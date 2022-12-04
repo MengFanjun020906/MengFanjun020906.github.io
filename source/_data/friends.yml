@@ -1,0 +1,15 @@
+- group: 个人 # 分组标题
+  description: 友情链接 # 分组描述
+  items:
+    - title: 我的CSDN个人主页 # 名称
+      avatar: https://i.postimg.cc/gks11QWk/4-C5737-F4-C198-42-EB-A0-FD-25886-D35-A4-D1-1-201-a.jpg # 头像
+      url: https://blog.csdn.net/qq_42887663 # 链接
+      screenshot: # 截图
+      keywords: # 关键词
+      description: # 描述
+    - title: # 名称
+      avatar: # 头像
+      url: # 链接
+      screenshot: # 截图
+      keywords: # 关键词
+      description: # 描述
