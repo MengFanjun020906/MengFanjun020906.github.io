@@ -5,8 +5,8 @@
   <meta name="Volantis" content="5.7.7">
   <meta charset="utf-8">
   <!-- SEO相关 -->
-  <meta name="robots" content="noindex,follow">
-  <link rel="canonical" href="https://mengfanjun020906.github.io/categories/"/>
+  
+  <link rel="canonical" href="https://mengfanjun020906.github.io/2021/10/01/arduino uno零基础入门学习笔记/"/>
   <!-- 渲染优化 -->
     <meta http-equiv='x-dns-prefetch-control' content='on' />
       <link rel='dns-prefetch' href='https://unpkg.com'>
@@ -31,20 +31,21 @@
 
   <!-- feed -->
   <!-- 页面元数据 -->
-  <title>所有分类 - MengFanjun的博客</title>
-  <meta name="keywords" content="null">
+  <title>Arduino Uno零基础入门学习笔记 - MengFanjun的博客</title>
+  <meta name="keywords" content="arduino,null">
   <meta desc name="description" content="20级通信工程大学生的个人博客 - MengFanjun - MengFanjun的博客">
   
-<meta property="og:type" content="website">
-<meta property="og:title" content="所有分类">
-<meta property="og:url" content="https://mengfanjun020906.github.io/categories/index.html">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Arduino Uno零基础入门学习笔记">
+<meta property="og:url" content="https://mengfanjun020906.github.io/2021/10/01/Arduino%20Uno%E9%9B%B6%E5%9F%BA%E7%A1%80%E5%85%A5%E9%97%A8%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/index.html">
 <meta property="og:site_name" content="MengFanjun的博客">
-<meta property="og:description" content="20级通信工程大学生的个人博客">
+<meta property="og:description" content="关于零基础学习Arduino的一篇学习笔记一、配置篇  因为要用Arduino来驱动小车，所以我就担任起了学习Arduino的重任，但由于我之前从来没有接触过编程，只有一定的c语言学习经验，所以是零基础进行学习，首先我是用的macos系统，配置环境大概比Windows系统要复杂一点，关于下载和环境配置如何进行，参考这一篇blog：https:&#x2F;&#x2F;blog.csdn.net&#x2F;yczyd&#x2F;articl">
 <meta property="og:locale" content="en_US">
 <meta property="og:image" content="https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png">
-<meta property="article:published_time" content="2022-12-04T13:03:47.139Z">
-<meta property="article:modified_time" content="2022-12-04T13:03:47.132Z">
+<meta property="article:published_time" content="2021-10-01T01:42:10.000Z">
+<meta property="article:modified_time" content="2022-12-05T03:10:35.199Z">
 <meta property="article:author" content="MengFanjun">
+<meta property="article:tag" content="arduino">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:image" content="https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png">
   <style>
@@ -2324,7 +2325,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
   
     
       <!-- see: /layout/_partial/scripts/_ctrl/coverCtrl.ejs -->
-      <div id="none" class='cover-wrapper category search' style="display: none;">
+      <div id="none" class='cover-wrapper post search' style="display: none;">
         
   <div class='cover-bg lazyload placeholder' data-bg="https://alpha.glilmu.com/i/2022/12/05/he1uuk.jpg"></div>
 
@@ -2378,59 +2379,229 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
       <div id="safearea">
         <div class="body-wrapper">
           
-
 <div id="l_main" class=''>
+  <article itemscope itemtype="http://schema.org/Article" class="article post white-box reveal md shadow floatable blur article-type-post" id="post" itemscope itemprop="blogPost">
+  <link itemprop="mainEntityOfPage" href="https://mengfanjun020906.github.io/2021/10/01/Arduino Uno零基础入门学习笔记/">
+  <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+    <meta itemprop="name" content="MengFanjun的博客">
+  </span>
+  <span hidden itemprop="post" itemscope itemtype="http://schema.org/Post">
+    <meta itemprop="name" content="MengFanjun的博客">
+    <meta itemprop="description" content="20级通信工程大学生的个人博客">
+  </span>
   
+
+
+  
+    <span hidden>
+      <meta itemprop="image" content="https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png">
+    </span>
+  
+  <div class="article-meta" id="top">
     
-      <div class='post-wrapper'>
-        <article id="cat" class="post article white-box reveal shadow floatable blur">
-          <h2>所有分类</h2>
-          <div class="all-cats">
-            
-              
-                <a class="" href="/categories/MATLAB%E4%B8%8E%E6%95%B0%E5%AD%A6%E5%BB%BA%E6%A8%A1/">
-                  <span><i class='fa-solid fa-folder-open fa-fw' aria-hidden="true"></i>&nbsp;&nbsp;MATLAB与数学建模</span>
-                  <span class="title">
-                    (2)
-                  </span>
-                </a>
-              
-                <a class=" child" href="/categories/MATLAB%E4%B8%8E%E6%95%B0%E5%AD%A6%E5%BB%BA%E6%A8%A1/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/">
-                  <span><i class='fa-solid fa-folder-open fa-fw' aria-hidden="true"></i>&nbsp;&nbsp;学习笔记</span>
-                  <span class="title">
-                    (1)
-                  </span>
-                </a>
-              
-                <a class="" href="/categories/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/">
-                  <span><i class='fa-solid fa-folder-open fa-fw' aria-hidden="true"></i>&nbsp;&nbsp;学习笔记</span>
-                  <span class="title">
-                    (2)
-                  </span>
-                </a>
-              
-                <a class=" child" href="/categories/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/%E8%93%9D%E6%A1%A5%E6%9D%AF%E5%8D%95%E7%89%87%E6%9C%BA%E5%AD%A6%E4%B9%A0/">
-                  <span><i class='fa-solid fa-folder-open fa-fw' aria-hidden="true"></i>&nbsp;&nbsp;蓝桥杯单片机学习</span>
-                  <span class="title">
-                    (1)
-                  </span>
-                </a>
-              
-                <a class="" href="/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA%E4%BA%8C%E7%BA%A7/">
-                  <span><i class='fa-solid fa-folder-open fa-fw' aria-hidden="true"></i>&nbsp;&nbsp;计算机二级</span>
-                  <span class="title">
-                    (1)
-                  </span>
-                </a>
-              
-            
-          </div>
-          <br>
+    
+    
+      <h1 class="title" itemprop="name headline">
+        Arduino Uno零基础入门学习笔记
+      </h1>
+      <div class='new-meta-box'>
+        
           
-        </article>
+            
+<div class='new-meta-item author' itemprop="author" itemscope itemtype="http://schema.org/Person">
+  <a itemprop="url" class='author' href="/" rel="nofollow">
+    <img itemprop="image" src="https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/apple-touch-icon.png" class="lazyload" data-srcset="https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/apple-touch-icon.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==">
+    <p itemprop="name">MengFanjun</p>
+  </a>
+</div>
+
+          
+        
+          
+            
+
+          
+        
+          
+            <div class="new-meta-item date" itemprop="dateCreated datePublished" datetime="2021-10-01T09:42:10+08:00">
+  <a class='notlink'>
+    <i class="fa-solid fa-calendar-alt fa-fw" aria-hidden="true"></i>
+    <p>发布于：Oct 1, 2021</p>
+  </a>
+</div>
+
+          
+        
+          
+            
+
+
+
+          
+        
+        <!-- Custom Files topMeta begin-->
+        
+        <!-- Custom Files topMeta end-->
       </div>
     
+  </div>
+
+
+  <div id="layoutHelper-page-plugins"></div>
+  <div id="post-body" itemprop="articleBody">
+    <h2 id="关于零基础学习Arduino的一篇学习笔记"><a href="#关于零基础学习Arduino的一篇学习笔记" class="headerlink" title="关于零基础学习Arduino的一篇学习笔记"></a><strong>关于零基础学习Arduino的一篇学习笔记</strong></h2><h2 id="一、配置篇"><a href="#一、配置篇" class="headerlink" title="一、配置篇"></a>一、配置篇</h2><p>  因为要用Arduino来驱动小车，所以我就担任起了学习Arduino的重任，但由于我之前从来没有接触过编程，只有一定的c语言学习经验，所以是零基础进行学习，首先我是用的macos系统，配置环境大概比Windows系统要复杂一点，关于下载和环境配置如何进行，参考这一篇blog：<a target="_blank" rel="noopener" href="https://blog.csdn.net/yczyd/article/details/78503420">https://blog.csdn.net/yczyd/article/details/78503420</a></p>
+<p>  *<em><strong>但需要注意的是</strong>，经过此篇文章的配置，我发现在我的端口里没有找到Arudino的端口，百思不得其解，之前的步骤也没有做错，后来，我把连接线的插口从左边换到了右边，问题就解决了，原理尚不清楚，如果有哪位大佬清楚，还请在评论区中指出</em>*</p>
+<p>现在我们就可以顺利的进行程序的编写了！！</p>
+<p> <img src="https://img-blog.csdnimg.cn/0bead6b2b2f74b9f857a57e758925a01.jpg?x-oss-process=image/watermark,type_ZHJvaWRzYW5zZmFsbGJhY2s,shadow_50,text_Q1NETiBAU29sLWl0dWRl,size_20,color_FFFFFF,t_70,g_se,x_16#pic_center" class="lazyload" data-srcset="https://img-blog.csdnimg.cn/0bead6b2b2f74b9f857a57e758925a01.jpg?x-oss-process=image/watermark,type_ZHJvaWRzYW5zZmFsbGJhY2s,shadow_50,text_Q1NETiBAU29sLWl0dWRl,size_20,color_FFFFFF,t_70,g_se,x_16#pic_center" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="在这里插入图片描述"></p>
+<h2 id="二、学习篇"><a href="#二、学习篇" class="headerlink" title="二、学习篇"></a>二、学习篇</h2><p>第一个要学习的程序，自然是点灯了。<br>我们点开左上角的文件，选择示例，选择Basics，选择Blink，一个led闪烁的程序就这么诞生了<br><img src="https://img-blog.csdnimg.cn/17784565f1c449a288b5ad7881202966.jpg?x-oss-process=image/watermark,type_ZHJvaWRzYW5zZmFsbGJhY2s,shadow_50,text_Q1NETiBAU29sLWl0dWRl,size_15,color_FFFFFF,t_70,g_se,x_16#pic_center" class="lazyload" data-srcset="https://img-blog.csdnimg.cn/17784565f1c449a288b5ad7881202966.jpg?x-oss-process=image/watermark,type_ZHJvaWRzYW5zZmFsbGJhY2s,shadow_50,text_Q1NETiBAU29sLWl0dWRl,size_15,color_FFFFFF,t_70,g_se,x_16#pic_center" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="在这里插入图片描述"></p>
+
+  </div>
   
+  
+    
+    <div class='footer'>
+       <!-- 参考资料、相关资料等 -->
+      
+       <!-- 相关文章 -->
+      
+      <!-- 版权声明组件 -->
+      
+      <!-- 打赏组件 -->
+      
+    </div>
+  
+  
+    
+
+
+  <div class='article-meta' id="bottom">
+    <div class='new-meta-box'>
+      
+        
+          <div class="new-meta-item date" itemprop="dateModified" datetime="2022-12-05T11:10:35+08:00">
+  <a class='notlink'>
+    <i class="fa-solid fa-edit fa-fw" aria-hidden="true"></i>
+    <p>更新于：Dec 5, 2022</p>
+  </a>
+</div>
+
+        
+      
+        
+          
+  
+  <div class="new-meta-item meta-tags"><a class="tag" href="/tags/arduino/" rel="nofollow"><i class="fa-solid fa-hashtag fa-fw" aria-hidden="true"></i><p>arduino</p></a></div>
+  <span hidden itemprop="keywords">arduino</span>
+
+
+        
+      
+        
+          
+  <div class="new-meta-item share -mob-share-list">
+  <div class="-mob-share-list share-body">
+    
+      
+        <a class="-mob-share-qq" title="" rel="external nofollow noopener noreferrer noopener"
+          
+          target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://mengfanjun020906.github.io/2021/10/01/Arduino%20Uno%E9%9B%B6%E5%9F%BA%E7%A1%80%E5%85%A5%E9%97%A8%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/&title=Arduino Uno零基础入门学习笔记 - MengFanjun的博客&summary="
+          
+          >
+          
+            <img src="https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/logo/128/qq.png" class="lazyload" data-srcset="https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/logo/128/qq.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==">
+          
+        </a>
+      
+    
+      
+        <a class="-mob-share-qzone" title="" rel="external nofollow noopener noreferrer noopener"
+          
+          target="_blank" href="https://sns.qzone.qq.com/cgi-bin/qzshare/cgi_qzshare_onekey?url=https://mengfanjun020906.github.io/2021/10/01/Arduino%20Uno%E9%9B%B6%E5%9F%BA%E7%A1%80%E5%85%A5%E9%97%A8%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/&title=Arduino Uno零基础入门学习笔记 - MengFanjun的博客&summary="
+          
+          >
+          
+            <img src="https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/logo/128/qzone.png" class="lazyload" data-srcset="https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/logo/128/qzone.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==">
+          
+        </a>
+      
+    
+      
+        <a class="-mob-share-weibo" title="" rel="external nofollow noopener noreferrer noopener"
+          
+          target="_blank" href="http://service.weibo.com/share/share.php?url=https://mengfanjun020906.github.io/2021/10/01/Arduino%20Uno%E9%9B%B6%E5%9F%BA%E7%A1%80%E5%85%A5%E9%97%A8%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/&title=Arduino Uno零基础入门学习笔记 - MengFanjun的博客&summary="
+          
+          >
+          
+            <img src="https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/logo/128/weibo.png" class="lazyload" data-srcset="https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/logo/128/weibo.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==">
+          
+        </a>
+      
+    
+      
+    
+      
+    
+  </div>
+</div>
+
+
+
+        
+      
+    </div>
+    <!-- Custom Files bottomMeta begin -->
+    
+    <!-- Custom Files bottomMeta end -->
+  </div>
+
+
+  
+  
+
+  
+    <div class="prev-next">
+      
+        <a class='prev' href='/2022/08/14/%E8%93%9D%E6%A1%A5%E6%9D%AF%E5%8D%95%E7%89%87%E6%9C%BA%E5%B8%B8%E7%94%A8%E6%A8%A1%E5%9D%97(%E8%87%AA%E7%94%A8)/'>
+          <p class='title'><i class="fa-solid fa-chevron-left" aria-hidden="true"></i>蓝桥杯单片机常用模块(自用)</p>
+          <p class='content'>关于我写的程序啥都不是还有脸上传的事之前一直在用txt记笔记，但是后来因为代码太多了，所以想到了记到csdn上下面是正文，无顺序，想到哪写到哪。
+一些基础的 -在138译码器中，前3位代表5 6...</p>
+        </a>
+      
+      
+        <a class='next' href='/2021/08/09/%E5%85%B3%E4%BA%8E%E5%9C%A8%E7%BB%83%E4%B9%A0%E8%AE%A1%E7%AE%97%E6%9C%BA%E4%BA%8C%E7%BA%A7%E6%97%B6%EF%BC%8C%E7%94%A8VisualStudio2019%E5%87%BA%E7%8E%B0%E7%9A%84%E6%97%A0%E6%B3%95%E8%B0%83%E8%AF%95%E9%97%AE%E9%A2%98/'>
+          <p class='title'>关于在练习计算机二级时，用VisualStudio2019出现的无法调试问题<i class="fa-solid fa-chevron-right" aria-hidden="true"></i></p>
+          <p class='content'>1.问题描述今天在刷二级题的时候，打开了.c后缀填空题文件，发现无法调试
+调试那一栏，总是灰色的，不知道为什么，在改完代码后发现没有办法运行，也不知道自己写的是对是错
+2.解决方法在文件夹的同一...</p>
+        </a>
+      
+    </div>
+  
+  <!-- Custom Files postEnd begin-->
+  
+  <!-- Custom Files postEnd end-->
+</article>
+
+
+  
+
+
+  <article class="post white-box shadow floatable blur" id="comments">
+    <span hidden>
+      <meta itemprop="discussionUrl" content="/2021/10/01/Arduino%20Uno%E9%9B%B6%E5%9F%BA%E7%A1%80%E5%85%A5%E9%97%A8%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/index.html#comments">
+    </span>
+    <p ct><i class='fa-solid fa-comments'></i> 评论</p>
+    
+
+    <div id="layoutHelper-comments"></div>
+
+  </article>
+
+
+
+
+
+
 </div>
 <aside id='l_side' itemscope itemtype="http://schema.org/WPSideBar">
   
@@ -2449,9 +2620,19 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
   
 
 
-  <div class="">
-    <!-- pjax占位 -->
-  </div>
+  <section class="widget toc-wrapper desktop mobile " id="toc-div" >
+    
+  <header>
+    
+      <i class="fa-solid fa-list fa-fw" aria-hidden="true"></i><span class='name'>本文目录</span>
+    
+  </header>
+
+
+    <div class='content'>
+        <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%85%B3%E4%BA%8E%E9%9B%B6%E5%9F%BA%E7%A1%80%E5%AD%A6%E4%B9%A0Arduino%E7%9A%84%E4%B8%80%E7%AF%87%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0"><span class="toc-text">关于零基础学习Arduino的一篇学习笔记</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%B8%80%E3%80%81%E9%85%8D%E7%BD%AE%E7%AF%87"><span class="toc-text">一、配置篇</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%BA%8C%E3%80%81%E5%AD%A6%E4%B9%A0%E7%AF%87"><span class="toc-text">二、学习篇</span></a></li></ol>
+    </div>
+  </section>
 
   
 
@@ -2502,13 +2683,14 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
 </aside>
 
 
+
           <!--此文件用来存放一些不方便取值的变量-->
 <!--思路大概是将值藏到重加载的区域内-->
 
 <pjax>
 <script>
   window.pdata={}
-  pdata.ispage=false;
+  pdata.ispage=true;
   pdata.commentPath="";
   pdata.commentPlaceholder="";
   pdata.commentConfig={};
@@ -3125,7 +3307,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
 </script>
 
 
-  <script type="application/ld+json">[{"@context":"http://schema.org","@type":"Organization","name":"MengFanjun的博客","url":"https://mengfanjun020906.github.io/","logo":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}},{"@context":"http://schema.org","@type":"Person","name":"MengFanjun","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png"},"url":"https://mengfanjun020906.github.io/","sameAs":["https://github.com/volantis-x"],"description":"20级通信工程大学生的个人博客"},{"@context":"http://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"item":{"@id":"https://mengfanjun020906.github.io/","name":"MengFanjun的博客"}}]},{"@context":"http://schema.org","@type":"WebSite","name":"MengFanjun的博客","url":"https://mengfanjun020906.github.io/","keywords":null,"description":"20级通信工程大学生的个人博客","author":{"@type":"Person","name":"MengFanjun","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png"},"url":"https://mengfanjun020906.github.io/","description":"20级通信工程大学生的个人博客"},"publisher":{"@type":"Organization","name":"MengFanjun的博客","url":"https://mengfanjun020906.github.io/","logo":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}},"potentialAction":{"@type":"SearchAction","name":"Site Search","target":{"@type":"EntryPoint","urlTemplate":"https://mengfanjun020906.github.io?s={search_term_string}"},"query-input":"required name=search_term_string"}},{"@context":"http://schema.org","@type":"BlogPosting","headline":"所有分类","description":"20级通信工程大学生的个人博客","inLanguage":"en","mainEntityOfPage":{"@type":"WebPage","@id":"https://mengfanjun020906.github.io/categories/index.html"},"author":{"@type":"Person","name":"MengFanjun","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png"},"url":"https://mengfanjun020906.github.io/"},"publisher":{"@type":"Organization","name":"MengFanjun的博客","logo":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}},"url":"https://mengfanjun020906.github.io/categories/index.html","wordCount":0,"datePublished":"2022-12-04T13:03:47.139Z","dateModified":"2022-12-04T13:03:47.132Z","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}}]</script>
+  <script type="application/ld+json">[{"@context":"http://schema.org","@type":"Organization","name":"MengFanjun的博客","url":"https://mengfanjun020906.github.io/","logo":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}},{"@context":"http://schema.org","@type":"Person","name":"MengFanjun","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png"},"url":"https://mengfanjun020906.github.io/","sameAs":["https://github.com/volantis-x"],"description":"20级通信工程大学生的个人博客"},{"@context":"http://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"item":{"@id":"https://mengfanjun020906.github.io/","name":"MengFanjun的博客"}},{"@type":"ListItem","position":3,"item":{"@id":"https://mengfanjun020906.github.io/2021/10/01/Arduino Uno零基础入门学习笔记/","name":"Arduino Uno零基础入门学习笔记"}}]},{"@context":"http://schema.org","@type":"WebSite","name":"MengFanjun的博客","url":"https://mengfanjun020906.github.io/","keywords":null,"description":"20级通信工程大学生的个人博客","author":{"@type":"Person","name":"MengFanjun","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png"},"url":"https://mengfanjun020906.github.io/","description":"20级通信工程大学生的个人博客"},"publisher":{"@type":"Organization","name":"MengFanjun的博客","url":"https://mengfanjun020906.github.io/","logo":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}},"potentialAction":{"@type":"SearchAction","name":"Site Search","target":{"@type":"EntryPoint","urlTemplate":"https://mengfanjun020906.github.io?s={search_term_string}"},"query-input":"required name=search_term_string"}},{"@context":"http://schema.org","@type":"BlogPosting","headline":"Arduino Uno零基础入门学习笔记","description":"20级通信工程大学生的个人博客","inLanguage":"en","mainEntityOfPage":{"@type":"WebPage","@id":"https://mengfanjun020906.github.io/2021/10/01/Arduino%20Uno%E9%9B%B6%E5%9F%BA%E7%A1%80%E5%85%A5%E9%97%A8%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/"},"author":{"@type":"Person","name":"MengFanjun","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png"},"url":"https://mengfanjun020906.github.io/"},"publisher":{"@type":"Organization","name":"MengFanjun的博客","logo":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}},"url":"https://mengfanjun020906.github.io/2021/10/01/Arduino%20Uno%E9%9B%B6%E5%9F%BA%E7%A1%80%E5%85%A5%E9%97%A8%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/","wordCount":0,"datePublished":"2021-10-01T01:42:10.000Z","dateModified":"2022-12-05T03:10:35.199Z","keywords":"arduino","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}}]</script>
 
 
 
