@@ -62,17 +62,17 @@
   --color-card: #fff;
   --color-text: #444;
   --color-block: #f6f6f6;
-  --color-inlinecode: #c74f00;
-  --color-codeblock: #fff7ea;
-  --color-h1: #3a3a3a;
-  --color-h2: #3a3a3a;
-  --color-h3: #333;
+  --color-inlinecode: #d56d28;
+  --color-codeblock: #f6f6f6;
+  --color-h1: #444;
+  --color-h2: #444;
+  --color-h3: #444;
   --color-h4: #444;
-  --color-h5: #555;
-  --color-h6: #666;
+  --color-h5: #444;
+  --color-h6: #444;
   --color-p: #444;
   --color-list: #666;
-  --color-list-hl: #30ad91;
+  --color-list-hl: #36ac91;
   --color-meta: #888;
   --color-read-bkg: #e0d8c8;
   --color-read-post: #f8f1e2;
@@ -94,7 +94,7 @@
   background: transparent;
 }
 *::-webkit-scrollbar-thumb {
-  background: #3dd9b6;
+  background: #44d7b6;
   cursor: pointer;
   border-radius: 2px;
   -webkit-border-radius: 2px;
@@ -117,7 +117,7 @@ html >::-webkit-scrollbar-track-piece {
   background: transparent;
 }
 html >::-webkit-scrollbar-thumb {
-  background: #3dd9b6;
+  background: #44d7b6;
   cursor: pointer;
   border-radius: 2px;
   -webkit-border-radius: 2px;
@@ -146,7 +146,7 @@ body.modal-active {
   }
 }
 a {
-  color: #2092ec;
+  color: #2196f3;
   cursor: pointer;
   text-decoration: none;
   transition: all 0.28s ease;
@@ -928,7 +928,7 @@ button {
   -moz-transition: all 0.28s ease;
   -o-transition: all 0.28s ease;
   -ms-transition: all 0.28s ease;
-  color: #3dd9b6;
+  color: #44d7b6;
 }
 .l_header .switcher >li >a:hover {
   border: none;
@@ -1108,7 +1108,7 @@ ul.m-pc >li>a {
 }
 ul.m-pc >li>a:active,
 ul.m-pc >li>a.active {
-  border-bottom: 2px solid #3dd9b6;
+  border-bottom: 2px solid #44d7b6;
 }
 ul.m-pc li:hover >ul.list-v,
 ul.list-v li:hover >ul.list-v {
@@ -1247,7 +1247,7 @@ ul.list-v >li>a:hover {
 }
 .l_header ul.nav-list-h>li >a:active,
 .l_header ul.nav-list-h>li >a.active {
-  color: #3dd9b6;
+  color: #44d7b6;
 }
 .l_header ul.nav-list-h>li:hover>a {
   color: var(--color-list-hl);
@@ -1628,7 +1628,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
     debug: "env",
     cdn: {"js":{"app":"/js/app.js","parallax":"/js/plugins/parallax.js","rightMenu":"/js/plugins/rightMenu.js","rightMenus":"/js/plugins/rightMenus.js","sites":"/js/plugins/tags/sites.js","friends":"/js/plugins/tags/friends.js","contributors":"/js/plugins/tags/contributors.js","search":"/js/search/hexo.js"},"css":{"style":"/css/style.css"}},
     default: {"avatar":"https://unpkg.com/volantis-static@0.0.1654736714924/media/placeholder/avatar/round/3442075.svg","link":"https://unpkg.com/volantis-static@0.0.1654736714924/media/placeholder/link/8f277b4ee0ecd.svg","cover":"https://unpkg.com/volantis-static@0.0.1654736714924/media/placeholder/cover/76b86c0226ffd.svg","image":"https://unpkg.com/volantis-static@0.0.1654736714924/media/placeholder/image/2659360.svg"},
-    lastupdate: new Date(1670210492100),
+    lastupdate: new Date(1670220431682),
     sidebar: {
       for_page: ["blogger","category","tagcloud","text"],
       for_post: ["toc"],
@@ -2602,10 +2602,20 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
   
     <div class="prev-next">
       
+        <a class='prev' href='/2022/11/26/MATLAB%E5%AE%9E%E7%8E%B0%E5%B0%86%E5%87%BD%E6%95%B0_%E5%BA%8F%E5%88%97%E8%BF%9B%E8%A1%8C%E5%91%A8%E6%9C%9F%E5%BB%B6%E6%8B%93/'>
+          <p class='title'><i class="fa-solid fa-chevron-left" aria-hidden="true"></i>MATLAB实现将函数/序列进行周期延拓</p>
+          <p class='content'>原函数假设我们有这么一个函数
+
+x(n)=3cos(0.125πn+0.2π)+2sin(0.25πn+0.1π)n为0到15的整数
+
+这是他的函数图像，如何将其进行周期化我在MATLAB中文论...</p>
+        </a>
       
-        <a class='next' href='/2022/10/13/%E6%95%B0%E5%AD%A6%E5%BB%BA%E6%A8%A1%E7%AE%97%E6%B3%95%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/'>
-          <p class='title'>数学建模算法学习笔记<i class="fa-solid fa-chevron-right" aria-hidden="true"></i></p>
-          <p class='content'>这是为了准备国赛突击学习的模型算法，我在原有的基础上加上自己的理解虽然不知道对不对，就是为了记录下自己学的模型他究竟是个什么东西，语言通俗，但是极不准确，只适合做一个大概的了解，建议大家详细的还...</p>
+      
+        <a class='next' href='/2022/11/22/%E6%95%B0%E5%AD%97%E4%BF%A1%E5%8F%B7%E5%A4%84%E7%90%86FFT%E5%BF%AB%E9%80%9F%E5%82%85%E7%AB%8B%E5%8F%B6%E5%8F%98%E6%8D%A2MATLAB%E5%AE%9E%E7%8E%B0%E2%80%94%E2%80%94%E5%AE%9E%E4%BE%8B/'>
+          <p class='title'>数字信号处理FFT快速傅立叶变换MATLAB实现——实例<i class="fa-solid fa-chevron-right" aria-hidden="true"></i></p>
+          <p class='content'>今天做作业的时候发现要对一个信号进行FFT变换，在网上找了半天也没找到个能看懂的（因为我太菜了），后来自己研究了一下，感觉一知半解的起因是这道作业题
+例题-满足奈奎斯特我画了两个图，一个是原信号...</p>
         </a>
       
     </div>
