@@ -1624,9 +1624,9 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
     debug: "env",
     cdn: {"js":{"app":"/js/app.js","parallax":"/js/plugins/parallax.js","rightMenu":"/js/plugins/rightMenu.js","rightMenus":"/js/plugins/rightMenus.js","sites":"/js/plugins/tags/sites.js","friends":"/js/plugins/tags/friends.js","contributors":"/js/plugins/tags/contributors.js","search":"/js/search/hexo.js"},"css":{"style":"/css/style.css"}},
     default: {"avatar":"https://unpkg.com/volantis-static@0.0.1654736714924/media/placeholder/avatar/round/3442075.svg","link":"https://unpkg.com/volantis-static@0.0.1654736714924/media/placeholder/link/8f277b4ee0ecd.svg","cover":"https://unpkg.com/volantis-static@0.0.1654736714924/media/placeholder/cover/76b86c0226ffd.svg","image":"https://unpkg.com/volantis-static@0.0.1654736714924/media/placeholder/image/2659360.svg"},
-    lastupdate: new Date(1670222875601),
+    lastupdate: new Date(1670226621795),
     sidebar: {
-      for_page: ["blogger","category","tagcloud","text"],
+      for_page: ["blogger","category","tagcloud","webinfo","lastupdate"],
       for_post: ["toc"],
       webinfo: {
         lastupd: {
@@ -1634,7 +1634,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
           friendlyShow: true
         },
         runtime: {
-          data: "2020/01/01",
+          data: "2022/12/04",
           unit: "天"
         }
       }
@@ -3265,17 +3265,67 @@ b = mod(a,m) 返回 a 除以 m 后的余数，其中 a 是被除数，m 是除�
     
     
       
-<section class="widget text desktop pjax">
+<section class="widget desktop pjax">
   
   <header>
     
-      <a target="_blank" rel="noopener" href='https://github.com/xaoxuu/'><i class="fab fa-github fa-fw" aria-hidden="true"></i><span class='name'>点个赞吧</span></a>
+      <i class="fa-solid fa-award fa-fw" aria-hidden="true"></i><span class='name'>站点信息</span>
     
   </header>
 
 
   <div class='content'>
+    <div class="webinfo">
+      
+        <div class="webinfo-item">
+          <div>文章数目：</div>
+          <div>52 篇</div>
+        </div>
+      
+
+      
+        <div class="webinfo-item">
+          <div>已运行时间：</div>
+          <div id="webinfo-runtime-count"></div>
+        </div>
+      
+
+
+      
+
+      
+
+      
+
+      
+        <div class="webinfo-item">
+          <div>最后活动时间：</div>
+          <div id="last-update-show">2022-12-05 日</div>
+        </div>
+      
+    </div>
+  </div>
+</section>
+
     
+  
+
+  
+    
+    
+      
+
+<section class="widget desktop mobile pjax">
+  
+  <header>
+    
+      <i class="fa-solid fa-clock WISTERIA fa-fw" aria-hidden="true"></i><span class='name'>最近更新</span>
+    
+  </header>
+
+
+  <div class='content'>
+    <ul class="list entry navigation"><li><a class="widget-last" href="/2022/11/30/%E6%95%B0%E5%AD%97%E4%BF%A1%E5%8F%B7%E5%A4%84%E7%90%86%E4%BF%A1%E5%8F%B7%E7%9A%84%E5%BA%8F%E5%88%97%E8%A1%A50MATLAB%E5%AE%9E%E7%8E%B0%E2%80%94%E2%80%94%E5%AE%9E%E4%BE%8B/"><div class="item"><time>2022-12-05</time><span>MATLAB与数学建模</span></div><span>数字信号处理信号的序列补0MATLAB实现——实例</span></a></li><li><a class="widget-last" href="/2022/11/30/%E6%95%B0%E5%AD%97%E4%BF%A1%E5%8F%B7%E5%A4%84%E7%90%86MATLAB%E4%BD%9C%E4%B8%9A%E4%B8%89%EF%BC%88%E9%A2%98%E7%9B%AE+%E8%A7%A3%E7%AD%94%E4%BB%A3%E7%A0%81%EF%BC%89/"><div class="item"><time>2022-12-05</time><span>MATLAB与数学建模</span></div><span>数字信号处理MATLAB作业三（题目+解答代码）</span></a></li><li><a class="widget-last" href="/2022/11/28/%E6%95%B0%E5%AD%97%E4%BF%A1%E5%8F%B7%E5%A4%84%E7%90%86%E4%BF%A1%E5%8F%B7%E7%9A%84%E5%9C%86%E5%91%A8%E5%8D%B7%E7%A7%AFMATLAB%E5%AE%9E%E7%8E%B0%E2%80%94%E2%80%94%E5%AE%9E%E4%BE%8B/"><div class="item"><time>2022-12-05</time><span>MATLAB与数学建模</span></div><span>数字信号处理信号的圆周卷积MATLAB实现——实例</span></a></li><li><a class="widget-last" href="/2022/11/27/%E7%AC%AC%E4%B8%83%E5%B1%8ANVIDIA%20Sky%20Hackathon%E9%A1%B9%E7%9B%AE%E6%8A%A5%E5%91%8A%E4%B9%A6/"><div class="item"><time>2022-12-05</time><span>The 7th Sky Hackathon</span></div><span>第七届NVIDIA Sky Hackathon项目报告书</span></a></li><li><a class="widget-last" href="/2022/12/02/%E6%88%91%E5%8F%82%E5%8A%A0%E7%AC%AC%E4%B8%83%E5%B1%8ANVIDIA%20Sky%20Hackathon%E2%80%94%E2%80%94%E8%AE%AD%E7%BB%83CV%E6%A8%A1%E5%9E%8B/"><div class="item"><time>2022-12-05</time><span>The 7th Sky Hackathon</span></div><span>我参加第七届NVIDIA Sky Hackathon——训练CV模型</span></a></li></ul>
   </div>
 </section>
 
