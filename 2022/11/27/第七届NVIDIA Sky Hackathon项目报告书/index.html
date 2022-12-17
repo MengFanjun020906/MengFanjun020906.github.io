@@ -39,11 +39,11 @@
 <meta property="og:title" content="第七届NVIDIA Sky Hackathon项目报告书">
 <meta property="og:url" content="https://mengfanjun020906.github.io/2022/11/27/%E7%AC%AC%E4%B8%83%E5%B1%8ANVIDIA%20Sky%20Hackathon%E9%A1%B9%E7%9B%AE%E6%8A%A5%E5%91%8A%E4%B9%A6/index.html">
 <meta property="og:site_name" content="MengFanjun的博客">
-<meta property="og:description" content="系列文章目录    数据集收集和标注情况 1ASR语音数据集收集和标注情况 2CV图像数据集收集和标注情况 进行模型的训练 1进行ASR模型的训练 2进行CV模型的训练 在Jetson平台进行部署和推理 1部署和推理ASR模型 2部署和推理CV模型 优化UI界面   1.    数据集收集和标注情况1.1ASR语音数据集收集和标注情况首先收集语音数据集，包含以下语音：|请检测出果皮 ||–||请检">
+<meta property="og:description" content="系列文章目录    数据集收集和标注情况 1ASR语音数据集收集和标注情况 2CV图像数据集收集和标注情况 进行模型的训练 1进行ASR模型的训练 2进行CV模型的训练 在Jetson平台进行部署和推理 1部署和推理ASR模型 2部署和推理CV模型 优化UI界面   1.    数据集收集和标注情况1.1ASR语音数据集收集和标注情况   请检测出果皮    请检测出瓶子   请检测出纸箱   请">
 <meta property="og:locale" content="en_US">
 <meta property="og:image" content="https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png">
 <meta property="article:published_time" content="2022-11-27T09:21:15.000Z">
-<meta property="article:modified_time" content="2022-12-14T11:41:41.789Z">
+<meta property="article:modified_time" content="2022-12-17T09:32:52.854Z">
 <meta property="article:author" content="MengFanjun">
 <meta property="article:tag" content="深度学习">
 <meta property="article:tag" content="Nvidia">
@@ -1598,7 +1598,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
     debug: "env",
     cdn: {"js":{"app":"/js/app.js","parallax":"/js/plugins/parallax.js","rightMenu":"/js/plugins/rightMenu.js","rightMenus":"/js/plugins/rightMenus.js","sites":"/js/plugins/tags/sites.js","friends":"/js/plugins/tags/friends.js","contributors":"/js/plugins/tags/contributors.js","search":"/js/search/hexo.js"},"css":{"style":"/css/style.css"}},
     default: {"avatar":"https://unpkg.com/volantis-static@0.0.1654736714924/media/placeholder/avatar/round/3442075.svg","link":"https://unpkg.com/volantis-static@0.0.1654736714924/media/placeholder/link/8f277b4ee0ecd.svg","cover":"https://unpkg.com/volantis-static@0.0.1654736714924/media/placeholder/cover/76b86c0226ffd.svg","image":"https://unpkg.com/volantis-static@0.0.1654736714924/media/placeholder/image/2659360.svg"},
-    lastupdate: new Date(1671161436640),
+    lastupdate: new Date(1671270172518),
     sidebar: {
       for_page: ["blogger","category","tagcloud","webinfo","lastupdate"],
       for_post: ["toc"],
@@ -2475,7 +2475,55 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
 <li>优化UI界面</li>
 </ol>
 <hr>
-<h1 id="1-数据集收集和标注情况"><a href="#1-数据集收集和标注情况" class="headerlink" title="1.    数据集收集和标注情况"></a>1.    数据集收集和标注情况</h1><h2 id="1-1ASR语音数据集收集和标注情况"><a href="#1-1ASR语音数据集收集和标注情况" class="headerlink" title="1.1ASR语音数据集收集和标注情况"></a>1.1ASR语音数据集收集和标注情况</h2><p>首先收集语音数据集，包含以下语音：<br>|请检测出果皮 |<br>|–|<br>|请检测出瓶子 |<br>|请检测出纸箱 |<br>|请检测出纸箱和果皮|<br>请检测出果皮和纸箱<br>请检测出纸箱果皮和瓶子<br>请检测出果皮纸箱和瓶子<br>请检测出果皮瓶子和纸箱<br>请检测出纸箱瓶子和果皮<br>请检测出瓶子果皮和纸箱<br>请检测出果皮和瓶子<br>请检测出瓶子纸箱和果皮<br>请检测出瓶子和果皮<br>请检测出纸箱和瓶子<br>请检测出瓶子和纸箱</p>
+<h1 id="1-数据集收集和标注情况"><a href="#1-数据集收集和标注情况" class="headerlink" title="1.    数据集收集和标注情况"></a>1.    数据集收集和标注情况</h1><h2 id="1-1ASR语音数据集收集和标注情况"><a href="#1-1ASR语音数据集收集和标注情况" class="headerlink" title="1.1ASR语音数据集收集和标注情况"></a>1.1ASR语音数据集收集和标注情况</h2><table>
+<thead>
+<tr>
+<th>请检测出果皮</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>请检测出瓶子</td>
+</tr>
+<tr>
+<td>请检测出纸箱</td>
+</tr>
+<tr>
+<td>请检测出纸箱和果皮</td>
+</tr>
+<tr>
+<td>请检测出果皮和纸箱</td>
+</tr>
+<tr>
+<td>请检测出纸箱果皮和瓶子</td>
+</tr>
+<tr>
+<td>请检测出果皮纸箱和瓶子</td>
+</tr>
+<tr>
+<td>请检测出果皮瓶子和纸箱</td>
+</tr>
+<tr>
+<td>请检测出纸箱瓶子和果皮</td>
+</tr>
+<tr>
+<td>请检测出瓶子果皮和纸箱</td>
+</tr>
+<tr>
+<td>请检测出果皮和瓶子</td>
+</tr>
+<tr>
+<td>请检测出瓶子纸箱和果皮</td>
+</tr>
+<tr>
+<td>请检测出瓶子和果皮</td>
+</tr>
+<tr>
+<td>请检测出纸箱和瓶子</td>
+</tr>
+<tr>
+<td>请检测出瓶子和纸箱</td>
+</tr>
+</tbody></table>
 <p>数据集类型以及数量<br>|数据集类型| 语音数量 |<br>|–|–|<br>| 测试集 | 111条男声+75条女声 |<br>| 训练集 | 221条（男+女） |</p>
 <p>通过librosa计算语音时长</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">asr_result = quartznet.transcribe(paths2audio_files=[<span class="string">&quot;xxx&quot;</span>]) <span class="comment"># 调用transcribe函数测试预训练模型识别效果  </span></span><br><span class="line"><span class="built_in">print</span>(asr_result)  </span><br></pre></td></tr></table></figure>
@@ -2524,10 +2572,10 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
     <div class='new-meta-box'>
       
         
-          <div class="new-meta-item date" itemprop="dateModified" datetime="2022-12-14T19:41:41+08:00">
+          <div class="new-meta-item date" itemprop="dateModified" datetime="2022-12-17T17:32:52+08:00">
   <a class='notlink'>
     <i class="fa-solid fa-edit fa-fw" aria-hidden="true"></i>
-    <p>更新于：Dec 14, 2022</p>
+    <p>更新于：Dec 17, 2022</p>
   </a>
 </div>
 
@@ -3408,7 +3456,7 @@ x(n)=3cos(0.125πn+0.2π)+2sin(0.25πn+0.1π)n为0到15的整数
 </script>
 
 
-  <script type="application/ld+json">[{"@context":"http://schema.org","@type":"Organization","name":"MengFanjun的博客","url":"https://mengfanjun020906.github.io/","logo":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}},{"@context":"http://schema.org","@type":"Person","name":"MengFanjun","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png"},"url":"https://mengfanjun020906.github.io/","sameAs":["https://github.com/volantis-x"],"description":"20级通信工程大学生的个人博客"},{"@context":"http://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"item":{"@id":"https://mengfanjun020906.github.io/","name":"MengFanjun的博客"}},{"@type":"ListItem","position":2,"item":{"@id":"https://mengfanjun020906.github.io/categories/The-7th-Sky-Hackathon/","name":"The 7th Sky Hackathon"}},{"@type":"ListItem","position":3,"item":{"@id":"https://mengfanjun020906.github.io/2022/11/27/第七届NVIDIA Sky Hackathon项目报告书/","name":"第七届NVIDIA Sky Hackathon项目报告书"}}]},{"@context":"http://schema.org","@type":"WebSite","name":"MengFanjun的博客","url":"https://mengfanjun020906.github.io/","keywords":null,"description":"20级通信工程大学生的个人博客","author":{"@type":"Person","name":"MengFanjun","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png"},"url":"https://mengfanjun020906.github.io/","description":"20级通信工程大学生的个人博客"},"publisher":{"@type":"Organization","name":"MengFanjun的博客","url":"https://mengfanjun020906.github.io/","logo":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}},"potentialAction":{"@type":"SearchAction","name":"Site Search","target":{"@type":"EntryPoint","urlTemplate":"https://mengfanjun020906.github.io?s={search_term_string}"},"query-input":"required name=search_term_string"}},{"@context":"http://schema.org","@type":"BlogPosting","headline":"第七届NVIDIA Sky Hackathon项目报告书","description":"20级通信工程大学生的个人博客","inLanguage":"en","mainEntityOfPage":{"@type":"WebPage","@id":"https://mengfanjun020906.github.io/2022/11/27/%E7%AC%AC%E4%B8%83%E5%B1%8ANVIDIA%20Sky%20Hackathon%E9%A1%B9%E7%9B%AE%E6%8A%A5%E5%91%8A%E4%B9%A6/"},"author":{"@type":"Person","name":"MengFanjun","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png"},"url":"https://mengfanjun020906.github.io/"},"publisher":{"@type":"Organization","name":"MengFanjun的博客","logo":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}},"url":"https://mengfanjun020906.github.io/2022/11/27/%E7%AC%AC%E4%B8%83%E5%B1%8ANVIDIA%20Sky%20Hackathon%E9%A1%B9%E7%9B%AE%E6%8A%A5%E5%91%8A%E4%B9%A6/","wordCount":0,"datePublished":"2022-11-27T09:21:15.000Z","dateModified":"2022-12-14T11:41:41.789Z","articleSection":"The 7th Sky Hackathon","keywords":"深度学习,Nvidia,人工智能,大数据","image":{"@type":"ImageObject","url":"https://m1.im5i.com/2022/12/14/U5OPAf.jpg","width":1024,"height":768}}]</script>
+  <script type="application/ld+json">[{"@context":"http://schema.org","@type":"Organization","name":"MengFanjun的博客","url":"https://mengfanjun020906.github.io/","logo":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}},{"@context":"http://schema.org","@type":"Person","name":"MengFanjun","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png"},"url":"https://mengfanjun020906.github.io/","sameAs":["https://github.com/volantis-x"],"description":"20级通信工程大学生的个人博客"},{"@context":"http://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"item":{"@id":"https://mengfanjun020906.github.io/","name":"MengFanjun的博客"}},{"@type":"ListItem","position":2,"item":{"@id":"https://mengfanjun020906.github.io/categories/The-7th-Sky-Hackathon/","name":"The 7th Sky Hackathon"}},{"@type":"ListItem","position":3,"item":{"@id":"https://mengfanjun020906.github.io/2022/11/27/第七届NVIDIA Sky Hackathon项目报告书/","name":"第七届NVIDIA Sky Hackathon项目报告书"}}]},{"@context":"http://schema.org","@type":"WebSite","name":"MengFanjun的博客","url":"https://mengfanjun020906.github.io/","keywords":null,"description":"20级通信工程大学生的个人博客","author":{"@type":"Person","name":"MengFanjun","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png"},"url":"https://mengfanjun020906.github.io/","description":"20级通信工程大学生的个人博客"},"publisher":{"@type":"Organization","name":"MengFanjun的博客","url":"https://mengfanjun020906.github.io/","logo":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}},"potentialAction":{"@type":"SearchAction","name":"Site Search","target":{"@type":"EntryPoint","urlTemplate":"https://mengfanjun020906.github.io?s={search_term_string}"},"query-input":"required name=search_term_string"}},{"@context":"http://schema.org","@type":"BlogPosting","headline":"第七届NVIDIA Sky Hackathon项目报告书","description":"20级通信工程大学生的个人博客","inLanguage":"en","mainEntityOfPage":{"@type":"WebPage","@id":"https://mengfanjun020906.github.io/2022/11/27/%E7%AC%AC%E4%B8%83%E5%B1%8ANVIDIA%20Sky%20Hackathon%E9%A1%B9%E7%9B%AE%E6%8A%A5%E5%91%8A%E4%B9%A6/"},"author":{"@type":"Person","name":"MengFanjun","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png"},"url":"https://mengfanjun020906.github.io/"},"publisher":{"@type":"Organization","name":"MengFanjun的博客","logo":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}},"url":"https://mengfanjun020906.github.io/2022/11/27/%E7%AC%AC%E4%B8%83%E5%B1%8ANVIDIA%20Sky%20Hackathon%E9%A1%B9%E7%9B%AE%E6%8A%A5%E5%91%8A%E4%B9%A6/","wordCount":0,"datePublished":"2022-11-27T09:21:15.000Z","dateModified":"2022-12-17T09:32:52.854Z","articleSection":"The 7th Sky Hackathon","keywords":"深度学习,Nvidia,人工智能,大数据","image":{"@type":"ImageObject","url":"https://m1.im5i.com/2022/12/14/U5OPAf.jpg","width":1024,"height":768}}]</script>
 
 
 
