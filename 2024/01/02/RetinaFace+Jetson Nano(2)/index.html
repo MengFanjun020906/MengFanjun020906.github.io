@@ -5,8 +5,8 @@
   <meta name="Volantis" content="5.7.7">
   <meta charset="utf-8">
   <!-- SEO相关 -->
-  <meta name="robots" content="noindex,follow">
-  <link rel="canonical" href="https://mengfanjun020906.github.io/archives/page/7/"/>
+  
+  <link rel="canonical" href="https://mengfanjun020906.github.io/2024/01/02/retinaface+jetson nano(2)/"/>
   <!-- 渲染优化 -->
     <meta http-equiv='x-dns-prefetch-control' content='on' />
       <link rel='dns-prefetch' href='https://unpkg.com'>
@@ -32,18 +32,25 @@
 
   <!-- feed -->
   <!-- 页面元数据 -->
-  <title>Archive - MengFanjun的博客</title>
-  <meta name="keywords" content="null">
+  <title>基于RetinaFace+Jetson Nano的智能门锁系统——第二篇（配置环境） - MengFanjun的博客</title>
+  <meta name="keywords" content="机器学习,嵌入式硬件,人工智能,ubuntu,linux,null">
   <meta desc name="description" content="20级通信工程大学生的个人博客 - MengFanjun - MengFanjun的博客">
   
-<meta property="og:type" content="website">
-<meta property="og:title" content="MengFanjun的博客">
-<meta property="og:url" content="https://mengfanjun020906.github.io/archives/page/7/index.html">
+<meta property="og:type" content="article">
+<meta property="og:title" content="基于RetinaFace+Jetson Nano的智能门锁系统——第二篇（配置环境）">
+<meta property="og:url" content="https://mengfanjun020906.github.io/2024/01/02/RetinaFace+Jetson%20Nano(2)/index.html">
 <meta property="og:site_name" content="MengFanjun的博客">
-<meta property="og:description" content="20级通信工程大学生的个人博客">
+<meta property="og:description" content="设备  Jetson Nano Micro-USB - USB-A电源线 HDMI线+屏幕 PC一台 USB网卡 USB鼠标 USB键盘  一、安装远程登录终端Xshell XShell 是一种流行且简单的网络程序，旨在模拟虚拟终端。XShell可以在Windows界面下来访问远端不同系统下的服务器，从而比较好的达到远程控制终端的目的。它支持 RLOGIN、SFTP、SERIAL、TELNET、S">
 <meta property="og:locale" content="en_US">
 <meta property="og:image" content="https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png">
+<meta property="article:published_time" content="2024-01-02T10:41:39.000Z">
+<meta property="article:modified_time" content="2024-02-26T12:05:07.732Z">
 <meta property="article:author" content="MengFanjun">
+<meta property="article:tag" content="机器学习">
+<meta property="article:tag" content="嵌入式硬件">
+<meta property="article:tag" content="人工智能">
+<meta property="article:tag" content="ubuntu">
+<meta property="article:tag" content="linux">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:image" content="https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png">
   <style>
@@ -2295,7 +2302,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
   
     
       <!-- see: /layout/_partial/scripts/_ctrl/coverCtrl.ejs -->
-      <div id="half" class='cover-wrapper  search' style="display: ;">
+      <div id="half" class='cover-wrapper post search' style="display: ;">
         
   <div id="parallax-window"></div>
 
@@ -2350,1454 +2357,429 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
         <div class="body-wrapper">
           
 <div id="l_main" class=''>
-	
-	  <article id="arc" class="post article white-box reveal shadow floatable blur">
-	  	<div id="calendar">
-			
-			<div class="container archive-calendar">
-    <div class="card">
-        <div id="post-calendar" class="card-content"></div>
-    </div>
+  <article itemscope itemtype="http://schema.org/Article" class="article post white-box reveal md shadow floatable blur article-type-post" id="post" itemscope itemprop="blogPost">
+  <link itemprop="mainEntityOfPage" href="https://mengfanjun020906.github.io/2024/01/02/RetinaFace+Jetson Nano(2)/">
+  <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+    <meta itemprop="name" content="MengFanjun的博客">
+  </span>
+  <span hidden itemprop="post" itemscope itemtype="http://schema.org/Post">
+    <meta itemprop="name" content="MengFanjun的博客">
+    <meta itemprop="description" content="20级通信工程大学生的个人博客">
+  </span>
+  
+
+
+  
+    <span hidden>
+      <meta itemprop="image" content="https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png">
+    </span>
+  
+  <div class="article-meta" id="top">
+    
+    
+    
+      <h1 class="title" itemprop="name headline">
+        基于RetinaFace+Jetson Nano的智能门锁系统——第二篇（配置环境）
+      </h1>
+      <div class='new-meta-box'>
+        
+          
+            
+<div class='new-meta-item author' itemprop="author" itemscope itemtype="http://schema.org/Person">
+  <a itemprop="url" class='author' href="/" rel="nofollow">
+    <img itemprop="image" src="https://pic.imgdb.cn/item/63f9926ef144a01007de7d7d.png" class="lazyload" data-srcset="https://pic.imgdb.cn/item/63f9926ef144a01007de7d7d.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==">
+    <p itemprop="name">MengFanjun</p>
+  </a>
 </div>
-<style type="text/css">
-    #post-calendar {
-        width: 100%;
-        height: 225px;
-        margin-top: 20px;
-        border-radius: 12px;
-        background-color: rgb(255, 255, 255,0.5);
-    }
-</style>
 
-<script type="text/javascript" src="https://gcore.jsdelivr.net/gh/0xAiKang/CDN@1.0/blog/js/echarts.min.js"></script>
-<script type="text/javascript">
-    let myChart = echarts.init(document.getElementById('post-calendar'));
+          
+        
+          
+            
+  <div class='new-meta-item category'>
+    <i class="fa-solid fa-folder-open fa-fw" aria-hidden="true"></i>
+    <a class="category-link" href="/categories/Jetson-Nano/">Jetson Nano</a>
+    
+      <span hidden itemprop="about" itemscope itemtype="http://schema.org/Thing">
+        <a href="/categories/Jetson-Nano/" itemprop="url"><span itemprop="name">Jetson Nano</span></a>
+      </span>
+    
+  </div>
 
+
+          
+        
+          
+            <div class="new-meta-item date" itemprop="dateCreated datePublished" datetime="2024-01-02T18:41:39+08:00">
+  <a class='notlink'>
+    <i class="fa-solid fa-calendar-alt fa-fw" aria-hidden="true"></i>
+    <p>发布于：Jan 2, 2024</p>
+  </a>
+</div>
+
+          
+        
+          
+            
+  <div class="new-meta-item wordcount">
+    <a class='notlink'>
+      <i class="fa-solid fa-keyboard fa-fw" aria-hidden="true"></i>
+      <p>1.4k words</p>
+    </a>
+  </div>
+  <div class="new-meta-item readtime">
+    <a class='notlink'>
+      <i class="fa-solid fa-hourglass-half fa-fw" aria-hidden="true"></i>
+      <p>5 min</p>
+    </a>
+  </div>
+
+
+          
+        
+          
+            
+
+
+<div class="new-meta-item browse">
+  <a class='notlink'>
+    <p>
+      <i class="fa-solid fa-eye fa-fw" aria-hidden="true"></i>
+      
+      <span id="busuanzi_value_page_pv"><i class="fa-solid fa-loader fa-spin fa-fw" aria-hidden="true"></i></span>
+      
+      <span>次浏览</span>
+    </p>
+  </a>
+</div>
+
+
+          
+        
+        <!-- Custom Files topMeta begin-->
+        
+        <!-- Custom Files topMeta end-->
+      </div>
+    
+  </div>
+
+
+  <div id="layoutHelper-page-plugins"></div>
+  <div id="post-body" itemprop="articleBody">
+    <h1 id="设备">设备</h1>
+<ul>
+<li>Jetson Nano</li>
+<li>Micro-USB - USB-A电源线</li>
+<li>HDMI线+屏幕</li>
+<li>PC一台</li>
+<li>USB网卡</li>
+<li>USB鼠标</li>
+<li>USB键盘</li>
+</ul>
+<h1 id="一安装远程登录终端xshell">一、安装远程登录终端Xshell</h1>
+<p>XShell
+是一种流行且简单的网络程序，旨在模拟虚拟终端。XShell可以在Windows界面下来访问远端不同系统下的服务器，从而比较好的达到远程控制终端的目的。它支持
+RLOGIN、SFTP、SERIAL、TELNET、SSH2 和
+SSH1，可以非常方便的对Linux主机进行远程管理。除此之外，其还有丰富的外观配色方案以及样式选择。
+## 1.1下载Xshell 下载地址：<a
+target="_blank" rel="noopener" href="https://www.xshell.com/zh/xshell/">https://www.xshell.com/zh/xshell/</a>
+建议下载学生免费版，要不然只有7天的免费试用 <img
+src="https://img-blog.csdnimg.cn/direct/88e07d24b7a44501814a53150832443f.png#pic_center"
+alt="在这里插入图片描述" /> ## 1.2新建回话 安装完毕之后，点击新建 <img
+src="https://img-blog.csdnimg.cn/direct/d79aa6f83cec42b2980e664eb3b6521f.png#pic_center"
+alt="在这里插入图片描述" /> <img
+src="https://img-blog.csdnimg.cn/direct/2919894de8b641b3ac88718eaf224419.png#pic_center"
+alt="在这里插入图片描述" /> ## 1.3查询ip地址 在Jetson
+Nano的终端输入来查看ip地址</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ifconfig</span><br></pre></td></tr></table></figure>
+<p><img
+src="https://img-blog.csdnimg.cn/direct/56dc1505ab674a0b845b77dce6144c74.png#pic_center"
+alt="在这里插入图片描述" /> ## 1.4启动连接 在Xshell输入此处的ip地址即可
+连接后输入你的用户名和密码 <img
+src="https://img-blog.csdnimg.cn/direct/97d9fc2bb5d44b969b5b243eb44cdd86.png#pic_center"
+alt="在这里插入图片描述" /> 出现以下界面则代表安装成功 <img
+src="https://img-blog.csdnimg.cn/direct/dd78aa5693814c07a2958ad088e354b2.png#pic_center"
+alt="在这里插入图片描述" /> # 二、安装远程文件管理WinScp WinSCP 是一个
+Windows 环境下使用的 SSH 的开源图形化 SFTP 客户端，同时支持 SCP
+协议。它的主要功能是在本地与远程计算机间安全地复制文件，并且可以直接编辑文件。WinSCP
+既可以管理远程 VPS
+主机，也可以管理路由器，网络机顶盒等，只要远程设备能ssh连接即可。</p>
+<h2 id="下载winscp">2.1下载WinScp</h2>
+<p>下载地址：<a
+target="_blank" rel="noopener" href="https://winscp.net/eng/index.php">https://winscp.net/eng/index.php</a>
+<img
+src="https://img-blog.csdnimg.cn/direct/0964071595ce4babbe137753cf6ca838.png#pic_center"
+alt="在这里插入图片描述" /> ## 2.2连接Jetson Nano 打开WinScp启动连接
+<img
+src="https://img-blog.csdnimg.cn/direct/edf1ccbaadb34e0e83f2dd5b840c6dde.png#pic_center"
+alt="在这里插入图片描述" /></p>
+<h2 id="连接成功">2.3连接成功</h2>
+<p>出现下图所示则代表连接成功 <img
+src="https://img-blog.csdnimg.cn/direct/218878c6642d497781f1dfcde54d6fb9.png#pic_center"
+alt="在这里插入图片描述" /> # 三、安装远程桌面VNC Viewer</p>
+<p>VNC是一款开源的远程控制软件，功能强大且高效实用，其性能不逊色同类软件，它的工作原理和WIN远程控制软件类似，但是更为重要的是，VNC-Viewer完全免费开源，更新速度也比较快！</p>
+<p>整个 VNC 一般运行的工作流程如下：</p>
+<p>（1） VNC 客户端通过浏览器或 VNC Viewer 连接至 VNC Server。</p>
+<p>（2） VNC Server
+传送一对话窗口至客户端，要求输入连接密码（可能为空），以及存取的 VNC
+Server 显示装置。</p>
+<p>（3） 在客户端输入连接密码后，VNC Server
+验证客户端是否具有存取权限。</p>
+<p>（4） 若是客户端通过 VNC Server 的验证，客户端即要求 VNC Server
+显示桌面环境。</p>
+<p>（5） 被控端将画面显示控制权交由 VNC Server 负责</p>
+<h2 id="下载vnc-viewer">3.1下载VNC Viewer</h2>
+<p>下载之后在PC端安装 <img
+src="https://img-blog.csdnimg.cn/direct/ed9a2c92bf524ce8970fc2f98e00311e.png#pic_center"
+alt="在这里插入图片描述" /> ## 3.2在Jetson Nano安装VNC Viewer 在Jetson
+nano终端执行</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo apt update</span><br></pre></td></tr></table></figure>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo apt install vino</span><br></pre></td></tr></table></figure>
+<h2 id="设置vino登录选项">3.3设置VINO登录选项</h2>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">gsettings <span class="built_in">set</span> org.gnome.Vino prompt-enabled <span class="literal">false</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">gsettings <span class="built_in">set</span> org.gnome.Vino require-encryption <span class="literal">false</span></span><br></pre></td></tr></table></figure>
+<h2 id="将网卡加入vino服务">3.4将网卡加入VINO服务</h2>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">nmcli connection show</span><br></pre></td></tr></table></figure>
+<p>复制你的网卡的UUID <img
+src="https://img-blog.csdnimg.cn/direct/df869f76583c45c28561c06320a09d6c.png#pic_center"
+alt="在这里插入图片描述" />
+将你的网卡的UUID替换到<code>your UUID</code>单引号内并执行</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">dconf write /org/gnome/settings-daemon/plugins/sharing/vino-server/enabled-connections <span class="string">&quot;[&#x27;your UUID&#x27;]&quot;</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">export</span> DISPLAY=:0</span><br></pre></td></tr></table></figure>
+<h2 id="在jetson-nano上启动vino">3.5在Jetson Nano上启动VINO</h2>
+<p>在<font color=red> Jetson Nnao</font>上执行</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">/usr/lib/vino/vino-server</span><br></pre></td></tr></table></figure>
+<p>显示如下页面则安装成功<img
+src="https://img-blog.csdnimg.cn/direct/440cae8a10dc4d0a94c45edabbb6e5e9.png#pic_center"
+alt="在这里插入图片描述" /></p>
+<h2 id="在pc端连接jetson-nano">3.6在PC端连接Jetson Nano</h2>
+<p>不要关闭打开的终端，在电脑上打开VNC Viewer，启动连接 <img
+src="https://img-blog.csdnimg.cn/direct/ffd3106f5b9e403fbe4e97953df2eec5.png#pic_center"
+alt="在这里插入图片描述" />
+第一次连接会弹出警告信息，点击continue，出现以下界面则成功 <img
+src="https://img-blog.csdnimg.cn/direct/3056bccbf0f442818fae950a4ef35aff.png#pic_center"
+alt="在这里插入图片描述" /> ## 3.7给VINO添加开机自动启动
+因为如果不输入启动命令的话，光靠电脑连接是连不上的，所以我们要设置开机自动启动。这样我们就不用每次都手动输入了
+执行以下代码，打开开机自启动项</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo gnome-session-properties</span><br></pre></td></tr></table></figure>
+<p>在Command那一栏输入：<code>/usr/lib/vino/vino-server</code> <img
+src="https://img-blog.csdnimg.cn/direct/9b3a4d85ed414480ba6592bf2f6a5b7a.png#pic_center"
+alt="在这里插入图片描述" /> 然后重启测试一下 # 四、安装pip并换源 ##
+4.1安装python3</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo apt-get install python3-pip python3-dev</span><br></pre></td></tr></table></figure>
+<p>再安装pip3</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo apt-get install python3-pip</span><br></pre></td></tr></table></figure>
+<h2 id="升级pip">4.2升级pip</h2>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">pip3 install --upgrade pip</span><br></pre></td></tr></table></figure>
+<p><img
+src="https://img-blog.csdnimg.cn/direct/7cd05337867441db9c1ce3dbc5aca700.png#pic_center"
+alt="在这里插入图片描述" />
+这时可能会出现一大片红的超时错误，执行以下代码即可</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">python -m pip --default-timeout=900 install --upgrade pip</span><br></pre></td></tr></table></figure>
+<h2 id="换源">4.3换源</h2>
+<p>先备份原本的源</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo <span class="built_in">cp</span> /etc/apt/sources.list /etc/apt/sources.list.bak </span><br></pre></td></tr></table></figure>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo gedit /etc/apt/sources.list</span><br></pre></td></tr></table></figure>
+<p>然后用下面的内容替换sources内的<strong>所有内容</strong></p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">deb http://mirrors.tuna.tsinghua.edu.cn/ubuntu-ports/ bionic main multiverse restricted universe</span><br><span class="line">deb http://mirrors.tuna.tsinghua.edu.cn/ubuntu-ports/ bionic-security main multiverse restricted universe</span><br><span class="line">deb http://mirrors.tuna.tsinghua.edu.cn/ubuntu-ports/ bionic-updates main multiverse restricted universe</span><br><span class="line">deb http://mirrors.tuna.tsinghua.edu.cn/ubuntu-ports/ bionic-backports main multiverse restricted universe</span><br><span class="line">deb-src http://mirrors.tuna.tsinghua.edu.cn/ubuntu-ports/ bionic main multiverse restricted universe</span><br><span class="line">deb-src http://mirrors.tuna.tsinghua.edu.cn/ubuntu-ports/ bionic-security main multiverse restricted universe</span><br><span class="line">deb-src http://mirrors.tuna.tsinghua.edu.cn/ubuntu-ports/ bionic-updates main multiverse restricted universe</span><br><span class="line">deb-src http://mirrors.tuna.tsinghua.edu.cn/ubuntu-ports/ bionic-backports main multiverse restricted universe</span><br></pre></td></tr></table></figure>
+<p>关闭并保存，然后执行</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo apt-get update</span><br></pre></td></tr></table></figure>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo apt-get full-upgrade</span><br></pre></td></tr></table></figure>
+<p>pip3还有个小bug需要修复一下，用vim打开pip3</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo vim /usr/bin/pip3</span><br></pre></td></tr></table></figure>
+<p>按<code>i</code>进入输入模式，将以下内容改为</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">from pip import main</span><br><span class="line"><span class="keyword">if</span> __name__ == <span class="string">&#x27;__main__&#x27;</span>:</span><br><span class="line">    sys.exit(main())</span><br></pre></td></tr></table></figure>
+<p>改为</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">from pip import __main__</span><br><span class="line"><span class="keyword">if</span> __name__ == <span class="string">&#x27;__main__&#x27;</span>:</span><br><span class="line">    sys.exit(__main__._main())</span><br></pre></td></tr></table></figure>
+<p>然后按<code>ESC</code>。再输入<code>：wq</code>保存关闭文件，就大功告成了。
+# 五、安装Jtop监视运行状态（选做） 执行安装命令</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo pip3 install jetson-stats</span><br></pre></td></tr></table></figure>
+<p>安装之后，直接在Xshell运行</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo jtop</span><br></pre></td></tr></table></figure>
+<p>这样就能看到Jetson Nano的运行状态了 <img
+src="https://img-blog.csdnimg.cn/direct/41487c055d384ad69062d8a74688c079.png#pic_center"
+alt="在这里插入图片描述" /> # 六、配置运行环境 ## 6.1安装CUDA
+在终端输入</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo apt-get install cuda-toolkit-10-2</span><br></pre></td></tr></table></figure>
+<p>出现以下 <img
+src="https://img-blog.csdnimg.cn/direct/05f47ce717f34920ae7bd038e15ee5ba.png#pic_center"
+alt="在这里插入图片描述" /> 打开~/.bashrc</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo gedit  ~/.bashrc</span><br></pre></td></tr></table></figure>
+<p>将以下内容复制到文件末尾</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">export</span> LD_LIBRARY_PATH=<span class="variable">$LD_LIBRARY_PATH</span>:/usr/local/cuda-10.2/lib64</span><br><span class="line"><span class="built_in">export</span> PATH=<span class="variable">$PATH</span>:/usr/local/cuda-10.2/bin</span><br><span class="line"><span class="built_in">export</span> CUDA_HOME=<span class="variable">$CUDA_HOME</span>:/usr/local/cuda-10.2</span><br></pre></td></tr></table></figure>
+
+  </div>
+  
+  
+    
+    <div class='footer'>
+       <!-- 参考资料、相关资料等 -->
+      
+       <!-- 相关文章 -->
+      
+      <!-- 版权声明组件 -->
+      
+        
+          <div class='copyright'>
+            <blockquote>
+              
+                
+                  <p>博客内容遵循 署名-非商业性使用-相同方式共享 4.0 国际 (CC BY-NC-SA
+4.0) 协议</p>
+
+                
+              
+                
+                  <p>本文永久链接是：<a href="https://mengfanjun020906.github.io/2024/01/02/RetinaFace+Jetson Nano(2)/">https://mengfanjun020906.github.io/2024/01/02/RetinaFace+Jetson Nano(2)/</a></p>
+                
+              
+            </blockquote>
+          </div>
+        
+      
+      <!-- 打赏组件 -->
+      
+    </div>
+  
+  
     
 
-    let option = {
-        title: {
-            top: 0,
-            text: '文章日历',
-            left: 'center',
-            textStyle: {
-                color: '#3C4858'
-            }
-        },
-        tooltip: {
-            padding: 10,
-            backgroundColor: '#555',
-            borderColor: '#777',
-            borderWidth: 1,
-            formatter: function (obj) {
-                var value = obj.value;
-                return '<div style="font-size: 14px;">' + value[0] + '：' + value[1] + '</div>';
-            }
-        },
-        visualMap: {
-            show: true,
-            showLabel: true,
-            categories: [0, 1, 2, 3, 4],
-            calculable: true,
-            inRange: {
-                symbol: 'rect',
-                color: ['#ebedf0', '#c6e48b', '#7bc96f', '#239a3b', '#196127']
-            },
-            itemWidth: 12,
-            itemHeight: 12,
-            orient: 'horizontal',
-            left: 'center',
-            bottom: 0
-        },
-        calendar: [{
-            left: 'center',
-            range: ["2023-02-26", "2024-02-26"],
-            cellSize: [13, 13],
-            splitLine: {
-                show: false
-            },
-            itemStyle: {
-                width: '1.88679%',
-                height: '15px',
-                color: '#EEEEEE',
-                borderColor: '#FFF',
-                borderWidth: 2
-            },
-            yearLabel: {
-                show: false
-            },
-            monthLabel: {
-                nameMap: 'cn',
-                fontWeight: 'lighter',
-                fontSize: 12
-            },
-            dayLabel: {
-                show: true,
-                formatter: '{start}  1st',
-                fontWeight: 'lighter',
-                nameMap: ['日',' ',' ','三',' ',' ','六',],
-                fontSize: 12
-            }
-        }],
-        series: [{
-            type: 'heatmap',
-            coordinateSystem: 'calendar',
-            calendarIndex: 0,
-            data: [["2023-02-26", 0], ["2023-02-27", 0], ["2023-02-28", 0], ["2023-03-01", 0], ["2023-03-02", 0], ["2023-03-03", 0], ["2023-03-04", 0], ["2023-03-05", 0], ["2023-03-06", 0], ["2023-03-07", 0], ["2023-03-08", 0], ["2023-03-09", 0], ["2023-03-10", 0], ["2023-03-11", 0], ["2023-03-12", 0], ["2023-03-13", 0], ["2023-03-14", 0], ["2023-03-15", 0], ["2023-03-16", 0], ["2023-03-17", 0], ["2023-03-18", 0], ["2023-03-19", 0], ["2023-03-20", 0], ["2023-03-21", 0], ["2023-03-22", 0], ["2023-03-23", 0], ["2023-03-24", 0], ["2023-03-25", 0], ["2023-03-26", 0], ["2023-03-27", 0], ["2023-03-28", 0], ["2023-03-29", 0], ["2023-03-30", 0], ["2023-03-31", 1], ["2023-04-01", 0], ["2023-04-02", 0], ["2023-04-03", 0], ["2023-04-04", 1], ["2023-04-05", 0], ["2023-04-06", 0], ["2023-04-07", 0], ["2023-04-08", 0], ["2023-04-09", 0], ["2023-04-10", 0], ["2023-04-11", 1], ["2023-04-12", 0], ["2023-04-13", 0], ["2023-04-14", 0], ["2023-04-15", 0], ["2023-04-16", 0], ["2023-04-17", 0], ["2023-04-18", 0], ["2023-04-19", 0], ["2023-04-20", 0], ["2023-04-21", 0], ["2023-04-22", 0], ["2023-04-23", 0], ["2023-04-24", 0], ["2023-04-25", 0], ["2023-04-26", 1], ["2023-04-27", 0], ["2023-04-28", 0], ["2023-04-29", 0], ["2023-04-30", 0], ["2023-05-01", 0], ["2023-05-02", 0], ["2023-05-03", 0], ["2023-05-04", 0], ["2023-05-05", 0], ["2023-05-06", 0], ["2023-05-07", 0], ["2023-05-08", 0], ["2023-05-09", 0], ["2023-05-10", 0], ["2023-05-11", 0], ["2023-05-12", 0], ["2023-05-13", 0], ["2023-05-14", 0], ["2023-05-15", 0], ["2023-05-16", 0], ["2023-05-17", 0], ["2023-05-18", 0], ["2023-05-19", 0], ["2023-05-20", 0], ["2023-05-21", 0], ["2023-05-22", 0], ["2023-05-23", 0], ["2023-05-24", 0], ["2023-05-25", 0], ["2023-05-26", 0], ["2023-05-27", 0], ["2023-05-28", 0], ["2023-05-29", 0], ["2023-05-30", 0], ["2023-05-31", 0], ["2023-06-01", 0], ["2023-06-02", 0], ["2023-06-03", 0], ["2023-06-04", 0], ["2023-06-05", 0], ["2023-06-06", 0], ["2023-06-07", 0], ["2023-06-08", 0], ["2023-06-09", 0], ["2023-06-10", 0], ["2023-06-11", 0], ["2023-06-12", 0], ["2023-06-13", 0], ["2023-06-14", 0], ["2023-06-15", 0], ["2023-06-16", 0], ["2023-06-17", 0], ["2023-06-18", 0], ["2023-06-19", 0], ["2023-06-20", 0], ["2023-06-21", 0], ["2023-06-22", 0], ["2023-06-23", 0], ["2023-06-24", 0], ["2023-06-25", 0], ["2023-06-26", 0], ["2023-06-27", 0], ["2023-06-28", 0], ["2023-06-29", 0], ["2023-06-30", 0], ["2023-07-01", 0], ["2023-07-02", 0], ["2023-07-03", 0], ["2023-07-04", 0], ["2023-07-05", 0], ["2023-07-06", 0], ["2023-07-07", 0], ["2023-07-08", 0], ["2023-07-09", 0], ["2023-07-10", 0], ["2023-07-11", 0], ["2023-07-12", 0], ["2023-07-13", 0], ["2023-07-14", 0], ["2023-07-15", 0], ["2023-07-16", 0], ["2023-07-17", 0], ["2023-07-18", 0], ["2023-07-19", 0], ["2023-07-20", 0], ["2023-07-21", 0], ["2023-07-22", 0], ["2023-07-23", 0], ["2023-07-24", 0], ["2023-07-25", 0], ["2023-07-26", 0], ["2023-07-27", 0], ["2023-07-28", 0], ["2023-07-29", 0], ["2023-07-30", 0], ["2023-07-31", 0], ["2023-08-01", 0], ["2023-08-02", 0], ["2023-08-03", 0], ["2023-08-04", 0], ["2023-08-05", 0], ["2023-08-06", 0], ["2023-08-07", 0], ["2023-08-08", 0], ["2023-08-09", 0], ["2023-08-10", 0], ["2023-08-11", 0], ["2023-08-12", 0], ["2023-08-13", 0], ["2023-08-14", 0], ["2023-08-15", 0], ["2023-08-16", 0], ["2023-08-17", 0], ["2023-08-18", 0], ["2023-08-19", 0], ["2023-08-20", 0], ["2023-08-21", 0], ["2023-08-22", 0], ["2023-08-23", 0], ["2023-08-24", 0], ["2023-08-25", 0], ["2023-08-26", 0], ["2023-08-27", 0], ["2023-08-28", 0], ["2023-08-29", 0], ["2023-08-30", 0], ["2023-08-31", 0], ["2023-09-01", 0], ["2023-09-02", 0], ["2023-09-03", 0], ["2023-09-04", 0], ["2023-09-05", 0], ["2023-09-06", 0], ["2023-09-07", 0], ["2023-09-08", 0], ["2023-09-09", 0], ["2023-09-10", 0], ["2023-09-11", 0], ["2023-09-12", 0], ["2023-09-13", 0], ["2023-09-14", 0], ["2023-09-15", 0], ["2023-09-16", 0], ["2023-09-17", 0], ["2023-09-18", 0], ["2023-09-19", 0], ["2023-09-20", 0], ["2023-09-21", 0], ["2023-09-22", 0], ["2023-09-23", 0], ["2023-09-24", 0], ["2023-09-25", 0], ["2023-09-26", 0], ["2023-09-27", 0], ["2023-09-28", 0], ["2023-09-29", 0], ["2023-09-30", 0], ["2023-10-01", 0], ["2023-10-02", 0], ["2023-10-03", 0], ["2023-10-04", 0], ["2023-10-05", 0], ["2023-10-06", 0], ["2023-10-07", 0], ["2023-10-08", 0], ["2023-10-09", 0], ["2023-10-10", 0], ["2023-10-11", 0], ["2023-10-12", 0], ["2023-10-13", 0], ["2023-10-14", 0], ["2023-10-15", 0], ["2023-10-16", 0], ["2023-10-17", 0], ["2023-10-18", 0], ["2023-10-19", 0], ["2023-10-20", 0], ["2023-10-21", 0], ["2023-10-22", 0], ["2023-10-23", 0], ["2023-10-24", 0], ["2023-10-25", 0], ["2023-10-26", 0], ["2023-10-27", 0], ["2023-10-28", 0], ["2023-10-29", 0], ["2023-10-30", 0], ["2023-10-31", 0], ["2023-11-01", 0], ["2023-11-02", 0], ["2023-11-03", 0], ["2023-11-04", 0], ["2023-11-05", 0], ["2023-11-06", 0], ["2023-11-07", 0], ["2023-11-08", 0], ["2023-11-09", 0], ["2023-11-10", 0], ["2023-11-11", 0], ["2023-11-12", 0], ["2023-11-13", 0], ["2023-11-14", 0], ["2023-11-15", 0], ["2023-11-16", 0], ["2023-11-17", 0], ["2023-11-18", 0], ["2023-11-19", 0], ["2023-11-20", 0], ["2023-11-21", 0], ["2023-11-22", 0], ["2023-11-23", 0], ["2023-11-24", 0], ["2023-11-25", 0], ["2023-11-26", 0], ["2023-11-27", 0], ["2023-11-28", 0], ["2023-11-29", 0], ["2023-11-30", 0], ["2023-12-01", 0], ["2023-12-02", 0], ["2023-12-03", 0], ["2023-12-04", 0], ["2023-12-05", 0], ["2023-12-06", 0], ["2023-12-07", 0], ["2023-12-08", 0], ["2023-12-09", 0], ["2023-12-10", 0], ["2023-12-11", 0], ["2023-12-12", 0], ["2023-12-13", 0], ["2023-12-14", 0], ["2023-12-15", 0], ["2023-12-16", 0], ["2023-12-17", 0], ["2023-12-18", 0], ["2023-12-19", 0], ["2023-12-20", 0], ["2023-12-21", 0], ["2023-12-22", 0], ["2023-12-23", 0], ["2023-12-24", 0], ["2023-12-25", 0], ["2023-12-26", 0], ["2023-12-27", 0], ["2023-12-28", 0], ["2023-12-29", 0], ["2023-12-30", 0], ["2023-12-31", 0], ["2024-01-01", 0], ["2024-01-02", 2], ["2024-01-03", 0], ["2024-01-04", 0], ["2024-01-05", 0], ["2024-01-06", 0], ["2024-01-07", 0], ["2024-01-08", 0], ["2024-01-09", 0], ["2024-01-10", 0], ["2024-01-11", 0], ["2024-01-12", 0], ["2024-01-13", 0], ["2024-01-14", 0], ["2024-01-15", 0], ["2024-01-16", 0], ["2024-01-17", 0], ["2024-01-18", 0], ["2024-01-19", 0], ["2024-01-20", 0], ["2024-01-21", 0], ["2024-01-22", 0], ["2024-01-23", 0], ["2024-01-24", 0], ["2024-01-25", 0], ["2024-01-26", 0], ["2024-01-27", 0], ["2024-01-28", 0], ["2024-01-29", 0], ["2024-01-30", 0], ["2024-01-31", 0], ["2024-02-01", 0], ["2024-02-02", 0], ["2024-02-03", 0], ["2024-02-04", 0], ["2024-02-05", 0], ["2024-02-06", 0], ["2024-02-07", 0], ["2024-02-08", 0], ["2024-02-09", 0], ["2024-02-10", 0], ["2024-02-11", 0], ["2024-02-12", 0], ["2024-02-13", 0], ["2024-02-14", 0], ["2024-02-15", 0], ["2024-02-16", 0], ["2024-02-17", 0], ["2024-02-18", 0], ["2024-02-19", 0], ["2024-02-20", 0], ["2024-02-21", 0], ["2024-02-22", 0], ["2024-02-23", 0], ["2024-02-24", 0], ["2024-02-25", 0], ["2024-02-26", 0]]
-        }]
 
-    };
+  <div class='article-meta' id="bottom">
+    <div class='new-meta-box'>
+      
+        
+          <div class="new-meta-item date" itemprop="dateModified" datetime="2024-02-26T20:05:07+08:00">
+  <a class='notlink'>
+    <i class="fa-solid fa-edit fa-fw" aria-hidden="true"></i>
+    <p>更新于：Feb 26, 2024</p>
+  </a>
+</div>
 
-    myChart.setOption(option);
-</script>
+        
+      
+        
+          
+  
+  <div class="new-meta-item meta-tags"><a class="tag" href="/tags/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/" rel="nofollow"><i class="fa-solid fa-hashtag fa-fw" aria-hidden="true"></i><p>机器学习</p></a></div> <div class="new-meta-item meta-tags"><a class="tag" href="/tags/%E5%B5%8C%E5%85%A5%E5%BC%8F%E7%A1%AC%E4%BB%B6/" rel="nofollow"><i class="fa-solid fa-hashtag fa-fw" aria-hidden="true"></i><p>嵌入式硬件</p></a></div> <div class="new-meta-item meta-tags"><a class="tag" href="/tags/%E4%BA%BA%E5%B7%A5%E6%99%BA%E8%83%BD/" rel="nofollow"><i class="fa-solid fa-hashtag fa-fw" aria-hidden="true"></i><p>人工智能</p></a></div> <div class="new-meta-item meta-tags"><a class="tag" href="/tags/ubuntu/" rel="nofollow"><i class="fa-solid fa-hashtag fa-fw" aria-hidden="true"></i><p>ubuntu</p></a></div> <div class="new-meta-item meta-tags"><a class="tag" href="/tags/linux/" rel="nofollow"><i class="fa-solid fa-hashtag fa-fw" aria-hidden="true"></i><p>linux</p></a></div>
+  <span hidden itemprop="keywords">机器学习 嵌入式硬件 人工智能 ubuntu linux</span>
 
 
-			
-	  	</div>
-			
-			
-				
-				
-					
-						
-						<h2>2024</h2>
-					
-						<div class='timenode'>
-								<a class="meta" href="/2024/01/02/RetinaFace+Jetson%20Nano(1)/">
-									<time>01-02</time>
-									
-										基于RetinaFace+Jetson Nano的智能门锁系统——第一篇（烧录系统）
-									
-									
-									
-									
-								</a>
-						</div>
-				
-			
-				
-				
-					
-						<div class='timenode'>
-								<a class="meta" href="/2024/01/02/RetinaFace+Jetson%20Nano(2)/">
-									<time>01-02</time>
-									
-										基于RetinaFace+Jetson Nano的智能门锁系统——第二篇（配置环境）
-									
-									
-									
-									
-								</a>
-						</div>
-				
-			
-				
-				
-					
-						
-						<h2>2023</h2>
-					
-						<div class='timenode'>
-								<a class="meta" href="/2023/04/26/FPGA_Verilog%20HDL_AC620%E9%9B%B6%E5%9F%BA%E7%A1%80%E5%85%A5%E9%97%A8%E5%AD%A6%E4%B9%A0%E2%80%94%E2%80%94%E6%A0%BC%E9%9B%B7%E7%A0%81%E8%AE%A1%E6%95%B0%E5%99%A8%E5%AE%9E%E9%AA%8C/">
-									<time>04-26</time>
-									
-										FPGA_Verilog HDL_AC620零基础入门学习——格雷码计数器实验
-									
-									
-									
-									
-								</a>
-						</div>
-				
-			
-				
-				
-					
-						<div class='timenode'>
-								<a class="meta" href="/2023/04/11/%E5%AD%A6%E4%B9%A0%E9%80%9A%E4%BF%A1%E5%8E%9F%E7%90%86%E4%B9%8B%E2%80%94%E2%80%94%E5%BD%BB%E5%BA%95%E7%90%86%E8%A7%A3%E9%A2%91%E8%B0%B1%E5%92%8C%E9%A2%91%E8%B0%B1%E5%AF%86%E5%BA%A6/">
-									<time>04-11</time>
-									
-										学习通信原理之——彻底理解频谱和频谱密度
-									
-									
-									
-									
-								</a>
-						</div>
-				
-			
-				
-				
-					
-						<div class='timenode'>
-								<a class="meta" href="/2023/04/04/%E5%AD%A6%E4%B9%A0%E9%80%9A%E4%BF%A1%E5%8E%9F%E7%90%86%E4%B9%8B%E2%80%94%E2%80%94%E9%A2%91%E8%B0%B1:%E5%8A%9F%E7%8E%87%E8%B0%B1:%E5%8A%9F%E7%8E%87%E8%B0%B1%E5%AF%86%E5%BA%A6(MATLAB%E6%BC%94%E7%A4%BA)/">
-									<time>04-04</time>
-									
-										学习通信原理之——频谱,功率谱,功率谱密度(MATLAB演示)
-									
-									
-									
-									
-								</a>
-						</div>
-				
-			
-				
-				
-					
-						<div class='timenode'>
-								<a class="meta" href="/2023/03/31/Introduction/">
-									<time>03-31</time>
-									
-										校园卡想对你说的话
-									
-									
-									
-									
-								</a>
-						</div>
-				
-			
-				
-				
-					
-						<div class='timenode'>
-								<a class="meta" href="/2023/02/14/AxMath%E4%BD%BF%E7%94%A8%E6%95%99%E7%A8%8B+%E5%B8%B8%E7%94%A8%E7%AC%A6%E5%8F%B7%E4%B8%8E%E5%85%AC%E5%BC%8F%EF%BC%88%E6%8C%81%E7%BB%AD%E6%9B%B4%E6%96%B0%E4%B8%AD%EF%BC%89/">
-									<time>02-14</time>
-									
-										AxMath使用教程+常用符号与公式（持续更新中）
-									
-									
-									
-									
-								</a>
-						</div>
-				
-			
-				
-				
-					
-						<div class='timenode'>
-								<a class="meta" href="/2023/02/11/Git%E6%8F%90%E4%BA%A4%E6%9C%AC%E5%9C%B0%E9%A1%B9%E7%9B%AE%E4%BB%A3%E7%A0%81%E5%88%B0%E8%BF%9C%E7%A8%8BGithub%E4%BB%93%E5%BA%93%E6%95%99%E7%A8%8B/">
-									<time>02-11</time>
-									
-										Git提交本地项目代码到远程Github仓库教程
-									
-									
-									
-									
-								</a>
-						</div>
-				
-			
-				
-				
-					
-						<div class='timenode'>
-								<a class="meta" href="/2023/01/28/24%E8%80%83%E7%A0%94%E6%95%B0%E5%AD%A6%E6%AF%8F%E6%97%A5%E4%B8%80%E9%A2%98(%E5%B8%A6%E8%A7%A3%E6%9E%90)/">
-									<time>01-28</time>
-									
-										24考研数学每日一题Latex版（带解析）
-									
-									
-									
-									
-								</a>
-						</div>
-				
-			
-				
-				
-					
-						
-						<h2>2022</h2>
-					
-						<div class='timenode'>
-								<a class="meta" href="/2022/12/20/Arduino%20Uno%E9%9B%B6%E5%9F%BA%E7%A1%80%E5%85%A5%E9%97%A8%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0%E2%80%94%E2%80%94%E5%AE%9A%E6%97%B6%E5%99%A8%E6%97%B6%E9%92%9F/">
-									<time>12-20</time>
-									
-										Arduino Uno零基础入门学习笔记——定时器时钟
-									
-									
-									
-									
-								</a>
-						</div>
-				
-			
-				
-				
-					
-						<div class='timenode'>
-								<a class="meta" href="/2022/12/19/Arduino%20Uno%E9%9B%B6%E5%9F%BA%E7%A1%80%E5%85%A5%E9%97%A8%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0%E2%80%94%E2%80%94%E6%99%BA%E8%83%BD%E6%97%B6%E9%92%9F(%E5%8F%AF%E4%BB%A5%E6%98%BE%E7%A4%BA%E6%B8%A9%E6%B9%BF%E5%BA%A6)%E3%80%90LCD1602+DS1302+%E6%B8%A9%E6%B9%BF%E5%BA%A6%E4%BC%A0%E6%84%9F%E5%99%A8+%E7%BA%A2%E5%A4%96%E6%8E%A5%E6%94%B6%E5%99%A8+LED+%E8%9C%82%E9%B8%A3%E5%99%A8%E3%80%91/">
-									<time>12-19</time>
-									
-										Arduino Uno零基础入门学习笔记——智能时钟(可以显示温湿度)【LCD1602+DS1302+温湿度传感器+红外接收器+LED+蜂鸣器】
-									
-									
-									
-									
-								</a>
-						</div>
-				
-			
-				
-				
-					
-						<div class='timenode'>
-								<a class="meta" href="/2022/12/19/Arduino%20Uno%E9%9B%B6%E5%9F%BA%E7%A1%80%E5%85%A5%E9%97%A8%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0%E2%80%94%E2%80%94%E5%9C%A8LCD1602%E5%B1%8F%E4%B8%8A%E6%98%BE%E7%A4%BA%E6%B8%A9%E5%BA%A6%E5%92%8C%E6%B9%BF%E5%BA%A6/">
-									<time>12-19</time>
-									
-										Arduino Uno零基础入门学习笔记——在LCD1602屏上显示温度和湿度
-									
-									
-									
-									
-								</a>
-						</div>
-				
-			
-				
-				
-					
-						<div class='timenode'>
-								<a class="meta" href="/2022/12/17/Arduino%20UNO%E6%96%B0%E6%89%8B%E9%9B%B6%E5%9F%BA%E7%A1%80%E5%85%A5%E9%97%A8%E5%AD%A6%E4%B9%A0%E5%8D%9A%E5%AE%A2%E6%B1%87%E6%80%BB/">
-									<time>12-17</time>
-									
-										Arduino UNO新手零基础入门学习博客汇总
-									
-									
-									
-									
-								</a>
-						</div>
-				
-			
-				
-				
-					
-						<div class='timenode'>
-								<a class="meta" href="/2022/12/17/Arduino%20Uno%E9%9B%B6%E5%9F%BA%E7%A1%80%E5%85%A5%E9%97%A8%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0%E2%80%94%E2%80%948229BSF%E8%A7%A6%E6%91%B8%E9%94%AE%E7%9B%98/">
-									<time>12-17</time>
-									
-										Arduino Uno零基础入门学习笔记——8229BSF触摸键盘
-									
-									
-									
-									
-								</a>
-						</div>
-				
-			
-				
-				
-					
-						<div class='timenode'>
-								<a class="meta" href="/2022/12/15/Arduino%20Uno%E9%9B%B6%E5%9F%BA%E7%A1%80%E5%85%A5%E9%97%A8%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0%E2%80%94%E2%80%94LCD1602%E5%B1%8F+DS1302%E6%97%B6%E9%92%9F/">
-									<time>12-15</time>
-									
-										Arduino Uno零基础入门学习笔记——LCD1602屏+DS1302时钟
-									
-									
-									
-									
-								</a>
-						</div>
-				
-			
-				
-				
-					
-						<div class='timenode'>
-								<a class="meta" href="/2022/12/15/Arduino%20Uno%E9%9B%B6%E5%9F%BA%E7%A1%80%E5%85%A5%E9%97%A8%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0%E2%80%94%E2%80%94LCD1602%E5%B1%8F+PIR%E8%BF%90%E5%8A%A8%E6%A3%80%E6%B5%8B%E5%99%A8/">
-									<time>12-15</time>
-									
-										Arduino Uno零基础入门学习笔记——LCD1602屏+PIR运动检测器
-									
-									
-									
-									
-								</a>
-						</div>
-				
-			
-				
-				
-					
-						<div class='timenode'>
-								<a class="meta" href="/2022/12/15/Arduino%20Uno%E9%9B%B6%E5%9F%BA%E7%A1%80%E5%85%A5%E9%97%A8%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0%E2%80%94%E2%80%94%E9%9C%8D%E5%B0%94%E4%BC%A0%E6%84%9F%E5%99%A8MH%20Sensor/">
-									<time>12-15</time>
-									
-										Arduino Uno零基础入门学习笔记——霍尔传感器MH Sensor
-									
-									
-									
-									
-								</a>
-						</div>
-				
-			
-				
-				
-					
-						<div class='timenode'>
-								<a class="meta" href="/2022/12/15/Arduino%20Uno%E9%9B%B6%E5%9F%BA%E7%A1%80%E5%85%A5%E9%97%A8%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0%E2%80%94%E2%80%94%E4%B8%89%E9%92%88%E8%84%9A%E5%A3%B0%E9%9F%B3%E4%BC%A0%E6%84%9F%E5%99%A8/">
-									<time>12-15</time>
-									
-										Arduino Uno零基础入门学习笔记——三针脚声音传感器
-									
-									
-									
-									
-								</a>
-						</div>
-				
-			
-				
-				
-					
-						<div class='timenode'>
-								<a class="meta" href="/2022/12/14/Arduino%20Uno%E9%9B%B6%E5%9F%BA%E7%A1%80%E5%85%A5%E9%97%A8%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0%E2%80%94%E2%80%94SOS%E6%91%A9%E6%96%AF%E5%AF%86%E7%A0%81LED+%E8%9C%82%E9%B8%A3%E5%99%A8/">
-									<time>12-14</time>
-									
-										AArduino Uno零基础入门学习笔记——SOS摩斯密码LED+蜂鸣器
-									
-									
-									
-									
-								</a>
-						</div>
-				
-			
-				
-				
-					
-						<div class='timenode'>
-								<a class="meta" href="/2022/12/14/Arduino%20Uno%E9%9B%B6%E5%9F%BA%E7%A1%80%E5%85%A5%E9%97%A8%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0%E2%80%94%E2%80%94%E6%99%BA%E8%83%BD%E9%97%A8%E9%94%81(%E6%97%A0%E8%88%B5%E6%9C%BA)/">
-									<time>12-14</time>
-									
-										Arduino Uno零基础入门学习笔记——智能门锁(无舵机)
-									
-									
-									
-									
-								</a>
-						</div>
-				
-			
-				
-				
-					
-						<div class='timenode'>
-								<a class="meta" href="/2022/12/14/Arduino%20Uno%E9%9B%B6%E5%9F%BA%E7%A1%80%E5%85%A5%E9%97%A8%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0%E2%80%94%E2%80%94PWM%E6%8E%A7%E5%88%B6LED/">
-									<time>12-14</time>
-									
-										Arduino Uno零基础入门学习笔记——PWM控制LED
-									
-									
-									
-									
-								</a>
-						</div>
-				
-			
-				
-				
-					
-						<div class='timenode'>
-								<a class="meta" href="/2022/12/13/Arduino%20Uno%E9%9B%B6%E5%9F%BA%E7%A1%80%E5%85%A5%E9%97%A8%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0%E2%80%94%E2%80%94%E7%BA%A2%E7%BB%BF%E7%81%AF/">
-									<time>12-13</time>
-									
-										Arduino Uno零基础入门学习笔记——红绿灯
-									
-									
-									
-									
-								</a>
-						</div>
-				
-			
-				
-				
-					
-						<div class='timenode'>
-								<a class="meta" href="/2022/12/13/Arduino%20Uno%E9%9B%B6%E5%9F%BA%E7%A1%80%E5%85%A5%E9%97%A8%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0%E2%80%94%E2%80%94%E6%A8%A1%E6%8B%9F%E8%BE%93%E5%87%BA/">
-									<time>12-13</time>
-									
-										Arduino Uno零基础入门学习笔记——模拟输出
-									
-									
-									
-									
-								</a>
-						</div>
-				
-			
-				
-				
-					
-						<div class='timenode'>
-								<a class="meta" href="/2022/12/13/Arduino%20Uno%E9%9B%B6%E5%9F%BA%E7%A1%80%E5%85%A5%E9%97%A8%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0%E2%80%94%E2%80%94%E6%B5%81%E6%B0%B4%E7%81%AF/">
-									<time>12-13</time>
-									
-										Arduino Uno零基础入门学习笔记——流水灯
-									
-									
-									
-									
-								</a>
-						</div>
-				
-			
-				
-				
-					
-						<div class='timenode'>
-								<a class="meta" href="/2022/12/13/Arduino%20Uno%E9%9B%B6%E5%9F%BA%E7%A1%80%E5%85%A5%E9%97%A8%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0%E2%80%94%E2%80%94%E6%8C%89%E9%94%AE%E5%BC%80%E5%85%B3/">
-									<time>12-13</time>
-									
-										Arduino Uno零基础入门学习笔记——按键开关
-									
-									
-									
-									
-								</a>
-						</div>
-				
-			
-				
-				
-					
-						<div class='timenode'>
-								<a class="meta" href="/2022/12/12/Arduino%20Uno%E9%9B%B6%E5%9F%BA%E7%A1%80%E5%85%A5%E9%97%A8%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0%E2%80%94%E2%80%94%E7%82%B9%E4%BA%AE%E4%B8%80%E4%B8%AALED/">
-									<time>12-12</time>
-									
-										Arduino Uno零基础入门学习笔记——点亮一个LED
-									
-									
-									
-									
-								</a>
-						</div>
-				
-			
-				
-				
-					
-						<div class='timenode'>
-								<a class="meta" href="/2022/12/12/Arduino%20Uno%E9%9B%B6%E5%9F%BA%E7%A1%80%E5%85%A5%E9%97%A8%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0%E2%80%94%E2%80%94%E5%8F%98%E9%87%8F%E4%B8%8E%E5%87%BD%E6%95%B0/">
-									<time>12-12</time>
-									
-										Arduino Uno零基础入门学习笔记——变量与函数
-									
-									
-									
-									
-								</a>
-						</div>
-				
-			
-				
-				
-					
-						<div class='timenode'>
-								<a class="meta" href="/2022/12/12/%E7%AC%AC%E4%B8%83%E5%B1%8ANVIDIA%20Sky%20Hackathon%E9%A1%B9%E7%9B%AE%E6%8A%A5%E5%91%8A%E4%B9%A6/">
-									<time>12-12</time>
-									
-										第七届NVIDIA Sky Hackathon项目报告书
-									
-									
-									
-									
-								</a>
-						</div>
-				
-			
-				
-				
-					
-						<div class='timenode'>
-								<a class="meta" href="/2022/12/08/%E6%95%B0%E5%AD%97%E4%BF%A1%E5%8F%B7%E5%A4%84%E7%90%86%E7%94%A8%E6%B1%89%E5%AE%81%E7%AA%97_%E7%9F%A9%E5%BD%A2%E7%AA%97_%E5%B8%83%E8%8E%B1%E5%85%8B%E6%9B%BC%E7%AA%97%E8%AE%BE%E8%AE%A1%E7%BA%BF%E6%80%A7%E7%9B%B8%E4%BD%8D%E5%B8%A6%E9%80%9A%E6%BB%A4%E6%B3%A2%E5%99%A8MATLAB%E5%AE%9E%E7%8E%B0%E2%80%94%E2%80%94%E5%AE%9E%E4%BE%8B/">
-									<time>12-08</time>
-									
-										数字信号处理用汉宁窗/矩形窗/布莱克曼窗设计线性相位带通滤波器MATLAB实现——实例
-									
-									
-									
-									
-								</a>
-						</div>
-				
-			
-				
-				
-					
-						<div class='timenode'>
-								<a class="meta" href="/2022/12/08/%E6%95%B0%E5%AD%97%E4%BF%A1%E5%8F%B7%E5%A4%84%E7%90%86%E7%94%A8%E8%84%89%E5%86%B2%E5%93%8D%E5%BA%94%E4%B8%8D%E5%8F%98%E6%B3%95%E5%92%8C%E5%8F%8C%E7%BA%BF%E6%80%A7%E5%8F%98%E6%8D%A2%E6%B3%95%E8%AE%BE%E8%AE%A1%E5%B7%B4%E7%89%B9%E6%B2%83%E6%96%AF%E6%BB%A4%E6%B3%A2%E5%99%A8MATLAB%E5%AE%9E%E7%8E%B0%E2%80%94%E2%80%94%E5%AE%9E%E4%BE%8B/">
-									<time>12-08</time>
-									
-										数字信号处理用脉冲响应不变法和双线性变换法设计巴特沃斯滤波器MATLAB实现——实例
-									
-									
-									
-									
-								</a>
-						</div>
-				
-			
-				
-				
-					
-						<div class='timenode'>
-								<a class="meta" href="/2022/12/06/%E7%BB%99%E8%87%AA%E5%B7%B1%E7%9A%84hexo%E5%8D%9A%E5%AE%A2%E4%B8%AA%E6%80%A7%E5%8C%96Volantis%E4%B8%BB%E9%A2%98/">
-									<time>12-06</time>
-									
-										给自己的hexo博客个性化Volantis主题
-									
-									
-									
-									
-								</a>
-						</div>
-				
-			
-				
-				
-					
-						<div class='timenode'>
-								<a class="meta" href="/2022/12/06/%E6%95%B0%E5%AD%97%E4%BF%A1%E5%8F%B7%E5%A4%84%E7%90%86MATLAB%E4%BD%9C%E4%B8%9A%E5%9B%9B%EF%BC%88%E9%A2%98%E7%9B%AE+%E8%A7%A3%E7%AD%94%E4%BB%A3%E7%A0%81%EF%BC%89/">
-									<time>12-06</time>
-									
-										数字信号处理MATLAB作业四（题目+解答代码）
-									
-									
-									
-									
-								</a>
-						</div>
-				
-			
-				
-				
-					
-						<div class='timenode'>
-								<a class="meta" href="/2022/12/05/Pytorch%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0%E5%92%8C%E7%9B%AE%E6%A0%87%E6%A3%80%E6%B5%8B%E5%AE%9E%E6%88%98%E7%AC%94%E8%AE%B0/">
-									<time>12-05</time>
-									
-										Pytorch深度学习和目标检测实战笔记
-									
-									
-									
-									
-								</a>
-						</div>
-				
-			
-				
-				
-					
-						<div class='timenode'>
-								<a class="meta" href="/2022/12/05/%E5%AD%A6%E4%B9%A0%E9%80%9A%E4%BF%A1%E5%8E%9F%E7%90%86%E4%B9%8B%E2%80%94%E2%80%94%E4%BB%80%E4%B9%88%E6%98%AF%E5%82%85%E7%AB%8B%E5%8F%B6%E7%BA%A7%E6%95%B0/">
-									<time>12-05</time>
-									
-										学习通信原理之——什么是傅立叶级数
-									
-									
-									
-									
-								</a>
-						</div>
-				
-			
-				
-				
-					
-						<div class='timenode'>
-								<a class="meta" href="/2022/12/02/%E6%88%91%E5%8F%82%E5%8A%A0%E7%AC%AC%E4%B8%83%E5%B1%8ANVIDIA%20Sky%20Hackathon%E2%80%94%E2%80%94%E8%AE%AD%E7%BB%83ASR%E6%A8%A1%E5%9E%8B/">
-									<time>12-02</time>
-									
-										我参加第七届NVIDIA Sky Hackathon——训练ASR模型
-									
-									
-									
-									
-								</a>
-						</div>
-				
-			
-				
-				
-					
-						<div class='timenode'>
-								<a class="meta" href="/2022/12/02/%E6%88%91%E5%8F%82%E5%8A%A0%E7%AC%AC%E4%B8%83%E5%B1%8ANVIDIA%20Sky%20Hackathon%E2%80%94%E2%80%94%E8%AE%AD%E7%BB%83CV%E6%A8%A1%E5%9E%8B/">
-									<time>12-02</time>
-									
-										我参加第七届NVIDIA Sky Hackathon——训练CV模型
-									
-									
-									
-									
-								</a>
-						</div>
-				
-			
-				
-				
-					
-						<div class='timenode'>
-								<a class="meta" href="/2022/11/30/%E6%95%B0%E5%AD%97%E4%BF%A1%E5%8F%B7%E5%A4%84%E7%90%86MATLAB%E4%BD%9C%E4%B8%9A%E4%B8%89%EF%BC%88%E9%A2%98%E7%9B%AE+%E8%A7%A3%E7%AD%94%E4%BB%A3%E7%A0%81%EF%BC%89/">
-									<time>11-30</time>
-									
-										数字信号处理MATLAB作业三（题目+解答代码）
-									
-									
-									
-									
-								</a>
-						</div>
-				
-			
-				
-				
-					
-						<div class='timenode'>
-								<a class="meta" href="/2022/11/30/%E6%95%B0%E5%AD%97%E4%BF%A1%E5%8F%B7%E5%A4%84%E7%90%86%E4%BF%A1%E5%8F%B7%E7%9A%84%E5%BA%8F%E5%88%97%E8%A1%A50MATLAB%E5%AE%9E%E7%8E%B0%E2%80%94%E2%80%94%E5%AE%9E%E4%BE%8B/">
-									<time>11-30</time>
-									
-										数字信号处理信号的序列补0MATLAB实现——实例
-									
-									
-									
-									
-								</a>
-						</div>
-				
-			
-				
-				
-					
-						<div class='timenode'>
-								<a class="meta" href="/2022/11/28/%E6%95%B0%E5%AD%97%E4%BF%A1%E5%8F%B7%E5%A4%84%E7%90%86%E4%BF%A1%E5%8F%B7%E7%9A%84%E5%9C%86%E5%91%A8%E5%8D%B7%E7%A7%AFMATLAB%E5%AE%9E%E7%8E%B0%E2%80%94%E2%80%94%E5%AE%9E%E4%BE%8B/">
-									<time>11-28</time>
-									
-										数字信号处理信号的圆周卷积MATLAB实现——实例
-									
-									
-									
-									
-								</a>
-						</div>
-				
-			
-				
-				
-					
-						<div class='timenode'>
-								<a class="meta" href="/2022/11/28/%E6%95%B0%E5%AD%97%E4%BF%A1%E5%8F%B7%E5%A4%84%E7%90%86MATLAB%E4%BD%9C%E4%B8%9A%E4%BA%8C%EF%BC%88%E9%A2%98%E7%9B%AE+%E8%A7%A3%E7%AD%94%E4%BB%A3%E7%A0%81%EF%BC%89/">
-									<time>11-28</time>
-									
-										数字信号处理MATLAB作业二（题目+解答代码）
-									
-									
-									
-									
-								</a>
-						</div>
-				
-			
-				
-				
-					
-						<div class='timenode'>
-								<a class="meta" href="/2022/11/26/MATLAB%E5%AE%9E%E7%8E%B0%E5%B0%86%E5%87%BD%E6%95%B0_%E5%BA%8F%E5%88%97%E8%BF%9B%E8%A1%8C%E5%91%A8%E6%9C%9F%E5%BB%B6%E6%8B%93/">
-									<time>11-26</time>
-									
-										MATLAB实现将函数/序列进行周期延拓
-									
-									
-									
-									
-								</a>
-						</div>
-				
-			
-				
-				
-					
-						<div class='timenode'>
-								<a class="meta" href="/2022/11/23/2021%E5%B9%B4%E4%BA%9A%E5%A4%AA%E6%9D%AF%E4%B8%89%E7%AD%89%E5%A5%96%E9%80%89%E6%89%8BC%E9%A2%98%E6%80%9D%E8%B7%AF/">
-									<time>11-23</time>
-									
-										2021年亚太杯三等奖选手C题思路
-									
-									
-									
-									
-								</a>
-						</div>
-				
-			
-				
-				
-					
-						<div class='timenode'>
-								<a class="meta" href="/2022/11/22/%E6%95%B0%E5%AD%97%E4%BF%A1%E5%8F%B7%E5%A4%84%E7%90%86FFT%E5%BF%AB%E9%80%9F%E5%82%85%E7%AB%8B%E5%8F%B6%E5%8F%98%E6%8D%A2MATLAB%E5%AE%9E%E7%8E%B0%E2%80%94%E2%80%94%E5%AE%9E%E4%BE%8B/">
-									<time>11-22</time>
-									
-										数字信号处理FFT快速傅立叶变换MATLAB实现——实例
-									
-									
-									
-									
-								</a>
-						</div>
-				
-			
-				
-				
-					
-						<div class='timenode'>
-								<a class="meta" href="/2022/11/21/%E6%95%B0%E5%AD%97%E4%BF%A1%E5%8F%B7%E5%A4%84%E7%90%86MATLAB%E4%BD%9C%E4%B8%9A%E4%B8%80%EF%BC%88%E9%A2%98%E7%9B%AE+%E8%A7%A3%E7%AD%94%E4%BB%A3%E7%A0%81%EF%BC%89/">
-									<time>11-21</time>
-									
-										数字信号处理MATLAB作业一（题目+解答代码）
-									
-									
-									
-									
-								</a>
-						</div>
-				
-			
-				
-				
-					
-						<div class='timenode'>
-								<a class="meta" href="/2022/11/21/%E6%95%B0%E5%AD%97%E4%BF%A1%E5%8F%B7%E5%A4%84%E7%90%86%E4%BF%A1%E5%8F%B7%E6%8A%BD%E6%A0%B7%E4%B8%8E%E6%8F%92%E5%80%BCMATLAB%E5%AE%9E%E7%8E%B0%E2%80%94%E2%80%94%E5%AE%9E%E4%BE%8B/">
-									<time>11-21</time>
-									
-										数字信号处理信号抽样与插值MATLAB实现——实例
-									
-									
-									
-									
-								</a>
-						</div>
-				
-			
-				
-				
-					
-						<div class='timenode'>
-								<a class="meta" href="/2022/11/21/%E4%BB%8E%E9%9B%B6%E5%BC%80%E5%A7%8B%E7%9A%84STM32F1%E8%AF%BE%E7%A8%8B%E5%AD%A6%E4%B9%A0(STM32CubeMX)/">
-									<time>11-21</time>
-									
-										从零开始的STM32F1课程学习(STM32CubeMX)
-									
-									
-									
-									
-								</a>
-						</div>
-				
-			
-				
-				
-					
-						<div class='timenode'>
-								<a class="meta" href="/2022/11/19/TAO%20CONVERTER%E4%BD%BF%E7%94%A8%E5%91%BD%E4%BB%A4%E6%B3%A8%E9%87%8A/">
-									<time>11-19</time>
-									
-										TAO CONVERTER使用命令注释
-									
-									
-									
-									
-								</a>
-						</div>
-				
-			
-				
-				
-					
-						<div class='timenode'>
-								<a class="meta" href="/2022/10/24/%E6%99%BA%E8%83%BD%E9%87%87%E6%91%98%E5%B0%8F%E8%BD%A6%E8%BF%9B%E5%B1%95/">
-									<time>10-24</time>
-									
-										智能采摘小车进展
-									
-									
-									
-									
-								</a>
-						</div>
-				
-			
-				
-				
-					
-						<div class='timenode'>
-								<a class="meta" href="/2022/10/23/Mac%E7%94%A8Pycharm%E5%AE%89%E8%A3%85mediapipe%E6%8A%A5%E9%94%99ERROR_%20Could%20not%20find%20a%20version%20that%20satisfies%20the%20requirement%20mediapipe/">
-									<time>10-23</time>
-									
-										Mac用Pycharm安装mediapipe报错ERROR_ Could not find a version that satisfies the requirement mediapipe
-									
-									
-									
-									
-								</a>
-						</div>
-				
-			
-				
-				
-					
-						<div class='timenode'>
-								<a class="meta" href="/2022/10/18/%E8%93%9D%E6%A1%A5%E6%9D%AF%E5%8D%95%E7%89%87%E6%9C%BA%E7%BB%83%E4%B9%A0%E2%80%94%E2%80%94%E5%8F%AF%E8%B0%83%E8%8A%82%E4%BA%AE%E5%BA%A6%E7%9A%84LED%E7%81%AF/">
-									<time>10-18</time>
-									
-										蓝桥杯单片机练习——可调节亮度的LED灯
-									
-									
-									
-									
-								</a>
-						</div>
-				
-			
-				
-				
-					
-						<div class='timenode'>
-								<a class="meta" href="/2022/10/13/%E6%95%B0%E5%AD%A6%E5%BB%BA%E6%A8%A1%E7%AE%97%E6%B3%95%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/">
-									<time>10-13</time>
-									
-										数学建模算法学习笔记
-									
-									
-									
-									
-								</a>
-						</div>
-				
-			
-				
-				
-					
-						<div class='timenode'>
-								<a class="meta" href="/2022/10/06/Pytorch%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E7%BB%8F%E5%85%B8%E7%AE%97%E6%B3%95%E2%80%94%E2%80%94%E7%BA%BF%E6%80%A7%E5%9B%9E%E5%BD%92/">
-									<time>10-06</time>
-									
-										Pytorch机器学习经典算法——线性回归
-									
-									
-									
-									
-								</a>
-						</div>
-				
-			
-				
-				
-					
-						<div class='timenode'>
-								<a class="meta" href="/2022/10/03/%E4%B8%8A%E4%BD%8D%E6%9C%BA%E7%94%A8%E4%B8%B2%E5%8F%A3%E5%AF%B9STM32F1%E5%8D%95%E7%89%87%E6%9C%BA%E4%B8%80%E5%AF%B9%E4%BA%8C%E4%B8%8B%E8%BD%BD%E4%B8%8E%E9%80%9A%E4%BF%A1/">
-									<time>10-03</time>
-									
-										上位机用串口对STM32F1单片机一对二下载与通信
-									
-									
-									
-									
-								</a>
-						</div>
-				
-			
-				
-				
-					
-						<div class='timenode'>
-								<a class="meta" href="/2022/09/26/%E5%A6%82%E4%BD%95%E9%98%85%E8%AF%BB%E8%8A%AF%E7%89%87%E6%89%8B%E5%86%8C/">
-									<time>09-26</time>
-									
-										如何阅读芯片手册
-									
-									
-									
-									
-								</a>
-						</div>
-				
-			
-				
-				
-					
-						<div class='timenode'>
-								<a class="meta" href="/2022/08/30/%E8%A7%A3%E5%86%B3Mingw-w64%E4%B8%8B%E8%BD%BD%E5%A4%AA%E6%85%A2%E9%97%AE%E9%A2%98/">
-									<time>08-30</time>
-									
-										解决Mingw-w64下载太慢问题
-									
-									
-									
-									
-								</a>
-						</div>
-				
-			
-				
-				
-					
-						<div class='timenode'>
-								<a class="meta" href="/2022/08/26/pip%20install%E6%B8%85%E5%8D%8E%E9%95%9C%E5%83%8F%E6%BA%90/">
-									<time>08-26</time>
-									
-										pip install清华镜像源
-									
-									
-									
-									
-								</a>
-						</div>
-				
-			
-				
-				
-					
-						<div class='timenode'>
-								<a class="meta" href="/2022/08/23/Python%E4%B8%ADa,%20b%20=%20b,%20a%20+%20b%E7%9A%84%E5%90%AB%E4%B9%89/">
-									<time>08-23</time>
-									
-										Python中a, b = b, a + b的含义
-									
-									
-									
-									
-								</a>
-						</div>
-				
-			
-				
-				
-					
-						<div class='timenode'>
-								<a class="meta" href="/2022/08/14/%E8%93%9D%E6%A1%A5%E6%9D%AF%E5%8D%95%E7%89%87%E6%9C%BA%E5%B8%B8%E7%94%A8%E6%A8%A1%E5%9D%97(%E8%87%AA%E7%94%A8)/">
-									<time>08-14</time>
-									
-										蓝桥杯单片机常用模块(自用)
-									
-									
-									
-									
-								</a>
-						</div>
-				
-			
-				
-				
-					
-						<div class='timenode'>
-								<a class="meta" href="/2022/07/20/%E5%9F%BA%E4%BA%8EPytorch%E5%AE%8C%E6%95%B4%E7%9A%84%E8%AE%AD%E7%BB%83%E4%B8%80%E4%B8%AA%E7%A5%9E%E7%BB%8F%E7%BD%91%E7%BB%9C(CIFAR10)%E5%B9%B6%E8%BF%9B%E8%A1%8C%E9%AA%8C%E8%AF%81/">
-									<time>07-20</time>
-									
-										基于Pytorch完整的训练一个神经网络(CIFAR10)并进行验证
-									
-									
-									
-									
-								</a>
-						</div>
-				
-			
-				
-				
-					
-						<div class='timenode'>
-								<a class="meta" href="/2022/07/08/Pytorch%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E7%BB%8F%E5%85%B8%E7%AE%97%E6%B3%95%E2%80%94%E2%80%94%E9%80%BB%E8%BE%91%E5%9B%9E%E5%BD%92/">
-									<time>07-08</time>
-									
-										Pytorch机器学习经典算法——逻辑回归
-									
-									
-									
-									
-								</a>
-						</div>
-				
-			
-				
-				
-					
-						<div class='timenode'>
-								<a class="meta" href="/2022/07/06/Pytorch%E5%AE%9E%E6%88%98%E2%80%94%E2%80%94MNIST%E6%95%B0%E6%8D%AE%E9%9B%86%E6%89%8B%E5%86%99%E6%95%B0%E5%AD%97%E8%AF%86%E5%88%AB/">
-									<time>07-06</time>
-									
-										Pytorch实战——MNIST数据集手写数字识别
-									
-									
-									
-									
-								</a>
-						</div>
-				
-			
-				
-				
-					
-						<div class='timenode'>
-								<a class="meta" href="/2022/06/16/%E5%85%B3%E4%BA%8EScikit-learn%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E7%9A%84%E7%AC%94%E8%AE%B0%E2%80%94%E2%80%94%E7%AC%AC%E5%85%AD%E7%AF%87/">
-									<time>06-16</time>
-									
-										关于Scikit-learn机器学习的笔记——第六篇
-									
-									
-									
-									
-								</a>
-						</div>
-				
-			
-				
-				
-					
-						<div class='timenode'>
-								<a class="meta" href="/2022/06/16/%E5%85%B3%E4%BA%8EScikit-learn%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E7%9A%84%E7%AC%94%E8%AE%B0%E2%80%94%E2%80%94%E7%AC%AC%E4%BA%94%E7%AF%87/">
-									<time>06-16</time>
-									
-										关于Scikit-learn机器学习的笔记——第五篇
-									
-									
-									
-									
-								</a>
-						</div>
-				
-			
-				
-				
-					
-						<div class='timenode'>
-								<a class="meta" href="/2022/06/15/%E5%85%B3%E4%BA%8EScikit-learn%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E7%9A%84%E7%AC%94%E8%AE%B0%E2%80%94%E2%80%94%E7%AC%AC%E5%9B%9B%E7%AF%87/">
-									<time>06-15</time>
-									
-										关于Scikit-learn机器学习的笔记——第四篇
-									
-									
-									
-									
-								</a>
-						</div>
-				
-			
-				
-				
-					
-						<div class='timenode'>
-								<a class="meta" href="/2022/06/15/%E5%85%B3%E4%BA%8EScikit-learn%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E7%9A%84%E7%AC%94%E8%AE%B0%E2%80%94%E2%80%94%E7%AC%AC%E4%B8%89%E7%AF%87/">
-									<time>06-15</time>
-									
-										关于Scikit-learn机器学习的笔记——第三篇
-									
-									
-									
-									
-								</a>
-						</div>
-				
-			
-				
-				
-					
-						<div class='timenode'>
-								<a class="meta" href="/2022/06/14/%E5%85%B3%E4%BA%8EScikit-learn%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E7%9A%84%E7%AC%94%E8%AE%B0%E2%80%94%E2%80%94%E7%AC%AC%E4%BA%8C%E7%AF%87/">
-									<time>06-14</time>
-									
-										关于Scikit-learn机器学习的笔记——第二篇
-									
-									
-									
-									
-								</a>
-						</div>
-				
-			
-				
-				
-					
-						<div class='timenode'>
-								<a class="meta" href="/2022/05/11/%E7%AC%AC%E5%8D%81%E4%B8%89%E5%B1%8A%E8%93%9D%E6%A1%A5%E6%9D%AF%E5%8D%95%E7%89%87%E6%9C%BA%E4%B8%89%E7%AD%89%E5%A5%96%E9%80%89%E6%89%8B%E7%9A%84%E5%A4%8D%E7%9B%98/">
-									<time>05-11</time>
-									
-										第十三届蓝桥杯单片机三等奖选手的复盘
-									
-									
-									
-									
-								</a>
-						</div>
-				
-			
-				
-				
-					
-						<div class='timenode'>
-								<a class="meta" href="/2022/04/18/STM32F103C8T6%20HAL%E5%BA%93%E2%80%94%E2%80%94%E4%BB%8E%E9%9B%B6%E5%BC%80%E5%A7%8B%E7%9A%84%E5%88%B6%E4%BD%9C%E5%B9%B3%E8%A1%A1%E5%B0%8F%E8%BD%A6%E7%94%9F%E6%B4%BB/">
-									<time>04-18</time>
-									
-										STM32F103C8T6 HAL库——从零开始的制作平衡小车生活
-									
-									
-									
-									
-								</a>
-						</div>
-				
-			
-				
-				
-					
-						<div class='timenode'>
-								<a class="meta" href="/2022/04/18/%E5%85%B3%E4%BA%8EScikit-learn%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E7%9A%84%E7%AC%94%E8%AE%B0%E2%80%94%E2%80%94%E7%AC%AC%E4%B8%80%E7%AF%87/">
-									<time>04-18</time>
-									
-										关于Scikit-learn机器学习的笔记——第一篇
-									
-									
-									
-									
-								</a>
-						</div>
-				
-			
-				
-				
-					
-						<div class='timenode'>
-								<a class="meta" href="/2022/04/18/%E7%94%A8Pytorch%E6%90%AD%E5%BB%BA%E7%AC%AC%E4%B8%80%E4%B8%AA%E7%A5%9E%E7%BB%8F%E7%BD%91%E7%BB%9C(CIFAR10)%E4%B8%94%E8%BF%9B%E8%A1%8C%E4%BC%98%E5%8C%96/">
-									<time>04-18</time>
-									
-										用Pytorch搭建第一个神经网络(CIFAR10)且进行优化
-									
-									
-									
-									
-								</a>
-						</div>
-				
-			
-				
-				
-					
-						<div class='timenode'>
-								<a class="meta" href="/2022/04/18/%E8%93%9D%E6%A1%A5%E6%9D%AF%E5%8D%95%E7%89%87%E6%9C%BA%E7%AC%AC%E5%8D%81%E4%B8%80%E5%B1%8A%E6%A8%A1%E6%8B%9F%E9%A2%98%E2%80%94%E2%80%94%E6%99%BA%E8%83%BD%E9%97%A8%E9%94%81%E7%9A%84%E7%A8%8B%E5%BA%8F%E4%BB%A5%E5%8F%8A%E8%AE%BE%E8%AE%A1%E6%80%9D%E8%B7%AF/">
-									<time>04-18</time>
-									
-										蓝桥杯单片机第十一届模拟题——智能门锁的程序以及设计思路
-									
-									
-									
-									
-								</a>
-						</div>
-				
-			
-				
-				
-					
-						<div class='timenode'>
-								<a class="meta" href="/2022/04/08/%E8%93%9D%E6%A1%A5%E6%9D%AF%E7%AC%AC%E5%8D%81%E4%B8%89%E5%B1%8A%E6%A8%A1%E6%8B%9F%E9%A2%9803%E2%80%94%E2%80%94%E6%BA%90%E4%BB%A3%E7%A0%81/">
-									<time>04-08</time>
-									
-										蓝桥杯第十三届模拟题03——源代码
-									
-									
-									
-									
-								</a>
-						</div>
-				
-			
-				
-				
-					
-						<div class='timenode'>
-								<a class="meta" href="/2022/04/08/%E8%93%9D%E6%A1%A5%E6%9D%AF%E5%8D%95%E7%89%87%E6%9C%BA%E7%AC%AC%E5%8D%81%E4%B8%89%E5%B1%8A%E6%A8%A1%E6%8B%9F%E9%A2%9801%E2%80%94%E2%80%94%E6%BA%90%E4%BB%A3%E7%A0%81/">
-									<time>04-08</time>
-									
-										蓝桥杯单片机第十三届模拟题01——源代码
-									
-									
-									
-									
-								</a>
-						</div>
-				
-			
-				
-				
-					
-						<div class='timenode'>
-								<a class="meta" href="/2022/04/05/%E8%93%9D%E6%A1%A5%E6%9D%AF%E5%8D%95%E7%89%87%E6%9C%BA%E7%AC%AC%E5%8D%81%E4%BA%8C%E5%B1%8A%E7%9C%81%E8%B5%9B%E7%AC%AC%E4%BA%8C%E6%89%B9%E2%80%94%E2%80%94%E6%BA%90%E7%A0%81%E5%8F%8A%E8%AE%BE%E8%AE%A1%E6%80%9D%E8%B7%AF/">
-									<time>04-05</time>
-									
-										蓝桥杯单片机第十二届省赛第二批——源码及设计思路
-									
-									
-									
-									
-								</a>
-						</div>
-				
-			
-				
-				
-					
-						<div class='timenode'>
-								<a class="meta" href="/2022/04/05/%E8%93%9D%E6%A1%A5%E6%9D%AF%E5%8D%95%E7%89%87%E6%9C%BA%E7%AC%AC%E5%8D%81%E4%B8%89%E5%B1%8A%E7%9C%81%E8%B5%9B%E6%A8%A1%E6%8B%9F%E5%86%B2%E5%88%BA02%E2%80%94%E2%80%94%E6%BA%90%E7%A0%81%E5%8F%8A%E8%AE%BE%E8%AE%A1%E6%80%9D%E8%B7%AF/">
-									<time>04-05</time>
-									
-										蓝桥杯单片机第十三届省赛模拟冲刺02——源码及设计思路
-									
-									
-									
-									
-								</a>
-						</div>
-				
-			
-				
-				
-					
-						<div class='timenode'>
-								<a class="meta" href="/2022/03/31/%E8%93%9D%E6%A1%A5%E6%9D%AF%E5%8D%95%E7%89%87%E6%9C%BA%E7%AC%AC%E5%8D%81%E4%BA%8C%E5%B1%8A%E7%AC%AC%E4%B8%80%E6%89%B9%E7%9C%81%E8%B5%9B%E9%A2%98%E2%80%94%E2%80%94%E6%BA%90%E7%A0%81%E5%8F%8A%E8%AE%BE%E8%AE%A1%E6%80%9D%E8%B7%AF/">
-									<time>03-31</time>
-									
-										蓝桥杯单片机第十二届第一批省赛题——源码及设计思路
-									
-									
-									
-									
-								</a>
-						</div>
-				
-			
-				
-				
-					
-						<div class='timenode'>
-								<a class="meta" href="/2022/03/30/%E8%93%9D%E6%A1%A5%E6%9D%AF%E5%8D%95%E7%89%87%E6%9C%BA%E7%AC%AC%E5%85%AB%E5%B1%8A%E7%9C%81%E8%B5%9B%E2%80%94%E2%80%94%E6%BA%90%E7%A0%81%E5%8F%8A%E8%AE%BE%E8%AE%A1%E6%80%9D%E8%B7%AF/">
-									<time>03-30</time>
-									
-										蓝桥杯单片机第八届省赛——源码及设计思路
-									
-									
-									
-									
-								</a>
-						</div>
-				
-			
-				
-				
-					
-						<div class='timenode'>
-								<a class="meta" href="/2022/03/24/%E8%93%9D%E6%A1%A5%E6%9D%AF%E5%8D%95%E7%89%87%E6%9C%BA%E6%A8%A1%E5%BC%8F%E8%BD%AC%E6%8D%A2%E6%80%9D%E8%B7%AF/">
-									<time>03-24</time>
-									
-										蓝桥杯单片机模式转换思路
-									
-									
-									
-									
-								</a>
-						</div>
-				
-			
-				
-				
-					
-						<div class='timenode'>
-								<a class="meta" href="/2022/02/11/%E8%93%9D%E6%A1%A5%E6%9D%AF%E5%8D%95%E7%89%87%E6%9C%BA%E7%AC%AC%E5%8D%81%E5%B1%8A%E7%9C%81%E8%B5%9B%E2%80%94%E2%80%94%E6%BA%90%E7%A0%81%E4%BB%A5%E5%8F%8A%E8%AE%BE%E8%AE%A1%E6%80%9D%E8%B7%AF/">
-									<time>02-11</time>
-									
-										蓝桥杯单片机第十届省赛——源码以及设计思路
-									
-									
-									
-									
-								</a>
-						</div>
-				
-			
-				
-				
-					
-						<div class='timenode'>
-								<a class="meta" href="/2022/02/09/%E8%93%9D%E6%A1%A5%E6%9D%AF%E5%8D%95%E7%89%87%E6%9C%BA%E7%BB%83%E4%B9%A0%E2%80%94%E2%80%94%E5%8F%AF%E8%B0%83%E8%8A%82%E6%97%B6%E9%92%9F%E6%BA%90%E4%BB%A3%E7%A0%81/">
-									<time>02-09</time>
-									
-										蓝桥杯单片机练习——可调节时钟源代码
-									
-									
-									
-									
-								</a>
-						</div>
-				
-			
-				
-				
-					
-						
-						<h2>2021</h2>
-					
-						<div class='timenode'>
-								<a class="meta" href="/2021/10/01/Arduino%20Uno%E9%9B%B6%E5%9F%BA%E7%A1%80%E5%85%A5%E9%97%A8%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/">
-									<time>10-01</time>
-									
-										Arduino Uno零基础入门学习笔记
-									
-									
-									
-									
-								</a>
-						</div>
-				
-			
-				
-				
-					
-						<div class='timenode'>
-								<a class="meta" href="/2021/08/09/%E5%85%B3%E4%BA%8E%E5%9C%A8%E7%BB%83%E4%B9%A0%E8%AE%A1%E7%AE%97%E6%9C%BA%E4%BA%8C%E7%BA%A7%E6%97%B6%EF%BC%8C%E7%94%A8VisualStudio2019%E5%87%BA%E7%8E%B0%E7%9A%84%E6%97%A0%E6%B3%95%E8%B0%83%E8%AF%95%E9%97%AE%E9%A2%98/">
-									<time>08-09</time>
-									
-										关于在练习计算机二级时，用VisualStudio2019出现的无法调试问题
-									
-									
-									
-									
-								</a>
-						</div>
-				
-			
-				
-				
-					
-						<div class='timenode'>
-								<a class="meta" href="/2021/07/12/%E8%AE%B0%E4%B8%80%E6%AC%A1mac%E7%9A%84vscode%E5%AD%A6%E4%B9%A0%E8%AE%B0%E5%BD%95%20%E5%85%B3%E4%BA%8E%E4%B8%BA%E4%BB%80%E4%B9%88%E8%BE%93%E5%87%BA%E9%87%8C%E6%B2%A1%E6%B3%95%E8%BF%9B%E8%A1%8C%E8%BE%93%E5%85%A5/">
-									<time>07-12</time>
-									
-										记一次mac的vscode学习记录 关于为什么输出里没法进行输入
-									
-									
-									
-									
-								</a>
-						</div>
-				
-			
-	  </article>
-	
+        
+      
+        
+          
+  <div class="new-meta-item share -mob-share-list">
+  <div class="-mob-share-list share-body">
+    
+      
+        <a class="-mob-share-qq" title="" rel="external nofollow noopener noreferrer noopener"
+          
+          target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://mengfanjun020906.github.io/2024/01/02/RetinaFace+Jetson%20Nano(2)/&title=基于RetinaFace+Jetson Nano的智能门锁系统——第二篇（配置环境） - MengFanjun的博客&summary="
+          
+          >
+          
+            <img src="https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/logo/128/qq.png" class="lazyload" data-srcset="https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/logo/128/qq.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==">
+          
+        </a>
+      
+    
+      
+        <a class="-mob-share-qzone" title="" rel="external nofollow noopener noreferrer noopener"
+          
+          target="_blank" href="https://sns.qzone.qq.com/cgi-bin/qzshare/cgi_qzshare_onekey?url=https://mengfanjun020906.github.io/2024/01/02/RetinaFace+Jetson%20Nano(2)/&title=基于RetinaFace+Jetson Nano的智能门锁系统——第二篇（配置环境） - MengFanjun的博客&summary="
+          
+          >
+          
+            <img src="https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/logo/128/qzone.png" class="lazyload" data-srcset="https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/logo/128/qzone.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==">
+          
+        </a>
+      
+    
+      
+        <a class="-mob-share-weibo" title="" rel="external nofollow noopener noreferrer noopener"
+          
+          target="_blank" href="http://service.weibo.com/share/share.php?url=https://mengfanjun020906.github.io/2024/01/02/RetinaFace+Jetson%20Nano(2)/&title=基于RetinaFace+Jetson Nano的智能门锁系统——第二篇（配置环境） - MengFanjun的博客&summary="
+          
+          >
+          
+            <img src="https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/logo/128/weibo.png" class="lazyload" data-srcset="https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/logo/128/weibo.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==">
+          
+        </a>
+      
+    
+      
+    
+      
+    
+  </div>
+</div>
+
+
+
+        
+      
+    </div>
+    <!-- Custom Files bottomMeta begin -->
+    
+    <!-- Custom Files bottomMeta end -->
+  </div>
+
+
+  
+  
+
+  
+    <div class="prev-next">
+      
+        <a class='prev' href='/2024/01/02/RetinaFace+Jetson%20Nano(1)/'>
+          <p class='title'><i class="fa-solid fa-chevron-left" aria-hidden="true"></i>基于RetinaFace+Jetson Nano的智能门锁系统——第一篇（烧录系统）</p>
+          <p class='content'>设备
+
+Jetson Nano
+Micro-USB - USB-A电源线
+HDMI线+屏幕
+PC一台 
+
+1.首先在PC端安装VMware虚拟机和Ubuntu18
+VMware下载地址：http...</p>
+        </a>
+      
+      
+        <a class='next' href='/2023/04/26/FPGA_Verilog%20HDL_AC620%E9%9B%B6%E5%9F%BA%E7%A1%80%E5%85%A5%E9%97%A8%E5%AD%A6%E4%B9%A0%E2%80%94%E2%80%94%E6%A0%BC%E9%9B%B7%E7%A0%81%E8%AE%A1%E6%95%B0%E5%99%A8%E5%AE%9E%E9%AA%8C/'>
+          <p class='title'>FPGA_Verilog HDL_AC620零基础入门学习——格雷码计数器实验<i class="fa-solid fa-chevron-right" aria-hidden="true"></i></p>
+          <p class='content'>实验要求
+模块功能应包括二进制码计数器的产生、由二进制码产生格雷码、所产生的格雷码再次转换为二进制码等逻辑部分。
+该项目由一个功能模块和一个testbench组成。其中功能模块的端口信号如下表所...</p>
+        </a>
+      
+    </div>
+  
+  <!-- Custom Files postEnd begin-->
+  
+  <!-- Custom Files postEnd end-->
+</article>
+
+
+  
+
+
+  <article class="post white-box shadow floatable blur" id="comments">
+    <span hidden>
+      <meta itemprop="discussionUrl" content="/2024/01/02/RetinaFace+Jetson%20Nano(2)/index.html#comments">
+    </span>
+    <p ct><i class='fa-solid fa-comments'></i> 评论</p>
+    
+
+    <div id="layoutHelper-comments"></div>
+
+  </article>
+
+
+
+
+
+
 </div>
 <aside id='l_side' itemscope itemtype="http://schema.org/WPSideBar">
   
@@ -3806,296 +2788,56 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
     
     
       
-<section class="widget blogger desktop mobile pjax">
-  <div class='content'>
-    
-      
-        <a class='avatar flat-box rectangle' href='/about/'>
-          <img no-lazy src='https://pic.imgdb.cn/item/63f9926ef144a01007de7d7d.png'/>
-        </a>
-      
-    
-    
-      <div class='text'>
-        
-          <h2>MengFanjun</h2>
-        
-        
-        
-          <p><span id="jinrishici-sentence">MengFanjun的博客</span></p>
-          <script src="https://sdk.jinrishici.com/v2/browser/jinrishici.js" charset="utf-8"></script>
-        
-      </div>
-    
-    
-      <div class="social-wrapper">
-        
-          
-            <a href="mailto:mengfanjun_020906@outlook.com"
-              class="social fa-solid fa-envelope flat-btn"
-              target="_blank"
-              rel="external nofollow noopener noreferrer">
-              
-            </a>
-          
-        
-          
-            <a href="https://github.com/MengFanjun020906"
-              class="social fab fa-github flat-btn"
-              target="_blank"
-              rel="external nofollow noopener noreferrer">
-              
-            </a>
-          
-        
-      </div>
-    
-  </div>
-</section>
-
-    
-  
-
-  
-    
-    
-      
-  
-  <section class="widget category desktop pjax">
-    
-  <header>
-    
-      <a href='categories/'><i class="fa-solid fa-folder-open fa-fw" aria-hidden="true"></i><span class='name'>文章分类</span></a>
-    
-  </header>
-
-
-    <div class='content'>
-      <ul class="entry navigation">
-        
-          <li><a class="flat-box"
-            title="/categories/Arduino%E5%AD%A6%E4%B9%A0/" href="/categories/Arduino%E5%AD%A6%E4%B9%A0/"
-            active-action="action-categoriesArduinoE5ADA6E4B9A0"
-            ><div class='name'>Arduino学习</div><div class='badge'>(19)</div></a></li>
-        
-          <li><a class="flat-box"
-            title="/categories/FPGA/" href="/categories/FPGA/"
-            active-action="action-categoriesFPGA"
-            ><div class='name'>FPGA</div><div class='badge'>(1)</div></a></li>
-        
-          <li><a class="flat-box"
-            title="/categories/Git/" href="/categories/Git/"
-            active-action="action-categoriesGit"
-            ><div class='name'>Git</div><div class='badge'>(1)</div></a></li>
-        
-          <li><a class="flat-box"
-            title="/categories/Jetson-Nano/" href="/categories/Jetson-Nano/"
-            active-action="action-categoriesJetson-Nano"
-            ><div class='name'>Jetson Nano</div><div class='badge'>(2)</div></a></li>
-        
-          <li><a class="flat-box"
-            title="/categories/Latex/" href="/categories/Latex/"
-            active-action="action-categoriesLatex"
-            ><div class='name'>Latex</div><div class='badge'>(1)</div></a></li>
-        
-          <li><a class="flat-box"
-            title="/categories/MATLAB%E4%B8%8E%E6%95%B0%E5%AD%A6%E5%BB%BA%E6%A8%A1/" href="/categories/MATLAB%E4%B8%8E%E6%95%B0%E5%AD%A6%E5%BB%BA%E6%A8%A1/"
-            active-action="action-categoriesMATLABE4B88EE695B0E5ADA6E5BBBAE6A8A1"
-            ><div class='name'>MATLAB与数学建模</div><div class='badge'>(14)</div></a></li>
-        
-          <li><a class="flat-box child"
-            title="/categories/MATLAB%E4%B8%8E%E6%95%B0%E5%AD%A6%E5%BB%BA%E6%A8%A1/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/" href="/categories/MATLAB%E4%B8%8E%E6%95%B0%E5%AD%A6%E5%BB%BA%E6%A8%A1/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/"
-            active-action="action-categoriesMATLABE4B88EE695B0E5ADA6E5BBBAE6A8A1E5ADA6E4B9A0E7AC94E8AEB0"
-            ><div class='name'>学习笔记</div><div class='badge'>(1)</div></a></li>
-        
-          <li><a class="flat-box child"
-            title="/categories/MATLAB%E4%B8%8E%E6%95%B0%E5%AD%A6%E5%BB%BA%E6%A8%A1/%E8%80%83%E7%A0%94/" href="/categories/MATLAB%E4%B8%8E%E6%95%B0%E5%AD%A6%E5%BB%BA%E6%A8%A1/%E8%80%83%E7%A0%94/"
-            active-action="action-categoriesMATLABE4B88EE695B0E5ADA6E5BBBAE6A8A1E88083E7A094"
-            ><div class='name'>考研</div><div class='badge'>(1)</div></a></li>
-        
-          <li><a class="flat-box child"
-            title="/categories/MATLAB%E4%B8%8E%E6%95%B0%E5%AD%A6%E5%BB%BA%E6%A8%A1/%E8%80%83%E7%A0%94/%E5%AD%A6%E4%B9%A0%E9%80%9A%E4%BF%A1%E5%8E%9F%E7%90%86/" href="/categories/MATLAB%E4%B8%8E%E6%95%B0%E5%AD%A6%E5%BB%BA%E6%A8%A1/%E8%80%83%E7%A0%94/%E5%AD%A6%E4%B9%A0%E9%80%9A%E4%BF%A1%E5%8E%9F%E7%90%86/"
-            active-action="action-categoriesMATLABE4B88EE695B0E5ADA6E5BBBAE6A8A1E88083E7A094E5ADA6E4B9A0E9809AE4BFA1E58E9FE79086"
-            ><div class='name'>学习通信原理</div><div class='badge'>(1)</div></a></li>
-        
-          <li><a class="flat-box"
-            title="/categories/Pytorch%E5%AD%A6%E4%B9%A0/" href="/categories/Pytorch%E5%AD%A6%E4%B9%A0/"
-            active-action="action-categoriesPytorchE5ADA6E4B9A0"
-            ><div class='name'>Pytorch学习</div><div class='badge'>(6)</div></a></li>
-        
-          <li><a class="flat-box"
-            title="/categories/SKlearn%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/" href="/categories/SKlearn%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/"
-            active-action="action-categoriesSKlearnE5ADA6E4B9A0E7AC94E8AEB0"
-            ><div class='name'>SKlearn学习笔记</div><div class='badge'>(6)</div></a></li>
-        
-          <li><a class="flat-box"
-            title="/categories/The-7th-Sky-Hackathon/" href="/categories/The-7th-Sky-Hackathon/"
-            active-action="action-categoriesThe-7th-Sky-Hackathon"
-            ><div class='name'>The 7th Sky Hackathon</div><div class='badge'>(4)</div></a></li>
-        
-          <li><a class="flat-box"
-            title="/categories/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/" href="/categories/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/"
-            active-action="action-categoriesE5ADA6E4B9A0E7AC94E8AEB0"
-            ><div class='name'>学习笔记</div><div class='badge'>(3)</div></a></li>
-        
-          <li><a class="flat-box child"
-            title="/categories/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/%E8%93%9D%E6%A1%A5%E6%9D%AF%E5%8D%95%E7%89%87%E6%9C%BA%E5%AD%A6%E4%B9%A0/" href="/categories/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/%E8%93%9D%E6%A1%A5%E6%9D%AF%E5%8D%95%E7%89%87%E6%9C%BA%E5%AD%A6%E4%B9%A0/"
-            active-action="action-categoriesE5ADA6E4B9A0E7AC94E8AEB0E8939DE6A1A5E69DAFE58D95E78987E69CBAE5ADA6E4B9A0"
-            ><div class='name'>蓝桥杯单片机学习</div><div class='badge'>(1)</div></a></li>
-        
-          <li><a class="flat-box"
-            title="/categories/%E5%AD%A6%E4%B9%A0%E9%80%9A%E4%BF%A1%E5%8E%9F%E7%90%86/" href="/categories/%E5%AD%A6%E4%B9%A0%E9%80%9A%E4%BF%A1%E5%8E%9F%E7%90%86/"
-            active-action="action-categoriesE5ADA6E4B9A0E9809AE4BFA1E58E9FE79086"
-            ><div class='name'>学习通信原理</div><div class='badge'>(1)</div></a></li>
-        
-          <li><a class="flat-box"
-            title="/categories/%E8%80%83%E7%A0%94%E6%95%B0%E5%AD%A6/" href="/categories/%E8%80%83%E7%A0%94%E6%95%B0%E5%AD%A6/"
-            active-action="action-categoriesE88083E7A094E695B0E5ADA6"
-            ><div class='name'>考研数学</div><div class='badge'>(1)</div></a></li>
-        
-          <li><a class="flat-box"
-            title="/categories/%E8%93%9D%E6%A1%A5%E6%9D%AF%E5%8D%95%E7%89%87%E6%9C%BA%E5%AD%A6%E4%B9%A0/" href="/categories/%E8%93%9D%E6%A1%A5%E6%9D%AF%E5%8D%95%E7%89%87%E6%9C%BA%E5%AD%A6%E4%B9%A0/"
-            active-action="action-categoriesE8939DE6A1A5E69DAFE58D95E78987E69CBAE5ADA6E4B9A0"
-            ><div class='name'>蓝桥杯单片机学习</div><div class='badge'>(12)</div></a></li>
-        
-          <li><a class="flat-box child"
-            title="/categories/%E8%93%9D%E6%A1%A5%E6%9D%AF%E5%8D%95%E7%89%87%E6%9C%BA%E5%AD%A6%E4%B9%A0/%E4%B8%AA%E4%BA%BA%E5%8F%8D%E6%80%9D%E4%B8%8E%E6%80%BB%E7%BB%93/" href="/categories/%E8%93%9D%E6%A1%A5%E6%9D%AF%E5%8D%95%E7%89%87%E6%9C%BA%E5%AD%A6%E4%B9%A0/%E4%B8%AA%E4%BA%BA%E5%8F%8D%E6%80%9D%E4%B8%8E%E6%80%BB%E7%BB%93/"
-            active-action="action-categoriesE8939DE6A1A5E69DAFE58D95E78987E69CBAE5ADA6E4B9A0E4B8AAE4BABAE58F8DE6809DE4B88EE680BBE7BB93"
-            ><div class='name'>个人反思与总结</div><div class='badge'>(1)</div></a></li>
-        
-          <li><a class="flat-box"
-            title="/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA%E4%BA%8C%E7%BA%A7/" href="/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA%E4%BA%8C%E7%BA%A7/"
-            active-action="action-categoriesE8AEA1E7AE97E69CBAE4BA8CE7BAA7"
-            ><div class='name'>计算机二级</div><div class='badge'>(1)</div></a></li>
-        
-          <li><a class="flat-box"
-            title="/categories/%E9%80%9A%E4%BF%A1%E5%8E%9F%E7%90%86/" href="/categories/%E9%80%9A%E4%BF%A1%E5%8E%9F%E7%90%86/"
-            active-action="action-categoriesE9809AE4BFA1E58E9FE79086"
-            ><div class='name'>通信原理</div><div class='badge'>(1)</div></a></li>
-        
-      </ul>
-    </div>
-  </section>
-
-
-    
-  
-
-  
-    
-    
-      
-  
-  <section class="widget tagcloud desktop mobile pjax">
-    
-  <header>
-    
-      <a href='tags/'><i class="fa-solid fa-tags fa-fw" aria-hidden="true"></i><span class='name'>热门标签</span></a>
-    
-  </header>
-
-
-    <div class='content'>
-      <a href="/tags/Arduino/" style="font-size: 24px; color: #555">Arduino</a> <a href="/tags/FPGA/" style="font-size: 14px; color: #999">FPGA</a> <a href="/tags/Latex/" style="font-size: 14px; color: #999">Latex</a> <a href="/tags/Nvidia/" style="font-size: 15.67px; color: #8e8e8e">Nvidia</a> <a href="/tags/TAO/" style="font-size: 14px; color: #999">TAO</a> <a href="/tags/git/" style="font-size: 14px; color: #999">git</a> <a href="/tags/github/" style="font-size: 14px; color: #999">github</a> <a href="/tags/html/" style="font-size: 14px; color: #999">html</a> <a href="/tags/linux/" style="font-size: 14.83px; color: #939393">linux</a> <a href="/tags/matlab/" style="font-size: 21.5px; color: #666">matlab</a> <a href="/tags/pcb%E5%B7%A5%E8%89%BA/" style="font-size: 14px; color: #999">pcb工艺</a> <a href="/tags/pip/" style="font-size: 14px; color: #999">pip</a> <a href="/tags/python/" style="font-size: 15.67px; color: #8e8e8e">python</a> <a href="/tags/pytorch/" style="font-size: 18.17px; color: #7d7d7d">pytorch</a> <a href="/tags/sklearn/" style="font-size: 17.33px; color: #828282">sklearn</a> <a href="/tags/stm32/" style="font-size: 15.67px; color: #8e8e8e">stm32</a> <a href="/tags/ubuntu/" style="font-size: 14.83px; color: #939393">ubuntu</a> <a href="/tags/visual-studio/" style="font-size: 14px; color: #999">visual studio</a> <a href="/tags/vscode/" style="font-size: 14.83px; color: #939393">vscode</a> <a href="/tags/%E4%BA%BA%E5%B7%A5%E6%99%BA%E8%83%BD/" style="font-size: 16.5px; color: #888">人工智能</a> <a href="/tags/%E5%89%8D%E7%AB%AF/" style="font-size: 14px; color: #999">前端</a> <a href="/tags/%E5%8D%95%E7%89%87%E6%9C%BA/" style="font-size: 23.17px; color: #5b5b5b">单片机</a> <a href="/tags/%E5%A4%A7%E6%95%B0%E6%8D%AE/" style="font-size: 14.83px; color: #939393">大数据</a> <a href="/tags/%E5%AD%A6%E4%B9%A0/" style="font-size: 17.33px; color: #828282">学习</a> <a href="/tags/%E5%B5%8C%E5%85%A5%E5%BC%8F%E7%A1%AC%E4%BB%B6/" style="font-size: 22.33px; color: #606060">嵌入式硬件</a> <a href="/tags/%E6%95%B0%E5%AD%97%E4%BF%A1%E5%8F%B7%E5%A4%84%E7%90%86/" style="font-size: 19.83px; color: #717171">数字信号处理</a> <a href="/tags/%E6%95%B0%E5%AD%A6%E5%BB%BA%E6%A8%A1/" style="font-size: 14.83px; color: #939393">数学建模</a> <a href="/tags/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/" style="font-size: 19px; color: #777">机器学习</a> <a href="/tags/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/" style="font-size: 18.17px; color: #7d7d7d">深度学习</a> <a href="/tags/%E7%A5%9E%E7%BB%8F%E7%BD%91%E7%BB%9C/" style="font-size: 15.67px; color: #8e8e8e">神经网络</a> <a href="/tags/%E7%AE%97%E6%B3%95/" style="font-size: 16.5px; color: #888">算法</a> <a href="/tags/%E8%80%83%E7%A0%94/" style="font-size: 14.83px; color: #939393">考研</a> <a href="/tags/%E8%93%9D%E6%A1%A5%E6%9D%AF/" style="font-size: 20.67px; color: #6c6c6c">蓝桥杯</a> <a href="/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA%E8%A7%86%E8%A7%89/" style="font-size: 14px; color: #999">计算机视觉</a>
-    </div>
-  </section>
-
-
-    
-  
-
-  
-    
-    
-      
-<section class="widget desktop pjax">
-  
-  <header>
-    
-      <i class="fa-solid fa-award fa-fw" aria-hidden="true"></i><span class='name'>站点信息</span>
-    
-  </header>
-
-
-  <div class='content'>
-    <div class="webinfo">
-      
-        <div class="webinfo-item">
-          <div>文章数目：</div>
-          <div>83 篇</div>
-        </div>
-      
-
-      
-        <div class="webinfo-item">
-          <div>已运行时间：</div>
-          <div id="webinfo-runtime-count"></div>
-        </div>
-      
-
-
-      
-
-      
-        <div class="webinfo-item">
-          <div>本站访客数：</div>
-          
-          <div><span id="busuanzi_value_site_uv"><i class="fa-solid fa-fan fa-spin fa-fw" aria-hidden="true"></i></span> 人</div>
-          
-        </div>
-      
-
-      
-        <div class="webinfo-item">
-          <div>本站总访问量：</div>
-          
-          <div><span id="busuanzi_value_site_pv"><i class="fa-solid fa-fan fa-spin fa-fw" aria-hidden="true"></i></span> 次</div>
-          
-        </div>
-      
-
-      
-        <div class="webinfo-item">
-          <div>最后活动时间：</div>
-          <div id="last-update-show">2024-02-26 日</div>
-        </div>
-      
-    </div>
-  </div>
-</section>
-
-    
-  
-
-  
-    
-    
-      
-
-<section class="widget desktop mobile pjax">
-  
-  <header>
-    
-      <i class="fa-solid fa-clock WISTERIA fa-fw" aria-hidden="true"></i><span class='name'>最近更新</span>
-    
-  </header>
-
-
-  <div class='content'>
-    <ul class="list entry navigation"><li><a class="widget-last" href="/2024/01/02/RetinaFace+Jetson%20Nano(2)/"><div class="item"><time>2024-02-26</time><span>Jetson Nano</span></div><span>基于RetinaFace+Jetson Nano的智能门锁系统——第二篇（配置环境）</span></a></li><li><a class="widget-last" href="/2024/01/02/RetinaFace+Jetson%20Nano(1)/"><div class="item"><time>2024-02-26</time><span>Jetson Nano</span></div><span>基于RetinaFace+Jetson Nano的智能门锁系统——第一篇（烧录系统）</span></a></li><li><a class="widget-last" href="/2023/04/26/FPGA_Verilog%20HDL_AC620%E9%9B%B6%E5%9F%BA%E7%A1%80%E5%85%A5%E9%97%A8%E5%AD%A6%E4%B9%A0%E2%80%94%E2%80%94%E6%A0%BC%E9%9B%B7%E7%A0%81%E8%AE%A1%E6%95%B0%E5%99%A8%E5%AE%9E%E9%AA%8C/"><div class="item"><time>2023-05-22</time><span>FPGA</span></div><span>FPGA_Verilog HDL_AC620零基础入门学习——格雷码计数器实验</span></a></li><li><a class="widget-last" href="/2023/02/14/AxMath%E4%BD%BF%E7%94%A8%E6%95%99%E7%A8%8B+%E5%B8%B8%E7%94%A8%E7%AC%A6%E5%8F%B7%E4%B8%8E%E5%85%AC%E5%BC%8F%EF%BC%88%E6%8C%81%E7%BB%AD%E6%9B%B4%E6%96%B0%E4%B8%AD%EF%BC%89/"><div class="item"><time>2023-04-29</time><span>Latex</span></div><span>AxMath使用教程+常用符号与公式（持续更新中）</span></a></li><li><a class="widget-last" href="/2023/04/11/%E5%AD%A6%E4%B9%A0%E9%80%9A%E4%BF%A1%E5%8E%9F%E7%90%86%E4%B9%8B%E2%80%94%E2%80%94%E5%BD%BB%E5%BA%95%E7%90%86%E8%A7%A3%E9%A2%91%E8%B0%B1%E5%92%8C%E9%A2%91%E8%B0%B1%E5%AF%86%E5%BA%A6/"><div class="item"><time>2023-04-11</time><span>学习通信原理</span></div><span>学习通信原理之——彻底理解频谱和频谱密度</span></a></li></ul>
-  </div>
-</section>
-
     
   
 
 
 <div class="widget-sticky pjax">
 
+  
+  
+
+
+  <section class="widget toc-wrapper desktop mobile " id="toc-div" >
+    
+  <header>
+    
+      <i class="fa-solid fa-list fa-fw" aria-hidden="true"></i><span class='name'>本文目录</span>
+    
+  </header>
+
+
+    <div class='content'>
+        <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%B8%8B%E8%BD%BDwinscp"><span class="toc-text">2.1下载WinScp</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E8%BF%9E%E6%8E%A5%E6%88%90%E5%8A%9F"><span class="toc-text">2.3连接成功</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%B8%8B%E8%BD%BDvnc-viewer"><span class="toc-text">3.1下载VNC Viewer</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E8%AE%BE%E7%BD%AEvino%E7%99%BB%E5%BD%95%E9%80%89%E9%A1%B9"><span class="toc-text">3.3设置VINO登录选项</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%B0%86%E7%BD%91%E5%8D%A1%E5%8A%A0%E5%85%A5vino%E6%9C%8D%E5%8A%A1"><span class="toc-text">3.4将网卡加入VINO服务</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%9C%A8jetson-nano%E4%B8%8A%E5%90%AF%E5%8A%A8vino"><span class="toc-text">3.5在Jetson Nano上启动VINO</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%9C%A8pc%E7%AB%AF%E8%BF%9E%E6%8E%A5jetson-nano"><span class="toc-text">3.6在PC端连接Jetson Nano</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%8D%87%E7%BA%A7pip"><span class="toc-text">4.2升级pip</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%8D%A2%E6%BA%90"><span class="toc-text">4.3换源</span></a></li></ol>
+    </div>
+  </section>
+
+  
+
 </div>
 
 
 <!-- 没有 pjax 占位会报错 万恶的 pjax -->
+
+  <div class="pjax">
+    <!-- pjax占位 -->
+  </div>
+
+  <div class="pjax">
+    <!-- pjax占位 -->
+  </div>
+
+  <div class="pjax">
+    <!-- pjax占位 -->
+  </div>
+
+  <div class="pjax">
+    <!-- pjax占位 -->
+  </div>
+
+  <div class="pjax">
+    <!-- pjax占位 -->
+  </div>
 
   <div class="pjax">
     <!-- pjax占位 -->
@@ -4130,7 +2872,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
 <pjax>
 <script>
   window.pdata={}
-  pdata.ispage=false;
+  pdata.ispage=true;
   pdata.commentPath="";
   pdata.commentPlaceholder="";
   pdata.commentConfig={};
@@ -4798,7 +3540,7 @@ target="_blank" rel="noopener" href="https://creativecommons.org/licenses/by-nc-
 </script>
 
 
-  <script type="application/ld+json">[{"@context":"http://schema.org","@type":"Organization","name":"MengFanjun的博客","url":"https://mengfanjun020906.github.io/","logo":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}},{"@context":"http://schema.org","@type":"Person","name":"MengFanjun","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png"},"url":"https://mengfanjun020906.github.io/","sameAs":["https://github.com/volantis-x"],"description":"20级通信工程大学生的个人博客"},{"@context":"http://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"item":{"@id":"https://mengfanjun020906.github.io/","name":"MengFanjun的博客"}},{"@type":"ListItem","position":2,"item":{"@id":"https://mengfanjun020906.github.io/archives/","name":"Archive"}}]},{"@context":"http://schema.org","@type":"WebSite","name":"MengFanjun的博客","url":"https://mengfanjun020906.github.io/","keywords":null,"description":"20级通信工程大学生的个人博客","author":{"@type":"Person","name":"MengFanjun","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png"},"url":"https://mengfanjun020906.github.io/","description":"20级通信工程大学生的个人博客"},"publisher":{"@type":"Organization","name":"MengFanjun的博客","url":"https://mengfanjun020906.github.io/","logo":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}},"potentialAction":{"@type":"SearchAction","name":"Site Search","target":{"@type":"EntryPoint","urlTemplate":"https://mengfanjun020906.github.io?s={search_term_string}"},"query-input":"required name=search_term_string"}},{"@context":"http://schema.org","@type":"BlogPosting","description":"20级通信工程大学生的个人博客","inLanguage":"en","mainEntityOfPage":{"@type":"WebPage"},"author":{"@type":"Person","name":"MengFanjun","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png"},"url":"https://mengfanjun020906.github.io/"},"publisher":{"@type":"Organization","name":"MengFanjun的博客","logo":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}},"wordCount":0,"image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}}]</script>
+  <script type="application/ld+json">[{"@context":"http://schema.org","@type":"Organization","name":"MengFanjun的博客","url":"https://mengfanjun020906.github.io/","logo":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}},{"@context":"http://schema.org","@type":"Person","name":"MengFanjun","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png"},"url":"https://mengfanjun020906.github.io/","sameAs":["https://github.com/volantis-x"],"description":"20级通信工程大学生的个人博客"},{"@context":"http://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"item":{"@id":"https://mengfanjun020906.github.io/","name":"MengFanjun的博客"}},{"@type":"ListItem","position":2,"item":{"@id":"https://mengfanjun020906.github.io/categories/Jetson-Nano/","name":"Jetson Nano"}},{"@type":"ListItem","position":3,"item":{"@id":"https://mengfanjun020906.github.io/2024/01/02/RetinaFace+Jetson Nano(2)/","name":"基于RetinaFace+Jetson Nano的智能门锁系统——第二篇（配置环境）"}}]},{"@context":"http://schema.org","@type":"WebSite","name":"MengFanjun的博客","url":"https://mengfanjun020906.github.io/","keywords":null,"description":"20级通信工程大学生的个人博客","author":{"@type":"Person","name":"MengFanjun","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png"},"url":"https://mengfanjun020906.github.io/","description":"20级通信工程大学生的个人博客"},"publisher":{"@type":"Organization","name":"MengFanjun的博客","url":"https://mengfanjun020906.github.io/","logo":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}},"potentialAction":{"@type":"SearchAction","name":"Site Search","target":{"@type":"EntryPoint","urlTemplate":"https://mengfanjun020906.github.io?s={search_term_string}"},"query-input":"required name=search_term_string"}},{"@context":"http://schema.org","@type":"BlogPosting","headline":"基于RetinaFace+Jetson Nano的智能门锁系统——第二篇（配置环境）","description":"20级通信工程大学生的个人博客","inLanguage":"en","mainEntityOfPage":{"@type":"WebPage","@id":"https://mengfanjun020906.github.io/2024/01/02/RetinaFace+Jetson%20Nano(2)/"},"author":{"@type":"Person","name":"MengFanjun","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png"},"url":"https://mengfanjun020906.github.io/"},"publisher":{"@type":"Organization","name":"MengFanjun的博客","logo":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}},"url":"https://mengfanjun020906.github.io/2024/01/02/RetinaFace+Jetson%20Nano(2)/","wordCount":0,"datePublished":"2024-01-02T10:41:39.000Z","dateModified":"2024-02-26T12:05:07.732Z","articleSection":"Jetson Nano","keywords":"机器学习,嵌入式硬件,人工智能,ubuntu,linux","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}}]</script>
 
 
 
