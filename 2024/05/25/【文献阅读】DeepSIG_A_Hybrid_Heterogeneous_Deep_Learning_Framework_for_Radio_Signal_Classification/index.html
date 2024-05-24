@@ -1,0 +1,3945 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head hexo-theme='https://github.com/volantis-x/hexo-theme-volantis/#5.7.7'>
+  <meta name="generator" content="Hexo 5.4.2">
+  <meta name="Volantis" content="5.7.7">
+  <meta charset="utf-8">
+  <!-- SEO相关 -->
+  
+  <link rel="canonical" href="https://mengfanjun020906.github.io/2024/05/25/【文献阅读】deepsig_a_hybrid_heterogeneous_deep_learning_framework_for_radio_signal_classification/"/>
+  <!-- 渲染优化 -->
+    <meta http-equiv='x-dns-prefetch-control' content='on' />
+      <link rel='dns-prefetch' href='https://unpkg.com'>
+      <link rel="preconnect" href="https://unpkg.com" crossorigin>
+  <meta name="renderer" content="webkit">
+  <meta name="force-rendering" content="webkit">
+  <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1">
+    <meta http-equiv="Content-Security-Policy" content=" default-src 'self' https:; block-all-mixed-content; base-uri 'self' https:; form-action 'self' https:; worker-src 'self' https:; connect-src 'self' https: *; img-src 'self' data: https: *; media-src 'self' https: *; font-src 'self' data: https: *; frame-src 'self' https: *; manifest-src 'self' https: *; child-src https:; script-src 'self' https: 'unsafe-inline' *; style-src 'self' https: 'unsafe-inline' *; ">
+  <meta name="HandheldFriendly" content="True" >
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=5">
+  <meta content="black-translucent" name="apple-mobile-web-app-status-bar-style">
+  <meta content="telephone=no" name="format-detection">
+  <!-- import head_begin begin -->
+  <!-- import head_begin end -->
+  <!-- Custom Files headBegin begin-->
+  
+  <!-- Custom Files headBegin end-->
+    <link rel="shortcut icon" type='image/x-icon' href="https://pic.imgdb.cn/item/640ad0cdf144a01007830622.png">
+  <link rel="preload" href="/css/style.css" as="style">
+  <link rel="preload" href="https://unpkg.com/volantis-static@0.0.1654736714924/media/fonts/VarelaRound/VarelaRound-Regular.ttf" as="font" type="font/ttf" crossorigin="anonymous">
+<link rel="preload" href="https://unpkg.com/volantis-static@0.0.1654736714924/media/fonts/UbuntuMono/UbuntuMono-Regular.ttf" as="font" type="font/ttf" crossorigin="anonymous">
+
+  <!-- feed -->
+  <!-- 页面元数据 -->
+  <title>【文献阅读】DeepSIG_A_Hybrid_Heterogeneous_Deep_Learning_Framework_for_Radio_Signal_Classification - MengFanjun的博客</title>
+  <meta name="keywords" content="学习,文献,研究所,null">
+  <meta desc name="description" content="20级通信工程大学生的个人博客 - MengFanjun - MengFanjun的博客">
+  
+<meta property="og:type" content="article">
+<meta property="og:title" content="【文献阅读】DeepSIG_A_Hybrid_Heterogeneous_Deep_Learning_Framework_for_Radio_Signal_Classification">
+<meta property="og:url" content="https://mengfanjun020906.github.io/2024/05/25/%E3%80%90%E6%96%87%E7%8C%AE%E9%98%85%E8%AF%BB%E3%80%91DeepSIG_A_Hybrid_Heterogeneous_Deep_Learning_Framework_for_Radio_Signal_Classification/index.html">
+<meta property="og:site_name" content="MengFanjun的博客">
+<meta property="og:description" content="缩写词 AMC：automatic modulation classification ，自动调制分类。 SIG：S for Sequence, I for Image and G for Graph。 LFGM：Limited Fixed Graph Mapping # 摘要 目的：为了处理异构输入格式的无线电信号，文章提出了一种名为DeepSIG的混合异构调制分类架构，该架构将递归神经网络（R">
+<meta property="og:locale" content="en_US">
+<meta property="og:image" content="https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png">
+<meta property="article:published_time" content="2024-05-25T03:49:26.000Z">
+<meta property="article:modified_time" content="2024-05-24T04:31:48.709Z">
+<meta property="article:author" content="MengFanjun">
+<meta property="article:tag" content="学习">
+<meta property="article:tag" content="文献">
+<meta property="article:tag" content="研究所">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png">
+  <style>
+    /* 首屏样式 */
+    #safearea {
+  display: none;
+}
+:root {
+  --color-site-body: #f4f4f4;
+  --color-site-bg: #f4f4f4;
+  --color-site-inner: #fff;
+  --color-site-footer: #fff;
+  --color-card: #fff;
+  --color-text: #444;
+  --color-block: #f6f6f6;
+  --color-inlinecode: #d56d28;
+  --color-codeblock: #f6f6f6;
+  --color-h1: #444;
+  --color-h2: #444;
+  --color-h3: #444;
+  --color-h4: #444;
+  --color-h5: #444;
+  --color-h6: #444;
+  --color-p: #444;
+  --color-list: #666;
+  --color-list-hl: #36ac91;
+  --color-meta: #888;
+  --color-read-bkg: #e0d8c8;
+  --color-read-post: #f8f1e2;
+  --color-copyright-bkg: #f5f5f5;
+}
+* {
+  box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  outline: none;
+  margin: 0;
+  padding: 0;
+}
+*::-webkit-scrollbar {
+  height: 4px;
+  width: 4px;
+}
+*::-webkit-scrollbar-track-piece {
+  background: transparent;
+}
+*::-webkit-scrollbar-thumb {
+  background: #44d7b6;
+  cursor: pointer;
+  border-radius: 2px;
+  -webkit-border-radius: 2px;
+}
+*::-webkit-scrollbar-thumb:hover {
+  background: #ff5722;
+}
+html {
+  color: var(--color-text);
+  width: 100%;
+  height: 100%;
+  font-family: UbuntuMono, "Varela Round", "PingFang SC", "Microsoft YaHei", Helvetica, Arial, Menlo, Monaco, monospace, sans-serif;
+  font-size: 16px;
+}
+html >::-webkit-scrollbar {
+  height: 4px;
+  width: 4px;
+}
+html >::-webkit-scrollbar-track-piece {
+  background: transparent;
+}
+html >::-webkit-scrollbar-thumb {
+  background: #44d7b6;
+  cursor: pointer;
+  border-radius: 2px;
+  -webkit-border-radius: 2px;
+}
+html >::-webkit-scrollbar-thumb:hover {
+  background: #ff5722;
+}
+body {
+  background-color: var(--color-site-body);
+  text-rendering: optimizelegibility;
+  -webkit-tap-highlight-color: rgba(0,0,0,0);
+  line-height: 1.6;
+  -webkit-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%;
+}
+body.modal-active {
+  overflow: hidden;
+}
+@media screen and (max-width: 680px) {
+  body.modal-active {
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+  }
+}
+a {
+  color: #2196f3;
+  cursor: pointer;
+  text-decoration: none;
+  transition: all 0.28s ease;
+  -webkit-transition: all 0.28s ease;
+  -khtml-transition: all 0.28s ease;
+  -moz-transition: all 0.28s ease;
+  -o-transition: all 0.28s ease;
+  -ms-transition: all 0.28s ease;
+}
+a:hover {
+  color: #ff5722;
+}
+a:active,
+a:hover {
+  outline: 0;
+}
+ul,
+ol {
+  padding-left: 0;
+}
+ul li,
+ol li {
+  list-style: none;
+}
+header {
+  display: -webkit-box /* OLD - iOS 6-, Safari 3.1-6 */;
+  display: -moz-box /* OLD - Firefox 19- (buggy but mostly works) */;
+  display: block;
+}
+img {
+  border: 0;
+  background: none;
+  max-width: 100%;
+}
+svg:not(:root) {
+  overflow: hidden;
+}
+hr {
+  -moz-box-sizing: content-box;
+  box-sizing: content-box;
+  -webkit-box-sizing: content-box;
+  -moz-box-sizing: content-box;
+  height: 0;
+  border: 0;
+  border-radius: 1px;
+  -webkit-border-radius: 1px;
+  border-bottom: 1px solid rgba(68,68,68,0.1);
+}
+button,
+input {
+  color: inherit;
+  font: inherit;
+  margin: 0;
+}
+button {
+  overflow: visible;
+  text-transform: none;
+  -webkit-appearance: button;
+  cursor: pointer;
+}
+@supports (backdrop-filter: blur(20px)) {
+  .blur {
+    background: rgba(255,255,255,0.9) !important;
+    backdrop-filter: saturate(200%) blur(20px);
+  }
+}
+.shadow {
+  box-shadow: 0 1px 2px 0px rgba(0,0,0,0.1);
+  -webkit-box-shadow: 0 1px 2px 0px rgba(0,0,0,0.1);
+}
+.shadow.floatable {
+  transition: all 0.28s ease;
+  -webkit-transition: all 0.28s ease;
+  -khtml-transition: all 0.28s ease;
+  -moz-transition: all 0.28s ease;
+  -o-transition: all 0.28s ease;
+  -ms-transition: all 0.28s ease;
+}
+.shadow.floatable:hover {
+  box-shadow: 0 2px 4px 0px rgba(0,0,0,0.1), 0 4px 8px 0px rgba(0,0,0,0.1), 0 8px 16px 0px rgba(0,0,0,0.1);
+  -webkit-box-shadow: 0 2px 4px 0px rgba(0,0,0,0.1), 0 4px 8px 0px rgba(0,0,0,0.1), 0 8px 16px 0px rgba(0,0,0,0.1);
+}
+#l_cover {
+  min-height: 64px;
+}
+.cover-wrapper {
+  top: 0;
+  left: 0;
+  max-width: 100%;
+  height: 100vh;
+  display: -webkit-box /* OLD - iOS 6-, Safari 3.1-6 */;
+  display: -moz-box /* OLD - Firefox 19- (buggy but mostly works) */;
+  display: -ms-flexbox /* TWEENER - IE 10 */;
+  display: -webkit-flex /* NEW - Chrome */;
+  display: flex /* NEW, Spec - Opera 12.1, Firefox 20+ */;
+  display: flex;
+  flex-wrap: nowrap;
+  -webkit-flex-wrap: nowrap;
+  -khtml-flex-wrap: nowrap;
+  -moz-flex-wrap: nowrap;
+  -o-flex-wrap: nowrap;
+  -ms-flex-wrap: nowrap;
+  -webkit-box-direction: normal;
+  -moz-box-direction: normal;
+  -webkit-box-orient: vertical;
+  -moz-box-orient: vertical;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  align-items: center;
+  align-self: center;
+  align-content: center;
+  color: var(--color-site-inner);
+  padding: 0 16px;
+  user-select: none;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  position: relative;
+  overflow: hidden;
+  margin-bottom: -100px;
+}
+.cover-wrapper .cover-body {
+  z-index: 1;
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+.cover-wrapper#full {
+  height: calc(100vh + 100px);
+  padding-bottom: 100px;
+}
+.cover-wrapper#half {
+  max-height: 640px;
+  min-height: 400px;
+  height: calc(36vh - 64px + 200px);
+}
+.cover-wrapper #scroll-down {
+  width: 100%;
+  height: 64px;
+  position: absolute;
+  bottom: 100px;
+  text-align: center;
+  cursor: pointer;
+}
+.cover-wrapper #scroll-down .scroll-down-effects {
+  color: #fff;
+  font-size: 24px;
+  line-height: 64px;
+  position: absolute;
+  width: 24px;
+  left: calc(50% - 12px);
+  text-shadow: 0 1px 2px rgba(0,0,0,0.1);
+  animation: scroll-down-effect 1.5s infinite;
+  -webkit-animation: scroll-down-effect 1.5s infinite;
+  -khtml-animation: scroll-down-effect 1.5s infinite;
+  -moz-animation: scroll-down-effect 1.5s infinite;
+  -o-animation: scroll-down-effect 1.5s infinite;
+  -ms-animation: scroll-down-effect 1.5s infinite;
+}
+@-moz-keyframes scroll-down-effect {
+  0% {
+    top: 0;
+    opacity: 1;
+    -webkit-opacity: 1;
+    -moz-opacity: 1;
+  }
+  50% {
+    top: -16px;
+    opacity: 0.4;
+    -webkit-opacity: 0.4;
+    -moz-opacity: 0.4;
+  }
+  100% {
+    top: 0;
+    opacity: 1;
+    -webkit-opacity: 1;
+    -moz-opacity: 1;
+  }
+}
+@-webkit-keyframes scroll-down-effect {
+  0% {
+    top: 0;
+    opacity: 1;
+    -webkit-opacity: 1;
+    -moz-opacity: 1;
+  }
+  50% {
+    top: -16px;
+    opacity: 0.4;
+    -webkit-opacity: 0.4;
+    -moz-opacity: 0.4;
+  }
+  100% {
+    top: 0;
+    opacity: 1;
+    -webkit-opacity: 1;
+    -moz-opacity: 1;
+  }
+}
+@-o-keyframes scroll-down-effect {
+  0% {
+    top: 0;
+    opacity: 1;
+    -webkit-opacity: 1;
+    -moz-opacity: 1;
+  }
+  50% {
+    top: -16px;
+    opacity: 0.4;
+    -webkit-opacity: 0.4;
+    -moz-opacity: 0.4;
+  }
+  100% {
+    top: 0;
+    opacity: 1;
+    -webkit-opacity: 1;
+    -moz-opacity: 1;
+  }
+}
+@keyframes scroll-down-effect {
+  0% {
+    top: 0;
+    opacity: 1;
+    -webkit-opacity: 1;
+    -moz-opacity: 1;
+  }
+  50% {
+    top: -16px;
+    opacity: 0.4;
+    -webkit-opacity: 0.4;
+    -moz-opacity: 0.4;
+  }
+  100% {
+    top: 0;
+    opacity: 1;
+    -webkit-opacity: 1;
+    -moz-opacity: 1;
+  }
+}
+.cover-wrapper .cover-body {
+  margin-top: 64px;
+  margin-bottom: 100px;
+}
+.cover-wrapper .cover-body,
+.cover-wrapper .cover-body .top,
+.cover-wrapper .cover-body .bottom {
+  display: -webkit-box /* OLD - iOS 6-, Safari 3.1-6 */;
+  display: -moz-box /* OLD - Firefox 19- (buggy but mostly works) */;
+  display: -ms-flexbox /* TWEENER - IE 10 */;
+  display: -webkit-flex /* NEW - Chrome */;
+  display: flex /* NEW, Spec - Opera 12.1, Firefox 20+ */;
+  display: flex;
+  -webkit-box-direction: normal;
+  -moz-box-direction: normal;
+  -webkit-box-orient: vertical;
+  -moz-box-orient: vertical;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  -webkit-justify-content: center;
+  -khtml-justify-content: center;
+  -moz-justify-content: center;
+  -o-justify-content: center;
+  -ms-justify-content: center;
+  max-width: 100%;
+}
+.cover-wrapper .cover-body .bottom {
+  margin-top: 32px;
+}
+.cover-wrapper .cover-body .title {
+  font-family: "Varela Round", "PingFang SC", "Microsoft YaHei", Helvetica, Arial, Helvetica, monospace;
+  font-size: 3.125rem;
+  line-height: 1.2;
+  text-shadow: 0 1px 2px rgba(0,0,0,0.1);
+}
+.cover-wrapper .cover-body .subtitle {
+  font-size: 20px;
+}
+.cover-wrapper .cover-body .logo {
+  max-height: 120px;
+  max-width: calc(100% - 4 * 16px);
+}
+@media screen and (min-height: 1024px) {
+  .cover-wrapper .cover-body .title {
+    font-size: 3rem;
+  }
+  .cover-wrapper .cover-body .subtitle {
+    font-size: 1.05rem;
+  }
+  .cover-wrapper .cover-body .logo {
+    max-height: 150px;
+  }
+}
+.cover-wrapper .cover-body .m_search {
+  position: relative;
+  max-width: calc(100% - 16px);
+  width: 320px;
+  vertical-align: middle;
+}
+.cover-wrapper .cover-body .m_search .form {
+  position: relative;
+  display: -webkit-box /* OLD - iOS 6-, Safari 3.1-6 */;
+  display: -moz-box /* OLD - Firefox 19- (buggy but mostly works) */;
+  display: block;
+  width: 100%;
+}
+.cover-wrapper .cover-body .m_search .icon,
+.cover-wrapper .cover-body .m_search .input {
+  transition: all 0.28s ease;
+  -webkit-transition: all 0.28s ease;
+  -khtml-transition: all 0.28s ease;
+  -moz-transition: all 0.28s ease;
+  -o-transition: all 0.28s ease;
+  -ms-transition: all 0.28s ease;
+}
+.cover-wrapper .cover-body .m_search .icon {
+  position: absolute;
+  display: -webkit-box /* OLD - iOS 6-, Safari 3.1-6 */;
+  display: -moz-box /* OLD - Firefox 19- (buggy but mostly works) */;
+  display: block;
+  line-height: 2.5rem;
+  width: 32px;
+  top: 0;
+  left: 5px;
+  color: rgba(68,68,68,0.75);
+}
+.cover-wrapper .cover-body .m_search .input {
+  display: -webkit-box /* OLD - iOS 6-, Safari 3.1-6 */;
+  display: -moz-box /* OLD - Firefox 19- (buggy but mostly works) */;
+  display: block;
+  height: 2.5rem;
+  width: 100%;
+  box-shadow: none;
+  -webkit-box-shadow: none;
+  box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  font-size: 0.875rem;
+  -webkit-appearance: none;
+  padding-left: 36px;
+  border-radius: 1.4rem;
+  -webkit-border-radius: 1.4rem;
+  background: rgba(255,255,255,0.6);
+  backdrop-filter: blur(10px);
+  border: none;
+  color: var(--color-text);
+}
+@media screen and (max-width: 500px) {
+  .cover-wrapper .cover-body .m_search .input {
+    padding-left: 36px;
+  }
+}
+.cover-wrapper .cover-body .m_search .input:hover {
+  background: rgba(255,255,255,0.8);
+}
+.cover-wrapper .cover-body .m_search .input:focus {
+  background: #fff;
+}
+.cover-wrapper .list-h {
+  display: -webkit-box /* OLD - iOS 6-, Safari 3.1-6 */;
+  display: -moz-box /* OLD - Firefox 19- (buggy but mostly works) */;
+  display: -ms-flexbox /* TWEENER - IE 10 */;
+  display: -webkit-flex /* NEW - Chrome */;
+  display: flex /* NEW, Spec - Opera 12.1, Firefox 20+ */;
+  display: flex;
+  -webkit-box-direction: normal;
+  -moz-box-direction: normal;
+  -webkit-box-orient: horizontal;
+  -moz-box-orient: horizontal;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  flex-wrap: wrap;
+  -webkit-flex-wrap: wrap;
+  -khtml-flex-wrap: wrap;
+  -moz-flex-wrap: wrap;
+  -o-flex-wrap: wrap;
+  -ms-flex-wrap: wrap;
+  align-items: stretch;
+  border-radius: 4px;
+  -webkit-border-radius: 4px;
+  user-select: none;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+}
+.cover-wrapper .list-h a {
+  -webkit-box-flex: 1;
+  -moz-box-flex: 1;
+  -webkit-flex: 1 0;
+  -ms-flex: 1 0;
+  flex: 1 0;
+  display: -webkit-box /* OLD - iOS 6-, Safari 3.1-6 */;
+  display: -moz-box /* OLD - Firefox 19- (buggy but mostly works) */;
+  display: -ms-flexbox /* TWEENER - IE 10 */;
+  display: -webkit-flex /* NEW - Chrome */;
+  display: flex /* NEW, Spec - Opera 12.1, Firefox 20+ */;
+  display: flex;
+  font-weight: 600;
+}
+.cover-wrapper .list-h a img {
+  display: -webkit-box /* OLD - iOS 6-, Safari 3.1-6 */;
+  display: -moz-box /* OLD - Firefox 19- (buggy but mostly works) */;
+  display: block;
+  border-radius: 2px;
+  -webkit-border-radius: 2px;
+  margin: 4px;
+  min-width: 40px;
+  max-width: 44px;
+}
+@media screen and (max-width: 768px) {
+  .cover-wrapper .list-h a img {
+    min-width: 36px;
+    max-width: 40px;
+  }
+}
+@media screen and (max-width: 500px) {
+  .cover-wrapper .list-h a img {
+    margin: 2px 4px;
+    min-width: 32px;
+    max-width: 36px;
+  }
+}
+@media screen and (max-width: 375px) {
+  .cover-wrapper .list-h a img {
+    min-width: 28px;
+    max-width: 32px;
+  }
+}
+.cover-wrapper {
+  max-width: 100%;
+}
+.cover-wrapper.search .bottom .menu {
+  margin-top: 16px;
+}
+.cover-wrapper.search .bottom .menu .list-h a {
+  white-space: nowrap;
+  -webkit-box-direction: normal;
+  -moz-box-direction: normal;
+  -webkit-box-orient: horizontal;
+  -moz-box-orient: horizontal;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  align-items: baseline;
+  padding: 2px;
+  margin: 4px;
+  color: var(--color-site-inner);
+  opacity: 0.75;
+  -webkit-opacity: 0.75;
+  -moz-opacity: 0.75;
+  text-shadow: 0 1px 2px rgba(0,0,0,0.05);
+  border-bottom: 2px solid transparent;
+}
+.cover-wrapper.search .bottom .menu .list-h a i {
+  margin-right: 4px;
+}
+.cover-wrapper.search .bottom .menu .list-h a p {
+  font-size: 0.9375rem;
+}
+.cover-wrapper.search .bottom .menu .list-h a:hover,
+.cover-wrapper.search .bottom .menu .list-h a.active,
+.cover-wrapper.search .bottom .menu .list-h a:active {
+  opacity: 1;
+  -webkit-opacity: 1;
+  -moz-opacity: 1;
+  border-bottom: 2px solid var(--color-site-inner);
+}
+.cover-wrapper #parallax-window {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background: transparent;
+}
+.parallax-mirror {
+  animation-delay: 0s;
+  animation-duration: 0.5s;
+  animation-fill-mode: forwards;
+  animation-timing-function: ease-out;
+  animation-name: fadeIn;
+}
+@-moz-keyframes fadeIn {
+  0% {
+    opacity: 0;
+    -webkit-opacity: 0;
+    -moz-opacity: 0;
+    filter: blur(12px);
+  }
+  100% {
+    opacity: 1;
+    -webkit-opacity: 1;
+    -moz-opacity: 1;
+  }
+}
+@-webkit-keyframes fadeIn {
+  0% {
+    opacity: 0;
+    -webkit-opacity: 0;
+    -moz-opacity: 0;
+    filter: blur(12px);
+  }
+  100% {
+    opacity: 1;
+    -webkit-opacity: 1;
+    -moz-opacity: 1;
+  }
+}
+@-o-keyframes fadeIn {
+  0% {
+    opacity: 0;
+    -webkit-opacity: 0;
+    -moz-opacity: 0;
+    filter: blur(12px);
+  }
+  100% {
+    opacity: 1;
+    -webkit-opacity: 1;
+    -moz-opacity: 1;
+  }
+}
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+    -webkit-opacity: 0;
+    -moz-opacity: 0;
+    filter: blur(12px);
+  }
+  100% {
+    opacity: 1;
+    -webkit-opacity: 1;
+    -moz-opacity: 1;
+  }
+}
+@font-face {
+  font-family: 'UbuntuMono';
+  src: url("https://unpkg.com/volantis-static@0.0.1654736714924/media/fonts/UbuntuMono/UbuntuMono-Regular.ttf");
+  font-weight: 'normal';
+  font-style: 'normal';
+  font-display: swap;
+}
+@font-face {
+  font-family: 'Varela Round';
+  src: url("https://unpkg.com/volantis-static@0.0.1654736714924/media/fonts/VarelaRound/VarelaRound-Regular.ttf");
+  font-weight: 'normal';
+  font-style: 'normal';
+  font-display: swap;
+}
+.l_header {
+  position: fixed;
+  z-index: 1000;
+  top: 0;
+  width: 100%;
+  height: 64px;
+  background: var(--color-card);
+  box-shadow: 0 1px 2px 0px rgba(0,0,0,0.1);
+  -webkit-box-shadow: 0 1px 2px 0px rgba(0,0,0,0.1);
+}
+.l_header.auto {
+  transition: opacity 0.4s ease;
+  -webkit-transition: opacity 0.4s ease;
+  -khtml-transition: opacity 0.4s ease;
+  -moz-transition: opacity 0.4s ease;
+  -o-transition: opacity 0.4s ease;
+  -ms-transition: opacity 0.4s ease;
+  visibility: hidden;
+}
+.l_header.auto.show {
+  opacity: 1 !important;
+  -webkit-opacity: 1 !important;
+  -moz-opacity: 1 !important;
+  visibility: visible;
+}
+.l_header .container {
+  margin-left: 16px;
+  margin-right: 16px;
+}
+.l_header #wrapper {
+  height: 100%;
+  user-select: none;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+}
+.l_header #wrapper .nav-main,
+.l_header #wrapper .nav-sub {
+  display: -webkit-box /* OLD - iOS 6-, Safari 3.1-6 */;
+  display: -moz-box /* OLD - Firefox 19- (buggy but mostly works) */;
+  display: -ms-flexbox /* TWEENER - IE 10 */;
+  display: -webkit-flex /* NEW - Chrome */;
+  display: flex /* NEW, Spec - Opera 12.1, Firefox 20+ */;
+  display: flex;
+  flex-wrap: nowrap;
+  -webkit-flex-wrap: nowrap;
+  -khtml-flex-wrap: nowrap;
+  -moz-flex-wrap: nowrap;
+  -o-flex-wrap: nowrap;
+  -ms-flex-wrap: nowrap;
+  justify-content: space-between;
+  -webkit-justify-content: space-between;
+  -khtml-justify-content: space-between;
+  -moz-justify-content: space-between;
+  -o-justify-content: space-between;
+  -ms-justify-content: space-between;
+  align-items: center;
+}
+.l_header #wrapper .nav-main {
+  transition: all 0.28s ease;
+  -webkit-transition: all 0.28s ease;
+  -khtml-transition: all 0.28s ease;
+  -moz-transition: all 0.28s ease;
+  -o-transition: all 0.28s ease;
+  -ms-transition: all 0.28s ease;
+}
+.l_header #wrapper.sub .nav-main {
+  transform: translateY(-64px);
+  -webkit-transform: translateY(-64px);
+  -khtml-transform: translateY(-64px);
+  -moz-transform: translateY(-64px);
+  -o-transform: translateY(-64px);
+  -ms-transform: translateY(-64px);
+}
+.l_header #wrapper .nav-sub {
+  transition: all 0.28s ease;
+  -webkit-transition: all 0.28s ease;
+  -khtml-transition: all 0.28s ease;
+  -moz-transition: all 0.28s ease;
+  -o-transition: all 0.28s ease;
+  -ms-transition: all 0.28s ease;
+  opacity: 0;
+  -webkit-opacity: 0;
+  -moz-opacity: 0;
+  height: 64px;
+  width: calc(100% - 2 * 16px);
+  position: absolute;
+}
+.l_header #wrapper .nav-sub ::-webkit-scrollbar {
+  display: -webkit-box /* OLD - iOS 6-, Safari 3.1-6 */;
+  display: -moz-box /* OLD - Firefox 19- (buggy but mostly works) */;
+  display: none;
+}
+@media screen and (min-width: 2048px) {
+  .l_header #wrapper .nav-sub {
+    max-width: 55vw;
+    margin: auto;
+  }
+}
+.l_header #wrapper.sub .nav-sub {
+  opacity: 1;
+  -webkit-opacity: 1;
+  -moz-opacity: 1;
+}
+.l_header #wrapper .title {
+  position: relative;
+  color: var(--color-text);
+  padding-left: 24px;
+  max-height: 64px;
+}
+.l_header #wrapper .nav-main .title {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  flex-shrink: 0;
+  line-height: 64px;
+  padding: 0 24px;
+  font-size: 1.25rem;
+  font-family: "Varela Round", "PingFang SC", "Microsoft YaHei", Helvetica, Arial, Helvetica, monospace;
+}
+.l_header #wrapper .nav-main .title img {
+  height: 64px;
+}
+.l_header .nav-sub {
+  max-width: 1080px;
+  margin: auto;
+}
+.l_header .nav-sub .title {
+  font-weight: bold;
+  font-family: UbuntuMono, "Varela Round", "PingFang SC", "Microsoft YaHei", Helvetica, Arial, Menlo, Monaco, monospace, sans-serif;
+  line-height: 1.2;
+  max-height: 64px;
+  white-space: normal;
+  flex-shrink: 1;
+}
+.l_header .switcher {
+  display: -webkit-box /* OLD - iOS 6-, Safari 3.1-6 */;
+  display: -moz-box /* OLD - Firefox 19- (buggy but mostly works) */;
+  display: none;
+  line-height: 64px;
+  align-items: center;
+}
+.l_header .switcher .s-toc {
+  display: -webkit-box /* OLD - iOS 6-, Safari 3.1-6 */;
+  display: -moz-box /* OLD - Firefox 19- (buggy but mostly works) */;
+  display: none;
+}
+@media screen and (max-width: 768px) {
+  .l_header .switcher .s-toc {
+    display: -webkit-box /* OLD - iOS 6-, Safari 3.1-6 */;
+    display: -moz-box /* OLD - Firefox 19- (buggy but mostly works) */;
+    display: -ms-flexbox /* TWEENER - IE 10 */;
+    display: -webkit-flex /* NEW - Chrome */;
+    display: flex /* NEW, Spec - Opera 12.1, Firefox 20+ */;
+    display: flex;
+  }
+}
+.l_header .switcher >li {
+  height: 48px;
+  transition: all 0.28s ease;
+  -webkit-transition: all 0.28s ease;
+  -khtml-transition: all 0.28s ease;
+  -moz-transition: all 0.28s ease;
+  -o-transition: all 0.28s ease;
+  -ms-transition: all 0.28s ease;
+  margin: 2px;
+}
+@media screen and (max-width: 500px) {
+  .l_header .switcher >li {
+    margin: 0 1px;
+    height: 48px;
+  }
+}
+.l_header .switcher >li >a {
+  display: -webkit-box /* OLD - iOS 6-, Safari 3.1-6 */;
+  display: -moz-box /* OLD - Firefox 19- (buggy but mostly works) */;
+  display: -ms-flexbox /* TWEENER - IE 10 */;
+  display: -webkit-flex /* NEW - Chrome */;
+  display: flex /* NEW, Spec - Opera 12.1, Firefox 20+ */;
+  display: flex;
+  justify-content: center;
+  -webkit-justify-content: center;
+  -khtml-justify-content: center;
+  -moz-justify-content: center;
+  -o-justify-content: center;
+  -ms-justify-content: center;
+  align-items: center;
+  width: 48px;
+  height: 48px;
+  padding: 0.85em 1.1em;
+  border-radius: 100px;
+  -webkit-border-radius: 100px;
+  border: none;
+  transition: all 0.28s ease;
+  -webkit-transition: all 0.28s ease;
+  -khtml-transition: all 0.28s ease;
+  -moz-transition: all 0.28s ease;
+  -o-transition: all 0.28s ease;
+  -ms-transition: all 0.28s ease;
+  color: #44d7b6;
+}
+.l_header .switcher >li >a:hover {
+  border: none;
+}
+.l_header .switcher >li >a.active,
+.l_header .switcher >li >a:active {
+  border: none;
+  background: var(--color-site-bg);
+}
+@media screen and (max-width: 500px) {
+  .l_header .switcher >li >a {
+    width: 36px;
+    height: 48px;
+  }
+}
+.l_header .nav-sub .switcher {
+  display: -webkit-box /* OLD - iOS 6-, Safari 3.1-6 */;
+  display: -moz-box /* OLD - Firefox 19- (buggy but mostly works) */;
+  display: -ms-flexbox /* TWEENER - IE 10 */;
+  display: -webkit-flex /* NEW - Chrome */;
+  display: flex /* NEW, Spec - Opera 12.1, Firefox 20+ */;
+  display: flex;
+}
+.l_header .m_search {
+  display: -webkit-box /* OLD - iOS 6-, Safari 3.1-6 */;
+  display: -moz-box /* OLD - Firefox 19- (buggy but mostly works) */;
+  display: -ms-flexbox /* TWEENER - IE 10 */;
+  display: -webkit-flex /* NEW - Chrome */;
+  display: flex /* NEW, Spec - Opera 12.1, Firefox 20+ */;
+  display: flex;
+  height: 64px;
+  width: 240px;
+  transition: all 0.28s ease;
+  -webkit-transition: all 0.28s ease;
+  -khtml-transition: all 0.28s ease;
+  -moz-transition: all 0.28s ease;
+  -o-transition: all 0.28s ease;
+  -ms-transition: all 0.28s ease;
+}
+@media screen and (max-width: 1024px) {
+  .l_header .m_search {
+    width: 44px;
+    min-width: 44px;
+  }
+  .l_header .m_search input::placeholder {
+    opacity: 0;
+    -webkit-opacity: 0;
+    -moz-opacity: 0;
+  }
+  .l_header .m_search:hover {
+    width: 240px;
+  }
+  .l_header .m_search:hover input::placeholder {
+    opacity: 1;
+    -webkit-opacity: 1;
+    -moz-opacity: 1;
+  }
+}
+@media screen and (min-width: 500px) {
+  .l_header .m_search:hover .input {
+    width: 100%;
+  }
+  .l_header .m_search:hover .input::placeholder {
+    opacity: 1;
+    -webkit-opacity: 1;
+    -moz-opacity: 1;
+  }
+}
+@media screen and (max-width: 500px) {
+  .l_header .m_search {
+    min-width: 0;
+  }
+  .l_header .m_search input::placeholder {
+    opacity: 1;
+    -webkit-opacity: 1;
+    -moz-opacity: 1;
+  }
+}
+.l_header .m_search .form {
+  position: relative;
+  display: -webkit-box /* OLD - iOS 6-, Safari 3.1-6 */;
+  display: -moz-box /* OLD - Firefox 19- (buggy but mostly works) */;
+  display: -ms-flexbox /* TWEENER - IE 10 */;
+  display: -webkit-flex /* NEW - Chrome */;
+  display: flex /* NEW, Spec - Opera 12.1, Firefox 20+ */;
+  display: flex;
+  width: 100%;
+  align-items: center;
+}
+.l_header .m_search .icon {
+  position: absolute;
+  width: 36px;
+  left: 5px;
+  color: var(--color-meta);
+}
+@media screen and (max-width: 500px) {
+  .l_header .m_search .icon {
+    display: -webkit-box /* OLD - iOS 6-, Safari 3.1-6 */;
+    display: -moz-box /* OLD - Firefox 19- (buggy but mostly works) */;
+    display: none;
+  }
+}
+.l_header .m_search .input {
+  display: -webkit-box /* OLD - iOS 6-, Safari 3.1-6 */;
+  display: -moz-box /* OLD - Firefox 19- (buggy but mostly works) */;
+  display: block;
+  padding-top: 8px;
+  padding-bottom: 8px;
+  line-height: 1.3;
+  width: 100%;
+  color: var(--color-text);
+  background: #fafafa;
+  box-shadow: none;
+  -webkit-box-shadow: none;
+  box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  padding-left: 40px;
+  font-size: 0.875rem;
+  border-radius: 8px;
+  -webkit-border-radius: 8px;
+  border: none;
+  transition: all 0.28s ease;
+  -webkit-transition: all 0.28s ease;
+  -khtml-transition: all 0.28s ease;
+  -moz-transition: all 0.28s ease;
+  -o-transition: all 0.28s ease;
+  -ms-transition: all 0.28s ease;
+}
+@media screen and (min-width: 500px) {
+  .l_header .m_search .input:focus {
+    box-shadow: 0 4px 8px 0px rgba(0,0,0,0.1);
+    -webkit-box-shadow: 0 4px 8px 0px rgba(0,0,0,0.1);
+  }
+}
+@media screen and (max-width: 500px) {
+  .l_header .m_search .input {
+    background: var(--color-block);
+    padding-left: 8px;
+    border: none;
+  }
+  .l_header .m_search .input:hover,
+  .l_header .m_search .input:focus {
+    border: none;
+  }
+}
+@media (max-width: 500px) {
+  .l_header .m_search {
+    left: 0;
+    width: 0;
+    overflow: hidden;
+    position: absolute;
+    background: #fff;
+    transition: all 0.28s ease;
+    -webkit-transition: all 0.28s ease;
+    -khtml-transition: all 0.28s ease;
+    -moz-transition: all 0.28s ease;
+    -o-transition: all 0.28s ease;
+    -ms-transition: all 0.28s ease;
+  }
+  .l_header .m_search .input {
+    border-radius: 32px;
+    -webkit-border-radius: 32px;
+    margin-left: 16px;
+    padding-left: 16px;
+  }
+  .l_header.z_search-open .m_search {
+    width: 100%;
+  }
+  .l_header.z_search-open .m_search .input {
+    width: calc(100% - 120px);
+  }
+}
+ul.m-pc >li>a {
+  color: inherit;
+  border-bottom: 2px solid transparent;
+}
+ul.m-pc >li>a:active,
+ul.m-pc >li>a.active {
+  border-bottom: 2px solid #44d7b6;
+}
+ul.m-pc li:hover >ul.list-v,
+ul.list-v li:hover >ul.list-v {
+  display: -webkit-box /* OLD - iOS 6-, Safari 3.1-6 */;
+  display: -moz-box /* OLD - Firefox 19- (buggy but mostly works) */;
+  display: block;
+}
+ul.nav-list-h {
+  display: -webkit-box /* OLD - iOS 6-, Safari 3.1-6 */;
+  display: -moz-box /* OLD - Firefox 19- (buggy but mostly works) */;
+  display: -ms-flexbox /* TWEENER - IE 10 */;
+  display: -webkit-flex /* NEW - Chrome */;
+  display: flex /* NEW, Spec - Opera 12.1, Firefox 20+ */;
+  display: flex;
+  align-items: stretch;
+}
+ul.nav-list-h>li {
+  position: relative;
+  justify-content: center;
+  -webkit-justify-content: center;
+  -khtml-justify-content: center;
+  -moz-justify-content: center;
+  -o-justify-content: center;
+  -ms-justify-content: center;
+  height: 100%;
+  line-height: 2.4;
+  border-radius: 4px;
+  -webkit-border-radius: 4px;
+}
+ul.nav-list-h>li >a {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  font-weight: 600;
+}
+ul.list-v {
+  z-index: 1;
+  display: -webkit-box /* OLD - iOS 6-, Safari 3.1-6 */;
+  display: -moz-box /* OLD - Firefox 19- (buggy but mostly works) */;
+  display: none;
+  position: absolute;
+  background: var(--color-card);
+  box-shadow: 0 2px 4px 0px rgba(0,0,0,0.08), 0 4px 8px 0px rgba(0,0,0,0.08), 0 8px 16px 0px rgba(0,0,0,0.08);
+  -webkit-box-shadow: 0 2px 4px 0px rgba(0,0,0,0.08), 0 4px 8px 0px rgba(0,0,0,0.08), 0 8px 16px 0px rgba(0,0,0,0.08);
+  margin-top: -6px;
+  border-radius: 4px;
+  -webkit-border-radius: 4px;
+  padding: 8px 0;
+}
+ul.list-v.show {
+  display: -webkit-box /* OLD - iOS 6-, Safari 3.1-6 */;
+  display: -moz-box /* OLD - Firefox 19- (buggy but mostly works) */;
+  display: block;
+}
+ul.list-v hr {
+  margin-top: 8px;
+  margin-bottom: 8px;
+}
+ul.list-v >li {
+  white-space: nowrap;
+  word-break: keep-all;
+}
+ul.list-v >li.header {
+  font-size: 0.78125rem;
+  font-weight: bold;
+  line-height: 2em;
+  color: var(--color-meta);
+  margin: 8px 16px 4px;
+}
+ul.list-v >li.header i {
+  margin-right: 8px;
+}
+ul.list-v >li ul {
+  margin-left: 0;
+  display: -webkit-box /* OLD - iOS 6-, Safari 3.1-6 */;
+  display: -moz-box /* OLD - Firefox 19- (buggy but mostly works) */;
+  display: none;
+  margin-top: -40px;
+}
+ul.list-v .aplayer-container {
+  min-height: 64px;
+  padding: 6px 16px;
+}
+ul.list-v >li>a {
+  transition: all 0.28s ease;
+  -webkit-transition: all 0.28s ease;
+  -khtml-transition: all 0.28s ease;
+  -moz-transition: all 0.28s ease;
+  -o-transition: all 0.28s ease;
+  -ms-transition: all 0.28s ease;
+  display: -webkit-box /* OLD - iOS 6-, Safari 3.1-6 */;
+  display: -moz-box /* OLD - Firefox 19- (buggy but mostly works) */;
+  display: block;
+  color: var(--color-list);
+  font-size: 0.875rem;
+  font-weight: bold;
+  line-height: 36px;
+  padding: 0 20px 0 16px;
+  text-overflow: ellipsis;
+  margin: 0 4px;
+  border-radius: 4px;
+  -webkit-border-radius: 4px;
+}
+@media screen and (max-width: 1024px) {
+  ul.list-v >li>a {
+    line-height: 40px;
+  }
+}
+ul.list-v >li>a >i {
+  margin-right: 8px;
+}
+ul.list-v >li>a:active,
+ul.list-v >li>a.active {
+  color: var(--color-list-hl);
+}
+ul.list-v >li>a:hover {
+  color: var(--color-list-hl);
+  background: var(--color-site-bg);
+}
+.l_header .menu >ul>li>a {
+  display: -webkit-box /* OLD - iOS 6-, Safari 3.1-6 */;
+  display: -moz-box /* OLD - Firefox 19- (buggy but mostly works) */;
+  display: block;
+  padding: 0 8px;
+}
+.l_header .menu >ul>li>a >i {
+  margin-right: 4px;
+}
+.l_header ul.nav-list-h>li {
+  color: var(--color-list);
+  line-height: 64px;
+}
+.l_header ul.nav-list-h>li >a {
+  max-height: 64px;
+  overflow: hidden;
+  color: inherit;
+}
+.l_header ul.nav-list-h>li >a:active,
+.l_header ul.nav-list-h>li >a.active {
+  color: #44d7b6;
+}
+.l_header ul.nav-list-h>li:hover>a {
+  color: var(--color-list-hl);
+}
+.l_header ul.nav-list-h>li i.music {
+  animation: rotate-effect 1.5s linear infinite;
+  -webkit-animation: rotate-effect 1.5s linear infinite;
+  -khtml-animation: rotate-effect 1.5s linear infinite;
+  -moz-animation: rotate-effect 1.5s linear infinite;
+  -o-animation: rotate-effect 1.5s linear infinite;
+  -ms-animation: rotate-effect 1.5s linear infinite;
+}
+@-moz-keyframes rotate-effect {
+  0% {
+    transform: rotate(0);
+    -webkit-transform: rotate(0);
+    -khtml-transform: rotate(0);
+    -moz-transform: rotate(0);
+    -o-transform: rotate(0);
+    -ms-transform: rotate(0);
+  }
+  25% {
+    transform: rotate(90deg);
+    -webkit-transform: rotate(90deg);
+    -khtml-transform: rotate(90deg);
+    -moz-transform: rotate(90deg);
+    -o-transform: rotate(90deg);
+    -ms-transform: rotate(90deg);
+  }
+  50% {
+    transform: rotate(180deg);
+    -webkit-transform: rotate(180deg);
+    -khtml-transform: rotate(180deg);
+    -moz-transform: rotate(180deg);
+    -o-transform: rotate(180deg);
+    -ms-transform: rotate(180deg);
+  }
+  75% {
+    transform: rotate(270deg);
+    -webkit-transform: rotate(270deg);
+    -khtml-transform: rotate(270deg);
+    -moz-transform: rotate(270deg);
+    -o-transform: rotate(270deg);
+    -ms-transform: rotate(270deg);
+  }
+  100% {
+    transform: rotate(360deg);
+    -webkit-transform: rotate(360deg);
+    -khtml-transform: rotate(360deg);
+    -moz-transform: rotate(360deg);
+    -o-transform: rotate(360deg);
+    -ms-transform: rotate(360deg);
+  }
+}
+@-webkit-keyframes rotate-effect {
+  0% {
+    transform: rotate(0);
+    -webkit-transform: rotate(0);
+    -khtml-transform: rotate(0);
+    -moz-transform: rotate(0);
+    -o-transform: rotate(0);
+    -ms-transform: rotate(0);
+  }
+  25% {
+    transform: rotate(90deg);
+    -webkit-transform: rotate(90deg);
+    -khtml-transform: rotate(90deg);
+    -moz-transform: rotate(90deg);
+    -o-transform: rotate(90deg);
+    -ms-transform: rotate(90deg);
+  }
+  50% {
+    transform: rotate(180deg);
+    -webkit-transform: rotate(180deg);
+    -khtml-transform: rotate(180deg);
+    -moz-transform: rotate(180deg);
+    -o-transform: rotate(180deg);
+    -ms-transform: rotate(180deg);
+  }
+  75% {
+    transform: rotate(270deg);
+    -webkit-transform: rotate(270deg);
+    -khtml-transform: rotate(270deg);
+    -moz-transform: rotate(270deg);
+    -o-transform: rotate(270deg);
+    -ms-transform: rotate(270deg);
+  }
+  100% {
+    transform: rotate(360deg);
+    -webkit-transform: rotate(360deg);
+    -khtml-transform: rotate(360deg);
+    -moz-transform: rotate(360deg);
+    -o-transform: rotate(360deg);
+    -ms-transform: rotate(360deg);
+  }
+}
+@-o-keyframes rotate-effect {
+  0% {
+    transform: rotate(0);
+    -webkit-transform: rotate(0);
+    -khtml-transform: rotate(0);
+    -moz-transform: rotate(0);
+    -o-transform: rotate(0);
+    -ms-transform: rotate(0);
+  }
+  25% {
+    transform: rotate(90deg);
+    -webkit-transform: rotate(90deg);
+    -khtml-transform: rotate(90deg);
+    -moz-transform: rotate(90deg);
+    -o-transform: rotate(90deg);
+    -ms-transform: rotate(90deg);
+  }
+  50% {
+    transform: rotate(180deg);
+    -webkit-transform: rotate(180deg);
+    -khtml-transform: rotate(180deg);
+    -moz-transform: rotate(180deg);
+    -o-transform: rotate(180deg);
+    -ms-transform: rotate(180deg);
+  }
+  75% {
+    transform: rotate(270deg);
+    -webkit-transform: rotate(270deg);
+    -khtml-transform: rotate(270deg);
+    -moz-transform: rotate(270deg);
+    -o-transform: rotate(270deg);
+    -ms-transform: rotate(270deg);
+  }
+  100% {
+    transform: rotate(360deg);
+    -webkit-transform: rotate(360deg);
+    -khtml-transform: rotate(360deg);
+    -moz-transform: rotate(360deg);
+    -o-transform: rotate(360deg);
+    -ms-transform: rotate(360deg);
+  }
+}
+@keyframes rotate-effect {
+  0% {
+    transform: rotate(0);
+    -webkit-transform: rotate(0);
+    -khtml-transform: rotate(0);
+    -moz-transform: rotate(0);
+    -o-transform: rotate(0);
+    -ms-transform: rotate(0);
+  }
+  25% {
+    transform: rotate(90deg);
+    -webkit-transform: rotate(90deg);
+    -khtml-transform: rotate(90deg);
+    -moz-transform: rotate(90deg);
+    -o-transform: rotate(90deg);
+    -ms-transform: rotate(90deg);
+  }
+  50% {
+    transform: rotate(180deg);
+    -webkit-transform: rotate(180deg);
+    -khtml-transform: rotate(180deg);
+    -moz-transform: rotate(180deg);
+    -o-transform: rotate(180deg);
+    -ms-transform: rotate(180deg);
+  }
+  75% {
+    transform: rotate(270deg);
+    -webkit-transform: rotate(270deg);
+    -khtml-transform: rotate(270deg);
+    -moz-transform: rotate(270deg);
+    -o-transform: rotate(270deg);
+    -ms-transform: rotate(270deg);
+  }
+  100% {
+    transform: rotate(360deg);
+    -webkit-transform: rotate(360deg);
+    -khtml-transform: rotate(360deg);
+    -moz-transform: rotate(360deg);
+    -o-transform: rotate(360deg);
+    -ms-transform: rotate(360deg);
+  }
+}
+.menu-phone li ul.list-v {
+  right: calc(100% - 0.5 * 16px);
+}
+.menu-phone li ul.list-v ul {
+  right: calc(100% - 0.5 * 16px);
+}
+#wrapper {
+  max-width: 1080px;
+  margin: auto;
+}
+@media screen and (min-width: 2048px) {
+  #wrapper {
+    max-width: 55vw;
+  }
+}
+#wrapper .menu {
+  -webkit-box-flex: 1;
+  -moz-box-flex: 1;
+  -webkit-flex: 1 1;
+  -ms-flex: 1 1;
+  flex: 1 1;
+  margin: 0 16px 0 0;
+}
+#wrapper .menu .list-v ul {
+  left: calc(100% - 0.5 * 16px);
+}
+.menu-phone {
+  display: -webkit-box /* OLD - iOS 6-, Safari 3.1-6 */;
+  display: -moz-box /* OLD - Firefox 19- (buggy but mostly works) */;
+  display: none;
+  margin-top: 16px;
+  right: 8px;
+  transition: all 0.28s ease;
+  -webkit-transition: all 0.28s ease;
+  -khtml-transition: all 0.28s ease;
+  -moz-transition: all 0.28s ease;
+  -o-transition: all 0.28s ease;
+  -ms-transition: all 0.28s ease;
+}
+.menu-phone ul {
+  right: calc(100% - 0.5 * 16px);
+}
+@media screen and (max-width: 500px) {
+  .menu-phone {
+    display: -webkit-box /* OLD - iOS 6-, Safari 3.1-6 */;
+    display: -moz-box /* OLD - Firefox 19- (buggy but mostly works) */;
+    display: block;
+  }
+}
+.l_header {
+  max-width: 65vw;
+  left: calc((100% - 65vw) * 0.5);
+  border-bottom-left-radius: 8px;
+  border-bottom-right-radius: 8px;
+}
+@media screen and (max-width: 2048px) {
+  .l_header {
+    max-width: 1112px;
+    left: calc((100% - 1112px) * 0.5);
+  }
+}
+@media screen and (max-width: 1112px) {
+  .l_header {
+    left: 0;
+    border-radius: 0;
+    -webkit-border-radius: 0;
+    max-width: 100%;
+  }
+}
+@media screen and (max-width: 500px) {
+  .l_header .container {
+    margin-left: 0;
+    margin-right: 0;
+  }
+  .l_header #wrapper .nav-main .title {
+    padding-left: 16px;
+    padding-right: 16px;
+  }
+  .l_header #wrapper .nav-sub {
+    width: 100%;
+  }
+  .l_header #wrapper .nav-sub .title {
+    overflow-y: scroll;
+    margin-top: 2px;
+    padding: 8px 16px;
+  }
+  .l_header #wrapper .switcher {
+    display: -webkit-box /* OLD - iOS 6-, Safari 3.1-6 */;
+    display: -moz-box /* OLD - Firefox 19- (buggy but mostly works) */;
+    display: -ms-flexbox /* TWEENER - IE 10 */;
+    display: -webkit-flex /* NEW - Chrome */;
+    display: flex /* NEW, Spec - Opera 12.1, Firefox 20+ */;
+    display: flex;
+    margin-right: 8px;
+  }
+  .l_header .menu {
+    display: -webkit-box /* OLD - iOS 6-, Safari 3.1-6 */;
+    display: -moz-box /* OLD - Firefox 19- (buggy but mostly works) */;
+    display: none;
+  }
+}
+@media screen and (max-width: 500px) {
+  .list-v li {
+    max-width: 270px;
+  }
+}
+#u-search {
+  display: -webkit-box /* OLD - iOS 6-, Safari 3.1-6 */;
+  display: -moz-box /* OLD - Firefox 19- (buggy but mostly works) */;
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  padding: 60px 20px;
+  z-index: 1001;
+}
+@media screen and (max-width: 680px) {
+  #u-search {
+    padding: 0px;
+  }
+}
+
+  </style>
+  <link rel="stylesheet" href="/css/style.css" media="print" onload="this.media='all';this.onload=null">
+  <noscript><link rel="stylesheet" href="/css/style.css"></noscript>
+  
+<script>
+if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMode))
+    document.write(
+	'<style>'+
+		'html{'+
+			'overflow-x: hidden !important;'+
+			'overflow-y: hidden !important;'+
+		'}'+
+		'.kill-ie{'+
+			'text-align:center;'+
+			'height: 100%;'+
+			'margin-top: 15%;'+
+			'margin-bottom: 5500%;'+
+		'}'+
+    '.kill-t{'+
+      'font-size: 2rem;'+
+    '}'+
+    '.kill-c{'+
+      'font-size: 1.2rem;'+
+    '}'+
+		'#l_header,#l_body{'+
+			'display: none;'+
+		'}'+
+	'</style>'+
+    '<div class="kill-ie">'+
+        `<span class="kill-t"><b>Sorry, your browser cannot access this site</b></span><br/>`+
+        `<span class="kill-c">Microsoft has terminated support for Internet Explorer (IE) 10 and earlier versions in 2016. <br/>There are great security risks to continue using it. Please use contemporary mainstream browsers to access.</span><br/>`+
+        `<a target="_blank" rel="noopener" href="https://blogs.windows.com/windowsexperience/2021/05/19/the-future-of-internet-explorer-on-windows-10-is-in-microsoft-edge/"><strong>Learn more ></strong></a>`+
+    '</div>');
+</script>
+
+
+<noscript>
+	<style>
+		html{
+			overflow-x: hidden !important;
+			overflow-y: hidden !important;
+		}
+		.kill-noscript{
+			text-align:center;
+			height: 100%;
+			margin-top: 15%;
+			margin-bottom: 5500%;
+		}
+    .kill-t{
+      font-size: 2rem;
+    }
+    .kill-c{
+      font-size: 1.2rem;
+    }
+		#l_header,#l_body{
+			display: none;
+		}
+	</style>
+    <div class="kill-noscript">
+        <span class="kill-t"><b>Sorry, your browser cannot access this site</b></span><br/>
+        <span class="kill-c">This page requires browser support (enable) JavaScript</span><br/>
+        <a target="_blank" rel="noopener" href="https://www.baidu.com/s?wd=启用JavaScript"><strong>Learn more ></strong></a>
+    </div>
+</noscript>
+
+
+  <script>
+  /************这个文件存放不需要重载的全局变量和全局函数*********/
+  window.volantis = {}; // volantis 全局变量
+  volantis.debug = "env"; // 调试模式
+  volantis.dom = {}; // 页面Dom see: /source/js/app.js etc.
+
+  volantis.GLOBAL_CONFIG ={
+    debug: "env",
+    cdn: {"js":{"app":"/js/app.js","parallax":"/js/plugins/parallax.js","rightMenu":"/js/plugins/rightMenu.js","rightMenus":"/js/plugins/rightMenus.js","sites":"/js/plugins/tags/sites.js","friends":"/js/plugins/tags/friends.js","contributors":"/js/plugins/tags/contributors.js","search":"/js/search/hexo.js"},"css":{"style":"/css/style.css"}},
+    default: {"avatar":"https://unpkg.com/volantis-static@0.0.1654736714924/media/placeholder/avatar/round/3442075.svg","link":"https://unpkg.com/volantis-static@0.0.1654736714924/media/placeholder/link/8f277b4ee0ecd.svg","cover":"https://unpkg.com/volantis-static@0.0.1654736714924/media/placeholder/cover/76b86c0226ffd.svg","image":"https://unpkg.com/volantis-static@0.0.1654736714924/media/placeholder/image/2659360.svg"},
+    lastupdate: new Date(1716525190351),
+    sidebar: {
+      for_page: ["blogger","category","tagcloud","webinfo","lastupdate"],
+      for_post: ["toc"],
+      webinfo: {
+        lastupd: {
+          enable: true,
+          friendlyShow: true
+        },
+        runtime: {
+          data: "2022/12/04",
+          unit: "天"
+        }
+      }
+    },
+    plugins: {
+      message: {"enable":true,"css":"https://unpkg.com/volantis-static@0.0.1654736714924/libs/izitoast/dist/css/iziToast.min.css","js":"https://unpkg.com/volantis-static@0.0.1654736714924/libs/izitoast/dist/js/iziToast.min.js","icon":{"default":"fa-solid fa-info-circle light-blue","quection":"fa-solid fa-question-circle light-blue"},"time":{"default":5000,"quection":20000},"position":"topRight","transitionIn":"bounceInLeft","transitionOut":"fadeOutRight","titleColor":"var(--color-text)","messageColor":"var(--color-text)","backgroundColor":"var(--color-card)","zindex":2147483647,"copyright":{"enable":true,"title":"知识共享许可协议","message":"请遵守 CC BY-NC-SA 4.0 协议。","icon":"far fa-copyright light-blue"},"aplayer":{"enable":true,"play":"fa-solid fa-play","pause":"fa-solid fa-pause"},"rightmenu":{"enable":true,"notice":true}},
+      fancybox: {"css":"https://unpkg.com/volantis-static@0.0.1654736714924/libs/@fancyapps/ui/dist/fancybox.css","js":"https://unpkg.com/volantis-static@0.0.1654736714924/libs/@fancyapps/ui/dist/fancybox.umd.js"},
+      
+      aplayer: {
+        id: 993524571,
+        enable:true
+      },
+      
+      
+      
+    }
+  }
+
+  /******************** volantis.EventListener ********************************/
+  // 事件监听器 see: /source/js/app.js
+  volantis.EventListener = {}
+  // 这里存放pjax切换页面时将被移除的事件监听器
+  volantis.EventListener.list = []
+  //构造方法
+  function volantisEventListener(type, f, ele) {
+    this.type = type
+    this.f = f
+    this.ele = ele
+  }
+  // 移除事件监听器
+  volantis.EventListener.remove = () => {
+    volantis.EventListener.list.forEach(function (i) {
+      i.ele.removeEventListener(i.type, i.f, false)
+    })
+    volantis.EventListener.list = []
+  }
+  /******************** volantis.dom.$ ********************************/
+  // 注：这里没有选择器，也没有forEach一次只处理一个dom，这里重新封装主题常用的dom方法，返回的是dom对象，对象包含了以下方法，同时保留dom的原生API
+  function volantisDom(ele) {
+    if (!ele) ele = document.createElement("div")
+    this.ele = ele;
+    // ==============================================================
+    this.ele.find = (c) => {
+      let q = this.ele.querySelector(c)
+      if (q)
+        return new volantisDom(q)
+    }
+    // ==============================================================
+    this.ele.hasClass = (c) => {
+      return this.ele.className.match(new RegExp('(\\s|^)' + c + '(\\s|$)'));
+    }
+    this.ele.addClass = (c) => {
+      this.ele.classList.add(c);
+      return this.ele
+    }
+    this.ele.removeClass = (c) => {
+      this.ele.classList.remove(c);
+      return this.ele
+    }
+    this.ele.toggleClass = (c) => {
+      if (this.ele.hasClass(c)) {
+        this.ele.removeClass(c)
+      } else {
+        this.ele.addClass(c)
+      }
+      return this.ele
+    }
+    // ==============================================================
+    // 参数 r 为 true 表示pjax切换页面时事件监听器将被移除，false不移除
+    this.ele.on = (c, f, r = 1) => {
+      this.ele.addEventListener(c, f, false)
+      if (r) {
+        volantis.EventListener.list.push(new volantisEventListener(c, f, this.ele))
+      }
+      return this.ele
+    }
+    this.ele.click = (f, r) => {
+      this.ele.on("click", f, r)
+      return this.ele
+    }
+    this.ele.scroll = (f, r) => {
+      this.ele.on("scroll", f, r)
+      return this.ele
+    }
+    // ==============================================================
+    this.ele.html = (c) => {
+      // if(c=== undefined){
+      //   return this.ele.innerHTML
+      // }else{
+      this.ele.innerHTML = c
+      return this.ele
+      // }
+    }
+    // ==============================================================
+    this.ele.hide = (c) => {
+      this.ele.style.display = "none"
+      return this.ele
+    }
+    this.ele.show = (c) => {
+      this.ele.style.display = "block"
+      return this.ele
+    }
+    // ==============================================================
+    return this.ele
+  }
+  volantis.dom.$ = (ele) => {
+    return !!ele ? new volantisDom(ele) : null;
+  }
+  /******************** RunItem ********************************/
+  function RunItem() {
+    this.list = []; // 存放回调函数
+    this.start = () => {
+      for (var i = 0; i < this.list.length; i++) {
+        this.list[i].run();
+      }
+    };
+    this.push = (fn, name, setRequestAnimationFrame = true) => {
+      let myfn = fn
+      if (setRequestAnimationFrame) {
+        myfn = ()=>{
+          volantis.requestAnimationFrame(fn)
+        }
+      }
+      var f = new Item(myfn, name);
+      this.list.push(f);
+    };
+    this.remove = (name) =>{
+      for (let index = 0; index < this.list.length; index++) {
+        const e = this.list[index];
+        if (e.name == name) {
+          this.list.splice(index,1);
+        }
+      }
+    }
+    // 构造一个可以run的对象
+    function Item(fn, name) {
+      // 函数名称
+      this.name = name || fn.name;
+      // run方法
+      this.run = () => {
+        try {
+          fn()
+        } catch (error) {
+          console.log(error);
+        }
+      };
+    }
+  }
+  /******************** Pjax ********************************/
+  // /layout/_plugins/pjax/index.ejs
+  // volantis.pjax.send(callBack[,"callBackName"]) 传入pjax:send回调函数
+  // volantis.pjax.push(callBack[,"callBackName"]) 传入pjax:complete回调函数
+  // volantis.pjax.error(callBack[,"callBackName"]) 传入pjax:error回调函数
+  volantis.pjax = {};
+  volantis.pjax.method = {
+    complete: new RunItem(),
+    error: new RunItem(),
+    send: new RunItem(),
+  };
+  volantis.pjax = Object.assign(volantis.pjax, {
+    push: volantis.pjax.method.complete.push,
+    error: volantis.pjax.method.error.push,
+    send: volantis.pjax.method.send.push,
+  });
+  /******************** RightMenu ********************************/
+  // volantis.rightmenu.handle(callBack[,"callBackName"]) 外部菜单项控制
+  // 可在 volantis.mouseEvent 处获取右键事件
+  volantis.rightmenu = {};
+  volantis.rightmenu.method = {
+    handle: new RunItem(),
+  }
+  volantis.rightmenu = Object.assign(volantis.rightmenu, {
+    handle: volantis.rightmenu.method.handle.push,
+  });
+  /********************  Dark Mode  ********************************/
+  // /layout/_partial/scripts/darkmode.ejs
+  // volantis.dark.mode 当前模式 dark or light
+  // volantis.dark.toggle() 暗黑模式触发器
+  // volantis.dark.push(callBack[,"callBackName"]) 传入触发器回调函数
+  volantis.dark = {};
+  volantis.dark.method = {
+    toggle: new RunItem(),
+  };
+  volantis.dark = Object.assign(volantis.dark, {
+    push: volantis.dark.method.toggle.push,
+  });
+  /********************  Message  ********************************/
+  // VolantisApp.message
+  /********************  isMobile  ********************************/
+  // /source/js/app.js
+  // volantis.isMobile
+  // volantis.isMobileOld
+  /********************脚本动态加载函数********************************/
+  // volantis.js(src, cb)  cb 可以传入onload回调函数 或者 JSON对象 例如: volantis.js("src", ()=>{}) 或 volantis.js("src", {defer:true,onload:()=>{}})
+  // volantis.css(src)
+
+  // 返回Promise对象，如下方法同步加载资源，这利于处理文件资源之间的依赖关系，例如：APlayer 需要在 MetingJS 之前加载
+  // (async () => {
+  //     await volantis.js("...theme.plugins.aplayer.js.aplayer...")
+  //     await volantis.js("...theme.plugins.aplayer.js.meting...")
+  // })();
+
+  // 已经加入了setTimeout
+  volantis.js = (src, cb) => {
+    return new Promise(resolve => {
+      setTimeout(function () {
+        var HEAD = document.getElementsByTagName("head")[0] || document.documentElement;
+        var script = document.createElement("script");
+        script.setAttribute("type", "text/javascript");
+        if (cb) {
+          if (JSON.stringify(cb)) {
+            for (let p in cb) {
+              if (p == "onload") {
+                script[p] = () => {
+                  cb[p]()
+                  resolve()
+                }
+              } else {
+                script[p] = cb[p]
+                script.onload = resolve
+              }
+            }
+          } else {
+            script.onload = () => {
+              cb()
+              resolve()
+            };
+          }
+        } else {
+          script.onload = resolve
+        }
+        script.setAttribute("src", src);
+        HEAD.appendChild(script);
+      });
+    });
+  }
+  volantis.css = (src) => {
+    return new Promise(resolve => {
+      setTimeout(function () {
+        var link = document.createElement('link');
+        link.rel = "stylesheet";
+        link.href = src;
+        link.onload = resolve;
+        document.getElementsByTagName("head")[0].appendChild(link);
+      });
+    });
+  }
+  /********************按需加载的插件********************************/
+  // volantis.import.jQuery().then(()=>{})
+  volantis.import = {
+    jQuery: () => {
+      if (typeof jQuery == "undefined") {
+        return volantis.js("https://unpkg.com/volantis-static@0.0.1654736714924/libs/jquery/dist/jquery.min.js")
+      } else {
+        return new Promise(resolve => {
+          resolve()
+        });
+      }
+    }
+  }
+  /********************** requestAnimationFrame ********************************/
+  // 1、requestAnimationFrame 会把每一帧中的所有 DOM 操作集中起来，在一次重绘或回流中就完成，并且重绘或回流的时间间隔紧紧跟随浏览器的刷新频率，一般来说，这个频率为每秒60帧。
+  // 2、在隐藏或不可见的元素中，requestAnimationFrame 将不会进行重绘或回流，这当然就意味着更少的的 cpu，gpu 和内存使用量。
+  volantis.requestAnimationFrame = (fn)=>{
+    if (!window.requestAnimationFrame) {
+      window.requestAnimationFrame = window.requestAnimationFrame || window.mozRequestAnimationFrame || window.webkitRequestAnimationFrame;
+    }
+    window.requestAnimationFrame(fn)
+  }
+  /************************ layoutHelper *****************************************/
+  volantis.layoutHelper = (helper, html, opt)=>{
+    opt = Object.assign({clean:false, pjax:true}, opt)
+    function myhelper(helper, html, clean) {
+      volantis.tempDiv = document.createElement("div");
+      volantis.tempDiv.innerHTML = html;
+      let layoutHelper = document.querySelector("#layoutHelper-"+helper)
+      if (layoutHelper) {
+        if (clean) {
+          layoutHelper.innerHTML = ""
+        }
+        layoutHelper.append(volantis.tempDiv);
+      }
+    }
+    myhelper(helper, html, opt.clean)
+    if (opt.pjax) {
+      volantis.pjax.push(()=>{
+        myhelper(helper, html, opt.clean)
+      },"layoutHelper-"+helper)
+    }
+  }
+  /****************************** 滚动事件处理 ****************************************/
+  volantis.scroll = {
+    engine: new RunItem(),
+    unengine: new RunItem(),
+  };
+  volantis.scroll = Object.assign(volantis.scroll, {
+    push: volantis.scroll.engine.push,
+  });
+  // 滚动条距离顶部的距离
+  volantis.scroll.getScrollTop = () =>{
+    let scrollPos;
+    if (window.pageYOffset) {
+      scrollPos = window.pageYOffset;
+    } else if (document.compatMode && document.compatMode != 'BackCompat') {
+      scrollPos = document.documentElement.scrollTop;
+    } else if (document.body) {
+      scrollPos = document.body.scrollTop;
+    }
+    return scrollPos;
+  }
+  // 使用 requestAnimationFrame 处理滚动事件
+  // `volantis.scroll.del` 中存储了一个数值, 该数值检测一定时间间隔内滚动条滚动的位移, 数值的检测频率是浏览器的刷新频率. 数值为正数时, 表示向下滚动. 数值为负数时, 表示向上滚动.
+  volantis.scroll.handleScrollEvents = () => {
+    volantis.scroll.lastScrollTop = volantis.scroll.getScrollTop()
+    function loop() {
+      const scrollTop = volantis.scroll.getScrollTop();
+      if (volantis.scroll.lastScrollTop !== scrollTop) {
+        volantis.scroll.del = scrollTop - volantis.scroll.lastScrollTop;
+        volantis.scroll.lastScrollTop = scrollTop;
+        // if (volantis.scroll.del > 0) {
+        //   console.log("向下滚动");
+        // } else {
+        //   console.log("向上滚动");
+        // }
+        // 注销过期的unengine未滚动事件
+        volantis.scroll.unengine.list=[]
+        volantis.scroll.engine.start();
+      }else{
+        volantis.scroll.unengine.start();
+      }
+      volantis.requestAnimationFrame(loop)
+    }
+    volantis.requestAnimationFrame(loop)
+  }
+  volantis.scroll.handleScrollEvents()
+  volantis.scroll.ele = null;
+  // 触发页面滚动至目标元素位置
+  volantis.scroll.to = (ele, option = {}) => {
+    if (!ele) return;
+    volantis.scroll.ele = ele;
+    // 默认配置
+    opt = {
+      top: ele.getBoundingClientRect().top + document.documentElement.scrollTop,
+      behavior: "smooth"
+    }
+    // 定义配置
+    if ("top" in option) {
+      opt.top = option.top
+    }
+    if ("behavior" in option) {
+      opt.behavior = option.behavior
+    }
+    if ("addTop" in option) {
+      opt.top += option.addTop
+    }
+    if (!("observerDic" in option)) {
+      option.observerDic = 100
+    }
+    // 滚动
+    window.scrollTo(opt);
+    // 监视器
+    // 监视并矫正元素滚动到指定位置
+    // 用于处理 lazyload 引起的 cls 导致的定位失败问题
+    // option.observer = false
+    if (option.observer) {
+      setTimeout(() => {
+        if (volantis.scroll.ele != ele) {
+          return
+        }
+        volantis.scroll.unengine.push(() => {
+          let me = ele.getBoundingClientRect().top
+          if(!(me >= -option.observerDic && me <= option.observerDic)){
+            volantis.scroll.to(ele, option)
+          }
+          volantis.scroll.unengine.remove("unengineObserver")
+        },"unengineObserver")
+      },1000)
+    }
+  }
+  /********************** Content Visibility ********************************/
+  // 见 source/css/first.styl 如果遇到任何问题 删除 .post-story 即可
+  // 一个元素被声明 content-visibility 属性后 如果元素不在 viewport 中 浏览器不会计算其后代元素样式和属性 从而节省 Style & Layout 耗时
+  // content-visibility 的副作用: 锚点失效 等等(实验初期 暂不明确), 使用此方法清除样式
+  volantis.cleanContentVisibility = ()=>{
+    if (document.querySelector(".post-story")) {
+      console.log("cleanContentVisibility");
+      document.querySelectorAll(".post-story").forEach(e=>{
+        e.classList.remove("post-story")
+      })
+    }
+  }
+  /******************************************************************************/
+  /******************************************************************************/
+  /******************************************************************************/
+  //图像加载出错时的处理
+  function errorImgAvatar(img) {
+    img.src = "https://unpkg.com/volantis-static@0.0.1654736714924/media/placeholder/avatar/round/3442075.svg";
+    img.onerror = null;
+  }
+  function errorImgCover(img) {
+    img.src = "https://unpkg.com/volantis-static@0.0.1654736714924/media/placeholder/cover/76b86c0226ffd.svg";
+    img.onerror = null;
+  }
+  /******************************************************************************/
+</script>
+
+  <!-- import head_end begin -->
+  <!-- import head_end end -->
+  <!-- Custom Files headEnd begin-->
+  
+  <!-- Custom Files headEnd end-->
+<!-- hexo injector head_end start -->
+<link rel="stylesheet" href="https://unpkg.com/katex@0.12.0/dist/katex.min.css">
+
+<link rel="stylesheet" href="https://unpkg.com/hexo-math@4.0.0/dist/style.css">
+<!-- hexo injector head_end end --></head>
+  <body itemscope itemtype="http://schema.org/WebPage">
+    <!-- import body_begin begin-->
+    <!-- import body_begin end-->
+    <!-- Custom Files bodyBegin begin-->
+    
+    <!-- Custom Files bodyBegin end-->
+    <header itemscope itemtype="http://schema.org/WPHeader" id="l_header" class="l_header auto shadow floatable blur " style='opacity: 0' >
+  <div class='container'>
+  <div id='wrapper'>
+    <div class='nav-sub'>
+      <p class="title"></p>
+      <ul class='switcher nav-list-h m-phone' id="pjax-header-nav-list">
+        <li><a id="s-comment" class="fa-solid fa-comments fa-fw" target="_self"  href="/" onclick="return false;" title="comment"></a></li>
+        
+          <li><a id="s-toc" class="s-toc fa-solid fa-list fa-fw" target="_self"  href="/" onclick="return false;" title="toc"></a></li>
+        
+      </ul>
+    </div>
+		<div class="nav-main">
+      
+        
+        <a class="title flat-box" target="_self" href='/'>
+          
+            <img no-lazy class='logo' src='https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/Logo-NavBar@3x.png'/>
+          
+          
+          
+        </a>
+      
+
+			<div class='menu navigation'>
+				<ul class='nav-list-h m-pc'>
+          
+          
+          
+            
+            
+              <li>
+                <a class="menuitem flat-box faa-parent animated-hover"
+                href="/" title="博客"
+                  
+                  
+                  
+                    active-action="action-home"
+                  >
+                  <i class='fa-solid fa-rss fa-fw'></i>博客
+                </a>
+                
+              </li>
+            
+          
+          
+            
+            
+              <li>
+                <a class="menuitem flat-box faa-parent animated-hover"
+                href="/categories/" title="分类"
+                  
+                  
+                  
+                    active-action="action-categories"
+                  >
+                  <i class='fa-solid fa-folder-open fa-fw'></i>分类
+                </a>
+                
+              </li>
+            
+          
+          
+            
+            
+              <li>
+                <a class="menuitem flat-box faa-parent animated-hover"
+                href="/tags/" title="标签"
+                  
+                  
+                  
+                    active-action="action-tags"
+                  >
+                  <i class='fa-solid fa-tags fa-fw'></i>标签
+                </a>
+                
+              </li>
+            
+          
+          
+            
+            
+              <li>
+                <a class="menuitem flat-box faa-parent animated-hover"
+                href="/archives/" title="归档"
+                  
+                  
+                  
+                    active-action="action-archives"
+                  >
+                  <i class='fa-solid fa-archive fa-fw'></i>归档
+                </a>
+                
+              </li>
+            
+          
+          
+            
+            
+              <li>
+                <a class="menuitem flat-box faa-parent animated-hover"
+                href="/friends/" title="友链"
+                  
+                  
+                  
+                    active-action="action-friends"
+                  >
+                  <i class='fa-solid fa-link fa-fw'></i>友链
+                </a>
+                
+              </li>
+            
+          
+          
+            
+            
+              <li>
+                <a class="menuitem flat-box faa-parent animated-hover"
+                href="/about/" title="关于"
+                  
+                  
+                  
+                    active-action="action-about"
+                  >
+                  <i class='fa-solid fa-info-circle fa-fw'></i>关于
+                </a>
+                
+              </li>
+            
+          
+          
+				</ul>
+			</div>
+      
+      <div class="m_search">
+        <form name="searchform" class="form u-search-form">
+          <i class="icon fa-solid fa-search fa-fw"></i>
+          <input type="text" class="input u-search-input" placeholder="Search..." />
+        </form>
+      </div>
+      
+
+			<ul class='switcher nav-list-h m-phone'>
+				
+					<li><a class="s-search fa-solid fa-search fa-fw" target="_self" href="/" onclick="return false;" title="search"></a></li>
+				
+				<li>
+          <a class="s-menu fa-solid fa-bars fa-fw" target="_self" href="/" onclick="return false;" title="menu"></a>
+          <ul class="menu-phone list-v navigation white-box">
+            
+              
+            
+              <li>
+                <a class="menuitem flat-box faa-parent animated-hover"
+                href="/" title="博客"
+                  
+                  
+                  
+                    active-action="action-home"
+                  >
+                  <i class='fa-solid fa-rss fa-fw'></i>博客
+                </a>
+                
+              </li>
+            
+          
+            
+              
+            
+              <li>
+                <a class="menuitem flat-box faa-parent animated-hover"
+                href="/categories/" title="分类"
+                  
+                  
+                  
+                    active-action="action-categories"
+                  >
+                  <i class='fa-solid fa-folder-open fa-fw'></i>分类
+                </a>
+                
+              </li>
+            
+          
+            
+              
+            
+              <li>
+                <a class="menuitem flat-box faa-parent animated-hover"
+                href="/tags/" title="标签"
+                  
+                  
+                  
+                    active-action="action-tags"
+                  >
+                  <i class='fa-solid fa-tags fa-fw'></i>标签
+                </a>
+                
+              </li>
+            
+          
+            
+              
+            
+              <li>
+                <a class="menuitem flat-box faa-parent animated-hover"
+                href="/archives/" title="归档"
+                  
+                  
+                  
+                    active-action="action-archives"
+                  >
+                  <i class='fa-solid fa-archive fa-fw'></i>归档
+                </a>
+                
+              </li>
+            
+          
+            
+              
+            
+              <li>
+                <a class="menuitem flat-box faa-parent animated-hover"
+                href="/friends/" title="友链"
+                  
+                  
+                  
+                    active-action="action-friends"
+                  >
+                  <i class='fa-solid fa-link fa-fw'></i>友链
+                </a>
+                
+              </li>
+            
+          
+            
+              
+            
+              <li>
+                <a class="menuitem flat-box faa-parent animated-hover"
+                href="/about/" title="关于"
+                  
+                  
+                  
+                    active-action="action-about"
+                  >
+                  <i class='fa-solid fa-info-circle fa-fw'></i>关于
+                </a>
+                
+              </li>
+            
+          
+            
+          </ul>
+        </li>
+			</ul>
+
+      <!-- Custom Files header begin -->
+      
+      <!-- Custom Files header end -->
+		</div>
+	</div>
+  </div>
+</header>
+
+    <div id="l_body">
+      <div id="l_cover">
+  
+    
+      <!-- see: /layout/_partial/scripts/_ctrl/coverCtrl.ejs -->
+      <div id="half" class='cover-wrapper post search' style="display: ;">
+        
+  <div id="parallax-window"></div>
+
+<div class='cover-body'>
+  <div class='top'>
+    
+    
+      <p class="title">MengFanjun的博客</p>
+    
+    
+  </div>
+  <div class='bottom'>
+    
+      <div class="m_search">
+        <form name="searchform" class="form u-search-form">
+          <input type="text" class="input u-search-input" placeholder="搜一下" />
+          <i class="icon fa-solid fa-search fa-fw"></i>
+        </form>
+      </div>
+    
+    <div class='menu navigation'>
+      <div class='list-h'>
+        
+          
+            <a href="/"
+              
+              
+              active-action="action-home">
+              <p>主页</p>
+            </a>
+          
+            <a href="/tags/"
+              
+              
+              active-action="action-tags">
+              <p>标签</p>
+            </a>
+          
+        
+      </div>
+    </div>
+  </div>
+</div>
+
+        <div id="scroll-down" style="display: none;"><i class="fa fa-chevron-down scroll-down-effects"></i></div>
+      </div>
+    
+  
+</div>
+
+      <div id="safearea">
+        <div class="body-wrapper">
+          
+<div id="l_main" class=''>
+  <article itemscope itemtype="http://schema.org/Article" class="article post white-box reveal md shadow floatable blur article-type-post" id="post" itemscope itemprop="blogPost">
+  <link itemprop="mainEntityOfPage" href="https://mengfanjun020906.github.io/2024/05/25/【文献阅读】DeepSIG_A_Hybrid_Heterogeneous_Deep_Learning_Framework_for_Radio_Signal_Classification/">
+  <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+    <meta itemprop="name" content="MengFanjun的博客">
+  </span>
+  <span hidden itemprop="post" itemscope itemtype="http://schema.org/Post">
+    <meta itemprop="name" content="MengFanjun的博客">
+    <meta itemprop="description" content="20级通信工程大学生的个人博客">
+  </span>
+  
+
+
+  
+    <span hidden>
+      <meta itemprop="image" content="https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png">
+    </span>
+  
+  <div class="article-meta" id="top">
+    
+    
+    
+      <h1 class="title" itemprop="name headline">
+        【文献阅读】DeepSIG_A_Hybrid_Heterogeneous_Deep_Learning_Framework_for_Radio_Signal_Classification
+      </h1>
+      <div class='new-meta-box'>
+        
+          
+            
+<div class='new-meta-item author' itemprop="author" itemscope itemtype="http://schema.org/Person">
+  <a itemprop="url" class='author' href="/" rel="nofollow">
+    <img itemprop="image" src="https://pic.imgdb.cn/item/63f9926ef144a01007de7d7d.png" class="lazyload" data-srcset="https://pic.imgdb.cn/item/63f9926ef144a01007de7d7d.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==">
+    <p itemprop="name">MengFanjun</p>
+  </a>
+</div>
+
+          
+        
+          
+            
+  <div class='new-meta-item category'>
+    <i class="fa-solid fa-folder-open fa-fw" aria-hidden="true"></i>
+    <a class="category-link" href="/categories/%E6%96%87%E7%8C%AE%E9%98%85%E8%AF%BB/">文献阅读</a>
+    
+      <span hidden itemprop="about" itemscope itemtype="http://schema.org/Thing">
+        <a href="/categories/%E6%96%87%E7%8C%AE%E9%98%85%E8%AF%BB/" itemprop="url"><span itemprop="name">文献阅读</span></a>
+      </span>
+    
+  </div>
+
+
+          
+        
+          
+            <div class="new-meta-item date" itemprop="dateCreated datePublished" datetime="2024-05-25T11:49:26+08:00">
+  <a class='notlink'>
+    <i class="fa-solid fa-calendar-alt fa-fw" aria-hidden="true"></i>
+    <p>发布于：May 25, 2024</p>
+  </a>
+</div>
+
+          
+        
+          
+            
+  <div class="new-meta-item wordcount">
+    <a class='notlink'>
+      <i class="fa-solid fa-keyboard fa-fw" aria-hidden="true"></i>
+      <p>8.5k words</p>
+    </a>
+  </div>
+  <div class="new-meta-item readtime">
+    <a class='notlink'>
+      <i class="fa-solid fa-hourglass-half fa-fw" aria-hidden="true"></i>
+      <p>30 min</p>
+    </a>
+  </div>
+
+
+          
+        
+          
+            
+
+
+<div class="new-meta-item browse">
+  <a class='notlink'>
+    <p>
+      <i class="fa-solid fa-eye fa-fw" aria-hidden="true"></i>
+      
+      <span id="busuanzi_value_page_pv"><i class="fa-solid fa-loader fa-spin fa-fw" aria-hidden="true"></i></span>
+      
+      <span>次浏览</span>
+    </p>
+  </a>
+</div>
+
+
+          
+        
+        <!-- Custom Files topMeta begin-->
+        
+        <!-- Custom Files topMeta end-->
+      </div>
+    
+  </div>
+
+
+  <div id="layoutHelper-page-plugins"></div>
+  <div id="post-body" itemprop="articleBody">
+    <h1 id="缩写词">缩写词</h1>
+<p>AMC：automatic modulation classification ，自动调制分类。 SIG：S for
+Sequence, I for Image and G for Graph。 LFGM：Limited Fixed Graph
+Mapping # 摘要
+目的：为了处理异构输入格式的无线电信号，文章提出了一种名为DeepSIG的混合异构调制分类架构，该架构将递归神经网络（RNN），卷积神经网络（CNN）和图神经网络（GNN）模型集成在单个框架中。
+in-phase (I) and quadrature (Q)
+sequences,IQ信号即同相正交信号，I为in-phase同相分量，Q为quadrature正交分量，Q与I的相位相差了90度。
+# Introduction</p>
+<p>第一章主要讲述了论文的研究背景、现有的调制分类方法及其局限性，以及提出的新的混合异构深度学习框架DeepSIG。以下是具体内容的概述：</p>
+<h3 id="研究背景与动机">研究背景与动机</h3>
+<ul>
+<li><strong>无线通信技术的发展</strong>：随着物联网（IoT）、5G技术等无线通信技术的快速发展，电磁环境变得越来越复杂，频谱资源短缺问题变得更加严重。</li>
+<li><strong>频谱利用率的重要性</strong>：提高频谱利用率变得愈发重要。认知无线电技术是一种有效的提高频谱效率的方法，它可以动态管理频谱资源的使用。</li>
+</ul>
+<h3 id="调制分类的角色">调制分类的角色</h3>
+<ul>
+<li><strong>调制识别在频谱感知中的作用</strong>：调制分类有助于频谱感知，是认知无线电中的关键技术之一。</li>
+</ul>
+<h3 id="传统调制分类方法">传统调制分类方法</h3>
+<ul>
+<li><strong>手工特征提取</strong>：传统的调制分类方法依赖于手工设计的特征提取步骤，需要专业知识支持，且在复杂环境下分类准确率可能不高。</li>
+</ul>
+<h3
+id="基于深度学习的自动调制分类amc">基于深度学习的自动调制分类（AMC）</h3>
+<ul>
+<li><strong>深度学习的发展</strong>：随着人工智能的发展，基于深度学习的AMC方法逐渐兴起，这些方法能够自动学习和提取特征，实现端到端的调制分类。</li>
+<li><strong>深度学习AMC的输入格式</strong>：根据输入格式，基于深度学习的AMC方法可以分为基于序列输入、图像输入和图形输入三类。</li>
+</ul>
+<h3 id="各类深度学习amc方法的特点">各类深度学习AMC方法的特点</h3>
+<ol type="1">
+<li><strong>基于序列输入</strong>：
+<ul>
+<li>输入一般为接收信号的同相（I）和正交（Q）分量，通常使用循环神经网络（RNN）模型来捕捉IQ信号的时间相关信息。</li>
+</ul></li>
+<li><strong>基于图像输入</strong>：
+<ul>
+<li>将IQ信号按照一定规则或通过可训练的神经网络层映射成图像，然后使用卷积神经网络（CNN）进行分类。该方法能够利用图像分类领域的技术，但可能会在转换过程中丢失原始信号中的某些信息。</li>
+</ul></li>
+<li><strong>基于图形输入</strong>：
+<ul>
+<li>将信号转换为图数据并进行分类。这类方法通过图嵌入方法或图神经网络（GNN）模型实现信号分类，但图映射算法的转换速度较慢，对长时间信号的处理有一定局限性。</li>
+</ul></li>
+</ol>
+<h3 id="deepsig框架">DeepSIG框架</h3>
+<ul>
+<li><strong>提出DeepSIG</strong>：为了充分利用不同输入格式的数据所包含的潜在信息，本文提出了一个混合异构框架DeepSIG，集成了基于序列、图像和图的三种AMC模型。</li>
+<li><strong>框架结构</strong>：DeepSIG包括四部分：序列网络、图像网络、图网络和融合分类网络。
+<ul>
+<li><strong>序列网络</strong>：使用长短时记忆网络（LSTM）处理IQ信号，提取时间相关特征信息。</li>
+<li><strong>图像网络</strong>：提出了一种新的图像映射方法DWTDR，通过离散小波变换（DWT）的分解和重构将IQ信号映射为双通道窄边图像，然后使用ResNet18模型提取图像特征。</li>
+<li><strong>图形网络</strong>：提出了一种新的图映射方法LFGM，将IQ信号根据其过采样率映射为稀疏图，并使用DiffPool模型提取图特征。</li>
+<li><strong>融合分类（fusion）网络</strong>：将前面三部分提取的特征向量进行归一化和拼接融合，通过全连接层进行最终的调制分类。</li>
+</ul></li>
+</ul>
+<h3 id="主要贡献">主要贡献</h3>
+<ol type="1">
+<li><strong>提出DeepSIG框架</strong>：整合了基于序列、图像和图的三种AMC模型，提高了调制识别的准确性。</li>
+<li><strong>新图像映射方法DWTDR</strong>：将IQ信号转换为双通道窄边图像，保留了原始信号中的隐含信息，有助于后续分类。</li>
+<li><strong>新图映射方法LFGM</strong>：高效地将IQ信号映射为稀疏图，适合处理长时间信号。</li>
+<li><strong>实验验证</strong>：在多个数据集和少样本场景下验证了DeepSIG的性能，显示其优于单一输入格式的分类方法。</li>
+</ol>
+<h3 id="论文结构">论文结构</h3>
+<ul>
+<li><strong>第二章</strong>：介绍了基于序列、图像和图的调制分类方法的相关工作。</li>
+<li><strong>第三章</strong>：详细介绍了DeepSIG的架构。</li>
+<li><strong>第四章</strong>：提供了仿真结果。</li>
+<li><strong>第五章</strong>：对论文进行了总结。</li>
+</ul>
+<p>总体而言，第一章为整个论文奠定了基础，介绍了研究的背景、现有方法的局限性以及提出的新的解决方案DeepSIG的整体框架和贡献。</p>
+<h1 id="related-work">Related Work</h1>
+<h2 id="a.amc-methods-with-sequence-input">A.AMC Methods With Sequence
+Input</h2>
+<p>在当前无线电调制分类的领域，基于序列输入即IQ信号的AMC方法是最常见的。然后列举了一些其他学者所做的调制分类方法。
+<img
+src="https://mfjblog-pic.oss-cn-beijing.aliyuncs.com/img/8f8442f3634c42daa27ebb8d09b2dad7.png"
+alt="在这里插入图片描述" /></p>
+<h2 id="b.amc-methods-with-image-input">B.AMC Methods With Image
+Input</h2>
+<p>在AMC处理图像输入时，将无线电信号转换成图像的方法是其中的关键步骤之一。可以分为两类：基于固定规则的图像映射方法和基于可训练神经网络层的图像映射方法。在目前来看，前者是很常见的。
+总的来说，目前基于固定规则的图像映射方法在转换过程中，容易丢失原始无线电信号的部分信息。基于可训练神经网络层的图像映射方法，需要人工设计再去与特定的网络模型相结合。
+## C.AMC Methods With Graph Input
+在基于图形输入的AMC方法中，将信号映射成图形的方法是必不可少的。文章在这一节介绍了许多类似的基于图形输入的图形映射方法，现有的图映射方法都存在一个共同的问题，都不能很好地应用于长信号。</p>
+<h1 id="proposed-deepsig-framework">PROPOSED DEEPSIG FRAMEWORK</h1>
+<h2 id="a.problem-formulation">A.Problem Formulation</h2>
+<p>在无线通信领域，调制分类旨在通过对接收信号<span
+class="math inline">\(r(n)\)</span>的分析来推断所发送的基带信号<span
+class="math inline">\(s(n)\)</span>的调制方案。接收信号<span
+class="math inline">\(r(n)\)</span>和发射信号<span
+class="math inline">\(s(n)\)</span>的关系如下： <img
+src="https://img-blog.csdnimg.cn/direct/8df38ab9caf54c45902000c436674dce.png"
+alt="在这里插入图片描述" /> <span
+class="math inline">\(g(n)\)</span>是滤波器的响应，<span
+class="math inline">\(h(n)\)</span>是无线信道的响应，<span
+class="math inline">\(\Delta
+f\)</span>是由接收器和发射器之间的时钟的多普勒频移或同步引起的载波频率偏差。<span
+class="math inline">\(\theta\)</span>是相位偏差，<span
+class="math inline">\(\omega(n)\)</span>是加性白色高斯噪声，<span
+class="math inline">\(N\)</span>是信号长度，<span
+class="math inline">\(*\)</span>代表卷积操作。</p>
+<p><span
+class="math inline">\(C\)</span>代表了调制方案的数量，因此，调制分类问题可以被视为具有<span
+class="math inline">\(C\)</span>类的分类问题。<img
+src="https://mfjblog-pic.oss-cn-beijing.aliyuncs.com/img/3c40a771cbcf4e42bb9758eaa895923e.png"
+alt="在这里插入图片描述" /></p>
+<p>若接收信号是复函数的形式，则以下列I/Q的形式去表示，I代表实部，Q代表虚部。<img
+src="https://mfjblog-pic.oss-cn-beijing.aliyuncs.com/img/c3b0e412439b4200bbd4b755a6b9a7f0.png"
+alt="在这里插入图片描述" /></p>
+<h2 id="b.overall-framework">B.Overall Framework</h2>
+<p>整体的框架如下，对于图像，输入的是映射后的双通道窄边缘图像，经过了没有分类的resnet18，输出了<span
+class="math inline">\(F_s\)</span>,对于序列信号，输入的是IQ信号，经过了没有分类的
+LSTM，输出了<span
+class="math inline">\(F_I\)</span>,对于图形，输入的是映射后的图形，经过了没有分类的DiffPool，输出了<span
+class="math inline">\(F_G\)</span>。其中图像和图形都是由IQ信号得到的，对IQ信号做DWT运算，得到了双通道窄边缘图像，对IQ信号做LFGM运算，得到了映射后的图形。这一框架里面还包含了全连接层，作为分类层。
+对于输入进的信号，如果不是IQ信号，我们需要做一些预处理。<img
+src="https://mfjblog-pic.oss-cn-beijing.aliyuncs.com/img/1842a238478846869a8f89f4974524b7.png"
+alt="在这里插入图片描述" /></p>
+<p>我们在DeepSIG的训练过程中做了一些处理，可以分为两步：
+1.利用IQ信号序列、DWT得到的图像数据和LFGM得到的图形数据，分别训练LSTM、ResNet18和DiffPool；根据初步训练后保存的三个模型，可以提取每个无线电信号的三个特征向量<span
+class="math inline">\(F_S\)</span>，<span
+class="math inline">\(F_I\)</span>和<span
+class="math inline">\(F_G\)</span>，它们是LSTM，ResNet18和DiffPool模型中最后一个全连接层的对应输入向量。
+2.再对这三个特征向量进行归一化处理后，通过拼接处理可以得到融合的特征向量<span
+class="math inline">\(F_H\)</span>，并将其作为输入向量训练新加入的全连接层，以获得最终的分类结果。
+## C.Sequence Network
+在DeepSIG的序列网络部分，输入数据是IQ信号，属于一种时间序列数据，使用的网络模型是LSTM。目前，RNN通常用于通过深度学习处理时间序列。其中，LSTM是较为流行的一种，它可以有效地解决RNN的长期依赖问题。LSTM主要通过遗忘门、更新门和输出门三种门机制来控制从时间序列中提取的特征信息的流动和损失，从而解决普通RNN在训练长时间序列过程中的梯度消失和梯度爆炸问题。<img
+src="https://mfjblog-pic.oss-cn-beijing.aliyuncs.com/img/8d13a881ac1d4461824332cf91feb58c.png"
+alt="在这里插入图片描述" /></p>
+<p>下图就是文中给出LSTM的详细构造，因为整个系统的容量是有限的，为了清除与本次过程无关的记忆内容，保留与本次有关的记忆内容，我们就引入了==遗忘门==<img
+src="https://mfjblog-pic.oss-cn-beijing.aliyuncs.com/img/a46ade2f455949959ec7a087d4a98d0a.png"
+alt="在这里插入图片描述" /></p>
+<p>其中，遗忘门<span class="math inline">\(f_t\)</span>的公式如下<img
+src="https://mfjblog-pic.oss-cn-beijing.aliyuncs.com/img/e0c8038279034b4a9303c07f59f73040.png"
+alt="在这里插入图片描述" /></p>
+<p>根据这公式所展示的sigmoid，其中<span
+class="math inline">\(W_f\)</span>和<span
+class="math inline">\(b_f\)</span>分别表示当前神经网络层的可训练权重和偏置。我们会把有用的记忆保留为1，不需要的变为0，这样往上走，进行乘法运算。<img
+src="https://mfjblog-pic.oss-cn-beijing.aliyuncs.com/img/7266d5277262435d83df3f359acd2c2a.png"
+alt="在这里插入图片描述" /></p>
+<p>==更新门==代表经过本次的学习产生了新的内容，但是对于这些内容，我们需要进行筛选，再输出，所以用Sigmoid和Tanh进行了筛选。<img
+src="https://mfjblog-pic.oss-cn-beijing.aliyuncs.com/img/6e90e2e6061e4fd488716428b6b6ba6e.png"
+alt="在这里插入图片描述" /></p>
+<p>其中<span class="math inline">\(W_u\)</span>、<span
+class="math inline">\(b_u\)</span>、&amp;W_Y<span
+class="math inline">\(和\)</span>b_Y$表示相应神经网络层的权重和偏置。</p>
+<p>==输出门==使用Sigmiod函数来确定需要输出单元状态<span
+class="math inline">\(V_t\)</span>的哪一部分，我们经过tanh就是为了筛选出我们需要的部分。<img
+src="https://mfjblog-pic.oss-cn-beijing.aliyuncs.com/img/6e3ad5c71d754aa6bf1e5942373e9312.png"
+alt="在这里插入图片描述" /></p>
+<p>其中<span class="math inline">\(W_o\)</span>和<span
+class="math inline">\(b_o\)</span>分别表示当前神经网络层的权重和偏置。</p>
+<hr />
+<p>文章使用了两个LSTM层和一个全连接层来分类序列网络中归一化为[-1，1]的IQ信号数据。下面是归一化的算法伪代码：<img
+src="https://mfjblog-pic.oss-cn-beijing.aliyuncs.com/img/e429363db38f45d2b2c66cc69cdad315.png"
+alt="在这里插入图片描述" /></p>
+<p>第一层由128个LSTM细胞组成，第二层有4个细胞，最后一个全连接层是分类层，用于将第二个LSTM层的输出特征映射到数据集的调制类别数量。</p>
+<h2 id="d.image-network">D.Image Network</h2>
+<p>提出了一种图像映射方法，对IQ信号数据进行DWT处理，得到双通道窄边缘图像数据，然后使用ResNet18模型进行调制识别任务。
+1）算法：小波变换是一种具有多分辨率分析特点的时频分析方法，在低频区和高频区分别具有较高的频域分辨率和时间分辨率。用DWT分解信号的层次结构如图所示。<img
+src="https://mfjblog-pic.oss-cn-beijing.aliyuncs.com/img/f6558701ce6c4455881352f17919e197.png"
+alt="在这里插入图片描述" /></p>
+<p><code>i</code>阶段的DWT信号分解公式如下所示， <img
+src="https://mfjblog-pic.oss-cn-beijing.aliyuncs.com/img/b2dcc92a0e5d480685d6be42b24b22cb.png"
+alt="在这里插入图片描述" /> 其中<span
+class="math inline">\(g(k)\)</span>和<span
+class="math inline">\(h(k)\)</span>分别表示低通滤波器和高通滤波器，<span
+class="math inline">\(K\)</span>是它们的长度。<span
+class="math inline">\(k\)</span>代表着信号中的时间索引或位置
+每次进行DWT分解，得到的两个分量的长度将减少一半，因此我们最多可以对长度为N的序列进行<span
+class="math inline">\(log_2 N\)</span>阶DWT分解。</p>
+<p>在实际应用中，对于包括无线电信号在内的许多序列数据，<strong>低频分量</strong>是重要的，它往往包含了信号的特征，而高频分量则显示了信号中的细节。
+基于近似分量及其对应细节分量的DWT重建过程可以表示为： <img
+src="https://mfjblog-pic.oss-cn-beijing.aliyuncs.com/img/7938d91144f34487a89b0567b304036b.png"
+alt="在这里插入图片描述" />
+在DWT重构过程中，两个等长的信号分量可以合并为一个新的、长度为原来两倍的信号分量。
+利用DWT的多层分解，可以将信号分解成多个高频和低频分量，然后通过多次DWT重构操作将这些分量组合回原始长度的信号。文章的方法与传统的信号重构方法不同之处在于，在DWTDR方法中，信号重构操作包含了一些预处理步骤，以便更好地处理信号分量。
+从IQ信号到图像的算法如下所示： <img
+src="https://mfjblog-pic.oss-cn-beijing.aliyuncs.com/img/7c9e8482c1a24689afac80742b4a2184.png"
+alt="在这里插入图片描述" /> 通道1的重建过程如图所示： <img
+src="https://mfjblog-pic.oss-cn-beijing.aliyuncs.com/img/9053feb77992481f91d15b9cbbd996f8.png"
+alt="在这里插入图片描述" />
+对I通道数据进行多次DWT分解，获取多个高频分量和一个低频分量。根据分解得到的频率分量进行多次重构操作。每次重构操作中，仅保留一个分量，其余设为零，通过多次重构得到新的序列。将所有重构序列组合成一个矩阵。对Q通道数据进行相同处理，得到对应矩阵。将I和Q通道的矩阵拼接，生成最终的图像。
+总结一下，就是对I通道和Q通道数据分别进行多次DWT分解和重构操作，生成多个重构序列，然后将这些序列组合成矩阵，最终通过连接I和Q通道的矩阵，生成一个双通道窄边图像。这种方法通过保留和重构频率分量，确保了信号的时间和频率信息在图像映射中的保留和表达。
+在得到每个IQ信号对应的<span
+class="math inline">\(M_{IQ}\)</span>图像后，文章利用resnet18进行调制分类。从理论上讲，神经网络模型的网络层越深，可以获得的信息越多，特征越丰富。但在实际中，当网络层数超过一定程度时，继续加深网络会造成<strong>梯度爆炸或梯度消失</strong>的问题，这将对网络的优化产生不利影响。
+为了解决这一问题，文章使用了以残差块为核心的resnet18。下图展示了一个残差块的构造：
+<img
+src="https://mfjblog-pic.oss-cn-beijing.aliyuncs.com/img/e41426044ece4241a9cac0fb393916a9.png"
+alt="在这里插入图片描述" /> resnet为何能解决梯度爆炸等问题呢？
+在深层神经网络中，随着层数的增加，梯度在反向传播过程中会逐层相乘，如果每一层的梯度都非常小（小于1），会导致梯度逐渐变得非常小，称为梯度消失；反之，如果每一层的梯度都非常大（大于1），会导致梯度逐渐变得非常大，称为梯度爆炸。这两种情况都会导致网络难以训练。
+残差块通过引入跳跃连接，使得每一个块的输入可以绕过中间的层，直接连接到输出。跳跃连接（Skip
+Connections）使得梯度可以直接从较深的层传递到较浅的层，从而有效缓解梯度消失和梯度爆炸问题。
+从图中可以看出，残差块之间有跳跃连接，跳跃连接提供了一条直接的梯度传播路径，使得梯度可以绕过多个中间层直接传递。这意味着即使中间层的梯度变得非常小或非常大，梯度仍然可以通过跳跃连接有效地传播。</p>
+<p>2）Complexity Analysis：
+文章在这里分析DWTDR的复杂性，以Haar小波为例子，首先分析<strong>时间复杂度</strong>，假设他的滤波器长度<span
+class="math inline">\(K=2\)</span>。当对具有长度<span
+class="math inline">\(N\)</span>的IQ信号的信道执行Haar离散小波分解时，需要总共<span
+class="math inline">\(N/2\)</span>次加法和<span
+class="math inline">\(N/2\)</span>次乘法运算。因此，Haar离散小波分解对长度为N的通道数据的时间复杂度为函数<span
+class="math inline">\(O(N)\)</span>。对于2个通道的IQ信号，时间复杂度为<span
+class="math inline">\(O(2N)\)</span>。在DWTDR过程中，总共需要<span
+class="math inline">\(log_2N\)</span>分解，并且每个分解的序列长度是前一个分解长度的一半。
+因此，在DWTDR中IQ信号的整个分解过程的时间复杂度为: <img
+src="https://mfjblog-pic.oss-cn-beijing.aliyuncs.com/img/de3603b0aed1449d870bded441e1b8a9.png"
+alt="在这里插入图片描述" /></p>
+<p>其次，在DWTDR的重构过程中，以处理长度为N的IQ信号的通道序列为例，基于从上述分解获得的一个低频分量和<span
+class="math inline">\(N\)</span>个高频分量，需要递归地执行<span
+class="math inline">\(log_2N\)</span>次DWT重构操作以获得长度为<span
+class="math inline">\(N\)</span>的序列，即一次信号重构。每次小波变换重构的时间复杂度与相应的小波变换分解的时间复杂度相同，均为<span
+class="math inline">\(O\)</span>(重建序列的长度)。因此，对信道序列执行信号重构操作的时间复杂度为：
+<img
+src="https://mfjblog-pic.oss-cn-beijing.aliyuncs.com/img/93b98c74e334495998440f71990633f0.png"
+alt="在这里插入图片描述" />
+对于IQ信号，存在两个通道序列，并且每个通道序列在整个DWTDR重构过程中需要<span
+class="math inline">\((1+log_2N)\)</span>个信号重构操作。
+因此，IQ信号的DWTDR重建的时间复杂度为： <img
+src="https://mfjblog-pic.oss-cn-beijing.aliyuncs.com/img/d0722301658d4740a85df6e312542c09.png"
+alt="在这里插入图片描述" /></p>
+<p>最后，我们可以知道DWTDR的时间复杂度是： <img
+src="https://mfjblog-pic.oss-cn-beijing.aliyuncs.com/img/bb942df292304e2597db3e9ba4361214.png"
+alt="在这里插入图片描述" />
+同样，DWTDR的<strong>空间复杂度</strong>也可以分为两部分：分解和重构。以IQ信号的信道序列为例，在分解过程中，<span
+class="math inline">\((1+log_2N)\)</span>的数组空间，需要存储一个低频分量和分解后得到的N个高频分量。因此，在DWTDR分解过程中IQ信号的空间复杂度为：
+<img
+src="https://mfjblog-pic.oss-cn-beijing.aliyuncs.com/img/96442824726d4596b17961dcbc150d78.png"
+alt="在这里插入图片描述" />
+在重构过程中，我们需要一个数组来存储从当前DWT重构获得的分量，单通道信号重构包括<span
+class="math inline">\(log_2 N\)</span> DWT重构，而DWTDR重构包括<span
+class="math inline">\((1+log_2N)\)</span>信号重构。因此，在DWTDR重构过程期间IQ信号的空间复杂度为：
+<img
+src="https://mfjblog-pic.oss-cn-beijing.aliyuncs.com/img/9fe52e986db5411882177ad8935d1211.png"
+alt="在这里插入图片描述" /> 最后，我们可以得到DWTDR的空间复杂度： <img
+src="https://img-blog.csdnimg.cn/direct/328dca7ce73c4810821f30a63cbb9ce9.png"
+alt="在这里插入图片描述" /> ## E.Graph Network
+这里讲的是用图形表示IQ信号，然而，这些图映射方法很耗时，特别是在处理长信号时，所以我们提出了一种方法称为LFGM，来映射IQ信号到图形。通过LFGM，我们用相同结构的图来表示不同的IQ信号。不同之处在于不同图中节点的特征向量。将IQ信号映射到图形的过程见下面的伪代码：
+<img
+src="https://mfjblog-pic.oss-cn-beijing.aliyuncs.com/img/d999bd437e65440789c0630acf6ac994.png"
+alt="在这里插入图片描述" /></p>
+<p>以下是伪代码的详细步骤解释：</p>
+<h3 id="输入">输入</h3>
+<ul>
+<li><strong>超参数 <span class="math inline">\(( k
+)\)</span></strong>：控制节点之间连接的范围。</li>
+<li><strong>IQ信号 <span class="math inline">\(( S_{IQ}
+)\)</span></strong>：包含 <span class="math inline">\(( I
+)\)</span>（同相分量）和<span class="math inline">\(( Q
+)\)</span>（正交分量）的时间序列信号。</li>
+</ul>
+<h3 id="输出">输出</h3>
+<ul>
+<li><strong>图 <span class="math inline">\(( G = \langle V_N, E \rangle
+)\)</span></strong>：包含节点集合 <span class="math inline">\(( V_N
+)\)</span> 和边集合 <span class="math inline">\(( E )\)</span>。</li>
+</ul>
+<figure>
+<img
+src="https://mfjblog-pic.oss-cn-beijing.aliyuncs.com/img/a8b72dfee36147608e1bb045642503e2.png"
+alt="在这里插入图片描述" />
+<figcaption aria-hidden="true">在这里插入图片描述</figcaption>
+</figure>
+<p><img
+src="https://mfjblog-pic.oss-cn-beijing.aliyuncs.com/img/e33a0ec7f82245398dde690d935d6d30.png"
+alt="在这里插入图片描述" /> 具体地，对于长度为N的无线电信号样本<span
+class="math inline">\(S_{IQ}\)</span> <img
+src="https://mfjblog-pic.oss-cn-beijing.aliyuncs.com/img/83dee5e3db8f4b54bd3b37e6523e96e8.png"
+alt="在这里插入图片描述" /> 我们把它转换成相应的图<span
+class="math inline">\(G = \langle V_N, E \rangle\)</span>。其中<span
+class="math inline">\(V_N\)</span>和<span
+class="math inline">\(E\)</span>表示图G的节点集和边集。在图<span
+class="math inline">\(G\)</span>中，<span
+class="math inline">\(N\)</span>个节点对应于相应IQ信号的时间采样点，节点的属性值是由采样点对应的IQ通道的两个值组成的向量。图<span
+class="math inline">\(G\)</span>的边由时间采样点的距离决定。间隔小于<span
+class="math inline">\(k\)</span>的时间采样点可以形成边，其中<span
+class="math inline">\(k\)</span>是一个超参数，可以用来控制图<span
+class="math inline">\(G\)</span>的连接关系的稀疏性。<span
+class="math inline">\(k\)</span>越大，生成的图越密集。为了更好地保留原始IQ信号的隐含信息，我们将<span
+class="math inline">\(k\)</span>设置为无线电信号的过采样率。 <img
+src="https://mfjblog-pic.oss-cn-beijing.aliyuncs.com/img/5c36f9c79f294a6ea601d764d802dab6.png"
+alt="在这里插入图片描述" /> 我们以<span
+class="math inline">\(v_3\)</span>为例子，<span
+class="math inline">\(4-3=1\)</span>小于2，所以<span
+class="math inline">\(v_3\)</span>连接<span
+class="math inline">\(v_4\)</span>，而不能连接其他的节点。
+在将每个IQ信号映射到相应的图中之后，现有的用于图分类的GNN可以直接用于无线电信号调制分类。用GNN进行图分类是根据拓扑连接关系学习每个节点的嵌入表示向量，文章选择DiffPool对映射图进行分类，DiffPool实际上是一个可微分图池模块，可以生成图的层次表示，并且可以以端到端的方式与各种图神经网络架构相结合。DiffPool的架构图如图所示。</p>
+<figure>
+<img
+src="https://mfjblog-pic.oss-cn-beijing.aliyuncs.com/img/3176cc7e435b46fb9a5693ca4babeab9.png"
+alt="在这里插入图片描述" />
+<figcaption aria-hidden="true">在这里插入图片描述</figcaption>
+</figure>
+<ol type="1">
+<li>原始图经过第一层池化，节点被聚合成超节点。图中用不同颜色（例如绿色、灰色、黄色和橙色）表示不同的超节点，每个超节点代表了一组原始节点的聚合。</li>
+<li>第一层池化后的图进一步经过第二层池化，超节点再次被聚合成更高层次的超节点。图中用蓝色和灰色表示这一级别的超节点。</li>
+<li>第二层池化后的图继续进行第三层池化，形成更少的超节点，用橙色表示。</li>
+<li>最终，经过多层池化后的图被转化为一个特征向量，提取出了代表图的全局信息的特征。</li>
+</ol>
+<figure>
+<img
+src="https://mfjblog-pic.oss-cn-beijing.aliyuncs.com/img/1b82ca21e8604ac38a6436de6709877d.png"
+alt="在这里插入图片描述" />
+<figcaption aria-hidden="true">在这里插入图片描述</figcaption>
+</figure>
+<p>它为每一层中的节点学习可区分的集群分配，将节点映射到一组集群，然后形成下一个GNN层的粗糙化输入。图的边连通度一般用一个形状为<span
+class="math inline">\(N×N\)</span>的矩阵表示。为了保存存储空间，我们可以用<span
+class="math inline">\(S_E\)</span>二进制群来表示边集，其中<span
+class="math inline">\(S_E\)</span>表示图中边的个数。
+通过算法3，我们得到了 <img
+src="https://mfjblog-pic.oss-cn-beijing.aliyuncs.com/img/378e6307357f4bcea8302c33f008311c.png"
+alt="在这里插入图片描述" /> 因此LFGM的空间复杂度为<span
+class="math inline">\(O(2S_E)\)</span> ## F.Fusion Training
+通过这三个训练好的模型，可以分别得到输入格式为序列、图像和图形的分类模型的特征向量<span
+class="math inline">\(F_S\)</span>、<span
+class="math inline">\(F_I\)</span>和<span
+class="math inline">\(F_G\)</span>。 <img
+src="https://mfjblog-pic.oss-cn-beijing.aliyuncs.com/img/0e32afff713b48e6969a24a65740cea9.png"
+alt="在这里插入图片描述" /> <span class="math inline">\(\Gamma
+s\)</span>、<span class="math inline">\(\Gamma i\)</span>、<span
+class="math inline">\(\Gamma
+g\)</span>分别表示训练好的没有最后一个分类层的ResNet18、LSTM和DiffPool模型。然后，对所获得的三个特征向量<span
+class="math inline">\(F_S\)</span>、<span
+class="math inline">\(F_I\)</span>和<span
+class="math inline">\(F_G\)</span>执行相同的归一化处理，并且将三个归一化向量拼接以获得如下融合特征向量<span
+class="math inline">\(F_H\)</span>: <img
+src="https://mfjblog-pic.oss-cn-beijing.aliyuncs.com/img/e5c3a3b33d9448a3847af3ff3f8afc65.png"
+alt="在这里插入图片描述" /> <img
+src="https://mfjblog-pic.oss-cn-beijing.aliyuncs.com/img/61d9d8d551a24265a107b141cf8bb8d0.png"
+alt="在这里插入图片描述" /> 这个<span
+class="math inline">\(N\)</span>代表了归一化运算。其中<span
+class="math inline">\(v\)</span>是要处理的一维特征向量，<span
+class="math inline">\(l\)</span>是向量<span
+class="math inline">\(v\)</span>的长度，<span
+class="math inline">\(v_i\)</span>表示<span
+class="math inline">\(v\)</span>的第<span
+class="math inline">\(i\)</span>个元素，<span
+class="math inline">\(\epsilon\)</span>是一个小值，用于避免被零除，<span
+class="math inline">\(\left \| v \right \| _p\)</span>表示<span
+class="math inline">\(v\)</span>上的L-p范数运算，<span
+class="math inline">\(p\)</span>表示范数公式中的指数值,|·|是绝对值运算。随后，增加用于分类的全连接层，并将拼接后的融合特征向量<span
+class="math inline">\(F_H\)</span>用作新层的输入： <img
+src="https://mfjblog-pic.oss-cn-beijing.aliyuncs.com/img/086a1f46e688447c9689dd3780f6b226.png"
+alt="在这里插入图片描述" /> 其中<span
+class="math inline">\(L_{FC}\)</span>表示添加的全连接层，<span
+class="math inline">\(O\)</span>是预测的标签.最后，将基于序列、图像和图形的前三个网络的最后一个全连接层去掉，并将神经网络与新增加的全连接层进行融合训练。在融合训练的过程中，新的全连接层需要用更大的学习率进行训练，其他神经网络层<span
+class="math inline">\(\Gamma s\)</span>、<span
+class="math inline">\(\Gamma i\)</span>、<span
+class="math inline">\(\Gamma g\)</span>需要用更小的学习率进行微调。</p>
+<h1 id="simulations">SIMULATIONS</h1>
+<h2 id="a.datasets">A.Datasets</h2>
+<p>文章使用三个无线电信号数据集RML2016.10a
+[25]，SigData18和SigData36来展示我们提出的DeepSIG的性能，其中第一个是公共数据集，另外两个是文章作者团队自己生成的。下表是其基本信息：
+<img
+src="https://mfjblog-pic.oss-cn-beijing.aliyuncs.com/img/5ffdad37abca452686cbffe0f1081ede.png"
+alt="在这里插入图片描述" />
+其中，RML2016.10a有11种调制方案。每种调制的信噪比（SNR）范围为−20 dB至18
+dB，间隔为2
+dB。每个信号的长度为128，过采样率为8。该数据集共有220000个样本。在仿真过程中，我们取800个从每个调制方案中，作为样本训练，剩下的作为测试样本。
+SigData-18包含18种调制方案。信号长度为512，过采样率为8。脉冲整形采用升余弦滤波，滚降系数在[0.2，0.7]范围内随机选择。SNR范围为−20dB至30dB，间隔也为2dB。我们在每个调制方案的每个SNR下从该数据集中随机挑选800个信号作为训练集，并将剩余样本合并到测试集中。
+SigData-36类似于SigData-18，除了SigData-36的信号长度为1024，并且它具有额外的18种调制方案，即BPSK，OQPSK，32APSK，64
+APSK，128 APSK，256 APSK，4ASK，8ASK，4FSK，8 FSK，4CPM，8
+CPM，OOK，AM，FM，AM-MSK，FM-MSK和OFDMBPSK。 ## B. Simulation
+Setting</p>
+<p>所有仿真过程都在NVIDIA Tesla
+T4上运行。在训练过程中，我们使用的深度学习框架是PyTorch。我们使用PyTorch
+Geometric来构建GNN模型DiffPool。优化器和损失函数分别是Adam和交叉熵。在训练模型时，我们使用固定步长的学习率衰减策略，初始学习率为0.001，每5个epoch调整一次学习率，衰减到前一个值的80%。此外，在对DeepSIG进行融合训练时，除最终分类层外的其他网络层的初始学习率均设置为0.00001。在数据集RML2016.10a、SigData—18和SigData—36上训练时，minibatch大小分别设置为128、128和32。我们在通过DWTDR将IQ信号映射到图像的过程中使用的小波函数是Daubechies（db1），即Haar。当在0.5%、1%和完整训练集的数据集RML
+2016.10a上训练DeepSIG时，（28）公式中提到的<span
+class="math inline">\(p\)</span>分别被设置为（50，1）和1，并且在其他情况下指数值<span
+class="math inline">\(p\)</span>被设置为2。 ## C. Performance of DWTDR
+and LFGM
+为了验证DWTDR和LFGM的性能，文章采用了GAF和AVG（两种图形转化算法）作为对照。自适应可见性图（AVG）、Gramian角场（GAF）。然后下文给了选择GAF和AVG的一些理由。
+为了公平起见，在用GAF和DWTDR将信号映射到图像后，使用ResNet18模型进行分类。对于AVG和LFGM，都结合DiffPool模型进行分类，结果展示如下：
+<img
+src="https://mfjblog-pic.oss-cn-beijing.aliyuncs.com/img/ebf4fb78c461400087eee09d6a439b48.png"
+alt="在这里插入图片描述" />
+其中，表II中的“FLOP”和“Parameters”分别表示当推断IQ信号样本时计算中的相应浮点运算和存储中的参数的数量。我们可以看到，与GAF相比，基于我们提出的DWTDR的调制分类方法在三个数据集上具有更高的准确性，特别是在RML2016.10a和SigData-18上。由于LFGM得到的窄边矩阵比GAF得到的窄边矩阵小得多，因此基于LFGM的调制识别方法的总体计算复杂度和空间复杂度都明显小于基于GAF的调制识别方法。
+通过比较基于可训练映射算法的AVG和基于固定映射规则的LFGM的结果可以看出，我们提出的LFGM在复杂长信号数据集SigData—36上具有更好的性能，准确率提高了约4%，但不可否认的是，RML
+2016.10a和SigData—18上的平均分类准确率分别降低了约0.4%和1.4%。与通过神经网络层学习和调整映射图结构的AVG相比，虽然LFGM在两个信号相对较短的数据集上的性能略低，但LFGM更简单高效，直接使用相同结构的图来表示不同的信号，不需要在用于学习图结构的神经网络层上花费冗余的资源和时间。表II中的“FLOP”表明基于LFGM的分类方法的计算复杂度上级基于AVG的分类方法。因此表II中基于AVG的分类方法的“Parametes”不包括图形的边缘信息。
+基于LFGM的分类方法的“Parameters”是通过考虑边缘信息参数和模型参数而获得的参数的数目。在上述三个数据集的仿真中，当处理相同的无线电信号时，基于AVG获得的映射图中的边的数量通常多于基于LFGM获得的映射图中的边的数量。因此，实际上，基于LFGM的分类方法的参数的数目少于基于AVG的分类方法的参数的数目。总的来说，我们提出的DWTDR和LFGM在分类精度和实现可行性方面具有良好的性能。
+## D. Results on Complete Datasets
+文章首先讨论DeepSIG在上述三个数据集上的调制分类性能。使用了第二节中提到的序列、图像和图三种分类方法。单独使用图像、序列、图形方法分别和把它们结合在一起的DeepSIG方法去做一个比较。比较的结果如下表所示
+<img
+src="https://mfjblog-pic.oss-cn-beijing.aliyuncs.com/img/fc8b8869a3f2467594efb67c09b58d71.png"
+alt="在这里插入图片描述" />
+得出结论：DeepSIG可以将分类准确率大幅提高近2.5%。
+下图展示出了在不同SNR上的调制分类精度： <img
+src="https://mfjblog-pic.oss-cn-beijing.aliyuncs.com/img/d247a0245d0840f4a0eaabc8a4b2064a.png"
+alt="在这里插入图片描述" />
+很明显，在数据集RML2016.10a上，我们提出的DeepSIG在− 12 dB和− 8
+dB等低SNR下略有优势，在其他SNR下的性能与其他方法基本相同。根据图8（b）所示的数据集SigData-18的详细分类结果，我们可以看到DeepSIG的性能明显优于其他三个单独的分类网络，特别是在8
+dB以上的高SNR下。
+从图8（c）可以看出，集成了三个独立分类网络的DeepSIG也可以提高数据集SigData-36的调制分类精度，特别是在-12
+dB和2 dB之间的SNR区域。
+在一定程度上可以说明，DeepSIG通过LSTM处理IQ序列数据可以提取时间信息，也能够通过处理映射的图像和图形，挖掘原始信号潜在的图像表示特征和潜在的图形特征。它可以充分利用这三个不同尺度上的特征来提高调制分类的准确性。
+为了进一步分析这些方法在不同调制类型下的识别性能，我们绘制了SNR = 10
+dB时的混淆矩阵，如图所示 <img
+src="https://mfjblog-pic.oss-cn-beijing.aliyuncs.com/img/548806a48d3648168665ca20f506dbb0.png"
+alt="在这里插入图片描述" /> 混淆矩阵就对其分类的结果进行了进一步的验证。
+从图9（a）至图9（d）可以看出，在调制类别数量相对较少的数据集RML
+2016.10a上，这些方法的分类精度相似，混淆矩阵差异不明显。这些方法都容易将WBFM误认为AMDSB。
+图9（e）至图9（h）是数据集SigData-18上的混淆矩阵。可以很明显的观察出DeepSIG的性能更优越在8PAM和16PAM，图像网络容易将OFDM—QPSK误分类为OFDM—16QAM，相比之下，图网络和DeepSIG对OFDM—QPSK的识别准确率更高。
+对于数据集SigData—36，从图9（i）到图9（l）可以看出，与其他三个单独的分类网络相比，混合异构DeepSIG在64QAM、128QAM和256QAM的识别能力上有一定的提升。</p>
+<p>总的来说，基于深度学习的调制识别网络本质上可以分为特征提取和分类。前者可以自动学习和提取能够代表输入信号的特征表示，而后者基于提取的特征向量进行分类处理。<strong>简单的说就是，提取的特征越多，对分类越有利</strong>。文章提出的混合异构框架DeepSIG包括三种不同类型的神经网络，可以处理代表同一信号样本的三种不同类型的输入，并从不同方面从原始信号数据中提取三个包含隐含信息的特征向量。这三个特征向量的融合导致更丰富和更全面的特征表示，通过充分利用丰富的特征，允许更好的分类性能。</p>
+<h2 id="e.-results-in-few-shot-scenarios">E. Results in Few-Shot
+Scenarios</h2>
+<p>现在是对少样本的场景分析DeepSIG的性能，模拟也是基于上述三个数据集。与上文不同的是，文章只使用训练集中的一部分数据来训练网络模型。三种少数情况，其中训练样本是从原始训练集中以不同比例随机提取的，分别是0.5%、1%和5%。仿真的结果如下表和图所示。
+<img
+src="https://mfjblog-pic.oss-cn-beijing.aliyuncs.com/img/e79071f2b1bb455e9ea03788ae0251d5.png"
+alt="在这里插入图片描述" /> <img
+src="https://mfjblog-pic.oss-cn-beijing.aliyuncs.com/img/8c6afb6d25a44cfc865091e79f6767b1.png"
+alt="在这里插入图片描述" />
+从表四可以看出，在三个少样本的场景中，DeepSIG的分类性能最好。RML2016.10a的类别较少，还有一定的进步空间。在另外两个数据集上，即，SigData-18和SigData-36，DeepSIG在分类准确性方面在少数场景中具有更好的分类性能。
+在数据集SigData—18的三个少样本中，与三个单独的分类网络（图像、图形、序列）相比，DeepSIG的性能将提高至少2%。在数据集SigData-36上，性能增益至少为4%。
+从图10中可以看出，DeepSIG在数据集SigData—18和SigData—36的几乎所有SNR中都具有比其他模型更高的分类准确度。<strong>这些结果表明，DeepSIG可以从不同角度充分挖掘和利用特征信息，以提高复杂无线电信号的少样本学习中的调制分类性能。</strong></p>
+<p>在实际的场景中，训练的样本常常是不足够的，此时，我们可以使用本文提到的三种不同形式的输入来表示同一个信号样本，然后从不同的角度提取、融合和使用信号特征表示，以在训练样本有限的场景下尽可能提高调制识别精度。</p>
+<h1 id="conclusion">CONCLUSION</h1>
+<p>在本文中，我们提出了一种用于无线电调制分类的混合异构深度学习框架，即DeepSIG。DeepSIG接收输入数据，这些数据可以以三种不同的格式表示IQ信号：序列，图像和图形。更重要的是，DeepSIG集成了RNN，CNN和GNN领域的网络模型。在三个无线电信号数据集上的仿真结果表明，我们提出的DeepSIG比基于三个独立字段的模型具有更好的分类性能。它的性能增益更明显，特别是在少数镜头的情况下。</p>
+<p>在未来，我们将尝试其他映射方法，将IQ信号映射到图像和图形中，并研究DeepSIG中的其他RNN，CNN和GNN架构。此外，我们将进行空中实验，以进一步验证所提出的方法的性能。</p>
+
+  </div>
+  
+  
+    
+    <div class='footer'>
+       <!-- 参考资料、相关资料等 -->
+      
+       <!-- 相关文章 -->
+      
+      <!-- 版权声明组件 -->
+      
+        
+          <div class='copyright'>
+            <blockquote>
+              
+                
+                  <p>博客内容遵循 署名-非商业性使用-相同方式共享 4.0 国际 (CC BY-NC-SA
+4.0) 协议</p>
+
+                
+              
+                
+                  <p>本文永久链接是：<a href="https://mengfanjun020906.github.io/2024/05/25/【文献阅读】DeepSIG_A_Hybrid_Heterogeneous_Deep_Learning_Framework_for_Radio_Signal_Classification/">https://mengfanjun020906.github.io/2024/05/25/【文献阅读】DeepSIG_A_Hybrid_Heterogeneous_Deep_Learning_Framework_for_Radio_Signal_Classification/</a></p>
+                
+              
+            </blockquote>
+          </div>
+        
+      
+      <!-- 打赏组件 -->
+      
+    </div>
+  
+  
+    
+
+
+  <div class='article-meta' id="bottom">
+    <div class='new-meta-box'>
+      
+        
+          <div class="new-meta-item date" itemprop="dateModified" datetime="2024-05-24T12:31:48+08:00">
+  <a class='notlink'>
+    <i class="fa-solid fa-edit fa-fw" aria-hidden="true"></i>
+    <p>更新于：May 24, 2024</p>
+  </a>
+</div>
+
+        
+      
+        
+          
+  
+  <div class="new-meta-item meta-tags"><a class="tag" href="/tags/%E5%AD%A6%E4%B9%A0/" rel="nofollow"><i class="fa-solid fa-hashtag fa-fw" aria-hidden="true"></i><p>学习</p></a></div> <div class="new-meta-item meta-tags"><a class="tag" href="/tags/%E6%96%87%E7%8C%AE/" rel="nofollow"><i class="fa-solid fa-hashtag fa-fw" aria-hidden="true"></i><p>文献</p></a></div> <div class="new-meta-item meta-tags"><a class="tag" href="/tags/%E7%A0%94%E7%A9%B6%E6%89%80/" rel="nofollow"><i class="fa-solid fa-hashtag fa-fw" aria-hidden="true"></i><p>研究所</p></a></div>
+  <span hidden itemprop="keywords">学习 文献 研究所</span>
+
+
+        
+      
+        
+          
+  <div class="new-meta-item share -mob-share-list">
+  <div class="-mob-share-list share-body">
+    
+      
+        <a class="-mob-share-qq" title="" rel="external nofollow noopener noreferrer noopener"
+          
+          target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://mengfanjun020906.github.io/2024/05/25/%E3%80%90%E6%96%87%E7%8C%AE%E9%98%85%E8%AF%BB%E3%80%91DeepSIG_A_Hybrid_Heterogeneous_Deep_Learning_Framework_for_Radio_Signal_Classification/&title=【文献阅读】DeepSIG_A_Hybrid_Heterogeneous_Deep_Learning_Framework_for_Radio_Signal_Classification - MengFanjun的博客&summary="
+          
+          >
+          
+            <img src="https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/logo/128/qq.png" class="lazyload" data-srcset="https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/logo/128/qq.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==">
+          
+        </a>
+      
+    
+      
+        <a class="-mob-share-qzone" title="" rel="external nofollow noopener noreferrer noopener"
+          
+          target="_blank" href="https://sns.qzone.qq.com/cgi-bin/qzshare/cgi_qzshare_onekey?url=https://mengfanjun020906.github.io/2024/05/25/%E3%80%90%E6%96%87%E7%8C%AE%E9%98%85%E8%AF%BB%E3%80%91DeepSIG_A_Hybrid_Heterogeneous_Deep_Learning_Framework_for_Radio_Signal_Classification/&title=【文献阅读】DeepSIG_A_Hybrid_Heterogeneous_Deep_Learning_Framework_for_Radio_Signal_Classification - MengFanjun的博客&summary="
+          
+          >
+          
+            <img src="https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/logo/128/qzone.png" class="lazyload" data-srcset="https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/logo/128/qzone.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==">
+          
+        </a>
+      
+    
+      
+        <a class="-mob-share-weibo" title="" rel="external nofollow noopener noreferrer noopener"
+          
+          target="_blank" href="http://service.weibo.com/share/share.php?url=https://mengfanjun020906.github.io/2024/05/25/%E3%80%90%E6%96%87%E7%8C%AE%E9%98%85%E8%AF%BB%E3%80%91DeepSIG_A_Hybrid_Heterogeneous_Deep_Learning_Framework_for_Radio_Signal_Classification/&title=【文献阅读】DeepSIG_A_Hybrid_Heterogeneous_Deep_Learning_Framework_for_Radio_Signal_Classification - MengFanjun的博客&summary="
+          
+          >
+          
+            <img src="https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/logo/128/weibo.png" class="lazyload" data-srcset="https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/logo/128/weibo.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==">
+          
+        </a>
+      
+    
+      
+    
+      
+    
+  </div>
+</div>
+
+
+
+        
+      
+    </div>
+    <!-- Custom Files bottomMeta begin -->
+    
+    <!-- Custom Files bottomMeta end -->
+  </div>
+
+
+  
+  
+
+  
+    <div class="prev-next">
+      
+      
+        <a class='next' href='/2024/02/21/%E5%AD%A6%E4%B9%A0%E9%80%9A%E4%BF%A1%E5%8E%9F%E7%90%86%E4%B9%8B%E2%80%94%E2%80%94%E5%BD%BB%E5%BA%95%E7%90%86%E8%A7%A3%E9%A2%91%E8%B0%B1%E5%92%8C%E9%A2%91%E8%B0%B1%E5%AF%86%E5%BA%A6/'>
+          <p class='title'>学习通信原理之——彻底理解频谱和频谱密度<i class="fa-solid fa-chevron-right" aria-hidden="true"></i></p>
+          <p class='content'>前言
+最近还是在复习通信原理，但是对于频谱/频谱密度/能量谱/能量谱密度/功率谱/功率谱密度还是一知半解的，所以我就去各种看资料，看视频，又去问了问老师。
+所以我在这里写下自己对这两个概念的一些...</p>
+        </a>
+      
+    </div>
+  
+  <!-- Custom Files postEnd begin-->
+  
+  <!-- Custom Files postEnd end-->
+</article>
+
+
+  
+
+
+  <article class="post white-box shadow floatable blur" id="comments">
+    <span hidden>
+      <meta itemprop="discussionUrl" content="/2024/05/25/%E3%80%90%E6%96%87%E7%8C%AE%E9%98%85%E8%AF%BB%E3%80%91DeepSIG_A_Hybrid_Heterogeneous_Deep_Learning_Framework_for_Radio_Signal_Classification/index.html#comments">
+    </span>
+    <p ct><i class='fa-solid fa-comments'></i> 评论</p>
+    
+
+    <div id="layoutHelper-comments"></div>
+
+  </article>
+
+
+
+
+
+
+</div>
+<aside id='l_side' itemscope itemtype="http://schema.org/WPSideBar">
+  
+
+  
+    
+    
+      
+    
+  
+
+
+<div class="widget-sticky pjax">
+
+  
+  
+
+
+  <section class="widget toc-wrapper desktop mobile " id="toc-div" >
+    
+  <header>
+    
+      <i class="fa-solid fa-list fa-fw" aria-hidden="true"></i><span class='name'>本文目录</span>
+    
+  </header>
+
+
+    <div class='content'>
+        <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%A0%94%E7%A9%B6%E8%83%8C%E6%99%AF%E4%B8%8E%E5%8A%A8%E6%9C%BA"><span class="toc-text">研究背景与动机</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%B0%83%E5%88%B6%E5%88%86%E7%B1%BB%E7%9A%84%E8%A7%92%E8%89%B2"><span class="toc-text">调制分类的角色</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%BC%A0%E7%BB%9F%E8%B0%83%E5%88%B6%E5%88%86%E7%B1%BB%E6%96%B9%E6%B3%95"><span class="toc-text">传统调制分类方法</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%9F%BA%E4%BA%8E%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0%E7%9A%84%E8%87%AA%E5%8A%A8%E8%B0%83%E5%88%B6%E5%88%86%E7%B1%BBamc"><span class="toc-text">基于深度学习的自动调制分类（AMC）</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%90%84%E7%B1%BB%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0amc%E6%96%B9%E6%B3%95%E7%9A%84%E7%89%B9%E7%82%B9"><span class="toc-text">各类深度学习AMC方法的特点</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#deepsig%E6%A1%86%E6%9E%B6"><span class="toc-text">DeepSIG框架</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%B8%BB%E8%A6%81%E8%B4%A1%E7%8C%AE"><span class="toc-text">主要贡献</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%AE%BA%E6%96%87%E7%BB%93%E6%9E%84"><span class="toc-text">论文结构</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#a.amc-methods-with-sequence-input"><span class="toc-text">A.AMC Methods With Sequence
+Input</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#b.amc-methods-with-image-input"><span class="toc-text">B.AMC Methods With Image
+Input</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#a.problem-formulation"><span class="toc-text">A.Problem Formulation</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#b.overall-framework"><span class="toc-text">B.Overall Framework</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#d.image-network"><span class="toc-text">D.Image Network</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%BE%93%E5%85%A5"><span class="toc-text">输入</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%BE%93%E5%87%BA"><span class="toc-text">输出</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#a.datasets"><span class="toc-text">A.Datasets</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#e.-results-in-few-shot-scenarios"><span class="toc-text">E. Results in Few-Shot
+Scenarios</span></a>
+    </div>
+  </section>
+
+  
+
+</div>
+
+
+<!-- 没有 pjax 占位会报错 万恶的 pjax -->
+
+  <div class="pjax">
+    <!-- pjax占位 -->
+  </div>
+
+  <div class="pjax">
+    <!-- pjax占位 -->
+  </div>
+
+  <div class="pjax">
+    <!-- pjax占位 -->
+  </div>
+
+  <div class="pjax">
+    <!-- pjax占位 -->
+  </div>
+
+  <div class="pjax">
+    <!-- pjax占位 -->
+  </div>
+
+  <div class="pjax">
+    <!-- pjax占位 -->
+  </div>
+
+  <div class="pjax">
+    <!-- pjax占位 -->
+  </div>
+
+  <div class="pjax">
+    <!-- pjax占位 -->
+  </div>
+
+  <div class="pjax">
+    <!-- pjax占位 -->
+  </div>
+
+  <div class="pjax">
+    <!-- pjax占位 -->
+  </div>
+
+  <!-- Custom Files side begin -->
+  
+  <!-- Custom Files side end -->
+</aside>
+
+
+
+          <!--此文件用来存放一些不方便取值的变量-->
+<!--思路大概是将值藏到重加载的区域内-->
+
+<pjax>
+<script>
+  window.pdata={}
+  pdata.ispage=true;
+  pdata.commentPath="";
+  pdata.commentPlaceholder="";
+  pdata.commentConfig={};
+  //  see: /layout/_partial/scripts/_ctrl/coverCtrl.ejs
+  
+    // header
+    var l_header=document.getElementById("l_header");
+    
+    l_header.classList.remove("show");
+    
+    
+      // cover
+      var cover_wrapper=document.querySelector('#l_cover .cover-wrapper');
+      var scroll_down=document.getElementById('scroll-down');
+      cover_wrapper.id="half";
+      cover_wrapper.style.display="";
+      scroll_down.style.display="none";
+    
+  
+</script>
+</pjax>
+        </div>
+        
+  
+  <footer class="footer clearfix"  itemscope itemtype="http://schema.org/WPFooter">
+    <br><br>
+    
+      
+        <div class="aplayer-container">
+          
+
+  
+    <meting-js
+      theme='#1BCDFC'
+      autoplay='true'
+      volume='0.7'
+      loop='all'
+      order='list'
+      fixed='true'
+      list-max-height='320px'
+      server='netease'
+      type='playlist'
+      id='993524571'
+      list-folded='true'>
+    </meting-js>
+  
+
+
+        </div>
+      
+    
+      
+        <br>
+        <div class="social-wrapper" itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          
+            
+              <a href="mailto:mengfanjun_020906@outlook.com"
+                class="social fas fa-envelope flat-btn"
+                target="_blank"
+                rel="external nofollow noopener noreferrer" itemprop="url">
+                
+              </a>
+            
+          
+            
+              <a href="https://github.com/MengFanjun020906"
+                class="social fab fa-github flat-btn"
+                target="_blank"
+                rel="external nofollow noopener noreferrer" itemprop="url">
+                
+              </a>
+            
+          
+        </div>
+      
+    
+      
+        <div><p>Blog content follows the <a
+target="_blank" rel="noopener" href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.en">Attribution-NonCommercial-ShareAlike
+4.0 International (CC BY-NC-SA 4.0) License</a></p>
+</div>
+      
+    
+      
+        Use
+        <a href="https://github.com/volantis-x/hexo-theme-volantis/#5.7.7" target="_blank" class="codename">Volantis</a>
+        as theme, total visits
+          <span id="busuanzi_value_site_pv"><i class="fa-solid fa-loader fa-spin fa-fw" aria-hidden="true"></i></span>
+          times
+        
+      
+    
+      
+        <div class='copyright'>
+        <p><a href="/">Copyright © 2022-2023 孟凡钧</a></p>
+
+        </div>
+      
+    
+    <!-- Custom Files footer begin-->
+    
+    <!-- Custom Files footer end-->
+  </footer>
+
+
+        <a id="s-top" class="fa-solid fa-arrow-up fa-fw" href="/" onclick="return false;" title="top"></a>
+      </div>
+    </div>
+    <div>
+      <script>
+  /******************** volantis.dom ********************************/
+  // 页面选择器 将dom对象缓存起来 see: /source/js/app.js etc.
+  volantis.dom.bodyAnchor = volantis.dom.$(document.getElementById("safearea")); // 页面主体
+  volantis.dom.topBtn = volantis.dom.$(document.getElementById('s-top')); // 向上
+  volantis.dom.wrapper = volantis.dom.$(document.getElementById('wrapper')); // 整个导航栏
+  volantis.dom.coverAnchor = volantis.dom.$(document.querySelector('#l_cover .cover-wrapper')); // 1个
+  volantis.dom.switcher = volantis.dom.$(document.querySelector('#l_header .switcher .s-search')); // 搜索按钮   移动端 1个
+  volantis.dom.header = volantis.dom.$(document.getElementById('l_header')); // 移动端导航栏
+  volantis.dom.search = volantis.dom.$(document.querySelector('#l_header .m_search')); // 搜索框 桌面端 移动端 1个
+  volantis.dom.mPhoneList = volantis.dom.$(document.querySelectorAll('#l_header .m-phone .list-v')); //  手机端 子菜单 多个
+</script>
+
+<script>
+  
+  volantis.css("https://unpkg.com/volantis-static@0.0.1654736714924/libs/@fortawesome/fontawesome-free/css/all.min.css");
+  
+  
+  
+</script>
+<script type="text/javascript" id="clustrmaps" src="//clustrmaps.com/map_v2.js?d=bPcCRxC4bZtkgRsg7UgdnDBMTDZWpbJMNpbRzeeUhkQ">
+</script>
+<!-- required -->
+
+
+<!-- internal -->
+
+<script src="/js/app.js"></script>
+
+
+
+
+
+
+<!-- rightmenu要在darkmode之前（ToggleButton） darkmode要在comments之前（volantis.dark.push）-->
+
+
+
+<script>
+  function loadIssuesJS() {
+    
+      const sites_api = document.getElementById('sites-api');
+      if (sites_api != undefined && typeof SitesJS === 'undefined') {
+        volantis.js("/js/plugins/tags/sites.js")
+      }
+    
+    
+      const friends_api = document.getElementById('friends-api');
+      if (friends_api != undefined && typeof FriendsJS === 'undefined') {
+        volantis.js("/js/plugins/tags/friends.js")
+      }
+    
+    
+      const contributors_api = document.getElementById('contributors-api');
+      if (contributors_api != undefined && typeof ContributorsJS === 'undefined') {
+        volantis.js("/js/plugins/tags/contributors.js")
+      }
+    
+  };
+  loadIssuesJS()
+  volantis.pjax.push(()=>{
+    loadIssuesJS();
+  })
+
+</script>
+
+
+
+
+  <script defer src="https://unpkg.com/volantis-static@0.0.1654736714924/libs/vanilla-lazyload/dist/lazyload.min.js"></script>
+<script>
+  // https://www.npmjs.com/package/vanilla-lazyload
+  // Set the options globally
+  // to make LazyLoad self-initialize
+  window.lazyLoadOptions = {
+    elements_selector: ".lazyload",
+    threshold: 0
+  };
+  // Listen to the initialization event
+  // and get the instance of LazyLoad
+  window.addEventListener(
+    "LazyLoad::Initialized",
+    function (event) {
+      window.lazyLoadInstance = event.detail.instance;
+    },
+    false
+  );
+  document.addEventListener('DOMContentLoaded', function () {
+    lazyLoadInstance.update();
+  });
+  document.addEventListener('pjax:complete', function () {
+    lazyLoadInstance.update();
+  });
+</script>
+
+
+
+
+  
+
+<script>
+  window.FPConfig = {
+	delay: 0,
+	ignoreKeywords: ["#"],
+	maxRPS: 6,
+	hoverDelay: 0
+  };
+</script>
+<script defer src="https://unpkg.com/volantis-static@0.0.1654736714924/libs/flying-pages/flying-pages.min.js"></script>
+
+
+
+
+
+
+
+  <script>
+  volantis.css("https://unpkg.com/volantis-static@0.0.1654736714924/libs/aplayer/dist/APlayer.min.css");
+  (async () => {
+    // APlayer 需要在  MetingJS 之前加载
+    await volantis.js("https://unpkg.com/volantis-static@0.0.1654736714924/libs/aplayer/dist/APlayer.min.js")
+    await volantis.js("https://unpkg.com/volantis-static@0.0.1654736714924/libs/meting/dist/Meting.min.js")
+  
+  })();
+
+  function SetAPlayerPlugin(){
+    let Metings = document.querySelectorAll('meting-js');
+    if (Metings.length === 0) {return;};
+    if (Metings[0].aplayer && Metings[0].aplayer.on) {
+      // improve the accessibility https://web.dev/button-name/
+      document.querySelectorAll(".aplayer-icon-menu").forEach(e=>{
+        e.setAttribute("aria-label","Aplayer Menu")
+      })
+      // message see: /layout/_plugins/message/script.ejs
+      
+        try {
+          setTimeout(() => {
+            Metings.forEach((item, index) => {
+              const aplayerItem = item.aplayer; if(!aplayerItem) return;
+              const rightAplayerCheck = 'true' === 'true'
+                && item.meta.id === '993524571';
+              if(rightAplayerCheck && typeof RightMenuAplayer !="undefined") RightMenuAplayer.checkAPlayer();
+              if(aplayerItem.events.events.play.every(item => {return item.name !== 'messagePlay'})) {
+                aplayerItem.on('play', function messagePlay() {
+                  let index = aplayerItem.list.index;
+                  let title = aplayerItem.list.audios[index].title;
+                  let artist = aplayerItem.list.audios[index].artist;
+                  setTimeout(() => {
+                    VolantisApp.message('音乐通知', title + ' - ' + artist, {
+                      icon: 'fa-solid fa-play',
+                      transitionIn: 'flipInX',
+                      transitionOut: 'flipOutX'
+                    });
+                  }, 100)
+                });
+              }
+              if(aplayerItem.events.events.pause.every(item => {return item.name !== 'messagePause'})) {
+                aplayerItem.on('pause', function messagePause() {
+                  let index = aplayerItem.list.index;
+                  let title = aplayerItem.list.audios[index].title;
+                  let artist = aplayerItem.list.audios[index].artist;
+                  setTimeout(() => {
+                    // 歌曲播放结束也会触发 pause 事件，为了避免错误提示，等待一会儿
+                    if(aplayerItem.paused) {
+                      VolantisApp.message('音乐通知', title + ' - ' + artist, {
+                        icon: 'fa-solid fa-pause',
+                        transitionIn: 'flipInX',
+                        transitionOut: 'flipOutX'
+                      });
+                    }
+                  }, 100)
+                });
+              }
+            });
+          }, 500)
+        } catch (error) { console.error(error); }
+      
+    }else{
+      volantis.requestAnimationFrame(SetAPlayerPlugin)
+    }
+  }
+
+  document.addEventListener("DOMContentLoaded", ()=>{
+    SetAPlayerPlugin();
+  });
+  volantis.pjax.push(SetAPlayerPlugin);
+</script>
+
+
+
+
+      <script>
+  volantis.layoutHelper("comments",`<div id="giscus_container"></div>`)
+
+  volantis.giscus = {};
+
+  function check_giscus() {
+    if (volantis.dark.mode === "dark") {
+      volantis.giscus.Theme = 'dark';
+    } else {
+      volantis.giscus.Theme = 'light';
+    }
+
+    return document.getElementById("giscus_container");
+  }
+
+  function pjax_giscus() {
+    const HEAD = check_giscus();
+    if (!HEAD) return;
+    let cfg = Object.assign({"theme":{"light":"light","dark":"dark"},"repo":"MengFanjun020906/comments","repo-id":"R_kgDOIjrvJg","category":"Announcements","category-id":"DIC_kwDOIjrvJs4CS6YN","mapping":"pathname","reactions-enabled":"1","emit-metadata":"0","lang":"zh-CN"},pdata.commentConfig)
+    const script = document.createElement('script');
+    script.setAttribute('src', 'https://giscus.app/client.js');
+    Object.keys(cfg).forEach(k=>{
+      if (k != "theme") {
+        script.setAttribute('data-'+k, cfg[k]);
+      }
+    })
+    script.setAttribute('data-theme', volantis.giscus.Theme);
+    script.setAttribute('crossorigin', "anonymous");
+    HEAD.appendChild(script);
+  }
+
+  function dark_giscus() {
+    const HEAD = check_giscus();
+    if (!HEAD) return;
+
+    const message = {
+      setConfig: {
+        theme: volantis.giscus.Theme
+      }
+    };
+    const giscusIframe = document.querySelector('iframe.giscus-frame');
+    giscusIframe.contentWindow.postMessage({ giscus: message }, 'https://giscus.app');
+  }
+  pjax_giscus();
+  volantis.pjax.push(pjax_giscus);
+  volantis.dark.push(dark_giscus);
+</script>
+
+    
+
+
+
+
+  <script defer src="https://gcore.jsdelivr.net/gh/volantis-x/cdn-busuanzi@2.3/js/busuanzi.pure.mini.js" data-pjax></script>
+
+
+<!-- optional -->
+
+  <script>
+  const SearchServiceDataPathRoot = ("/" || "/").endsWith("/") ?
+    "/" || "/" :
+    "//" || "/";
+  const SearchServiceDataPath = SearchServiceDataPathRoot + "content.json";
+
+  function loadSearchScript() {
+    // see: layout/_partial/scripts/_ctrl/cdnCtrl.ejs
+    return volantis.js("/js/search/hexo.js");
+  }
+
+  function loadSearchService() {
+    loadSearchScript();
+    document.querySelectorAll(".input.u-search-input").forEach((e) => {
+      e.removeEventListener("focus", loadSearchService, false);
+    });
+
+    document.querySelectorAll(".u-search-form").forEach((e) => {
+      e.addEventListener("submit", (event) => {
+        event.preventDefault();
+      }, false);
+    });
+  }
+
+  // 打开并搜索 字符串 s
+  function OpenSearch(s) {
+    if (typeof SearchService === 'undefined')
+      loadSearchScript().then(() => {
+        SearchService.setQueryText(s);
+        SearchService.search();
+      });
+    else {
+      SearchService.setQueryText(s);
+      SearchService.search();
+    }
+  }
+
+  // 访问含有 ?s=xxx  的链接时打开搜索 // 与搜索引擎 structured data 相关: /scripts/helpers/structured-data/lib/config.js
+  if (window.location.search && /^\?s=/g.test(window.location.search)) {
+    let queryText = decodeURI(window.location.search)
+      .replace(/\ /g, "-")
+      .replace(/^\?s=/g, "");
+    OpenSearch(queryText);
+  }
+
+  // 搜索输入框获取焦点时加载搜索
+  document.querySelectorAll(".input.u-search-input").forEach((e) => {
+    e.addEventListener("focus", loadSearchService, false);
+  });
+</script>
+
+
+
+
+
+
+
+  <script>
+
+
+
+  function pjax_highlightjs_copyCode(){
+    if (!(document.querySelector(".highlight .code pre") ||
+      document.querySelector(".article pre code"))) {
+      return;
+    }
+    VolantisApp.utilCopyCode(".highlight .code pre, .article pre code")
+  }
+  volantis.requestAnimationFrame(pjax_highlightjs_copyCode)
+  volantis.pjax.push(pjax_highlightjs_copyCode)
+
+</script>
+
+
+
+
+
+
+
+
+
+
+  <script>
+  let imgs = ["https://mfjblog-pic.oss-cn-beijing.aliyuncs.com/img/1071826.jpg"];
+  let index = 0;
+  let IntervalParallax = null;
+
+  function parallax(){
+    let ParallaxWindow = document.querySelector("#parallax-window");
+    
+      ParallaxWindow = document.querySelector("html");
+    
+    Parallax.window = ParallaxWindow;
+    Parallax.options.fade = 1500;
+    Parallax.cache = 1;
+    next_parallax();
+    Parallax.init();
+    if (imgs.length>1) {
+      IntervalParallax = setInterval(function () {
+        next_parallax();
+      }, '10000');
+    }
+  }
+
+  function next_parallax() {
+    if (typeof Parallax == "undefined") {
+      return
+    }
+    
+    if (imgs.length>=1) {
+      Parallax.options.src = imgs[index % imgs.length];
+      Parallax.start();
+      index++;
+      if (Parallax.cache) {
+        fetch(imgs[index % imgs.length] +"?t=" + new Date().getTime());
+        if (index == imgs.length) {
+          Parallax.cache = 0;
+        }
+      }
+    }
+  }
+  var runningOnBrowser = typeof window !== "undefined";
+  var isBot = runningOnBrowser && !("onscroll" in window) || typeof navigator !== "undefined" && /(gle|ing|ro|msn)bot|crawl|spider|yand|duckgo/i.test(navigator.userAgent);
+  if (!isBot) {
+    volantis.js('/js/plugins/parallax.js').then(()=>{
+      parallax()
+    })
+    volantis.pjax.send(()=>{
+      clearInterval(IntervalParallax)
+    },"clearIntervalParallax");
+    volantis.pjax.push(parallax);
+  }
+</script>
+
+
+
+
+  <script>
+  function load_swiper() {
+    if (!document.querySelectorAll(".swiper-container")[0]) return;
+    volantis.css("https://unpkg.com/volantis-static@0.0.1654736714924/libs/swiper/swiper-bundle.min.css");
+    volantis.js("https://unpkg.com/volantis-static@0.0.1654736714924/libs/swiper/swiper-bundle.min.js").then(() => {
+      pjax_swiper();
+    });
+  }
+
+  load_swiper();
+
+  function pjax_swiper() {
+    volantis.swiper = new Swiper('.swiper-container', {
+      slidesPerView: 'auto',
+      spaceBetween: 8,
+      centeredSlides: true,
+      loop: true,
+      pagination: {
+        el: '.swiper-pagination',
+        clickable: true,
+      },
+      navigation: {
+        nextEl: '.swiper-button-next',
+        prevEl: '.swiper-button-prev',
+      },
+    });
+  }
+
+  volantis.pjax.push(() => {
+    if (!document.querySelectorAll(".swiper-container")[0]) return;
+    if (typeof volantis.swiper === "undefined") {
+      load_swiper();
+    } else {
+      pjax_swiper();
+    }
+  });
+</script>
+
+
+<!-- pjax 标签必须存在于所有页面 否则 pjax error -->
+<pjax>
+
+        <script>
+  // https://github.com/theme-next/hexo-theme-next/blob/master/layout/_third-party/math/mathjax.swig
+  if (typeof MathJax === 'undefined') {
+    window.MathJax = {
+      loader: {
+        source: {
+          '[tex]/amsCd': '[tex]/amscd',
+          '[tex]/AMScd': '[tex]/amscd'
+        }
+      },
+      tex: {
+        inlineMath: {'[+]': [['$', '$']]},
+        tags: 'ams'
+      },
+      options: {
+        renderActions: {
+          findScript: [10, doc => {
+            document.querySelectorAll('script[type^="math/tex"]').forEach(node => {
+              const display = !!node.type.match(/; *mode=display/);
+              const math = new doc.options.MathItem(node.textContent, doc.inputJax[0], display);
+              const text = document.createTextNode('');
+              node.parentNode.replaceChild(text, node);
+              math.start = {node: text, delim: '', n: 0};
+              math.end = {node: text, delim: '', n: 0};
+              doc.math.push(math);
+            });
+          }, '', false],
+          insertedScript: [200, () => {
+            document.querySelectorAll('mjx-container').forEach(node => {
+              let target = node.parentNode;
+              if (target.nodeName.toLowerCase() === 'li') {
+                target.parentNode.classList.add('has-jax');
+              }
+            });
+          }, '', false]
+        }
+      }
+    };
+    (function () {
+      var script = document.createElement('script');
+      script.src = "https://unpkg.com/volantis-static@0.0.1654736714924/libs/mathjax/es5/tex-mml-chtml.js";
+      script.defer = true;
+      document.head.appendChild(script);
+    })();
+  } else {
+    // 文章章节标题不能为 “MathJax” ，否则会报错。
+    MathJax.startup.document.state(0);
+    MathJax.texReset();
+    MathJax.typesetPromise();
+  }
+</script>
+
+
+
+</pjax>
+
+<script>
+  function listennSidebarTOC() {
+    const navItems = document.querySelectorAll(".toc li");
+    if (!navItems.length) return;
+    let targets = []
+    const sections = [...navItems].map((element) => {
+      const link = element.querySelector(".toc-link");
+      const target = document.getElementById(
+        decodeURI(link.getAttribute("href")).replace("#", "")
+      );
+      targets.push(target)
+      // 解除 a 标签 href 的 锚点定位, a 标签 href 的 锚点定位 会随机启用?? 产生错位???
+      link.setAttribute("onclick","return false;")
+      link.setAttribute("toc-action","toc-"+decodeURI(link.getAttribute("href")).replace("#", ""))
+      link.setAttribute("href","/")
+      // 配置 点击 触发新的锚点定位
+      link.addEventListener("click", (event) => {
+        event.preventDefault();
+        // 这里的 addTop 是通过错位使得 toc 自动展开.
+        volantis.scroll.to(target,{addTop: 5, observer:true})
+        // Anchor id
+        history.pushState(null, document.title, "#" + target.id);
+      });
+      return target;
+    });
+
+    function activateNavByIndex(target) {
+      if (target.classList.contains("active-current")) return;
+
+      document.querySelectorAll(".toc .active").forEach((element) => {
+        element.classList.remove("active", "active-current");
+      });
+      target.classList.add("active", "active-current");
+      let parent = target.parentNode;
+      while (!parent.matches(".toc")) {
+        if (parent.matches("li")) parent.classList.add("active");
+        parent = parent.parentNode;
+      }
+    }
+
+    // 方案一：
+    volantis.activateNavIndex=0
+    activateNavByIndex(navItems[volantis.activateNavIndex])
+    volantis.scroll.push(()=>{
+      if (targets[0].getBoundingClientRect().top >= 0) {
+        volantis.activateNavIndex = 0
+      }else if (targets[targets.length-1].getBoundingClientRect().top < 0) {
+        volantis.activateNavIndex = targets.length-1
+      } else {
+        for (let index = 0; index < targets.length; index++) {
+          const target0 = targets[index];
+          const target1 = targets[(index+1)%targets.length];
+          if (target0.getBoundingClientRect().top < 0&&target1.getBoundingClientRect().top >= 0) {
+            volantis.activateNavIndex=index
+            break;
+          }
+        }
+      }
+      activateNavByIndex(navItems[volantis.activateNavIndex])
+    })
+
+    // 方案二：
+    // IntersectionObserver 不是完美精确到像素级别 也不是低延时性的
+    // function findIndex(entries) {
+    //   let index = 0;
+    //   let entry = entries[index];
+    //   if (entry.boundingClientRect.top > 0) {
+    //     index = sections.indexOf(entry.target);
+    //     return index === 0 ? 0 : index - 1;
+    //   }
+    //   for (; index < entries.length; index++) {
+    //     if (entries[index].boundingClientRect.top <= 0) {
+    //       entry = entries[index];
+    //     } else {
+    //       return sections.indexOf(entry.target);
+    //     }
+    //   }
+    //   return sections.indexOf(entry.target);
+    // }
+    // function createIntersectionObserver(marginTop) {
+    //   marginTop = Math.floor(marginTop + 10000);
+    //   let intersectionObserver = new IntersectionObserver(
+    //     (entries, observe) => {
+    //       let scrollHeight = document.documentElement.scrollHeight;
+    //       if (scrollHeight > marginTop) {
+    //         observe.disconnect();
+    //         createIntersectionObserver(scrollHeight);
+    //         return;
+    //       }
+    //       let index = findIndex(entries);
+    //       activateNavByIndex(navItems[index]);
+    //     }, {
+    //       rootMargin: marginTop + "px 0px -100% 0px",
+    //       threshold: 0,
+    //     }
+    //   );
+    //   sections.forEach((element) => {
+    //     element && intersectionObserver.observe(element);
+    //   });
+    // }
+    // createIntersectionObserver(document.documentElement.scrollHeight);
+  }
+
+  document.addEventListener("DOMContentLoaded", ()=>{
+    volantis.requestAnimationFrame(listennSidebarTOC)
+  });
+  document.addEventListener("pjax:success", ()=>{
+    volantis.requestAnimationFrame(listennSidebarTOC)
+  });
+</script>
+
+
+
+<script>
+  document.onreadystatechange = function () {
+    if (document.readyState == 'complete') {
+      // 页面加载完毕 样式加载失败，或是当前网速慢，或是开启了省流模式
+      const { saveData, effectiveType } = navigator.connection || navigator.mozConnection || navigator.webkitConnection || {}
+      if (getComputedStyle(document.querySelector("#safearea"), null)["display"] == "none" || saveData || /2g/.test(effectiveType)) {
+        document.querySelectorAll(".reveal").forEach(function (e) {
+          e.style["opacity"] = "1";
+        });
+        document.querySelector("#safearea").style["display"] = "block";
+      }
+    }
+  }
+</script>
+
+
+  <script type="application/ld+json">[{"@context":"http://schema.org","@type":"Organization","name":"MengFanjun的博客","url":"https://mengfanjun020906.github.io/","logo":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}},{"@context":"http://schema.org","@type":"Person","name":"MengFanjun","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png"},"url":"https://mengfanjun020906.github.io/","sameAs":["https://github.com/volantis-x"],"description":"20级通信工程大学生的个人博客"},{"@context":"http://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"item":{"@id":"https://mengfanjun020906.github.io/","name":"MengFanjun的博客"}},{"@type":"ListItem","position":2,"item":{"@id":"https://mengfanjun020906.github.io/categories/文献阅读/","name":"文献阅读"}},{"@type":"ListItem","position":3,"item":{"@id":"https://mengfanjun020906.github.io/2024/05/25/【文献阅读】DeepSIG_A_Hybrid_Heterogeneous_Deep_Learning_Framework_for_Radio_Signal_Classification/","name":"【文献阅读】DeepSIG_A_Hybrid_Heterogeneous_Deep_Learning_Framework_for_Radio_Signal_Classification"}}]},{"@context":"http://schema.org","@type":"WebSite","name":"MengFanjun的博客","url":"https://mengfanjun020906.github.io/","keywords":null,"description":"20级通信工程大学生的个人博客","author":{"@type":"Person","name":"MengFanjun","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png"},"url":"https://mengfanjun020906.github.io/","description":"20级通信工程大学生的个人博客"},"publisher":{"@type":"Organization","name":"MengFanjun的博客","url":"https://mengfanjun020906.github.io/","logo":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}},"potentialAction":{"@type":"SearchAction","name":"Site Search","target":{"@type":"EntryPoint","urlTemplate":"https://mengfanjun020906.github.io?s={search_term_string}"},"query-input":"required name=search_term_string"}},{"@context":"http://schema.org","@type":"BlogPosting","headline":"【文献阅读】DeepSIG_A_Hybrid_Heterogeneous_Deep_Learning_Framework_for_Radio_Signal_Classification","description":"20级通信工程大学生的个人博客","inLanguage":"en","mainEntityOfPage":{"@type":"WebPage","@id":"https://mengfanjun020906.github.io/2024/05/25/%E3%80%90%E6%96%87%E7%8C%AE%E9%98%85%E8%AF%BB%E3%80%91DeepSIG_A_Hybrid_Heterogeneous_Deep_Learning_Framework_for_Radio_Signal_Classification/"},"author":{"@type":"Person","name":"MengFanjun","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png"},"url":"https://mengfanjun020906.github.io/"},"publisher":{"@type":"Organization","name":"MengFanjun的博客","logo":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}},"url":"https://mengfanjun020906.github.io/2024/05/25/%E3%80%90%E6%96%87%E7%8C%AE%E9%98%85%E8%AF%BB%E3%80%91DeepSIG_A_Hybrid_Heterogeneous_Deep_Learning_Framework_for_Radio_Signal_Classification/","wordCount":0,"datePublished":"2024-05-25T03:49:26.000Z","dateModified":"2024-05-24T04:31:48.709Z","articleSection":"文献阅读","keywords":"学习,文献,研究所","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}}]</script>
+
+
+
+      
+        <!--
+  pjax重载区域接口：
+  1.  <pjax></pjax> 标签 pjax 标签必须存在于所有页面 否则 pjax error
+  2.  script[data-pjax]
+  3.  .pjax-reload script
+  4.  .pjax
+-->
+
+
+
+<script src="https://unpkg.com/volantis-static@0.0.1654736714924/libs/pjax/pjax.min.js"></script>
+
+
+<script>
+    var pjax;
+    document.addEventListener('DOMContentLoaded', function () {
+      pjax = new Pjax({
+        elements: 'a[href]:not([href^="#"]):not([href="javascript:void(0)"]):not([pjax-fancybox]):not([onclick="return false;"]):not([onclick="return!1"]):not([target="_blank"]):not([target="view_window"]):not([href$=".xml"])',
+        selectors: [
+          "head title",
+          "head meta[name=keywords]",
+          "head meta[name=description]",
+          
+          "#l_main",
+          "#pjax-header-nav-list",
+          ".pjax",
+          "pjax", // <pjax></pjax> 标签
+          "script[data-pjax], .pjax-reload script" // script标签添加data-pjax 或 script标签外层添加.pjax-reload 的script代码段重载
+        ],
+        cacheBust: false,   // url 地址追加时间戳，用以避免浏览器缓存
+        timeout: 5000,
+        
+      });
+    });
+
+    document.addEventListener('pjax:send', function (e) {
+      //window.stop(); // 相当于点击了浏览器的停止按钮
+
+      try {
+        var currentUrl = window.location.pathname;
+        var targetUrl = e.triggerElement.href;
+        var banUrl = [""];
+        if (banUrl[0] != "") {
+          banUrl.forEach(item => {
+            if(currentUrl.indexOf(item) != -1 || targetUrl.indexOf(item) != -1) {
+              window.location.href = targetUrl;
+            }
+          });
+        }
+      } catch (error) {}
+
+      // 使用 volantis.pjax.send 方法传入pjax:send回调函数 参见layout/_partial/scripts/global.ejs
+      volantis.pjax.method.send.start();
+    });
+
+    document.addEventListener('pjax:complete', function () {
+      // 使用 volantis.pjax.push 方法传入重载函数 参见layout/_partial/scripts/global.ejs
+      volantis.pjax.method.complete.start();
+    });
+
+    document.addEventListener('pjax:error', function (e) {
+      if(volantis.debug) {
+        console.error(e);
+        console.log('pjax error: \n' + JSON.stringify(e));
+      }else{
+        // 使用 volantis.pjax.error 方法传入pjax:error回调函数 参见layout/_partial/scripts/global.ejs
+        volantis.pjax.method.error.start();
+        window.location.href = e.triggerElement.href;
+      }
+    });
+</script>
+
+      
+    </div>
+    <!-- import body_end begin-->
+    <!-- import body_end end-->
+    <!-- Custom Files bodyEnd begin-->
+    
+    <!-- Custom Files bodyEnd end-->
+  </body>
+</html>
