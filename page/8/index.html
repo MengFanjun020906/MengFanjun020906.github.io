@@ -1593,7 +1593,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
     debug: "env",
     cdn: {"js":{"app":"/js/app.js","parallax":"/js/plugins/parallax.js","rightMenu":"/js/plugins/rightMenu.js","rightMenus":"/js/plugins/rightMenus.js","sites":"/js/plugins/tags/sites.js","friends":"/js/plugins/tags/friends.js","contributors":"/js/plugins/tags/contributors.js","search":"/js/search/hexo.js"},"css":{"style":"/css/style.css"}},
     default: {"avatar":"https://unpkg.com/volantis-static@0.0.1654736714924/media/placeholder/avatar/round/3442075.svg","link":"https://unpkg.com/volantis-static@0.0.1654736714924/media/placeholder/link/8f277b4ee0ecd.svg","cover":"https://unpkg.com/volantis-static@0.0.1654736714924/media/placeholder/cover/76b86c0226ffd.svg","image":"https://unpkg.com/volantis-static@0.0.1654736714924/media/placeholder/image/2659360.svg"},
-    lastupdate: new Date(1724593412334),
+    lastupdate: new Date(1724593510216),
     sidebar: {
       for_page: ["blogger","category","tagcloud","webinfo","lastupdate"],
       for_post: ["toc"],
@@ -2358,90 +2358,6 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
         
           <div class='post-wrapper'>
             <div class="post post-v3 white-box reveal shadow floatable blur"  itemscope itemtype="http://schema.org/Article" >
-  <link itemprop="mainEntityOfPage" href="https://mengfanjun020906.github.io/2022/04/18/蓝桥杯单片机第十一届模拟题——智能门锁的程序以及设计思路/">
-  <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-    <meta itemprop="name" content="MengFanjun的博客">
-  </span>
-  <span hidden itemprop="post" itemscope itemtype="http://schema.org/Post">
-    <meta itemprop="name" content="MengFanjun的博客">
-    <meta itemprop="description" content="20级通信工程大学生的个人博客">
-  </span>
-  
-  
-  
-    <span hidden>
-      <meta itemprop="image" content="https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png">
-    </span>
-  
-  
-    
-    <h2 class="article-title"  itemprop="name headline">
-      <a href="/2022/04/18/%E8%93%9D%E6%A1%A5%E6%9D%AF%E5%8D%95%E7%89%87%E6%9C%BA%E7%AC%AC%E5%8D%81%E4%B8%80%E5%B1%8A%E6%A8%A1%E6%8B%9F%E9%A2%98%E2%80%94%E2%80%94%E6%99%BA%E8%83%BD%E9%97%A8%E9%94%81%E7%9A%84%E7%A8%8B%E5%BA%8F%E4%BB%A5%E5%8F%8A%E8%AE%BE%E8%AE%A1%E6%80%9D%E8%B7%AF/"  itemprop="url">
-        蓝桥杯单片机第十一届模拟题——智能门锁的程序以及设计思路
-      </a>
-    </h2>
-  
-  <div class='md article-desc' itemprop="articleBody">
-    
-      
-        最近在练习蓝桥杯的单片机，因为之前沉迷游戏太久了，于是就想做出来一个涨涨面子，这一做就是一周。。。。。。。但总算做出来了，在这里复盘一下，顺便放出代码，大家也能看看，检查一下bug之类的。
-注意！！！J5为KBD模式，J13位IO模式，然后跳线帽不要放在P34和SIGNAL上，我就因为这个看了1个小时的代码
-原理图
-
-
-请添加图片描述
-
-题目
-  
-主要是分四个显示：
-
-输入显示
-修改显示
-...
-      
-    
-  </div>
-  
-    <div class='meta-v3' line_style='solid'>
-      <div>
-        
-          
-          <a class='avatar' href='/'><img src='https://pic.imgdb.cn/item/63f9926ef144a01007de7d7d.png'></a>
-          <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-            <meta itemprop="image" content="https://pic.imgdb.cn/item/63f9926ef144a01007de7d7d.png">
-            <meta itemprop="name" content="MengFanjun">
-            <meta itemprop="url" content="/">
-          </span>
-        
-        <time itemprop="dateCreated datePublished" datetime="2022-04-18T15:13:54+08:00">2022-04-18</time>
-        
-          <span class="dot"></span>
-          <a class="category-link" href="/categories/%E8%93%9D%E6%A1%A5%E6%9D%AF%E5%8D%95%E7%89%87%E6%9C%BA%E5%AD%A6%E4%B9%A0/">蓝桥杯单片机学习</a>
-          
-            <span hidden itemprop="about" itemscope itemtype="http://schema.org/Thing">
-              <a href="/categories/%E8%93%9D%E6%A1%A5%E6%9D%AF%E5%8D%95%E7%89%87%E6%9C%BA%E5%AD%A6%E4%B9%A0/" itemprop="url"><span itemprop="name">蓝桥杯单片机学习</span></a>
-            </span>
-          
-        
-      </div>
-      
-        <div>
-          <a class='readmore' href='/2022/04/18/%E8%93%9D%E6%A1%A5%E6%9D%AF%E5%8D%95%E7%89%87%E6%9C%BA%E7%AC%AC%E5%8D%81%E4%B8%80%E5%B1%8A%E6%A8%A1%E6%8B%9F%E9%A2%98%E2%80%94%E2%80%94%E6%99%BA%E8%83%BD%E9%97%A8%E9%94%81%E7%9A%84%E7%A8%8B%E5%BA%8F%E4%BB%A5%E5%8F%8A%E8%AE%BE%E8%AE%A1%E6%80%9D%E8%B7%AF/' itemprop="url">
-            Read More
-          </a>
-        </div>
-      
-    </div>
-  
-
-</div>
-
-          </div>
-        
-      
-        
-          <div class='post-wrapper'>
-            <div class="post post-v3 white-box reveal shadow floatable blur"  itemscope itemtype="http://schema.org/Article" >
   <link itemprop="mainEntityOfPage" href="https://mengfanjun020906.github.io/2022/04/08/蓝桥杯第十三届模拟题03——源代码/">
   <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
     <meta itemprop="name" content="MengFanjun的博客">
@@ -3102,6 +3018,81 @@ S6：向左切换调节对象 S5：向右切换调节对象 S7：加1 S4：减1
           </div>
         
       
+        
+          <div class='post-wrapper'>
+            <div class="post post-v3 white-box reveal shadow floatable blur"  itemscope itemtype="http://schema.org/Article" >
+  <link itemprop="mainEntityOfPage" href="https://mengfanjun020906.github.io/2021/10/01/Arduino Uno零基础入门学习笔记/">
+  <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+    <meta itemprop="name" content="MengFanjun的博客">
+  </span>
+  <span hidden itemprop="post" itemscope itemtype="http://schema.org/Post">
+    <meta itemprop="name" content="MengFanjun的博客">
+    <meta itemprop="description" content="20级通信工程大学生的个人博客">
+  </span>
+  
+  
+  
+    <div class='headimg-div'>
+      <a class='headimg-a' href="/2021/10/01/Arduino%20Uno%E9%9B%B6%E5%9F%BA%E7%A1%80%E5%85%A5%E9%97%A8%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/">
+        <img itemprop="image" class='headimg' alt="Arduino Uno零基础入门学习笔记" src='https://m1.im5i.com/2022/12/13/U5Ky6h.png'/>
+      </a>
+    </div>
+  
+  
+    
+    <h2 class="article-title"  itemprop="name headline">
+      <a href="/2021/10/01/Arduino%20Uno%E9%9B%B6%E5%9F%BA%E7%A1%80%E5%85%A5%E9%97%A8%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/"  itemprop="url">
+        Arduino Uno零基础入门学习笔记
+      </a>
+    </h2>
+  
+  <div class='md article-desc' itemprop="articleBody">
+    
+      
+        关于零基础学习Arduino的一篇学习笔记
+一、配置篇
+因为要用Arduino来驱动小车，所以我就担任起了学习Arduino的重任，但由于我之前从来没有接触过编程，只有一定的c语言学习经验，所以是零基础进行学习，首先我是用的macos系统，配置环境大概比Windows系统要复杂一点，关于下载和环境配置如何进行，参考这一篇blog：https://blog.csdn.net/yczyd/art...
+      
+    
+  </div>
+  
+    <div class='meta-v3' line_style='solid'>
+      <div>
+        
+          
+          <a class='avatar' href='/'><img src='https://pic.imgdb.cn/item/63f9926ef144a01007de7d7d.png'></a>
+          <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+            <meta itemprop="image" content="https://pic.imgdb.cn/item/63f9926ef144a01007de7d7d.png">
+            <meta itemprop="name" content="MengFanjun">
+            <meta itemprop="url" content="/">
+          </span>
+        
+        <time itemprop="dateCreated datePublished" datetime="2021-10-01T09:42:10+08:00">2021-10-01</time>
+        
+          <span class="dot"></span>
+          <a class="category-link" href="/categories/Arduino%E5%AD%A6%E4%B9%A0/">Arduino学习</a>
+          
+            <span hidden itemprop="about" itemscope itemtype="http://schema.org/Thing">
+              <a href="/categories/Arduino%E5%AD%A6%E4%B9%A0/" itemprop="url"><span itemprop="name">Arduino学习</span></a>
+            </span>
+          
+        
+      </div>
+      
+        <div>
+          <a class='readmore' href='/2021/10/01/Arduino%20Uno%E9%9B%B6%E5%9F%BA%E7%A1%80%E5%85%A5%E9%97%A8%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/' itemprop="url">
+            Read More
+          </a>
+        </div>
+      
+    </div>
+  
+
+</div>
+
+          </div>
+        
+      
     
   </section>
   
@@ -3354,7 +3345,7 @@ S6：向左切换调节对象 S5：向右切换调节对象 S7：加1 S4：减1
       
         <div class="webinfo-item">
           <div>文章数目：</div>
-          <div>83 篇</div>
+          <div>82 篇</div>
         </div>
       
 
