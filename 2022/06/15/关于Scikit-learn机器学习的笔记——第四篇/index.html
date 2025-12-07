@@ -40,7 +40,7 @@
 <meta property="og:title" content="关于Scikit-learn机器学习的笔记——第四篇">
 <meta property="og:url" content="https://mengfanjun020906.github.io/2022/06/15/%E5%85%B3%E4%BA%8EScikit-learn%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E7%9A%84%E7%AC%94%E8%AE%B0%E2%80%94%E2%80%94%E7%AC%AC%E5%9B%9B%E7%AF%87/index.html">
 <meta property="og:site_name" content="MengFanjun的博客">
-<meta property="og:description" content="视频教程：【莫烦Python】Scikit-learn (sklearn) 优雅地学会机器学习 在我们获得数据时，需要对数据进行normalization  x1的数据范围更大，x2的数据范围很小，以这样的数值这样进行机器学习会使得结果不准确，所以我们需要经过标准化，再去进行机器学习 程序示例： 123456789from sklearn import preprocessingimport nu">
+<meta property="og:description" content="视频教程：【莫烦Python】Scikit-learn (sklearn) 优雅地学会机器学习 在我们获得数据时，需要对数据进行normalizationx1的数据范围更大，x2的数据范围很小，以这样的数值这样进行机器学习会使得结果不准确，所以我们需要经过标准化，再去进行机器学习 程序示例： 123456789from sklearn import preprocessingimport nump">
 <meta property="og:locale" content="en_US">
 <meta property="og:image" content="https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png">
 <meta property="article:published_time" content="2022-06-15T13:24:25.000Z">
@@ -1597,7 +1597,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
     debug: "env",
     cdn: {"js":{"app":"/js/app.js","parallax":"/js/plugins/parallax.js","rightMenu":"/js/plugins/rightMenu.js","rightMenus":"/js/plugins/rightMenus.js","sites":"/js/plugins/tags/sites.js","friends":"/js/plugins/tags/friends.js","contributors":"/js/plugins/tags/contributors.js","search":"/js/search/hexo.js"},"css":{"style":"/css/style.css"}},
     default: {"avatar":"https://unpkg.com/volantis-static@0.0.1654736714924/media/placeholder/avatar/round/3442075.svg","link":"https://unpkg.com/volantis-static@0.0.1654736714924/media/placeholder/link/8f277b4ee0ecd.svg","cover":"https://unpkg.com/volantis-static@0.0.1654736714924/media/placeholder/cover/76b86c0226ffd.svg","image":"https://unpkg.com/volantis-static@0.0.1654736714924/media/placeholder/image/2659360.svg"},
-    lastupdate: new Date(1765118762067),
+    lastupdate: new Date(1765119292905),
     sidebar: {
       for_page: ["blogger","category","tagcloud","webinfo","lastupdate"],
       for_post: ["toc"],
@@ -2421,7 +2421,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
   <div class="new-meta-item wordcount">
     <a class='notlink'>
       <i class="fa-solid fa-keyboard fa-fw" aria-hidden="true"></i>
-      <p>611 words</p>
+      <p>610 words</p>
     </a>
   </div>
   <div class="new-meta-item readtime">
@@ -2463,28 +2463,20 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
 
   <div id="layoutHelper-page-plugins"></div>
   <div id="post-body" itemprop="articleBody">
-    <p>视频教程：<a
-target="_blank" rel="noopener" href="https://www.bilibili.com/video/BV1xW411Y7Qd?p=5&amp;share_source=copy_web">【莫烦Python】Scikit-learn
-(sklearn) 优雅地学会机器学习</a></p>
-<p>在我们获得数据时，需要对数据进行normalization <img
-src="https://mfjblog-pic.oss-cn-beijing.aliyuncs.com/img/0a6bca09ed4947ec9ea70110e3eb9e7a.png"
-alt="在这里插入图片描述" />
-x1的数据范围更大，x2的数据范围很小，以这样的数值这样进行机器学习会使得结果不准确，所以我们需要经过标准化，再去进行机器学习</p>
+    <p>视频教程：<a target="_blank" rel="noopener" href="https://www.bilibili.com/video/BV1xW411Y7Qd?p=5&share_source=copy_web">【莫烦Python】Scikit-learn (sklearn) 优雅地学会机器学习</a></p>
+<p>在我们获得数据时，需要对数据进行normalization<br><img src="https://mfjblog-pic.oss-cn-beijing.aliyuncs.com/img/0a6bca09ed4947ec9ea70110e3eb9e7a.png" class="lazyload" data-srcset="https://mfjblog-pic.oss-cn-beijing.aliyuncs.com/img/0a6bca09ed4947ec9ea70110e3eb9e7a.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="在这里插入图片描述"><br>x1的数据范围更大，x2的数据范围很小，以这样的数值这样进行机器学习会使得结果不准确，所以我们需要经过标准化，再去进行机器学习</p>
 <p>程序示例：</p>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> sklearn <span class="keyword">import</span> preprocessing</span><br><span class="line"><span class="keyword">import</span> numpy <span class="keyword">as</span> np</span><br><span class="line"></span><br><span class="line">a=np.array([[<span class="number">10</span>,<span class="number">2.7</span>,<span class="number">3.6</span>],</span><br><span class="line">            [-<span class="number">100</span>,<span class="number">5</span>,-<span class="number">2</span>],</span><br><span class="line">            [<span class="number">120</span>,<span class="number">20</span>,<span class="number">40</span>]],dtype=np.float64)<span class="comment">##3个features分别是从-100到120，从2.7到20，从-2到40</span></span><br><span class="line"></span><br><span class="line"><span class="built_in">print</span>(a)<span class="comment">##无scale的结果</span></span><br><span class="line"><span class="built_in">print</span>(preprocessing.scale(a)) <span class="comment">##有scale之后的结果</span></span><br></pre></td></tr></table></figure>
 <p>输出结果：</p>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">[[  <span class="number">10.</span>     <span class="number">2.7</span>    <span class="number">3.6</span>]</span><br><span class="line"> [-<span class="number">100.</span>     <span class="number">5.</span>    -<span class="number">2.</span> ]</span><br><span class="line"> [ <span class="number">120.</span>    <span class="number">20.</span>    <span class="number">40.</span> ]]</span><br><span class="line">[[ <span class="number">0.</span>         -<span class="number">0.85170713</span> -<span class="number">0.55138018</span>]</span><br><span class="line"> [-<span class="number">1.22474487</span> -<span class="number">0.55187146</span> -<span class="number">0.852133</span>  ]</span><br><span class="line"> [ <span class="number">1.22474487</span>  <span class="number">1.40357859</span>  <span class="number">1.40351318</span>]]</span><br></pre></td></tr></table></figure>
 <p>很明显的看出来，经过scale的结果会更适合机器学习，因为他的偏差会更小</p>
-<p>接下来我们生成一些随机值，用SVM模型寻找超平面 程序示例：</p>
+<p>接下来我们生成一些随机值，用SVM模型寻找超平面<br>程序示例：</p>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> sklearn <span class="keyword">import</span> preprocessing</span><br><span class="line"><span class="keyword">import</span> numpy <span class="keyword">as</span> np</span><br><span class="line"><span class="keyword">from</span> sklearn.model_selection <span class="keyword">import</span> train_test_split<span class="comment">##从sklearn数据库导入函数</span></span><br><span class="line"><span class="keyword">from</span> sklearn.datasets._samples_generator <span class="keyword">import</span> make_classification</span><br><span class="line"><span class="keyword">from</span> sklearn.svm <span class="keyword">import</span> SVC</span><br><span class="line"><span class="keyword">import</span> matplotlib.pyplot <span class="keyword">as</span> plt</span><br><span class="line"></span><br><span class="line">X,y=make_classification(n_samples=<span class="number">300</span>,n_features=<span class="number">2</span>,n_redundant=<span class="number">0</span>,n_informative=<span class="number">2</span>,random_state=<span class="number">22</span>,n_clusters_per_class=<span class="number">1</span>,scale=<span class="number">100</span>)</span><br><span class="line">plt.scatter(X[:,<span class="number">0</span>],X[:,<span class="number">1</span>],c=y)</span><br><span class="line">plt.show()</span><br></pre></td></tr></table></figure>
-<p>输出结果： <img
-src="https://mfjblog-pic.oss-cn-beijing.aliyuncs.com/img/401878f7784f486aa1ce1567f753065e.png"
-alt="在这里插入图片描述" />
-接下来，我们利用SVM去学习，先不进行标准化数据 程序示例：</p>
+<p>输出结果：<br><img src="https://mfjblog-pic.oss-cn-beijing.aliyuncs.com/img/401878f7784f486aa1ce1567f753065e.png" class="lazyload" data-srcset="https://mfjblog-pic.oss-cn-beijing.aliyuncs.com/img/401878f7784f486aa1ce1567f753065e.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="在这里插入图片描述"><br>接下来，我们利用SVM去学习，先不进行标准化数据<br>程序示例：</p>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> sklearn <span class="keyword">import</span> preprocessing</span><br><span class="line"><span class="keyword">import</span> numpy <span class="keyword">as</span> np</span><br><span class="line"><span class="keyword">from</span> sklearn.model_selection <span class="keyword">import</span> train_test_split<span class="comment">##从sklearn数据库导入函数</span></span><br><span class="line"><span class="keyword">from</span> sklearn.datasets._samples_generator <span class="keyword">import</span> make_classification</span><br><span class="line"><span class="keyword">from</span> sklearn.svm <span class="keyword">import</span> SVC</span><br><span class="line"><span class="keyword">import</span> matplotlib.pyplot <span class="keyword">as</span> plt</span><br><span class="line"></span><br><span class="line">X,y=make_classification(n_samples=<span class="number">300</span>,n_features=<span class="number">2</span>,n_redundant=<span class="number">0</span>,n_informative=<span class="number">2</span>,random_state=<span class="number">22</span>,n_clusters_per_class=<span class="number">1</span>,scale=<span class="number">100</span>)</span><br><span class="line"></span><br><span class="line">X_train,X_test,y_train,y_test=train_test_split(X,y,test_size=<span class="number">.3</span>)<span class="comment">##X,y分为训练数据和测试数据，用traindata去学习，testdata去预测</span></span><br><span class="line">clf=SVC()</span><br><span class="line">clf.fit(X_train,y_train)<span class="comment">##traindata放入模型去学习</span></span><br><span class="line"><span class="built_in">print</span>(clf.score(X_test,y_test))<span class="comment">##用test去测试他的分数</span></span><br></pre></td></tr></table></figure>
 <p>输出结果：</p>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="number">0.9333333333333333</span></span><br></pre></td></tr></table></figure>
-<p>假如利经过标准化，那我们会得到什么样的结果 程序示范例：</p>
+<p>假如利经过标准化，那我们会得到什么样的结果<br>程序示范例：</p>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> sklearn <span class="keyword">import</span> preprocessing</span><br><span class="line"><span class="keyword">import</span> numpy <span class="keyword">as</span> np</span><br><span class="line"><span class="keyword">from</span> sklearn.model_selection <span class="keyword">import</span> train_test_split<span class="comment">##从sklearn数据库导入函数</span></span><br><span class="line"><span class="keyword">from</span> sklearn.datasets._samples_generator <span class="keyword">import</span> make_classification</span><br><span class="line"><span class="keyword">from</span> sklearn.svm <span class="keyword">import</span> SVC</span><br><span class="line"><span class="keyword">import</span> matplotlib.pyplot <span class="keyword">as</span> plt</span><br><span class="line"></span><br><span class="line">X,y=make_classification(n_samples=<span class="number">300</span>,n_features=<span class="number">2</span>,n_redundant=<span class="number">0</span>,n_informative=<span class="number">2</span>,random_state=<span class="number">22</span>,n_clusters_per_class=<span class="number">1</span>,scale=<span class="number">100</span>)</span><br><span class="line"></span><br><span class="line">X=preprocessing.scale(X)<span class="comment">##进行标准化数据</span></span><br><span class="line">X_train,X_test,y_train,y_test=train_test_split(X,y,test_size=<span class="number">.3</span>)<span class="comment">##X,y分为训练数据和测试数据，用traindata去学习，testdata去预测</span></span><br><span class="line">clf=SVC()</span><br><span class="line">clf.fit(X_train,y_train)<span class="comment">##traindata放入模型去学习</span></span><br><span class="line"><span class="built_in">print</span>(clf.score(X_test,y_test))<span class="comment">##用test去测试他的分数</span></span><br></pre></td></tr></table></figure>
 <p>输出结果：</p>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="number">0.94444444444444</span></span><br></pre></td></tr></table></figure>
@@ -2506,8 +2498,7 @@ alt="在这里插入图片描述" />
             <blockquote>
               
                 
-                  <p>博客内容遵循 署名-非商业性使用-相同方式共享 4.0 国际 (CC BY-NC-SA
-4.0) 协议</p>
+                  <p>博客内容遵循 署名-非商业性使用-相同方式共享 4.0 国际 (CC BY-NC-SA 4.0) 协议</p>
 
                 
               
@@ -2616,8 +2607,7 @@ alt="在这里插入图片描述" />
       
         <a class='prev' href='/2022/06/16/%E5%85%B3%E4%BA%8EScikit-learn%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E7%9A%84%E7%AC%94%E8%AE%B0%E2%80%94%E2%80%94%E7%AC%AC%E4%BA%94%E7%AF%87/'>
           <p class='title'><i class="fa-solid fa-chevron-left" aria-hidden="true"></i>关于Scikit-learn机器学习的笔记——第五篇</p>
-          <p class='content'>视频教程：【莫烦Python】Scikit-learn
-(sklearn) 优雅地学会机器学习
+          <p class='content'>视频教程：【莫烦Python】Scikit-learn (sklearn) 优雅地学会机器学习
 首先用KNN模型来进行基础的学习并且计算模型的分数
 程序示例：
 12345678910111213...</p>
@@ -2626,8 +2616,7 @@ alt="在这里插入图片描述" />
       
         <a class='next' href='/2022/06/15/%E5%85%B3%E4%BA%8EScikit-learn%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E7%9A%84%E7%AC%94%E8%AE%B0%E2%80%94%E2%80%94%E7%AC%AC%E4%B8%89%E7%AF%87/'>
           <p class='title'>关于Scikit-learn机器学习的笔记——第三篇<i class="fa-solid fa-chevron-right" aria-hidden="true"></i></p>
-          <p class='content'>视频教程：【莫烦Python】Scikit-learn
-(sklearn) 优雅地学会机器学习
+          <p class='content'>视频教程：【莫烦Python】Scikit-learn (sklearn) 优雅地学会机器学习
 接着上一次的代码，我们这次学习model的一些属性
 运用model.coef_与model.int...</p>
         </a>
@@ -2819,9 +2808,7 @@ alt="在这里插入图片描述" />
       
     
       
-        <div><p>Blog content follows the <a
-target="_blank" rel="noopener" href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.en">Attribution-NonCommercial-ShareAlike
-4.0 International (CC BY-NC-SA 4.0) License</a></p>
+        <div><p>Blog content follows the <a target="_blank" rel="noopener" href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.en">Attribution-NonCommercial-ShareAlike 4.0 International (CC BY-NC-SA 4.0) License</a></p>
 </div>
       
     

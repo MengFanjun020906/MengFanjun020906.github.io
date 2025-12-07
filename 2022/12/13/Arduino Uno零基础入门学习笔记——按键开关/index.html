@@ -40,7 +40,7 @@
 <meta property="og:title" content="Arduino Uno零基础入门学习笔记——按键开关">
 <meta property="og:url" content="https://mengfanjun020906.github.io/2022/12/13/Arduino%20Uno%E9%9B%B6%E5%9F%BA%E7%A1%80%E5%85%A5%E9%97%A8%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0%E2%80%94%E2%80%94%E6%8C%89%E9%94%AE%E5%BC%80%E5%85%B3/index.html">
 <meta property="og:site_name" content="MengFanjun的博客">
-<meta property="og:description" content="一、按键介绍 按键相连不同侧，同侧不相连 按键是一种数字输入，可以识别两种状态  HIGH LOW  二、搭建电路   上拉电阻为10K 三、代码 123456789101112131415void setup() &amp;#123;  &#x2F;&#x2F; initialize serial communication at 9600 bits per second:  Serial.begin(9600);&#x2F;&#x2F;串口">
+<meta property="og:description" content="一、按键介绍按键相连不同侧，同侧不相连按键是一种数字输入，可以识别两种状态  HIGH LOW  二、搭建电路上拉电阻为10K 三、代码123456789101112131415void setup() &amp;#123;  &#x2F;&#x2F; initialize serial communication at 9600 bits per second:  Serial.begin(9600);&#x2F;&#x2F;串口通信初始，波">
 <meta property="og:locale" content="en_US">
 <meta property="og:image" content="https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png">
 <meta property="article:published_time" content="2022-12-13T01:18:39.000Z">
@@ -1596,7 +1596,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
     debug: "env",
     cdn: {"js":{"app":"/js/app.js","parallax":"/js/plugins/parallax.js","rightMenu":"/js/plugins/rightMenu.js","rightMenus":"/js/plugins/rightMenus.js","sites":"/js/plugins/tags/sites.js","friends":"/js/plugins/tags/friends.js","contributors":"/js/plugins/tags/contributors.js","search":"/js/search/hexo.js"},"css":{"style":"/css/style.css"}},
     default: {"avatar":"https://unpkg.com/volantis-static@0.0.1654736714924/media/placeholder/avatar/round/3442075.svg","link":"https://unpkg.com/volantis-static@0.0.1654736714924/media/placeholder/link/8f277b4ee0ecd.svg","cover":"https://unpkg.com/volantis-static@0.0.1654736714924/media/placeholder/cover/76b86c0226ffd.svg","image":"https://unpkg.com/volantis-static@0.0.1654736714924/media/placeholder/image/2659360.svg"},
-    lastupdate: new Date(1765118762067),
+    lastupdate: new Date(1765119292905),
     sidebar: {
       for_page: ["blogger","category","tagcloud","webinfo","lastupdate"],
       for_post: ["toc"],
@@ -2462,20 +2462,16 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
 
   <div id="layoutHelper-page-plugins"></div>
   <div id="post-body" itemprop="articleBody">
-    <h1 id="一按键介绍">一、按键介绍</h1>
-<p>按键相连不同侧，同侧不相连 按键是一种数字输入，可以识别两种状态</p>
+    <h1 id="一、按键介绍"><a href="#一、按键介绍" class="headerlink" title="一、按键介绍"></a>一、按键介绍</h1><p>按键相连不同侧，同侧不相连<br>按键是一种数字输入，可以识别两种状态</p>
 <ul>
 <li>HIGH</li>
 <li>LOW</li>
 </ul>
-<h1 id="二搭建电路">二、搭建电路</h1>
-<p><img
-src="https://mfjblog-pic.oss-cn-beijing.aliyuncs.com/img/26406dd7aa0c44af97391725baaf8df7.png"
-alt="在这里插入图片描述" /> <img
-src="https://mfjblog-pic.oss-cn-beijing.aliyuncs.com/img/91b3c8089ec0425c9a5635ad116e87e2.png"
-alt="在这里插入图片描述" /> 上拉电阻为10K</p>
-<h1 id="三代码">三、代码</h1>
-<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="type">void</span> <span class="title function_">setup</span><span class="params">()</span> &#123;</span><br><span class="line">  <span class="comment">// initialize serial communication at 9600 bits per second:</span></span><br><span class="line">  Serial.begin(<span class="number">9600</span>);<span class="comment">//串口通信初始，波特率为9600,Serial.begin()表示用的是Serial库里面的begin函数</span></span><br><span class="line">  <span class="comment">// make the pushbutton&#x27;s pin an input:</span></span><br><span class="line">  pinMode(pushButton, INPUT);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// the loop routine runs over and over again forever:</span></span><br><span class="line"><span class="type">void</span> <span class="title function_">loop</span><span class="params">()</span> &#123;</span><br><span class="line">  <span class="comment">// read the input pin:</span></span><br><span class="line">  <span class="type">int</span> buttonState = digitalRead(pushButton)<span class="comment">//读取引脚2的状态，digitalRead()可以读取引脚是HIGH还是LOW</span></span><br><span class="line">  <span class="comment">// print out the state of the button:</span></span><br><span class="line">  Serial.println(buttonState);<span class="comment">//打印串口数据，HIGH为1 LOW为0</span></span><br><span class="line">  delay(<span class="number">1</span>);        <span class="comment">// delay in between reads for stability</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h1 id="二、搭建电路"><a href="#二、搭建电路" class="headerlink" title="二、搭建电路"></a>二、搭建电路</h1><p><img src="https://mfjblog-pic.oss-cn-beijing.aliyuncs.com/img/26406dd7aa0c44af97391725baaf8df7.png" class="lazyload" data-srcset="https://mfjblog-pic.oss-cn-beijing.aliyuncs.com/img/26406dd7aa0c44af97391725baaf8df7.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="在这里插入图片描述"><br><img src="https://mfjblog-pic.oss-cn-beijing.aliyuncs.com/img/91b3c8089ec0425c9a5635ad116e87e2.png" class="lazyload" data-srcset="https://mfjblog-pic.oss-cn-beijing.aliyuncs.com/img/91b3c8089ec0425c9a5635ad116e87e2.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="在这里插入图片描述"><br>上拉电阻为10K</p>
+<h1 id="三、代码"><a href="#三、代码" class="headerlink" title="三、代码"></a>三、代码</h1><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="type">void</span> <span class="title function_">setup</span><span class="params">()</span> &#123;</span><br><span class="line">  <span class="comment">// initialize serial communication at 9600 bits per second:</span></span><br><span class="line">  Serial.begin(<span class="number">9600</span>);<span class="comment">//串口通信初始，波特率为9600,Serial.begin()表示用的是Serial库里面的begin函数</span></span><br><span class="line">  <span class="comment">// make the pushbutton&#x27;s pin an input:</span></span><br><span class="line">  pinMode(pushButton, INPUT);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// the loop routine runs over and over again forever:</span></span><br><span class="line"><span class="type">void</span> <span class="title function_">loop</span><span class="params">()</span> &#123;</span><br><span class="line">  <span class="comment">// read the input pin:</span></span><br><span class="line">  <span class="type">int</span> buttonState = digitalRead(pushButton)<span class="comment">//读取引脚2的状态，digitalRead()可以读取引脚是HIGH还是LOW</span></span><br><span class="line">  <span class="comment">// print out the state of the button:</span></span><br><span class="line">  Serial.println(buttonState);<span class="comment">//打印串口数据，HIGH为1 LOW为0</span></span><br><span class="line">  delay(<span class="number">1</span>);        <span class="comment">// delay in between reads for stability</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+
+
 
   </div>
   
@@ -2493,8 +2489,7 @@ alt="在这里插入图片描述" /> 上拉电阻为10K</p>
             <blockquote>
               
                 
-                  <p>博客内容遵循 署名-非商业性使用-相同方式共享 4.0 国际 (CC BY-NC-SA
-4.0) 协议</p>
+                  <p>博客内容遵循 署名-非商业性使用-相同方式共享 4.0 国际 (CC BY-NC-SA 4.0) 协议</p>
 
                 
               
@@ -2604,21 +2599,14 @@ alt="在这里插入图片描述" /> 上拉电阻为10K</p>
         <a class='prev' href='/2022/12/13/Arduino%20Uno%E9%9B%B6%E5%9F%BA%E7%A1%80%E5%85%A5%E9%97%A8%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0%E2%80%94%E2%80%94%E6%B5%81%E6%B0%B4%E7%81%AF/'>
           <p class='title'><i class="fa-solid fa-chevron-left" aria-hidden="true"></i>Arduino Uno零基础入门学习笔记——流水灯</p>
           <p class='content'>一、电路图
-
-
-在这里插入图片描述
-
-二、程序
-123456789101112131415161718192021222324int base=2;int num=6;int i=0;void ...</p>
+二、程序123456789101112131415161718192021222324int base=2;int num=6;int i=0;void setup() &#123;...</p>
         </a>
       
       
         <a class='next' href='/2022/12/12/Arduino%20Uno%E9%9B%B6%E5%9F%BA%E7%A1%80%E5%85%A5%E9%97%A8%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0%E2%80%94%E2%80%94%E7%82%B9%E4%BA%AE%E4%B8%80%E4%B8%AALED/'>
           <p class='title'>Arduino Uno零基础入门学习笔记——点亮一个LED<i class="fa-solid fa-chevron-right" aria-hidden="true"></i></p>
-          <p class='content'>文中的部分图片来源视频教程：【太极创客】零基础入门学用Arduino
-第一部分 合辑
-一、认识LED
-LED=Lighting Emitting Diode  长的那一边是正极，短的那一边是负极...</p>
+          <p class='content'>文中的部分图片来源视频教程：【太极创客】零基础入门学用Arduino 第一部分 合辑
+一、认识LEDLED&#x3D;Lighting Emitting Diode长的那一边是正极，短的那一边是...</p>
         </a>
       
     </div>
@@ -2818,9 +2806,7 @@ LED=Lighting Emitting Diode  长的那一边是正极，短的那一边是负极
       
     
       
-        <div><p>Blog content follows the <a
-target="_blank" rel="noopener" href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.en">Attribution-NonCommercial-ShareAlike
-4.0 International (CC BY-NC-SA 4.0) License</a></p>
+        <div><p>Blog content follows the <a target="_blank" rel="noopener" href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.en">Attribution-NonCommercial-ShareAlike 4.0 International (CC BY-NC-SA 4.0) License</a></p>
 </div>
       
     

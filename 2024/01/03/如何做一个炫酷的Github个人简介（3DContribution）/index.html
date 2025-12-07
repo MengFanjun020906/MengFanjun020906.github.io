@@ -40,7 +40,7 @@
 <meta property="og:title" content="如何做一个炫酷的Github个人简介（3DContribution）">
 <meta property="og:url" content="https://mengfanjun020906.github.io/2024/01/03/%E5%A6%82%E4%BD%95%E5%81%9A%E4%B8%80%E4%B8%AA%E7%82%AB%E9%85%B7%E7%9A%84Github%E4%B8%AA%E4%BA%BA%E7%AE%80%E4%BB%8B%EF%BC%883DContribution%EF%BC%89/index.html">
 <meta property="og:site_name" content="MengFanjun的博客">
-<meta property="og:description" content="前言 最近放假了，毕设目前也不太想做，先搞一点小玩意玩玩，让自己的github看起来好看点。也顺便学学这个action是怎么个事。 3D-Contrib 先给大家看一下效果 我的个人主页：https:&#x2F;&#x2F;github.com&#x2F;MengFanjun020906&#x2F;MengFanjun020906 原仓库链接：https:&#x2F;&#x2F;github.com&#x2F;yoshi389111&#x2F;github-profile-3">
+<meta property="og:description" content="前言最近放假了，毕设目前也不太想做，先搞一点小玩意玩玩，让自己的github看起来好看点。也顺便学学这个action是怎么个事。 3D-Contrib先给大家看一下效果我的个人主页：https:&#x2F;&#x2F;github.com&#x2F;MengFanjun020906&#x2F;MengFanjun020906原仓库链接：https:&#x2F;&#x2F;github.com&#x2F;yoshi389111&#x2F;github-profile-3d-co">
 <meta property="og:locale" content="en_US">
 <meta property="og:image" content="https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png">
 <meta property="article:published_time" content="2024-01-03T09:08:16.000Z">
@@ -1596,7 +1596,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
     debug: "env",
     cdn: {"js":{"app":"/js/app.js","parallax":"/js/plugins/parallax.js","rightMenu":"/js/plugins/rightMenu.js","rightMenus":"/js/plugins/rightMenus.js","sites":"/js/plugins/tags/sites.js","friends":"/js/plugins/tags/friends.js","contributors":"/js/plugins/tags/contributors.js","search":"/js/search/hexo.js"},"css":{"style":"/css/style.css"}},
     default: {"avatar":"https://unpkg.com/volantis-static@0.0.1654736714924/media/placeholder/avatar/round/3442075.svg","link":"https://unpkg.com/volantis-static@0.0.1654736714924/media/placeholder/link/8f277b4ee0ecd.svg","cover":"https://unpkg.com/volantis-static@0.0.1654736714924/media/placeholder/cover/76b86c0226ffd.svg","image":"https://unpkg.com/volantis-static@0.0.1654736714924/media/placeholder/image/2659360.svg"},
-    lastupdate: new Date(1765118762067),
+    lastupdate: new Date(1765119292905),
     sidebar: {
       for_page: ["blogger","category","tagcloud","webinfo","lastupdate"],
       for_post: ["toc"],
@@ -2410,7 +2410,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
   <div class="new-meta-item wordcount">
     <a class='notlink'>
       <i class="fa-solid fa-keyboard fa-fw" aria-hidden="true"></i>
-      <p>356 words</p>
+      <p>346 words</p>
     </a>
   </div>
   <div class="new-meta-item readtime">
@@ -2452,48 +2452,21 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
 
   <div id="layoutHelper-page-plugins"></div>
   <div id="post-body" itemprop="articleBody">
-    <h1 id="前言">前言</h1>
-<p>最近放假了，毕设目前也不太想做，先搞一点小玩意玩玩，让自己的github看起来好看点。也顺便学学这个action是怎么个事。</p>
-<h1 id="d-contrib">3D-Contrib</h1>
-<p>先给大家看一下效果 我的个人主页：<a
-target="_blank" rel="noopener" href="https://github.com/MengFanjun020906/MengFanjun020906">https://github.com/MengFanjun020906/MengFanjun020906</a>
-原仓库链接：<a
-target="_blank" rel="noopener" href="https://github.com/yoshi389111/github-profile-3d-contrib">https://github.com/yoshi389111/github-profile-3d-contrib</a>
-PS：不要在意我这个少得可怜的contributions</p>
-<p><img
-src="https://mfjblog-pic.oss-cn-beijing.aliyuncs.com/img/image-20240229162039298.png"
-alt="image-20240229162039298" />
-要做这样一个效果，就需要用到github的action，之前一直没用过，今天才知道是干啥用的。</p>
-<h2 id="第一步">第一步</h2>
-<p>在你的个人仓库下找到Actions <img
-src="https://mfjblog-pic.oss-cn-beijing.aliyuncs.com/img/image-20240229162053186.png"
-alt="image-20240229162053186" /></p>
-<h2 id="第二步">第二步</h2>
-<p>点击New workflow</p>
-<figure>
-<img
-src="https://mfjblog-pic.oss-cn-beijing.aliyuncs.com/img/e7495104b3e948b4867636168d0bbbb6.png"
-alt="在这里插入图片描述" />
-<figcaption aria-hidden="true">在这里插入图片描述</figcaption>
-</figure>
-<h2 id="第三步">第三步</h2>
-<p>创建一个新的文件，名为<code>profile-3d.yml</code> <img
-src="https://mfjblog-pic.oss-cn-beijing.aliyuncs.com/img/image-20240229162149025.png"
-alt="image-20240229162149025" /></p>
-<h2 id="第四步">第四步</h2>
-<p>文件输入这些信息，替换<code>你自己的名字</code>即可</p>
+    <h1 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h1><p>最近放假了，毕设目前也不太想做，先搞一点小玩意玩玩，让自己的github看起来好看点。也顺便学学这个action是怎么个事。</p>
+<h1 id="3D-Contrib"><a href="#3D-Contrib" class="headerlink" title="3D-Contrib"></a>3D-Contrib</h1><p>先给大家看一下效果<br>我的个人主页：<a target="_blank" rel="noopener" href="https://github.com/MengFanjun020906/MengFanjun020906">https://github.com/MengFanjun020906/MengFanjun020906</a><br>原仓库链接：<a target="_blank" rel="noopener" href="https://github.com/yoshi389111/github-profile-3d-contrib">https://github.com/yoshi389111/github-profile-3d-contrib</a><br>PS：不要在意我这个少得可怜的contributions</p>
+<p><img src="https://mfjblog-pic.oss-cn-beijing.aliyuncs.com/img/image-20240229162039298.png" class="lazyload" data-srcset="https://mfjblog-pic.oss-cn-beijing.aliyuncs.com/img/image-20240229162039298.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="image-20240229162039298"><br>要做这样一个效果，就需要用到github的action，之前一直没用过，今天才知道是干啥用的。</p>
+<h2 id="第一步"><a href="#第一步" class="headerlink" title="第一步"></a>第一步</h2><p>在你的个人仓库下找到Actions<br><img src="https://mfjblog-pic.oss-cn-beijing.aliyuncs.com/img/image-20240229162053186.png" class="lazyload" data-srcset="https://mfjblog-pic.oss-cn-beijing.aliyuncs.com/img/image-20240229162053186.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="image-20240229162053186"></p>
+<h2 id="第二步"><a href="#第二步" class="headerlink" title="第二步"></a>第二步</h2><p>点击New workflow</p>
+<p><img src="https://mfjblog-pic.oss-cn-beijing.aliyuncs.com/img/e7495104b3e948b4867636168d0bbbb6.png" class="lazyload" data-srcset="https://mfjblog-pic.oss-cn-beijing.aliyuncs.com/img/e7495104b3e948b4867636168d0bbbb6.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="在这里插入图片描述"></p>
+<h2 id="第三步"><a href="#第三步" class="headerlink" title="第三步"></a>第三步</h2><p>创建一个新的文件，名为<code>profile-3d.yml</code><br><img src="https://mfjblog-pic.oss-cn-beijing.aliyuncs.com/img/image-20240229162149025.png" class="lazyload" data-srcset="https://mfjblog-pic.oss-cn-beijing.aliyuncs.com/img/image-20240229162149025.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="image-20240229162149025"></p>
+<h2 id="第四步"><a href="#第四步" class="headerlink" title="第四步"></a>第四步</h2><p>文件输入这些信息，替换<code>你自己的名字</code>即可</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line">name: GitHub-Profile-3D-Contrib</span><br><span class="line"></span><br><span class="line">on:</span><br><span class="line">  schedule: <span class="comment"># 03:00 JST == 18:00 UTC</span></span><br><span class="line">    - cron: <span class="string">&quot;0 18 * * *&quot;</span></span><br><span class="line">  workflow_dispatch:</span><br><span class="line"></span><br><span class="line"><span class="built_in">jobs</span>:</span><br><span class="line">  build:</span><br><span class="line">    runs-on: ubuntu-latest</span><br><span class="line">    name: generate-github-profile-3d-contrib</span><br><span class="line">    steps:</span><br><span class="line">      - uses: actions/checkout@v3</span><br><span class="line">      - uses: yoshi389111/github-profile-3d-contrib@0.7.1</span><br><span class="line">        <span class="built_in">env</span>:</span><br><span class="line">          GITHUB_TOKEN: <span class="variable">$&#123;&#123; secrets.GITHUB_TOKEN &#125;</span>&#125;</span><br><span class="line">          USERNAME: 你自己的名字</span><br><span class="line">      - name: Commit &amp; Push</span><br><span class="line">        run: |</span><br><span class="line">          git config user.name github-actions</span><br><span class="line">          git config user.email github-actions@github.com</span><br><span class="line">          git add -A .</span><br><span class="line">          git diff --staged --exit-code || (git commit -m <span class="string">&quot;generated&quot;</span> &amp;&amp; git push)</span><br></pre></td></tr></table></figure>
+
 <p>保存</p>
-<h2 id="第五步">第五步</h2>
-<p><img
-src="https://mfjblog-pic.oss-cn-beijing.aliyuncs.com/img/image-20240229162154490.png"
-alt="image-20240229162154490" /> 在Action下运行这一action</p>
-<h2 id="第六步">第六步</h2>
-<p>在你的<code>README.md</code>中添加</p>
+<h2 id="第五步"><a href="#第五步" class="headerlink" title="第五步"></a>第五步</h2><p><img src="https://mfjblog-pic.oss-cn-beijing.aliyuncs.com/img/image-20240229162154490.png" class="lazyload" data-srcset="https://mfjblog-pic.oss-cn-beijing.aliyuncs.com/img/image-20240229162154490.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="image-20240229162154490"><br>在Action下运行这一action</p>
+<h2 id="第六步"><a href="#第六步" class="headerlink" title="第六步"></a>第六步</h2><p>在你的<code>README.md</code>中添加</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">![Personal 3D Metrics](./profile-3d-contrib/profile-night-green.svg)</span><br></pre></td></tr></table></figure>
-<p>当然，他会创建一个文件夹，你也可以自己选择。 <img
-src="https://mfjblog-pic.oss-cn-beijing.aliyuncs.com/img/image-20240229162201145.png"
-alt="image-20240229162201145" /> 添加到README中就能看到了。</p>
+<p>当然，他会创建一个文件夹，你也可以自己选择。<br><img src="https://mfjblog-pic.oss-cn-beijing.aliyuncs.com/img/image-20240229162201145.png" class="lazyload" data-srcset="https://mfjblog-pic.oss-cn-beijing.aliyuncs.com/img/image-20240229162201145.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="image-20240229162201145"><br>添加到README中就能看到了。</p>
 
   </div>
   
@@ -2511,8 +2484,7 @@ alt="image-20240229162201145" /> 添加到README中就能看到了。</p>
             <blockquote>
               
                 
-                  <p>博客内容遵循 署名-非商业性使用-相同方式共享 4.0 国际 (CC BY-NC-SA
-4.0) 协议</p>
+                  <p>博客内容遵循 署名-非商业性使用-相同方式共享 4.0 国际 (CC BY-NC-SA 4.0) 协议</p>
 
                 
               
@@ -2621,17 +2593,14 @@ alt="image-20240229162201145" /> 添加到README中就能看到了。</p>
       
         <a class='prev' href='/2024/02/21/%E5%AD%A6%E4%B9%A0%E9%80%9A%E4%BF%A1%E5%8E%9F%E7%90%86%E4%B9%8B%E2%80%94%E2%80%94%E5%BD%BB%E5%BA%95%E7%90%86%E8%A7%A3%E9%A2%91%E8%B0%B1%E5%92%8C%E9%A2%91%E8%B0%B1%E5%AF%86%E5%BA%A6/'>
           <p class='title'><i class="fa-solid fa-chevron-left" aria-hidden="true"></i>学习通信原理之——彻底理解频谱和频谱密度</p>
-          <p class='content'>前言
-最近还是在复习通信原理，但是对于频谱/频谱密度/能量谱/能量谱密度/功率谱/功率谱密度还是一知半解的，所以我就去各种看资料，看视频，又去问了问老师。
-所以我在这里写下自己对这两个概念的一些...</p>
+          <p class='content'>前言最近还是在复习通信原理，但是对于频谱&#x2F;频谱密度&#x2F;能量谱&#x2F;能量谱密度&#x2F;功率谱&#x2F;功率谱密度还是一知半解的，所以我就去各种看资料，看视频，又去问了...</p>
         </a>
       
       
         <a class='next' href='/2023/04/26/FPGA_Verilog%20HDL_AC620%E9%9B%B6%E5%9F%BA%E7%A1%80%E5%85%A5%E9%97%A8%E5%AD%A6%E4%B9%A0%E2%80%94%E2%80%94%E6%A0%BC%E9%9B%B7%E7%A0%81%E8%AE%A1%E6%95%B0%E5%99%A8%E5%AE%9E%E9%AA%8C/'>
           <p class='title'>FPGA_Verilog HDL_AC620零基础入门学习——格雷码计数器实验<i class="fa-solid fa-chevron-right" aria-hidden="true"></i></p>
-          <p class='content'>实验要求
-模块功能应包括二进制码计数器的产生、由二进制码产生格雷码、所产生的格雷码再次转换为二进制码等逻辑部分。
-该项目由一个功能模块和一个testbench组成。其中功能模块的端口信号如下表所...</p>
+          <p class='content'>实验要求模块功能应包括二进制码计数器的产生、由二进制码产生格雷码、所产生的格雷码再次转换为二进制码等逻辑部分。该项目由一个功能模块和一个testbench组成。其中功能模块的端口信号如下表所示
+...</p>
         </a>
       
     </div>
@@ -2831,9 +2800,7 @@ alt="image-20240229162201145" /> 添加到README中就能看到了。</p>
       
     
       
-        <div><p>Blog content follows the <a
-target="_blank" rel="noopener" href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.en">Attribution-NonCommercial-ShareAlike
-4.0 International (CC BY-NC-SA 4.0) License</a></p>
+        <div><p>Blog content follows the <a target="_blank" rel="noopener" href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.en">Attribution-NonCommercial-ShareAlike 4.0 International (CC BY-NC-SA 4.0) License</a></p>
 </div>
       
     

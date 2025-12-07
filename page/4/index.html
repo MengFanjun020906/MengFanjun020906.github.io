@@ -1593,7 +1593,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
     debug: "env",
     cdn: {"js":{"app":"/js/app.js","parallax":"/js/plugins/parallax.js","rightMenu":"/js/plugins/rightMenu.js","rightMenus":"/js/plugins/rightMenus.js","sites":"/js/plugins/tags/sites.js","friends":"/js/plugins/tags/friends.js","contributors":"/js/plugins/tags/contributors.js","search":"/js/search/hexo.js"},"css":{"style":"/css/style.css"}},
     default: {"avatar":"https://unpkg.com/volantis-static@0.0.1654736714924/media/placeholder/avatar/round/3442075.svg","link":"https://unpkg.com/volantis-static@0.0.1654736714924/media/placeholder/link/8f277b4ee0ecd.svg","cover":"https://unpkg.com/volantis-static@0.0.1654736714924/media/placeholder/cover/76b86c0226ffd.svg","image":"https://unpkg.com/volantis-static@0.0.1654736714924/media/placeholder/image/2659360.svg"},
-    lastupdate: new Date(1765118762067),
+    lastupdate: new Date(1765119292905),
     sidebar: {
       for_page: ["blogger","category","tagcloud","webinfo","lastupdate"],
       for_post: ["toc"],
@@ -2385,9 +2385,8 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
     
       
         符号含义
- # 例题 
-脉冲响应不变法
-123456789101112131415161718clearclose allclcfs=1000;%采样频率fc=200;%通带截止频率fr=300;%阻带截止频率T=0.001; %采样周期%%%%%%%脉冲响应不变法wp1=2*pi*fc;%通带截止频率wr1=2*pi*fr;%阻带截止频率[N1,wn1]=buttord(wp1,wr1,1...
+例题
+脉冲响应不变法123456789101112131415161718clearclose allclcfs=1000;%采样频率fc=200;%通带截止频率fr=300;%阻带截止频率T=0.001; %采样周期%%%%%%%脉冲响应不变法wp1=2*pi*fc;%通带截止频率wr1=2*pi*fr;%阻带截止频率[N1,wn1]=buttord(wp1,wr1,1,25,&...
       
     
   </div>
@@ -2458,16 +2457,11 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
   <div class='md article-desc' itemprop="articleBody">
     
       
-        准备工作
-首先要有自己的hexo博客，并且已经部署到
-github上面了，这样我们接下来才能顺利的换主题
-先推荐我自己的个人博客 我的博客
+        准备工作首先要有自己的hexo博客，并且已经部署到github上面了，这样我们接下来才能顺利的换主题
+先推荐我自己的个人博客我的博客
 
-一、搭建一个大致框架
-我在这里非常推荐去读官方的文档，里面写的非常清楚， 官方文档
-但是因为鄙人实在愚钝，对着官方文档都配置的漏洞百出，所以打算自己记录下配置的过程。
-首先在你搭建hexo的文件下新建一个yml文件，起名叫
-_config.volant...
+一、搭建一个大致框架我在这里非常推荐去读官方的文档，里面写的非常清楚，官方文档但是因为鄙人实在愚钝，对着官方文档都配置的漏洞百出，所以打算自己记录下配置的过程。
+首先在你搭建hexo的文件下新建一个yml文件，起名叫_config.volantis.yml就...
       
     
   </div>
@@ -2538,7 +2532,8 @@ _config.volant...
   <div class='md article-desc' itemprop="articleBody">
     
       
-         1234567891011121314151617181920clearclose allclcfs=1000;fc=200;fr=300;T=0.001; wp1=2*pi*fc;wr1=2*pi*fr; [N1,wn1]=buttord(wp1,wr1,1,25,&#x27;s&#x27;); [B1,A1]=butter(N1,wn1,&#x27;s&#x27;); [num1,de...
+        
+1234567891011121314151617181920clearclose allclcfs=1000;fc=200;fr=300;T=0.001; wp1=2*pi*fc;wr1=2*pi*fr; [N1,wn1]=buttord(wp1,wr1,1,25,&#x27;s&#x27;); [B1,A1]=butter(N1,wn1,&#x27;s&#x27;); [num1,de...
       
     
   </div>
@@ -2609,19 +2604,14 @@ _config.volant...
   <div class='md article-desc' itemprop="articleBody">
     
       
-        原视频链接：PyTorch深度学习目标检测入门实战系列【土堆
-x 布尔艺数】
-下载VOC数据集
-下载地址：http://host.robots.ox.ac.uk/pascal/VOC/
+        原视频链接：PyTorch深度学习目标检测入门实战系列【土堆 x 布尔艺数】
+下载VOC数据集下载地址：http://host.robots.ox.ac.uk/pascal/VOC/
 数据集里面都有什么
-
-
-在这里插入图片描述
-
 
 Annotations 标注文件夹(包含xml文件，图片的各种信息)
 ImageSets 图片集合(主要关注Main文件夹的内容)
-JPEGImages 数据集...
+JPEGImages 数据集包含的图片
+Segmenta...
       
     
   </div>
@@ -2694,8 +2684,8 @@ JPEGImages 数据集...
       
         要学习通信，一定绕不开的就是傅里叶级数和傅里叶变换，之前学信号与系统的时候没有好好学，这里看了B站的网课，豁然开朗，所以特地来写一篇学习笔记，来激励自己，也算是检验自己学习成果了。
 B站网课链接：https://www.bilibili.com/video/BV1Et411R78v?share_source=copy_web
-Part 1 三角函数的正交性
-首先要介绍的就是三角函数系：集合：...
+Part 1 三角函数的正交性首先要介绍的就是三角函数系：集合：
+...
       
     
   </div>
@@ -2766,14 +2756,9 @@ Part 1 三角函数的正交性
   <div class='md article-desc' itemprop="articleBody">
     
       
-        如何从0开始训练自己的ASR模型
-第一步 获取NGC密钥 第二步 配置Ubuntu22.04的运行环境 第三步
-开始训练ASR模型
+        如何从0开始训练自己的ASR模型第一步 获取NGC密钥第二步 配置Ubuntu22.04的运行环境第三步 开始训练ASR模型
 
-前言
-Sky
-Hackathon由NVIDIA发起并主办，项目旨在帮助在校学生、深度学习开发者在NVIDIA
-Jetson边缘高性能计算产品上部署和优化人工智能应用。在经验丰富的GPU导师指导下，通过黑客松竞赛的方式学习业界所需的深度学习相关应用开发及其并行计...
+前言Sky Hackathon由NVIDIA发起并主办，项目旨在帮助在校学生、深度学习开发者在NVIDIA Jetson边缘高性能计算产品上部署和优化人工智能应用。在经验丰富的GPU导师指导下，通过黑客松竞赛的方式学习业界所需的深度学习相关应用开发及其并行计算技能，...
       
     
   </div>
@@ -2844,15 +2829,9 @@ Jetson边缘高性能计算产品上部署和优化人工智能应用。在经�
   <div class='md article-desc' itemprop="articleBody">
     
       
-        如何从0开始训练自己的CV模型
-第一步 配置基本环境(在上一篇已经配置了我参加第七届NVIDIA Sky
-Hackathon——训练ASR模型 ) 第二步 利用labelimg制作图像数据集 第三步
-开始训练resnet18模型
+        如何从0开始训练自己的CV模型第一步 配置基本环境(在上一篇已经配置了我参加第七届NVIDIA Sky Hackathon——训练ASR模型  )第二步 利用labelimg制作图像数据集第三步 开始训练resnet18模型
 
-前言
-Sky
-Hackathon由NVIDIA发起并主办，项目旨在帮助在校学生、深度学习开发者在NVIDIA
-Jetson边缘高性能计算产品上部署和优化人工智能应...
+前言Sky Hackathon由NVIDIA发起并主办，项目旨在帮助在校学生、深度学习开发者在NVIDIA Jetson边缘高性能计算产品上部署和优化人工智能应用。在...
       
     
   </div>
@@ -2923,9 +2902,8 @@ Jetson边缘高性能计算产品上部署和优化人工智能应...
   <div class='md article-desc' itemprop="articleBody">
     
       
-        
-这题原本画出来就四条谱线，除了频率0的直流分量，就三根了，太少了，为了看着方便，我自己增加了序列
-12345678910111213clearclose allclcn=0:8;x=[4 3 2 6 7 8 3 3 5];subplot(1,2,1);stem(n,x)xlabel(&#x27;n&#x27;);ylabel(&#x27;幅度&#x27;);title(&#x27;原序列&...
+        这题原本画出来就四条谱线，除了频率0的直流分量，就三根了，太少了，为了看着方便，我自己增加了序列
+12345678910111213clearclose allclcn=0:8;x=[4 3 2 6 7 8 3 3 5];subplot(1,2,1);stem(n,x)xlabel(&#x27;n&#x27;);ylabel(&#x27;幅度&#x27;);title(&#x27;原序列&#...
       
     
   </div>
@@ -2996,9 +2974,8 @@ Jetson边缘高性能计算产品上部署和优化人工智能应...
   <div class='md article-desc' itemprop="articleBody">
     
       
-         这里我们直接展示补0的核心代码
-生成三角波和反三角波
-123456789101112N=8;n=0:7;x1=zeros(size(n));x2=zeros(size(n));xa=(n&gt;=0)&amp;(n&lt;=3);x1(xa)=n(xa);x2(xa)=4-n(xa);xa=(n&gt;=4)&amp;(n&lt;=7);x1(xa)=8-n(xa);x2(xa)=n(xa...
+        这里我们直接展示补0的核心代码
+生成三角波和反三角波123456789101112N=8;n=0:7;x1=zeros(size(n));x2=zeros(size(n));xa=(n&gt;=0)&amp;(n&lt;=3);x1(xa)=n(xa);x2(xa)=4-n(xa);xa=(n&gt;=4)&amp;(n&lt;=7);x1(xa)=8-n(xa);x2(xa)=n(xa)-...
       
     
   </div>
@@ -3069,10 +3046,8 @@ Jetson边缘高性能计算产品上部署和优化人工智能应...
   <div class='md article-desc' itemprop="articleBody">
     
       
-        
-xa(n)是高斯序列 xb(n)是衰减正弦序列 线性卷积很简单，利用conv函数就可以
-那么圆周卷积要怎么实现呢
-12345678910111213141516171819202122clc; n1=0:1:15; %16个点n2=0:1:30; %线性卷积，序列长度变成了16+16-1p=8;q=2;a=0.1;f=0.0625;xa=exp(-((n1-p).^2)/q);xb=exp...
+        xa(n)是高斯序列xb(n)是衰减正弦序列线性卷积很简单，利用conv函数就可以那么圆周卷积要怎么实现呢
+12345678910111213141516171819202122clc; n1=0:1:15; %16个点n2=0:1:30; %线性卷积，序列长度变成了16+16-1p=8;q=2;a=0.1;f=0.0625;xa=exp(-((n1-p).^2)/q);xb=exp(-a....
       
     
   </div>
@@ -3552,9 +3527,7 @@ xa(n)是高斯序列 xb(n)是衰减正弦序列 线性卷积很简单，利用co
       
     
       
-        <div><p>Blog content follows the <a
-target="_blank" rel="noopener" href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.en">Attribution-NonCommercial-ShareAlike
-4.0 International (CC BY-NC-SA 4.0) License</a></p>
+        <div><p>Blog content follows the <a target="_blank" rel="noopener" href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.en">Attribution-NonCommercial-ShareAlike 4.0 International (CC BY-NC-SA 4.0) License</a></p>
 </div>
       
     

@@ -40,7 +40,7 @@
 <meta property="og:title" content="上位机用串口对STM32F1单片机一对二下载与通信">
 <meta property="og:url" content="https://mengfanjun020906.github.io/2022/10/03/%E4%B8%8A%E4%BD%8D%E6%9C%BA%E7%94%A8%E4%B8%B2%E5%8F%A3%E5%AF%B9STM32F1%E5%8D%95%E7%89%87%E6%9C%BA%E4%B8%80%E5%AF%B9%E4%BA%8C%E4%B8%8B%E8%BD%BD%E4%B8%8E%E9%80%9A%E4%BF%A1/index.html">
 <meta property="og:site_name" content="MengFanjun的博客">
-<meta property="og:description" content="问题 最近一直在做一个项目，发现STM32的定时器不太够。 正好我们上课在学STM32F103RCT6，就想利用两个芯片做项目。 那么问题来了：怎么用一个上位机给两个单片机下载程序和通信呢？ 解决方案 结果学长设计了一个电路：  感觉其中的OE很有玄机，于是去查了查这个芯片的芯片手册，看到了这句话  上面的意思大概就是：如果将OE置为低电平，那么芯片的其他脚将变成高阻态。 再看看上面的电路  如果">
+<meta property="og:description" content="问题最近一直在做一个项目，发现STM32的定时器不太够。正好我们上课在学STM32F103RCT6，就想利用两个芯片做项目。那么问题来了：怎么用一个上位机给两个单片机下载程序和通信呢？ 解决方案结果学长设计了一个电路： 感觉其中的OE很有玄机，于是去查了查这个芯片的芯片手册，看到了这句话上面的意思大概就是：如果将OE置为低电平，那么芯片的其他脚将变成高阻态。 再看看上面的电路如果UART CS为高">
 <meta property="og:locale" content="en_US">
 <meta property="og:image" content="https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png">
 <meta property="article:published_time" content="2022-10-03T12:29:51.000Z">
@@ -1598,7 +1598,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
     debug: "env",
     cdn: {"js":{"app":"/js/app.js","parallax":"/js/plugins/parallax.js","rightMenu":"/js/plugins/rightMenu.js","rightMenus":"/js/plugins/rightMenus.js","sites":"/js/plugins/tags/sites.js","friends":"/js/plugins/tags/friends.js","contributors":"/js/plugins/tags/contributors.js","search":"/js/search/hexo.js"},"css":{"style":"/css/style.css"}},
     default: {"avatar":"https://unpkg.com/volantis-static@0.0.1654736714924/media/placeholder/avatar/round/3442075.svg","link":"https://unpkg.com/volantis-static@0.0.1654736714924/media/placeholder/link/8f277b4ee0ecd.svg","cover":"https://unpkg.com/volantis-static@0.0.1654736714924/media/placeholder/cover/76b86c0226ffd.svg","image":"https://unpkg.com/volantis-static@0.0.1654736714924/media/placeholder/image/2659360.svg"},
-    lastupdate: new Date(1765118762067),
+    lastupdate: new Date(1765119292905),
     sidebar: {
       for_page: ["blogger","category","tagcloud","webinfo","lastupdate"],
       for_post: ["toc"],
@@ -2412,7 +2412,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
   <div class="new-meta-item wordcount">
     <a class='notlink'>
       <i class="fa-solid fa-keyboard fa-fw" aria-hidden="true"></i>
-      <p>510 words</p>
+      <p>509 words</p>
     </a>
   </div>
   <div class="new-meta-item readtime">
@@ -2454,40 +2454,13 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
 
   <div id="layoutHelper-page-plugins"></div>
   <div id="post-body" itemprop="articleBody">
-    <h2 id="问题">问题</h2>
-<p>最近一直在做一个项目，发现STM32的定时器不太够。
-正好我们上课在学STM32F103RCT6，就想利用两个芯片做项目。
-那么问题来了：<strong>怎么用一个上位机给两个单片机下载程序和通信呢？</strong></p>
-<h2 id="解决方案">解决方案</h2>
-<p>结果学长设计了一个电路： <img
-src="https://mfjblog-pic.oss-cn-beijing.aliyuncs.com/img/0e6ec042e3e7401e8f4c651c74f5a508.png"
-alt="在这里插入图片描述" /></p>
-<p>感觉其中的OE很有玄机，于是去查了查这个芯片的芯片手册，看到了这句话
-<img
-src="https://mfjblog-pic.oss-cn-beijing.aliyuncs.com/img/6c21ca494bdd41a39dfbdc2d41d2f522.png"
-alt="在这里插入图片描述" />
-上面的意思大概就是：如果将OE置为低电平，那么芯片的其他脚将变成高阻态。</p>
-<p>再看看上面的电路 <img
-src="https://mfjblog-pic.oss-cn-beijing.aliyuncs.com/img/b08d6c9a819549aa8ce2e0500e907766.jpeg"
-alt="请添加图片描述" /> <strong>如果UART CS为高，那么就是给单片机B下载
-如果UART CS为低，那么就是给单片机A下载</strong></p>
+    <h2 id="问题"><a href="#问题" class="headerlink" title="问题"></a>问题</h2><p>最近一直在做一个项目，发现STM32的定时器不太够。<br>正好我们上课在学STM32F103RCT6，就想利用两个芯片做项目。<br>那么问题来了：<strong>怎么用一个上位机给两个单片机下载程序和通信呢？</strong></p>
+<h2 id="解决方案"><a href="#解决方案" class="headerlink" title="解决方案"></a>解决方案</h2><p>结果学长设计了一个电路：<br><img src="https://mfjblog-pic.oss-cn-beijing.aliyuncs.com/img/0e6ec042e3e7401e8f4c651c74f5a508.png" class="lazyload" data-srcset="https://mfjblog-pic.oss-cn-beijing.aliyuncs.com/img/0e6ec042e3e7401e8f4c651c74f5a508.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="在这里插入图片描述"></p>
+<p>感觉其中的OE很有玄机，于是去查了查这个芯片的芯片手册，看到了这句话<br><img src="https://mfjblog-pic.oss-cn-beijing.aliyuncs.com/img/6c21ca494bdd41a39dfbdc2d41d2f522.png" class="lazyload" data-srcset="https://mfjblog-pic.oss-cn-beijing.aliyuncs.com/img/6c21ca494bdd41a39dfbdc2d41d2f522.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="在这里插入图片描述"><br>上面的意思大概就是：如果将OE置为低电平，那么芯片的其他脚将变成高阻态。</p>
+<p>再看看上面的电路<br><img src="https://mfjblog-pic.oss-cn-beijing.aliyuncs.com/img/b08d6c9a819549aa8ce2e0500e907766.jpeg" class="lazyload" data-srcset="https://mfjblog-pic.oss-cn-beijing.aliyuncs.com/img/b08d6c9a819549aa8ce2e0500e907766.jpeg" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="请添加图片描述"><br><strong>如果UART CS为高，那么就是给单片机B下载<br>如果UART CS为低，那么就是给单片机A下载</strong></p>
 <p>但只有这个还不够，STM32还有BOOT电路，BOOT电路在这里就不详细说了。</p>
-<p>关于这一点，我们是这么设计的电路： <img
-src="https://mfjblog-pic.oss-cn-beijing.aliyuncs.com/img/ee59675227944b9c94dc0d38ed4ff74a.png"
-alt="在这里插入图片描述" /> 通过ISP A和ISP
-B来对单片机A和单片机B的BOOT电路进行控制，但由于这是一个MOS管的开漏电路，<strong>如果给ISP
-A为1那么输出会变成0</strong>，需要注意这一点。如果ISP A和ISP
-B设置的不对的话，程序可以下载进去，但是就是没有反应。
-于是，我们得到了这个表 <img
-src="https://mfjblog-pic.oss-cn-beijing.aliyuncs.com/img/7d1c18faee1f45e2963a63792903e62c.png"
-alt="请添加图片描述" /> 后来进行了测试 <img
-src="https://mfjblog-pic.oss-cn-beijing.aliyuncs.com/img/a54011425a284f14afa5f8544996c6d5.jpeg"
-alt="请添加图片描述" /> <strong>成功出现了B的数据！</strong> 这时为ISP
-A和ISP B都为高，再将UART CS置低，就会出现A的串口输出，不需要将串口关闭。
-这样就实现了上位机一对二对单片机进行下载与串口接收。</p>
-<h2 id="总结">总结</h2>
-<p>之前在打第一版板子之前老师和我们说，这个方法太笨了，不如用CAN，但是我们还是想试一下，结果居然成功了，之前BOOT电路那里一直忘了改，导致一直出现各种奇怪的问题。
-芯片其实就是个电平转换芯片，没想到居然还能有这样的作用，不得不说还是学长更聪明啊。</p>
+<p>关于这一点，我们是这么设计的电路：<br><img src="https://mfjblog-pic.oss-cn-beijing.aliyuncs.com/img/ee59675227944b9c94dc0d38ed4ff74a.png" class="lazyload" data-srcset="https://mfjblog-pic.oss-cn-beijing.aliyuncs.com/img/ee59675227944b9c94dc0d38ed4ff74a.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="在这里插入图片描述"><br>通过ISP A和ISP B来对单片机A和单片机B的BOOT电路进行控制，但由于这是一个MOS管的开漏电路，<strong>如果给ISP A为1那么输出会变成0</strong>，需要注意这一点。如果ISP A和ISP B设置的不对的话，程序可以下载进去，但是就是没有反应。<br>于是，我们得到了这个表<br><img src="https://mfjblog-pic.oss-cn-beijing.aliyuncs.com/img/7d1c18faee1f45e2963a63792903e62c.png" class="lazyload" data-srcset="https://mfjblog-pic.oss-cn-beijing.aliyuncs.com/img/7d1c18faee1f45e2963a63792903e62c.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="请添加图片描述"><br>后来进行了测试<br><img src="https://mfjblog-pic.oss-cn-beijing.aliyuncs.com/img/a54011425a284f14afa5f8544996c6d5.jpeg" class="lazyload" data-srcset="https://mfjblog-pic.oss-cn-beijing.aliyuncs.com/img/a54011425a284f14afa5f8544996c6d5.jpeg" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="请添加图片描述"><br><strong>成功出现了B的数据！</strong><br>这时为ISP A和ISP B都为高，再将UART CS置低，就会出现A的串口输出，不需要将串口关闭。<br>这样就实现了上位机一对二对单片机进行下载与串口接收。</p>
+<h2 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h2><p>之前在打第一版板子之前老师和我们说，这个方法太笨了，不如用CAN，但是我们还是想试一下，结果居然成功了，之前BOOT电路那里一直忘了改，导致一直出现各种奇怪的问题。<br>芯片其实就是个电平转换芯片，没想到居然还能有这样的作用，不得不说还是学长更聪明啊。</p>
 
   </div>
   
@@ -2505,8 +2478,7 @@ A和ISP B都为高，再将UART CS置低，就会出现A的串口输出，不需
             <blockquote>
               
                 
-                  <p>博客内容遵循 署名-非商业性使用-相同方式共享 4.0 国际 (CC BY-NC-SA
-4.0) 协议</p>
+                  <p>博客内容遵循 署名-非商业性使用-相同方式共享 4.0 国际 (CC BY-NC-SA 4.0) 协议</p>
 
                 
               
@@ -2615,21 +2587,18 @@ A和ISP B都为高，再将UART CS置低，就会出现A的串口输出，不需
       
         <a class='prev' href='/2022/10/06/Pytorch%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E7%BB%8F%E5%85%B8%E7%AE%97%E6%B3%95%E2%80%94%E2%80%94%E7%BA%BF%E6%80%A7%E5%9B%9E%E5%BD%92/'>
           <p class='title'><i class="fa-solid fa-chevron-left" aria-hidden="true"></i>Pytorch机器学习经典算法——线性回归</p>
-          <p class='content'>原视频链接：3.
-零基础入门PyTorch之线性回归【逐行代码讲解】 原文章链接：【PyTorch修炼】零基础入门PyTorch之线性回归【逐行代码讲解】
+          <p class='content'>原视频链接：3. 零基础入门PyTorch之线性回归【逐行代码讲解】原文章链接：【PyTorch修炼】零基础入门PyTorch之线性回归【逐行代码讲解】
 线性回归其实就是
 
-y=kx+b
-
-但...</p>
+y&#x3D;kx+...</p>
         </a>
       
       
         <a class='next' href='/2022/09/26/%E5%A6%82%E4%BD%95%E9%98%85%E8%AF%BB%E8%8A%AF%E7%89%87%E6%89%8B%E5%86%8C/'>
           <p class='title'>如何阅读芯片手册<i class="fa-solid fa-chevron-right" aria-hidden="true"></i></p>
           <p class='content'>原视频链接：如何快速阅读芯片数据手册（初学者和外行进）
-## 1.芯片手册的结构 ### 1.Features 特性 对芯片的特点进行了总结 ###
-2.General Description ...</p>
+1.芯片手册的结构1.Features 特性对芯片的特点进行了总结
+2.General Description 概述把芯片的功能进行了一个...</p>
         </a>
       
     </div>
@@ -2829,9 +2798,7 @@ y=kx+b
       
     
       
-        <div><p>Blog content follows the <a
-target="_blank" rel="noopener" href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.en">Attribution-NonCommercial-ShareAlike
-4.0 International (CC BY-NC-SA 4.0) License</a></p>
+        <div><p>Blog content follows the <a target="_blank" rel="noopener" href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.en">Attribution-NonCommercial-ShareAlike 4.0 International (CC BY-NC-SA 4.0) License</a></p>
 </div>
       
     

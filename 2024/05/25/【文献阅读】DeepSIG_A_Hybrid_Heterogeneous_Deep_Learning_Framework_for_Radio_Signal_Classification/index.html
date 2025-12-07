@@ -40,7 +40,7 @@
 <meta property="og:title" content="【文献阅读】DeepSIG_A_Hybrid_Heterogeneous_Deep_Learning_Framework_for_Radio_Signal_Classification">
 <meta property="og:url" content="https://mengfanjun020906.github.io/2024/05/25/%E3%80%90%E6%96%87%E7%8C%AE%E9%98%85%E8%AF%BB%E3%80%91DeepSIG_A_Hybrid_Heterogeneous_Deep_Learning_Framework_for_Radio_Signal_Classification/index.html">
 <meta property="og:site_name" content="MengFanjun的博客">
-<meta property="og:description" content="缩写词 AMC：automatic modulation classification ，自动调制分类。 SIG：S for Sequence, I for Image and G for Graph。 LFGM：Limited Fixed Graph Mapping # 摘要 目的：为了处理异构输入格式的无线电信号，文章提出了一种名为DeepSIG的混合异构调制分类架构，该架构将递归神经网络（R">
+<meta property="og:description" content="缩写词AMC：automatic modulation classification ，自动调制分类。SIG：S for Sequence, I for Image and G for Graph。LFGM：Limited Fixed Graph Mapping 摘要目的：为了处理异构输入格式的无线电信号，文章提出了一种名为DeepSIG的混合异构调制分类架构，该架构将递归神经网络（RNN），卷积">
 <meta property="og:locale" content="en_US">
 <meta property="og:image" content="https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png">
 <meta property="article:published_time" content="2024-05-25T03:49:26.000Z">
@@ -1598,7 +1598,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
     debug: "env",
     cdn: {"js":{"app":"/js/app.js","parallax":"/js/plugins/parallax.js","rightMenu":"/js/plugins/rightMenu.js","rightMenus":"/js/plugins/rightMenus.js","sites":"/js/plugins/tags/sites.js","friends":"/js/plugins/tags/friends.js","contributors":"/js/plugins/tags/contributors.js","search":"/js/search/hexo.js"},"css":{"style":"/css/style.css"}},
     default: {"avatar":"https://unpkg.com/volantis-static@0.0.1654736714924/media/placeholder/avatar/round/3442075.svg","link":"https://unpkg.com/volantis-static@0.0.1654736714924/media/placeholder/link/8f277b4ee0ecd.svg","cover":"https://unpkg.com/volantis-static@0.0.1654736714924/media/placeholder/cover/76b86c0226ffd.svg","image":"https://unpkg.com/volantis-static@0.0.1654736714924/media/placeholder/image/2659360.svg"},
-    lastupdate: new Date(1765118762067),
+    lastupdate: new Date(1765119292905),
     sidebar: {
       for_page: ["blogger","category","tagcloud","webinfo","lastupdate"],
       for_post: ["toc"],
@@ -2422,7 +2422,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
   <div class="new-meta-item wordcount">
     <a class='notlink'>
       <i class="fa-solid fa-keyboard fa-fw" aria-hidden="true"></i>
-      <p>8.5k words</p>
+      <p>8.4k words</p>
     </a>
   </div>
   <div class="new-meta-item readtime">
@@ -2464,420 +2464,114 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
 
   <div id="layoutHelper-page-plugins"></div>
   <div id="post-body" itemprop="articleBody">
-    <h1 id="缩写词">缩写词</h1>
-<p>AMC：automatic modulation classification ，自动调制分类。 SIG：S for
-Sequence, I for Image and G for Graph。 LFGM：Limited Fixed Graph
-Mapping # 摘要
-目的：为了处理异构输入格式的无线电信号，文章提出了一种名为DeepSIG的混合异构调制分类架构，该架构将递归神经网络（RNN），卷积神经网络（CNN）和图神经网络（GNN）模型集成在单个框架中。
-in-phase (I) and quadrature (Q)
-sequences,IQ信号即同相正交信号，I为in-phase同相分量，Q为quadrature正交分量，Q与I的相位相差了90度。
-# Introduction</p>
-<p>第一章主要讲述了论文的研究背景、现有的调制分类方法及其局限性，以及提出的新的混合异构深度学习框架DeepSIG。以下是具体内容的概述：</p>
-<h3 id="研究背景与动机">研究背景与动机</h3>
-<ul>
+    <h1 id="缩写词"><a href="#缩写词" class="headerlink" title="缩写词"></a>缩写词</h1><p>AMC：automatic modulation classification ，自动调制分类。<br>SIG：S for Sequence, I for Image and G for Graph。<br>LFGM：Limited Fixed Graph Mapping</p>
+<h1 id="摘要"><a href="#摘要" class="headerlink" title="摘要"></a>摘要</h1><p>目的：为了处理异构输入格式的无线电信号，文章提出了一种名为DeepSIG的混合异构调制分类架构，该架构将递归神经网络（RNN），卷积神经网络（CNN）和图神经网络（GNN）模型集成在单个框架中。<br>in-phase (I) and quadrature (Q) sequences,IQ信号即同相正交信号，I为in-phase同相分量，Q为quadrature正交分量，Q与I的相位相差了90度。</p>
+<h1 id="Introduction"><a href="#Introduction" class="headerlink" title="Introduction"></a>Introduction</h1><p>第一章主要讲述了论文的研究背景、现有的调制分类方法及其局限性，以及提出的新的混合异构深度学习框架DeepSIG。以下是具体内容的概述：</p>
+<h3 id="研究背景与动机"><a href="#研究背景与动机" class="headerlink" title="研究背景与动机"></a>研究背景与动机</h3><ul>
 <li><strong>无线通信技术的发展</strong>：随着物联网（IoT）、5G技术等无线通信技术的快速发展，电磁环境变得越来越复杂，频谱资源短缺问题变得更加严重。</li>
 <li><strong>频谱利用率的重要性</strong>：提高频谱利用率变得愈发重要。认知无线电技术是一种有效的提高频谱效率的方法，它可以动态管理频谱资源的使用。</li>
 </ul>
-<h3 id="调制分类的角色">调制分类的角色</h3>
-<ul>
+<h3 id="调制分类的角色"><a href="#调制分类的角色" class="headerlink" title="调制分类的角色"></a>调制分类的角色</h3><ul>
 <li><strong>调制识别在频谱感知中的作用</strong>：调制分类有助于频谱感知，是认知无线电中的关键技术之一。</li>
 </ul>
-<h3 id="传统调制分类方法">传统调制分类方法</h3>
-<ul>
+<h3 id="传统调制分类方法"><a href="#传统调制分类方法" class="headerlink" title="传统调制分类方法"></a>传统调制分类方法</h3><ul>
 <li><strong>手工特征提取</strong>：传统的调制分类方法依赖于手工设计的特征提取步骤，需要专业知识支持，且在复杂环境下分类准确率可能不高。</li>
 </ul>
-<h3
-id="基于深度学习的自动调制分类amc">基于深度学习的自动调制分类（AMC）</h3>
-<ul>
+<h3 id="基于深度学习的自动调制分类（AMC）"><a href="#基于深度学习的自动调制分类（AMC）" class="headerlink" title="基于深度学习的自动调制分类（AMC）"></a>基于深度学习的自动调制分类（AMC）</h3><ul>
 <li><strong>深度学习的发展</strong>：随着人工智能的发展，基于深度学习的AMC方法逐渐兴起，这些方法能够自动学习和提取特征，实现端到端的调制分类。</li>
 <li><strong>深度学习AMC的输入格式</strong>：根据输入格式，基于深度学习的AMC方法可以分为基于序列输入、图像输入和图形输入三类。</li>
 </ul>
-<h3 id="各类深度学习amc方法的特点">各类深度学习AMC方法的特点</h3>
-<ol type="1">
-<li><strong>基于序列输入</strong>：
-<ul>
+<h3 id="各类深度学习AMC方法的特点"><a href="#各类深度学习AMC方法的特点" class="headerlink" title="各类深度学习AMC方法的特点"></a>各类深度学习AMC方法的特点</h3><ol>
+<li><strong>基于序列输入</strong>：<ul>
 <li>输入一般为接收信号的同相（I）和正交（Q）分量，通常使用循环神经网络（RNN）模型来捕捉IQ信号的时间相关信息。</li>
-</ul></li>
-<li><strong>基于图像输入</strong>：
-<ul>
+</ul>
+</li>
+<li><strong>基于图像输入</strong>：<ul>
 <li>将IQ信号按照一定规则或通过可训练的神经网络层映射成图像，然后使用卷积神经网络（CNN）进行分类。该方法能够利用图像分类领域的技术，但可能会在转换过程中丢失原始信号中的某些信息。</li>
-</ul></li>
-<li><strong>基于图形输入</strong>：
-<ul>
+</ul>
+</li>
+<li><strong>基于图形输入</strong>：<ul>
 <li>将信号转换为图数据并进行分类。这类方法通过图嵌入方法或图神经网络（GNN）模型实现信号分类，但图映射算法的转换速度较慢，对长时间信号的处理有一定局限性。</li>
-</ul></li>
+</ul>
+</li>
 </ol>
-<h3 id="deepsig框架">DeepSIG框架</h3>
-<ul>
+<h3 id="DeepSIG框架"><a href="#DeepSIG框架" class="headerlink" title="DeepSIG框架"></a>DeepSIG框架</h3><ul>
 <li><strong>提出DeepSIG</strong>：为了充分利用不同输入格式的数据所包含的潜在信息，本文提出了一个混合异构框架DeepSIG，集成了基于序列、图像和图的三种AMC模型。</li>
-<li><strong>框架结构</strong>：DeepSIG包括四部分：序列网络、图像网络、图网络和融合分类网络。
-<ul>
+<li><strong>框架结构</strong>：DeepSIG包括四部分：序列网络、图像网络、图网络和融合分类网络。<ul>
 <li><strong>序列网络</strong>：使用长短时记忆网络（LSTM）处理IQ信号，提取时间相关特征信息。</li>
 <li><strong>图像网络</strong>：提出了一种新的图像映射方法DWTDR，通过离散小波变换（DWT）的分解和重构将IQ信号映射为双通道窄边图像，然后使用ResNet18模型提取图像特征。</li>
 <li><strong>图形网络</strong>：提出了一种新的图映射方法LFGM，将IQ信号根据其过采样率映射为稀疏图，并使用DiffPool模型提取图特征。</li>
 <li><strong>融合分类（fusion）网络</strong>：将前面三部分提取的特征向量进行归一化和拼接融合，通过全连接层进行最终的调制分类。</li>
-</ul></li>
 </ul>
-<h3 id="主要贡献">主要贡献</h3>
-<ol type="1">
+</li>
+</ul>
+<h3 id="主要贡献"><a href="#主要贡献" class="headerlink" title="主要贡献"></a>主要贡献</h3><ol>
 <li><strong>提出DeepSIG框架</strong>：整合了基于序列、图像和图的三种AMC模型，提高了调制识别的准确性。</li>
 <li><strong>新图像映射方法DWTDR</strong>：将IQ信号转换为双通道窄边图像，保留了原始信号中的隐含信息，有助于后续分类。</li>
 <li><strong>新图映射方法LFGM</strong>：高效地将IQ信号映射为稀疏图，适合处理长时间信号。</li>
 <li><strong>实验验证</strong>：在多个数据集和少样本场景下验证了DeepSIG的性能，显示其优于单一输入格式的分类方法。</li>
 </ol>
-<h3 id="论文结构">论文结构</h3>
-<ul>
+<h3 id="论文结构"><a href="#论文结构" class="headerlink" title="论文结构"></a>论文结构</h3><ul>
 <li><strong>第二章</strong>：介绍了基于序列、图像和图的调制分类方法的相关工作。</li>
 <li><strong>第三章</strong>：详细介绍了DeepSIG的架构。</li>
 <li><strong>第四章</strong>：提供了仿真结果。</li>
 <li><strong>第五章</strong>：对论文进行了总结。</li>
 </ul>
 <p>总体而言，第一章为整个论文奠定了基础，介绍了研究的背景、现有方法的局限性以及提出的新的解决方案DeepSIG的整体框架和贡献。</p>
-<h1 id="related-work">Related Work</h1>
-<h2 id="a.amc-methods-with-sequence-input">A.AMC Methods With Sequence
-Input</h2>
-<p>在当前无线电调制分类的领域，基于序列输入即IQ信号的AMC方法是最常见的。然后列举了一些其他学者所做的调制分类方法。
-<img
-src="https://mfjblog-pic.oss-cn-beijing.aliyuncs.com/img/8f8442f3634c42daa27ebb8d09b2dad7.png"
-alt="在这里插入图片描述" /></p>
-<h2 id="b.amc-methods-with-image-input">B.AMC Methods With Image
-Input</h2>
-<p>在AMC处理图像输入时，将无线电信号转换成图像的方法是其中的关键步骤之一。可以分为两类：基于固定规则的图像映射方法和基于可训练神经网络层的图像映射方法。在目前来看，前者是很常见的。
-总的来说，目前基于固定规则的图像映射方法在转换过程中，容易丢失原始无线电信号的部分信息。基于可训练神经网络层的图像映射方法，需要人工设计再去与特定的网络模型相结合。
-## C.AMC Methods With Graph Input
-在基于图形输入的AMC方法中，将信号映射成图形的方法是必不可少的。文章在这一节介绍了许多类似的基于图形输入的图形映射方法，现有的图映射方法都存在一个共同的问题，都不能很好地应用于长信号。</p>
-<h1 id="proposed-deepsig-framework">PROPOSED DEEPSIG FRAMEWORK</h1>
-<h2 id="a.problem-formulation">A.Problem Formulation</h2>
-<p>在无线通信领域，调制分类旨在通过对接收信号<span
-class="math inline">\(r(n)\)</span>的分析来推断所发送的基带信号<span
-class="math inline">\(s(n)\)</span>的调制方案。接收信号<span
-class="math inline">\(r(n)\)</span>和发射信号<span
-class="math inline">\(s(n)\)</span>的关系如下： <img
-src="https://img-blog.csdnimg.cn/direct/8df38ab9caf54c45902000c436674dce.png"
-alt="在这里插入图片描述" /> <span
-class="math inline">\(g(n)\)</span>是滤波器的响应，<span
-class="math inline">\(h(n)\)</span>是无线信道的响应，<span
-class="math inline">\(\Delta
-f\)</span>是由接收器和发射器之间的时钟的多普勒频移或同步引起的载波频率偏差。<span
-class="math inline">\(\theta\)</span>是相位偏差，<span
-class="math inline">\(\omega(n)\)</span>是加性白色高斯噪声，<span
-class="math inline">\(N\)</span>是信号长度，<span
-class="math inline">\(*\)</span>代表卷积操作。</p>
-<p><span
-class="math inline">\(C\)</span>代表了调制方案的数量，因此，调制分类问题可以被视为具有<span
-class="math inline">\(C\)</span>类的分类问题。<img
-src="https://mfjblog-pic.oss-cn-beijing.aliyuncs.com/img/3c40a771cbcf4e42bb9758eaa895923e.png"
-alt="在这里插入图片描述" /></p>
-<p>若接收信号是复函数的形式，则以下列I/Q的形式去表示，I代表实部，Q代表虚部。<img
-src="https://mfjblog-pic.oss-cn-beijing.aliyuncs.com/img/c3b0e412439b4200bbd4b755a6b9a7f0.png"
-alt="在这里插入图片描述" /></p>
-<h2 id="b.overall-framework">B.Overall Framework</h2>
-<p>整体的框架如下，对于图像，输入的是映射后的双通道窄边缘图像，经过了没有分类的resnet18，输出了<span
-class="math inline">\(F_s\)</span>,对于序列信号，输入的是IQ信号，经过了没有分类的
-LSTM，输出了<span
-class="math inline">\(F_I\)</span>,对于图形，输入的是映射后的图形，经过了没有分类的DiffPool，输出了<span
-class="math inline">\(F_G\)</span>。其中图像和图形都是由IQ信号得到的，对IQ信号做DWT运算，得到了双通道窄边缘图像，对IQ信号做LFGM运算，得到了映射后的图形。这一框架里面还包含了全连接层，作为分类层。
-对于输入进的信号，如果不是IQ信号，我们需要做一些预处理。<img
-src="https://mfjblog-pic.oss-cn-beijing.aliyuncs.com/img/1842a238478846869a8f89f4974524b7.png"
-alt="在这里插入图片描述" /></p>
-<p>我们在DeepSIG的训练过程中做了一些处理，可以分为两步：
-1.利用IQ信号序列、DWT得到的图像数据和LFGM得到的图形数据，分别训练LSTM、ResNet18和DiffPool；根据初步训练后保存的三个模型，可以提取每个无线电信号的三个特征向量<span
-class="math inline">\(F_S\)</span>，<span
-class="math inline">\(F_I\)</span>和<span
-class="math inline">\(F_G\)</span>，它们是LSTM，ResNet18和DiffPool模型中最后一个全连接层的对应输入向量。
-2.再对这三个特征向量进行归一化处理后，通过拼接处理可以得到融合的特征向量<span
-class="math inline">\(F_H\)</span>，并将其作为输入向量训练新加入的全连接层，以获得最终的分类结果。
-## C.Sequence Network
-在DeepSIG的序列网络部分，输入数据是IQ信号，属于一种时间序列数据，使用的网络模型是LSTM。目前，RNN通常用于通过深度学习处理时间序列。其中，LSTM是较为流行的一种，它可以有效地解决RNN的长期依赖问题。LSTM主要通过遗忘门、更新门和输出门三种门机制来控制从时间序列中提取的特征信息的流动和损失，从而解决普通RNN在训练长时间序列过程中的梯度消失和梯度爆炸问题。<img
-src="https://mfjblog-pic.oss-cn-beijing.aliyuncs.com/img/8d13a881ac1d4461824332cf91feb58c.png"
-alt="在这里插入图片描述" /></p>
-<p>下图就是文中给出LSTM的详细构造，因为整个系统的容量是有限的，为了清除与本次过程无关的记忆内容，保留与本次有关的记忆内容，我们就引入了==遗忘门==<img
-src="https://mfjblog-pic.oss-cn-beijing.aliyuncs.com/img/a46ade2f455949959ec7a087d4a98d0a.png"
-alt="在这里插入图片描述" /></p>
-<p>其中，遗忘门<span class="math inline">\(f_t\)</span>的公式如下<img
-src="https://mfjblog-pic.oss-cn-beijing.aliyuncs.com/img/e0c8038279034b4a9303c07f59f73040.png"
-alt="在这里插入图片描述" /></p>
-<p>根据这公式所展示的sigmoid，其中<span
-class="math inline">\(W_f\)</span>和<span
-class="math inline">\(b_f\)</span>分别表示当前神经网络层的可训练权重和偏置。我们会把有用的记忆保留为1，不需要的变为0，这样往上走，进行乘法运算。<img
-src="https://mfjblog-pic.oss-cn-beijing.aliyuncs.com/img/7266d5277262435d83df3f359acd2c2a.png"
-alt="在这里插入图片描述" /></p>
-<p>==更新门==代表经过本次的学习产生了新的内容，但是对于这些内容，我们需要进行筛选，再输出，所以用Sigmoid和Tanh进行了筛选。<img
-src="https://mfjblog-pic.oss-cn-beijing.aliyuncs.com/img/6e90e2e6061e4fd488716428b6b6ba6e.png"
-alt="在这里插入图片描述" /></p>
-<p>其中<span class="math inline">\(W_u\)</span>、<span
-class="math inline">\(b_u\)</span>、&amp;W_Y<span
-class="math inline">\(和\)</span>b_Y$表示相应神经网络层的权重和偏置。</p>
-<p>==输出门==使用Sigmiod函数来确定需要输出单元状态<span
-class="math inline">\(V_t\)</span>的哪一部分，我们经过tanh就是为了筛选出我们需要的部分。<img
-src="https://mfjblog-pic.oss-cn-beijing.aliyuncs.com/img/6e3ad5c71d754aa6bf1e5942373e9312.png"
-alt="在这里插入图片描述" /></p>
-<p>其中<span class="math inline">\(W_o\)</span>和<span
-class="math inline">\(b_o\)</span>分别表示当前神经网络层的权重和偏置。</p>
-<hr />
-<p>文章使用了两个LSTM层和一个全连接层来分类序列网络中归一化为[-1，1]的IQ信号数据。下面是归一化的算法伪代码：<img
-src="https://mfjblog-pic.oss-cn-beijing.aliyuncs.com/img/e429363db38f45d2b2c66cc69cdad315.png"
-alt="在这里插入图片描述" /></p>
+<h1 id="Related-Work"><a href="#Related-Work" class="headerlink" title="Related Work"></a>Related Work</h1><h2 id="A-AMC-Methods-With-Sequence-Input"><a href="#A-AMC-Methods-With-Sequence-Input" class="headerlink" title="A.AMC Methods With Sequence Input"></a>A.AMC Methods With Sequence Input</h2><p>在当前无线电调制分类的领域，基于序列输入即IQ信号的AMC方法是最常见的。然后列举了一些其他学者所做的调制分类方法。<br><img src="https://mfjblog-pic.oss-cn-beijing.aliyuncs.com/img/8f8442f3634c42daa27ebb8d09b2dad7.png" class="lazyload" data-srcset="https://mfjblog-pic.oss-cn-beijing.aliyuncs.com/img/8f8442f3634c42daa27ebb8d09b2dad7.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="在这里插入图片描述"></p>
+<h2 id="B-AMC-Methods-With-Image-Input"><a href="#B-AMC-Methods-With-Image-Input" class="headerlink" title="B.AMC Methods With Image Input"></a>B.AMC Methods With Image Input</h2><p>在AMC处理图像输入时，将无线电信号转换成图像的方法是其中的关键步骤之一。可以分为两类：基于固定规则的图像映射方法和基于可训练神经网络层的图像映射方法。在目前来看，前者是很常见的。<br>总的来说，目前基于固定规则的图像映射方法在转换过程中，容易丢失原始无线电信号的部分信息。基于可训练神经网络层的图像映射方法，需要人工设计再去与特定的网络模型相结合。</p>
+<h2 id="C-AMC-Methods-With-Graph-Input"><a href="#C-AMC-Methods-With-Graph-Input" class="headerlink" title="C.AMC Methods With Graph Input"></a>C.AMC Methods With Graph Input</h2><p>在基于图形输入的AMC方法中，将信号映射成图形的方法是必不可少的。文章在这一节介绍了许多类似的基于图形输入的图形映射方法，现有的图映射方法都存在一个共同的问题，都不能很好地应用于长信号。</p>
+<h1 id="PROPOSED-DEEPSIG-FRAMEWORK"><a href="#PROPOSED-DEEPSIG-FRAMEWORK" class="headerlink" title="PROPOSED DEEPSIG FRAMEWORK"></a>PROPOSED DEEPSIG FRAMEWORK</h1><h2 id="A-Problem-Formulation"><a href="#A-Problem-Formulation" class="headerlink" title="A.Problem Formulation"></a>A.Problem Formulation</h2><p>在无线通信领域，调制分类旨在通过对接收信号$r(n)$的分析来推断所发送的基带信号$s(n)$的调制方案。接收信号$r(n)$和发射信号$s(n)$的关系如下：<br><img src="https://img-blog.csdnimg.cn/direct/8df38ab9caf54c45902000c436674dce.png" class="lazyload" data-srcset="https://img-blog.csdnimg.cn/direct/8df38ab9caf54c45902000c436674dce.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="在这里插入图片描述"><br>$g(n)$是滤波器的响应，$h(n)$是无线信道的响应，$\Delta f$是由接收器和发射器之间的时钟的多普勒频移或同步引起的载波频率偏差。$\theta$是相位偏差，$\omega(n)$是加性白色高斯噪声，$N$是信号长度，$*$代表卷积操作。</p>
+<p>$C$代表了调制方案的数量，因此，调制分类问题可以被视为具有$C$类的分类问题。<img src="https://mfjblog-pic.oss-cn-beijing.aliyuncs.com/img/3c40a771cbcf4e42bb9758eaa895923e.png" class="lazyload" data-srcset="https://mfjblog-pic.oss-cn-beijing.aliyuncs.com/img/3c40a771cbcf4e42bb9758eaa895923e.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="在这里插入图片描述"></p>
+<p>若接收信号是复函数的形式，则以下列I&#x2F;Q的形式去表示，I代表实部，Q代表虚部。<img src="https://mfjblog-pic.oss-cn-beijing.aliyuncs.com/img/c3b0e412439b4200bbd4b755a6b9a7f0.png" class="lazyload" data-srcset="https://mfjblog-pic.oss-cn-beijing.aliyuncs.com/img/c3b0e412439b4200bbd4b755a6b9a7f0.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="在这里插入图片描述"></p>
+<h2 id="B-Overall-Framework"><a href="#B-Overall-Framework" class="headerlink" title="B.Overall Framework"></a>B.Overall Framework</h2><p>整体的框架如下，对于图像，输入的是映射后的双通道窄边缘图像，经过了没有分类的resnet18，输出了$F_s$,对于序列信号，输入的是IQ信号，经过了没有分类的 LSTM，输出了$F_I$,对于图形，输入的是映射后的图形，经过了没有分类的DiffPool，输出了$F_G$。其中图像和图形都是由IQ信号得到的，对IQ信号做DWT运算，得到了双通道窄边缘图像，对IQ信号做LFGM运算，得到了映射后的图形。这一框架里面还包含了全连接层，作为分类层。<br>对于输入进的信号，如果不是IQ信号，我们需要做一些预处理。<img src="https://mfjblog-pic.oss-cn-beijing.aliyuncs.com/img/1842a238478846869a8f89f4974524b7.png" class="lazyload" data-srcset="https://mfjblog-pic.oss-cn-beijing.aliyuncs.com/img/1842a238478846869a8f89f4974524b7.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="在这里插入图片描述"></p>
+<p>我们在DeepSIG的训练过程中做了一些处理，可以分为两步：<br>1.利用IQ信号序列、DWT得到的图像数据和LFGM得到的图形数据，分别训练LSTM、ResNet18和DiffPool；根据初步训练后保存的三个模型，可以提取每个无线电信号的三个特征向量$F_S$，$F_I$和$F_G$，它们是LSTM，ResNet18和DiffPool模型中最后一个全连接层的对应输入向量。<br>2.再对这三个特征向量进行归一化处理后，通过拼接处理可以得到融合的特征向量$F_H$，并将其作为输入向量训练新加入的全连接层，以获得最终的分类结果。</p>
+<h2 id="C-Sequence-Network"><a href="#C-Sequence-Network" class="headerlink" title="C.Sequence Network"></a>C.Sequence Network</h2><p>在DeepSIG的序列网络部分，输入数据是IQ信号，属于一种时间序列数据，使用的网络模型是LSTM。目前，RNN通常用于通过深度学习处理时间序列。其中，LSTM是较为流行的一种，它可以有效地解决RNN的长期依赖问题。LSTM主要通过遗忘门、更新门和输出门三种门机制来控制从时间序列中提取的特征信息的流动和损失，从而解决普通RNN在训练长时间序列过程中的梯度消失和梯度爆炸问题。<img src="https://mfjblog-pic.oss-cn-beijing.aliyuncs.com/img/8d13a881ac1d4461824332cf91feb58c.png" class="lazyload" data-srcset="https://mfjblog-pic.oss-cn-beijing.aliyuncs.com/img/8d13a881ac1d4461824332cf91feb58c.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="在这里插入图片描述"></p>
+<p>下图就是文中给出LSTM的详细构造，因为整个系统的容量是有限的，为了清除与本次过程无关的记忆内容，保留与本次有关的记忆内容，我们就引入了&#x3D;&#x3D;遗忘门&#x3D;&#x3D;<img src="https://mfjblog-pic.oss-cn-beijing.aliyuncs.com/img/a46ade2f455949959ec7a087d4a98d0a.png" class="lazyload" data-srcset="https://mfjblog-pic.oss-cn-beijing.aliyuncs.com/img/a46ade2f455949959ec7a087d4a98d0a.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="在这里插入图片描述"></p>
+<p>其中，遗忘门$f_t$的公式如下<img src="https://mfjblog-pic.oss-cn-beijing.aliyuncs.com/img/e0c8038279034b4a9303c07f59f73040.png" class="lazyload" data-srcset="https://mfjblog-pic.oss-cn-beijing.aliyuncs.com/img/e0c8038279034b4a9303c07f59f73040.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="在这里插入图片描述"></p>
+<p>根据这公式所展示的sigmoid，其中$W_f$和$b_f$分别表示当前神经网络层的可训练权重和偏置。我们会把有用的记忆保留为1，不需要的变为0，这样往上走，进行乘法运算。<img src="https://mfjblog-pic.oss-cn-beijing.aliyuncs.com/img/7266d5277262435d83df3f359acd2c2a.png" class="lazyload" data-srcset="https://mfjblog-pic.oss-cn-beijing.aliyuncs.com/img/7266d5277262435d83df3f359acd2c2a.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="在这里插入图片描述"></p>
+<p>&#x3D;&#x3D;更新门&#x3D;&#x3D;代表经过本次的学习产生了新的内容，但是对于这些内容，我们需要进行筛选，再输出，所以用Sigmoid和Tanh进行了筛选。<img src="https://mfjblog-pic.oss-cn-beijing.aliyuncs.com/img/6e90e2e6061e4fd488716428b6b6ba6e.png" class="lazyload" data-srcset="https://mfjblog-pic.oss-cn-beijing.aliyuncs.com/img/6e90e2e6061e4fd488716428b6b6ba6e.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="在这里插入图片描述"></p>
+<p>其中$W_u$、$b_u$、&amp;W_Y$和$b_Y$表示相应神经网络层的权重和偏置。</p>
+<p>&#x3D;&#x3D;输出门&#x3D;&#x3D;使用Sigmiod函数来确定需要输出单元状态$V_t$的哪一部分，我们经过tanh就是为了筛选出我们需要的部分。<img src="https://mfjblog-pic.oss-cn-beijing.aliyuncs.com/img/6e3ad5c71d754aa6bf1e5942373e9312.png" class="lazyload" data-srcset="https://mfjblog-pic.oss-cn-beijing.aliyuncs.com/img/6e3ad5c71d754aa6bf1e5942373e9312.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="在这里插入图片描述"></p>
+<p>其中$W_o$和$b_o$分别表示当前神经网络层的权重和偏置。</p>
+<hr>
+<p>文章使用了两个LSTM层和一个全连接层来分类序列网络中归一化为[-1，1]的IQ信号数据。下面是归一化的算法伪代码：<img src="https://mfjblog-pic.oss-cn-beijing.aliyuncs.com/img/e429363db38f45d2b2c66cc69cdad315.png" class="lazyload" data-srcset="https://mfjblog-pic.oss-cn-beijing.aliyuncs.com/img/e429363db38f45d2b2c66cc69cdad315.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="在这里插入图片描述"></p>
 <p>第一层由128个LSTM细胞组成，第二层有4个细胞，最后一个全连接层是分类层，用于将第二个LSTM层的输出特征映射到数据集的调制类别数量。</p>
-<h2 id="d.image-network">D.Image Network</h2>
-<p>提出了一种图像映射方法，对IQ信号数据进行DWT处理，得到双通道窄边缘图像数据，然后使用ResNet18模型进行调制识别任务。
-1）算法：小波变换是一种具有多分辨率分析特点的时频分析方法，在低频区和高频区分别具有较高的频域分辨率和时间分辨率。用DWT分解信号的层次结构如图所示。<img
-src="https://mfjblog-pic.oss-cn-beijing.aliyuncs.com/img/f6558701ce6c4455881352f17919e197.png"
-alt="在这里插入图片描述" /></p>
-<p><code>i</code>阶段的DWT信号分解公式如下所示， <img
-src="https://mfjblog-pic.oss-cn-beijing.aliyuncs.com/img/b2dcc92a0e5d480685d6be42b24b22cb.png"
-alt="在这里插入图片描述" /> 其中<span
-class="math inline">\(g(k)\)</span>和<span
-class="math inline">\(h(k)\)</span>分别表示低通滤波器和高通滤波器，<span
-class="math inline">\(K\)</span>是它们的长度。<span
-class="math inline">\(k\)</span>代表着信号中的时间索引或位置
-每次进行DWT分解，得到的两个分量的长度将减少一半，因此我们最多可以对长度为N的序列进行<span
-class="math inline">\(log_2 N\)</span>阶DWT分解。</p>
-<p>在实际应用中，对于包括无线电信号在内的许多序列数据，<strong>低频分量</strong>是重要的，它往往包含了信号的特征，而高频分量则显示了信号中的细节。
-基于近似分量及其对应细节分量的DWT重建过程可以表示为： <img
-src="https://mfjblog-pic.oss-cn-beijing.aliyuncs.com/img/7938d91144f34487a89b0567b304036b.png"
-alt="在这里插入图片描述" />
-在DWT重构过程中，两个等长的信号分量可以合并为一个新的、长度为原来两倍的信号分量。
-利用DWT的多层分解，可以将信号分解成多个高频和低频分量，然后通过多次DWT重构操作将这些分量组合回原始长度的信号。文章的方法与传统的信号重构方法不同之处在于，在DWTDR方法中，信号重构操作包含了一些预处理步骤，以便更好地处理信号分量。
-从IQ信号到图像的算法如下所示： <img
-src="https://mfjblog-pic.oss-cn-beijing.aliyuncs.com/img/7c9e8482c1a24689afac80742b4a2184.png"
-alt="在这里插入图片描述" /> 通道1的重建过程如图所示： <img
-src="https://mfjblog-pic.oss-cn-beijing.aliyuncs.com/img/9053feb77992481f91d15b9cbbd996f8.png"
-alt="在这里插入图片描述" />
-对I通道数据进行多次DWT分解，获取多个高频分量和一个低频分量。根据分解得到的频率分量进行多次重构操作。每次重构操作中，仅保留一个分量，其余设为零，通过多次重构得到新的序列。将所有重构序列组合成一个矩阵。对Q通道数据进行相同处理，得到对应矩阵。将I和Q通道的矩阵拼接，生成最终的图像。
-总结一下，就是对I通道和Q通道数据分别进行多次DWT分解和重构操作，生成多个重构序列，然后将这些序列组合成矩阵，最终通过连接I和Q通道的矩阵，生成一个双通道窄边图像。这种方法通过保留和重构频率分量，确保了信号的时间和频率信息在图像映射中的保留和表达。
-在得到每个IQ信号对应的<span
-class="math inline">\(M_{IQ}\)</span>图像后，文章利用resnet18进行调制分类。从理论上讲，神经网络模型的网络层越深，可以获得的信息越多，特征越丰富。但在实际中，当网络层数超过一定程度时，继续加深网络会造成<strong>梯度爆炸或梯度消失</strong>的问题，这将对网络的优化产生不利影响。
-为了解决这一问题，文章使用了以残差块为核心的resnet18。下图展示了一个残差块的构造：
-<img
-src="https://mfjblog-pic.oss-cn-beijing.aliyuncs.com/img/e41426044ece4241a9cac0fb393916a9.png"
-alt="在这里插入图片描述" /> resnet为何能解决梯度爆炸等问题呢？
-在深层神经网络中，随着层数的增加，梯度在反向传播过程中会逐层相乘，如果每一层的梯度都非常小（小于1），会导致梯度逐渐变得非常小，称为梯度消失；反之，如果每一层的梯度都非常大（大于1），会导致梯度逐渐变得非常大，称为梯度爆炸。这两种情况都会导致网络难以训练。
-残差块通过引入跳跃连接，使得每一个块的输入可以绕过中间的层，直接连接到输出。跳跃连接（Skip
-Connections）使得梯度可以直接从较深的层传递到较浅的层，从而有效缓解梯度消失和梯度爆炸问题。
-从图中可以看出，残差块之间有跳跃连接，跳跃连接提供了一条直接的梯度传播路径，使得梯度可以绕过多个中间层直接传递。这意味着即使中间层的梯度变得非常小或非常大，梯度仍然可以通过跳跃连接有效地传播。</p>
-<p>2）Complexity Analysis：
-文章在这里分析DWTDR的复杂性，以Haar小波为例子，首先分析<strong>时间复杂度</strong>，假设他的滤波器长度<span
-class="math inline">\(K=2\)</span>。当对具有长度<span
-class="math inline">\(N\)</span>的IQ信号的信道执行Haar离散小波分解时，需要总共<span
-class="math inline">\(N/2\)</span>次加法和<span
-class="math inline">\(N/2\)</span>次乘法运算。因此，Haar离散小波分解对长度为N的通道数据的时间复杂度为函数<span
-class="math inline">\(O(N)\)</span>。对于2个通道的IQ信号，时间复杂度为<span
-class="math inline">\(O(2N)\)</span>。在DWTDR过程中，总共需要<span
-class="math inline">\(log_2N\)</span>分解，并且每个分解的序列长度是前一个分解长度的一半。
-因此，在DWTDR中IQ信号的整个分解过程的时间复杂度为: <img
-src="https://mfjblog-pic.oss-cn-beijing.aliyuncs.com/img/de3603b0aed1449d870bded441e1b8a9.png"
-alt="在这里插入图片描述" /></p>
-<p>其次，在DWTDR的重构过程中，以处理长度为N的IQ信号的通道序列为例，基于从上述分解获得的一个低频分量和<span
-class="math inline">\(N\)</span>个高频分量，需要递归地执行<span
-class="math inline">\(log_2N\)</span>次DWT重构操作以获得长度为<span
-class="math inline">\(N\)</span>的序列，即一次信号重构。每次小波变换重构的时间复杂度与相应的小波变换分解的时间复杂度相同，均为<span
-class="math inline">\(O\)</span>(重建序列的长度)。因此，对信道序列执行信号重构操作的时间复杂度为：
-<img
-src="https://mfjblog-pic.oss-cn-beijing.aliyuncs.com/img/93b98c74e334495998440f71990633f0.png"
-alt="在这里插入图片描述" />
-对于IQ信号，存在两个通道序列，并且每个通道序列在整个DWTDR重构过程中需要<span
-class="math inline">\((1+log_2N)\)</span>个信号重构操作。
-因此，IQ信号的DWTDR重建的时间复杂度为： <img
-src="https://mfjblog-pic.oss-cn-beijing.aliyuncs.com/img/d0722301658d4740a85df6e312542c09.png"
-alt="在这里插入图片描述" /></p>
-<p>最后，我们可以知道DWTDR的时间复杂度是： <img
-src="https://mfjblog-pic.oss-cn-beijing.aliyuncs.com/img/bb942df292304e2597db3e9ba4361214.png"
-alt="在这里插入图片描述" />
-同样，DWTDR的<strong>空间复杂度</strong>也可以分为两部分：分解和重构。以IQ信号的信道序列为例，在分解过程中，<span
-class="math inline">\((1+log_2N)\)</span>的数组空间，需要存储一个低频分量和分解后得到的N个高频分量。因此，在DWTDR分解过程中IQ信号的空间复杂度为：
-<img
-src="https://mfjblog-pic.oss-cn-beijing.aliyuncs.com/img/96442824726d4596b17961dcbc150d78.png"
-alt="在这里插入图片描述" />
-在重构过程中，我们需要一个数组来存储从当前DWT重构获得的分量，单通道信号重构包括<span
-class="math inline">\(log_2 N\)</span> DWT重构，而DWTDR重构包括<span
-class="math inline">\((1+log_2N)\)</span>信号重构。因此，在DWTDR重构过程期间IQ信号的空间复杂度为：
-<img
-src="https://mfjblog-pic.oss-cn-beijing.aliyuncs.com/img/9fe52e986db5411882177ad8935d1211.png"
-alt="在这里插入图片描述" /> 最后，我们可以得到DWTDR的空间复杂度： <img
-src="https://img-blog.csdnimg.cn/direct/328dca7ce73c4810821f30a63cbb9ce9.png"
-alt="在这里插入图片描述" /> ## E.Graph Network
-这里讲的是用图形表示IQ信号，然而，这些图映射方法很耗时，特别是在处理长信号时，所以我们提出了一种方法称为LFGM，来映射IQ信号到图形。通过LFGM，我们用相同结构的图来表示不同的IQ信号。不同之处在于不同图中节点的特征向量。将IQ信号映射到图形的过程见下面的伪代码：
-<img
-src="https://mfjblog-pic.oss-cn-beijing.aliyuncs.com/img/d999bd437e65440789c0630acf6ac994.png"
-alt="在这里插入图片描述" /></p>
+<h2 id="D-Image-Network"><a href="#D-Image-Network" class="headerlink" title="D.Image Network"></a>D.Image Network</h2><p>提出了一种图像映射方法，对IQ信号数据进行DWT处理，得到双通道窄边缘图像数据，然后使用ResNet18模型进行调制识别任务。<br>1）算法：小波变换是一种具有多分辨率分析特点的时频分析方法，在低频区和高频区分别具有较高的频域分辨率和时间分辨率。用DWT分解信号的层次结构如图所示。<img src="https://mfjblog-pic.oss-cn-beijing.aliyuncs.com/img/f6558701ce6c4455881352f17919e197.png" class="lazyload" data-srcset="https://mfjblog-pic.oss-cn-beijing.aliyuncs.com/img/f6558701ce6c4455881352f17919e197.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="在这里插入图片描述"></p>
+<p><code>i</code>阶段的DWT信号分解公式如下所示，<br><img src="https://mfjblog-pic.oss-cn-beijing.aliyuncs.com/img/b2dcc92a0e5d480685d6be42b24b22cb.png" class="lazyload" data-srcset="https://mfjblog-pic.oss-cn-beijing.aliyuncs.com/img/b2dcc92a0e5d480685d6be42b24b22cb.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="在这里插入图片描述"><br>其中$g(k)$和$h(k)$分别表示低通滤波器和高通滤波器，$K$是它们的长度。$k$代表着信号中的时间索引或位置<br>每次进行DWT分解，得到的两个分量的长度将减少一半，因此我们最多可以对长度为N的序列进行$log_2 N$阶DWT分解。</p>
+<p>在实际应用中，对于包括无线电信号在内的许多序列数据，<strong>低频分量</strong>是重要的，它往往包含了信号的特征，而高频分量则显示了信号中的细节。<br>基于近似分量及其对应细节分量的DWT重建过程可以表示为：<br><img src="https://mfjblog-pic.oss-cn-beijing.aliyuncs.com/img/7938d91144f34487a89b0567b304036b.png" class="lazyload" data-srcset="https://mfjblog-pic.oss-cn-beijing.aliyuncs.com/img/7938d91144f34487a89b0567b304036b.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="在这里插入图片描述"><br>在DWT重构过程中，两个等长的信号分量可以合并为一个新的、长度为原来两倍的信号分量。<br>利用DWT的多层分解，可以将信号分解成多个高频和低频分量，然后通过多次DWT重构操作将这些分量组合回原始长度的信号。文章的方法与传统的信号重构方法不同之处在于，在DWTDR方法中，信号重构操作包含了一些预处理步骤，以便更好地处理信号分量。<br>从IQ信号到图像的算法如下所示：<br><img src="https://mfjblog-pic.oss-cn-beijing.aliyuncs.com/img/7c9e8482c1a24689afac80742b4a2184.png" class="lazyload" data-srcset="https://mfjblog-pic.oss-cn-beijing.aliyuncs.com/img/7c9e8482c1a24689afac80742b4a2184.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="在这里插入图片描述"><br>通道1的重建过程如图所示：<br><img src="https://mfjblog-pic.oss-cn-beijing.aliyuncs.com/img/9053feb77992481f91d15b9cbbd996f8.png" class="lazyload" data-srcset="https://mfjblog-pic.oss-cn-beijing.aliyuncs.com/img/9053feb77992481f91d15b9cbbd996f8.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="在这里插入图片描述"><br>对I通道数据进行多次DWT分解，获取多个高频分量和一个低频分量。根据分解得到的频率分量进行多次重构操作。每次重构操作中，仅保留一个分量，其余设为零，通过多次重构得到新的序列。将所有重构序列组合成一个矩阵。对Q通道数据进行相同处理，得到对应矩阵。将I和Q通道的矩阵拼接，生成最终的图像。<br>总结一下，就是对I通道和Q通道数据分别进行多次DWT分解和重构操作，生成多个重构序列，然后将这些序列组合成矩阵，最终通过连接I和Q通道的矩阵，生成一个双通道窄边图像。这种方法通过保留和重构频率分量，确保了信号的时间和频率信息在图像映射中的保留和表达。<br>在得到每个IQ信号对应的$M_{IQ}$图像后，文章利用resnet18进行调制分类。从理论上讲，神经网络模型的网络层越深，可以获得的信息越多，特征越丰富。但在实际中，当网络层数超过一定程度时，继续加深网络会造成<strong>梯度爆炸或梯度消失</strong>的问题，这将对网络的优化产生不利影响。<br>为了解决这一问题，文章使用了以残差块为核心的resnet18。下图展示了一个残差块的构造：<br><img src="https://mfjblog-pic.oss-cn-beijing.aliyuncs.com/img/e41426044ece4241a9cac0fb393916a9.png" class="lazyload" data-srcset="https://mfjblog-pic.oss-cn-beijing.aliyuncs.com/img/e41426044ece4241a9cac0fb393916a9.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="在这里插入图片描述"><br>resnet为何能解决梯度爆炸等问题呢？<br>在深层神经网络中，随着层数的增加，梯度在反向传播过程中会逐层相乘，如果每一层的梯度都非常小（小于1），会导致梯度逐渐变得非常小，称为梯度消失；反之，如果每一层的梯度都非常大（大于1），会导致梯度逐渐变得非常大，称为梯度爆炸。这两种情况都会导致网络难以训练。<br>残差块通过引入跳跃连接，使得每一个块的输入可以绕过中间的层，直接连接到输出。跳跃连接（Skip Connections）使得梯度可以直接从较深的层传递到较浅的层，从而有效缓解梯度消失和梯度爆炸问题。<br>从图中可以看出，残差块之间有跳跃连接，跳跃连接提供了一条直接的梯度传播路径，使得梯度可以绕过多个中间层直接传递。这意味着即使中间层的梯度变得非常小或非常大，梯度仍然可以通过跳跃连接有效地传播。</p>
+<p>2）Complexity Analysis：<br>文章在这里分析DWTDR的复杂性，以Haar小波为例子，首先分析<strong>时间复杂度</strong>，假设他的滤波器长度$K&#x3D;2$。当对具有长度$N$的IQ信号的信道执行Haar离散小波分解时，需要总共$N&#x2F;2$次加法和$N&#x2F;2$次乘法运算。因此，Haar离散小波分解对长度为N的通道数据的时间复杂度为函数$O(N)$。对于2个通道的IQ信号，时间复杂度为$O(2N)$。在DWTDR过程中，总共需要$log_2N$分解，并且每个分解的序列长度是前一个分解长度的一半。<br>因此，在DWTDR中IQ信号的整个分解过程的时间复杂度为:<br><img src="https://mfjblog-pic.oss-cn-beijing.aliyuncs.com/img/de3603b0aed1449d870bded441e1b8a9.png" class="lazyload" data-srcset="https://mfjblog-pic.oss-cn-beijing.aliyuncs.com/img/de3603b0aed1449d870bded441e1b8a9.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="在这里插入图片描述"></p>
+<p>其次，在DWTDR的重构过程中，以处理长度为N的IQ信号的通道序列为例，基于从上述分解获得的一个低频分量和$N$个高频分量，需要递归地执行$log_2N$次DWT重构操作以获得长度为$N$的序列，即一次信号重构。每次小波变换重构的时间复杂度与相应的小波变换分解的时间复杂度相同，均为$O$(重建序列的长度)。因此，对信道序列执行信号重构操作的时间复杂度为：<br><img src="https://mfjblog-pic.oss-cn-beijing.aliyuncs.com/img/93b98c74e334495998440f71990633f0.png" class="lazyload" data-srcset="https://mfjblog-pic.oss-cn-beijing.aliyuncs.com/img/93b98c74e334495998440f71990633f0.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="在这里插入图片描述"><br>对于IQ信号，存在两个通道序列，并且每个通道序列在整个DWTDR重构过程中需要$(1+log_2N)$个信号重构操作。<br>因此，IQ信号的DWTDR重建的时间复杂度为：<br><img src="https://mfjblog-pic.oss-cn-beijing.aliyuncs.com/img/d0722301658d4740a85df6e312542c09.png" class="lazyload" data-srcset="https://mfjblog-pic.oss-cn-beijing.aliyuncs.com/img/d0722301658d4740a85df6e312542c09.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="在这里插入图片描述"></p>
+<p>最后，我们可以知道DWTDR的时间复杂度是：<br><img src="https://mfjblog-pic.oss-cn-beijing.aliyuncs.com/img/bb942df292304e2597db3e9ba4361214.png" class="lazyload" data-srcset="https://mfjblog-pic.oss-cn-beijing.aliyuncs.com/img/bb942df292304e2597db3e9ba4361214.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="在这里插入图片描述"><br>同样，DWTDR的<strong>空间复杂度</strong>也可以分为两部分：分解和重构。以IQ信号的信道序列为例，在分解过程中，$(1+log_2N)$的数组空间，需要存储一个低频分量和分解后得到的N个高频分量。因此，在DWTDR分解过程中IQ信号的空间复杂度为：<br><img src="https://mfjblog-pic.oss-cn-beijing.aliyuncs.com/img/96442824726d4596b17961dcbc150d78.png" class="lazyload" data-srcset="https://mfjblog-pic.oss-cn-beijing.aliyuncs.com/img/96442824726d4596b17961dcbc150d78.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="在这里插入图片描述"><br>在重构过程中，我们需要一个数组来存储从当前DWT重构获得的分量，单通道信号重构包括$log_2 N$ DWT重构，而DWTDR重构包括$(1+log_2N)$信号重构。因此，在DWTDR重构过程期间IQ信号的空间复杂度为：<br><img src="https://mfjblog-pic.oss-cn-beijing.aliyuncs.com/img/9fe52e986db5411882177ad8935d1211.png" class="lazyload" data-srcset="https://mfjblog-pic.oss-cn-beijing.aliyuncs.com/img/9fe52e986db5411882177ad8935d1211.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="在这里插入图片描述"><br>最后，我们可以得到DWTDR的空间复杂度：<br><img src="https://img-blog.csdnimg.cn/direct/328dca7ce73c4810821f30a63cbb9ce9.png" class="lazyload" data-srcset="https://img-blog.csdnimg.cn/direct/328dca7ce73c4810821f30a63cbb9ce9.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="在这里插入图片描述"></p>
+<h2 id="E-Graph-Network"><a href="#E-Graph-Network" class="headerlink" title="E.Graph Network"></a>E.Graph Network</h2><p>这里讲的是用图形表示IQ信号，然而，这些图映射方法很耗时，特别是在处理长信号时，所以我们提出了一种方法称为LFGM，来映射IQ信号到图形。通过LFGM，我们用相同结构的图来表示不同的IQ信号。不同之处在于不同图中节点的特征向量。将IQ信号映射到图形的过程见下面的伪代码：<br><img src="https://mfjblog-pic.oss-cn-beijing.aliyuncs.com/img/d999bd437e65440789c0630acf6ac994.png" class="lazyload" data-srcset="https://mfjblog-pic.oss-cn-beijing.aliyuncs.com/img/d999bd437e65440789c0630acf6ac994.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="在这里插入图片描述"></p>
 <p>以下是伪代码的详细步骤解释：</p>
-<h3 id="输入">输入</h3>
-<ul>
-<li><strong>超参数 <span class="math inline">\(( k
-)\)</span></strong>：控制节点之间连接的范围。</li>
-<li><strong>IQ信号 <span class="math inline">\(( S_{IQ}
-)\)</span></strong>：包含 <span class="math inline">\(( I
-)\)</span>（同相分量）和<span class="math inline">\(( Q
-)\)</span>（正交分量）的时间序列信号。</li>
+<h3 id="输入"><a href="#输入" class="headerlink" title="输入"></a>输入</h3><ul>
+<li><strong>超参数 $( k )$</strong>：控制节点之间连接的范围。</li>
+<li><strong>IQ信号 $( S_{IQ} )$</strong>：包含 $( I )$（同相分量）和$( Q )$（正交分量）的时间序列信号。</li>
 </ul>
-<h3 id="输出">输出</h3>
-<ul>
-<li><strong>图 <span class="math inline">\(( G = \langle V_N, E \rangle
-)\)</span></strong>：包含节点集合 <span class="math inline">\(( V_N
-)\)</span> 和边集合 <span class="math inline">\(( E )\)</span>。</li>
+<h3 id="输出"><a href="#输出" class="headerlink" title="输出"></a>输出</h3><ul>
+<li><strong>图 $( G &#x3D; \langle V_N, E \rangle )$</strong>：包含节点集合 $( V_N )$ 和边集合 $( E )$。</li>
 </ul>
-<figure>
-<img
-src="https://mfjblog-pic.oss-cn-beijing.aliyuncs.com/img/a8b72dfee36147608e1bb045642503e2.png"
-alt="在这里插入图片描述" />
-<figcaption aria-hidden="true">在这里插入图片描述</figcaption>
-</figure>
-<p><img
-src="https://mfjblog-pic.oss-cn-beijing.aliyuncs.com/img/e33a0ec7f82245398dde690d935d6d30.png"
-alt="在这里插入图片描述" /> 具体地，对于长度为N的无线电信号样本<span
-class="math inline">\(S_{IQ}\)</span> <img
-src="https://mfjblog-pic.oss-cn-beijing.aliyuncs.com/img/83dee5e3db8f4b54bd3b37e6523e96e8.png"
-alt="在这里插入图片描述" /> 我们把它转换成相应的图<span
-class="math inline">\(G = \langle V_N, E \rangle\)</span>。其中<span
-class="math inline">\(V_N\)</span>和<span
-class="math inline">\(E\)</span>表示图G的节点集和边集。在图<span
-class="math inline">\(G\)</span>中，<span
-class="math inline">\(N\)</span>个节点对应于相应IQ信号的时间采样点，节点的属性值是由采样点对应的IQ通道的两个值组成的向量。图<span
-class="math inline">\(G\)</span>的边由时间采样点的距离决定。间隔小于<span
-class="math inline">\(k\)</span>的时间采样点可以形成边，其中<span
-class="math inline">\(k\)</span>是一个超参数，可以用来控制图<span
-class="math inline">\(G\)</span>的连接关系的稀疏性。<span
-class="math inline">\(k\)</span>越大，生成的图越密集。为了更好地保留原始IQ信号的隐含信息，我们将<span
-class="math inline">\(k\)</span>设置为无线电信号的过采样率。 <img
-src="https://mfjblog-pic.oss-cn-beijing.aliyuncs.com/img/5c36f9c79f294a6ea601d764d802dab6.png"
-alt="在这里插入图片描述" /> 我们以<span
-class="math inline">\(v_3\)</span>为例子，<span
-class="math inline">\(4-3=1\)</span>小于2，所以<span
-class="math inline">\(v_3\)</span>连接<span
-class="math inline">\(v_4\)</span>，而不能连接其他的节点。
-在将每个IQ信号映射到相应的图中之后，现有的用于图分类的GNN可以直接用于无线电信号调制分类。用GNN进行图分类是根据拓扑连接关系学习每个节点的嵌入表示向量，文章选择DiffPool对映射图进行分类，DiffPool实际上是一个可微分图池模块，可以生成图的层次表示，并且可以以端到端的方式与各种图神经网络架构相结合。DiffPool的架构图如图所示。</p>
-<figure>
-<img
-src="https://mfjblog-pic.oss-cn-beijing.aliyuncs.com/img/3176cc7e435b46fb9a5693ca4babeab9.png"
-alt="在这里插入图片描述" />
-<figcaption aria-hidden="true">在这里插入图片描述</figcaption>
-</figure>
-<ol type="1">
+<p><img src="https://mfjblog-pic.oss-cn-beijing.aliyuncs.com/img/a8b72dfee36147608e1bb045642503e2.png" class="lazyload" data-srcset="https://mfjblog-pic.oss-cn-beijing.aliyuncs.com/img/a8b72dfee36147608e1bb045642503e2.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="在这里插入图片描述"></p>
+<p><img src="https://mfjblog-pic.oss-cn-beijing.aliyuncs.com/img/e33a0ec7f82245398dde690d935d6d30.png" class="lazyload" data-srcset="https://mfjblog-pic.oss-cn-beijing.aliyuncs.com/img/e33a0ec7f82245398dde690d935d6d30.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="在这里插入图片描述"><br>具体地，对于长度为N的无线电信号样本$S_{IQ}$<br><img src="https://mfjblog-pic.oss-cn-beijing.aliyuncs.com/img/83dee5e3db8f4b54bd3b37e6523e96e8.png" class="lazyload" data-srcset="https://mfjblog-pic.oss-cn-beijing.aliyuncs.com/img/83dee5e3db8f4b54bd3b37e6523e96e8.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="在这里插入图片描述"><br>我们把它转换成相应的图$G &#x3D; \langle V_N, E \rangle$。其中$V_N$和$E$表示图G的节点集和边集。在图$G$中，$N$个节点对应于相应IQ信号的时间采样点，节点的属性值是由采样点对应的IQ通道的两个值组成的向量。图$G$的边由时间采样点的距离决定。间隔小于$k$的时间采样点可以形成边，其中$k$是一个超参数，可以用来控制图$G$的连接关系的稀疏性。$k$越大，生成的图越密集。为了更好地保留原始IQ信号的隐含信息，我们将$k$设置为无线电信号的过采样率。<br><img src="https://mfjblog-pic.oss-cn-beijing.aliyuncs.com/img/5c36f9c79f294a6ea601d764d802dab6.png" class="lazyload" data-srcset="https://mfjblog-pic.oss-cn-beijing.aliyuncs.com/img/5c36f9c79f294a6ea601d764d802dab6.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="在这里插入图片描述"><br>我们以$v_3$为例子，$4-3&#x3D;1$小于2，所以$v_3$连接$v_4$，而不能连接其他的节点。<br>在将每个IQ信号映射到相应的图中之后，现有的用于图分类的GNN可以直接用于无线电信号调制分类。用GNN进行图分类是根据拓扑连接关系学习每个节点的嵌入表示向量，文章选择DiffPool对映射图进行分类，DiffPool实际上是一个可微分图池模块，可以生成图的层次表示，并且可以以端到端的方式与各种图神经网络架构相结合。DiffPool的架构图如图所示。</p>
+<p><img src="https://mfjblog-pic.oss-cn-beijing.aliyuncs.com/img/3176cc7e435b46fb9a5693ca4babeab9.png" class="lazyload" data-srcset="https://mfjblog-pic.oss-cn-beijing.aliyuncs.com/img/3176cc7e435b46fb9a5693ca4babeab9.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="在这里插入图片描述"></p>
+<ol>
 <li>原始图经过第一层池化，节点被聚合成超节点。图中用不同颜色（例如绿色、灰色、黄色和橙色）表示不同的超节点，每个超节点代表了一组原始节点的聚合。</li>
 <li>第一层池化后的图进一步经过第二层池化，超节点再次被聚合成更高层次的超节点。图中用蓝色和灰色表示这一级别的超节点。</li>
 <li>第二层池化后的图继续进行第三层池化，形成更少的超节点，用橙色表示。</li>
 <li>最终，经过多层池化后的图被转化为一个特征向量，提取出了代表图的全局信息的特征。</li>
 </ol>
-<figure>
-<img
-src="https://mfjblog-pic.oss-cn-beijing.aliyuncs.com/img/1b82ca21e8604ac38a6436de6709877d.png"
-alt="在这里插入图片描述" />
-<figcaption aria-hidden="true">在这里插入图片描述</figcaption>
-</figure>
-<p>它为每一层中的节点学习可区分的集群分配，将节点映射到一组集群，然后形成下一个GNN层的粗糙化输入。图的边连通度一般用一个形状为<span
-class="math inline">\(N×N\)</span>的矩阵表示。为了保存存储空间，我们可以用<span
-class="math inline">\(S_E\)</span>二进制群来表示边集，其中<span
-class="math inline">\(S_E\)</span>表示图中边的个数。
-通过算法3，我们得到了 <img
-src="https://mfjblog-pic.oss-cn-beijing.aliyuncs.com/img/378e6307357f4bcea8302c33f008311c.png"
-alt="在这里插入图片描述" /> 因此LFGM的空间复杂度为<span
-class="math inline">\(O(2S_E)\)</span> ## F.Fusion Training
-通过这三个训练好的模型，可以分别得到输入格式为序列、图像和图形的分类模型的特征向量<span
-class="math inline">\(F_S\)</span>、<span
-class="math inline">\(F_I\)</span>和<span
-class="math inline">\(F_G\)</span>。 <img
-src="https://mfjblog-pic.oss-cn-beijing.aliyuncs.com/img/0e32afff713b48e6969a24a65740cea9.png"
-alt="在这里插入图片描述" /> <span class="math inline">\(\Gamma
-s\)</span>、<span class="math inline">\(\Gamma i\)</span>、<span
-class="math inline">\(\Gamma
-g\)</span>分别表示训练好的没有最后一个分类层的ResNet18、LSTM和DiffPool模型。然后，对所获得的三个特征向量<span
-class="math inline">\(F_S\)</span>、<span
-class="math inline">\(F_I\)</span>和<span
-class="math inline">\(F_G\)</span>执行相同的归一化处理，并且将三个归一化向量拼接以获得如下融合特征向量<span
-class="math inline">\(F_H\)</span>: <img
-src="https://mfjblog-pic.oss-cn-beijing.aliyuncs.com/img/e5c3a3b33d9448a3847af3ff3f8afc65.png"
-alt="在这里插入图片描述" /> <img
-src="https://mfjblog-pic.oss-cn-beijing.aliyuncs.com/img/61d9d8d551a24265a107b141cf8bb8d0.png"
-alt="在这里插入图片描述" /> 这个<span
-class="math inline">\(N\)</span>代表了归一化运算。其中<span
-class="math inline">\(v\)</span>是要处理的一维特征向量，<span
-class="math inline">\(l\)</span>是向量<span
-class="math inline">\(v\)</span>的长度，<span
-class="math inline">\(v_i\)</span>表示<span
-class="math inline">\(v\)</span>的第<span
-class="math inline">\(i\)</span>个元素，<span
-class="math inline">\(\epsilon\)</span>是一个小值，用于避免被零除，<span
-class="math inline">\(\left \| v \right \| _p\)</span>表示<span
-class="math inline">\(v\)</span>上的L-p范数运算，<span
-class="math inline">\(p\)</span>表示范数公式中的指数值,|·|是绝对值运算。随后，增加用于分类的全连接层，并将拼接后的融合特征向量<span
-class="math inline">\(F_H\)</span>用作新层的输入： <img
-src="https://mfjblog-pic.oss-cn-beijing.aliyuncs.com/img/086a1f46e688447c9689dd3780f6b226.png"
-alt="在这里插入图片描述" /> 其中<span
-class="math inline">\(L_{FC}\)</span>表示添加的全连接层，<span
-class="math inline">\(O\)</span>是预测的标签.最后，将基于序列、图像和图形的前三个网络的最后一个全连接层去掉，并将神经网络与新增加的全连接层进行融合训练。在融合训练的过程中，新的全连接层需要用更大的学习率进行训练，其他神经网络层<span
-class="math inline">\(\Gamma s\)</span>、<span
-class="math inline">\(\Gamma i\)</span>、<span
-class="math inline">\(\Gamma g\)</span>需要用更小的学习率进行微调。</p>
-<h1 id="simulations">SIMULATIONS</h1>
-<h2 id="a.datasets">A.Datasets</h2>
-<p>文章使用三个无线电信号数据集RML2016.10a
-[25]，SigData18和SigData36来展示我们提出的DeepSIG的性能，其中第一个是公共数据集，另外两个是文章作者团队自己生成的。下表是其基本信息：
-<img
-src="https://mfjblog-pic.oss-cn-beijing.aliyuncs.com/img/5ffdad37abca452686cbffe0f1081ede.png"
-alt="在这里插入图片描述" />
-其中，RML2016.10a有11种调制方案。每种调制的信噪比（SNR）范围为−20 dB至18
-dB，间隔为2
-dB。每个信号的长度为128，过采样率为8。该数据集共有220000个样本。在仿真过程中，我们取800个从每个调制方案中，作为样本训练，剩下的作为测试样本。
-SigData-18包含18种调制方案。信号长度为512，过采样率为8。脉冲整形采用升余弦滤波，滚降系数在[0.2，0.7]范围内随机选择。SNR范围为−20dB至30dB，间隔也为2dB。我们在每个调制方案的每个SNR下从该数据集中随机挑选800个信号作为训练集，并将剩余样本合并到测试集中。
-SigData-36类似于SigData-18，除了SigData-36的信号长度为1024，并且它具有额外的18种调制方案，即BPSK，OQPSK，32APSK，64
-APSK，128 APSK，256 APSK，4ASK，8ASK，4FSK，8 FSK，4CPM，8
-CPM，OOK，AM，FM，AM-MSK，FM-MSK和OFDMBPSK。 ## B. Simulation
-Setting</p>
-<p>所有仿真过程都在NVIDIA Tesla
-T4上运行。在训练过程中，我们使用的深度学习框架是PyTorch。我们使用PyTorch
-Geometric来构建GNN模型DiffPool。优化器和损失函数分别是Adam和交叉熵。在训练模型时，我们使用固定步长的学习率衰减策略，初始学习率为0.001，每5个epoch调整一次学习率，衰减到前一个值的80%。此外，在对DeepSIG进行融合训练时，除最终分类层外的其他网络层的初始学习率均设置为0.00001。在数据集RML2016.10a、SigData—18和SigData—36上训练时，minibatch大小分别设置为128、128和32。我们在通过DWTDR将IQ信号映射到图像的过程中使用的小波函数是Daubechies（db1），即Haar。当在0.5%、1%和完整训练集的数据集RML
-2016.10a上训练DeepSIG时，（28）公式中提到的<span
-class="math inline">\(p\)</span>分别被设置为（50，1）和1，并且在其他情况下指数值<span
-class="math inline">\(p\)</span>被设置为2。 ## C. Performance of DWTDR
-and LFGM
-为了验证DWTDR和LFGM的性能，文章采用了GAF和AVG（两种图形转化算法）作为对照。自适应可见性图（AVG）、Gramian角场（GAF）。然后下文给了选择GAF和AVG的一些理由。
-为了公平起见，在用GAF和DWTDR将信号映射到图像后，使用ResNet18模型进行分类。对于AVG和LFGM，都结合DiffPool模型进行分类，结果展示如下：
-<img
-src="https://mfjblog-pic.oss-cn-beijing.aliyuncs.com/img/ebf4fb78c461400087eee09d6a439b48.png"
-alt="在这里插入图片描述" />
-其中，表II中的“FLOP”和“Parameters”分别表示当推断IQ信号样本时计算中的相应浮点运算和存储中的参数的数量。我们可以看到，与GAF相比，基于我们提出的DWTDR的调制分类方法在三个数据集上具有更高的准确性，特别是在RML2016.10a和SigData-18上。由于LFGM得到的窄边矩阵比GAF得到的窄边矩阵小得多，因此基于LFGM的调制识别方法的总体计算复杂度和空间复杂度都明显小于基于GAF的调制识别方法。
-通过比较基于可训练映射算法的AVG和基于固定映射规则的LFGM的结果可以看出，我们提出的LFGM在复杂长信号数据集SigData—36上具有更好的性能，准确率提高了约4%，但不可否认的是，RML
-2016.10a和SigData—18上的平均分类准确率分别降低了约0.4%和1.4%。与通过神经网络层学习和调整映射图结构的AVG相比，虽然LFGM在两个信号相对较短的数据集上的性能略低，但LFGM更简单高效，直接使用相同结构的图来表示不同的信号，不需要在用于学习图结构的神经网络层上花费冗余的资源和时间。表II中的“FLOP”表明基于LFGM的分类方法的计算复杂度上级基于AVG的分类方法。因此表II中基于AVG的分类方法的“Parametes”不包括图形的边缘信息。
-基于LFGM的分类方法的“Parameters”是通过考虑边缘信息参数和模型参数而获得的参数的数目。在上述三个数据集的仿真中，当处理相同的无线电信号时，基于AVG获得的映射图中的边的数量通常多于基于LFGM获得的映射图中的边的数量。因此，实际上，基于LFGM的分类方法的参数的数目少于基于AVG的分类方法的参数的数目。总的来说，我们提出的DWTDR和LFGM在分类精度和实现可行性方面具有良好的性能。
-## D. Results on Complete Datasets
-文章首先讨论DeepSIG在上述三个数据集上的调制分类性能。使用了第二节中提到的序列、图像和图三种分类方法。单独使用图像、序列、图形方法分别和把它们结合在一起的DeepSIG方法去做一个比较。比较的结果如下表所示
-<img
-src="https://mfjblog-pic.oss-cn-beijing.aliyuncs.com/img/fc8b8869a3f2467594efb67c09b58d71.png"
-alt="在这里插入图片描述" />
-得出结论：DeepSIG可以将分类准确率大幅提高近2.5%。
-下图展示出了在不同SNR上的调制分类精度： <img
-src="https://mfjblog-pic.oss-cn-beijing.aliyuncs.com/img/d247a0245d0840f4a0eaabc8a4b2064a.png"
-alt="在这里插入图片描述" />
-很明显，在数据集RML2016.10a上，我们提出的DeepSIG在− 12 dB和− 8
-dB等低SNR下略有优势，在其他SNR下的性能与其他方法基本相同。根据图8（b）所示的数据集SigData-18的详细分类结果，我们可以看到DeepSIG的性能明显优于其他三个单独的分类网络，特别是在8
-dB以上的高SNR下。
-从图8（c）可以看出，集成了三个独立分类网络的DeepSIG也可以提高数据集SigData-36的调制分类精度，特别是在-12
-dB和2 dB之间的SNR区域。
-在一定程度上可以说明，DeepSIG通过LSTM处理IQ序列数据可以提取时间信息，也能够通过处理映射的图像和图形，挖掘原始信号潜在的图像表示特征和潜在的图形特征。它可以充分利用这三个不同尺度上的特征来提高调制分类的准确性。
-为了进一步分析这些方法在不同调制类型下的识别性能，我们绘制了SNR = 10
-dB时的混淆矩阵，如图所示 <img
-src="https://mfjblog-pic.oss-cn-beijing.aliyuncs.com/img/548806a48d3648168665ca20f506dbb0.png"
-alt="在这里插入图片描述" /> 混淆矩阵就对其分类的结果进行了进一步的验证。
-从图9（a）至图9（d）可以看出，在调制类别数量相对较少的数据集RML
-2016.10a上，这些方法的分类精度相似，混淆矩阵差异不明显。这些方法都容易将WBFM误认为AMDSB。
-图9（e）至图9（h）是数据集SigData-18上的混淆矩阵。可以很明显的观察出DeepSIG的性能更优越在8PAM和16PAM，图像网络容易将OFDM—QPSK误分类为OFDM—16QAM，相比之下，图网络和DeepSIG对OFDM—QPSK的识别准确率更高。
-对于数据集SigData—36，从图9（i）到图9（l）可以看出，与其他三个单独的分类网络相比，混合异构DeepSIG在64QAM、128QAM和256QAM的识别能力上有一定的提升。</p>
+<p><img src="https://mfjblog-pic.oss-cn-beijing.aliyuncs.com/img/1b82ca21e8604ac38a6436de6709877d.png" class="lazyload" data-srcset="https://mfjblog-pic.oss-cn-beijing.aliyuncs.com/img/1b82ca21e8604ac38a6436de6709877d.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="在这里插入图片描述"></p>
+<p>它为每一层中的节点学习可区分的集群分配，将节点映射到一组集群，然后形成下一个GNN层的粗糙化输入。图的边连通度一般用一个形状为$N×N$的矩阵表示。为了保存存储空间，我们可以用$S_E$二进制群来表示边集，其中$S_E$表示图中边的个数。<br>通过算法3，我们得到了<br><img src="https://mfjblog-pic.oss-cn-beijing.aliyuncs.com/img/378e6307357f4bcea8302c33f008311c.png" class="lazyload" data-srcset="https://mfjblog-pic.oss-cn-beijing.aliyuncs.com/img/378e6307357f4bcea8302c33f008311c.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="在这里插入图片描述"><br>因此LFGM的空间复杂度为$O(2S_E)$</p>
+<h2 id="F-Fusion-Training"><a href="#F-Fusion-Training" class="headerlink" title="F.Fusion Training"></a>F.Fusion Training</h2><p>通过这三个训练好的模型，可以分别得到输入格式为序列、图像和图形的分类模型的特征向量$F_S$、$F_I$和$F_G$。<br><img src="https://mfjblog-pic.oss-cn-beijing.aliyuncs.com/img/0e32afff713b48e6969a24a65740cea9.png" class="lazyload" data-srcset="https://mfjblog-pic.oss-cn-beijing.aliyuncs.com/img/0e32afff713b48e6969a24a65740cea9.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="在这里插入图片描述"><br>$\Gamma s$、$\Gamma i$、$\Gamma g$分别表示训练好的没有最后一个分类层的ResNet18、LSTM和DiffPool模型。然后，对所获得的三个特征向量$F_S$、$F_I$和$F_G$执行相同的归一化处理，并且将三个归一化向量拼接以获得如下融合特征向量$F_H$:<br><img src="https://mfjblog-pic.oss-cn-beijing.aliyuncs.com/img/e5c3a3b33d9448a3847af3ff3f8afc65.png" class="lazyload" data-srcset="https://mfjblog-pic.oss-cn-beijing.aliyuncs.com/img/e5c3a3b33d9448a3847af3ff3f8afc65.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="在这里插入图片描述"><br><img src="https://mfjblog-pic.oss-cn-beijing.aliyuncs.com/img/61d9d8d551a24265a107b141cf8bb8d0.png" class="lazyload" data-srcset="https://mfjblog-pic.oss-cn-beijing.aliyuncs.com/img/61d9d8d551a24265a107b141cf8bb8d0.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="在这里插入图片描述"><br>这个$N$代表了归一化运算。其中$v$是要处理的一维特征向量，$l$是向量$v$的长度，$v_i$表示$v$的第$i$个元素，$\epsilon$是一个小值，用于避免被零除，$\left | v \right | <em>p$表示$v$上的L-p范数运算，$p$表示范数公式中的指数值,|·|是绝对值运算。随后，增加用于分类的全连接层，并将拼接后的融合特征向量$F_H$用作新层的输入：<br><img src="https://mfjblog-pic.oss-cn-beijing.aliyuncs.com/img/086a1f46e688447c9689dd3780f6b226.png" class="lazyload" data-srcset="https://mfjblog-pic.oss-cn-beijing.aliyuncs.com/img/086a1f46e688447c9689dd3780f6b226.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="在这里插入图片描述"><br>其中$L</em>{FC}$表示添加的全连接层，$O$是预测的标签.最后，将基于序列、图像和图形的前三个网络的最后一个全连接层去掉，并将神经网络与新增加的全连接层进行融合训练。在融合训练的过程中，新的全连接层需要用更大的学习率进行训练，其他神经网络层$\Gamma s$、$\Gamma i$、$\Gamma g$需要用更小的学习率进行微调。</p>
+<h1 id="SIMULATIONS"><a href="#SIMULATIONS" class="headerlink" title="SIMULATIONS"></a>SIMULATIONS</h1><h2 id="A-Datasets"><a href="#A-Datasets" class="headerlink" title="A.Datasets"></a>A.Datasets</h2><p>文章使用三个无线电信号数据集RML2016.10a [25]，SigData18和SigData36来展示我们提出的DeepSIG的性能，其中第一个是公共数据集，另外两个是文章作者团队自己生成的。下表是其基本信息：<br><img src="https://mfjblog-pic.oss-cn-beijing.aliyuncs.com/img/5ffdad37abca452686cbffe0f1081ede.png" class="lazyload" data-srcset="https://mfjblog-pic.oss-cn-beijing.aliyuncs.com/img/5ffdad37abca452686cbffe0f1081ede.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="在这里插入图片描述"><br>其中，RML2016.10a有11种调制方案。每种调制的信噪比（SNR）范围为−20 dB至18 dB，间隔为2 dB。每个信号的长度为128，过采样率为8。该数据集共有220000个样本。在仿真过程中，我们取800个从每个调制方案中，作为样本训练，剩下的作为测试样本。<br>SigData-18包含18种调制方案。信号长度为512，过采样率为8。脉冲整形采用升余弦滤波，滚降系数在[0.2，0.7]范围内随机选择。SNR范围为−20dB至30dB，间隔也为2dB。我们在每个调制方案的每个SNR下从该数据集中随机挑选800个信号作为训练集，并将剩余样本合并到测试集中。<br>SigData-36类似于SigData-18，除了SigData-36的信号长度为1024，并且它具有额外的18种调制方案，即BPSK，OQPSK，32APSK，64 APSK，128 APSK，256 APSK，4ASK，8ASK，4FSK，8 FSK，4CPM，8 CPM，OOK，AM，FM，AM-MSK，FM-MSK和OFDMBPSK。</p>
+<h2 id="B-Simulation-Setting"><a href="#B-Simulation-Setting" class="headerlink" title="B. Simulation Setting"></a>B. Simulation Setting</h2><p>所有仿真过程都在NVIDIA Tesla T4上运行。在训练过程中，我们使用的深度学习框架是PyTorch。我们使用PyTorch Geometric来构建GNN模型DiffPool。优化器和损失函数分别是Adam和交叉熵。在训练模型时，我们使用固定步长的学习率衰减策略，初始学习率为0.001，每5个epoch调整一次学习率，衰减到前一个值的80%。此外，在对DeepSIG进行融合训练时，除最终分类层外的其他网络层的初始学习率均设置为0.00001。在数据集RML2016.10a、SigData—18和SigData—36上训练时，minibatch大小分别设置为128、128和32。我们在通过DWTDR将IQ信号映射到图像的过程中使用的小波函数是Daubechies（db1），即Haar。当在0.5%、1%和完整训练集的数据集RML 2016.10a上训练DeepSIG时，（28）公式中提到的$p$分别被设置为（50，1）和1，并且在其他情况下指数值$p$被设置为2。</p>
+<h2 id="C-Performance-of-DWTDR-and-LFGM"><a href="#C-Performance-of-DWTDR-and-LFGM" class="headerlink" title="C. Performance of DWTDR and LFGM"></a>C. Performance of DWTDR and LFGM</h2><p>为了验证DWTDR和LFGM的性能，文章采用了GAF和AVG（两种图形转化算法）作为对照。自适应可见性图（AVG）、Gramian角场（GAF）。然后下文给了选择GAF和AVG的一些理由。<br>为了公平起见，在用GAF和DWTDR将信号映射到图像后，使用ResNet18模型进行分类。对于AVG和LFGM，都结合DiffPool模型进行分类，结果展示如下：<br><img src="https://mfjblog-pic.oss-cn-beijing.aliyuncs.com/img/ebf4fb78c461400087eee09d6a439b48.png" class="lazyload" data-srcset="https://mfjblog-pic.oss-cn-beijing.aliyuncs.com/img/ebf4fb78c461400087eee09d6a439b48.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="在这里插入图片描述"><br>其中，表II中的“FLOP”和“Parameters”分别表示当推断IQ信号样本时计算中的相应浮点运算和存储中的参数的数量。我们可以看到，与GAF相比，基于我们提出的DWTDR的调制分类方法在三个数据集上具有更高的准确性，特别是在RML2016.10a和SigData-18上。由于LFGM得到的窄边矩阵比GAF得到的窄边矩阵小得多，因此基于LFGM的调制识别方法的总体计算复杂度和空间复杂度都明显小于基于GAF的调制识别方法。<br>通过比较基于可训练映射算法的AVG和基于固定映射规则的LFGM的结果可以看出，我们提出的LFGM在复杂长信号数据集SigData—36上具有更好的性能，准确率提高了约4%，但不可否认的是，RML 2016.10a和SigData—18上的平均分类准确率分别降低了约0.4%和1.4%。与通过神经网络层学习和调整映射图结构的AVG相比，虽然LFGM在两个信号相对较短的数据集上的性能略低，但LFGM更简单高效，直接使用相同结构的图来表示不同的信号，不需要在用于学习图结构的神经网络层上花费冗余的资源和时间。表II中的“FLOP”表明基于LFGM的分类方法的计算复杂度上级基于AVG的分类方法。因此表II中基于AVG的分类方法的“Parametes”不包括图形的边缘信息。<br>基于LFGM的分类方法的“Parameters”是通过考虑边缘信息参数和模型参数而获得的参数的数目。在上述三个数据集的仿真中，当处理相同的无线电信号时，基于AVG获得的映射图中的边的数量通常多于基于LFGM获得的映射图中的边的数量。因此，实际上，基于LFGM的分类方法的参数的数目少于基于AVG的分类方法的参数的数目。总的来说，我们提出的DWTDR和LFGM在分类精度和实现可行性方面具有良好的性能。</p>
+<h2 id="D-Results-on-Complete-Datasets"><a href="#D-Results-on-Complete-Datasets" class="headerlink" title="D. Results on Complete Datasets"></a>D. Results on Complete Datasets</h2><p>文章首先讨论DeepSIG在上述三个数据集上的调制分类性能。使用了第二节中提到的序列、图像和图三种分类方法。单独使用图像、序列、图形方法分别和把它们结合在一起的DeepSIG方法去做一个比较。比较的结果如下表所示<br><img src="https://mfjblog-pic.oss-cn-beijing.aliyuncs.com/img/fc8b8869a3f2467594efb67c09b58d71.png" class="lazyload" data-srcset="https://mfjblog-pic.oss-cn-beijing.aliyuncs.com/img/fc8b8869a3f2467594efb67c09b58d71.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="在这里插入图片描述"><br>得出结论：DeepSIG可以将分类准确率大幅提高近2.5%。<br>下图展示出了在不同SNR上的调制分类精度：<br><img src="https://mfjblog-pic.oss-cn-beijing.aliyuncs.com/img/d247a0245d0840f4a0eaabc8a4b2064a.png" class="lazyload" data-srcset="https://mfjblog-pic.oss-cn-beijing.aliyuncs.com/img/d247a0245d0840f4a0eaabc8a4b2064a.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="在这里插入图片描述"><br>很明显，在数据集RML2016.10a上，我们提出的DeepSIG在− 12 dB和− 8 dB等低SNR下略有优势，在其他SNR下的性能与其他方法基本相同。根据图8（b）所示的数据集SigData-18的详细分类结果，我们可以看到DeepSIG的性能明显优于其他三个单独的分类网络，特别是在8 dB以上的高SNR下。<br>从图8（c）可以看出，集成了三个独立分类网络的DeepSIG也可以提高数据集SigData-36的调制分类精度，特别是在-12 dB和2 dB之间的SNR区域。<br>在一定程度上可以说明，DeepSIG通过LSTM处理IQ序列数据可以提取时间信息，也能够通过处理映射的图像和图形，挖掘原始信号潜在的图像表示特征和潜在的图形特征。它可以充分利用这三个不同尺度上的特征来提高调制分类的准确性。<br>为了进一步分析这些方法在不同调制类型下的识别性能，我们绘制了SNR &#x3D; 10 dB时的混淆矩阵，如图所示<br><img src="https://mfjblog-pic.oss-cn-beijing.aliyuncs.com/img/548806a48d3648168665ca20f506dbb0.png" class="lazyload" data-srcset="https://mfjblog-pic.oss-cn-beijing.aliyuncs.com/img/548806a48d3648168665ca20f506dbb0.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="在这里插入图片描述"><br>混淆矩阵就对其分类的结果进行了进一步的验证。<br>从图9（a）至图9（d）可以看出，在调制类别数量相对较少的数据集RML 2016.10a上，这些方法的分类精度相似，混淆矩阵差异不明显。这些方法都容易将WBFM误认为AMDSB。<br>图9（e）至图9（h）是数据集SigData-18上的混淆矩阵。可以很明显的观察出DeepSIG的性能更优越在8PAM和16PAM，图像网络容易将OFDM—QPSK误分类为OFDM—16QAM，相比之下，图网络和DeepSIG对OFDM—QPSK的识别准确率更高。<br>对于数据集SigData—36，从图9（i）到图9（l）可以看出，与其他三个单独的分类网络相比，混合异构DeepSIG在64QAM、128QAM和256QAM的识别能力上有一定的提升。</p>
 <p>总的来说，基于深度学习的调制识别网络本质上可以分为特征提取和分类。前者可以自动学习和提取能够代表输入信号的特征表示，而后者基于提取的特征向量进行分类处理。<strong>简单的说就是，提取的特征越多，对分类越有利</strong>。文章提出的混合异构框架DeepSIG包括三种不同类型的神经网络，可以处理代表同一信号样本的三种不同类型的输入，并从不同方面从原始信号数据中提取三个包含隐含信息的特征向量。这三个特征向量的融合导致更丰富和更全面的特征表示，通过充分利用丰富的特征，允许更好的分类性能。</p>
-<h2 id="e.-results-in-few-shot-scenarios">E. Results in Few-Shot
-Scenarios</h2>
-<p>现在是对少样本的场景分析DeepSIG的性能，模拟也是基于上述三个数据集。与上文不同的是，文章只使用训练集中的一部分数据来训练网络模型。三种少数情况，其中训练样本是从原始训练集中以不同比例随机提取的，分别是0.5%、1%和5%。仿真的结果如下表和图所示。
-<img
-src="https://mfjblog-pic.oss-cn-beijing.aliyuncs.com/img/e79071f2b1bb455e9ea03788ae0251d5.png"
-alt="在这里插入图片描述" /> <img
-src="https://mfjblog-pic.oss-cn-beijing.aliyuncs.com/img/8c6afb6d25a44cfc865091e79f6767b1.png"
-alt="在这里插入图片描述" />
-从表四可以看出，在三个少样本的场景中，DeepSIG的分类性能最好。RML2016.10a的类别较少，还有一定的进步空间。在另外两个数据集上，即，SigData-18和SigData-36，DeepSIG在分类准确性方面在少数场景中具有更好的分类性能。
-在数据集SigData—18的三个少样本中，与三个单独的分类网络（图像、图形、序列）相比，DeepSIG的性能将提高至少2%。在数据集SigData-36上，性能增益至少为4%。
-从图10中可以看出，DeepSIG在数据集SigData—18和SigData—36的几乎所有SNR中都具有比其他模型更高的分类准确度。<strong>这些结果表明，DeepSIG可以从不同角度充分挖掘和利用特征信息，以提高复杂无线电信号的少样本学习中的调制分类性能。</strong></p>
+<h2 id="E-Results-in-Few-Shot-Scenarios"><a href="#E-Results-in-Few-Shot-Scenarios" class="headerlink" title="E. Results in Few-Shot Scenarios"></a>E. Results in Few-Shot Scenarios</h2><p>现在是对少样本的场景分析DeepSIG的性能，模拟也是基于上述三个数据集。与上文不同的是，文章只使用训练集中的一部分数据来训练网络模型。三种少数情况，其中训练样本是从原始训练集中以不同比例随机提取的，分别是0.5%、1%和5%。仿真的结果如下表和图所示。<br><img src="https://mfjblog-pic.oss-cn-beijing.aliyuncs.com/img/e79071f2b1bb455e9ea03788ae0251d5.png" class="lazyload" data-srcset="https://mfjblog-pic.oss-cn-beijing.aliyuncs.com/img/e79071f2b1bb455e9ea03788ae0251d5.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="在这里插入图片描述"><br><img src="https://mfjblog-pic.oss-cn-beijing.aliyuncs.com/img/8c6afb6d25a44cfc865091e79f6767b1.png" class="lazyload" data-srcset="https://mfjblog-pic.oss-cn-beijing.aliyuncs.com/img/8c6afb6d25a44cfc865091e79f6767b1.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="在这里插入图片描述"><br>从表四可以看出，在三个少样本的场景中，DeepSIG的分类性能最好。RML2016.10a的类别较少，还有一定的进步空间。在另外两个数据集上，即，SigData-18和SigData-36，DeepSIG在分类准确性方面在少数场景中具有更好的分类性能。<br>在数据集SigData—18的三个少样本中，与三个单独的分类网络（图像、图形、序列）相比，DeepSIG的性能将提高至少2%。在数据集SigData-36上，性能增益至少为4%。<br>从图10中可以看出，DeepSIG在数据集SigData—18和SigData—36的几乎所有SNR中都具有比其他模型更高的分类准确度。<strong>这些结果表明，DeepSIG可以从不同角度充分挖掘和利用特征信息，以提高复杂无线电信号的少样本学习中的调制分类性能。</strong></p>
 <p>在实际的场景中，训练的样本常常是不足够的，此时，我们可以使用本文提到的三种不同形式的输入来表示同一个信号样本，然后从不同的角度提取、融合和使用信号特征表示，以在训练样本有限的场景下尽可能提高调制识别精度。</p>
-<h1 id="conclusion">CONCLUSION</h1>
-<p>在本文中，我们提出了一种用于无线电调制分类的混合异构深度学习框架，即DeepSIG。DeepSIG接收输入数据，这些数据可以以三种不同的格式表示IQ信号：序列，图像和图形。更重要的是，DeepSIG集成了RNN，CNN和GNN领域的网络模型。在三个无线电信号数据集上的仿真结果表明，我们提出的DeepSIG比基于三个独立字段的模型具有更好的分类性能。它的性能增益更明显，特别是在少数镜头的情况下。</p>
+<h1 id="CONCLUSION"><a href="#CONCLUSION" class="headerlink" title="CONCLUSION"></a>CONCLUSION</h1><p>在本文中，我们提出了一种用于无线电调制分类的混合异构深度学习框架，即DeepSIG。DeepSIG接收输入数据，这些数据可以以三种不同的格式表示IQ信号：序列，图像和图形。更重要的是，DeepSIG集成了RNN，CNN和GNN领域的网络模型。在三个无线电信号数据集上的仿真结果表明，我们提出的DeepSIG比基于三个独立字段的模型具有更好的分类性能。它的性能增益更明显，特别是在少数镜头的情况下。</p>
 <p>在未来，我们将尝试其他映射方法，将IQ信号映射到图像和图形中，并研究DeepSIG中的其他RNN，CNN和GNN架构。此外，我们将进行空中实验，以进一步验证所提出的方法的性能。</p>
 
   </div>
@@ -2896,8 +2590,7 @@ alt="在这里插入图片描述" />
             <blockquote>
               
                 
-                  <p>博客内容遵循 署名-非商业性使用-相同方式共享 4.0 国际 (CC BY-NC-SA
-4.0) 协议</p>
+                  <p>博客内容遵循 署名-非商业性使用-相同方式共享 4.0 国际 (CC BY-NC-SA 4.0) 协议</p>
 
                 
               
@@ -3006,17 +2699,13 @@ alt="在这里插入图片描述" />
       
         <a class='prev' href='/2024/10/23/%E3%80%90%E9%A1%B9%E7%9B%AE%E4%BB%8B%E7%BB%8D%E3%80%91%E5%9F%BA%E4%BA%8E%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E7%9A%84%E4%BD%8E%E7%A9%BA%E5%B0%8F%E3%80%81%E5%BE%AE%E6%97%A0%E4%BA%BA%E6%9C%BA%E8%AF%86%E5%88%AB%E6%8A%80%E6%9C%AF/'>
           <p class='title'><i class="fa-solid fa-chevron-left" aria-hidden="true"></i>基于机器学习的低空小、微无人机识别技术</p>
-          <p class='content'>1.项目介绍
-对于现代雷达探测系统而言，无人机和飞鸟同属于低空小、微特征的一类典型目标，而面对比较复杂的环境，如何有效区分两者类型并完成识别是当下急迫且重要的难题。常规方法是从目标的微动特征差异...</p>
+          <p class='content'>1.项目介绍对于现代雷达探测系统而言，无人机和飞鸟同属于低空小、微特征的一类典型目标，而面对比较复杂的环境，如何有效区分两者类型并完成识别是当下急迫且重要的难题。常规方法是从目标的微动特征差异进...</p>
         </a>
       
       
         <a class='next' href='/2024/04/25/%E5%9F%BA%E4%BA%8ERetinaFace+Jetson%20Nano%E7%9A%84%E6%99%BA%E8%83%BD%E9%97%A8%E9%94%81%E7%B3%BB%E7%BB%9F/'>
           <p class='title'>基于RetinaFace+Jetson Nano的智能门锁系统<i class="fa-solid fa-chevron-right" aria-hidden="true"></i></p>
-          <p class='content'>总体介绍
-项目名称：基于RetinaFace+Jetson Nano的智能门锁系统
-项目时间：2024年4月-2024年6月 项目平台：PC、Linux 项目语言：Python、C
-项目软件：P...</p>
+          <p class='content'>总体介绍项目名称：基于RetinaFace+Jetson Nano的智能门锁系统项目时间：2024年4月-2024年6月项目平台：PC、Linux项目语言：Python、C项目软件：Pychar...</p>
         </a>
       
     </div>
@@ -3074,10 +2763,7 @@ alt="在这里插入图片描述" />
 
 
     <div class='content'>
-        <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%A0%94%E7%A9%B6%E8%83%8C%E6%99%AF%E4%B8%8E%E5%8A%A8%E6%9C%BA"><span class="toc-text">研究背景与动机</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%B0%83%E5%88%B6%E5%88%86%E7%B1%BB%E7%9A%84%E8%A7%92%E8%89%B2"><span class="toc-text">调制分类的角色</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%BC%A0%E7%BB%9F%E8%B0%83%E5%88%B6%E5%88%86%E7%B1%BB%E6%96%B9%E6%B3%95"><span class="toc-text">传统调制分类方法</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%9F%BA%E4%BA%8E%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0%E7%9A%84%E8%87%AA%E5%8A%A8%E8%B0%83%E5%88%B6%E5%88%86%E7%B1%BBamc"><span class="toc-text">基于深度学习的自动调制分类（AMC）</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%90%84%E7%B1%BB%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0amc%E6%96%B9%E6%B3%95%E7%9A%84%E7%89%B9%E7%82%B9"><span class="toc-text">各类深度学习AMC方法的特点</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#deepsig%E6%A1%86%E6%9E%B6"><span class="toc-text">DeepSIG框架</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%B8%BB%E8%A6%81%E8%B4%A1%E7%8C%AE"><span class="toc-text">主要贡献</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%AE%BA%E6%96%87%E7%BB%93%E6%9E%84"><span class="toc-text">论文结构</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#a.amc-methods-with-sequence-input"><span class="toc-text">A.AMC Methods With Sequence
-Input</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#b.amc-methods-with-image-input"><span class="toc-text">B.AMC Methods With Image
-Input</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#a.problem-formulation"><span class="toc-text">A.Problem Formulation</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#b.overall-framework"><span class="toc-text">B.Overall Framework</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#d.image-network"><span class="toc-text">D.Image Network</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%BE%93%E5%85%A5"><span class="toc-text">输入</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%BE%93%E5%87%BA"><span class="toc-text">输出</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#a.datasets"><span class="toc-text">A.Datasets</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#e.-results-in-few-shot-scenarios"><span class="toc-text">E. Results in Few-Shot
-Scenarios</span></a>
+        <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%A0%94%E7%A9%B6%E8%83%8C%E6%99%AF%E4%B8%8E%E5%8A%A8%E6%9C%BA"><span class="toc-text">研究背景与动机</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%B0%83%E5%88%B6%E5%88%86%E7%B1%BB%E7%9A%84%E8%A7%92%E8%89%B2"><span class="toc-text">调制分类的角色</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%BC%A0%E7%BB%9F%E8%B0%83%E5%88%B6%E5%88%86%E7%B1%BB%E6%96%B9%E6%B3%95"><span class="toc-text">传统调制分类方法</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%9F%BA%E4%BA%8E%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0%E7%9A%84%E8%87%AA%E5%8A%A8%E8%B0%83%E5%88%B6%E5%88%86%E7%B1%BB%EF%BC%88AMC%EF%BC%89"><span class="toc-text">基于深度学习的自动调制分类（AMC）</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%90%84%E7%B1%BB%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0AMC%E6%96%B9%E6%B3%95%E7%9A%84%E7%89%B9%E7%82%B9"><span class="toc-text">各类深度学习AMC方法的特点</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#DeepSIG%E6%A1%86%E6%9E%B6"><span class="toc-text">DeepSIG框架</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%B8%BB%E8%A6%81%E8%B4%A1%E7%8C%AE"><span class="toc-text">主要贡献</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%AE%BA%E6%96%87%E7%BB%93%E6%9E%84"><span class="toc-text">论文结构</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#A-AMC-Methods-With-Sequence-Input"><span class="toc-text">A.AMC Methods With Sequence Input</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#B-AMC-Methods-With-Image-Input"><span class="toc-text">B.AMC Methods With Image Input</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#C-AMC-Methods-With-Graph-Input"><span class="toc-text">C.AMC Methods With Graph Input</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#A-Problem-Formulation"><span class="toc-text">A.Problem Formulation</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#B-Overall-Framework"><span class="toc-text">B.Overall Framework</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#C-Sequence-Network"><span class="toc-text">C.Sequence Network</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#D-Image-Network"><span class="toc-text">D.Image Network</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#E-Graph-Network"><span class="toc-text">E.Graph Network</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%BE%93%E5%85%A5"><span class="toc-text">输入</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%BE%93%E5%87%BA"><span class="toc-text">输出</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#F-Fusion-Training"><span class="toc-text">F.Fusion Training</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#A-Datasets"><span class="toc-text">A.Datasets</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#B-Simulation-Setting"><span class="toc-text">B. Simulation Setting</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#C-Performance-of-DWTDR-and-LFGM"><span class="toc-text">C. Performance of DWTDR and LFGM</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#D-Results-on-Complete-Datasets"><span class="toc-text">D. Results on Complete Datasets</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#E-Results-in-Few-Shot-Scenarios"><span class="toc-text">E. Results in Few-Shot Scenarios</span></a>
     </div>
   </section>
 
@@ -3219,9 +2905,7 @@ Scenarios</span></a>
       
     
       
-        <div><p>Blog content follows the <a
-target="_blank" rel="noopener" href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.en">Attribution-NonCommercial-ShareAlike
-4.0 International (CC BY-NC-SA 4.0) License</a></p>
+        <div><p>Blog content follows the <a target="_blank" rel="noopener" href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.en">Attribution-NonCommercial-ShareAlike 4.0 International (CC BY-NC-SA 4.0) License</a></p>
 </div>
       
     

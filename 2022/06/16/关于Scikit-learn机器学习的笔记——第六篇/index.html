@@ -40,7 +40,7 @@
 <meta property="og:title" content="关于Scikit-learn机器学习的笔记——第六篇">
 <meta property="og:url" content="https://mengfanjun020906.github.io/2022/06/16/%E5%85%B3%E4%BA%8EScikit-learn%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E7%9A%84%E7%AC%94%E8%AE%B0%E2%80%94%E2%80%94%E7%AC%AC%E5%85%AD%E7%AF%87/index.html">
 <meta property="og:site_name" content="MengFanjun的博客">
-<meta property="og:description" content="视频教程：【莫烦Python】Scikit-learn (sklearn) 优雅地学会机器学习 Overfitting过拟合现象  黑线已经区分的很好了，但绿线就出现了过拟合的现象 程序示例： 1234567891011121314151617181920212223from sklearn.model_selection import learning_curvefrom sklearn.dat">
+<meta property="og:description" content="视频教程：【莫烦Python】Scikit-learn (sklearn) 优雅地学会机器学习 Overfitting过拟合现象黑线已经区分的很好了，但绿线就出现了过拟合的现象 程序示例： 1234567891011121314151617181920212223from sklearn.model_selection import learning_curvefrom sklearn.datas">
 <meta property="og:locale" content="en_US">
 <meta property="og:image" content="https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png">
 <meta property="article:published_time" content="2022-06-16T02:38:13.000Z">
@@ -1597,7 +1597,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
     debug: "env",
     cdn: {"js":{"app":"/js/app.js","parallax":"/js/plugins/parallax.js","rightMenu":"/js/plugins/rightMenu.js","rightMenus":"/js/plugins/rightMenus.js","sites":"/js/plugins/tags/sites.js","friends":"/js/plugins/tags/friends.js","contributors":"/js/plugins/tags/contributors.js","search":"/js/search/hexo.js"},"css":{"style":"/css/style.css"}},
     default: {"avatar":"https://unpkg.com/volantis-static@0.0.1654736714924/media/placeholder/avatar/round/3442075.svg","link":"https://unpkg.com/volantis-static@0.0.1654736714924/media/placeholder/link/8f277b4ee0ecd.svg","cover":"https://unpkg.com/volantis-static@0.0.1654736714924/media/placeholder/cover/76b86c0226ffd.svg","image":"https://unpkg.com/volantis-static@0.0.1654736714924/media/placeholder/image/2659360.svg"},
-    lastupdate: new Date(1765118762067),
+    lastupdate: new Date(1765119292905),
     sidebar: {
       for_page: ["blogger","category","tagcloud","webinfo","lastupdate"],
       for_post: ["toc"],
@@ -2421,7 +2421,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
   <div class="new-meta-item wordcount">
     <a class='notlink'>
       <i class="fa-solid fa-keyboard fa-fw" aria-hidden="true"></i>
-      <p>392 words</p>
+      <p>383 words</p>
     </a>
   </div>
   <div class="new-meta-item readtime">
@@ -2463,32 +2463,15 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
 
   <div id="layoutHelper-page-plugins"></div>
   <div id="post-body" itemprop="articleBody">
-    <p>视频教程：<a
-target="_blank" rel="noopener" href="https://www.bilibili.com/video/BV1xW411Y7Qd?p=5&amp;share_source=copy_web">【莫烦Python】Scikit-learn
-(sklearn) 优雅地学会机器学习</a></p>
-<p><strong>Overfitting过拟合现象</strong> <img
-src="https://mfjblog-pic.oss-cn-beijing.aliyuncs.com/img/4057f6d224b444878e886c37f532f453.png"
-alt="在这里插入图片描述" />
-黑线已经区分的很好了，但绿线就出现了过拟合的现象</p>
+    <p>视频教程：<a target="_blank" rel="noopener" href="https://www.bilibili.com/video/BV1xW411Y7Qd?p=5&share_source=copy_web">【莫烦Python】Scikit-learn (sklearn) 优雅地学会机器学习</a></p>
+<p><strong>Overfitting过拟合现象</strong><br><img src="https://mfjblog-pic.oss-cn-beijing.aliyuncs.com/img/4057f6d224b444878e886c37f532f453.png" class="lazyload" data-srcset="https://mfjblog-pic.oss-cn-beijing.aliyuncs.com/img/4057f6d224b444878e886c37f532f453.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="在这里插入图片描述"><br>黑线已经区分的很好了，但绿线就出现了过拟合的现象</p>
 <p>程序示例：</p>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> sklearn.model_selection <span class="keyword">import</span> learning_curve</span><br><span class="line"><span class="keyword">from</span> sklearn.datasets <span class="keyword">import</span> load_digits</span><br><span class="line"><span class="keyword">from</span> sklearn.svm <span class="keyword">import</span> SVC</span><br><span class="line"><span class="keyword">import</span> matplotlib.pyplot <span class="keyword">as</span> plt</span><br><span class="line"><span class="keyword">import</span> numpy <span class="keyword">as</span> np</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">digits=load_digits()</span><br><span class="line">X=digits.data</span><br><span class="line">y=digits.target</span><br><span class="line">train_sizes,train_loss,test_loss=learning_curve(</span><br><span class="line">    SVC(gamma=<span class="number">0.001</span>),X,y,cv=<span class="number">10</span>,scoring=<span class="string">&#x27;neg_mean_squared_error&#x27;</span>,</span><br><span class="line">    train_sizes=[<span class="number">0.1</span>,<span class="number">0.25</span>,<span class="number">0.5</span>,<span class="number">0.75</span>,<span class="number">1</span>])<span class="comment">##输出train_size,train的误差，test的误差值，SVC的gamma参数为0.0001，用方差值去测试，在10%，25%的点去记录一下</span></span><br><span class="line">train_loss_mean=-np.mean(train_loss,axis=<span class="number">1</span>)<span class="comment">##axis=1表示按列要求，0是按行要求，mean是中间值的意思</span></span><br><span class="line">test_loss_mean=-np.mean(test_loss,axis=<span class="number">1</span>)</span><br><span class="line"></span><br><span class="line">plt.plot(train_sizes,train_loss_mean,<span class="string">&#x27;o-&#x27;</span>,color=<span class="string">&quot;r&quot;</span>,label=<span class="string">&quot;Training&quot;</span>)</span><br><span class="line">plt.plot(train_sizes,test_loss_mean,<span class="string">&#x27;o-&#x27;</span>,color=<span class="string">&quot;g&quot;</span>,label=<span class="string">&quot;Cross-validation&quot;</span>)</span><br><span class="line"></span><br><span class="line">plt.xlabel(<span class="string">&quot;Training examples&quot;</span>)</span><br><span class="line">plt.ylabel(<span class="string">&quot;Loss&quot;</span>)</span><br><span class="line">plt.legend(loc=<span class="string">&quot;best&quot;</span>)</span><br><span class="line">plt.show()</span><br></pre></td></tr></table></figure>
-<p>输出结果： <img
-src="https://mfjblog-pic.oss-cn-beijing.aliyuncs.com/img/cca507ce94c04303973772e0927e7c9e.png"
-alt="在这里插入图片描述" />
-绿色：表示testdata在刚开始的时候cross-validation的值很高，但随着training的进行，误差会逐渐降低
-红色：误差较小，是因为机器在学习的时候，能够较好的预测出train的走向，这就是为什么我们之前要将train和test分开的原因</p>
+<p>输出结果：<br><img src="https://mfjblog-pic.oss-cn-beijing.aliyuncs.com/img/cca507ce94c04303973772e0927e7c9e.png" class="lazyload" data-srcset="https://mfjblog-pic.oss-cn-beijing.aliyuncs.com/img/cca507ce94c04303973772e0927e7c9e.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="在这里插入图片描述"><br>绿色：表示testdata在刚开始的时候cross-validation的值很高，但随着training的进行，误差会逐渐降低<br>红色：误差较小，是因为机器在学习的时候，能够较好的预测出train的走向，这就是为什么我们之前要将train和test分开的原因</p>
 <p>若将gamma的值改为0.01</p>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">train_sizes,train_loss,test_loss=learning_curve(</span><br><span class="line">    SVC(gamma=<span class="number">0.01</span>),X,y,cv=<span class="number">10</span>,scoring=<span class="string">&#x27;neg_mean_squared_error&#x27;</span>,</span><br><span class="line">    train_sizes=[<span class="number">0.1</span>,<span class="number">0.25</span>,<span class="number">0.5</span>,<span class="number">0.75</span>,<span class="number">1</span>])</span><br></pre></td></tr></table></figure>
-<p>输出结果： <img
-src="https://mfjblog-pic.oss-cn-beijing.aliyuncs.com/img/f87698a1d55b4a17acac017c6e17a6d2.png"
-alt="在这里插入图片描述" /> 曲线最终并没有向下走
-红色表示testdata，蓝色表示traindata，在达到一定值以后，test的误差会变大，因为出现了Overfitting</p>
-<figure>
-<img
-src="https://mfjblog-pic.oss-cn-beijing.aliyuncs.com/img/a351d9c795c04977b14e19702cfe2fe0.png"
-alt="在这里插入图片描述" />
-<figcaption aria-hidden="true">在这里插入图片描述</figcaption>
-</figure>
+<p>输出结果：<br><img src="https://mfjblog-pic.oss-cn-beijing.aliyuncs.com/img/f87698a1d55b4a17acac017c6e17a6d2.png" class="lazyload" data-srcset="https://mfjblog-pic.oss-cn-beijing.aliyuncs.com/img/f87698a1d55b4a17acac017c6e17a6d2.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="在这里插入图片描述"><br>曲线最终并没有向下走<br>红色表示testdata，蓝色表示traindata，在达到一定值以后，test的误差会变大，因为出现了Overfitting</p>
+<p><img src="https://mfjblog-pic.oss-cn-beijing.aliyuncs.com/img/a351d9c795c04977b14e19702cfe2fe0.png" class="lazyload" data-srcset="https://mfjblog-pic.oss-cn-beijing.aliyuncs.com/img/a351d9c795c04977b14e19702cfe2fe0.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="在这里插入图片描述"></p>
 
   </div>
   
@@ -2506,8 +2489,7 @@ alt="在这里插入图片描述" />
             <blockquote>
               
                 
-                  <p>博客内容遵循 署名-非商业性使用-相同方式共享 4.0 国际 (CC BY-NC-SA
-4.0) 协议</p>
+                  <p>博客内容遵循 署名-非商业性使用-相同方式共享 4.0 国际 (CC BY-NC-SA 4.0) 协议</p>
 
                 
               
@@ -2617,15 +2599,13 @@ alt="在这里插入图片描述" />
         <a class='prev' href='/2022/07/06/Pytorch%E5%AE%9E%E6%88%98%E2%80%94%E2%80%94MNIST%E6%95%B0%E6%8D%AE%E9%9B%86%E6%89%8B%E5%86%99%E6%95%B0%E5%AD%97%E8%AF%86%E5%88%AB/'>
           <p class='title'><i class="fa-solid fa-chevron-left" aria-hidden="true"></i>Pytorch实战——MNIST数据集手写数字识别</p>
           <p class='content'>原视频链接：轻松学Pytorch手写字体识别MNIST
-1.加载必要的库
-123456#1 加载必要的库import torchimport torch.nn as nnimport torch...</p>
+1.加载必要的库123456#1 加载必要的库import torchimport torch.nn as nnimport torch....</p>
         </a>
       
       
         <a class='next' href='/2022/06/16/%E5%85%B3%E4%BA%8EScikit-learn%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E7%9A%84%E7%AC%94%E8%AE%B0%E2%80%94%E2%80%94%E7%AC%AC%E4%BA%94%E7%AF%87/'>
           <p class='title'>关于Scikit-learn机器学习的笔记——第五篇<i class="fa-solid fa-chevron-right" aria-hidden="true"></i></p>
-          <p class='content'>视频教程：【莫烦Python】Scikit-learn
-(sklearn) 优雅地学会机器学习
+          <p class='content'>视频教程：【莫烦Python】Scikit-learn (sklearn) 优雅地学会机器学习
 首先用KNN模型来进行基础的学习并且计算模型的分数
 程序示例：
 12345678910111213...</p>
@@ -2818,9 +2798,7 @@ alt="在这里插入图片描述" />
       
     
       
-        <div><p>Blog content follows the <a
-target="_blank" rel="noopener" href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.en">Attribution-NonCommercial-ShareAlike
-4.0 International (CC BY-NC-SA 4.0) License</a></p>
+        <div><p>Blog content follows the <a target="_blank" rel="noopener" href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.en">Attribution-NonCommercial-ShareAlike 4.0 International (CC BY-NC-SA 4.0) License</a></p>
 </div>
       
     

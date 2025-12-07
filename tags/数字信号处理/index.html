@@ -1593,7 +1593,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
     debug: "env",
     cdn: {"js":{"app":"/js/app.js","parallax":"/js/plugins/parallax.js","rightMenu":"/js/plugins/rightMenu.js","rightMenus":"/js/plugins/rightMenus.js","sites":"/js/plugins/tags/sites.js","friends":"/js/plugins/tags/friends.js","contributors":"/js/plugins/tags/contributors.js","search":"/js/search/hexo.js"},"css":{"style":"/css/style.css"}},
     default: {"avatar":"https://unpkg.com/volantis-static@0.0.1654736714924/media/placeholder/avatar/round/3442075.svg","link":"https://unpkg.com/volantis-static@0.0.1654736714924/media/placeholder/link/8f277b4ee0ecd.svg","cover":"https://unpkg.com/volantis-static@0.0.1654736714924/media/placeholder/cover/76b86c0226ffd.svg","image":"https://unpkg.com/volantis-static@0.0.1654736714924/media/placeholder/image/2659360.svg"},
-    lastupdate: new Date(1765118762067),
+    lastupdate: new Date(1765119292905),
     sidebar: {
       for_page: ["blogger","category","tagcloud","webinfo","lastupdate"],
       for_post: ["toc"],
@@ -2412,11 +2412,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
     
       
         汉宁窗
-
-
-在这里插入图片描述
-
-123456789101112clearclose allclcN=45;wn=[0.3,0.5];%截止频率window=hanning(N+1); %计算长度为N的汉宁窗b=fir1(N,wn,window); %N是阶数,wn是截止频率[H,w]=freqz(b); subplot(2,1,1);plot(w/pi,20*log10(abs(H)));...
+123456789101112clearclose allclcN=45;wn=[0.3,0.5];%截止频率window=hanning(N+1); %计算长度为N的汉宁窗b=fir1(N,wn,window); %N是阶数,wn是截止频率[H,w]=freqz(b); subplot(2,1,1);plot(w/pi,20*log10(abs(H)));grid; xlabel(...
       
     
   </div>
@@ -2488,9 +2484,8 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
     
       
         符号含义
- # 例题 
-脉冲响应不变法
-123456789101112131415161718clearclose allclcfs=1000;%采样频率fc=200;%通带截止频率fr=300;%阻带截止频率T=0.001; %采样周期%%%%%%%脉冲响应不变法wp1=2*pi*fc;%通带截止频率wr1=2*pi*fr;%阻带截止频率[N1,wn1]=buttord(wp1,wr1,1...
+例题
+脉冲响应不变法123456789101112131415161718clearclose allclcfs=1000;%采样频率fc=200;%通带截止频率fr=300;%阻带截止频率T=0.001; %采样周期%%%%%%%脉冲响应不变法wp1=2*pi*fc;%通带截止频率wr1=2*pi*fr;%阻带截止频率[N1,wn1]=buttord(wp1,wr1,1,25,&...
       
     
   </div>
@@ -2561,7 +2556,8 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
   <div class='md article-desc' itemprop="articleBody">
     
       
-         1234567891011121314151617181920clearclose allclcfs=1000;fc=200;fr=300;T=0.001; wp1=2*pi*fc;wr1=2*pi*fr; [N1,wn1]=buttord(wp1,wr1,1,25,&#x27;s&#x27;); [B1,A1]=butter(N1,wn1,&#x27;s&#x27;); [num1,de...
+        
+1234567891011121314151617181920clearclose allclcfs=1000;fc=200;fr=300;T=0.001; wp1=2*pi*fc;wr1=2*pi*fr; [N1,wn1]=buttord(wp1,wr1,1,25,&#x27;s&#x27;); [B1,A1]=butter(N1,wn1,&#x27;s&#x27;); [num1,de...
       
     
   </div>
@@ -2632,9 +2628,8 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
   <div class='md article-desc' itemprop="articleBody">
     
       
-        
-这题原本画出来就四条谱线，除了频率0的直流分量，就三根了，太少了，为了看着方便，我自己增加了序列
-12345678910111213clearclose allclcn=0:8;x=[4 3 2 6 7 8 3 3 5];subplot(1,2,1);stem(n,x)xlabel(&#x27;n&#x27;);ylabel(&#x27;幅度&#x27;);title(&#x27;原序列&...
+        这题原本画出来就四条谱线，除了频率0的直流分量，就三根了，太少了，为了看着方便，我自己增加了序列
+12345678910111213clearclose allclcn=0:8;x=[4 3 2 6 7 8 3 3 5];subplot(1,2,1);stem(n,x)xlabel(&#x27;n&#x27;);ylabel(&#x27;幅度&#x27;);title(&#x27;原序列&#...
       
     
   </div>
@@ -2705,9 +2700,8 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
   <div class='md article-desc' itemprop="articleBody">
     
       
-         这里我们直接展示补0的核心代码
-生成三角波和反三角波
-123456789101112N=8;n=0:7;x1=zeros(size(n));x2=zeros(size(n));xa=(n&gt;=0)&amp;(n&lt;=3);x1(xa)=n(xa);x2(xa)=4-n(xa);xa=(n&gt;=4)&amp;(n&lt;=7);x1(xa)=8-n(xa);x2(xa)=n(xa...
+        这里我们直接展示补0的核心代码
+生成三角波和反三角波123456789101112N=8;n=0:7;x1=zeros(size(n));x2=zeros(size(n));xa=(n&gt;=0)&amp;(n&lt;=3);x1(xa)=n(xa);x2(xa)=4-n(xa);xa=(n&gt;=4)&amp;(n&lt;=7);x1(xa)=8-n(xa);x2(xa)=n(xa)-...
       
     
   </div>
@@ -2778,10 +2772,8 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
   <div class='md article-desc' itemprop="articleBody">
     
       
-        
-xa(n)是高斯序列 xb(n)是衰减正弦序列 线性卷积很简单，利用conv函数就可以
-那么圆周卷积要怎么实现呢
-12345678910111213141516171819202122clc; n1=0:1:15; %16个点n2=0:1:30; %线性卷积，序列长度变成了16+16-1p=8;q=2;a=0.1;f=0.0625;xa=exp(-((n1-p).^2)/q);xb=exp...
+        xa(n)是高斯序列xb(n)是衰减正弦序列线性卷积很简单，利用conv函数就可以那么圆周卷积要怎么实现呢
+12345678910111213141516171819202122clc; n1=0:1:15; %16个点n2=0:1:30; %线性卷积，序列长度变成了16+16-1p=8;q=2;a=0.1;f=0.0625;xa=exp(-((n1-p).^2)/q);xb=exp(-a....
       
     
   </div>
@@ -2853,10 +2845,7 @@ xa(n)是高斯序列 xb(n)是衰减正弦序列 线性卷积很简单，利用co
     
       
         
-
-在这里插入图片描述
-
-12345678910111213141516171819clearclose allclcfs=8000;%采样频率n=0:99;%采样点100个y=sin(0.00625*2*pi*n)+sin(0.0625*pi*2*n)+sin(0.125*2*pi*n);%采样后的信号 0.00625=50/8000subplot(2,1,1);stem(n,y)titl...
+12345678910111213141516171819clearclose allclcfs=8000;%采样频率n=0:99;%采样点100个y=sin(0.00625*2*pi*n)+sin(0.0625*pi*2*n)+sin(0.125*2*pi*n);%采样后的信号 0.00625=50/8000subplot(2,1,1);stem(n,y)title(&#x27;抽样后信...
       
     
   </div>
@@ -2927,17 +2916,15 @@ xa(n)是高斯序列 xb(n)是衰减正弦序列 线性卷积很简单，利用co
   <div class='md article-desc' itemprop="articleBody">
     
       
-        原函数
-假设我们有这么一个函数
+        原函数假设我们有这么一个函数
 
-x(n)=3cos(0.125πn+0.2π)+2sin(0.25πn+0.1π)
-n为0到15的整数
+x(n)&#x3D;3cos(0.125πn+0.2π)+2sin(0.25πn+0.1π)n为0到15的整数
 
-这是他的函数图像，如何将其进行周期化  我在MATLAB中文论坛看到了一个很巧妙的方法
+这是他的函数图像，如何将其进行周期化我在MATLAB中文论坛看到了一个很巧妙的方法
 1b = mod(a,m)
 
-b = mod(a,m) 返回 a 除以 m 后的余数，其中 a 是被除数，m
-是除数。此函数通常称为取模运算，表达式为 b = a-m...
+
+b &#x3D; mod(a,m) 返回 a 除以 m 后的余数，其中 a 是被除数，m 是除数。此函数通常称为取模运算，表达式为 ...
       
     
   </div>
@@ -3008,12 +2995,9 @@ b = mod(a,m) 返回 a 除以 m 后的余数，其中 a 是被除数，m
   <div class='md article-desc' itemprop="articleBody">
     
       
-        今天做作业的时候发现要对一个信号进行FFT变换，在网上找了半天也没找到个能看懂的（因为我太菜了），后来自己研究了一下，感觉一知半解的
-起因是这道作业题 ## 例题-满足奈奎斯特 
-我画了两个图，一个是原信号经过采样后的离散图，一个就是此信号经过FFT后的频谱图
-因为是8kHZ采样，所以信号不会失真，频谱也是正确的
-解答如下：
-12345678910111213141516171819clea...
+        今天做作业的时候发现要对一个信号进行FFT变换，在网上找了半天也没找到个能看懂的（因为我太菜了），后来自己研究了一下，感觉一知半解的起因是这道作业题
+例题-满足奈奎斯特我画了两个图，一个是原信号经过采样后的离散图，一个就是此信号经过FFT后的频谱图因为是8kHZ采样，所以信号不会失真，频谱也是正确的解答如下：
+12345678910111213141516171819clearclose a...
       
     
   </div>
@@ -3058,7 +3042,7 @@ b = mod(a,m) 返回 a 除以 m 后的余数，其中 a 是被除数，m
         
           <div class='post-wrapper'>
             <div class="post post-v3 white-box reveal shadow floatable blur"  itemscope itemtype="http://schema.org/Article" >
-  <link itemprop="mainEntityOfPage" href="https://mengfanjun020906.github.io/2022/11/21/数字信号处理MATLAB作业一（题目+解答代码）/">
+  <link itemprop="mainEntityOfPage" href="https://mengfanjun020906.github.io/2022/11/21/数字信号处理信号抽样与插值MATLAB实现——实例/">
   <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
     <meta itemprop="name" content="MengFanjun的博客">
   </span>
@@ -3076,19 +3060,16 @@ b = mod(a,m) 返回 a 除以 m 后的余数，其中 a 是被除数，m
   
     
     <h2 class="article-title"  itemprop="name headline">
-      <a href="/2022/11/21/%E6%95%B0%E5%AD%97%E4%BF%A1%E5%8F%B7%E5%A4%84%E7%90%86MATLAB%E4%BD%9C%E4%B8%9A%E4%B8%80%EF%BC%88%E9%A2%98%E7%9B%AE+%E8%A7%A3%E7%AD%94%E4%BB%A3%E7%A0%81%EF%BC%89/"  itemprop="url">
-        数字信号处理MATLAB作业一（题目+解答代码）
+      <a href="/2022/11/21/%E6%95%B0%E5%AD%97%E4%BF%A1%E5%8F%B7%E5%A4%84%E7%90%86%E4%BF%A1%E5%8F%B7%E6%8A%BD%E6%A0%B7%E4%B8%8E%E6%8F%92%E5%80%BCMATLAB%E5%AE%9E%E7%8E%B0%E2%80%94%E2%80%94%E5%AE%9E%E4%BE%8B/"  itemprop="url">
+        数字信号处理信号抽样与插值MATLAB实现——实例
       </a>
     </h2>
   
   <div class='md article-desc' itemprop="articleBody">
     
       
-        
-
-在这里插入图片描述
-
-123456789101112131415161718192021222324252627282930313233clear;close all;clc;A=[1 2 3 4];B=[3 4 5 6];C=A+B;D=A-B;E=A.*BF=A./BF=A.^BG=A.^Bsubplot(4,2,1)stem(A)xlabel(&#x27;A&#x27;)subpl...
+        因为之前MATLAB没有好好学，而且DSP也没有好好学，做起作业来十分困难，为了好好写作业，我又重新研究了DSP和MATLAB，学了一下信号的抽样和插值先看一看x(n)原本的图像代码如下
+123456789101112%定义基本参数f=1;%原信号频率fs=16;%抽样信号频率N=52;%采样点数n=0:N-1;%画原序列图像xn=cos(2*pi*n*(f/fs));stem(n,xn)t...
       
     
   </div>
@@ -3117,7 +3098,7 @@ b = mod(a,m) 返回 a 除以 m 后的余数，其中 a 是被除数，m
       </div>
       
         <div>
-          <a class='readmore' href='/2022/11/21/%E6%95%B0%E5%AD%97%E4%BF%A1%E5%8F%B7%E5%A4%84%E7%90%86MATLAB%E4%BD%9C%E4%B8%9A%E4%B8%80%EF%BC%88%E9%A2%98%E7%9B%AE+%E8%A7%A3%E7%AD%94%E4%BB%A3%E7%A0%81%EF%BC%89/' itemprop="url">
+          <a class='readmore' href='/2022/11/21/%E6%95%B0%E5%AD%97%E4%BF%A1%E5%8F%B7%E5%A4%84%E7%90%86%E4%BF%A1%E5%8F%B7%E6%8A%BD%E6%A0%B7%E4%B8%8E%E6%8F%92%E5%80%BCMATLAB%E5%AE%9E%E7%8E%B0%E2%80%94%E2%80%94%E5%AE%9E%E4%BE%8B/' itemprop="url">
             Read More
           </a>
         </div>
@@ -3563,9 +3544,7 @@ b = mod(a,m) 返回 a 除以 m 后的余数，其中 a 是被除数，m
       
     
       
-        <div><p>Blog content follows the <a
-target="_blank" rel="noopener" href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.en">Attribution-NonCommercial-ShareAlike
-4.0 International (CC BY-NC-SA 4.0) License</a></p>
+        <div><p>Blog content follows the <a target="_blank" rel="noopener" href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.en">Attribution-NonCommercial-ShareAlike 4.0 International (CC BY-NC-SA 4.0) License</a></p>
 </div>
       
     

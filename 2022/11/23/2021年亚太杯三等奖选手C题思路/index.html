@@ -40,7 +40,7 @@
 <meta property="og:title" content="2021年亚太杯三等奖选手C题思路">
 <meta property="og:url" content="https://mengfanjun020906.github.io/2022/11/23/2021%E5%B9%B4%E4%BA%9A%E5%A4%AA%E6%9D%AF%E4%B8%89%E7%AD%89%E5%A5%96%E9%80%89%E6%89%8BC%E9%A2%98%E6%80%9D%E8%B7%AF/index.html">
 <meta property="og:site_name" content="MengFanjun的博客">
-<meta property="og:description" content="昨天晚上刚出了亚太杯的成绩，获得了三等奖，毕竟是第一次参加数学建模比赛，不是成功参与奖就很高兴了，结束了之后，还要进行总结复盘，接下来，就是我们队伍的思路。 因为A题和B题都读不懂，所以我们才选了C题，但是坏处是，选C题的人数也很多。 ## 亚太杯C题第一小问   读完第一问，我们不难发现，有几个关键词需要我们注意。 请选择合适指标，收集相关数据，建立塞罕坝对生态环境影响的评价模型，为了定量评价。">
+<meta property="og:description" content="昨天晚上刚出了亚太杯的成绩，获得了三等奖，毕竟是第一次参加数学建模比赛，不是成功参与奖就很高兴了，结束了之后，还要进行总结复盘，接下来，就是我们队伍的思路。 因为A题和B题都读不懂，所以我们才选了C题，但是坏处是，选C题的人数也很多。 亚太杯C题第一小问读完第一问，我们不难发现，有几个关键词需要我们注意。请选择合适指标，收集相关数据，建立塞罕坝对生态环境影响的评价模型，为了定量评价。。。。。。。。">
 <meta property="og:locale" content="en_US">
 <meta property="og:image" content="https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png">
 <meta property="article:published_time" content="2022-11-23T04:51:44.000Z">
@@ -1597,7 +1597,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
     debug: "env",
     cdn: {"js":{"app":"/js/app.js","parallax":"/js/plugins/parallax.js","rightMenu":"/js/plugins/rightMenu.js","rightMenus":"/js/plugins/rightMenus.js","sites":"/js/plugins/tags/sites.js","friends":"/js/plugins/tags/friends.js","contributors":"/js/plugins/tags/contributors.js","search":"/js/search/hexo.js"},"css":{"style":"/css/style.css"}},
     default: {"avatar":"https://unpkg.com/volantis-static@0.0.1654736714924/media/placeholder/avatar/round/3442075.svg","link":"https://unpkg.com/volantis-static@0.0.1654736714924/media/placeholder/link/8f277b4ee0ecd.svg","cover":"https://unpkg.com/volantis-static@0.0.1654736714924/media/placeholder/cover/76b86c0226ffd.svg","image":"https://unpkg.com/volantis-static@0.0.1654736714924/media/placeholder/image/2659360.svg"},
-    lastupdate: new Date(1765118762067),
+    lastupdate: new Date(1765119292905),
     sidebar: {
       for_page: ["blogger","category","tagcloud","webinfo","lastupdate"],
       for_post: ["toc"],
@@ -2464,82 +2464,41 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
   <div id="layoutHelper-page-plugins"></div>
   <div id="post-body" itemprop="articleBody">
     <p>昨天晚上刚出了亚太杯的成绩，获得了三等奖，毕竟是第一次参加数学建模比赛，不是成功参与奖就很高兴了，结束了之后，还要进行总结复盘，接下来，就是我们队伍的思路。</p>
-<p>因为A题和B题都读不懂，所以我们才选了C题，但是坏处是，选C题的人数也很多。
-## 亚太杯C题第一小问</p>
-<p><img
-src="https://mfjblog-pic.oss-cn-beijing.aliyuncs.com/img/watermark,type_d3F5LXplbmhlaQ,shadow_50,text_Q1NETiBAU29sLWl0dWRl,size_20,color_FFFFFF,t_70,g_se,x_16-20230323231934233-20230323232009673.png" />
-<img
-src="https://mfjblog-pic.oss-cn-beijing.aliyuncs.com/img/watermark,type_d3F5LXplbmhlaQ,shadow_50,text_Q1NETiBAU29sLWl0dWRl,size_20,color_FFFFFF,t_70,g_se,x_16-20230323232026931.png" />
-读完第一问，我们不难发现，有几个关键词需要我们注意。
-请<strong>选择合适指标</strong>，收集相关数据，建立塞罕坝对生态环境影响的<strong>评价模型</strong>，为了定量评价。。。。。。。。对塞罕坝恢复前后的环境状况进行<strong>对比分析</strong>。
-所以我们从第一步开始，先选择合适指标：
-通过对以往环境对比评价类型的论文的参考，我们选择了三个方面，分别是，经济情况，土壤情况，以及二氧化碳情况，六个指标，对环境情况进行分析，采用了<strong>层次分析模型</strong>，下面是我们的模型示意图：
-<img
-src="https://mfjblog-pic.oss-cn-beijing.aliyuncs.com/img/watermark,type_d3F5LXplbmhlaQ,shadow_50,text_Q1NETiBAU29sLWl0dWRl,size_20,color_FFFFFF,t_70,g_se,x_16-20230323232030466.png" />
-备选层只有两个选择，一个是恢复前的塞罕坝，一个是恢复后的塞罕坝，
-第二步就是构建权重矩阵，我们可以得到 <img
-src="https://mfjblog-pic.oss-cn-beijing.aliyuncs.com/img/watermark,type_d3F5LXplbmhlaQ,shadow_50,text_Q1NETiBAU29sLWl0dWRl,size_20,color_FFFFFF,t_70,g_se,x_16-20230323232033564.png" />
-代码如下</p>
+<p>因为A题和B题都读不懂，所以我们才选了C题，但是坏处是，选C题的人数也很多。</p>
+<h2 id="亚太杯C题第一小问"><a href="#亚太杯C题第一小问" class="headerlink" title="亚太杯C题第一小问"></a>亚太杯C题第一小问</h2><p><img src="https://mfjblog-pic.oss-cn-beijing.aliyuncs.com/img/watermark,type_d3F5LXplbmhlaQ,shadow_50,text_Q1NETiBAU29sLWl0dWRl,size_20,color_FFFFFF,t_70,g_se,x_16-20230323231934233-20230323232009673.png" class="lazyload" data-srcset="https://mfjblog-pic.oss-cn-beijing.aliyuncs.com/img/watermark,type_d3F5LXplbmhlaQ,shadow_50,text_Q1NETiBAU29sLWl0dWRl,size_20,color_FFFFFF,t_70,g_se,x_16-20230323231934233-20230323232009673.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt=" "><br><img src="https://mfjblog-pic.oss-cn-beijing.aliyuncs.com/img/watermark,type_d3F5LXplbmhlaQ,shadow_50,text_Q1NETiBAU29sLWl0dWRl,size_20,color_FFFFFF,t_70,g_se,x_16-20230323232026931.png" class="lazyload" data-srcset="https://mfjblog-pic.oss-cn-beijing.aliyuncs.com/img/watermark,type_d3F5LXplbmhlaQ,shadow_50,text_Q1NETiBAU29sLWl0dWRl,size_20,color_FFFFFF,t_70,g_se,x_16-20230323232026931.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt=" "><br>读完第一问，我们不难发现，有几个关键词需要我们注意。<br>请<strong>选择合适指标</strong>，收集相关数据，建立塞罕坝对生态环境影响的<strong>评价模型</strong>，为了定量评价。。。。。。。。对塞罕坝恢复前后的环境状况进行<strong>对比分析</strong>。<br>所以我们从第一步开始，先选择合适指标：<br>通过对以往环境对比评价类型的论文的参考，我们选择了三个方面，分别是，经济情况，土壤情况，以及二氧化碳情况，六个指标，对环境情况进行分析，采用了<strong>层次分析模型</strong>，下面是我们的模型示意图：<br><img src="https://mfjblog-pic.oss-cn-beijing.aliyuncs.com/img/watermark,type_d3F5LXplbmhlaQ,shadow_50,text_Q1NETiBAU29sLWl0dWRl,size_20,color_FFFFFF,t_70,g_se,x_16-20230323232030466.png" class="lazyload" data-srcset="https://mfjblog-pic.oss-cn-beijing.aliyuncs.com/img/watermark,type_d3F5LXplbmhlaQ,shadow_50,text_Q1NETiBAU29sLWl0dWRl,size_20,color_FFFFFF,t_70,g_se,x_16-20230323232030466.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt=" "><br>备选层只有两个选择，一个是恢复前的塞罕坝，一个是恢复后的塞罕坝，<br>第二步就是构建权重矩阵，我们可以得到<br><img src="https://mfjblog-pic.oss-cn-beijing.aliyuncs.com/img/watermark,type_d3F5LXplbmhlaQ,shadow_50,text_Q1NETiBAU29sLWl0dWRl,size_20,color_FFFFFF,t_70,g_se,x_16-20230323232033564.png" class="lazyload" data-srcset="https://mfjblog-pic.oss-cn-beijing.aliyuncs.com/img/watermark,type_d3F5LXplbmhlaQ,shadow_50,text_Q1NETiBAU29sLWl0dWRl,size_20,color_FFFFFF,t_70,g_se,x_16-20230323232033564.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt=" "><br>代码如下</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line">disp(<span class="string">&#x27;input A&#x27;</span>);</span><br><span class="line">A=input(<span class="string">&#x27;A=&#x27;</span>);</span><br><span class="line">[n,n]=size(A);</span><br><span class="line">[V,D]=eig(A);</span><br><span class="line">tempNum=D(1,1);</span><br><span class="line">pos=1;</span><br><span class="line"><span class="keyword">for</span> h=1:n</span><br><span class="line">    <span class="keyword">if</span> D(h,h)&gt;tempNum</span><br><span class="line">        tempNum=D(h,h);</span><br><span class="line">        pos=h;</span><br><span class="line">    end</span><br><span class="line">end    </span><br><span class="line">w=abs(V(:,pos));</span><br><span class="line">w=w/sum(w);</span><br><span class="line">t=D(pos,pos);</span><br><span class="line">disp(<span class="string">&#x27;rules w=&#x27;</span>);disp(w);disp(<span class="string">&#x27;bigget t=&#x27;</span>);disp(t);</span><br><span class="line">CI=(t-n)/(n-1);RI=[0 0 0.52 0.89 1.12 1.26 1.36 1.41 1.46 1.49 1.52 1.54 1.56 1.58 1.59 1.60 1.61 1.615 1.62 1.63];</span><br><span class="line">CR=CI/RI(n);</span><br><span class="line"><span class="keyword">if</span> CR&lt;0.10</span><br><span class="line">    disp(<span class="string">&#x27; ACCE PT!&#x27;</span>);</span><br><span class="line">    disp(<span class="string">&#x27;CI=&#x27;</span>);disp(CI);</span><br><span class="line">    disp(<span class="string">&#x27;CR=&#x27;</span>);disp(CR);</span><br><span class="line"><span class="keyword">else</span> disp(<span class="string">&#x27; NOT ACCEPCT!&#x27;</span>);</span><br><span class="line">end</span><br></pre></td></tr></table></figure>
-<p>最后得到的CR&lt;0.1，一致性检验通过，所以第一题就算是做完了。
-优点：</p>
+
+<p>最后得到的CR&lt;0.1，一致性检验通过，所以第一题就算是做完了。<br>优点：</p>
 <ul>
-<li>快速，用了一个上午就做出来了；</li>
+<li>快速，用了一个上午就做出来了； </li>
 <li>简单，因为备选对象只有两个，所以算起来，矩阵很好列</li>
 </ul>
 <p>缺点：</p>
 <ul>
-<li><p>不准确，因为图速度，选取的指标太少了，其实结果是不准确的；</p></li>
-<li><p>人为因素较多，在建模的时候，一想就知道恢复后更好，所以靠眼看，都知道谁好，有种从结论写过程的感觉；</p></li>
+<li><p>不准确，因为图速度，选取的指标太少了，其实结果是不准确的；</p>
+</li>
+<li><p>人为因素较多，在建模的时候，一想就知道恢复后更好，所以靠眼看，都知道谁好，有种从结论写过程的感觉；</p>
+</li>
 </ul>
 <p>到这里第一题就做完了，看起来还很顺利，但后面我们就陷入了瓶颈</p>
-<h2 id="亚太杯c题第二小问">亚太杯C题第二小问</h2>
-<p><img
-src="https://mfjblog-pic.oss-cn-beijing.aliyuncs.com/img/b88dce99d45f4d1484e24393b8d9190f-20230324202037021.png" />
-读完题目之后，我们可以从其中选取几个关键词：请<strong>选择合适的指标</strong>，收集相关数据，建立数学模型，<strong>评估塞罕坝对北京抗沙能力的影响</strong>，<strong>定量评估</strong>塞罕坝在北京抗沙尘暴中的作用。</p>
-<ol type="1">
+<h2 id="亚太杯C题第二小问"><a href="#亚太杯C题第二小问" class="headerlink" title="亚太杯C题第二小问"></a>亚太杯C题第二小问</h2><p><img src="https://mfjblog-pic.oss-cn-beijing.aliyuncs.com/img/b88dce99d45f4d1484e24393b8d9190f-20230324202037021.png" class="lazyload" data-srcset="https://mfjblog-pic.oss-cn-beijing.aliyuncs.com/img/b88dce99d45f4d1484e24393b8d9190f-20230324202037021.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt=" "><br>读完题目之后，我们可以从其中选取几个关键词：请<strong>选择合适的指标</strong>，收集相关数据，建立数学模型，<strong>评估塞罕坝对北京抗沙能力的影响</strong>，<strong>定量评估</strong>塞罕坝在北京抗沙尘暴中的作用。</p>
+<ol>
 <li>选取合适的指标，我们采用的是主成分分析法，根据第一问，我们选择从经济与森林面积出发建立经济层面与森林面积层面的指标，经过数据收集并且对数据进行了优化处理，通过对京津冀2019年的影响抗沙能力的林业面积和林业经济的各项指标进行主成分分析（<strong>在做主成分分析之前一定要进行数据优化，要不然就会因为尺度不一样而出大问题</strong>），根据总方差的解释结果，找到占比最大的指标，即为影响最大的指标，通过主成分分析法，找到四个主要指标，分别为林业总产值、林业用地面积、森林覆盖率，找到相关专业论文，找到了AQI，一共四个主要指标。</li>
 <li>评估塞罕坝对北京抗沙能力的影响，这个要求我们当时也是没读明白，为什么塞罕坝会影响北京的抗沙能力，后来想了想，就是塞罕坝建立前怎么样，与建立后，北京的一些指标的对比，所以根据这四个指标在2001年与2019年的数据对比，得出了结论，（2001年塞罕坝已初步建成，但是国家统计局的网站上，最早只能找到2001，所以我们只选了2001年的），可以看出，2019年北京的四项指标，明显好于2001年。</li>
-<li>关于塞罕坝在北京抗沙过程中的作用，我们的找到NOx 与SO2
-比值的年际变化图：</li>
+<li>关于塞罕坝在北京抗沙过程中的作用，我们的找到NOx 与SO2 比值的年际变化图：</li>
 </ol>
-<p><img
-src="https://mfjblog-pic.oss-cn-beijing.aliyuncs.com/img/watermark,type_d3F5LXplbmhlaQ,shadow_50,text_Q1NETiBAU29sLWl0dWRl,size_20,color_FFFFFF,t_70,g_se,x_16-20230323232040673.png" />
-根据增长趋势，我们得出结论：塞罕坝人工林不仅改善了当地的生态环境，而且对京、津及其周边地区的生态环境质量的改善起到重要作用。</p>
-<h2 id="亚太杯c题第三小问">亚太杯C题第三小问</h2>
-<p><img
-src="https://mfjblog-pic.oss-cn-beijing.aliyuncs.com/img/9f0ad9fad2484711aa5e634e13bcc093.png" />
-刚看到这题，瞬间就懵了，来确定中国哪些地理位置需要建设生态区，一开始没有进行深入思考，就开始疯狂查找数据，我们发现，生态区分为：植物、动物、地形等，还有国家级，市级、县级。。。。。。。一开始就想无头苍蝇一样搜集数据，后来我们发现了关键的一点，<strong>将塞罕坝的生态保护模式推广到全国</strong>，我们就要弄清楚，塞罕坝的生态模式是什么，通过查阅资料，塞罕坝的生态模式就是，通俗来说，就是有风沙，然后，种树，那我们可不可以找到中国风沙最严重的地区，于是就开始根据全国风沙地图来选择，
-<img
-src="https://mfjblog-pic.oss-cn-beijing.aliyuncs.com/img/watermark,type_d3F5LXplbmhlaQ,shadow_50,text_Q1NETiBAU29sLWl0dWRl,size_20,color_FFFFFF,t_70,g_se,x_16-20230323232043889.png" />
-不难看出来，那几个颜色最深的地方，就是风沙最严重的地方，来建立生态保护区。
-1.生态保护区的指标：分为两层，一层是森林覆盖率和森林产值，第二层是几个乱七八糟的指标，因为我国建立生态区的标准过于复杂，所以我们从政府文件中选取了几个关键的指标。
-2.判断其是否能建立：开始查找数据，因为地理位置偏远而且有的还是小县城，所以数据基本上，只有1年的数据，那没办法了，也只能硬着头皮来上，那么，该如何判断呢，这时，我突发奇想，既然我们这些小地方找不到数据，那我们找全国最大的，于是，我们利用神经网络算法，倒入了几组成功建立生态区的地区数据，经过机器学习，来判断我们找的这几个地方是否能建立生态区，后来一试，误差居然很小</p>
+<p><img src="https://mfjblog-pic.oss-cn-beijing.aliyuncs.com/img/watermark,type_d3F5LXplbmhlaQ,shadow_50,text_Q1NETiBAU29sLWl0dWRl,size_20,color_FFFFFF,t_70,g_se,x_16-20230323232040673.png" class="lazyload" data-srcset="https://mfjblog-pic.oss-cn-beijing.aliyuncs.com/img/watermark,type_d3F5LXplbmhlaQ,shadow_50,text_Q1NETiBAU29sLWl0dWRl,size_20,color_FFFFFF,t_70,g_se,x_16-20230323232040673.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt=" "><br>根据增长趋势，我们得出结论：塞罕坝人工林不仅改善了当地的生态环境，而且对京、津及其周边地区的生态环境质量的改善起到重要作用。</p>
+<h2 id="亚太杯C题第三小问"><a href="#亚太杯C题第三小问" class="headerlink" title="亚太杯C题第三小问"></a>亚太杯C题第三小问</h2><p><img src="https://mfjblog-pic.oss-cn-beijing.aliyuncs.com/img/9f0ad9fad2484711aa5e634e13bcc093.png" class="lazyload" data-srcset="https://mfjblog-pic.oss-cn-beijing.aliyuncs.com/img/9f0ad9fad2484711aa5e634e13bcc093.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt=" "><br>刚看到这题，瞬间就懵了，来确定中国哪些地理位置需要建设生态区，一开始没有进行深入思考，就开始疯狂查找数据，我们发现，生态区分为：植物、动物、地形等，还有国家级，市级、县级。。。。。。。一开始就想无头苍蝇一样搜集数据，后来我们发现了关键的一点，<strong>将塞罕坝的生态保护模式推广到全国</strong>，我们就要弄清楚，塞罕坝的生态模式是什么，通过查阅资料，塞罕坝的生态模式就是，通俗来说，就是有风沙，然后，种树，那我们可不可以找到中国风沙最严重的地区，于是就开始根据全国风沙地图来选择，<br><img src="https://mfjblog-pic.oss-cn-beijing.aliyuncs.com/img/watermark,type_d3F5LXplbmhlaQ,shadow_50,text_Q1NETiBAU29sLWl0dWRl,size_20,color_FFFFFF,t_70,g_se,x_16-20230323232043889.png" class="lazyload" data-srcset="https://mfjblog-pic.oss-cn-beijing.aliyuncs.com/img/watermark,type_d3F5LXplbmhlaQ,shadow_50,text_Q1NETiBAU29sLWl0dWRl,size_20,color_FFFFFF,t_70,g_se,x_16-20230323232043889.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt=" "><br>不难看出来，那几个颜色最深的地方，就是风沙最严重的地方，来建立生态保护区。<br>1.生态保护区的指标：分为两层，一层是森林覆盖率和森林产值，第二层是几个乱七八糟的指标，因为我国建立生态区的标准过于复杂，所以我们从政府文件中选取了几个关键的指标。<br>2.判断其是否能建立：开始查找数据，因为地理位置偏远而且有的还是小县城，所以数据基本上，只有1年的数据，那没办法了，也只能硬着头皮来上，那么，该如何判断呢，这时，我突发奇想，既然我们这些小地方找不到数据，那我们找全国最大的，于是，我们利用神经网络算法，倒入了几组成功建立生态区的地区数据，经过机器学习，来判断我们找的这几个地方是否能建立生态区，后来一试，误差居然很小</p>
 <p>代码如下</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br></pre></td><td class="code"><pre><span class="line">y=input(<span class="string">&#x27; input data&#x27;</span>);</span><br><span class="line">n=length(y);</span><br><span class="line">yy=ones(n,1);</span><br><span class="line">yy(1)=y(1);</span><br><span class="line"><span class="keyword">for</span> i=2:n</span><br><span class="line">    yy(i)=yy(i-1)+y(i)</span><br><span class="line">end</span><br><span class="line">B=ones(n-1,2);</span><br><span class="line"><span class="keyword">for</span> i=1:(n-1)</span><br><span class="line">    B(i,1)=-(yy(i)+yy(i+1))/2;</span><br><span class="line">    B(i,2)=1;</span><br><span class="line">end</span><br><span class="line">BT=B<span class="string">&#x27;;</span></span><br><span class="line"><span class="string">for j=1:(n-1)</span></span><br><span class="line"><span class="string">    YN(j)=y(j+1);</span></span><br><span class="line"><span class="string">end</span></span><br><span class="line"><span class="string">YN=YN&#x27;</span>;</span><br><span class="line">A=inv(BT*B)*BT*YN;</span><br><span class="line">a=A(1);</span><br><span class="line">u=A(2);</span><br><span class="line">t=u/a;</span><br><span class="line">t_test=input(<span class="string">&#x27; numbers&#x27;</span>);</span><br><span class="line">i=1:t_test+n;</span><br><span class="line">yys(i+1)=(y(1)-t).*exp(-a.*i)+t;</span><br><span class="line">yys(1)=y(1);   </span><br><span class="line"><span class="keyword">for</span> j=n+t_test:-1:2</span><br><span class="line">    ys(j)=yys(j)-yys(j-1);</span><br><span class="line">end</span><br><span class="line">x=1:n;</span><br><span class="line">xs=2:n+t_test;</span><br><span class="line">yn=ys(2:n+t_test);</span><br><span class="line">plot(x,y,<span class="string">&#x27;^r&#x27;</span>,xs,yn,<span class="string">&#x27;*-b&#x27;</span>);</span><br><span class="line">det=0;</span><br><span class="line"><span class="keyword">for</span> i=2:n</span><br><span class="line">    det=det+abs(yn(i)-y(i));</span><br><span class="line">end</span><br><span class="line">det=det/(n-1);</span><br><span class="line">disp([<span class="string">&#x27; deviation：&#x27;</span>,num2str(det),<span class="string">&#x27;%&#x27;</span>]);</span><br><span class="line">    disp([<span class="string">&#x27; predict：&#x27;</span>,num2str(ys(n+1:n+t_test))]);</span><br></pre></td></tr></table></figure>
+
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line">net = newff(minmax(P),[7,1],&#123;<span class="string">&#x27;tansig&#x27;</span>,<span class="string">&#x27;purelin&#x27;</span>&#125;,<span class="string">&#x27;trainlm&#x27;</span>);</span><br><span class="line">  </span><br><span class="line">net.trainParam.show=50;%</span><br><span class="line">  </span><br><span class="line">net.trainParam.lr=0.05;</span><br><span class="line">  </span><br><span class="line">net.trainParam.epochs=1000;</span><br><span class="line">  </span><br><span class="line">net.trainParam.goal=1e-5;</span><br><span class="line"></span><br><span class="line">[net,<span class="built_in">tr</span>]=train(net,P,T);</span><br><span class="line"></span><br><span class="line">net.iw&#123;1,1&#125;</span><br><span class="line"></span><br><span class="line">net.b&#123;1&#125;</span><br><span class="line"></span><br><span class="line">net.lw&#123;2,1&#125;</span><br><span class="line"></span><br><span class="line">net.b&#123;2&#125;</span><br><span class="line">P2=[-1;2];</span><br><span class="line"></span><br><span class="line">y3=sim(net,P2);</span><br></pre></td></tr></table></figure>
-<p><img
-src="https://mfjblog-pic.oss-cn-beijing.aliyuncs.com/img/watermark,type_d3F5LXplbmhlaQ,shadow_50,text_Q1NETiBAU29sLWl0dWRl,size_20,color_FFFFFF,t_70,g_se,x_16-20230323232047840.png" />
-喜出望外，于是我们就利用神经网络算法给解决了问题，最大的缺点就是，数据根本找不到，<del>我们后来都想编上几组</del>
-，但是还好成功做出来了。</p>
-<h2 id="亚太杯c题第四小问">亚太杯C题第四小问</h2>
-<p><img
-src="https://mfjblog-pic.oss-cn-beijing.aliyuncs.com/img/aeb9bd1025904de48df58ad906f936bc.png" />
-<strong>请从亚太地区选择另一个国家建立数学模型</strong>，因为不知道有什么可选取的规则，为了查找数据方便，我们就选了中国的好朋友，巴基斯坦，和第四问的思路差不多，还是寻找风沙图，但我们遇到了一个问题，就是找不到风沙图，毕竟不是在国内，于是转变思路，我们找了森林的分布图以及降水图
-<img
-src="https://mfjblog-pic.oss-cn-beijing.aliyuncs.com/img/watermark,type_d3F5LXplbmhlaQ,shadow_50,text_Q1NETiBAU29sLWl0dWRl,size_20,color_FFFFFF,t_70,g_se,x_16-20230323232052566.png" />
-通过枚举法，<del>说白了就是拿眼看</del> ，我们找到了以下地区的4项指标
-<img
-src="https://mfjblog-pic.oss-cn-beijing.aliyuncs.com/img/watermark,type_d3F5LXplbmhlaQ,shadow_50,text_Q1NETiBAU29sLWl0dWRl,size_20,color_FFFFFF,t_70,g_se,x_16-20230323232055315.png" />
-通过灰色关联分析，和灰色预测，先判断其关联性，再通过灰色预测的斜率判断其建立生态区的规模，最终得出结果，找到了适合建立生态区的地区
-<img
-src="https://mfjblog-pic.oss-cn-beijing.aliyuncs.com/img/watermark,type_d3F5LXplbmhlaQ,shadow_50,text_Q1NETiBAU29sLWl0dWRl,size_20,color_FFFFFF,t_70,g_se,x_16-20230323232057365.png" />
-代码如下</p>
+
+<p><img src="https://mfjblog-pic.oss-cn-beijing.aliyuncs.com/img/watermark,type_d3F5LXplbmhlaQ,shadow_50,text_Q1NETiBAU29sLWl0dWRl,size_20,color_FFFFFF,t_70,g_se,x_16-20230323232047840.png" class="lazyload" data-srcset="https://mfjblog-pic.oss-cn-beijing.aliyuncs.com/img/watermark,type_d3F5LXplbmhlaQ,shadow_50,text_Q1NETiBAU29sLWl0dWRl,size_20,color_FFFFFF,t_70,g_se,x_16-20230323232047840.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt=" "><br>喜出望外，于是我们就利用神经网络算法给解决了问题，最大的缺点就是，数据根本找不到，<del>我们后来都想编上几组</del> ，但是还好成功做出来了。</p>
+<h2 id="亚太杯C题第四小问"><a href="#亚太杯C题第四小问" class="headerlink" title="亚太杯C题第四小问"></a>亚太杯C题第四小问</h2><p><img src="https://mfjblog-pic.oss-cn-beijing.aliyuncs.com/img/aeb9bd1025904de48df58ad906f936bc.png" class="lazyload" data-srcset="https://mfjblog-pic.oss-cn-beijing.aliyuncs.com/img/aeb9bd1025904de48df58ad906f936bc.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt=" "><br><strong>请从亚太地区选择另一个国家建立数学模型</strong>，因为不知道有什么可选取的规则，为了查找数据方便，我们就选了中国的好朋友，巴基斯坦，和第四问的思路差不多，还是寻找风沙图，但我们遇到了一个问题，就是找不到风沙图，毕竟不是在国内，于是转变思路，我们找了森林的分布图以及降水图<br><img src="https://mfjblog-pic.oss-cn-beijing.aliyuncs.com/img/watermark,type_d3F5LXplbmhlaQ,shadow_50,text_Q1NETiBAU29sLWl0dWRl,size_20,color_FFFFFF,t_70,g_se,x_16-20230323232052566.png" class="lazyload" data-srcset="https://mfjblog-pic.oss-cn-beijing.aliyuncs.com/img/watermark,type_d3F5LXplbmhlaQ,shadow_50,text_Q1NETiBAU29sLWl0dWRl,size_20,color_FFFFFF,t_70,g_se,x_16-20230323232052566.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt=" "><br>通过枚举法，<del>说白了就是拿眼看</del> ，我们找到了以下地区的4项指标<br><img src="https://mfjblog-pic.oss-cn-beijing.aliyuncs.com/img/watermark,type_d3F5LXplbmhlaQ,shadow_50,text_Q1NETiBAU29sLWl0dWRl,size_20,color_FFFFFF,t_70,g_se,x_16-20230323232055315.png" class="lazyload" data-srcset="https://mfjblog-pic.oss-cn-beijing.aliyuncs.com/img/watermark,type_d3F5LXplbmhlaQ,shadow_50,text_Q1NETiBAU29sLWl0dWRl,size_20,color_FFFFFF,t_70,g_se,x_16-20230323232055315.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt=" "><br>通过灰色关联分析，和灰色预测，先判断其关联性，再通过灰色预测的斜率判断其建立生态区的规模，最终得出结果，找到了适合建立生态区的地区<br><img src="https://mfjblog-pic.oss-cn-beijing.aliyuncs.com/img/watermark,type_d3F5LXplbmhlaQ,shadow_50,text_Q1NETiBAU29sLWl0dWRl,size_20,color_FFFFFF,t_70,g_se,x_16-20230323232057365.png" class="lazyload" data-srcset="https://mfjblog-pic.oss-cn-beijing.aliyuncs.com/img/watermark,type_d3F5LXplbmhlaQ,shadow_50,text_Q1NETiBAU29sLWl0dWRl,size_20,color_FFFFFF,t_70,g_se,x_16-20230323232057365.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt=" "><br>代码如下</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br></pre></td><td class="code"><pre><span class="line">y=input(<span class="string">&#x27; input data&#x27;</span>);</span><br><span class="line">n=length(y);</span><br><span class="line">yy=ones(n,1);</span><br><span class="line">yy(1)=y(1);</span><br><span class="line"><span class="keyword">for</span> i=2:n</span><br><span class="line">    yy(i)=yy(i-1)+y(i)</span><br><span class="line">end</span><br><span class="line">B=ones(n-1,2);</span><br><span class="line"><span class="keyword">for</span> i=1:(n-1)</span><br><span class="line">    B(i,1)=-(yy(i)+yy(i+1))/2;</span><br><span class="line">    B(i,2)=1;</span><br><span class="line">end</span><br><span class="line">BT=B<span class="string">&#x27;;</span></span><br><span class="line"><span class="string">for j=1:(n-1)</span></span><br><span class="line"><span class="string">    YN(j)=y(j+1);</span></span><br><span class="line"><span class="string">end</span></span><br><span class="line"><span class="string">YN=YN&#x27;</span>;</span><br><span class="line">A=inv(BT*B)*BT*YN;</span><br><span class="line">a=A(1);</span><br><span class="line">u=A(2);</span><br><span class="line">t=u/a;</span><br><span class="line">t_test=input(<span class="string">&#x27; numbers&#x27;</span>);</span><br><span class="line">i=1:t_test+n;</span><br><span class="line">yys(i+1)=(y(1)-t).*exp(-a.*i)+t;</span><br><span class="line">yys(1)=y(1);   </span><br><span class="line"><span class="keyword">for</span> j=n+t_test:-1:2</span><br><span class="line">    ys(j)=yys(j)-yys(j-1);</span><br><span class="line">end</span><br><span class="line">x=1:n;</span><br><span class="line">xs=2:n+t_test;</span><br><span class="line">yn=ys(2:n+t_test);</span><br><span class="line">plot(x,y,<span class="string">&#x27;^r&#x27;</span>,xs,yn,<span class="string">&#x27;*-b&#x27;</span>);</span><br><span class="line">det=0;</span><br><span class="line"><span class="keyword">for</span> i=2:n</span><br><span class="line">    det=det+abs(yn(i)-y(i));</span><br><span class="line">end</span><br><span class="line">det=det/(n-1);</span><br><span class="line">disp([<span class="string">&#x27; deviation：&#x27;</span>,num2str(det),<span class="string">&#x27;%&#x27;</span>]);</span><br><span class="line">    disp([<span class="string">&#x27; predict：&#x27;</span>,num2str(ys(n+1:n+t_test))]);</span><br></pre></td></tr></table></figure>
-<h2 id="亚太杯c题第五小问">亚太杯C题第五小问</h2>
-<p><img
-src="https://mfjblog-pic.oss-cn-beijing.aliyuncs.com/img/2248be3de201479c9255c9463daac8df.png" />
-第五问应该是纯文字描述我们的模型，不用再建模了，所以就基本上把前四题叙述了一遍。</p>
+
+<h2 id="亚太杯C题第五小问"><a href="#亚太杯C题第五小问" class="headerlink" title="亚太杯C题第五小问"></a>亚太杯C题第五小问</h2><p><img src="https://mfjblog-pic.oss-cn-beijing.aliyuncs.com/img/2248be3de201479c9255c9463daac8df.png" class="lazyload" data-srcset="https://mfjblog-pic.oss-cn-beijing.aliyuncs.com/img/2248be3de201479c9255c9463daac8df.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt=" "><br>第五问应该是纯文字描述我们的模型，不用再建模了，所以就基本上把前四题叙述了一遍。</p>
 <p>写完了之后，算上附录一共26页，成就感满满，也没想到能够取得三等奖，今年国赛加油。</p>
 
   </div>
@@ -2558,8 +2517,7 @@ src="https://mfjblog-pic.oss-cn-beijing.aliyuncs.com/img/2248be3de201479c9255c94
             <blockquote>
               
                 
-                  <p>博客内容遵循 署名-非商业性使用-相同方式共享 4.0 国际 (CC BY-NC-SA
-4.0) 协议</p>
+                  <p>博客内容遵循 署名-非商业性使用-相同方式共享 4.0 国际 (CC BY-NC-SA 4.0) 协议</p>
 
                 
               
@@ -2668,21 +2626,18 @@ src="https://mfjblog-pic.oss-cn-beijing.aliyuncs.com/img/2248be3de201479c9255c94
       
         <a class='prev' href='/2022/11/26/MATLAB%E5%AE%9E%E7%8E%B0%E5%B0%86%E5%87%BD%E6%95%B0_%E5%BA%8F%E5%88%97%E8%BF%9B%E8%A1%8C%E5%91%A8%E6%9C%9F%E5%BB%B6%E6%8B%93/'>
           <p class='title'><i class="fa-solid fa-chevron-left" aria-hidden="true"></i>MATLAB实现将函数/序列进行周期延拓</p>
-          <p class='content'>原函数
-假设我们有这么一个函数
+          <p class='content'>原函数假设我们有这么一个函数
 
-x(n)=3cos(0.125πn+0.2π)+2sin(0.25πn+0.1π)
-n为0到15的整数
+x(n)&#x3D;3cos(0.125πn+0.2π)+2sin(0.25πn+0.1π)n为0到15的整数
 
-这是他的函数图像，如何将其进行周期化  我在MATLA...</p>
+这是他的函数图像，如何将其进行周期化我在MATL...</p>
         </a>
       
       
         <a class='next' href='/2022/11/22/%E6%95%B0%E5%AD%97%E4%BF%A1%E5%8F%B7%E5%A4%84%E7%90%86FFT%E5%BF%AB%E9%80%9F%E5%82%85%E7%AB%8B%E5%8F%B6%E5%8F%98%E6%8D%A2MATLAB%E5%AE%9E%E7%8E%B0%E2%80%94%E2%80%94%E5%AE%9E%E4%BE%8B/'>
           <p class='title'>数字信号处理FFT快速傅立叶变换MATLAB实现——实例<i class="fa-solid fa-chevron-right" aria-hidden="true"></i></p>
-          <p class='content'>今天做作业的时候发现要对一个信号进行FFT变换，在网上找了半天也没找到个能看懂的（因为我太菜了），后来自己研究了一下，感觉一知半解的
-起因是这道作业题 ## 例题-满足奈奎斯特 
-我画了两个图，...</p>
+          <p class='content'>今天做作业的时候发现要对一个信号进行FFT变换，在网上找了半天也没找到个能看懂的（因为我太菜了），后来自己研究了一下，感觉一知半解的起因是这道作业题
+例题-满足奈奎斯特我画了两个图，一个是原信号...</p>
         </a>
       
     </div>
@@ -2740,7 +2695,7 @@ n为0到15的整数
 
 
     <div class='content'>
-        <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%BA%9A%E5%A4%AA%E6%9D%AFc%E9%A2%98%E7%AC%AC%E4%BA%8C%E5%B0%8F%E9%97%AE"><span class="toc-text">亚太杯C题第二小问</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%BA%9A%E5%A4%AA%E6%9D%AFc%E9%A2%98%E7%AC%AC%E4%B8%89%E5%B0%8F%E9%97%AE"><span class="toc-text">亚太杯C题第三小问</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%BA%9A%E5%A4%AA%E6%9D%AFc%E9%A2%98%E7%AC%AC%E5%9B%9B%E5%B0%8F%E9%97%AE"><span class="toc-text">亚太杯C题第四小问</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%BA%9A%E5%A4%AA%E6%9D%AFc%E9%A2%98%E7%AC%AC%E4%BA%94%E5%B0%8F%E9%97%AE"><span class="toc-text">亚太杯C题第五小问</span></a></li></ol>
+        <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%BA%9A%E5%A4%AA%E6%9D%AFC%E9%A2%98%E7%AC%AC%E4%B8%80%E5%B0%8F%E9%97%AE"><span class="toc-text">亚太杯C题第一小问</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%BA%9A%E5%A4%AA%E6%9D%AFC%E9%A2%98%E7%AC%AC%E4%BA%8C%E5%B0%8F%E9%97%AE"><span class="toc-text">亚太杯C题第二小问</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%BA%9A%E5%A4%AA%E6%9D%AFC%E9%A2%98%E7%AC%AC%E4%B8%89%E5%B0%8F%E9%97%AE"><span class="toc-text">亚太杯C题第三小问</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%BA%9A%E5%A4%AA%E6%9D%AFC%E9%A2%98%E7%AC%AC%E5%9B%9B%E5%B0%8F%E9%97%AE"><span class="toc-text">亚太杯C题第四小问</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%BA%9A%E5%A4%AA%E6%9D%AFC%E9%A2%98%E7%AC%AC%E4%BA%94%E5%B0%8F%E9%97%AE"><span class="toc-text">亚太杯C题第五小问</span></a></li></ol>
     </div>
   </section>
 
@@ -2882,9 +2837,7 @@ n为0到15的整数
       
     
       
-        <div><p>Blog content follows the <a
-target="_blank" rel="noopener" href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.en">Attribution-NonCommercial-ShareAlike
-4.0 International (CC BY-NC-SA 4.0) License</a></p>
+        <div><p>Blog content follows the <a target="_blank" rel="noopener" href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.en">Attribution-NonCommercial-ShareAlike 4.0 International (CC BY-NC-SA 4.0) License</a></p>
 </div>
       
     

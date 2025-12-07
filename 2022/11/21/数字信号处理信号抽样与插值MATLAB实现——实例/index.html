@@ -40,7 +40,7 @@
 <meta property="og:title" content="数字信号处理信号抽样与插值MATLAB实现——实例">
 <meta property="og:url" content="https://mengfanjun020906.github.io/2022/11/21/%E6%95%B0%E5%AD%97%E4%BF%A1%E5%8F%B7%E5%A4%84%E7%90%86%E4%BF%A1%E5%8F%B7%E6%8A%BD%E6%A0%B7%E4%B8%8E%E6%8F%92%E5%80%BCMATLAB%E5%AE%9E%E7%8E%B0%E2%80%94%E2%80%94%E5%AE%9E%E4%BE%8B/index.html">
 <meta property="og:site_name" content="MengFanjun的博客">
-<meta property="og:description" content="因为之前MATLAB没有好好学，而且DSP也没有好好学，做起作业来十分困难，为了好好写作业，我又重新研究了DSP和MATLAB，学了一下信号的抽样和插值 先看一看x(n)原本的图像  代码如下 123456789101112%定义基本参数f&#x3D;1;%原信号频率fs&#x3D;16;%抽样信号频率N&#x3D;52;%采样点数n&#x3D;0:N-1;%画原序列图像xn&#x3D;cos(2*pi*n*(f&#x2F;fs));stem(n,xn)">
+<meta property="og:description" content="因为之前MATLAB没有好好学，而且DSP也没有好好学，做起作业来十分困难，为了好好写作业，我又重新研究了DSP和MATLAB，学了一下信号的抽样和插值先看一看x(n)原本的图像代码如下 123456789101112%定义基本参数f&#x3D;1;%原信号频率fs&#x3D;16;%抽样信号频率N&#x3D;52;%采样点数n&#x3D;0:N-1;%画原序列图像xn&#x3D;cos(2*pi*n*(f&#x2F;fs));stem(n,xn)titl">
 <meta property="og:locale" content="en_US">
 <meta property="og:image" content="https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png">
 <meta property="article:published_time" content="2022-11-21T11:34:11.000Z">
@@ -1597,7 +1597,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
     debug: "env",
     cdn: {"js":{"app":"/js/app.js","parallax":"/js/plugins/parallax.js","rightMenu":"/js/plugins/rightMenu.js","rightMenus":"/js/plugins/rightMenus.js","sites":"/js/plugins/tags/sites.js","friends":"/js/plugins/tags/friends.js","contributors":"/js/plugins/tags/contributors.js","search":"/js/search/hexo.js"},"css":{"style":"/css/style.css"}},
     default: {"avatar":"https://unpkg.com/volantis-static@0.0.1654736714924/media/placeholder/avatar/round/3442075.svg","link":"https://unpkg.com/volantis-static@0.0.1654736714924/media/placeholder/link/8f277b4ee0ecd.svg","cover":"https://unpkg.com/volantis-static@0.0.1654736714924/media/placeholder/cover/76b86c0226ffd.svg","image":"https://unpkg.com/volantis-static@0.0.1654736714924/media/placeholder/image/2659360.svg"},
-    lastupdate: new Date(1765118762067),
+    lastupdate: new Date(1765119292905),
     sidebar: {
       for_page: ["blogger","category","tagcloud","webinfo","lastupdate"],
       for_post: ["toc"],
@@ -2421,7 +2421,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
   <div class="new-meta-item wordcount">
     <a class='notlink'>
       <i class="fa-solid fa-keyboard fa-fw" aria-hidden="true"></i>
-      <p>709 words</p>
+      <p>715 words</p>
     </a>
   </div>
   <div class="new-meta-item readtime">
@@ -2463,35 +2463,23 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
 
   <div id="layoutHelper-page-plugins"></div>
   <div id="post-body" itemprop="articleBody">
-    <p><img
-src="https://img-blog.csdnimg.cn/2f628f1e040b4a17858c972605177728.png" />
-因为之前MATLAB没有好好学，而且DSP也没有好好学，做起作业来十分困难，为了好好写作业，我又重新研究了DSP和MATLAB，学了一下信号的抽样和插值
-先看一看x(n)原本的图像 <img
-src="https://mfjblog-pic.oss-cn-beijing.aliyuncs.com/img/57f2faa1e035437a9b91824f33ef8d92.png" />
-代码如下</p>
+    <p><img src="https://img-blog.csdnimg.cn/2f628f1e040b4a17858c972605177728.png" class="lazyload" data-srcset="https://img-blog.csdnimg.cn/2f628f1e040b4a17858c972605177728.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt=" "><br>因为之前MATLAB没有好好学，而且DSP也没有好好学，做起作业来十分困难，为了好好写作业，我又重新研究了DSP和MATLAB，学了一下信号的抽样和插值<br>先看一看x(n)原本的图像<br><img src="https://mfjblog-pic.oss-cn-beijing.aliyuncs.com/img/57f2faa1e035437a9b91824f33ef8d92.png" class="lazyload" data-srcset="https://mfjblog-pic.oss-cn-beijing.aliyuncs.com/img/57f2faa1e035437a9b91824f33ef8d92.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt=" "><br>代码如下</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">%定义基本参数</span><br><span class="line">f=1;%原信号频率</span><br><span class="line">fs=16;%抽样信号频率</span><br><span class="line">N=52;%采样点数</span><br><span class="line">n=0:N-1;</span><br><span class="line"></span><br><span class="line">%画原序列图像</span><br><span class="line">xn=cos(2*pi*n*(f/fs));</span><br><span class="line">stem(n,xn)</span><br><span class="line">title(<span class="string">&#x27;原x(n)图像&#x27;</span>)</span><br><span class="line">xlabel(<span class="string">&#x27;n&#x27;</span>)</span><br><span class="line">ylabel(<span class="string">&#x27;幅度&#x27;</span>)</span><br></pre></td></tr></table></figure>
-<p>题目中说了f/fs=16，也就是说T=16，在图像中也吻合
-那么我们要将其进行4倍的抽样，该怎么做</p>
+<p>题目中说了f&#x2F;fs&#x3D;16，也就是说T&#x3D;16，在图像中也吻合<br>那么我们要将其进行4倍的抽样，该怎么做</p>
 <p>实现代码如下</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">%定义基本参数</span><br><span class="line">f=1;%原信号频率</span><br><span class="line">fs=16;%抽样信号频率</span><br><span class="line">N=52;%采样点数</span><br><span class="line">n=0:N-1;</span><br><span class="line"></span><br><span class="line">xn=cos(2*pi*n*(f/fs));</span><br><span class="line"></span><br><span class="line">%画M=4倍抽样的x(n)</span><br><span class="line">M=4;</span><br><span class="line">m=0:N/M-1;%52/4=13 13-1=12 0:12有13个点</span><br><span class="line">xn1=decimate(xn,M);%对序列进行抽样</span><br><span class="line">subplot(3,1,2)</span><br><span class="line">stem(m,xn1)%注意对上m和xn1</span><br><span class="line">title(<span class="string">&#x27;进行M=4倍抽取后的x(n)图像&#x27;</span>)</span><br><span class="line">xlabel(<span class="string">&#x27;n&#x27;</span>)</span><br><span class="line">ylabel(<span class="string">&#x27;幅度&#x27;</span>)</span><br></pre></td></tr></table></figure>
-<h2 id="抽样函数">抽样函数</h2>
-<p>其中decimate()函数的意思就是抽样</p>
+<h2 id="抽样函数"><a href="#抽样函数" class="headerlink" title="抽样函数"></a>抽样函数</h2><p>其中decimate()函数的意思就是抽样</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">decimate(xn,M)%表示对xn进行M倍的抽样，并不能进行插值</span><br></pre></td></tr></table></figure>
-<p><img
-src="https://mfjblog-pic.oss-cn-beijing.aliyuncs.com/img/5129206b19064355acfb0589f5961857.png" />
-注意看图像的横坐标，之前的T=16，现在的T=4</p>
+
+<p><img src="https://mfjblog-pic.oss-cn-beijing.aliyuncs.com/img/5129206b19064355acfb0589f5961857.png" class="lazyload" data-srcset="https://mfjblog-pic.oss-cn-beijing.aliyuncs.com/img/5129206b19064355acfb0589f5961857.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt=" "><br>注意看图像的横坐标，之前的T&#x3D;16，现在的T&#x3D;4</p>
 <p>下面对信号进行插值</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">%定义基本参数</span><br><span class="line">f=1;%原信号频率</span><br><span class="line">fs=16;%抽样信号频率</span><br><span class="line">N=52;%采样点数</span><br><span class="line">n=0:N-1;</span><br><span class="line"></span><br><span class="line">xn=cos(2*pi*n*(f/fs));</span><br><span class="line"></span><br><span class="line">%画L=3倍插值的x(n)</span><br><span class="line">L=3;</span><br><span class="line">xn2=interp(xn,L);</span><br><span class="line">p=0:N*L-1;</span><br><span class="line">stem(p,xn2)</span><br><span class="line">title(<span class="string">&#x27;进行L=3倍插值后的x(n)图像&#x27;</span>)</span><br><span class="line">xlabel(<span class="string">&#x27;n&#x27;</span>)</span><br><span class="line">ylabel(<span class="string">&#x27;幅度&#x27;</span>)</span><br></pre></td></tr></table></figure>
-<h2 id="插值函数">插值函数</h2>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">interp(xn,L);%表示对xn进行L的插值，L必须为正整数</span><br></pre></td></tr></table></figure>
-<p><img
-src="https://mfjblog-pic.oss-cn-beijing.aliyuncs.com/img/eed0c107e70843228fbf9d72221eb11b.png" />
-同样，观察横坐标，既然L=3，那么T就变成了48</p>
+<h2 id="插值函数"><a href="#插值函数" class="headerlink" title="插值函数"></a>插值函数</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">interp(xn,L);%表示对xn进行L的插值，L必须为正整数</span><br></pre></td></tr></table></figure>
+
+<p><img src="https://mfjblog-pic.oss-cn-beijing.aliyuncs.com/img/eed0c107e70843228fbf9d72221eb11b.png" class="lazyload" data-srcset="https://mfjblog-pic.oss-cn-beijing.aliyuncs.com/img/eed0c107e70843228fbf9d72221eb11b.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt=" "><br>同样，观察横坐标，既然L&#x3D;3，那么T就变成了48</p>
 <p><strong>在画图时要注意stem()里面的参数，常常会因为抽样点和信号对不上画不出来</strong></p>
-<h2 id="完整代码">完整代码</h2>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br></pre></td><td class="code"><pre><span class="line">clear</span><br><span class="line">close all</span><br><span class="line">clc</span><br><span class="line"></span><br><span class="line">%定义基本参数</span><br><span class="line">f=1;%原信号频率</span><br><span class="line">fs=16;%抽样信号频率</span><br><span class="line">N=52;%采样点数</span><br><span class="line">n=0:N-1;</span><br><span class="line"></span><br><span class="line">%画原序列图像</span><br><span class="line">xn=cos(2*pi*n*(f/fs));</span><br><span class="line">%subplot(3,1,1)</span><br><span class="line">stem(n,xn)</span><br><span class="line">title(<span class="string">&#x27;原x(n)图像&#x27;</span>)</span><br><span class="line">xlabel(<span class="string">&#x27;n&#x27;</span>)</span><br><span class="line">ylabel(<span class="string">&#x27;幅度&#x27;</span>)</span><br><span class="line"></span><br><span class="line">%画M=4倍抽样的x(n)</span><br><span class="line">M=4;</span><br><span class="line">m=0:N/M-1;%52/4=13 13-1=12 0:12有13个点</span><br><span class="line">xn1=decimate(xn,M);%对序列进行抽样</span><br><span class="line">subplot(3,1,2)</span><br><span class="line">stem(m,xn1)%注意对上m和xn1</span><br><span class="line">title(<span class="string">&#x27;进行M=4倍抽取后的x(n)图像&#x27;</span>)</span><br><span class="line">xlabel(<span class="string">&#x27;n&#x27;</span>)</span><br><span class="line">ylabel(<span class="string">&#x27;幅度&#x27;</span>)</span><br><span class="line"></span><br><span class="line">%画L=3倍插值的x(n)</span><br><span class="line">L=3;</span><br><span class="line">xn2=interp(xn,L);</span><br><span class="line">p=0:N*L-1;</span><br><span class="line">subplot(3,1,3)</span><br><span class="line">stem(p,xn2)</span><br><span class="line">title(<span class="string">&#x27;进行L=3倍插值后的x(n)图像&#x27;</span>)</span><br><span class="line">xlabel(<span class="string">&#x27;n&#x27;</span>)</span><br><span class="line">ylabel(<span class="string">&#x27;幅度&#x27;</span>)</span><br></pre></td></tr></table></figure>
-<p><img
-src="https://mfjblog-pic.oss-cn-beijing.aliyuncs.com/img/b94f7fca5ad34b91a6521bf20cd336d4.png" /></p>
+<h2 id="完整代码"><a href="#完整代码" class="headerlink" title="完整代码"></a>完整代码</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br></pre></td><td class="code"><pre><span class="line">clear</span><br><span class="line">close all</span><br><span class="line">clc</span><br><span class="line"></span><br><span class="line">%定义基本参数</span><br><span class="line">f=1;%原信号频率</span><br><span class="line">fs=16;%抽样信号频率</span><br><span class="line">N=52;%采样点数</span><br><span class="line">n=0:N-1;</span><br><span class="line"></span><br><span class="line">%画原序列图像</span><br><span class="line">xn=cos(2*pi*n*(f/fs));</span><br><span class="line">%subplot(3,1,1)</span><br><span class="line">stem(n,xn)</span><br><span class="line">title(<span class="string">&#x27;原x(n)图像&#x27;</span>)</span><br><span class="line">xlabel(<span class="string">&#x27;n&#x27;</span>)</span><br><span class="line">ylabel(<span class="string">&#x27;幅度&#x27;</span>)</span><br><span class="line"></span><br><span class="line">%画M=4倍抽样的x(n)</span><br><span class="line">M=4;</span><br><span class="line">m=0:N/M-1;%52/4=13 13-1=12 0:12有13个点</span><br><span class="line">xn1=decimate(xn,M);%对序列进行抽样</span><br><span class="line">subplot(3,1,2)</span><br><span class="line">stem(m,xn1)%注意对上m和xn1</span><br><span class="line">title(<span class="string">&#x27;进行M=4倍抽取后的x(n)图像&#x27;</span>)</span><br><span class="line">xlabel(<span class="string">&#x27;n&#x27;</span>)</span><br><span class="line">ylabel(<span class="string">&#x27;幅度&#x27;</span>)</span><br><span class="line"></span><br><span class="line">%画L=3倍插值的x(n)</span><br><span class="line">L=3;</span><br><span class="line">xn2=interp(xn,L);</span><br><span class="line">p=0:N*L-1;</span><br><span class="line">subplot(3,1,3)</span><br><span class="line">stem(p,xn2)</span><br><span class="line">title(<span class="string">&#x27;进行L=3倍插值后的x(n)图像&#x27;</span>)</span><br><span class="line">xlabel(<span class="string">&#x27;n&#x27;</span>)</span><br><span class="line">ylabel(<span class="string">&#x27;幅度&#x27;</span>)</span><br></pre></td></tr></table></figure>
+<p><img src="https://mfjblog-pic.oss-cn-beijing.aliyuncs.com/img/b94f7fca5ad34b91a6521bf20cd336d4.png" class="lazyload" data-srcset="https://mfjblog-pic.oss-cn-beijing.aliyuncs.com/img/b94f7fca5ad34b91a6521bf20cd336d4.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt=" "></p>
 
   </div>
   
@@ -2509,8 +2497,7 @@ src="https://mfjblog-pic.oss-cn-beijing.aliyuncs.com/img/b94f7fca5ad34b91a6521bf
             <blockquote>
               
                 
-                  <p>博客内容遵循 署名-非商业性使用-相同方式共享 4.0 国际 (CC BY-NC-SA
-4.0) 协议</p>
+                  <p>博客内容遵循 署名-非商业性使用-相同方式共享 4.0 国际 (CC BY-NC-SA 4.0) 协议</p>
 
                 
               
@@ -2617,20 +2604,17 @@ src="https://mfjblog-pic.oss-cn-beijing.aliyuncs.com/img/b94f7fca5ad34b91a6521bf
   
     <div class="prev-next">
       
-        <a class='prev' href='/2022/11/21/%E6%95%B0%E5%AD%97%E4%BF%A1%E5%8F%B7%E5%A4%84%E7%90%86MATLAB%E4%BD%9C%E4%B8%9A%E4%B8%80%EF%BC%88%E9%A2%98%E7%9B%AE+%E8%A7%A3%E7%AD%94%E4%BB%A3%E7%A0%81%EF%BC%89/'>
-          <p class='title'><i class="fa-solid fa-chevron-left" aria-hidden="true"></i>数字信号处理MATLAB作业一（题目+解答代码）</p>
-          <p class='content'>
-
-在这里插入图片描述
-
-123456789101112131415161718192021222324252627282930313233clear;close all;clc;A=[1 2 ...</p>
+        <a class='prev' href='/2022/11/22/%E6%95%B0%E5%AD%97%E4%BF%A1%E5%8F%B7%E5%A4%84%E7%90%86FFT%E5%BF%AB%E9%80%9F%E5%82%85%E7%AB%8B%E5%8F%B6%E5%8F%98%E6%8D%A2MATLAB%E5%AE%9E%E7%8E%B0%E2%80%94%E2%80%94%E5%AE%9E%E4%BE%8B/'>
+          <p class='title'><i class="fa-solid fa-chevron-left" aria-hidden="true"></i>数字信号处理FFT快速傅立叶变换MATLAB实现——实例</p>
+          <p class='content'>今天做作业的时候发现要对一个信号进行FFT变换，在网上找了半天也没找到个能看懂的（因为我太菜了），后来自己研究了一下，感觉一知半解的起因是这道作业题
+例题-满足奈奎斯特我画了两个图，一个是原信号...</p>
         </a>
       
       
-        <a class='next' href='/2022/11/21/%E4%BB%8E%E9%9B%B6%E5%BC%80%E5%A7%8B%E7%9A%84STM32F1%E8%AF%BE%E7%A8%8B%E5%AD%A6%E4%B9%A0(STM32CubeMX)/'>
-          <p class='title'>从零开始的STM32F1课程学习(STM32CubeMX)<i class="fa-solid fa-chevron-right" aria-hidden="true"></i></p>
-          <p class='content'>新学期新气象，新学期我们要学32了，之前虽然学了一点点，但是学的都不是很系统，这里终于能系统的学习一下32了，从原理角度进行一下学习。
-我的基本配置：STM32CubeMX、Jlink、STM3...</p>
+        <a class='next' href='/2022/11/21/%E6%95%B0%E5%AD%97%E4%BF%A1%E5%8F%B7%E5%A4%84%E7%90%86MATLAB%E4%BD%9C%E4%B8%9A%E4%B8%80%EF%BC%88%E9%A2%98%E7%9B%AE+%E8%A7%A3%E7%AD%94%E4%BB%A3%E7%A0%81%EF%BC%89/'>
+          <p class='title'>数字信号处理MATLAB作业一（题目+解答代码）<i class="fa-solid fa-chevron-right" aria-hidden="true"></i></p>
+          <p class='content'>
+123456789101112131415161718192021222324252627282930313233clear;close all;clc;A=[1 2 3 4];B=[3 4 ...</p>
         </a>
       
     </div>
@@ -2830,9 +2814,7 @@ src="https://mfjblog-pic.oss-cn-beijing.aliyuncs.com/img/b94f7fca5ad34b91a6521bf
       
     
       
-        <div><p>Blog content follows the <a
-target="_blank" rel="noopener" href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.en">Attribution-NonCommercial-ShareAlike
-4.0 International (CC BY-NC-SA 4.0) License</a></p>
+        <div><p>Blog content follows the <a target="_blank" rel="noopener" href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.en">Attribution-NonCommercial-ShareAlike 4.0 International (CC BY-NC-SA 4.0) License</a></p>
 </div>
       
     

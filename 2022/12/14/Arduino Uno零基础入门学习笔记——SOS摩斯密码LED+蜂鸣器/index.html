@@ -40,7 +40,7 @@
 <meta property="og:title" content="AArduino Uno零基础入门学习笔记——SOS摩斯密码LED+蜂鸣器">
 <meta property="og:url" content="https://mengfanjun020906.github.io/2022/12/14/Arduino%20Uno%E9%9B%B6%E5%9F%BA%E7%A1%80%E5%85%A5%E9%97%A8%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0%E2%80%94%E2%80%94SOS%E6%91%A9%E6%96%AF%E5%AF%86%E7%A0%81LED+%E8%9C%82%E9%B8%A3%E5%99%A8/index.html">
 <meta property="og:site_name" content="MengFanjun的博客">
-<meta property="og:description" content="一、电路图   在这里插入图片描述  二、程序 1234567891011121314151617181920212223242526272829303132333435363738394041424344int led&#x3D;5;int beep&#x3D;8;void setup() &amp;#123;  pinMode(beep,OUTPUT);  pinMode(led,OUTPUT);&amp;#125;void l">
+<meta property="og:description" content="一、电路图 二、程序1234567891011121314151617181920212223242526272829303132333435363738394041424344int led&#x3D;5;int beep&#x3D;8;void setup() &amp;#123;  pinMode(beep,OUTPUT);  pinMode(led,OUTPUT);&amp;#125;void loop() &amp;#123;">
 <meta property="og:locale" content="en_US">
 <meta property="og:image" content="https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png">
 <meta property="article:published_time" content="2022-12-14T11:30:38.000Z">
@@ -1596,7 +1596,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
     debug: "env",
     cdn: {"js":{"app":"/js/app.js","parallax":"/js/plugins/parallax.js","rightMenu":"/js/plugins/rightMenu.js","rightMenus":"/js/plugins/rightMenus.js","sites":"/js/plugins/tags/sites.js","friends":"/js/plugins/tags/friends.js","contributors":"/js/plugins/tags/contributors.js","search":"/js/search/hexo.js"},"css":{"style":"/css/style.css"}},
     default: {"avatar":"https://unpkg.com/volantis-static@0.0.1654736714924/media/placeholder/avatar/round/3442075.svg","link":"https://unpkg.com/volantis-static@0.0.1654736714924/media/placeholder/link/8f277b4ee0ecd.svg","cover":"https://unpkg.com/volantis-static@0.0.1654736714924/media/placeholder/cover/76b86c0226ffd.svg","image":"https://unpkg.com/volantis-static@0.0.1654736714924/media/placeholder/image/2659360.svg"},
-    lastupdate: new Date(1765118762067),
+    lastupdate: new Date(1765119292905),
     sidebar: {
       for_page: ["blogger","category","tagcloud","webinfo","lastupdate"],
       for_post: ["toc"],
@@ -2420,7 +2420,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
   <div class="new-meta-item wordcount">
     <a class='notlink'>
       <i class="fa-solid fa-keyboard fa-fw" aria-hidden="true"></i>
-      <p>133 words</p>
+      <p>117 words</p>
     </a>
   </div>
   <div class="new-meta-item readtime">
@@ -2462,22 +2462,9 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
 
   <div id="layoutHelper-page-plugins"></div>
   <div id="post-body" itemprop="articleBody">
-    <h1 id="一电路图">一、电路图</h1>
-<figure>
-<img
-src="https://mfjblog-pic.oss-cn-beijing.aliyuncs.com/img/f22ee9e87c3d408eaf971b8993efcfa3.png"
-alt="在这里插入图片描述" />
-<figcaption aria-hidden="true">在这里插入图片描述</figcaption>
-</figure>
-<h1 id="二程序">二、程序</h1>
-<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br></pre></td><td class="code"><pre><span class="line"><span class="type">int</span> led=<span class="number">5</span>;</span><br><span class="line"><span class="type">int</span> beep=<span class="number">8</span>;</span><br><span class="line"><span class="type">void</span> <span class="title function_">setup</span><span class="params">()</span> &#123;</span><br><span class="line">  pinMode(beep,OUTPUT);</span><br><span class="line">  pinMode(led,OUTPUT);</span><br><span class="line"></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="type">void</span> <span class="title function_">loop</span><span class="params">()</span></span><br><span class="line"> &#123;</span><br><span class="line">    sos();</span><br><span class="line">&#125;</span><br><span class="line"><span class="type">void</span> <span class="title function_">sos</span><span class="params">()</span></span><br><span class="line">&#123;</span><br><span class="line">  <span class="keyword">for</span>(<span class="type">int</span> a=<span class="number">0</span>;a&lt;<span class="number">3</span>;a++)</span><br><span class="line">  &#123;</span><br><span class="line">  digitalWrite(beep,LOW);</span><br><span class="line">  digitalWrite(led,HIGH);</span><br><span class="line">  delay(<span class="number">200</span>);</span><br><span class="line">  digitalWrite(beep,HIGH);</span><br><span class="line">  digitalWrite(led,LOW);</span><br><span class="line">  delay(<span class="number">200</span>);</span><br><span class="line">  &#125;</span><br><span class="line">  delay(<span class="number">2000</span>);</span><br><span class="line">  <span class="keyword">for</span>(<span class="type">int</span> b=<span class="number">0</span>;b&lt;<span class="number">3</span>;b++)</span><br><span class="line">  &#123;</span><br><span class="line">  digitalWrite(beep,LOW);</span><br><span class="line">  digitalWrite(led,HIGH);</span><br><span class="line">  delay(<span class="number">1000</span>);</span><br><span class="line">  digitalWrite(beep,HIGH);</span><br><span class="line">  digitalWrite(led,LOW);</span><br><span class="line">  delay(<span class="number">1000</span>);</span><br><span class="line">  &#125;</span><br><span class="line">    <span class="keyword">for</span>(<span class="type">int</span> b=<span class="number">0</span>;b&lt;<span class="number">3</span>;b++)</span><br><span class="line">  &#123;</span><br><span class="line">  digitalWrite(beep,LOW);</span><br><span class="line">  digitalWrite(led,HIGH);</span><br><span class="line">  delay(<span class="number">200</span>);</span><br><span class="line">  digitalWrite(beep,HIGH);</span><br><span class="line">  digitalWrite(led,LOW);</span><br><span class="line">  delay(<span class="number">200</span>);</span><br><span class="line">  &#125;</span><br><span class="line">  delay(<span class="number">2000</span>);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<h1 id="三效果">三、效果</h1>
-<figure>
-<img
-src="https://mfjblog-pic.oss-cn-beijing.aliyuncs.com/img/0488651cda894372b6ac691cae3d1641.gif"
-alt="请添加图片描述" />
-<figcaption aria-hidden="true">请添加图片描述</figcaption>
-</figure>
+    <h1 id="一、电路图"><a href="#一、电路图" class="headerlink" title="一、电路图"></a>一、电路图</h1><p><img src="https://mfjblog-pic.oss-cn-beijing.aliyuncs.com/img/f22ee9e87c3d408eaf971b8993efcfa3.png" class="lazyload" data-srcset="https://mfjblog-pic.oss-cn-beijing.aliyuncs.com/img/f22ee9e87c3d408eaf971b8993efcfa3.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="在这里插入图片描述"></p>
+<h1 id="二、程序"><a href="#二、程序" class="headerlink" title="二、程序"></a>二、程序</h1><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br></pre></td><td class="code"><pre><span class="line"><span class="type">int</span> led=<span class="number">5</span>;</span><br><span class="line"><span class="type">int</span> beep=<span class="number">8</span>;</span><br><span class="line"><span class="type">void</span> <span class="title function_">setup</span><span class="params">()</span> &#123;</span><br><span class="line">  pinMode(beep,OUTPUT);</span><br><span class="line">  pinMode(led,OUTPUT);</span><br><span class="line"></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="type">void</span> <span class="title function_">loop</span><span class="params">()</span></span><br><span class="line"> &#123;</span><br><span class="line">    sos();</span><br><span class="line">&#125;</span><br><span class="line"><span class="type">void</span> <span class="title function_">sos</span><span class="params">()</span></span><br><span class="line">&#123;</span><br><span class="line">  <span class="keyword">for</span>(<span class="type">int</span> a=<span class="number">0</span>;a&lt;<span class="number">3</span>;a++)</span><br><span class="line">  &#123;</span><br><span class="line">  digitalWrite(beep,LOW);</span><br><span class="line">  digitalWrite(led,HIGH);</span><br><span class="line">  delay(<span class="number">200</span>);</span><br><span class="line">  digitalWrite(beep,HIGH);</span><br><span class="line">  digitalWrite(led,LOW);</span><br><span class="line">  delay(<span class="number">200</span>);</span><br><span class="line">  &#125;</span><br><span class="line">  delay(<span class="number">2000</span>);</span><br><span class="line">  <span class="keyword">for</span>(<span class="type">int</span> b=<span class="number">0</span>;b&lt;<span class="number">3</span>;b++)</span><br><span class="line">  &#123;</span><br><span class="line">  digitalWrite(beep,LOW);</span><br><span class="line">  digitalWrite(led,HIGH);</span><br><span class="line">  delay(<span class="number">1000</span>);</span><br><span class="line">  digitalWrite(beep,HIGH);</span><br><span class="line">  digitalWrite(led,LOW);</span><br><span class="line">  delay(<span class="number">1000</span>);</span><br><span class="line">  &#125;</span><br><span class="line">    <span class="keyword">for</span>(<span class="type">int</span> b=<span class="number">0</span>;b&lt;<span class="number">3</span>;b++)</span><br><span class="line">  &#123;</span><br><span class="line">  digitalWrite(beep,LOW);</span><br><span class="line">  digitalWrite(led,HIGH);</span><br><span class="line">  delay(<span class="number">200</span>);</span><br><span class="line">  digitalWrite(beep,HIGH);</span><br><span class="line">  digitalWrite(led,LOW);</span><br><span class="line">  delay(<span class="number">200</span>);</span><br><span class="line">  &#125;</span><br><span class="line">  delay(<span class="number">2000</span>);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h1 id="三、效果"><a href="#三、效果" class="headerlink" title="三、效果"></a>三、效果</h1><p><img src="https://mfjblog-pic.oss-cn-beijing.aliyuncs.com/img/0488651cda894372b6ac691cae3d1641.gif" class="lazyload" data-srcset="https://mfjblog-pic.oss-cn-beijing.aliyuncs.com/img/0488651cda894372b6ac691cae3d1641.gif" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="请添加图片描述"></p>
 
   </div>
   
@@ -2495,8 +2482,7 @@ alt="请添加图片描述" />
             <blockquote>
               
                 
-                  <p>博客内容遵循 署名-非商业性使用-相同方式共享 4.0 国际 (CC BY-NC-SA
-4.0) 协议</p>
+                  <p>博客内容遵循 署名-非商业性使用-相同方式共享 4.0 国际 (CC BY-NC-SA 4.0) 协议</p>
 
                 
               
@@ -2605,14 +2591,11 @@ alt="请添加图片描述" />
       
         <a class='prev' href='/2022/12/15/Arduino%20Uno%E9%9B%B6%E5%9F%BA%E7%A1%80%E5%85%A5%E9%97%A8%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0%E2%80%94%E2%80%94%E4%B8%89%E9%92%88%E8%84%9A%E5%A3%B0%E9%9F%B3%E4%BC%A0%E6%84%9F%E5%99%A8/'>
           <p class='title'><i class="fa-solid fa-chevron-left" aria-hidden="true"></i>Arduino Uno零基础入门学习笔记——三针脚声音传感器</p>
-          <p class='content'>一、电路接线
-声音传感器
-
+          <p class='content'>一、电路接线声音传感器
 
 
 声音传感器引脚
 Arduino引脚
-
 
 
 
@@ -2628,9 +2611,7 @@ OUT
 6
 
 
-
 LED
-
 
 
 LED引脚
@@ -2638,22 +2619,21 @@ Arduino引脚
 
 
 
-
 正极
-8...</p>
+8
+
+
+GND...</p>
         </a>
       
       
         <a class='next' href='/2022/12/14/Arduino%20Uno%E9%9B%B6%E5%9F%BA%E7%A1%80%E5%85%A5%E9%97%A8%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0%E2%80%94%E2%80%94%E6%99%BA%E8%83%BD%E9%97%A8%E9%94%81(%E6%97%A0%E8%88%B5%E6%9C%BA)/'>
           <p class='title'>Arduino Uno零基础入门学习笔记——智能门锁(无舵机)<i class="fa-solid fa-chevron-right" aria-hidden="true"></i></p>
-          <p class='content'>一、电路接线
-RFID-RC522
-
+          <p class='content'>一、电路接线RFID-RC522
 
 
 RC522引脚号
 Arduino板引脚号
-
 
 
 
@@ -2677,7 +2657,8 @@ SCK
 13
 
 
-S...</p>
+SDA
+...</p>
         </a>
       
     </div>
@@ -2877,9 +2858,7 @@ S...</p>
       
     
       
-        <div><p>Blog content follows the <a
-target="_blank" rel="noopener" href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.en">Attribution-NonCommercial-ShareAlike
-4.0 International (CC BY-NC-SA 4.0) License</a></p>
+        <div><p>Blog content follows the <a target="_blank" rel="noopener" href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.en">Attribution-NonCommercial-ShareAlike 4.0 International (CC BY-NC-SA 4.0) License</a></p>
 </div>
       
     

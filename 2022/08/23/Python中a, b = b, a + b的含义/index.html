@@ -40,7 +40,7 @@
 <meta property="og:title" content="Python中a, b &#x3D; b, a + b的含义">
 <meta property="og:url" content="https://mengfanjun020906.github.io/2022/08/23/Python%E4%B8%ADa,%20b%20=%20b,%20a%20+%20b%E7%9A%84%E5%90%AB%E4%B9%89/index.html">
 <meta property="og:site_name" content="MengFanjun的博客">
-<meta property="og:description" content="现在在学Python的基础，看了一道斐波那契数列的练习题，看到了如下结构 12345a &#x3D; 0b &#x3D; 1for _ in range(20): # _表示占位符    a, b &#x3D; b, a + b    print(a, end&#x3D;&amp;#x27; &amp;#x27;)#end&#x3D;&amp;#x27; &amp;#x27;表示关闭自动换行 循环里面的那一行就是看不懂，后来自己去查了查资料，才明白  1.计算&#x3D;右边的a+b">
+<meta property="og:description" content="现在在学Python的基础，看了一道斐波那契数列的练习题，看到了如下结构 12345a &#x3D; 0b &#x3D; 1for _ in range(20): # _表示占位符    a, b &#x3D; b, a + b    print(a, end&#x3D;&amp;#x27; &amp;#x27;)#end&#x3D;&amp;#x27; &amp;#x27;表示关闭自动换行 循环里面的那一行就是看不懂，后来自己去查了查资料，才明白  1.计算&#x3D;右边的">
 <meta property="og:locale" content="en_US">
 <meta property="og:image" content="https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png">
 <meta property="article:published_time" content="2022-08-23T11:30:28.000Z">
@@ -1596,7 +1596,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
     debug: "env",
     cdn: {"js":{"app":"/js/app.js","parallax":"/js/plugins/parallax.js","rightMenu":"/js/plugins/rightMenu.js","rightMenus":"/js/plugins/rightMenus.js","sites":"/js/plugins/tags/sites.js","friends":"/js/plugins/tags/friends.js","contributors":"/js/plugins/tags/contributors.js","search":"/js/search/hexo.js"},"css":{"style":"/css/style.css"}},
     default: {"avatar":"https://unpkg.com/volantis-static@0.0.1654736714924/media/placeholder/avatar/round/3442075.svg","link":"https://unpkg.com/volantis-static@0.0.1654736714924/media/placeholder/link/8f277b4ee0ecd.svg","cover":"https://unpkg.com/volantis-static@0.0.1654736714924/media/placeholder/cover/76b86c0226ffd.svg","image":"https://unpkg.com/volantis-static@0.0.1654736714924/media/placeholder/image/2659360.svg"},
-    lastupdate: new Date(1765118762067),
+    lastupdate: new Date(1765119292905),
     sidebar: {
       for_page: ["blogger","category","tagcloud","webinfo","lastupdate"],
       for_post: ["toc"],
@@ -2410,7 +2410,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
   <div class="new-meta-item wordcount">
     <a class='notlink'>
       <i class="fa-solid fa-keyboard fa-fw" aria-hidden="true"></i>
-      <p>257 words</p>
+      <p>281 words</p>
     </a>
   </div>
   <div class="new-meta-item readtime">
@@ -2456,20 +2456,17 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">a = <span class="number">0</span></span><br><span class="line">b = <span class="number">1</span></span><br><span class="line"><span class="keyword">for</span> _ <span class="keyword">in</span> <span class="built_in">range</span>(<span class="number">20</span>): <span class="comment"># _表示占位符</span></span><br><span class="line">    a, b = b, a + b</span><br><span class="line">    <span class="built_in">print</span>(a, end=<span class="string">&#x27; &#x27;</span>)<span class="comment">#end=&#x27; &#x27;表示关闭自动换行</span></span><br></pre></td></tr></table></figure>
 <p>循环里面的那一行就是看不懂，后来自己去查了查资料，才明白</p>
 <blockquote>
-<p>1.计算=右边的a+b</p>
+<p>1.计算&#x3D;右边的a+b</p>
 </blockquote>
 <blockquote>
-<p>2.a=b</p>
+<p>2.a&#x3D;b</p>
 </blockquote>
 <blockquote>
-<p>3.b=a+b</p>
+<p>3.b&#x3D;a+b</p>
 </blockquote>
 <p>顺序其实就是这样的，那么上面程序运行的结果就是</p>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="number">1</span> <span class="number">1</span> <span class="number">2</span> <span class="number">3</span> <span class="number">5</span> <span class="number">8</span> <span class="number">13</span> <span class="number">21</span> <span class="number">34</span> <span class="number">55</span> <span class="number">89</span> <span class="number">144</span> <span class="number">233</span> <span class="number">377</span> <span class="number">610</span> <span class="number">987</span> <span class="number">1597</span> <span class="number">2584</span> <span class="number">4181</span> <span class="number">6765</span> </span><br></pre></td></tr></table></figure>
-<p>解释：第一轮a=0,b=1,先进行了等号右边的计算a+b=1,赋值之后，a=b=1,b=a+b=1。
-第二轮a=1,b=1,先进行了等号右边的计算a+b=2,赋值之后，a=b=1,b=a+b=2。
-第三轮a=1,b=2,先进行了等号右边的计算a+b=2,赋值之后，a=b=2,b=a+b=3。
-以此类推，后面的结果就出来了</p>
+<p>解释：第一轮a&#x3D;0,b&#x3D;1,先进行了等号右边的计算a+b&#x3D;1,赋值之后，a&#x3D;b&#x3D;1,b&#x3D;a+b&#x3D;1。<br>第二轮a&#x3D;1,b&#x3D;1,先进行了等号右边的计算a+b&#x3D;2,赋值之后，a&#x3D;b&#x3D;1,b&#x3D;a+b&#x3D;2。<br>第三轮a&#x3D;1,b&#x3D;2,先进行了等号右边的计算a+b&#x3D;2,赋值之后，a&#x3D;b&#x3D;2,b&#x3D;a+b&#x3D;3。<br>以此类推，后面的结果就出来了</p>
 
   </div>
   
@@ -2487,8 +2484,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
             <blockquote>
               
                 
-                  <p>博客内容遵循 署名-非商业性使用-相同方式共享 4.0 国际 (CC BY-NC-SA
-4.0) 协议</p>
+                  <p>博客内容遵循 署名-非商业性使用-相同方式共享 4.0 国际 (CC BY-NC-SA 4.0) 协议</p>
 
                 
               
@@ -2599,17 +2595,15 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
           <p class='title'><i class="fa-solid fa-chevron-left" aria-hidden="true"></i>pip install清华镜像源</p>
           <p class='content'>1pip install -i https://pypi.tuna.tsinghua.edu.cn/simple  xxx
 
-使用方法： 1.将这段话复制到你虚拟环境下 2.将xxx改成你需要的...</p>
+
+使用方法：1.将这段话复制到你虚拟环境下2.将xxx改成你需要的包...</p>
         </a>
       
       
         <a class='next' href='/2022/08/14/%E8%93%9D%E6%A1%A5%E6%9D%AF%E5%8D%95%E7%89%87%E6%9C%BA%E5%B8%B8%E7%94%A8%E6%A8%A1%E5%9D%97(%E8%87%AA%E7%94%A8)/'>
           <p class='title'>蓝桥杯单片机常用模块(自用)<i class="fa-solid fa-chevron-right" aria-hidden="true"></i></p>
-          <p class='content'>关于我写的程序啥都不是还有脸上传的事
-之前一直在用txt记笔记，但是后来因为代码太多了，所以想到了记到csdn上
-下面是正文，无顺序，想到哪写到哪。
-一些基础的
--在138译码器中，前3位代表5...</p>
+          <p class='content'>关于我写的程序啥都不是还有脸上传的事之前一直在用txt记笔记，但是后来因为代码太多了，所以想到了记到csdn上下面是正文，无顺序，想到哪写到哪。
+一些基础的 -在138译码器中，前3位代表5 6...</p>
         </a>
       
     </div>
@@ -2799,9 +2793,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
       
     
       
-        <div><p>Blog content follows the <a
-target="_blank" rel="noopener" href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.en">Attribution-NonCommercial-ShareAlike
-4.0 International (CC BY-NC-SA 4.0) License</a></p>
+        <div><p>Blog content follows the <a target="_blank" rel="noopener" href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.en">Attribution-NonCommercial-ShareAlike 4.0 International (CC BY-NC-SA 4.0) License</a></p>
 </div>
       
     

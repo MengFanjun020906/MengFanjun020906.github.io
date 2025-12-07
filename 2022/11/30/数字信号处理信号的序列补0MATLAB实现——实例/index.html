@@ -40,7 +40,7 @@
 <meta property="og:title" content="数字信号处理信号的序列补0MATLAB实现——实例">
 <meta property="og:url" content="https://mengfanjun020906.github.io/2022/11/30/%E6%95%B0%E5%AD%97%E4%BF%A1%E5%8F%B7%E5%A4%84%E7%90%86%E4%BF%A1%E5%8F%B7%E7%9A%84%E5%BA%8F%E5%88%97%E8%A1%A50MATLAB%E5%AE%9E%E7%8E%B0%E2%80%94%E2%80%94%E5%AE%9E%E4%BE%8B/index.html">
 <meta property="og:site_name" content="MengFanjun的博客">
-<meta property="og:description" content="这里我们直接展示补0的核心代码 生成三角波和反三角波 123456789101112N&#x3D;8;n&#x3D;0:7;x1&#x3D;zeros(size(n));x2&#x3D;zeros(size(n));xa&#x3D;(n&gt;&#x3D;0)&amp;(n&lt;&#x3D;3);x1(xa)&#x3D;n(xa);x2(xa)&#x3D;4-n(xa);xa&#x3D;(n&gt;&#x3D;4)&amp;(n&lt;&#x3D;7);x1(xa)&#x3D;8-n(xa);x2(xa)&#x3D;n(xa)-4">
+<meta property="og:description" content="这里我们直接展示补0的核心代码 生成三角波和反三角波123456789101112N&#x3D;8;n&#x3D;0:7;x1&#x3D;zeros(size(n));x2&#x3D;zeros(size(n));xa&#x3D;(n&gt;&#x3D;0)&amp;(n&lt;&#x3D;3);x1(xa)&#x3D;n(xa);x2(xa)&#x3D;4-n(xa);xa&#x3D;(n&gt;&#x3D;4)&amp;(n&lt;&#x3D;7);x1(xa)&#x3D;8-n(xa);x2(xa)&#x3D;n(xa)-4;">
 <meta property="og:locale" content="en_US">
 <meta property="og:image" content="https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png">
 <meta property="article:published_time" content="2022-11-30T09:14:34.000Z">
@@ -1598,7 +1598,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
     debug: "env",
     cdn: {"js":{"app":"/js/app.js","parallax":"/js/plugins/parallax.js","rightMenu":"/js/plugins/rightMenu.js","rightMenus":"/js/plugins/rightMenus.js","sites":"/js/plugins/tags/sites.js","friends":"/js/plugins/tags/friends.js","contributors":"/js/plugins/tags/contributors.js","search":"/js/search/hexo.js"},"css":{"style":"/css/style.css"}},
     default: {"avatar":"https://unpkg.com/volantis-static@0.0.1654736714924/media/placeholder/avatar/round/3442075.svg","link":"https://unpkg.com/volantis-static@0.0.1654736714924/media/placeholder/link/8f277b4ee0ecd.svg","cover":"https://unpkg.com/volantis-static@0.0.1654736714924/media/placeholder/cover/76b86c0226ffd.svg","image":"https://unpkg.com/volantis-static@0.0.1654736714924/media/placeholder/image/2659360.svg"},
-    lastupdate: new Date(1765118762067),
+    lastupdate: new Date(1765119292905),
     sidebar: {
       for_page: ["blogger","category","tagcloud","webinfo","lastupdate"],
       for_post: ["toc"],
@@ -2422,7 +2422,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
   <div class="new-meta-item wordcount">
     <a class='notlink'>
       <i class="fa-solid fa-keyboard fa-fw" aria-hidden="true"></i>
-      <p>352 words</p>
+      <p>342 words</p>
     </a>
   </div>
   <div class="new-meta-item readtime">
@@ -2464,21 +2464,11 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
 
   <div id="layoutHelper-page-plugins"></div>
   <div id="post-body" itemprop="articleBody">
-    <p><img
-src="https://mfjblog-pic.oss-cn-beijing.aliyuncs.com/img/808fd56e822c45aa9947fe636e65da09.png"
-alt="在这里插入图片描述" /> 这里我们直接展示补0的核心代码</p>
-<h1 id="生成三角波和反三角波">生成三角波和反三角波</h1>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">N=8;</span><br><span class="line">n=0:7;</span><br><span class="line">x1=zeros(size(n));</span><br><span class="line">x2=zeros(size(n));</span><br><span class="line"></span><br><span class="line">xa=(n&gt;=0)&amp;(n&lt;=3);</span><br><span class="line">x1(xa)=n(xa);</span><br><span class="line">x2(xa)=4-n(xa);</span><br><span class="line"></span><br><span class="line">xa=(n&gt;=4)&amp;(n&lt;=7);</span><br><span class="line">x1(xa)=8-n(xa);</span><br><span class="line">x2(xa)=n(xa)-4;</span><br></pre></td></tr></table></figure>
-<h1 id="对序列进行后面补0">对序列进行后面补0</h1>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">tempx1=zeros(1,24);%创造一个1行24个0的序列</span><br><span class="line">x11=[x1,tempx1];%将原本的x1序列和24个0的序列合并</span><br><span class="line">tempx2=zeros(1,24);%创造一个1行24个0的序列</span><br><span class="line">x22=[x2,tempx2];%将原本的x2序列和24个0的序列合并</span><br></pre></td></tr></table></figure>
-<h1 id="完整代码">完整代码</h1>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br></pre></td><td class="code"><pre><span class="line">clear</span><br><span class="line">close all</span><br><span class="line">clc</span><br><span class="line"></span><br><span class="line">N=8;</span><br><span class="line">n=0:7;</span><br><span class="line">x1=zeros(size(n));</span><br><span class="line">x2=zeros(size(n));</span><br><span class="line"></span><br><span class="line">xa=(n&gt;=0)&amp;(n&lt;=3);</span><br><span class="line">x1(xa)=n(xa);</span><br><span class="line">x2(xa)=4-n(xa);</span><br><span class="line"></span><br><span class="line">xa=(n&gt;=4)&amp;(n&lt;=7);</span><br><span class="line">x1(xa)=8-n(xa);</span><br><span class="line">x2(xa)=n(xa)-4;</span><br><span class="line">N2=32;</span><br><span class="line">n2=0:31;</span><br><span class="line">tempx1=zeros(1,24);</span><br><span class="line">x11=[x1,tempx1];</span><br><span class="line">tempx2=zeros(1,24);</span><br><span class="line">x22=[x2,tempx2];</span><br><span class="line"></span><br><span class="line">fp11=fft(x11);</span><br><span class="line">fp11=abs(fp11); </span><br><span class="line">fp22=fft(x22);</span><br><span class="line">fp22=abs(fp22);</span><br><span class="line"></span><br><span class="line">subplot(2,2,1);stem(n2,x11);xlabel(<span class="string">&#x27;n&#x27;</span>);ylabel(<span class="string">&#x27;时域特性&#x27;</span>);title(<span class="string">&#x27;补0后三角波序列&#x27;</span>); </span><br><span class="line">subplot(2,2,2);stem(n2,fp11);xlabel(<span class="string">&#x27;n&#x27;</span>);ylabel(<span class="string">&#x27;幅频特性&#x27;</span>);title(<span class="string">&#x27;补0后三角波序列&#x27;</span>); </span><br><span class="line">subplot(2,2,3);stem(n2,x22);xlabel(<span class="string">&#x27;n&#x27;</span>);ylabel(<span class="string">&#x27;时域特性&#x27;</span>);title(<span class="string">&#x27;补0后反三角波序列&#x27;</span>); </span><br><span class="line">subplot(2,2,4);stem(n2,fp22);xlabel(<span class="string">&#x27;n&#x27;</span>);ylabel(<span class="string">&#x27;幅频特性&#x27;</span>);title(<span class="string">&#x27;补0后反三角波序列&#x27;</span>);</span><br></pre></td></tr></table></figure>
-<figure>
-<img
-src="https://mfjblog-pic.oss-cn-beijing.aliyuncs.com/img/a1b160bdae694d07a88a131ce098ddf0.png"
-alt="在这里插入图片描述" />
-<figcaption aria-hidden="true">在这里插入图片描述</figcaption>
-</figure>
+    <p><img src="https://mfjblog-pic.oss-cn-beijing.aliyuncs.com/img/808fd56e822c45aa9947fe636e65da09.png" class="lazyload" data-srcset="https://mfjblog-pic.oss-cn-beijing.aliyuncs.com/img/808fd56e822c45aa9947fe636e65da09.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="在这里插入图片描述"><br>这里我们直接展示补0的核心代码</p>
+<h1 id="生成三角波和反三角波"><a href="#生成三角波和反三角波" class="headerlink" title="生成三角波和反三角波"></a>生成三角波和反三角波</h1><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">N=8;</span><br><span class="line">n=0:7;</span><br><span class="line">x1=zeros(size(n));</span><br><span class="line">x2=zeros(size(n));</span><br><span class="line"></span><br><span class="line">xa=(n&gt;=0)&amp;(n&lt;=3);</span><br><span class="line">x1(xa)=n(xa);</span><br><span class="line">x2(xa)=4-n(xa);</span><br><span class="line"></span><br><span class="line">xa=(n&gt;=4)&amp;(n&lt;=7);</span><br><span class="line">x1(xa)=8-n(xa);</span><br><span class="line">x2(xa)=n(xa)-4;</span><br></pre></td></tr></table></figure>
+<h1 id="对序列进行后面补0"><a href="#对序列进行后面补0" class="headerlink" title="对序列进行后面补0"></a>对序列进行后面补0</h1><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">tempx1=zeros(1,24);%创造一个1行24个0的序列</span><br><span class="line">x11=[x1,tempx1];%将原本的x1序列和24个0的序列合并</span><br><span class="line">tempx2=zeros(1,24);%创造一个1行24个0的序列</span><br><span class="line">x22=[x2,tempx2];%将原本的x2序列和24个0的序列合并</span><br></pre></td></tr></table></figure>
+<h1 id="完整代码"><a href="#完整代码" class="headerlink" title="完整代码"></a>完整代码</h1><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br></pre></td><td class="code"><pre><span class="line">clear</span><br><span class="line">close all</span><br><span class="line">clc</span><br><span class="line"></span><br><span class="line">N=8;</span><br><span class="line">n=0:7;</span><br><span class="line">x1=zeros(size(n));</span><br><span class="line">x2=zeros(size(n));</span><br><span class="line"></span><br><span class="line">xa=(n&gt;=0)&amp;(n&lt;=3);</span><br><span class="line">x1(xa)=n(xa);</span><br><span class="line">x2(xa)=4-n(xa);</span><br><span class="line"></span><br><span class="line">xa=(n&gt;=4)&amp;(n&lt;=7);</span><br><span class="line">x1(xa)=8-n(xa);</span><br><span class="line">x2(xa)=n(xa)-4;</span><br><span class="line">N2=32;</span><br><span class="line">n2=0:31;</span><br><span class="line">tempx1=zeros(1,24);</span><br><span class="line">x11=[x1,tempx1];</span><br><span class="line">tempx2=zeros(1,24);</span><br><span class="line">x22=[x2,tempx2];</span><br><span class="line"></span><br><span class="line">fp11=fft(x11);</span><br><span class="line">fp11=abs(fp11); </span><br><span class="line">fp22=fft(x22);</span><br><span class="line">fp22=abs(fp22);</span><br><span class="line"></span><br><span class="line">subplot(2,2,1);stem(n2,x11);xlabel(<span class="string">&#x27;n&#x27;</span>);ylabel(<span class="string">&#x27;时域特性&#x27;</span>);title(<span class="string">&#x27;补0后三角波序列&#x27;</span>); </span><br><span class="line">subplot(2,2,2);stem(n2,fp11);xlabel(<span class="string">&#x27;n&#x27;</span>);ylabel(<span class="string">&#x27;幅频特性&#x27;</span>);title(<span class="string">&#x27;补0后三角波序列&#x27;</span>); </span><br><span class="line">subplot(2,2,3);stem(n2,x22);xlabel(<span class="string">&#x27;n&#x27;</span>);ylabel(<span class="string">&#x27;时域特性&#x27;</span>);title(<span class="string">&#x27;补0后反三角波序列&#x27;</span>); </span><br><span class="line">subplot(2,2,4);stem(n2,fp22);xlabel(<span class="string">&#x27;n&#x27;</span>);ylabel(<span class="string">&#x27;幅频特性&#x27;</span>);title(<span class="string">&#x27;补0后反三角波序列&#x27;</span>);</span><br></pre></td></tr></table></figure>
+<p><img src="https://mfjblog-pic.oss-cn-beijing.aliyuncs.com/img/a1b160bdae694d07a88a131ce098ddf0.png" class="lazyload" data-srcset="https://mfjblog-pic.oss-cn-beijing.aliyuncs.com/img/a1b160bdae694d07a88a131ce098ddf0.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="在这里插入图片描述"></p>
 
   </div>
   
@@ -2496,8 +2486,7 @@ alt="在这里插入图片描述" />
             <blockquote>
               
                 
-                  <p>博客内容遵循 署名-非商业性使用-相同方式共享 4.0 国际 (CC BY-NC-SA
-4.0) 协议</p>
+                  <p>博客内容遵循 署名-非商业性使用-相同方式共享 4.0 国际 (CC BY-NC-SA 4.0) 协议</p>
 
                 
               
@@ -2606,18 +2595,15 @@ alt="在这里插入图片描述" />
       
         <a class='prev' href='/2022/11/30/%E6%95%B0%E5%AD%97%E4%BF%A1%E5%8F%B7%E5%A4%84%E7%90%86MATLAB%E4%BD%9C%E4%B8%9A%E4%B8%89%EF%BC%88%E9%A2%98%E7%9B%AE+%E8%A7%A3%E7%AD%94%E4%BB%A3%E7%A0%81%EF%BC%89/'>
           <p class='title'><i class="fa-solid fa-chevron-left" aria-hidden="true"></i>数字信号处理MATLAB作业三（题目+解答代码）</p>
-          <p class='content'>
-这题原本画出来就四条谱线，除了频率0的直流分量，就三根了，太少了，为了看着方便，我自己增加了序列
-12345678910111213clearclose allclcn=0:8;x=[4 3 ...</p>
+          <p class='content'>这题原本画出来就四条谱线，除了频率0的直流分量，就三根了，太少了，为了看着方便，我自己增加了序列
+12345678910111213clearclose allclcn=0:8;x=[4 3 2...</p>
         </a>
       
       
         <a class='next' href='/2022/11/28/%E6%95%B0%E5%AD%97%E4%BF%A1%E5%8F%B7%E5%A4%84%E7%90%86%E4%BF%A1%E5%8F%B7%E7%9A%84%E5%9C%86%E5%91%A8%E5%8D%B7%E7%A7%AFMATLAB%E5%AE%9E%E7%8E%B0%E2%80%94%E2%80%94%E5%AE%9E%E4%BE%8B/'>
           <p class='title'>数字信号处理信号的圆周卷积MATLAB实现——实例<i class="fa-solid fa-chevron-right" aria-hidden="true"></i></p>
-          <p class='content'>
-xa(n)是高斯序列 xb(n)是衰减正弦序列 线性卷积很简单，利用conv函数就可以
-那么圆周卷积要怎么实现呢
-12345678910111213141516171819202122clc;...</p>
+          <p class='content'>xa(n)是高斯序列xb(n)是衰减正弦序列线性卷积很简单，利用conv函数就可以那么圆周卷积要怎么实现呢
+12345678910111213141516171819202122clc; n1=...</p>
         </a>
       
     </div>
@@ -2817,9 +2803,7 @@ xa(n)是高斯序列 xb(n)是衰减正弦序列 线性卷积很简单，利用co
       
     
       
-        <div><p>Blog content follows the <a
-target="_blank" rel="noopener" href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.en">Attribution-NonCommercial-ShareAlike
-4.0 International (CC BY-NC-SA 4.0) License</a></p>
+        <div><p>Blog content follows the <a target="_blank" rel="noopener" href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.en">Attribution-NonCommercial-ShareAlike 4.0 International (CC BY-NC-SA 4.0) License</a></p>
 </div>
       
     

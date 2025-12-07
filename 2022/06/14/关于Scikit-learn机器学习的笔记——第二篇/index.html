@@ -1597,7 +1597,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
     debug: "env",
     cdn: {"js":{"app":"/js/app.js","parallax":"/js/plugins/parallax.js","rightMenu":"/js/plugins/rightMenu.js","rightMenus":"/js/plugins/rightMenus.js","sites":"/js/plugins/tags/sites.js","friends":"/js/plugins/tags/friends.js","contributors":"/js/plugins/tags/contributors.js","search":"/js/search/hexo.js"},"css":{"style":"/css/style.css"}},
     default: {"avatar":"https://unpkg.com/volantis-static@0.0.1654736714924/media/placeholder/avatar/round/3442075.svg","link":"https://unpkg.com/volantis-static@0.0.1654736714924/media/placeholder/link/8f277b4ee0ecd.svg","cover":"https://unpkg.com/volantis-static@0.0.1654736714924/media/placeholder/cover/76b86c0226ffd.svg","image":"https://unpkg.com/volantis-static@0.0.1654736714924/media/placeholder/image/2659360.svg"},
-    lastupdate: new Date(1765118762067),
+    lastupdate: new Date(1765119292905),
     sidebar: {
       for_page: ["blogger","category","tagcloud","webinfo","lastupdate"],
       for_post: ["toc"],
@@ -2421,7 +2421,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
   <div class="new-meta-item wordcount">
     <a class='notlink'>
       <i class="fa-solid fa-keyboard fa-fw" aria-hidden="true"></i>
-      <p>401 words</p>
+      <p>403 words</p>
     </a>
   </div>
   <div class="new-meta-item readtime">
@@ -2463,23 +2463,18 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
 
   <div id="layoutHelper-page-plugins"></div>
   <div id="post-body" itemprop="articleBody">
-    <p>视频教程：<a
-target="_blank" rel="noopener" href="https://www.bilibili.com/video/BV1xW411Y7Qd?p=5&amp;share_source=copy_web">【莫烦Python】Scikit-learn
-(sklearn) 优雅地学会机器学习</a></p>
+    <p>视频教程：<a target="_blank" rel="noopener" href="https://www.bilibili.com/video/BV1xW411Y7Qd?p=5&share_source=copy_web">【莫烦Python】Scikit-learn (sklearn) 优雅地学会机器学习</a></p>
 <p>在第一篇中，我们采用了鸢尾花的数据集进行了测试，这次我们采用boston的数据集进行测试，boston也是sklearn自带的数据库</p>
 <p>程序示例：</p>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> sklearn <span class="keyword">import</span> datasets<span class="comment">##导入datasets</span></span><br><span class="line"><span class="keyword">from</span> sklearn.linear_model <span class="keyword">import</span> LinearRegression<span class="comment">##导入线性回归模型</span></span><br><span class="line"></span><br><span class="line">loaded_data=datasets.load_boston()<span class="comment">##加载boston数据</span></span><br><span class="line">data_X=loaded_data.data<span class="comment">##数据值</span></span><br><span class="line">data_y=loaded_data.target<span class="comment">##目标值</span></span><br><span class="line"></span><br><span class="line">modele=LinearRegression()<span class="comment">##用线性回归模型</span></span><br><span class="line">modele.fit(data_X,data_y)<span class="comment">##data_X是训练数据输入，data_y是训练数据输出</span></span><br><span class="line"></span><br><span class="line"><span class="built_in">print</span>(modele.predict(data_X[:<span class="number">4</span>,:]))<span class="comment">##对前四个数据进行预测</span></span><br><span class="line"><span class="built_in">print</span>(data_y[:<span class="number">4</span>])<span class="comment">##前四个数据实际值，形成对比，观察其预测的准确度</span></span><br></pre></td></tr></table></figure>
 <p>输出结果：</p>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">[<span class="number">30.00384338</span> <span class="number">25.02556238</span> <span class="number">30.56759672</span> <span class="number">28.60703649</span>]<span class="comment">##预测值</span></span><br><span class="line">[<span class="number">24.</span>  <span class="number">21.6</span> <span class="number">34.7</span> <span class="number">33.4</span>]<span class="comment">##实际值</span></span><br></pre></td></tr></table></figure>
 <p>可以看到，预测的结果并没有那么准确，因为我们并没有将对模型进行改善，所以作为入门学习，采用sklearn默认的模型就足够了</p>
-<p>接下来我们创造一些数据，赋值给X，y 程序示例： <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> sklearn <span class="keyword">import</span> datasets<span class="comment">##导入datasets</span></span><br><span class="line"><span class="keyword">from</span> sklearn.linear_model <span class="keyword">import</span> LinearRegression<span class="comment">##导入线性回归模型</span></span><br><span class="line"><span class="keyword">import</span> matplotlib.pyplot <span class="keyword">as</span> plt<span class="comment">##使用图像化工具</span></span><br><span class="line"></span><br><span class="line">X,y=datasets.make_regression(n_samples=<span class="number">100</span>,n_features=<span class="number">1</span>,n_targets=<span class="number">1</span>,noise=<span class="number">1</span>)<span class="comment">##创造100个例子，1个特征值，1个回归目标，1noise</span></span><br><span class="line">plt.scatter(X,y)<span class="comment">##画图</span></span><br><span class="line">plt.show()<span class="comment">##展示出画图的结果</span></span><br></pre></td></tr></table></figure></p>
-<p>输出结果： <img
-src="https://mfjblog-pic.oss-cn-beijing.aliyuncs.com/img/80233b2919f54b03b3849bf4a652f5a9.png"
-alt="请添加图片描述" /></p>
-<p>若noise变大，noise=10，离散会更大 noise=10的输出结果： <img
-src="https://mfjblog-pic.oss-cn-beijing.aliyuncs.com/img/3e7c978304ed4499b1e29d6815972f34.png"
-alt="请添加图片描述" />
-运用我们创造出的数据进行机器学习，可以让我们更有目的性的去进行训练</p>
+<p>接下来我们创造一些数据，赋值给X，y<br>程序示例：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> sklearn <span class="keyword">import</span> datasets<span class="comment">##导入datasets</span></span><br><span class="line"><span class="keyword">from</span> sklearn.linear_model <span class="keyword">import</span> LinearRegression<span class="comment">##导入线性回归模型</span></span><br><span class="line"><span class="keyword">import</span> matplotlib.pyplot <span class="keyword">as</span> plt<span class="comment">##使用图像化工具</span></span><br><span class="line"></span><br><span class="line">X,y=datasets.make_regression(n_samples=<span class="number">100</span>,n_features=<span class="number">1</span>,n_targets=<span class="number">1</span>,noise=<span class="number">1</span>)<span class="comment">##创造100个例子，1个特征值，1个回归目标，1noise</span></span><br><span class="line">plt.scatter(X,y)<span class="comment">##画图</span></span><br><span class="line">plt.show()<span class="comment">##展示出画图的结果</span></span><br></pre></td></tr></table></figure>
+
+<p>输出结果：<br><img src="https://mfjblog-pic.oss-cn-beijing.aliyuncs.com/img/80233b2919f54b03b3849bf4a652f5a9.png" class="lazyload" data-srcset="https://mfjblog-pic.oss-cn-beijing.aliyuncs.com/img/80233b2919f54b03b3849bf4a652f5a9.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="请添加图片描述"></p>
+<p>若noise变大，noise&#x3D;10，离散会更大<br>noise&#x3D;10的输出结果：<br><img src="https://mfjblog-pic.oss-cn-beijing.aliyuncs.com/img/3e7c978304ed4499b1e29d6815972f34.png" class="lazyload" data-srcset="https://mfjblog-pic.oss-cn-beijing.aliyuncs.com/img/3e7c978304ed4499b1e29d6815972f34.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="请添加图片描述"><br>运用我们创造出的数据进行机器学习，可以让我们更有目的性的去进行训练</p>
 
   </div>
   
@@ -2497,8 +2492,7 @@ alt="请添加图片描述" />
             <blockquote>
               
                 
-                  <p>博客内容遵循 署名-非商业性使用-相同方式共享 4.0 国际 (CC BY-NC-SA
-4.0) 协议</p>
+                  <p>博客内容遵循 署名-非商业性使用-相同方式共享 4.0 国际 (CC BY-NC-SA 4.0) 协议</p>
 
                 
               
@@ -2607,8 +2601,7 @@ alt="请添加图片描述" />
       
         <a class='prev' href='/2022/06/15/%E5%85%B3%E4%BA%8EScikit-learn%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E7%9A%84%E7%AC%94%E8%AE%B0%E2%80%94%E2%80%94%E7%AC%AC%E4%B8%89%E7%AF%87/'>
           <p class='title'><i class="fa-solid fa-chevron-left" aria-hidden="true"></i>关于Scikit-learn机器学习的笔记——第三篇</p>
-          <p class='content'>视频教程：【莫烦Python】Scikit-learn
-(sklearn) 优雅地学会机器学习
+          <p class='content'>视频教程：【莫烦Python】Scikit-learn (sklearn) 优雅地学会机器学习
 接着上一次的代码，我们这次学习model的一些属性
 运用model.coef_与model.int...</p>
         </a>
@@ -2807,9 +2800,7 @@ alt="请添加图片描述" />
       
     
       
-        <div><p>Blog content follows the <a
-target="_blank" rel="noopener" href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.en">Attribution-NonCommercial-ShareAlike
-4.0 International (CC BY-NC-SA 4.0) License</a></p>
+        <div><p>Blog content follows the <a target="_blank" rel="noopener" href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.en">Attribution-NonCommercial-ShareAlike 4.0 International (CC BY-NC-SA 4.0) License</a></p>
 </div>
       
     

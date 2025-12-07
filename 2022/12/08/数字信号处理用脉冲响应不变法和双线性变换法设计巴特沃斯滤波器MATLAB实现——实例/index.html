@@ -40,7 +40,7 @@
 <meta property="og:title" content="数字信号处理用脉冲响应不变法和双线性变换法设计巴特沃斯滤波器MATLAB实现——实例">
 <meta property="og:url" content="https://mengfanjun020906.github.io/2022/12/08/%E6%95%B0%E5%AD%97%E4%BF%A1%E5%8F%B7%E5%A4%84%E7%90%86%E7%94%A8%E8%84%89%E5%86%B2%E5%93%8D%E5%BA%94%E4%B8%8D%E5%8F%98%E6%B3%95%E5%92%8C%E5%8F%8C%E7%BA%BF%E6%80%A7%E5%8F%98%E6%8D%A2%E6%B3%95%E8%AE%BE%E8%AE%A1%E5%B7%B4%E7%89%B9%E6%B2%83%E6%96%AF%E6%BB%A4%E6%B3%A2%E5%99%A8MATLAB%E5%AE%9E%E7%8E%B0%E2%80%94%E2%80%94%E5%AE%9E%E4%BE%8B/index.html">
 <meta property="og:site_name" content="MengFanjun的博客">
-<meta property="og:description" content="符号含义  # 例题  脉冲响应不变法 123456789101112131415161718clearclose allclcfs&#x3D;1000;%采样频率fc&#x3D;200;%通带截止频率fr&#x3D;300;%阻带截止频率T&#x3D;0.001; %采样周期%%%%%%%脉冲响应不变法wp1&#x3D;2*pi*fc;%通带截止频率wr1&#x3D;2*pi*fr;%阻带截止频率[N1,wn1]&#x3D;buttord(wp1,wr1,1,25">
+<meta property="og:description" content="符号含义 例题 脉冲响应不变法123456789101112131415161718clearclose allclcfs&#x3D;1000;%采样频率fc&#x3D;200;%通带截止频率fr&#x3D;300;%阻带截止频率T&#x3D;0.001; %采样周期%%%%%%%脉冲响应不变法wp1&#x3D;2*pi*fc;%通带截止频率wr1&#x3D;2*pi*fr;%阻带截止频率[N1,wn1]&#x3D;buttord(wp1,wr1,1,25,&amp;#x2">
 <meta property="og:locale" content="en_US">
 <meta property="og:image" content="https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png">
 <meta property="article:published_time" content="2022-12-08T06:57:19.000Z">
@@ -1597,7 +1597,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
     debug: "env",
     cdn: {"js":{"app":"/js/app.js","parallax":"/js/plugins/parallax.js","rightMenu":"/js/plugins/rightMenu.js","rightMenus":"/js/plugins/rightMenus.js","sites":"/js/plugins/tags/sites.js","friends":"/js/plugins/tags/friends.js","contributors":"/js/plugins/tags/contributors.js","search":"/js/search/hexo.js"},"css":{"style":"/css/style.css"}},
     default: {"avatar":"https://unpkg.com/volantis-static@0.0.1654736714924/media/placeholder/avatar/round/3442075.svg","link":"https://unpkg.com/volantis-static@0.0.1654736714924/media/placeholder/link/8f277b4ee0ecd.svg","cover":"https://unpkg.com/volantis-static@0.0.1654736714924/media/placeholder/cover/76b86c0226ffd.svg","image":"https://unpkg.com/volantis-static@0.0.1654736714924/media/placeholder/image/2659360.svg"},
-    lastupdate: new Date(1765118762067),
+    lastupdate: new Date(1765119292905),
     sidebar: {
       for_page: ["blogger","category","tagcloud","webinfo","lastupdate"],
       for_post: ["toc"],
@@ -2463,27 +2463,21 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
 
   <div id="layoutHelper-page-plugins"></div>
   <div id="post-body" itemprop="articleBody">
-    <h1 id="符号含义">符号含义</h1>
-<p><img
-src="https://mfjblog-pic.oss-cn-beijing.aliyuncs.com/img/6c65fb6836a44ab593a8a9048711084a.png"
-alt="在这里插入图片描述" /> # 例题 <img
-src="https://mfjblog-pic.oss-cn-beijing.aliyuncs.com/img/6f6a71d7de424295b71a62a91b75a42a.png"
-alt="在这里插入图片描述" /></p>
-<h1 id="脉冲响应不变法">脉冲响应不变法</h1>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line">clear</span><br><span class="line">close all</span><br><span class="line">clc</span><br><span class="line"></span><br><span class="line">fs=1000;%采样频率</span><br><span class="line"><span class="built_in">fc</span>=200;%通带截止频率</span><br><span class="line">fr=300;%阻带截止频率</span><br><span class="line">T=0.001; %采样周期</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">%%%%%%%脉冲响应不变法</span><br><span class="line">wp1=2*pi*<span class="built_in">fc</span>;%通带截止频率</span><br><span class="line">wr1=2*pi*fr;%阻带截止频率</span><br><span class="line"></span><br><span class="line">[N1,wn1]=buttord(wp1,wr1,1,25,<span class="string">&#x27;s&#x27;</span>); %[滤波器的阶数,截止频率]=buttord(通带截止频率,阻带截止频率,通带波纹,阻带衰减,滤波器类型s-带阻)</span><br><span class="line">[B1,A1]=butter(N1,wn1,<span class="string">&#x27;s&#x27;</span>); %[传递函数系数B1是分子的 A1是分母的]=butter(滤波器的阶数,截止频率,滤波器类型s-带阻)</span><br><span class="line">[num1,den1]=impinvar(B1,A1,fs); %利用脉冲响应不变法将模拟滤波器转数字滤波器[数字滤波器传递函数num1/den1]=impinvar(模拟的分子系数B1,模拟的分母系数A1,采样频率)</span><br><span class="line">[h1,w]=freqz(num1,den1); %[频率响应,角频率]=freqz(数字滤波器传递函数num1/den1)</span><br></pre></td></tr></table></figure>
-<h1 id="双线性变换法">双线性变换法</h1>
-<p>双线性变换法要对通带截止频率和阻带截止频率做一个预畸变处理</p>
+    <h1 id="符号含义"><a href="#符号含义" class="headerlink" title="符号含义"></a>符号含义</h1><p><img src="https://mfjblog-pic.oss-cn-beijing.aliyuncs.com/img/6c65fb6836a44ab593a8a9048711084a.png" class="lazyload" data-srcset="https://mfjblog-pic.oss-cn-beijing.aliyuncs.com/img/6c65fb6836a44ab593a8a9048711084a.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="在这里插入图片描述"></p>
+<h1 id="例题"><a href="#例题" class="headerlink" title="例题"></a>例题</h1><p><img src="https://mfjblog-pic.oss-cn-beijing.aliyuncs.com/img/6f6a71d7de424295b71a62a91b75a42a.png" class="lazyload" data-srcset="https://mfjblog-pic.oss-cn-beijing.aliyuncs.com/img/6f6a71d7de424295b71a62a91b75a42a.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="在这里插入图片描述"></p>
+<h1 id="脉冲响应不变法"><a href="#脉冲响应不变法" class="headerlink" title="脉冲响应不变法"></a>脉冲响应不变法</h1><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line">clear</span><br><span class="line">close all</span><br><span class="line">clc</span><br><span class="line"></span><br><span class="line">fs=1000;%采样频率</span><br><span class="line"><span class="built_in">fc</span>=200;%通带截止频率</span><br><span class="line">fr=300;%阻带截止频率</span><br><span class="line">T=0.001; %采样周期</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">%%%%%%%脉冲响应不变法</span><br><span class="line">wp1=2*pi*<span class="built_in">fc</span>;%通带截止频率</span><br><span class="line">wr1=2*pi*fr;%阻带截止频率</span><br><span class="line"></span><br><span class="line">[N1,wn1]=buttord(wp1,wr1,1,25,<span class="string">&#x27;s&#x27;</span>); %[滤波器的阶数,截止频率]=buttord(通带截止频率,阻带截止频率,通带波纹,阻带衰减,滤波器类型s-带阻)</span><br><span class="line">[B1,A1]=butter(N1,wn1,<span class="string">&#x27;s&#x27;</span>); %[传递函数系数B1是分子的 A1是分母的]=butter(滤波器的阶数,截止频率,滤波器类型s-带阻)</span><br><span class="line">[num1,den1]=impinvar(B1,A1,fs); %利用脉冲响应不变法将模拟滤波器转数字滤波器[数字滤波器传递函数num1/den1]=impinvar(模拟的分子系数B1,模拟的分母系数A1,采样频率)</span><br><span class="line">[h1,w]=freqz(num1,den1); %[频率响应,角频率]=freqz(数字滤波器传递函数num1/den1)</span><br></pre></td></tr></table></figure>
+<h1 id="双线性变换法"><a href="#双线性变换法" class="headerlink" title="双线性变换法"></a>双线性变换法</h1><p>双线性变换法要对通带截止频率和阻带截止频率做一个预畸变处理</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">%%%%%%%双线性变换法</span><br><span class="line">wp2=2*fs*tan(2*pi*<span class="built_in">fc</span>/(2*fs)); %做预畸变处理后的通带截止频率</span><br><span class="line">wr2=2*fs*tan(2*pi*fr/(2*fs)); %做预畸变处理后的阻带截止频率</span><br><span class="line">[N2,wn2]=buttord(wp2,wr2,1,25,<span class="string">&#x27;s&#x27;</span>); %[滤波器的阶数,截止频率]=buttord(通带截止频率,阻带截止频率,通带波纹,阻带衰减,滤波器类型s-带阻)</span><br><span class="line">[B2,A2]=butter(N2,wn2,<span class="string">&#x27;s&#x27;</span>); %[传递函数系数B2是分子的 A2是分母的]=butter(滤波器的阶数,截止频率,滤波器类型s-带阻)</span><br><span class="line">[num2,den2]=bilinear(B2,A2,fs); %利用双线性的方法将模拟滤波器转数字滤波器[数字滤波器传递函数num2/den2]=impinvar(模拟的分子系数B2,模拟的分母系数A2,采样频率)</span><br><span class="line">[h2,w]=freqz(num2,den2); %[频率响应,角频率]=freqz(数字滤波器传递函数num2/den2)</span><br><span class="line">f=w/(2*pi)*fs; %将角频率转换为频率</span><br></pre></td></tr></table></figure>
-<h1 id="画图">画图</h1>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">plot(f,20*log10(abs(h1)),<span class="string">&#x27;-.&#x27;</span>,f,20*log10(abs(h2)),<span class="string">&#x27;-&#x27;</span>); %画脉冲响应不变法和双线性变换法的图</span><br><span class="line">axis([0,500,-80,10]);% 设置当前坐标轴x轴和y轴的限制范围</span><br><span class="line">grid; %切换改变主网格线的可见性</span><br><span class="line">xlabel(<span class="string">&#x27;频率/Hz&#x27;</span>);ylabel(<span class="string">&#x27;幅度/dB&#x27;</span>);title(<span class="string">&#x27;巴特沃思数字低通滤波器&#x27;</span>); </span><br><span class="line">legend(<span class="string">&#x27;脉冲响应不变法&#x27;</span>,<span class="string">&#x27;双线性变换法&#x27;</span>);</span><br></pre></td></tr></table></figure>
-<figure>
-<img
-src="https://mfjblog-pic.oss-cn-beijing.aliyuncs.com/img/42a1467d969c4e00a7a6d8498c1a3463.png"
-alt="在这里插入图片描述" />
-<figcaption aria-hidden="true">在这里插入图片描述</figcaption>
-</figure>
-<h1 id="完整代码">完整代码</h1>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br></pre></td><td class="code"><pre><span class="line">clear</span><br><span class="line">close all</span><br><span class="line">clc</span><br><span class="line"></span><br><span class="line">fs=1000;%采样频率</span><br><span class="line"><span class="built_in">fc</span>=200;%通带截止频率</span><br><span class="line">fr=300;%阻带截止频率</span><br><span class="line">T=0.001; %采样周期</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">%%%%%%%脉冲响应不变法</span><br><span class="line">wp1=2*pi*<span class="built_in">fc</span>;%通带截止频率</span><br><span class="line">wr1=2*pi*fr;%阻带截止频率</span><br><span class="line"></span><br><span class="line">[N1,wn1]=buttord(wp1,wr1,1,25,<span class="string">&#x27;s&#x27;</span>); %[滤波器的阶数,截止频率]=buttord(通带截止频率,阻带截止频率,通带波纹,阻带衰减,滤波器类型s-带阻)</span><br><span class="line">[B1,A1]=butter(N1,wn1,<span class="string">&#x27;s&#x27;</span>); %[传递函数系数B1是分子的 A1是分母的]=butter(滤波器的阶数,截止频率,滤波器类型s-带阻)</span><br><span class="line">[num1,den1]=impinvar(B1,A1,fs); %利用脉冲响应不变法将模拟滤波器转数字滤波器[数字滤波器传递函数num1/den1]=impinvar(模拟的分子系数B1,模拟的分母系数A1,采样频率)</span><br><span class="line">[h1,w]=freqz(num1,den1); %[频率响应,角频率]=freqz(数字滤波器传递函数num1/den1)</span><br><span class="line"></span><br><span class="line">%%%%%%%双线性变换法</span><br><span class="line">wp2=2*fs*tan(2*pi*<span class="built_in">fc</span>/(2*fs)); %做预畸变处理后的通带截止频率</span><br><span class="line">wr2=2*fs*tan(2*pi*fr/(2*fs)); %做预畸变处理后的阻带截止频率</span><br><span class="line">[N2,wn2]=buttord(wp2,wr2,1,25,<span class="string">&#x27;s&#x27;</span>); %[滤波器的阶数,截止频率]=buttord(通带截止频率,阻带截止频率,通带波纹,阻带衰减,滤波器类型s-带阻)</span><br><span class="line">[B2,A2]=butter(N2,wn2,<span class="string">&#x27;s&#x27;</span>); %[传递函数系数B2是分子的 A2是分母的]=butter(滤波器的阶数,截止频率,滤波器类型s-带阻)</span><br><span class="line">[num2,den2]=bilinear(B2,A2,fs); %利用双线性的方法将模拟滤波器转数字滤波器[数字滤波器传递函数num2/den2]=impinvar(模拟的分子系数B2,模拟的分母系数A2,采样频率)</span><br><span class="line">[h2,w]=freqz(num2,den2); %[频率响应,角频率]=freqz(数字滤波器传递函数num2/den2)</span><br><span class="line">f=w/(2*pi)*fs; %将角频率转换为频率</span><br><span class="line"></span><br><span class="line">plot(f,20*log10(abs(h1)),<span class="string">&#x27;-.&#x27;</span>,f,20*log10(abs(h2)),<span class="string">&#x27;-&#x27;</span>); %画脉冲响应不变法和双线性变换法的图</span><br><span class="line">axis([0,500,-80,10]);% 设置当前坐标轴x轴和y轴的限制范围</span><br><span class="line">grid; %切换改变主网格线的可见性</span><br><span class="line">xlabel(<span class="string">&#x27;频率/Hz&#x27;</span>);ylabel(<span class="string">&#x27;幅度/dB&#x27;</span>);title(<span class="string">&#x27;巴特沃思数字低通滤波器&#x27;</span>); </span><br><span class="line">legend(<span class="string">&#x27;脉冲响应不变法&#x27;</span>,<span class="string">&#x27;双线性变换法&#x27;</span>);</span><br></pre></td></tr></table></figure>
+
+<h1 id="画图"><a href="#画图" class="headerlink" title="画图"></a>画图</h1><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">plot(f,20*log10(abs(h1)),<span class="string">&#x27;-.&#x27;</span>,f,20*log10(abs(h2)),<span class="string">&#x27;-&#x27;</span>); %画脉冲响应不变法和双线性变换法的图</span><br><span class="line">axis([0,500,-80,10]);% 设置当前坐标轴x轴和y轴的限制范围</span><br><span class="line">grid; %切换改变主网格线的可见性</span><br><span class="line">xlabel(<span class="string">&#x27;频率/Hz&#x27;</span>);ylabel(<span class="string">&#x27;幅度/dB&#x27;</span>);title(<span class="string">&#x27;巴特沃思数字低通滤波器&#x27;</span>); </span><br><span class="line">legend(<span class="string">&#x27;脉冲响应不变法&#x27;</span>,<span class="string">&#x27;双线性变换法&#x27;</span>);</span><br></pre></td></tr></table></figure>
+
+<p><img src="https://mfjblog-pic.oss-cn-beijing.aliyuncs.com/img/42a1467d969c4e00a7a6d8498c1a3463.png" class="lazyload" data-srcset="https://mfjblog-pic.oss-cn-beijing.aliyuncs.com/img/42a1467d969c4e00a7a6d8498c1a3463.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="在这里插入图片描述"></p>
+<h1 id="完整代码"><a href="#完整代码" class="headerlink" title="完整代码"></a>完整代码</h1><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br></pre></td><td class="code"><pre><span class="line">clear</span><br><span class="line">close all</span><br><span class="line">clc</span><br><span class="line"></span><br><span class="line">fs=1000;%采样频率</span><br><span class="line"><span class="built_in">fc</span>=200;%通带截止频率</span><br><span class="line">fr=300;%阻带截止频率</span><br><span class="line">T=0.001; %采样周期</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">%%%%%%%脉冲响应不变法</span><br><span class="line">wp1=2*pi*<span class="built_in">fc</span>;%通带截止频率</span><br><span class="line">wr1=2*pi*fr;%阻带截止频率</span><br><span class="line"></span><br><span class="line">[N1,wn1]=buttord(wp1,wr1,1,25,<span class="string">&#x27;s&#x27;</span>); %[滤波器的阶数,截止频率]=buttord(通带截止频率,阻带截止频率,通带波纹,阻带衰减,滤波器类型s-带阻)</span><br><span class="line">[B1,A1]=butter(N1,wn1,<span class="string">&#x27;s&#x27;</span>); %[传递函数系数B1是分子的 A1是分母的]=butter(滤波器的阶数,截止频率,滤波器类型s-带阻)</span><br><span class="line">[num1,den1]=impinvar(B1,A1,fs); %利用脉冲响应不变法将模拟滤波器转数字滤波器[数字滤波器传递函数num1/den1]=impinvar(模拟的分子系数B1,模拟的分母系数A1,采样频率)</span><br><span class="line">[h1,w]=freqz(num1,den1); %[频率响应,角频率]=freqz(数字滤波器传递函数num1/den1)</span><br><span class="line"></span><br><span class="line">%%%%%%%双线性变换法</span><br><span class="line">wp2=2*fs*tan(2*pi*<span class="built_in">fc</span>/(2*fs)); %做预畸变处理后的通带截止频率</span><br><span class="line">wr2=2*fs*tan(2*pi*fr/(2*fs)); %做预畸变处理后的阻带截止频率</span><br><span class="line">[N2,wn2]=buttord(wp2,wr2,1,25,<span class="string">&#x27;s&#x27;</span>); %[滤波器的阶数,截止频率]=buttord(通带截止频率,阻带截止频率,通带波纹,阻带衰减,滤波器类型s-带阻)</span><br><span class="line">[B2,A2]=butter(N2,wn2,<span class="string">&#x27;s&#x27;</span>); %[传递函数系数B2是分子的 A2是分母的]=butter(滤波器的阶数,截止频率,滤波器类型s-带阻)</span><br><span class="line">[num2,den2]=bilinear(B2,A2,fs); %利用双线性的方法将模拟滤波器转数字滤波器[数字滤波器传递函数num2/den2]=impinvar(模拟的分子系数B2,模拟的分母系数A2,采样频率)</span><br><span class="line">[h2,w]=freqz(num2,den2); %[频率响应,角频率]=freqz(数字滤波器传递函数num2/den2)</span><br><span class="line">f=w/(2*pi)*fs; %将角频率转换为频率</span><br><span class="line"></span><br><span class="line">plot(f,20*log10(abs(h1)),<span class="string">&#x27;-.&#x27;</span>,f,20*log10(abs(h2)),<span class="string">&#x27;-&#x27;</span>); %画脉冲响应不变法和双线性变换法的图</span><br><span class="line">axis([0,500,-80,10]);% 设置当前坐标轴x轴和y轴的限制范围</span><br><span class="line">grid; %切换改变主网格线的可见性</span><br><span class="line">xlabel(<span class="string">&#x27;频率/Hz&#x27;</span>);ylabel(<span class="string">&#x27;幅度/dB&#x27;</span>);title(<span class="string">&#x27;巴特沃思数字低通滤波器&#x27;</span>); </span><br><span class="line">legend(<span class="string">&#x27;脉冲响应不变法&#x27;</span>,<span class="string">&#x27;双线性变换法&#x27;</span>);</span><br></pre></td></tr></table></figure>
+
+
+
+
+
 
   </div>
   
@@ -2501,8 +2495,7 @@ alt="在这里插入图片描述" />
             <blockquote>
               
                 
-                  <p>博客内容遵循 署名-非商业性使用-相同方式共享 4.0 国际 (CC BY-NC-SA
-4.0) 协议</p>
+                  <p>博客内容遵循 署名-非商业性使用-相同方式共享 4.0 国际 (CC BY-NC-SA 4.0) 协议</p>
 
                 
               
@@ -2612,23 +2605,16 @@ alt="在这里插入图片描述" />
         <a class='prev' href='/2022/12/08/%E6%95%B0%E5%AD%97%E4%BF%A1%E5%8F%B7%E5%A4%84%E7%90%86%E7%94%A8%E6%B1%89%E5%AE%81%E7%AA%97_%E7%9F%A9%E5%BD%A2%E7%AA%97_%E5%B8%83%E8%8E%B1%E5%85%8B%E6%9B%BC%E7%AA%97%E8%AE%BE%E8%AE%A1%E7%BA%BF%E6%80%A7%E7%9B%B8%E4%BD%8D%E5%B8%A6%E9%80%9A%E6%BB%A4%E6%B3%A2%E5%99%A8MATLAB%E5%AE%9E%E7%8E%B0%E2%80%94%E2%80%94%E5%AE%9E%E4%BE%8B/'>
           <p class='title'><i class="fa-solid fa-chevron-left" aria-hidden="true"></i>数字信号处理用汉宁窗/矩形窗/布莱克曼窗设计线性相位带通滤波器MATLAB实现——实例</p>
           <p class='content'>汉宁窗
-
-
-在这里插入图片描述
-
-123456789101112clearclose allclcN=45;wn=[0.3,0.5];%截止频率window=hanning(N+1); %计算长...</p>
+123456789101112clearclose allclcN=45;wn=[0.3,0.5];%截止频率window=hanning(N+1); %计算长度为N的汉宁窗b=fir1...</p>
         </a>
       
       
         <a class='next' href='/2022/12/06/%E7%BB%99%E8%87%AA%E5%B7%B1%E7%9A%84hexo%E5%8D%9A%E5%AE%A2%E4%B8%AA%E6%80%A7%E5%8C%96Volantis%E4%B8%BB%E9%A2%98/'>
           <p class='title'>给自己的hexo博客个性化Volantis主题<i class="fa-solid fa-chevron-right" aria-hidden="true"></i></p>
-          <p class='content'>准备工作
-首先要有自己的hexo博客，并且已经部署到
-github上面了，这样我们接下来才能顺利的换主题
-先推荐我自己的个人博客 我的博客
+          <p class='content'>准备工作首先要有自己的hexo博客，并且已经部署到github上面了，这样我们接下来才能顺利的换主题
+先推荐我自己的个人博客我的博客
 
-一、搭建一个大致框架
-我在这里非常推荐去读官方的文档...</p>
+一、搭建一个大致框架我在这里非常推荐去读官方的文档，里面写...</p>
         </a>
       
     </div>
@@ -2828,9 +2814,7 @@ github上面了，这样我们接下来才能顺利的换主题
       
     
       
-        <div><p>Blog content follows the <a
-target="_blank" rel="noopener" href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.en">Attribution-NonCommercial-ShareAlike
-4.0 International (CC BY-NC-SA 4.0) License</a></p>
+        <div><p>Blog content follows the <a target="_blank" rel="noopener" href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.en">Attribution-NonCommercial-ShareAlike 4.0 International (CC BY-NC-SA 4.0) License</a></p>
 </div>
       
     

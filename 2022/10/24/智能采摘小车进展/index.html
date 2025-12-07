@@ -40,7 +40,7 @@
 <meta property="og:title" content="智能采摘小车进展">
 <meta property="og:url" content="https://mengfanjun020906.github.io/2022/10/24/%E6%99%BA%E8%83%BD%E9%87%87%E6%91%98%E5%B0%8F%E8%BD%A6%E8%BF%9B%E5%B1%95/index.html">
 <meta property="og:site_name" content="MengFanjun的博客">
-<meta property="og:description" content="此博客为记录419通信实验室智能小车+机械臂项目的进展博客 2022年10月6日 串口一对多下载与通信   在这里插入图片描述  实现了单片机A和单片机B的串口下载与接收 具体的操作步骤见那边写串口的文章 ### 实现了编码器EN1和EN3的读取 #### Cube配置    #### 代码配置 12345678910111213141516&#x2F;* USER CODE BEGIN 4 *&#x2F;&#x2F;****">
+<meta property="og:description" content="此博客为记录419通信实验室智能小车+机械臂项目的进展博客2022年10月6日串口一对多下载与通信 实现了单片机A和单片机B的串口下载与接收具体的操作步骤见那边写串口的文章 实现了编码器EN1和EN3的读取Cube配置 代码配置12345678910111213141516&#x2F;* USER CODE BEGIN 4 *&#x2F;&#x2F;******************************	功能：每5ms在">
 <meta property="og:locale" content="en_US">
 <meta property="og:image" content="https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png">
 <meta property="article:published_time" content="2022-10-24T02:17:45.000Z">
@@ -1598,7 +1598,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
     debug: "env",
     cdn: {"js":{"app":"/js/app.js","parallax":"/js/plugins/parallax.js","rightMenu":"/js/plugins/rightMenu.js","rightMenus":"/js/plugins/rightMenus.js","sites":"/js/plugins/tags/sites.js","friends":"/js/plugins/tags/friends.js","contributors":"/js/plugins/tags/contributors.js","search":"/js/search/hexo.js"},"css":{"style":"/css/style.css"}},
     default: {"avatar":"https://unpkg.com/volantis-static@0.0.1654736714924/media/placeholder/avatar/round/3442075.svg","link":"https://unpkg.com/volantis-static@0.0.1654736714924/media/placeholder/link/8f277b4ee0ecd.svg","cover":"https://unpkg.com/volantis-static@0.0.1654736714924/media/placeholder/cover/76b86c0226ffd.svg","image":"https://unpkg.com/volantis-static@0.0.1654736714924/media/placeholder/image/2659360.svg"},
-    lastupdate: new Date(1765118762067),
+    lastupdate: new Date(1765119292905),
     sidebar: {
       for_page: ["blogger","category","tagcloud","webinfo","lastupdate"],
       for_post: ["toc"],
@@ -2412,7 +2412,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
   <div class="new-meta-item wordcount">
     <a class='notlink'>
       <i class="fa-solid fa-keyboard fa-fw" aria-hidden="true"></i>
-      <p>653 words</p>
+      <p>641 words</p>
     </a>
   </div>
   <div class="new-meta-item readtime">
@@ -2454,50 +2454,48 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
 
   <div id="layoutHelper-page-plugins"></div>
   <div id="post-body" itemprop="articleBody">
-    <h1
-id="此博客为记录419通信实验室智能小车机械臂项目的进展博客">此博客为记录419通信实验室智能小车+机械臂项目的进展博客</h1>
-<h2 id="年10月6日">2022年10月6日</h2>
-<h2 id="串口一对多下载与通信">串口一对多下载与通信</h2>
-<figure>
-<img
-src="https://img-blog.csdnimg.cn/889f74f13bd54113b940322c4cec7fbf.png"
-alt="在这里插入图片描述" />
-<figcaption aria-hidden="true">在这里插入图片描述</figcaption>
-</figure>
-<h3
-id="实现了单片机a和单片机b的串口下载与接收">实现了单片机A和单片机B的串口下载与接收</h3>
-<p>具体的操作步骤见那边写串口的文章 ### 实现了编码器EN1和EN3的读取 ####
-Cube配置</p>
-<p><img
-src="https://img-blog.csdnimg.cn/355de48d43174c4db2d4d908e0a99716.png"
-alt="在这里插入图片描述" /> <img
-src="https://img-blog.csdnimg.cn/b30a0c3cc18c48e3817f633f72eda534.png"
-alt="在这里插入图片描述" /> <img
-src="https://img-blog.csdnimg.cn/d9efad8e05fb46aabc7a74f3f85012e5.png"
-alt="在这里插入图片描述" /> #### 代码配置</p>
-<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/* USER CODE BEGIN 4 */</span></span><br><span class="line"><span class="comment">/******************************</span></span><br><span class="line"><span class="comment">	功能：每5ms在定时器中执行一次，</span></span><br><span class="line"><span class="comment">				获取电机速度SPEED</span></span><br><span class="line"><span class="comment">	返回值：电机速度SPEED</span></span><br><span class="line"><span class="comment">	形参：无</span></span><br><span class="line"><span class="comment">*******************************/</span></span><br><span class="line"><span class="type">int</span> <span class="title function_">GetSpeed</span><span class="params">()</span></span><br><span class="line">&#123;</span><br><span class="line">	<span class="type">short</span> SPEED = <span class="number">0</span>;</span><br><span class="line"><span class="comment">//	static short last = 0;</span></span><br><span class="line">	SPEED = (<span class="type">short</span>)(__HAL_TIM_GET_COUNTER(&amp;htim2)*<span class="number">100</span>)/(<span class="number">4</span>*<span class="number">16</span>*<span class="number">10</span>);<span class="comment">//哪个定时器对应不同的编码器</span></span><br><span class="line">	__HAL_TIM_SET_COUNTER(&amp;htim2,<span class="number">0</span>);</span><br><span class="line">	<span class="keyword">return</span> SPEED;</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">/* USER CODE END 4 */</span></span><br></pre></td></tr></table></figure>
+    <h1 id="此博客为记录419通信实验室智能小车-机械臂项目的进展博客"><a href="#此博客为记录419通信实验室智能小车-机械臂项目的进展博客" class="headerlink" title="此博客为记录419通信实验室智能小车+机械臂项目的进展博客"></a>此博客为记录419通信实验室智能小车+机械臂项目的进展博客</h1><h2 id="2022年10月6日"><a href="#2022年10月6日" class="headerlink" title="2022年10月6日"></a>2022年10月6日</h2><h2 id="串口一对多下载与通信"><a href="#串口一对多下载与通信" class="headerlink" title="串口一对多下载与通信"></a>串口一对多下载与通信</h2><p><img src="https://img-blog.csdnimg.cn/889f74f13bd54113b940322c4cec7fbf.png" class="lazyload" data-srcset="https://img-blog.csdnimg.cn/889f74f13bd54113b940322c4cec7fbf.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="在这里插入图片描述"></p>
+<h3 id="实现了单片机A和单片机B的串口下载与接收"><a href="#实现了单片机A和单片机B的串口下载与接收" class="headerlink" title="实现了单片机A和单片机B的串口下载与接收"></a>实现了单片机A和单片机B的串口下载与接收</h3><p>具体的操作步骤见那边写串口的文章</p>
+<h3 id="实现了编码器EN1和EN3的读取"><a href="#实现了编码器EN1和EN3的读取" class="headerlink" title="实现了编码器EN1和EN3的读取"></a>实现了编码器EN1和EN3的读取</h3><h4 id="Cube配置"><a href="#Cube配置" class="headerlink" title="Cube配置"></a>Cube配置</h4><p><img src="https://img-blog.csdnimg.cn/355de48d43174c4db2d4d908e0a99716.png" class="lazyload" data-srcset="https://img-blog.csdnimg.cn/355de48d43174c4db2d4d908e0a99716.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="在这里插入图片描述"><br><img src="https://img-blog.csdnimg.cn/b30a0c3cc18c48e3817f633f72eda534.png" class="lazyload" data-srcset="https://img-blog.csdnimg.cn/b30a0c3cc18c48e3817f633f72eda534.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="在这里插入图片描述"><br><img src="https://img-blog.csdnimg.cn/d9efad8e05fb46aabc7a74f3f85012e5.png" class="lazyload" data-srcset="https://img-blog.csdnimg.cn/d9efad8e05fb46aabc7a74f3f85012e5.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="在这里插入图片描述"></p>
+<h4 id="代码配置"><a href="#代码配置" class="headerlink" title="代码配置"></a>代码配置</h4><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/* USER CODE BEGIN 4 */</span></span><br><span class="line"><span class="comment">/******************************</span></span><br><span class="line"><span class="comment">	功能：每5ms在定时器中执行一次，</span></span><br><span class="line"><span class="comment">				获取电机速度SPEED</span></span><br><span class="line"><span class="comment">	返回值：电机速度SPEED</span></span><br><span class="line"><span class="comment">	形参：无</span></span><br><span class="line"><span class="comment">*******************************/</span></span><br><span class="line"><span class="type">int</span> <span class="title function_">GetSpeed</span><span class="params">()</span></span><br><span class="line">&#123;</span><br><span class="line">	<span class="type">short</span> SPEED = <span class="number">0</span>;</span><br><span class="line"><span class="comment">//	static short last = 0;</span></span><br><span class="line">	SPEED = (<span class="type">short</span>)(__HAL_TIM_GET_COUNTER(&amp;htim2)*<span class="number">100</span>)/(<span class="number">4</span>*<span class="number">16</span>*<span class="number">10</span>);<span class="comment">//哪个定时器对应不同的编码器</span></span><br><span class="line">	__HAL_TIM_SET_COUNTER(&amp;htim2,<span class="number">0</span>);</span><br><span class="line">	<span class="keyword">return</span> SPEED;</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">/* USER CODE END 4 */</span></span><br></pre></td></tr></table></figure>
 <p>int mian()里面，while（1）之前</p>
 <figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/*打开定时器中断*/</span></span><br><span class="line">HAL_TIM_Base_Start_IT((TIM_HandleTypeDef *)&amp;htim7);</span><br><span class="line"><span class="comment">/*开启串口DMA接收，默认DMA为循环模式，千万不要放在循环里！！*/</span></span><br><span class="line">HAL_UART_Receive_DMA(&amp;huart1,(<span class="type">uint8_t</span>*)&amp;TargetSpeed,<span class="keyword">sizeof</span>(TargetSpeed));</span><br><span class="line"><span class="comment">/*打开编码器捕获*/</span></span><br><span class="line">HAL_TIM_Encoder_Start(&amp;htim4,TIM_CHANNEL_ALL);<span class="comment">//这是EN3</span></span><br><span class="line">HAL_TIM_Encoder_Start(&amp;htim2,TIM_CHANNEL_ALL);<span class="comment">//这是EN1</span></span><br></pre></td></tr></table></figure>
-<h4 id="结果">结果</h4>
-<p><img
-src="https://img-blog.csdnimg.cn/e0506cda7d76472bb3780eb6957a9cf4.png"
-alt="在这里插入图片描述" /> ## 2022年10月7日 ### 实现了四个编码器的读取
-|定时器|编码器| |--|--| |TIM2|EN1| |TIM3|EN2| |TIM4|EN3| |TIM5|EN4| ##
-2022年10月21日</p>
-<h3
-id="实现了树莓派与stm32的收发数据测试">实现了树莓派与STM32的收发数据测试</h3>
-<p>我们用的树莓派是4B，之前用了3B+的做了串口接收的测试，参考的是这一篇文章
-<a
-target="_blank" rel="noopener" href="http://t.csdn.cn/5ZIUq">树莓派3B+与STM32进行串口通讯</a>，收数据是通了。发数据还有点问题，然后就去找了很多，发现是利用Python的Serial库进行的串口通讯</p>
+<h4 id="结果"><a href="#结果" class="headerlink" title="结果"></a>结果</h4><p><img src="https://img-blog.csdnimg.cn/e0506cda7d76472bb3780eb6957a9cf4.png" class="lazyload" data-srcset="https://img-blog.csdnimg.cn/e0506cda7d76472bb3780eb6957a9cf4.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="在这里插入图片描述"></p>
+<h2 id="2022年10月7日"><a href="#2022年10月7日" class="headerlink" title="2022年10月7日"></a>2022年10月7日</h2><h3 id="实现了四个编码器的读取"><a href="#实现了四个编码器的读取" class="headerlink" title="实现了四个编码器的读取"></a>实现了四个编码器的读取</h3><table>
+<thead>
+<tr>
+<th>定时器</th>
+<th>编码器</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>TIM2</td>
+<td>EN1</td>
+</tr>
+<tr>
+<td>TIM3</td>
+<td>EN2</td>
+</tr>
+<tr>
+<td>TIM4</td>
+<td>EN3</td>
+</tr>
+<tr>
+<td>TIM5</td>
+<td>EN4</td>
+</tr>
+</tbody></table>
+<h2 id="2022年10月21日"><a href="#2022年10月21日" class="headerlink" title="2022年10月21日"></a>2022年10月21日</h2><h3 id="实现了树莓派与STM32的收发数据测试"><a href="#实现了树莓派与STM32的收发数据测试" class="headerlink" title="实现了树莓派与STM32的收发数据测试"></a>实现了树莓派与STM32的收发数据测试</h3><p>我们用的树莓派是4B，之前用了3B+的做了串口接收的测试，参考的是这一篇文章<br><a target="_blank" rel="noopener" href="http://t.csdn.cn/5ZIUq">树莓派3B+与STM32进行串口通讯</a>，收数据是通了。发数据还有点问题，然后就去找了很多，发现是利用Python的Serial库进行的串口通讯</p>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> serial</span><br><span class="line">dev=serial.Serial(<span class="string">&#x27;/dev/ttyAMA0&#x27;</span>,<span class="number">115200</span>,timeout=<span class="number">0.5</span>)<span class="comment">#读取串口号，设置波特率，连接超时0。5秒</span></span><br><span class="line"><span class="keyword">while</span> <span class="literal">True</span>:</span><br><span class="line">    <span class="built_in">print</span>(dev.readlins())<span class="comment">#读显示出串口的数据</span></span><br><span class="line">    s= <span class="number">6</span></span><br><span class="line">    dev.write(<span class="string">&quot;&#123;&#125;\r\n&quot;</span>.<span class="built_in">format</span>(s).encode())<span class="comment">#将s写入串口中</span></span><br></pre></td></tr></table></figure>
-<h3 id="stm32程序">STM32程序</h3>
-<p>这里就关系到我们之前用的串口发送接收重定义了，</p>
+<h3 id="STM32程序"><a href="#STM32程序" class="headerlink" title="STM32程序"></a>STM32程序</h3><p>这里就关系到我们之前用的串口发送接收重定义了，</p>
 <figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/*fgetc*/</span></span><br><span class="line"><span class="type">int</span> <span class="title function_">fgetc</span><span class="params">(FILE * F)</span></span><br><span class="line">&#123;</span><br><span class="line">HAL_UART_Receive (&amp;huart1,&amp;ch_r,<span class="number">1</span>,<span class="number">0xffff</span>);<span class="comment">//接收</span></span><br><span class="line"><span class="keyword">return</span> ch_r;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>这里的HAL_UART_Receive()他在HAL库中不是阻塞式接收，也就是说scanf在32中被执行的时候并不会暂停，所以为了确保其能接收到数据，我们要将他手动改成阻塞式的
-<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/* USER CODE BEGIN 3 */</span></span><br><span class="line">		<span class="built_in">printf</span>(<span class="string">&quot;Aaaa\n&quot;</span>);</span><br><span class="line">		<span class="built_in">printf</span>(<span class="string">&quot;1145141919810\n&quot;</span>);</span><br><span class="line">		<span class="built_in">printf</span>(<span class="string">&quot;woshiA\n&quot;</span>);</span><br><span class="line">		HAL_Delay(<span class="number">1000</span>);</span><br><span class="line">	  n=<span class="number">0</span>;</span><br><span class="line">	  <span class="keyword">while</span>(n == <span class="number">0</span>)</span><br><span class="line">	  	&#123;</span><br><span class="line">		<span class="built_in">scanf</span>(<span class="string">&quot;%d&quot;</span>,&amp;n);</span><br><span class="line">		&#125;<span class="comment">//使其变成手动的阻塞式接收</span></span><br><span class="line">		HAL_Delay(<span class="number">1000</span>);</span><br><span class="line">		<span class="built_in">printf</span>(<span class="string">&quot;output:%d&quot;</span>,n);</span><br><span class="line">		HAL_Delay(<span class="number">1000</span>);</span><br></pre></td></tr></table></figure> 接收发送成功截图 <img
-src="https://img-blog.csdnimg.cn/ad78ffd295784ba6937a3ddd040d1ec8.png"
-alt="在这里插入图片描述" />
-这里的output就是收到的数据，但是不知道为啥这个minicom显示的是这样的，不影响调试，就是很丑</p>
+
+
+
+
+<p>这里的HAL_UART_Receive()他在HAL库中不是阻塞式接收，也就是说scanf在32中被执行的时候并不会暂停，所以为了确保其能接收到数据，我们要将他手动改成阻塞式的</p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/* USER CODE BEGIN 3 */</span></span><br><span class="line">		<span class="built_in">printf</span>(<span class="string">&quot;Aaaa\n&quot;</span>);</span><br><span class="line">		<span class="built_in">printf</span>(<span class="string">&quot;1145141919810\n&quot;</span>);</span><br><span class="line">		<span class="built_in">printf</span>(<span class="string">&quot;woshiA\n&quot;</span>);</span><br><span class="line">		HAL_Delay(<span class="number">1000</span>);</span><br><span class="line">	  n=<span class="number">0</span>;</span><br><span class="line">	  <span class="keyword">while</span>(n == <span class="number">0</span>)</span><br><span class="line">	  	&#123;</span><br><span class="line">		<span class="built_in">scanf</span>(<span class="string">&quot;%d&quot;</span>,&amp;n);</span><br><span class="line">		&#125;<span class="comment">//使其变成手动的阻塞式接收</span></span><br><span class="line">		HAL_Delay(<span class="number">1000</span>);</span><br><span class="line">		<span class="built_in">printf</span>(<span class="string">&quot;output:%d&quot;</span>,n);</span><br><span class="line">		HAL_Delay(<span class="number">1000</span>);</span><br></pre></td></tr></table></figure>
+<p>接收发送成功截图<br><img src="https://img-blog.csdnimg.cn/ad78ffd295784ba6937a3ddd040d1ec8.png" class="lazyload" data-srcset="https://img-blog.csdnimg.cn/ad78ffd295784ba6937a3ddd040d1ec8.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="在这里插入图片描述"><br>这里的output就是收到的数据，但是不知道为啥这个minicom显示的是这样的，不影响调试，就是很丑</p>
 
   </div>
   
@@ -2515,8 +2513,7 @@ alt="在这里插入图片描述" />
             <blockquote>
               
                 
-                  <p>博客内容遵循 署名-非商业性使用-相同方式共享 4.0 国际 (CC BY-NC-SA
-4.0) 协议</p>
+                  <p>博客内容遵循 署名-非商业性使用-相同方式共享 4.0 国际 (CC BY-NC-SA 4.0) 协议</p>
 
                 
               
@@ -2631,9 +2628,8 @@ alt="在这里插入图片描述" />
       
         <a class='next' href='/2022/10/23/Mac%E7%94%A8Pycharm%E5%AE%89%E8%A3%85mediapipe%E6%8A%A5%E9%94%99ERROR_%20Could%20not%20find%20a%20version%20that%20satisfies%20the%20requirement%20mediapipe/'>
           <p class='title'>Mac用Pycharm安装mediapipe报错ERROR_ Could not find a version that satisfies the requirement mediapipe<i class="fa-solid fa-chevron-right" aria-hidden="true"></i></p>
-          <p class='content'>问题
-因为最近要用python做一个手部检测的项目，于是用找了个开源的程序跑了跑，发现安装mediapipe的时候会报错
-1ERROR: Could not find a version tha...</p>
+          <p class='content'>问题因为最近要用python做一个手部检测的项目，于是用找了个开源的程序跑了跑，发现安装mediapipe的时候会报错
+1ERROR: Could not find a version that...</p>
         </a>
       
     </div>
@@ -2691,7 +2687,7 @@ alt="在这里插入图片描述" />
 
 
     <div class='content'>
-        <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%B9%B410%E6%9C%886%E6%97%A5"><span class="toc-text">2022年10月6日</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%B8%B2%E5%8F%A3%E4%B8%80%E5%AF%B9%E5%A4%9A%E4%B8%8B%E8%BD%BD%E4%B8%8E%E9%80%9A%E4%BF%A1"><span class="toc-text">串口一对多下载与通信</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%AE%9E%E7%8E%B0%E4%BA%86%E5%8D%95%E7%89%87%E6%9C%BAa%E5%92%8C%E5%8D%95%E7%89%87%E6%9C%BAb%E7%9A%84%E4%B8%B2%E5%8F%A3%E4%B8%8B%E8%BD%BD%E4%B8%8E%E6%8E%A5%E6%94%B6"><span class="toc-text">实现了单片机A和单片机B的串口下载与接收</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E7%BB%93%E6%9E%9C"><span class="toc-text">结果</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%AE%9E%E7%8E%B0%E4%BA%86%E6%A0%91%E8%8E%93%E6%B4%BE%E4%B8%8Estm32%E7%9A%84%E6%94%B6%E5%8F%91%E6%95%B0%E6%8D%AE%E6%B5%8B%E8%AF%95"><span class="toc-text">实现了树莓派与STM32的收发数据测试</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#stm32%E7%A8%8B%E5%BA%8F"><span class="toc-text">STM32程序</span></a></li></ol></li></ol>
+        <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#2022%E5%B9%B410%E6%9C%886%E6%97%A5"><span class="toc-text">2022年10月6日</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%B8%B2%E5%8F%A3%E4%B8%80%E5%AF%B9%E5%A4%9A%E4%B8%8B%E8%BD%BD%E4%B8%8E%E9%80%9A%E4%BF%A1"><span class="toc-text">串口一对多下载与通信</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%AE%9E%E7%8E%B0%E4%BA%86%E5%8D%95%E7%89%87%E6%9C%BAA%E5%92%8C%E5%8D%95%E7%89%87%E6%9C%BAB%E7%9A%84%E4%B8%B2%E5%8F%A3%E4%B8%8B%E8%BD%BD%E4%B8%8E%E6%8E%A5%E6%94%B6"><span class="toc-text">实现了单片机A和单片机B的串口下载与接收</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%AE%9E%E7%8E%B0%E4%BA%86%E7%BC%96%E7%A0%81%E5%99%A8EN1%E5%92%8CEN3%E7%9A%84%E8%AF%BB%E5%8F%96"><span class="toc-text">实现了编码器EN1和EN3的读取</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#Cube%E9%85%8D%E7%BD%AE"><span class="toc-text">Cube配置</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E4%BB%A3%E7%A0%81%E9%85%8D%E7%BD%AE"><span class="toc-text">代码配置</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E7%BB%93%E6%9E%9C"><span class="toc-text">结果</span></a></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2022%E5%B9%B410%E6%9C%887%E6%97%A5"><span class="toc-text">2022年10月7日</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%AE%9E%E7%8E%B0%E4%BA%86%E5%9B%9B%E4%B8%AA%E7%BC%96%E7%A0%81%E5%99%A8%E7%9A%84%E8%AF%BB%E5%8F%96"><span class="toc-text">实现了四个编码器的读取</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2022%E5%B9%B410%E6%9C%8821%E6%97%A5"><span class="toc-text">2022年10月21日</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%AE%9E%E7%8E%B0%E4%BA%86%E6%A0%91%E8%8E%93%E6%B4%BE%E4%B8%8ESTM32%E7%9A%84%E6%94%B6%E5%8F%91%E6%95%B0%E6%8D%AE%E6%B5%8B%E8%AF%95"><span class="toc-text">实现了树莓派与STM32的收发数据测试</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#STM32%E7%A8%8B%E5%BA%8F"><span class="toc-text">STM32程序</span></a></li></ol></li></ol>
     </div>
   </section>
 
@@ -2833,9 +2829,7 @@ alt="在这里插入图片描述" />
       
     
       
-        <div><p>Blog content follows the <a
-target="_blank" rel="noopener" href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.en">Attribution-NonCommercial-ShareAlike
-4.0 International (CC BY-NC-SA 4.0) License</a></p>
+        <div><p>Blog content follows the <a target="_blank" rel="noopener" href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.en">Attribution-NonCommercial-ShareAlike 4.0 International (CC BY-NC-SA 4.0) License</a></p>
 </div>
       
     

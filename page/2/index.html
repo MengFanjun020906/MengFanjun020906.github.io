@@ -1593,7 +1593,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
     debug: "env",
     cdn: {"js":{"app":"/js/app.js","parallax":"/js/plugins/parallax.js","rightMenu":"/js/plugins/rightMenu.js","rightMenus":"/js/plugins/rightMenus.js","sites":"/js/plugins/tags/sites.js","friends":"/js/plugins/tags/friends.js","contributors":"/js/plugins/tags/contributors.js","search":"/js/search/hexo.js"},"css":{"style":"/css/style.css"}},
     default: {"avatar":"https://unpkg.com/volantis-static@0.0.1654736714924/media/placeholder/avatar/round/3442075.svg","link":"https://unpkg.com/volantis-static@0.0.1654736714924/media/placeholder/link/8f277b4ee0ecd.svg","cover":"https://unpkg.com/volantis-static@0.0.1654736714924/media/placeholder/cover/76b86c0226ffd.svg","image":"https://unpkg.com/volantis-static@0.0.1654736714924/media/placeholder/image/2659360.svg"},
-    lastupdate: new Date(1765118762067),
+    lastupdate: new Date(1765119292905),
     sidebar: {
       for_page: ["blogger","category","tagcloud","webinfo","lastupdate"],
       for_post: ["toc"],
@@ -2384,14 +2384,11 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
   <div class='md article-desc' itemprop="articleBody">
     
       
-        一、电路连接
-LCD1602IIC
-
+        一、电路连接LCD1602IIC
 
 
 LCD1602IIC引脚
 Arduino引脚
-
 
 
 
@@ -2411,11 +2408,9 @@ SCL
 A5
 
 
-
 我这里的LCD1602是IIC的，所以只需要4根线
- 这里是定时器时钟，所以不需要在接别的外设
-二、代码
-1234567891011121314151617181920212223242526272829303132333...
+这里是定时器时钟，所以不需要在接别的外设
+二、代码1234567891011121314151617181920212223242526272829303132333435363...
       
     
   </div>
@@ -2486,8 +2481,7 @@ A5
   <div class='md article-desc' itemprop="articleBody">
     
       
-        一、电路连接
-需要以下几个外设
+        一、电路连接需要以下几个外设
 
 LCD1602(IIC驱动)
 DS1302
@@ -2500,10 +2494,8 @@ DS1302
 LCD1602IIC
 
 
-
 LCD1602IIC引脚
 Arduino引脚
-
 
 
 
@@ -2523,10 +2515,12 @@ SCL
 A5
 
 
-
 我这里的LCD1602是IIC的，所以只需要4根线
 
-## 1-WIRE温湿度...
+1-WIRE温湿度检测器
+
+
+传...
       
     
   </div>
@@ -2597,14 +2591,11 @@ A5
   <div class='md article-desc' itemprop="articleBody">
     
       
-        一、电路连接
-LCD1602IIC
-
+        一、电路连接LCD1602IIC
 
 
 LCD1602IIC引脚
 Arduino引脚
-
 
 
 
@@ -2624,15 +2615,13 @@ SCL
 A5
 
 
-
 我这里的LCD1602是IIC的，所以只需要4根线
- ## 1-WIRE
 
+1-WIRE
 
 
 传感器引脚
 Arduino引脚
-
 
 
 
@@ -2648,10 +2637,8 @@ S
 5V
 
 
-
- 中间的线是要接5V的
-二、程序
-123456789101...
+中间的线是要接5V的
+二、程序123456789101112131415161...
       
     
   </div>
@@ -2722,18 +2709,11 @@ S
   <div class='md article-desc' itemprop="articleBody">
     
       
-        写在开头
-最近在上Arduino的课，可以说Arduino对新手来说非常友好了，因为相比于51和32，Arduino的库函数下载就好，不需要自己去写，就很方便
+        写在开头最近在上Arduino的课，可以说Arduino对新手来说非常友好了，因为相比于51和32，Arduino的库函数下载就好，不需要自己去写，就很方便
 我的硬件设备
+博客汇总博客内容大多数以实际案例为主，基本都是电路+代码+演示效果的结构
 
-
-Arduino实验盒里面
-
-博客汇总
-博客内容大多数以实际案例为主，基本都是电路+代码+演示效果的结构 &gt;
-1.Arduino
-Uno零基础入门学习笔记——第一个程序 &gt; 2.Arduino
-Uno零基础...
+1.Arduino Uno零基础入门学习笔记——第一个程序2.Arduino Uno零基础入门学习笔记——变量与函数3.Arduino Uno零基...
       
     
   </div>
@@ -2804,16 +2784,12 @@ Uno零基础...
   <div class='md article-desc' itemprop="articleBody">
     
       
-        一、电路连接
-
-学校发的Arduino实验盒里还有个矩阵键盘，一开始看到了SDA和SCL感觉是IIC驱动的，但是去Arduino官方论坛看了看，发现好像那个是SDO？，他并不是IIC驱动的，后来从Github上找了一个能用的库
+        一、电路连接学校发的Arduino实验盒里还有个矩阵键盘，一开始看到了SDA和SCL感觉是IIC驱动的，但是去Arduino官方论坛看了看，发现好像那个是SDO？，他并不是IIC驱动的，后来从Github上找了一个能用的库
 矩阵键盘
-
 
 
 矩阵键盘引脚
 Arduino引脚
-
 
 
 
@@ -2833,9 +2809,8 @@ SCL
 8
 
 
-
-二、代码
-先要下载一个TTP229的库 TT...
+二、代码先要下载一个TTP229的库TTP229
+12...
       
     
   </div>
@@ -2907,13 +2882,11 @@ SCL
     
       
         我是在这篇文章的基础上进行修改的，那篇文章只进行了串口的打印，并没有在LCD1602上显示
-# 一、电路连接 ## LCD1602IIC
-
+一、电路连接LCD1602IIC
 
 
 LCD1602IIC引脚
 Arduino引脚
-
 
 
 
@@ -2933,16 +2906,21 @@ SCL
 A5
 
 
-
 我这里的LCD1602是IIC的，所以只需要4根线
- ## DS1302
 
+DS1302
 
 
 DS1302引脚
 Arduino引脚
 
-...
+
+
+VCC
+5V
+
+
+GN...
       
     
   </div>
@@ -3013,14 +2991,11 @@ Arduino引脚
   <div class='md article-desc' itemprop="articleBody">
     
       
-        一、电路连接
-PIR运动检测器
-
+        一、电路连接PIR运动检测器
 
 
 PIR运动检测器引脚
 Arduino引脚
-
 
 
 
@@ -3037,17 +3012,11 @@ A0(14)
 
 
 
-
-
-在这里插入图片描述
-
 LCD1602IIC
-
 
 
 LCD1602IIC引脚
 Arduino引脚
-
 
 
 
@@ -3067,11 +3036,13 @@ SCL
 A5
 
 
-
 我这里的LCD1602是IIC的，所以只需要4根线
 
+LED
 
-...
+
+LED引脚
+Arduino引...
       
     
   </div>
@@ -3145,10 +3116,8 @@ A5
         一、电路接线
 
 
-
 霍尔传感器引脚
 Arduino引脚
-
 
 
 
@@ -3168,9 +3137,7 @@ A0
 A0
 
 
-
-二、程序
-12345678910111213141516#define Moisture A0#define D0 7void setup() &#123;  pinMode(Moisture,INPUT);  pinMode(D0,INPUT);  Seri...
+二、程序12345678910111213141516#define Moisture A0#define D0 7void setup() &#123;  pinMode(Moisture,INPUT);  pinMode(D0,INPUT);  Serial.b...
       
     
   </div>
@@ -3241,14 +3208,11 @@ A0
   <div class='md article-desc' itemprop="articleBody">
     
       
-        一、电路接线
-声音传感器
-
+        一、电路接线声音传感器
 
 
 声音传感器引脚
 Arduino引脚
-
 
 
 
@@ -3264,14 +3228,11 @@ OUT
 6
 
 
-
 LED
-
 
 
 LED引脚
 Arduino引脚
-
 
 
 
@@ -3283,9 +3244,7 @@ GND
 GND
 
 
-
-二、代码
-1234567891011121314151617181920212223int val;int ledpin=8;int voicepin=6;void set...
+二、代码1234567891011121314151617181920212223int val;int ledpin=8;int voicepin=6;void setup() &#1...
       
     
   </div>
@@ -3357,12 +3316,7 @@ GND
     
       
         一、电路图
-
-
-在这里插入图片描述
-
-二、程序
-1234567891011121314151617181920212223242526272829303132333435363738394041424344int led=5;int beep=8;void setup() &#123;  pinMode(beep,OUTPUT);  pinMode(led,OUTPUT);&#125;voi...
+二、程序1234567891011121314151617181920212223242526272829303132333435363738394041424344int led=5;int beep=8;void setup() &#123;  pinMode(beep,OUTPUT);  pinMode(led,OUTPUT);&#125;void loop() &#123...
       
     
   </div>
@@ -3842,9 +3796,7 @@ GND
       
     
       
-        <div><p>Blog content follows the <a
-target="_blank" rel="noopener" href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.en">Attribution-NonCommercial-ShareAlike
-4.0 International (CC BY-NC-SA 4.0) License</a></p>
+        <div><p>Blog content follows the <a target="_blank" rel="noopener" href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.en">Attribution-NonCommercial-ShareAlike 4.0 International (CC BY-NC-SA 4.0) License</a></p>
 </div>
       
     

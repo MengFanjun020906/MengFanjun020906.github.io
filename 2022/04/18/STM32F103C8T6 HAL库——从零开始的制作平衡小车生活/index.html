@@ -40,7 +40,7 @@
 <meta property="og:title" content="STM32F103C8T6 HAL库——从零开始的制作平衡小车生活">
 <meta property="og:url" content="https://mengfanjun020906.github.io/2022/04/18/STM32F103C8T6%20HAL%E5%BA%93%E2%80%94%E2%80%94%E4%BB%8E%E9%9B%B6%E5%BC%80%E5%A7%8B%E7%9A%84%E5%88%B6%E4%BD%9C%E5%B9%B3%E8%A1%A1%E5%B0%8F%E8%BD%A6%E7%94%9F%E6%B4%BB/index.html">
 <meta property="og:site_name" content="MengFanjun的博客">
-<meta property="og:description" content="最近买了个平衡小车，为了圆我PID梦，买来玩玩，废话不多说，直接开搞 第一步：让小车的轮子转起来 我用的电机是TB6612FNG，想详细了解的话直接去搜手册，给他输出两路PWM还要两个引脚进行高低电平的转换就可以设置前进或者后退了，规则如下  看一下引脚图吧  引脚连接：    PWMA PA11     PWMB PA8   AIN1 PB13   AIN2 PB12   BIN1 PB14">
+<meta property="og:description" content="最近买了个平衡小车，为了圆我PID梦，买来玩玩，废话不多说，直接开搞 第一步：让小车的轮子转起来我用的电机是TB6612FNG，想详细了解的话直接去搜手册，给他输出两路PWM还要两个引脚进行高低电平的转换就可以设置前进或者后退了，规则如下看一下引脚图吧引脚连接：    PWMA PA11    PWMB PA8   AIN1 PB13   AIN2 PB12   BIN1 PB14   BIN2">
 <meta property="og:locale" content="en_US">
 <meta property="og:image" content="https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png">
 <meta property="article:published_time" content="2022-04-18T07:13:54.000Z">
@@ -1597,7 +1597,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
     debug: "env",
     cdn: {"js":{"app":"/js/app.js","parallax":"/js/plugins/parallax.js","rightMenu":"/js/plugins/rightMenu.js","rightMenus":"/js/plugins/rightMenus.js","sites":"/js/plugins/tags/sites.js","friends":"/js/plugins/tags/friends.js","contributors":"/js/plugins/tags/contributors.js","search":"/js/search/hexo.js"},"css":{"style":"/css/style.css"}},
     default: {"avatar":"https://unpkg.com/volantis-static@0.0.1654736714924/media/placeholder/avatar/round/3442075.svg","link":"https://unpkg.com/volantis-static@0.0.1654736714924/media/placeholder/link/8f277b4ee0ecd.svg","cover":"https://unpkg.com/volantis-static@0.0.1654736714924/media/placeholder/cover/76b86c0226ffd.svg","image":"https://unpkg.com/volantis-static@0.0.1654736714924/media/placeholder/image/2659360.svg"},
-    lastupdate: new Date(1765118762067),
+    lastupdate: new Date(1765119292905),
     sidebar: {
       for_page: ["blogger","category","tagcloud","webinfo","lastupdate"],
       for_post: ["toc"],
@@ -2454,100 +2454,56 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
   <div id="layoutHelper-page-plugins"></div>
   <div id="post-body" itemprop="articleBody">
     <p>最近买了个平衡小车，为了圆我PID梦，买来玩玩，废话不多说，直接开搞</p>
-<h2 id="第一步让小车的轮子转起来">第一步：让小车的轮子转起来</h2>
-<p>我用的电机是TB6612FNG，想详细了解的话直接去搜手册，给他输出两路PWM还要两个引脚进行高低电平的转换就可以设置前进或者后退了，规则如下
-<img
-src="https://mfjblog-pic.oss-cn-beijing.aliyuncs.com/img/12b92bf84c3a4d30a6bdc252459f1a64.png"
-alt="在这里插入图片描述" /> 看一下引脚图吧 <img
-src="https://mfjblog-pic.oss-cn-beijing.aliyuncs.com/img/d1ac2b8501724c7f9df3ffddcac7ab50.png"
-alt="在这里插入图片描述" /> 引脚连接：</p>
+<h2 id="第一步：让小车的轮子转起来"><a href="#第一步：让小车的轮子转起来" class="headerlink" title="第一步：让小车的轮子转起来"></a>第一步：让小车的轮子转起来</h2><p>我用的电机是TB6612FNG，想详细了解的话直接去搜手册，给他输出两路PWM还要两个引脚进行高低电平的转换就可以设置前进或者后退了，规则如下<br><img src="https://mfjblog-pic.oss-cn-beijing.aliyuncs.com/img/12b92bf84c3a4d30a6bdc252459f1a64.png" class="lazyload" data-srcset="https://mfjblog-pic.oss-cn-beijing.aliyuncs.com/img/12b92bf84c3a4d30a6bdc252459f1a64.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="在这里插入图片描述"><br>看一下引脚图吧<br><img src="https://mfjblog-pic.oss-cn-beijing.aliyuncs.com/img/d1ac2b8501724c7f9df3ffddcac7ab50.png" class="lazyload" data-srcset="https://mfjblog-pic.oss-cn-beijing.aliyuncs.com/img/d1ac2b8501724c7f9df3ffddcac7ab50.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="在这里插入图片描述"><br>引脚连接：</p>
 <table>
 <thead>
-<tr class="header">
+<tr>
 <th>PWMA</th>
 <th>PA11</th>
 </tr>
 </thead>
-<tbody>
-<tr class="odd">
+<tbody><tr>
 <td>PWMB</td>
 <td>PA8</td>
 </tr>
-<tr class="even">
+<tr>
 <td>AIN1</td>
 <td>PB13</td>
 </tr>
-<tr class="odd">
+<tr>
 <td>AIN2</td>
 <td>PB12</td>
 </tr>
-<tr class="even">
+<tr>
 <td>BIN1</td>
 <td>PB14</td>
 </tr>
-<tr class="odd">
+<tr>
 <td>BIN2</td>
 <td>PB15</td>
 </tr>
-</tbody>
-</table>
-<p>下面开始配置CUBE 首先是SYS： <img
-src="https://mfjblog-pic.oss-cn-beijing.aliyuncs.com/img/88e19e9ea93f46eda0bf7e71ad3926c1.png"
-alt="在这里插入图片描述" /> 其次是时钟： <img
-src="https://mfjblog-pic.oss-cn-beijing.aliyuncs.com/img/f3fbaa98568743629730b262e34047f3.png"
-alt="在这里插入图片描述" /> <img
-src="https://mfjblog-pic.oss-cn-beijing.aliyuncs.com/img/73f4599fecc446d5a08efc9e4839561c-20230324140444700.png"
-alt="在这里插入图片描述" /></p>
-<p>下面开始引脚的设置： <img
-src="https://mfjblog-pic.oss-cn-beijing.aliyuncs.com/img/286cbab6ab23471482ff742836602242.png"
-alt="在这里插入图片描述" /> 用定时器1，10Hz就够了 <img
-src="https://mfjblog-pic.oss-cn-beijing.aliyuncs.com/img/ef9c33f070064379aa6dd0a9f2ff71b6.png"
-alt="在这里插入图片描述" /> 生成： <img
-src="https://mfjblog-pic.oss-cn-beijing.aliyuncs.com/img/a9dc3b4de78d44a9b19fe8dac5dd1447.png"
-alt="在这里插入图片描述" /></p>
-<p><strong>代码部分：</strong> main.h</p>
+</tbody></table>
+<p>下面开始配置CUBE<br>首先是SYS：<br><img src="https://mfjblog-pic.oss-cn-beijing.aliyuncs.com/img/88e19e9ea93f46eda0bf7e71ad3926c1.png" class="lazyload" data-srcset="https://mfjblog-pic.oss-cn-beijing.aliyuncs.com/img/88e19e9ea93f46eda0bf7e71ad3926c1.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="在这里插入图片描述"><br>其次是时钟：<br><img src="https://mfjblog-pic.oss-cn-beijing.aliyuncs.com/img/f3fbaa98568743629730b262e34047f3.png" class="lazyload" data-srcset="https://mfjblog-pic.oss-cn-beijing.aliyuncs.com/img/f3fbaa98568743629730b262e34047f3.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="在这里插入图片描述"><br><img src="https://mfjblog-pic.oss-cn-beijing.aliyuncs.com/img/73f4599fecc446d5a08efc9e4839561c-20230324140444700.png" class="lazyload" data-srcset="https://mfjblog-pic.oss-cn-beijing.aliyuncs.com/img/73f4599fecc446d5a08efc9e4839561c-20230324140444700.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="在这里插入图片描述"></p>
+<p>下面开始引脚的设置：<br><img src="https://mfjblog-pic.oss-cn-beijing.aliyuncs.com/img/286cbab6ab23471482ff742836602242.png" class="lazyload" data-srcset="https://mfjblog-pic.oss-cn-beijing.aliyuncs.com/img/286cbab6ab23471482ff742836602242.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="在这里插入图片描述"><br>用定时器1，10Hz就够了<br><img src="https://mfjblog-pic.oss-cn-beijing.aliyuncs.com/img/ef9c33f070064379aa6dd0a9f2ff71b6.png" class="lazyload" data-srcset="https://mfjblog-pic.oss-cn-beijing.aliyuncs.com/img/ef9c33f070064379aa6dd0a9f2ff71b6.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="在这里插入图片描述"><br>生成：<br><img src="https://mfjblog-pic.oss-cn-beijing.aliyuncs.com/img/a9dc3b4de78d44a9b19fe8dac5dd1447.png" class="lazyload" data-srcset="https://mfjblog-pic.oss-cn-beijing.aliyuncs.com/img/a9dc3b4de78d44a9b19fe8dac5dd1447.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="在这里插入图片描述"></p>
+<p><strong>代码部分：</strong><br>main.h</p>
 <figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/* USER CODE BEGIN Private defines */</span></span><br><span class="line"><span class="meta">#<span class="keyword">define</span> AIN2_Pin GPIO_PIN_12</span></span><br><span class="line"><span class="meta">#<span class="keyword">define</span> AIN2_GPIO_Port GPIOB</span></span><br><span class="line"><span class="meta">#<span class="keyword">define</span> AIN1_Pin GPIO_PIN_13</span></span><br><span class="line"><span class="meta">#<span class="keyword">define</span> AIN1_GPIO_Port GPIOB</span></span><br><span class="line"></span><br><span class="line"><span class="meta">#<span class="keyword">define</span> BIN2_Pin GPIO_PIN_14</span></span><br><span class="line"><span class="meta">#<span class="keyword">define</span> BIN2_GPIO_Port GPIOB</span></span><br><span class="line"><span class="meta">#<span class="keyword">define</span> BIN1_Pin GPIO_PIN_15</span></span><br><span class="line"><span class="meta">#<span class="keyword">define</span> BIN1_GPIO_Port GPIOB</span></span><br><span class="line"><span class="comment">/* USER CODE END Private defines */</span></span><br></pre></td></tr></table></figure>
 <p>main.c</p>
 <figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/* USER CODE BEGIN 2 */</span></span><br><span class="line">	HAL_TIM_PWM_Start(&amp;htim1,TIM_CHANNEL_1);<span class="comment">//开启TIM1_CH1</span></span><br><span class="line">  	HAL_TIM_PWM_Start(&amp;htim1,TIM_CHANNEL_4);<span class="comment">//开启TIM1_CH4</span></span><br><span class="line">	HAL_GPIO_WritePin(AIN1_GPIO_Port,AIN1_Pin,GPIO_PIN_RESET);<span class="comment">//AIN1为0</span></span><br><span class="line">	HAL_GPIO_WritePin(AIN2_GPIO_Port,AIN2_Pin,GPIO_PIN_SET);<span class="comment">//AIN2位1，反转</span></span><br><span class="line">	HAL_GPIO_WritePin(BIN1_GPIO_Port,BIN1_Pin,GPIO_PIN_RESET);<span class="comment">//BIN1为0</span></span><br><span class="line">	HAL_GPIO_WritePin(BIN2_GPIO_Port,BIN2_Pin,GPIO_PIN_SET);<span class="comment">//BIN2位1，反转</span></span><br><span class="line">  <span class="comment">/* USER CODE END 2 */</span></span><br></pre></td></tr></table></figure>
+
 <figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/* USER CODE BEGIN 3 */</span></span><br><span class="line">	HAL_GPIO_WritePin(AIN1_GPIO_Port,AIN1_Pin,GPIO_PIN_RESET);</span><br><span class="line">	HAL_GPIO_WritePin(AIN2_GPIO_Port,AIN2_Pin,GPIO_PIN_SET);</span><br><span class="line">	HAL_GPIO_WritePin(BIN1_GPIO_Port,BIN1_Pin,GPIO_PIN_RESET);</span><br><span class="line">	HAL_GPIO_WritePin(BIN2_GPIO_Port,BIN2_Pin,GPIO_PIN_SET);</span><br><span class="line">	<span class="keyword">for</span>(<span class="type">int</span> i=<span class="number">0</span>;i&lt;<span class="number">7100</span>;i++)</span><br><span class="line">	&#123;</span><br><span class="line">		__HAL_TIM_SET_COMPARE(&amp;htim1,TIM_CHANNEL_4,i);<span class="comment">//让轮子转起来</span></span><br><span class="line">		HAL_Delay(<span class="number">1</span>);</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">for</span>(<span class="type">int</span> j=<span class="number">7100</span>;j&gt;<span class="number">0</span>;j--)</span><br><span class="line">	&#123;</span><br><span class="line">		__HAL_TIM_SET_COMPARE(&amp;htim1,TIM_CHANNEL_4,j);</span><br><span class="line">		HAL_Delay(<span class="number">1</span>);</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">for</span>(<span class="type">int</span> i=<span class="number">0</span>;i&lt;<span class="number">7100</span>;i++)</span><br><span class="line">	&#123;</span><br><span class="line">		__HAL_TIM_SET_COMPARE(&amp;htim1,TIM_CHANNEL_1,i);</span><br><span class="line">		HAL_Delay(<span class="number">1</span>);</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">for</span>(<span class="type">int</span> j=<span class="number">7100</span>;j&gt;<span class="number">0</span>;j--)</span><br><span class="line">	&#123;</span><br><span class="line">		__HAL_TIM_SET_COMPARE(&amp;htim1,TIM_CHANNEL_1,j);</span><br><span class="line">		HAL_Delay(<span class="number">1</span>);</span><br><span class="line">	&#125;</span><br><span class="line"> &#125;</span><br><span class="line"> <span class="comment">/* USER CODE END 3 */</span></span><br></pre></td></tr></table></figure>
-<h2
-id="第二步用编码器测出小车的速度">第二步：用编码器测出小车的速度</h2>
-<p>先看原理图 <img
-src="https://mfjblog-pic.oss-cn-beijing.aliyuncs.com/img/cb40a7ef8d24440d9cdea2558d4d4ccd.png"
-alt="在这里插入图片描述" />
-PA0和PA1，PA6和PA7分别是小车的编码器引脚，所以我们在cunbe中将这四个引脚设置为Encoder模式
-<img
-src="https://mfjblog-pic.oss-cn-beijing.aliyuncs.com/img/355f7407ccea4c0ea27f470ae4d62193.png"
-alt="在这里插入图片描述" />
-在cube中设置好编码器之后，我们再设置好串口，异步通信，再打开中断 <img
-src="https://mfjblog-pic.oss-cn-beijing.aliyuncs.com/img/552b6358078a48fa99736e6fd621812f.png"
-alt="在这里插入图片描述" /> 首先开启编码器</p>
+
+<h2 id="第二步：用编码器测出小车的速度"><a href="#第二步：用编码器测出小车的速度" class="headerlink" title="第二步：用编码器测出小车的速度"></a>第二步：用编码器测出小车的速度</h2><p>先看原理图<br><img src="https://mfjblog-pic.oss-cn-beijing.aliyuncs.com/img/cb40a7ef8d24440d9cdea2558d4d4ccd.png" class="lazyload" data-srcset="https://mfjblog-pic.oss-cn-beijing.aliyuncs.com/img/cb40a7ef8d24440d9cdea2558d4d4ccd.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="在这里插入图片描述"><br>PA0和PA1，PA6和PA7分别是小车的编码器引脚，所以我们在cunbe中将这四个引脚设置为Encoder模式<br><img src="https://mfjblog-pic.oss-cn-beijing.aliyuncs.com/img/355f7407ccea4c0ea27f470ae4d62193.png" class="lazyload" data-srcset="https://mfjblog-pic.oss-cn-beijing.aliyuncs.com/img/355f7407ccea4c0ea27f470ae4d62193.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="在这里插入图片描述"><br>在cube中设置好编码器之后，我们再设置好串口，异步通信，再打开中断<br><img src="https://mfjblog-pic.oss-cn-beijing.aliyuncs.com/img/552b6358078a48fa99736e6fd621812f.png" class="lazyload" data-srcset="https://mfjblog-pic.oss-cn-beijing.aliyuncs.com/img/552b6358078a48fa99736e6fd621812f.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="在这里插入图片描述"><br>首先开启编码器</p>
 <figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="type">void</span> <span class="title function_">Encoder_Start</span><span class="params">(<span class="type">void</span>)</span>   <span class="comment">//启动两个编码器. 而编码器初始化HAL_TIM_Encoder_Init()和HAL_TIM_Encoder_MspInit()在main()函数中调用的MX_TIM2_Init()中。</span></span><br><span class="line">&#123;</span><br><span class="line">	__HAL_TIM_SET_COUNTER(&amp;htim2,<span class="number">0</span>);   <span class="comment">//用带参宏设置编码器的初始值为0(涉及正反转的需要)</span></span><br><span class="line">	__HAL_TIM_SET_COUNTER(&amp;htim3,<span class="number">0</span>);</span><br><span class="line"></span><br><span class="line">	HAL_TIM_Encoder_Start_IT(&amp;htim2,TIM_CHANNEL_ALL);   <span class="comment">//开启编码器的中断模式,两个定时器通道TI1和TI2是每个编码器的两个信号采集通道.</span></span><br><span class="line">	HAL_TIM_Encoder_Start_IT(&amp;htim3,TIM_CHANNEL_ALL);</span><br><span class="line"></span><br><span class="line">	HAL_TIM_Encoder_Start(&amp;htim2,TIM_CHANNEL_ALL);  <span class="comment">//开启两个编码器</span></span><br><span class="line">	HAL_TIM_Encoder_Start(&amp;htim3,TIM_CHANNEL_ALL);</span><br><span class="line">	</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <p>读取编码器速度值</p>
 <figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"><span class="type">int</span> <span class="title function_">Read_Speed</span><span class="params">(<span class="type">int</span> TIMx)</span></span><br><span class="line">&#123;</span><br><span class="line">	<span class="type">int</span> Encoder_Value = <span class="number">0</span>;</span><br><span class="line">	<span class="keyword">switch</span>(TIMx)</span><br><span class="line">	&#123;</span><br><span class="line">		<span class="keyword">case</span> <span class="number">2</span>: </span><br><span class="line">			Encoder_Value =(<span class="type">short</span>) __HAL_TIM_GET_COUNTER(&amp;htim2);     <span class="comment">//保存编码器计数器的值</span></span><br><span class="line">			__HAL_TIM_SET_COUNTER(&amp;htim2,<span class="number">0</span>);                   <span class="comment">//保存之后要清零,以便下次继续读取.另外每次清零后采样值减0,直接用单位时间的话就可以得出速度信息了.不要麻烦还要减去初值了.</span></span><br><span class="line">			<span class="keyword">break</span>;</span><br><span class="line"></span><br><span class="line">		<span class="keyword">case</span> <span class="number">3</span>: </span><br><span class="line">			Encoder_Value =(<span class="type">short</span>) __HAL_TIM_GET_COUNTER(&amp;htim3);</span><br><span class="line">			__HAL_TIM_SET_COUNTER(&amp;htim3,<span class="number">0</span>);</span><br><span class="line">			<span class="keyword">break</span>;</span><br><span class="line">		</span><br><span class="line">		<span class="keyword">default</span>:</span><br><span class="line">			Encoder_Value = <span class="number">0</span>;</span><br><span class="line">	&#125;	</span><br><span class="line">	<span class="keyword">return</span> Encoder_Value;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>这里是主函数，记得定义encoder2和encoder3 <figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">  <span class="comment">/* USER CODE BEGIN WHILE */</span></span><br><span class="line">  <span class="keyword">while</span> (<span class="number">1</span>)</span><br><span class="line">  &#123;</span><br><span class="line">    <span class="comment">/* USER CODE END WHILE */</span></span><br><span class="line">    <span class="comment">/* USER CODE BEGIN 3 */</span></span><br><span class="line">	encoder2=Read_Speed(<span class="number">2</span>);</span><br><span class="line">	encoder3=Read_Speed(<span class="number">3</span>);</span><br><span class="line">	<span class="built_in">printf</span>(<span class="string">&quot;A轮=%d,B轮=%d\n&quot;</span>,encoder2,encoder3);</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-输出结果，因为是拿手转的，只能一只手转轮子： <img
-src="https://mfjblog-pic.oss-cn-beijing.aliyuncs.com/img/52108ee6dafe4613b764f77e9f6ed9fd.png"
-alt="在这里插入图片描述" /></p>
-<h2 id="第三步读取mpu6050的数据值">第三步：读取MPU6050的数据值</h2>
-<p>接下来就是最难的MPU6050了，我这里就不详细讲了，因为我自己对底层也不是很了解</p>
+<p>这里是主函数，记得定义encoder2和encoder3</p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">  <span class="comment">/* USER CODE BEGIN WHILE */</span></span><br><span class="line">  <span class="keyword">while</span> (<span class="number">1</span>)</span><br><span class="line">  &#123;</span><br><span class="line">    <span class="comment">/* USER CODE END WHILE */</span></span><br><span class="line">    <span class="comment">/* USER CODE BEGIN 3 */</span></span><br><span class="line">	encoder2=Read_Speed(<span class="number">2</span>);</span><br><span class="line">	encoder3=Read_Speed(<span class="number">3</span>);</span><br><span class="line">	<span class="built_in">printf</span>(<span class="string">&quot;A轮=%d,B轮=%d\n&quot;</span>,encoder2,encoder3);</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>输出结果，因为是拿手转的，只能一只手转轮子：<br><img src="https://mfjblog-pic.oss-cn-beijing.aliyuncs.com/img/52108ee6dafe4613b764f77e9f6ed9fd.png" class="lazyload" data-srcset="https://mfjblog-pic.oss-cn-beijing.aliyuncs.com/img/52108ee6dafe4613b764f77e9f6ed9fd.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="在这里插入图片描述"></p>
+<h2 id="第三步：读取MPU6050的数据值"><a href="#第三步：读取MPU6050的数据值" class="headerlink" title="第三步：读取MPU6050的数据值"></a>第三步：读取MPU6050的数据值</h2><p>接下来就是最难的MPU6050了，我这里就不详细讲了，因为我自己对底层也不是很了解</p>
 <p>左边我们可以看到XYZ的加速度，和XYZ陀螺仪数值，他们经过ADC转换后的数值通过IIC可以直接输出，但是数值就是纯数值，并不是角度值，然后就去DMP了，DMP在输出去FIMO，我理解就是，可以把MPU6050读取的这些东西，变成四元数，然后再通过IIC输出，就可以变成角度值了</p>
-<p><img
-src="https://mfjblog-pic.oss-cn-beijing.aliyuncs.com/img/b27758e650b845ada6b2ca9bd9efbc66.png"
-alt="在这里插入图片描述" /> 首先我们在CUBE中配置好IIC的SDA线和SCL线 <img
-src="https://mfjblog-pic.oss-cn-beijing.aliyuncs.com/img/4f9bac28793a4a41bdf3012b36ffb775.png"
-alt="在这里插入图片描述" /> <img
-src="https://mfjblog-pic.oss-cn-beijing.aliyuncs.com/img/ab47249089e443a8a8854706bdf9daa8.png"
-alt="在这里插入图片描述" />
-MPU6050的读写程序我就不展示了，因为这些从网络上都能找到，我用的是正点原子的，需要注意的就是我这里用的是硬件的HAL库IIC，之前我们老师说硬件的IIC有点bug，让我们用软件的，但是我试了试硬件的IIC，发现也挺好用的，就不用软件的了</p>
-<p>读取结果： <img
-src="https://mfjblog-pic.oss-cn-beijing.aliyuncs.com/img/4b43191e35fd4be5909eba94561bcfd7.png"
-alt="在这里插入图片描述" />
-可以看到欧拉角的角度值，这样就可以去调整小车的姿态了</p>
-<h2 id="第四步pid">第四步：PID</h2>
-<h1 id="最近在做智能采摘机器人-有时间一定接着更">最近在做智能采摘机器人
-有时间一定接着更！</h1>
-
+<p><img src="https://mfjblog-pic.oss-cn-beijing.aliyuncs.com/img/b27758e650b845ada6b2ca9bd9efbc66.png" class="lazyload" data-srcset="https://mfjblog-pic.oss-cn-beijing.aliyuncs.com/img/b27758e650b845ada6b2ca9bd9efbc66.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="在这里插入图片描述"><br>首先我们在CUBE中配置好IIC的SDA线和SCL线<br><img src="https://mfjblog-pic.oss-cn-beijing.aliyuncs.com/img/4f9bac28793a4a41bdf3012b36ffb775.png" class="lazyload" data-srcset="https://mfjblog-pic.oss-cn-beijing.aliyuncs.com/img/4f9bac28793a4a41bdf3012b36ffb775.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="在这里插入图片描述"><br><img src="https://mfjblog-pic.oss-cn-beijing.aliyuncs.com/img/ab47249089e443a8a8854706bdf9daa8.png" class="lazyload" data-srcset="https://mfjblog-pic.oss-cn-beijing.aliyuncs.com/img/ab47249089e443a8a8854706bdf9daa8.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="在这里插入图片描述"><br>MPU6050的读写程序我就不展示了，因为这些从网络上都能找到，我用的是正点原子的，需要注意的就是我这里用的是硬件的HAL库IIC，之前我们老师说硬件的IIC有点bug，让我们用软件的，但是我试了试硬件的IIC，发现也挺好用的，就不用软件的了</p>
+<p>读取结果：<br><img src="https://mfjblog-pic.oss-cn-beijing.aliyuncs.com/img/4b43191e35fd4be5909eba94561bcfd7.png" class="lazyload" data-srcset="https://mfjblog-pic.oss-cn-beijing.aliyuncs.com/img/4b43191e35fd4be5909eba94561bcfd7.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="在这里插入图片描述"><br>可以看到欧拉角的角度值，这样就可以去调整小车的姿态了</p>
+<h2 id="第四步：PID"><a href="#第四步：PID" class="headerlink" title="第四步：PID"></a>第四步：PID</h2><h1 id="最近在做智能采摘机器人-有时间一定接着更！"><a href="#最近在做智能采摘机器人-有时间一定接着更！" class="headerlink" title="最近在做智能采摘机器人 有时间一定接着更！"></a>最近在做智能采摘机器人 有时间一定接着更！</h1>
   </div>
   
   
@@ -2564,8 +2520,7 @@ alt="在这里插入图片描述" />
             <blockquote>
               
                 
-                  <p>博客内容遵循 署名-非商业性使用-相同方式共享 4.0 国际 (CC BY-NC-SA
-4.0) 协议</p>
+                  <p>博客内容遵循 署名-非商业性使用-相同方式共享 4.0 国际 (CC BY-NC-SA 4.0) 协议</p>
 
                 
               
@@ -2681,8 +2636,7 @@ alt="在这里插入图片描述" />
       
         <a class='next' href='/2022/04/18/%E5%85%B3%E4%BA%8EScikit-learn%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E7%9A%84%E7%AC%94%E8%AE%B0%E2%80%94%E2%80%94%E7%AC%AC%E4%B8%80%E7%AF%87/'>
           <p class='title'>关于Scikit-learn机器学习的笔记——第一篇<i class="fa-solid fa-chevron-right" aria-hidden="true"></i></p>
-          <p class='content'>视频教程：【莫烦Python】Scikit-learn
-(sklearn) 优雅地学会机器学习
+          <p class='content'>视频教程：【莫烦Python】Scikit-learn (sklearn) 优雅地学会机器学习
 首先从安装sklearn入手，我用的是python3.7，需要安装numpy和scipy，安装之后...</p>
         </a>
       
@@ -2741,7 +2695,7 @@ alt="在这里插入图片描述" />
 
 
     <div class='content'>
-        <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%AC%AC%E4%B8%80%E6%AD%A5%E8%AE%A9%E5%B0%8F%E8%BD%A6%E7%9A%84%E8%BD%AE%E5%AD%90%E8%BD%AC%E8%B5%B7%E6%9D%A5"><span class="toc-text">第一步：让小车的轮子转起来</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%AC%AC%E4%BA%8C%E6%AD%A5%E7%94%A8%E7%BC%96%E7%A0%81%E5%99%A8%E6%B5%8B%E5%87%BA%E5%B0%8F%E8%BD%A6%E7%9A%84%E9%80%9F%E5%BA%A6"><span class="toc-text">第二步：用编码器测出小车的速度</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%AC%AC%E4%B8%89%E6%AD%A5%E8%AF%BB%E5%8F%96mpu6050%E7%9A%84%E6%95%B0%E6%8D%AE%E5%80%BC"><span class="toc-text">第三步：读取MPU6050的数据值</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%AC%AC%E5%9B%9B%E6%AD%A5pid"><span class="toc-text">第四步：PID</span></a></li></ol>
+        <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%AC%AC%E4%B8%80%E6%AD%A5%EF%BC%9A%E8%AE%A9%E5%B0%8F%E8%BD%A6%E7%9A%84%E8%BD%AE%E5%AD%90%E8%BD%AC%E8%B5%B7%E6%9D%A5"><span class="toc-text">第一步：让小车的轮子转起来</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%AC%AC%E4%BA%8C%E6%AD%A5%EF%BC%9A%E7%94%A8%E7%BC%96%E7%A0%81%E5%99%A8%E6%B5%8B%E5%87%BA%E5%B0%8F%E8%BD%A6%E7%9A%84%E9%80%9F%E5%BA%A6"><span class="toc-text">第二步：用编码器测出小车的速度</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%AC%AC%E4%B8%89%E6%AD%A5%EF%BC%9A%E8%AF%BB%E5%8F%96MPU6050%E7%9A%84%E6%95%B0%E6%8D%AE%E5%80%BC"><span class="toc-text">第三步：读取MPU6050的数据值</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%AC%AC%E5%9B%9B%E6%AD%A5%EF%BC%9APID"><span class="toc-text">第四步：PID</span></a></li></ol>
     </div>
   </section>
 
@@ -2883,9 +2837,7 @@ alt="在这里插入图片描述" />
       
     
       
-        <div><p>Blog content follows the <a
-target="_blank" rel="noopener" href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.en">Attribution-NonCommercial-ShareAlike
-4.0 International (CC BY-NC-SA 4.0) License</a></p>
+        <div><p>Blog content follows the <a target="_blank" rel="noopener" href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.en">Attribution-NonCommercial-ShareAlike 4.0 International (CC BY-NC-SA 4.0) License</a></p>
 </div>
       
     

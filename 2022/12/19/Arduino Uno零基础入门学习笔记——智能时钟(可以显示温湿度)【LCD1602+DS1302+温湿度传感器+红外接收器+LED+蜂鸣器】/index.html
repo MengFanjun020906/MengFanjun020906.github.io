@@ -40,7 +40,7 @@
 <meta property="og:title" content="Arduino Uno零基础入门学习笔记——智能时钟(可以显示温湿度)【LCD1602+DS1302+温湿度传感器+红外接收器+LED+蜂鸣器】">
 <meta property="og:url" content="https://mengfanjun020906.github.io/2022/12/19/Arduino%20Uno%E9%9B%B6%E5%9F%BA%E7%A1%80%E5%85%A5%E9%97%A8%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0%E2%80%94%E2%80%94%E6%99%BA%E8%83%BD%E6%97%B6%E9%92%9F(%E5%8F%AF%E4%BB%A5%E6%98%BE%E7%A4%BA%E6%B8%A9%E6%B9%BF%E5%BA%A6)%E3%80%90LCD1602+DS1302+%E6%B8%A9%E6%B9%BF%E5%BA%A6%E4%BC%A0%E6%84%9F%E5%99%A8+%E7%BA%A2%E5%A4%96%E6%8E%A5%E6%94%B6%E5%99%A8+LED+%E8%9C%82%E9%B8%A3%E5%99%A8%E3%80%91/index.html">
 <meta property="og:site_name" content="MengFanjun的博客">
-<meta property="og:description" content="一、电路连接 需要以下几个外设  LCD1602(IIC驱动) DS1302 1-WIRE温湿度检测器 红外接收器 遥控器 两个LED(一红一蓝) 蜂鸣器  LCD1602IIC    LCD1602IIC引脚 Arduino引脚     VCC 5V   GND GND   SDA A4   SCL A5    我这里的LCD1602是IIC的，所以只需要4根线  ## 1-WIRE温湿度检测器">
+<meta property="og:description" content="一、电路连接需要以下几个外设  LCD1602(IIC驱动) DS1302 1-WIRE温湿度检测器 红外接收器 遥控器 两个LED(一红一蓝) 蜂鸣器  LCD1602IIC   LCD1602IIC引脚 Arduino引脚    VCC 5V   GND GND   SDA A4   SCL A5   我这里的LCD1602是IIC的，所以只需要4根线  1-WIRE温湿度检测器   传感器引">
 <meta property="og:locale" content="en_US">
 <meta property="og:image" content="https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png">
 <meta property="article:published_time" content="2022-12-19T08:53:48.000Z">
@@ -1596,7 +1596,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
     debug: "env",
     cdn: {"js":{"app":"/js/app.js","parallax":"/js/plugins/parallax.js","rightMenu":"/js/plugins/rightMenu.js","rightMenus":"/js/plugins/rightMenus.js","sites":"/js/plugins/tags/sites.js","friends":"/js/plugins/tags/friends.js","contributors":"/js/plugins/tags/contributors.js","search":"/js/search/hexo.js"},"css":{"style":"/css/style.css"}},
     default: {"avatar":"https://unpkg.com/volantis-static@0.0.1654736714924/media/placeholder/avatar/round/3442075.svg","link":"https://unpkg.com/volantis-static@0.0.1654736714924/media/placeholder/link/8f277b4ee0ecd.svg","cover":"https://unpkg.com/volantis-static@0.0.1654736714924/media/placeholder/cover/76b86c0226ffd.svg","image":"https://unpkg.com/volantis-static@0.0.1654736714924/media/placeholder/image/2659360.svg"},
-    lastupdate: new Date(1765118762067),
+    lastupdate: new Date(1765119292905),
     sidebar: {
       for_page: ["blogger","category","tagcloud","webinfo","lastupdate"],
       for_post: ["toc"],
@@ -2462,9 +2462,8 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
 
   <div id="layoutHelper-page-plugins"></div>
   <div id="post-body" itemprop="articleBody">
-    <h1 id="一电路连接">一、电路连接</h1>
-<p>需要以下几个外设</p>
-<ol type="1">
+    <h1 id="一、电路连接"><a href="#一、电路连接" class="headerlink" title="一、电路连接"></a>一、电路连接</h1><p>需要以下几个外设</p>
+<ol>
 <li>LCD1602(IIC驱动)</li>
 <li>DS1302</li>
 <li>1-WIRE温湿度检测器</li>
@@ -2473,182 +2472,152 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
 <li>两个LED(一红一蓝)</li>
 <li>蜂鸣器</li>
 </ol>
-<h2 id="lcd1602iic">LCD1602IIC</h2>
-<table>
+<h2 id="LCD1602IIC"><a href="#LCD1602IIC" class="headerlink" title="LCD1602IIC"></a>LCD1602IIC</h2><table>
 <thead>
-<tr class="header">
+<tr>
 <th>LCD1602IIC引脚</th>
 <th>Arduino引脚</th>
 </tr>
 </thead>
-<tbody>
-<tr class="odd">
+<tbody><tr>
 <td>VCC</td>
 <td>5V</td>
 </tr>
-<tr class="even">
+<tr>
 <td>GND</td>
 <td>GND</td>
 </tr>
-<tr class="odd">
+<tr>
 <td>SDA</td>
 <td>A4</td>
 </tr>
-<tr class="even">
+<tr>
 <td>SCL</td>
 <td>A5</td>
 </tr>
-</tbody>
-</table>
+</tbody></table>
 <p>我这里的LCD1602是IIC的，所以只需要4根线</p>
-<p><img
-src="https://mfjblog-pic.oss-cn-beijing.aliyuncs.com/img/f0f63b0ccc684b42b617c94a959a2ea6.png" />
-## 1-WIRE温湿度检测器</p>
-<table>
+<p><img src="https://mfjblog-pic.oss-cn-beijing.aliyuncs.com/img/f0f63b0ccc684b42b617c94a959a2ea6.png" class="lazyload" data-srcset="https://mfjblog-pic.oss-cn-beijing.aliyuncs.com/img/f0f63b0ccc684b42b617c94a959a2ea6.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt=" "></p>
+<h2 id="1-WIRE温湿度检测器"><a href="#1-WIRE温湿度检测器" class="headerlink" title="1-WIRE温湿度检测器"></a>1-WIRE温湿度检测器</h2><table>
 <thead>
-<tr class="header">
+<tr>
 <th>传感器引脚</th>
 <th>Arduino引脚</th>
 </tr>
 </thead>
-<tbody>
-<tr class="odd">
+<tbody><tr>
 <td>-</td>
 <td>GND</td>
 </tr>
-<tr class="even">
+<tr>
 <td>S</td>
 <td>8</td>
 </tr>
-<tr class="odd">
+<tr>
 <td>+</td>
 <td>5V</td>
 </tr>
-</tbody>
-</table>
-<p><img
-src="https://mfjblog-pic.oss-cn-beijing.aliyuncs.com/img/c3aaa976100f417c8c3da928b2609028.png" />
-中间的线是要接5V的</p>
-<h2 id="红外接收器">红外接收器</h2>
-<table>
+</tbody></table>
+<p><img src="https://mfjblog-pic.oss-cn-beijing.aliyuncs.com/img/c3aaa976100f417c8c3da928b2609028.png" class="lazyload" data-srcset="https://mfjblog-pic.oss-cn-beijing.aliyuncs.com/img/c3aaa976100f417c8c3da928b2609028.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt=" "><br>中间的线是要接5V的</p>
+<h2 id="红外接收器"><a href="#红外接收器" class="headerlink" title="红外接收器"></a>红外接收器</h2><table>
 <thead>
-<tr class="header">
+<tr>
 <th>红外接收器引脚</th>
 <th>Arduino引脚</th>
 </tr>
 </thead>
-<tbody>
-<tr class="odd">
+<tbody><tr>
 <td>-</td>
 <td>GND</td>
 </tr>
-<tr class="even">
+<tr>
 <td>+</td>
 <td>5V</td>
 </tr>
-<tr class="odd">
+<tr>
 <td>S</td>
 <td>11</td>
 </tr>
-</tbody>
-</table>
-<p><img
-src="https://mfjblog-pic.oss-cn-beijing.aliyuncs.com/img/e8486a38307b48d198bcace2caac7f22.png" />
-## DS1302</p>
-<table>
+</tbody></table>
+<p><img src="https://mfjblog-pic.oss-cn-beijing.aliyuncs.com/img/e8486a38307b48d198bcace2caac7f22.png" class="lazyload" data-srcset="https://mfjblog-pic.oss-cn-beijing.aliyuncs.com/img/e8486a38307b48d198bcace2caac7f22.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt=" "></p>
+<h2 id="DS1302"><a href="#DS1302" class="headerlink" title="DS1302"></a>DS1302</h2><table>
 <thead>
-<tr class="header">
+<tr>
 <th>DS1302引脚</th>
 <th>Arduino引脚</th>
 </tr>
 </thead>
-<tbody>
-<tr class="odd">
+<tbody><tr>
 <td>VCC</td>
 <td>5V</td>
 </tr>
-<tr class="even">
+<tr>
 <td>GND</td>
 <td>GND</td>
 </tr>
-<tr class="odd">
+<tr>
 <td>RST</td>
 <td>A0(14)</td>
 </tr>
-<tr class="even">
+<tr>
 <td>DAT</td>
 <td>A1(15)</td>
 </tr>
-<tr class="odd">
+<tr>
 <td>SCK</td>
 <td>A2(16)</td>
 </tr>
-</tbody>
-</table>
-<p><img
-src="https://mfjblog-pic.oss-cn-beijing.aliyuncs.com/img/830eb91e1d8541a0b1139cc379fbf012.png" />
-## 蜂鸣器</p>
-<table>
+</tbody></table>
+<p><img src="https://mfjblog-pic.oss-cn-beijing.aliyuncs.com/img/830eb91e1d8541a0b1139cc379fbf012.png" class="lazyload" data-srcset="https://mfjblog-pic.oss-cn-beijing.aliyuncs.com/img/830eb91e1d8541a0b1139cc379fbf012.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt=" "></p>
+<h2 id="蜂鸣器"><a href="#蜂鸣器" class="headerlink" title="蜂鸣器"></a>蜂鸣器</h2><table>
 <thead>
-<tr class="header">
+<tr>
 <th>蜂鸣器引脚</th>
 <th>Arduino引脚</th>
 </tr>
 </thead>
-<tbody>
-<tr class="odd">
+<tbody><tr>
 <td>-</td>
 <td>GND</td>
 </tr>
-<tr class="even">
+<tr>
 <td>+</td>
 <td>5V</td>
 </tr>
-<tr class="odd">
-<td>I/O</td>
+<tr>
+<td>I&#x2F;O</td>
 <td>5</td>
 </tr>
-</tbody>
-</table>
-<p><img
-src="https://mfjblog-pic.oss-cn-beijing.aliyuncs.com/img/759d819d47f04419953989b7cfe9d663.png" />
-## LED</p>
-<table>
+</tbody></table>
+<p><img src="https://mfjblog-pic.oss-cn-beijing.aliyuncs.com/img/759d819d47f04419953989b7cfe9d663.png" class="lazyload" data-srcset="https://mfjblog-pic.oss-cn-beijing.aliyuncs.com/img/759d819d47f04419953989b7cfe9d663.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt=" "></p>
+<h2 id="LED"><a href="#LED" class="headerlink" title="LED"></a>LED</h2><table>
 <thead>
-<tr class="header">
+<tr>
 <th>LED引脚</th>
 <th>Arduino引脚</th>
 </tr>
 </thead>
-<tbody>
-<tr class="odd">
+<tbody><tr>
 <td>红色LED</td>
 <td>6</td>
 </tr>
-<tr class="even">
+<tr>
 <td>蓝色LED</td>
 <td>7</td>
 </tr>
-</tbody>
-</table>
-<p><img
-src="https://mfjblog-pic.oss-cn-beijing.aliyuncs.com/img/1d067bd9a2184398949429d49538d5b8.png" /></p>
-<h1 id="二程序">二、程序</h1>
-<p>这里需要下载4个库：</p>
+</tbody></table>
+<p><img src="https://mfjblog-pic.oss-cn-beijing.aliyuncs.com/img/1d067bd9a2184398949429d49538d5b8.png" class="lazyload" data-srcset="https://mfjblog-pic.oss-cn-beijing.aliyuncs.com/img/1d067bd9a2184398949429d49538d5b8.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt=" "></p>
+<h1 id="二、程序"><a href="#二、程序" class="headerlink" title="二、程序"></a>二、程序</h1><p>这里需要下载4个库：</p>
 <ul>
 <li>dht11</li>
 <li>LiquidCrystal_I2C</li>
 <li>IRremote</li>
 <li>DS1302</li>
 </ul>
-<p>我把他们都传到我的Github里面了：<a
-target="_blank" rel="noopener" href="https://github.com/MengFanjun020906/ArduinoSmartClock">SmartClock</a>
-程序里面的红外遥控器是按任何一个按键都可以切换模式，因为我这个遥控器的解码有点问题，可能是这个库的时序问题，大家可以自己个性化自己的按键，改一下就能用了
-## 功能简介
-LCD1602屏默认显示温度和湿度，在按下遥控器任何一个按键时，LCD1602屏显示时间，再按下显示温度和湿度。温度湿度还有时间数据都会在串口打印出来，方便调试。在温度高于一定阈值之后，亮红灯，在湿度低于一定阈值后，亮蓝灯。时钟到设定的时间后，蜂鸣器叫10声。
-<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br><span class="line">109</span><br><span class="line">110</span><br><span class="line">111</span><br><span class="line">112</span><br><span class="line">113</span><br><span class="line">114</span><br><span class="line">115</span><br><span class="line">116</span><br><span class="line">117</span><br><span class="line">118</span><br><span class="line">119</span><br><span class="line">120</span><br><span class="line">121</span><br><span class="line">122</span><br><span class="line">123</span><br><span class="line">124</span><br><span class="line">125</span><br><span class="line">126</span><br><span class="line">127</span><br><span class="line">128</span><br><span class="line">129</span><br><span class="line">130</span><br><span class="line">131</span><br><span class="line">132</span><br><span class="line">133</span><br><span class="line">134</span><br><span class="line">135</span><br><span class="line">136</span><br><span class="line">137</span><br><span class="line">138</span><br><span class="line">139</span><br><span class="line">140</span><br><span class="line">141</span><br><span class="line">142</span><br><span class="line">143</span><br><span class="line">144</span><br><span class="line">145</span><br><span class="line">146</span><br><span class="line">147</span><br><span class="line">148</span><br><span class="line">149</span><br><span class="line">150</span><br><span class="line">151</span><br><span class="line">152</span><br><span class="line">153</span><br><span class="line">154</span><br><span class="line">155</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;dht11.h&gt;</span>   <span class="comment">//引用dht11库文件，使得下面可以调用相关参数</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;Wire.h&gt;</span> </span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;LiquidCrystal_I2C.h&gt;</span> <span class="comment">//引用I2C库</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;DS1302.h&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span><span class="string">&lt;IRremote.h&gt;</span></span></span><br><span class="line"></span><br><span class="line"><span class="meta">#<span class="keyword">define</span> dht11Pin 8   <span class="comment">//定义温湿度针脚号为8号引脚</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">define</span> ledBlue 6 <span class="comment">//定义湿度阈值灯为6号引脚</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">define</span> ledRed 7 <span class="comment">//定义温度阈值灯为7号引脚</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">define</span> beep 5 <span class="comment">//定义蜂鸣器为5号引脚</span></span></span><br><span class="line">dht11 dht;    <span class="comment">//实例化一个对象</span></span><br><span class="line"><span class="type">char</span> buf1[<span class="number">50</span>];</span><br><span class="line"><span class="type">char</span> buf2[<span class="number">50</span>];</span><br><span class="line">LiquidCrystal_I2C <span class="title function_">lcd</span><span class="params">(<span class="number">0x27</span>,<span class="number">16</span>,<span class="number">2</span>)</span>; <span class="comment">//这里是0x27</span></span><br><span class="line">DS1302 <span class="title function_">rtc</span><span class="params">(<span class="number">14</span>, <span class="number">15</span>, <span class="number">16</span>)</span>; <span class="comment">//对应DS1302的RST,DAT,CLK</span></span><br><span class="line"><span class="type">int</span> RECV_PIN = <span class="number">11</span>;   <span class="comment">//红外线接收器OUTPUT端接在pin 11</span></span><br><span class="line"><span class="type">int</span> Keynum=<span class="number">1</span>;</span><br><span class="line">IRrecv <span class="title function_">irrecv</span><span class="params">(RECV_PIN)</span>;   <span class="comment">// 定义IRrecv 对象来接收红外线信号</span></span><br><span class="line">decode_results results;   <span class="comment">//解码结果放在decode_results构造的对象results里</span></span><br><span class="line"></span><br><span class="line"><span class="type">void</span> <span class="title function_">initRTCTime</span><span class="params">(<span class="type">void</span>)</span><span class="comment">//初始化RTC时钟</span></span><br><span class="line">&#123;</span><br><span class="line">  rtc.writeProtect(<span class="literal">false</span>); <span class="comment">//关闭写保护</span></span><br><span class="line">  rtc.halt(<span class="literal">false</span>); <span class="comment">//清除时钟停止标志</span></span><br><span class="line">  Time <span class="title function_">t</span><span class="params">(<span class="number">2022</span>, <span class="number">12</span>, <span class="number">19</span>, <span class="number">16</span>, <span class="number">25</span>, <span class="number">50</span>, <span class="number">4</span>)</span>; <span class="comment">//新建时间对象 最后参数位星期数据，周日为1，周一为2以此类推</span></span><br><span class="line">  rtc.time(t);<span class="comment">//向DS1302设置时间数据</span></span><br><span class="line">&#125;</span><br><span class="line"><span class="type">void</span> <span class="title function_">printTime</span><span class="params">()</span><span class="comment">//打印时间数据</span></span><br><span class="line">&#123;</span><br><span class="line">  Time tim = rtc.time(); <span class="comment">//从DS1302获取时间数据</span></span><br><span class="line">  </span><br><span class="line">  <span class="built_in">snprintf</span>(buf1, <span class="keyword">sizeof</span>(buf1), <span class="string">&quot;%04d-%02d-%02d &quot;</span>,</span><br><span class="line">           tim.yr, tim.mon, tim.date</span><br><span class="line">           );</span><br><span class="line">  <span class="built_in">snprintf</span>(buf2, <span class="keyword">sizeof</span>(buf2), <span class="string">&quot;%02d:%02d:%02d&quot;</span>,</span><br><span class="line">           tim.hr, tim.min, tim.sec);</span><br><span class="line"></span><br><span class="line">  Serial.println(buf1);</span><br><span class="line">  Serial.println(buf2);</span><br><span class="line"></span><br><span class="line">&#125;</span><br><span class="line"><span class="type">void</span> <span class="title function_">setup</span><span class="params">()</span>    <span class="comment">//初始化函数，只执行一次</span></span><br><span class="line">&#123;</span><br><span class="line">  Serial.begin(<span class="number">9600</span>);      <span class="comment">//设置波特率参数</span></span><br><span class="line">  pinMode(dht11Pin, OUTPUT);    <span class="comment">//通过定义将Arduino开发板上dht11Pin引脚(8号口)的工作模式转化为输出模式</span></span><br><span class="line">  pinMode(ledBlue, OUTPUT);</span><br><span class="line">  pinMode(ledRed, OUTPUT);</span><br><span class="line">  pinMode(beep, OUTPUT);</span><br><span class="line"></span><br><span class="line">  lcd.init();                  <span class="comment">// 初始化LCD</span></span><br><span class="line">  lcd.backlight();             <span class="comment">//设置LCD背景等亮</span></span><br><span class="line">  initRTCTime();</span><br><span class="line">  irrecv.enableIRIn(); <span class="comment">//    启动红外解码</span></span><br><span class="line">  delay(<span class="number">2000</span>);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="type">void</span> <span class="title function_">loop</span><span class="params">()</span>     <span class="comment">//loop函数，重复循环执行</span></span><br><span class="line">&#123;</span><br><span class="line">  </span><br><span class="line">  <span class="keyword">if</span> (irrecv.decode(&amp;results)!=<span class="number">0</span>)  </span><br><span class="line">  &#123;        </span><br><span class="line">      delay(<span class="number">500</span>);</span><br><span class="line">      Keynum++;</span><br><span class="line">      delay(<span class="number">500</span>);</span><br><span class="line">      lcd.clear();</span><br><span class="line">      <span class="keyword">if</span>(Keynum&gt;=<span class="number">3</span>)</span><br><span class="line">      &#123;</span><br><span class="line">        Keynum=<span class="number">1</span>;</span><br><span class="line">      &#125;</span><br><span class="line">      irrecv.resume();</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="keyword">switch</span>(Keynum)</span><br><span class="line">  &#123;</span><br><span class="line">    <span class="keyword">case</span> <span class="number">1</span>:  SerialTem();ther();TemJudge();alarm();<span class="keyword">break</span>;</span><br><span class="line">    <span class="keyword">case</span> <span class="number">2</span>:  printTime();TemJudge();</span><br><span class="line">            Time tim = rtc.time(); <span class="comment">//从DS1302获取时间数据</span></span><br><span class="line">            lcd.setCursor(<span class="number">0</span>,<span class="number">0</span>);</span><br><span class="line">            lcd.print(buf1);</span><br><span class="line">            lcd.setCursor(<span class="number">0</span>,<span class="number">1</span>);</span><br><span class="line">            lcd.print(buf2);</span><br><span class="line">            alarm();</span><br><span class="line">            <span class="keyword">break</span>;</span><br><span class="line">    <span class="keyword">default</span>: <span class="keyword">break</span>;</span><br><span class="line">  &#125;   </span><br><span class="line">&#125;</span><br><span class="line"><span class="type">void</span> <span class="title function_">ther</span><span class="params">()</span><span class="comment">//温湿度计</span></span><br><span class="line">&#123;</span><br><span class="line">  <span class="type">int</span> tol = dht.read(dht11Pin);    <span class="comment">//将读取到的值赋给tol</span></span><br><span class="line">  <span class="type">int</span> temp = (<span class="type">float</span>)dht.temperature; <span class="comment">//将温度值赋值给temp</span></span><br><span class="line">  <span class="type">int</span> humi = (<span class="type">float</span>)dht.humidity; <span class="comment">//将湿度值赋给humi</span></span><br><span class="line"></span><br><span class="line">  lcd.setCursor(<span class="number">0</span>,<span class="number">0</span>);</span><br><span class="line">  lcd.print(<span class="string">&quot;Tem:&quot;</span>);</span><br><span class="line">  lcd.setCursor(<span class="number">4</span>,<span class="number">0</span>);</span><br><span class="line">  lcd.print(temp);</span><br><span class="line">  lcd.setCursor(<span class="number">6</span>,<span class="number">0</span>);</span><br><span class="line">  lcd.print(<span class="string">&quot;C&quot;</span>);</span><br><span class="line"></span><br><span class="line">  lcd.setCursor(<span class="number">0</span>,<span class="number">1</span>);</span><br><span class="line">  lcd.print(<span class="string">&quot;Hum:&quot;</span>);</span><br><span class="line">  lcd.setCursor(<span class="number">4</span>,<span class="number">1</span>);</span><br><span class="line">  lcd.print(humi);</span><br><span class="line">  lcd.setCursor(<span class="number">6</span>,<span class="number">1</span>);</span><br><span class="line">  lcd.print(<span class="string">&quot;%&quot;</span>);</span><br><span class="line">&#125;</span><br><span class="line"><span class="type">void</span> <span class="title function_">TemJudge</span><span class="params">()</span></span><br><span class="line">&#123;</span><br><span class="line">  <span class="type">int</span> tol = dht.read(dht11Pin);    <span class="comment">//将读取到的值赋给tol</span></span><br><span class="line">  <span class="type">int</span> temp = (<span class="type">float</span>)dht.temperature; <span class="comment">//将温度值赋值给temp</span></span><br><span class="line">  <span class="type">int</span> humi = (<span class="type">float</span>)dht.humidity; <span class="comment">//将湿度值赋给humi</span></span><br><span class="line">  <span class="keyword">if</span>(temp&gt;=<span class="number">20</span>)<span class="comment">//假如温度高于20度亮红灯</span></span><br><span class="line">  &#123;</span><br><span class="line">    digitalWrite(ledBlue,HIGH);</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="keyword">else</span> digitalWrite(ledBlue,LOW);</span><br><span class="line">  <span class="keyword">if</span>(humi&gt;=<span class="number">34</span>)<span class="comment">//假如湿度高于34%亮蓝灯</span></span><br><span class="line">  &#123;</span><br><span class="line">    digitalWrite(ledRed,HIGH);</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="keyword">else</span> digitalWrite(ledRed,LOW);</span><br><span class="line"></span><br><span class="line">&#125;</span><br><span class="line"><span class="type">void</span> <span class="title function_">alarm</span><span class="params">()</span></span><br><span class="line">&#123;</span><br><span class="line">  digitalWrite(beep,HIGH);</span><br><span class="line">  <span class="type">int</span> alarm_hr=<span class="number">16</span>;<span class="comment">//设置闹钟小时</span></span><br><span class="line">  <span class="type">int</span> alarm_min=<span class="number">26</span>;<span class="comment">//设置闹钟分钟</span></span><br><span class="line">  <span class="type">int</span> alarm_sec=<span class="number">0</span>;<span class="comment">//设置闹钟秒</span></span><br><span class="line">    Time tim = rtc.time(); <span class="comment">//从DS1302获取时间数据</span></span><br><span class="line">  </span><br><span class="line">  <span class="built_in">snprintf</span>(buf2, <span class="keyword">sizeof</span>(buf2), <span class="string">&quot;%02d:%02d:%02d&quot;</span>,</span><br><span class="line">           tim.hr, tim.min, tim.sec);</span><br><span class="line">  <span class="keyword">if</span>((tim.hr==alarm_hr)&amp;&amp;(tim.min==alarm_min)&amp;&amp;(tim.sec==alarm_sec))</span><br><span class="line">  &#123;</span><br><span class="line">    <span class="keyword">for</span>(<span class="type">int</span> i=<span class="number">0</span>;i&lt;<span class="number">20</span>;i++)</span><br><span class="line">    &#123;</span><br><span class="line">    digitalWrite(beep,LOW);</span><br><span class="line">    delay(<span class="number">100</span>);</span><br><span class="line">    digitalWrite(beep,HIGH);</span><br><span class="line">    delay(<span class="number">100</span>);</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="type">void</span> <span class="title function_">SerialTem</span><span class="params">()</span><span class="comment">//串口打印温度湿度</span></span><br><span class="line">&#123;</span><br><span class="line">  <span class="type">int</span> tol = dht.read(dht11Pin);    <span class="comment">//将读取到的值赋给tol</span></span><br><span class="line">  <span class="type">int</span> temp = (<span class="type">float</span>)dht.temperature; <span class="comment">//将温度值赋值给temp</span></span><br><span class="line">  <span class="type">int</span> humi = (<span class="type">float</span>)dht.humidity; <span class="comment">//将湿度值赋给humi</span></span><br><span class="line">  Serial.print(<span class="string">&quot;Temperature:&quot;</span>);     <span class="comment">//在串口打印出Tempeature:</span></span><br><span class="line">  Serial.print(temp);       <span class="comment">//在串口打印温度结果</span></span><br><span class="line">  Serial.println(<span class="string">&quot;.C&quot;</span>);    <span class="comment">//在串口打印出℃</span></span><br><span class="line">  Serial.print(<span class="string">&quot;Humidity:&quot;</span>);     <span class="comment">//在串口打印出Humidity:</span></span><br><span class="line">  Serial.print(humi);     <span class="comment">//在串口打印出湿度结果</span></span><br><span class="line">  Serial.println(<span class="string">&quot;%&quot;</span>);     <span class="comment">//在串口打印出%  </span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure> # 三、效果 <img
-src="https://mfjblog-pic.oss-cn-beijing.aliyuncs.com/img/f1a214db7c764053a95c29e7b713e610.gif"
-alt="请添加图片描述" /></p>
+<p>我把他们都传到我的Github里面了：<a target="_blank" rel="noopener" href="https://github.com/MengFanjun020906/ArduinoSmartClock">SmartClock</a><br>程序里面的红外遥控器是按任何一个按键都可以切换模式，因为我这个遥控器的解码有点问题，可能是这个库的时序问题，大家可以自己个性化自己的按键，改一下就能用了</p>
+<h2 id="功能简介"><a href="#功能简介" class="headerlink" title="功能简介"></a>功能简介</h2><p>LCD1602屏默认显示温度和湿度，在按下遥控器任何一个按键时，LCD1602屏显示时间，再按下显示温度和湿度。温度湿度还有时间数据都会在串口打印出来，方便调试。在温度高于一定阈值之后，亮红灯，在湿度低于一定阈值后，亮蓝灯。时钟到设定的时间后，蜂鸣器叫10声。</p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br><span class="line">109</span><br><span class="line">110</span><br><span class="line">111</span><br><span class="line">112</span><br><span class="line">113</span><br><span class="line">114</span><br><span class="line">115</span><br><span class="line">116</span><br><span class="line">117</span><br><span class="line">118</span><br><span class="line">119</span><br><span class="line">120</span><br><span class="line">121</span><br><span class="line">122</span><br><span class="line">123</span><br><span class="line">124</span><br><span class="line">125</span><br><span class="line">126</span><br><span class="line">127</span><br><span class="line">128</span><br><span class="line">129</span><br><span class="line">130</span><br><span class="line">131</span><br><span class="line">132</span><br><span class="line">133</span><br><span class="line">134</span><br><span class="line">135</span><br><span class="line">136</span><br><span class="line">137</span><br><span class="line">138</span><br><span class="line">139</span><br><span class="line">140</span><br><span class="line">141</span><br><span class="line">142</span><br><span class="line">143</span><br><span class="line">144</span><br><span class="line">145</span><br><span class="line">146</span><br><span class="line">147</span><br><span class="line">148</span><br><span class="line">149</span><br><span class="line">150</span><br><span class="line">151</span><br><span class="line">152</span><br><span class="line">153</span><br><span class="line">154</span><br><span class="line">155</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;dht11.h&gt;</span>   <span class="comment">//引用dht11库文件，使得下面可以调用相关参数</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;Wire.h&gt;</span> </span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;LiquidCrystal_I2C.h&gt;</span> <span class="comment">//引用I2C库</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;DS1302.h&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span><span class="string">&lt;IRremote.h&gt;</span></span></span><br><span class="line"></span><br><span class="line"><span class="meta">#<span class="keyword">define</span> dht11Pin 8   <span class="comment">//定义温湿度针脚号为8号引脚</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">define</span> ledBlue 6 <span class="comment">//定义湿度阈值灯为6号引脚</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">define</span> ledRed 7 <span class="comment">//定义温度阈值灯为7号引脚</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">define</span> beep 5 <span class="comment">//定义蜂鸣器为5号引脚</span></span></span><br><span class="line">dht11 dht;    <span class="comment">//实例化一个对象</span></span><br><span class="line"><span class="type">char</span> buf1[<span class="number">50</span>];</span><br><span class="line"><span class="type">char</span> buf2[<span class="number">50</span>];</span><br><span class="line">LiquidCrystal_I2C <span class="title function_">lcd</span><span class="params">(<span class="number">0x27</span>,<span class="number">16</span>,<span class="number">2</span>)</span>; <span class="comment">//这里是0x27</span></span><br><span class="line">DS1302 <span class="title function_">rtc</span><span class="params">(<span class="number">14</span>, <span class="number">15</span>, <span class="number">16</span>)</span>; <span class="comment">//对应DS1302的RST,DAT,CLK</span></span><br><span class="line"><span class="type">int</span> RECV_PIN = <span class="number">11</span>;   <span class="comment">//红外线接收器OUTPUT端接在pin 11</span></span><br><span class="line"><span class="type">int</span> Keynum=<span class="number">1</span>;</span><br><span class="line">IRrecv <span class="title function_">irrecv</span><span class="params">(RECV_PIN)</span>;   <span class="comment">// 定义IRrecv 对象来接收红外线信号</span></span><br><span class="line">decode_results results;   <span class="comment">//解码结果放在decode_results构造的对象results里</span></span><br><span class="line"></span><br><span class="line"><span class="type">void</span> <span class="title function_">initRTCTime</span><span class="params">(<span class="type">void</span>)</span><span class="comment">//初始化RTC时钟</span></span><br><span class="line">&#123;</span><br><span class="line">  rtc.writeProtect(<span class="literal">false</span>); <span class="comment">//关闭写保护</span></span><br><span class="line">  rtc.halt(<span class="literal">false</span>); <span class="comment">//清除时钟停止标志</span></span><br><span class="line">  Time <span class="title function_">t</span><span class="params">(<span class="number">2022</span>, <span class="number">12</span>, <span class="number">19</span>, <span class="number">16</span>, <span class="number">25</span>, <span class="number">50</span>, <span class="number">4</span>)</span>; <span class="comment">//新建时间对象 最后参数位星期数据，周日为1，周一为2以此类推</span></span><br><span class="line">  rtc.time(t);<span class="comment">//向DS1302设置时间数据</span></span><br><span class="line">&#125;</span><br><span class="line"><span class="type">void</span> <span class="title function_">printTime</span><span class="params">()</span><span class="comment">//打印时间数据</span></span><br><span class="line">&#123;</span><br><span class="line">  Time tim = rtc.time(); <span class="comment">//从DS1302获取时间数据</span></span><br><span class="line">  </span><br><span class="line">  <span class="built_in">snprintf</span>(buf1, <span class="keyword">sizeof</span>(buf1), <span class="string">&quot;%04d-%02d-%02d &quot;</span>,</span><br><span class="line">           tim.yr, tim.mon, tim.date</span><br><span class="line">           );</span><br><span class="line">  <span class="built_in">snprintf</span>(buf2, <span class="keyword">sizeof</span>(buf2), <span class="string">&quot;%02d:%02d:%02d&quot;</span>,</span><br><span class="line">           tim.hr, tim.min, tim.sec);</span><br><span class="line"></span><br><span class="line">  Serial.println(buf1);</span><br><span class="line">  Serial.println(buf2);</span><br><span class="line"></span><br><span class="line">&#125;</span><br><span class="line"><span class="type">void</span> <span class="title function_">setup</span><span class="params">()</span>    <span class="comment">//初始化函数，只执行一次</span></span><br><span class="line">&#123;</span><br><span class="line">  Serial.begin(<span class="number">9600</span>);      <span class="comment">//设置波特率参数</span></span><br><span class="line">  pinMode(dht11Pin, OUTPUT);    <span class="comment">//通过定义将Arduino开发板上dht11Pin引脚(8号口)的工作模式转化为输出模式</span></span><br><span class="line">  pinMode(ledBlue, OUTPUT);</span><br><span class="line">  pinMode(ledRed, OUTPUT);</span><br><span class="line">  pinMode(beep, OUTPUT);</span><br><span class="line"></span><br><span class="line">  lcd.init();                  <span class="comment">// 初始化LCD</span></span><br><span class="line">  lcd.backlight();             <span class="comment">//设置LCD背景等亮</span></span><br><span class="line">  initRTCTime();</span><br><span class="line">  irrecv.enableIRIn(); <span class="comment">//    启动红外解码</span></span><br><span class="line">  delay(<span class="number">2000</span>);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="type">void</span> <span class="title function_">loop</span><span class="params">()</span>     <span class="comment">//loop函数，重复循环执行</span></span><br><span class="line">&#123;</span><br><span class="line">  </span><br><span class="line">  <span class="keyword">if</span> (irrecv.decode(&amp;results)!=<span class="number">0</span>)  </span><br><span class="line">  &#123;        </span><br><span class="line">      delay(<span class="number">500</span>);</span><br><span class="line">      Keynum++;</span><br><span class="line">      delay(<span class="number">500</span>);</span><br><span class="line">      lcd.clear();</span><br><span class="line">      <span class="keyword">if</span>(Keynum&gt;=<span class="number">3</span>)</span><br><span class="line">      &#123;</span><br><span class="line">        Keynum=<span class="number">1</span>;</span><br><span class="line">      &#125;</span><br><span class="line">      irrecv.resume();</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="keyword">switch</span>(Keynum)</span><br><span class="line">  &#123;</span><br><span class="line">    <span class="keyword">case</span> <span class="number">1</span>:  SerialTem();ther();TemJudge();alarm();<span class="keyword">break</span>;</span><br><span class="line">    <span class="keyword">case</span> <span class="number">2</span>:  printTime();TemJudge();</span><br><span class="line">            Time tim = rtc.time(); <span class="comment">//从DS1302获取时间数据</span></span><br><span class="line">            lcd.setCursor(<span class="number">0</span>,<span class="number">0</span>);</span><br><span class="line">            lcd.print(buf1);</span><br><span class="line">            lcd.setCursor(<span class="number">0</span>,<span class="number">1</span>);</span><br><span class="line">            lcd.print(buf2);</span><br><span class="line">            alarm();</span><br><span class="line">            <span class="keyword">break</span>;</span><br><span class="line">    <span class="keyword">default</span>: <span class="keyword">break</span>;</span><br><span class="line">  &#125;   </span><br><span class="line">&#125;</span><br><span class="line"><span class="type">void</span> <span class="title function_">ther</span><span class="params">()</span><span class="comment">//温湿度计</span></span><br><span class="line">&#123;</span><br><span class="line">  <span class="type">int</span> tol = dht.read(dht11Pin);    <span class="comment">//将读取到的值赋给tol</span></span><br><span class="line">  <span class="type">int</span> temp = (<span class="type">float</span>)dht.temperature; <span class="comment">//将温度值赋值给temp</span></span><br><span class="line">  <span class="type">int</span> humi = (<span class="type">float</span>)dht.humidity; <span class="comment">//将湿度值赋给humi</span></span><br><span class="line"></span><br><span class="line">  lcd.setCursor(<span class="number">0</span>,<span class="number">0</span>);</span><br><span class="line">  lcd.print(<span class="string">&quot;Tem:&quot;</span>);</span><br><span class="line">  lcd.setCursor(<span class="number">4</span>,<span class="number">0</span>);</span><br><span class="line">  lcd.print(temp);</span><br><span class="line">  lcd.setCursor(<span class="number">6</span>,<span class="number">0</span>);</span><br><span class="line">  lcd.print(<span class="string">&quot;C&quot;</span>);</span><br><span class="line"></span><br><span class="line">  lcd.setCursor(<span class="number">0</span>,<span class="number">1</span>);</span><br><span class="line">  lcd.print(<span class="string">&quot;Hum:&quot;</span>);</span><br><span class="line">  lcd.setCursor(<span class="number">4</span>,<span class="number">1</span>);</span><br><span class="line">  lcd.print(humi);</span><br><span class="line">  lcd.setCursor(<span class="number">6</span>,<span class="number">1</span>);</span><br><span class="line">  lcd.print(<span class="string">&quot;%&quot;</span>);</span><br><span class="line">&#125;</span><br><span class="line"><span class="type">void</span> <span class="title function_">TemJudge</span><span class="params">()</span></span><br><span class="line">&#123;</span><br><span class="line">  <span class="type">int</span> tol = dht.read(dht11Pin);    <span class="comment">//将读取到的值赋给tol</span></span><br><span class="line">  <span class="type">int</span> temp = (<span class="type">float</span>)dht.temperature; <span class="comment">//将温度值赋值给temp</span></span><br><span class="line">  <span class="type">int</span> humi = (<span class="type">float</span>)dht.humidity; <span class="comment">//将湿度值赋给humi</span></span><br><span class="line">  <span class="keyword">if</span>(temp&gt;=<span class="number">20</span>)<span class="comment">//假如温度高于20度亮红灯</span></span><br><span class="line">  &#123;</span><br><span class="line">    digitalWrite(ledBlue,HIGH);</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="keyword">else</span> digitalWrite(ledBlue,LOW);</span><br><span class="line">  <span class="keyword">if</span>(humi&gt;=<span class="number">34</span>)<span class="comment">//假如湿度高于34%亮蓝灯</span></span><br><span class="line">  &#123;</span><br><span class="line">    digitalWrite(ledRed,HIGH);</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="keyword">else</span> digitalWrite(ledRed,LOW);</span><br><span class="line"></span><br><span class="line">&#125;</span><br><span class="line"><span class="type">void</span> <span class="title function_">alarm</span><span class="params">()</span></span><br><span class="line">&#123;</span><br><span class="line">  digitalWrite(beep,HIGH);</span><br><span class="line">  <span class="type">int</span> alarm_hr=<span class="number">16</span>;<span class="comment">//设置闹钟小时</span></span><br><span class="line">  <span class="type">int</span> alarm_min=<span class="number">26</span>;<span class="comment">//设置闹钟分钟</span></span><br><span class="line">  <span class="type">int</span> alarm_sec=<span class="number">0</span>;<span class="comment">//设置闹钟秒</span></span><br><span class="line">    Time tim = rtc.time(); <span class="comment">//从DS1302获取时间数据</span></span><br><span class="line">  </span><br><span class="line">  <span class="built_in">snprintf</span>(buf2, <span class="keyword">sizeof</span>(buf2), <span class="string">&quot;%02d:%02d:%02d&quot;</span>,</span><br><span class="line">           tim.hr, tim.min, tim.sec);</span><br><span class="line">  <span class="keyword">if</span>((tim.hr==alarm_hr)&amp;&amp;(tim.min==alarm_min)&amp;&amp;(tim.sec==alarm_sec))</span><br><span class="line">  &#123;</span><br><span class="line">    <span class="keyword">for</span>(<span class="type">int</span> i=<span class="number">0</span>;i&lt;<span class="number">20</span>;i++)</span><br><span class="line">    &#123;</span><br><span class="line">    digitalWrite(beep,LOW);</span><br><span class="line">    delay(<span class="number">100</span>);</span><br><span class="line">    digitalWrite(beep,HIGH);</span><br><span class="line">    delay(<span class="number">100</span>);</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="type">void</span> <span class="title function_">SerialTem</span><span class="params">()</span><span class="comment">//串口打印温度湿度</span></span><br><span class="line">&#123;</span><br><span class="line">  <span class="type">int</span> tol = dht.read(dht11Pin);    <span class="comment">//将读取到的值赋给tol</span></span><br><span class="line">  <span class="type">int</span> temp = (<span class="type">float</span>)dht.temperature; <span class="comment">//将温度值赋值给temp</span></span><br><span class="line">  <span class="type">int</span> humi = (<span class="type">float</span>)dht.humidity; <span class="comment">//将湿度值赋给humi</span></span><br><span class="line">  Serial.print(<span class="string">&quot;Temperature:&quot;</span>);     <span class="comment">//在串口打印出Tempeature:</span></span><br><span class="line">  Serial.print(temp);       <span class="comment">//在串口打印温度结果</span></span><br><span class="line">  Serial.println(<span class="string">&quot;.C&quot;</span>);    <span class="comment">//在串口打印出℃</span></span><br><span class="line">  Serial.print(<span class="string">&quot;Humidity:&quot;</span>);     <span class="comment">//在串口打印出Humidity:</span></span><br><span class="line">  Serial.print(humi);     <span class="comment">//在串口打印出湿度结果</span></span><br><span class="line">  Serial.println(<span class="string">&quot;%&quot;</span>);     <span class="comment">//在串口打印出%  </span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h1 id="三、效果"><a href="#三、效果" class="headerlink" title="三、效果"></a>三、效果</h1><p><img src="https://mfjblog-pic.oss-cn-beijing.aliyuncs.com/img/f1a214db7c764053a95c29e7b713e610.gif" class="lazyload" data-srcset="https://mfjblog-pic.oss-cn-beijing.aliyuncs.com/img/f1a214db7c764053a95c29e7b713e610.gif" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="请添加图片描述"></p>
 
   </div>
   
@@ -2666,8 +2635,7 @@ alt="请添加图片描述" /></p>
             <blockquote>
               
                 
-                  <p>博客内容遵循 署名-非商业性使用-相同方式共享 4.0 国际 (CC BY-NC-SA
-4.0) 协议</p>
+                  <p>博客内容遵循 署名-非商业性使用-相同方式共享 4.0 国际 (CC BY-NC-SA 4.0) 协议</p>
 
                 
               
@@ -2776,14 +2744,11 @@ alt="请添加图片描述" /></p>
       
         <a class='prev' href='/2022/12/20/Arduino%20Uno%E9%9B%B6%E5%9F%BA%E7%A1%80%E5%85%A5%E9%97%A8%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0%E2%80%94%E2%80%94%E5%AE%9A%E6%97%B6%E5%99%A8%E6%97%B6%E9%92%9F/'>
           <p class='title'><i class="fa-solid fa-chevron-left" aria-hidden="true"></i>Arduino Uno零基础入门学习笔记——定时器时钟</p>
-          <p class='content'>一、电路连接
-LCD1602IIC
-
+          <p class='content'>一、电路连接LCD1602IIC
 
 
 LCD1602IIC引脚
 Arduino引脚
-
 
 
 
@@ -2803,21 +2768,17 @@ SCL
 A5
 
 
-
-我这里的LCD1602...</p>
+我这里的LCD1602是IIC...</p>
         </a>
       
       
         <a class='next' href='/2022/12/19/Arduino%20Uno%E9%9B%B6%E5%9F%BA%E7%A1%80%E5%85%A5%E9%97%A8%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0%E2%80%94%E2%80%94%E5%9C%A8LCD1602%E5%B1%8F%E4%B8%8A%E6%98%BE%E7%A4%BA%E6%B8%A9%E5%BA%A6%E5%92%8C%E6%B9%BF%E5%BA%A6/'>
           <p class='title'>Arduino Uno零基础入门学习笔记——在LCD1602屏上显示温度和湿度<i class="fa-solid fa-chevron-right" aria-hidden="true"></i></p>
-          <p class='content'>一、电路连接
-LCD1602IIC
-
+          <p class='content'>一、电路连接LCD1602IIC
 
 
 LCD1602IIC引脚
 Arduino引脚
-
 
 
 
@@ -2837,8 +2798,7 @@ SCL
 A5
 
 
-
-我这里的LCD1602...</p>
+我这里的LCD1602是IIC...</p>
         </a>
       
     </div>
@@ -2896,7 +2856,7 @@ A5
 
 
     <div class='content'>
-        <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#lcd1602iic"><span class="toc-text">LCD1602IIC</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%BA%A2%E5%A4%96%E6%8E%A5%E6%94%B6%E5%99%A8"><span class="toc-text">红外接收器</span></a></li></ol>
+        <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#LCD1602IIC"><span class="toc-text">LCD1602IIC</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#1-WIRE%E6%B8%A9%E6%B9%BF%E5%BA%A6%E6%A3%80%E6%B5%8B%E5%99%A8"><span class="toc-text">1-WIRE温湿度检测器</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%BA%A2%E5%A4%96%E6%8E%A5%E6%94%B6%E5%99%A8"><span class="toc-text">红外接收器</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#DS1302"><span class="toc-text">DS1302</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E8%9C%82%E9%B8%A3%E5%99%A8"><span class="toc-text">蜂鸣器</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#LED"><span class="toc-text">LED</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%8A%9F%E8%83%BD%E7%AE%80%E4%BB%8B"><span class="toc-text">功能简介</span></a></li></ol>
     </div>
   </section>
 
@@ -3038,9 +2998,7 @@ A5
       
     
       
-        <div><p>Blog content follows the <a
-target="_blank" rel="noopener" href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.en">Attribution-NonCommercial-ShareAlike
-4.0 International (CC BY-NC-SA 4.0) License</a></p>
+        <div><p>Blog content follows the <a target="_blank" rel="noopener" href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.en">Attribution-NonCommercial-ShareAlike 4.0 International (CC BY-NC-SA 4.0) License</a></p>
 </div>
       
     

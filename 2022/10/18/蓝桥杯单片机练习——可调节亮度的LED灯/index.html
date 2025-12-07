@@ -40,7 +40,7 @@
 <meta property="og:title" content="蓝桥杯单片机练习——可调节亮度的LED灯">
 <meta property="og:url" content="https://mengfanjun020906.github.io/2022/10/18/%E8%93%9D%E6%A1%A5%E6%9D%AF%E5%8D%95%E7%89%87%E6%9C%BA%E7%BB%83%E4%B9%A0%E2%80%94%E2%80%94%E5%8F%AF%E8%B0%83%E8%8A%82%E4%BA%AE%E5%BA%A6%E7%9A%84LED%E7%81%AF/index.html">
 <meta property="og:site_name" content="MengFanjun的博客">
-<meta property="og:description" content="因为之前看到了第九届的省赛，LED彩灯控制，看到了一个给LED灯分等级亮度，直接望而生畏，遂放弃。 在和大佬沟通交流与过后，我发现实现LED的亮度控制一点也不难，先看代码，大部分人应该都能看懂 1234567891011121314151617181920212223242526272829303132333435363738394041424344454647484950515253545556">
+<meta property="og:description" content="因为之前看到了第九届的省赛，LED彩灯控制，看到了一个给LED灯分等级亮度，直接望而生畏，遂放弃。在和大佬沟通交流与过后，我发现实现LED的亮度控制一点也不难，先看代码，大部分人应该都能看懂 12345678910111213141516171819202122232425262728293031323334353637383940414243444546474849505152535455565">
 <meta property="og:locale" content="en_US">
 <meta property="og:image" content="https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png">
 <meta property="article:published_time" content="2022-10-18T00:49:02.000Z">
@@ -1598,7 +1598,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
     debug: "env",
     cdn: {"js":{"app":"/js/app.js","parallax":"/js/plugins/parallax.js","rightMenu":"/js/plugins/rightMenu.js","rightMenus":"/js/plugins/rightMenus.js","sites":"/js/plugins/tags/sites.js","friends":"/js/plugins/tags/friends.js","contributors":"/js/plugins/tags/contributors.js","search":"/js/search/hexo.js"},"css":{"style":"/css/style.css"}},
     default: {"avatar":"https://unpkg.com/volantis-static@0.0.1654736714924/media/placeholder/avatar/round/3442075.svg","link":"https://unpkg.com/volantis-static@0.0.1654736714924/media/placeholder/link/8f277b4ee0ecd.svg","cover":"https://unpkg.com/volantis-static@0.0.1654736714924/media/placeholder/cover/76b86c0226ffd.svg","image":"https://unpkg.com/volantis-static@0.0.1654736714924/media/placeholder/image/2659360.svg"},
-    lastupdate: new Date(1765118762067),
+    lastupdate: new Date(1765119292905),
     sidebar: {
       for_page: ["blogger","category","tagcloud","webinfo","lastupdate"],
       for_post: ["toc"],
@@ -2464,8 +2464,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
 
   <div id="layoutHelper-page-plugins"></div>
   <div id="post-body" itemprop="articleBody">
-    <p>因为之前看到了第九届的省赛，LED彩灯控制，看到了一个给LED灯分等级亮度，直接望而生畏，遂放弃。
-在和大佬沟通交流与过后，我发现实现LED的亮度控制一点也不难，先看代码，大部分人应该都能看懂</p>
+    <p>因为之前看到了第九届的省赛，LED彩灯控制，看到了一个给LED灯分等级亮度，直接望而生畏，遂放弃。<br>在和大佬沟通交流与过后，我发现实现LED的亮度控制一点也不难，先看代码，大部分人应该都能看懂</p>
 <figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;reg51.h&gt;</span></span></span><br><span class="line">sbit k4=P3^<span class="number">3</span>;</span><br><span class="line">sbit k5=P3^<span class="number">2</span>;</span><br><span class="line">sbit k6=P3^<span class="number">1</span>;</span><br><span class="line">sbit k7=P3^<span class="number">0</span>;</span><br><span class="line"><span class="type">void</span> <span class="title function_">stop</span><span class="params">()</span></span><br><span class="line">&#123;</span><br><span class="line"> P2=(P2&amp;<span class="number">0x1f</span>)|<span class="number">0x80</span>;  </span><br><span class="line"> P0=<span class="number">0xff</span>;</span><br><span class="line"> P2&amp;=<span class="number">0x1f</span>;</span><br><span class="line"> </span><br><span class="line"> P2=(P2&amp;<span class="number">0x1f</span>)|<span class="number">0xA0</span>;   </span><br><span class="line"> P0 = P0 &amp; <span class="number">0XAF</span>; </span><br><span class="line"> P2&amp;=<span class="number">0x1f</span>;</span><br><span class="line"> </span><br><span class="line"> P2=(P2&amp;<span class="number">0x1f</span>)|<span class="number">0xc0</span>;   </span><br><span class="line"> P0=<span class="number">0xff</span>;</span><br><span class="line"> P2&amp;=<span class="number">0x1f</span>;</span><br><span class="line"> P2=(P2&amp;<span class="number">0x1f</span>)|<span class="number">0xe0</span>;</span><br><span class="line"> P0=<span class="number">0xFF</span>;</span><br><span class="line"> P2&amp;=<span class="number">0x1f</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="type">void</span> <span class="title function_">delay_us</span><span class="params">(<span class="type">int</span> us)</span></span><br><span class="line">&#123;</span><br><span class="line">  <span class="keyword">while</span> (us--);</span><br><span class="line">&#125;</span><br><span class="line"><span class="type">void</span> <span class="title function_">main</span><span class="params">()</span></span><br><span class="line">&#123;</span><br><span class="line"> <span class="type">unsigned</span> <span class="type">int</span> i;</span><br><span class="line">  stop();</span><br><span class="line"> <span class="keyword">while</span>(<span class="number">1</span>)</span><br><span class="line"> &#123;</span><br><span class="line">   <span class="keyword">if</span>(k4==<span class="number">0</span>)</span><br><span class="line">  &#123;</span><br><span class="line">   P2=<span class="number">0x80</span>;</span><br><span class="line">   P0=<span class="number">0x00</span>;</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="keyword">if</span>(k5==<span class="number">0</span>)</span><br><span class="line">  &#123;</span><br><span class="line">   P2=<span class="number">0x80</span>;</span><br><span class="line">   P0=<span class="number">0x00</span>;</span><br><span class="line">   delay_us(<span class="number">10</span>);</span><br><span class="line">   P0=<span class="number">0xff</span>;</span><br><span class="line">   delay_us(<span class="number">10</span>);</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="keyword">if</span>(k6==<span class="number">0</span>)</span><br><span class="line">  &#123;</span><br><span class="line">   P2=<span class="number">0x80</span>; </span><br><span class="line">   P0=<span class="number">0x00</span>;</span><br><span class="line">   delay_us(<span class="number">5</span>);</span><br><span class="line">   P0=<span class="number">0xff</span>;</span><br><span class="line">   delay_us(<span class="number">5</span>);</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="keyword">if</span>(k7==<span class="number">0</span>)</span><br><span class="line">  &#123;</span><br><span class="line">   P2=<span class="number">0x80</span>;</span><br><span class="line">   P0=<span class="number">0x00</span>;</span><br><span class="line">   P0=<span class="number">0xff</span>;</span><br><span class="line">  &#125;</span><br><span class="line"> &#125;</span><br><span class="line">&#125;</span><br><span class="line"> </span><br></pre></td></tr></table></figure>
 <p><strong>原理就是使LED灯快速闪烁，然后改变时间间隔，来达到控制亮度的结果，S4是最亮的，然后S7最暗，四个按键呈阶梯式分布，就这么简单。</strong></p>
 
@@ -2485,8 +2484,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
             <blockquote>
               
                 
-                  <p>博客内容遵循 署名-非商业性使用-相同方式共享 4.0 国际 (CC BY-NC-SA
-4.0) 协议</p>
+                  <p>博客内容遵循 署名-非商业性使用-相同方式共享 4.0 国际 (CC BY-NC-SA 4.0) 协议</p>
 
                 
               
@@ -2595,9 +2593,8 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
       
         <a class='prev' href='/2022/10/23/Mac%E7%94%A8Pycharm%E5%AE%89%E8%A3%85mediapipe%E6%8A%A5%E9%94%99ERROR_%20Could%20not%20find%20a%20version%20that%20satisfies%20the%20requirement%20mediapipe/'>
           <p class='title'><i class="fa-solid fa-chevron-left" aria-hidden="true"></i>Mac用Pycharm安装mediapipe报错ERROR_ Could not find a version that satisfies the requirement mediapipe</p>
-          <p class='content'>问题
-因为最近要用python做一个手部检测的项目，于是用找了个开源的程序跑了跑，发现安装mediapipe的时候会报错
-1ERROR: Could not find a version tha...</p>
+          <p class='content'>问题因为最近要用python做一个手部检测的项目，于是用找了个开源的程序跑了跑，发现安装mediapipe的时候会报错
+1ERROR: Could not find a version that...</p>
         </a>
       
       
@@ -2793,9 +2790,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
       
     
       
-        <div><p>Blog content follows the <a
-target="_blank" rel="noopener" href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.en">Attribution-NonCommercial-ShareAlike
-4.0 International (CC BY-NC-SA 4.0) License</a></p>
+        <div><p>Blog content follows the <a target="_blank" rel="noopener" href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.en">Attribution-NonCommercial-ShareAlike 4.0 International (CC BY-NC-SA 4.0) License</a></p>
 </div>
       
     

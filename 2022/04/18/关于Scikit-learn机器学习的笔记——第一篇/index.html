@@ -40,7 +40,7 @@
 <meta property="og:title" content="关于Scikit-learn机器学习的笔记——第一篇">
 <meta property="og:url" content="https://mengfanjun020906.github.io/2022/04/18/%E5%85%B3%E4%BA%8EScikit-learn%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E7%9A%84%E7%AC%94%E8%AE%B0%E2%80%94%E2%80%94%E7%AC%AC%E4%B8%80%E7%AF%87/index.html">
 <meta property="og:site_name" content="MengFanjun的博客">
-<meta property="og:description" content="视频教程：【莫烦Python】Scikit-learn (sklearn) 优雅地学会机器学习 首先从安装sklearn入手，我用的是python3.7，需要安装numpy和scipy，安装之后，就可以用sklearn自带的数据了，就用它自带的鸢尾花了  程序示例（我是用Pycharm运行的)： 12345678910import numpy as npfrom sklearn import da">
+<meta property="og:description" content="视频教程：【莫烦Python】Scikit-learn (sklearn) 优雅地学会机器学习 首先从安装sklearn入手，我用的是python3.7，需要安装numpy和scipy，安装之后，就可以用sklearn自带的数据了，就用它自带的鸢尾花了程序示例（我是用Pycharm运行的)： 12345678910import numpy as npfrom sklearn import data">
 <meta property="og:locale" content="en_US">
 <meta property="og:image" content="https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png">
 <meta property="article:published_time" content="2022-04-18T07:13:54.000Z">
@@ -1597,7 +1597,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
     debug: "env",
     cdn: {"js":{"app":"/js/app.js","parallax":"/js/plugins/parallax.js","rightMenu":"/js/plugins/rightMenu.js","rightMenus":"/js/plugins/rightMenus.js","sites":"/js/plugins/tags/sites.js","friends":"/js/plugins/tags/friends.js","contributors":"/js/plugins/tags/contributors.js","search":"/js/search/hexo.js"},"css":{"style":"/css/style.css"}},
     default: {"avatar":"https://unpkg.com/volantis-static@0.0.1654736714924/media/placeholder/avatar/round/3442075.svg","link":"https://unpkg.com/volantis-static@0.0.1654736714924/media/placeholder/link/8f277b4ee0ecd.svg","cover":"https://unpkg.com/volantis-static@0.0.1654736714924/media/placeholder/cover/76b86c0226ffd.svg","image":"https://unpkg.com/volantis-static@0.0.1654736714924/media/placeholder/image/2659360.svg"},
-    lastupdate: new Date(1765118762067),
+    lastupdate: new Date(1765119292905),
     sidebar: {
       for_page: ["blogger","category","tagcloud","webinfo","lastupdate"],
       for_post: ["toc"],
@@ -2463,13 +2463,8 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
 
   <div id="layoutHelper-page-plugins"></div>
   <div id="post-body" itemprop="articleBody">
-    <p>视频教程：<a
-target="_blank" rel="noopener" href="https://www.bilibili.com/video/BV1xW411Y7Qd?p=5&amp;share_source=copy_web">【莫烦Python】Scikit-learn
-(sklearn) 优雅地学会机器学习</a></p>
-<p>首先从安装sklearn入手，我用的是python3.7，需要安装numpy和scipy，安装之后，就可以用sklearn自带的数据了，就用它自带的鸢尾花了
-<img
-src="https://mfjblog-pic.oss-cn-beijing.aliyuncs.com/img/fef457d9bb6040b1a52a6d600c592385.png"
-alt="在这里插入图片描述" /> 程序示例（我是用Pycharm运行的)：</p>
+    <p>视频教程：<a target="_blank" rel="noopener" href="https://www.bilibili.com/video/BV1xW411Y7Qd?p=5&share_source=copy_web">【莫烦Python】Scikit-learn (sklearn) 优雅地学会机器学习</a></p>
+<p>首先从安装sklearn入手，我用的是python3.7，需要安装numpy和scipy，安装之后，就可以用sklearn自带的数据了，就用它自带的鸢尾花了<br><img src="https://mfjblog-pic.oss-cn-beijing.aliyuncs.com/img/fef457d9bb6040b1a52a6d600c592385.png" class="lazyload" data-srcset="https://mfjblog-pic.oss-cn-beijing.aliyuncs.com/img/fef457d9bb6040b1a52a6d600c592385.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="在这里插入图片描述"><br>程序示例（我是用Pycharm运行的)：</p>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> numpy <span class="keyword">as</span> np</span><br><span class="line"><span class="keyword">from</span> sklearn <span class="keyword">import</span> datasets<span class="comment">##从sklearn数据库导入数据</span></span><br><span class="line"><span class="keyword">from</span> sklearn.model_selection <span class="keyword">import</span> KFold</span><br><span class="line"><span class="keyword">from</span> sklearn.model_selection <span class="keyword">import</span> train_test_split<span class="comment">##从sklearn数据库导入函数</span></span><br><span class="line"><span class="keyword">from</span> sklearn.neighbors <span class="keyword">import</span> KNeighborsClassifier<span class="comment">##从sklearn数据库导入算法，K邻近分类</span></span><br><span class="line"></span><br><span class="line">iris=datasets.load_iris()<span class="comment">##导入鸢尾花数据</span></span><br><span class="line">iris_X=iris.data<span class="comment">##花的属性存在data里面</span></span><br><span class="line">iris_Y=iris.target<span class="comment">##花的分类在target里面</span></span><br><span class="line"><span class="built_in">print</span>(iris_X[:<span class="number">2</span>,:]) <span class="comment">##打印出iris的属性，2个</span></span><br></pre></td></tr></table></figure>
 <p>输出结果：</p>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">[[<span class="number">5.1</span> <span class="number">3.5</span> <span class="number">1.4</span> <span class="number">0.2</span>]</span><br><span class="line"> [<span class="number">4.9</span> <span class="number">3.</span>  <span class="number">1.4</span> <span class="number">0.2</span>]]</span><br></pre></td></tr></table></figure>
@@ -2485,7 +2480,7 @@ alt="在这里插入图片描述" /> 程序示例（我是用Pycharm运行的)�
 <p>输出结果：</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">[2 1 1 1 0 0 1 0 2 1 1 2 0 0 0 1 0 1 0 2 1 1 0 2 2 2 1 0 2 1 1 2 1 1 1 2 0</span><br><span class="line"> 1 2 0 0 1 1 0 0 2 2 2 1 2 0 2 1 0 1 0 1 0 2 2 1 0 0 1 0 0 0 1 1 0 2 2 0 1</span><br><span class="line"> 0 2 1 1 2 2 2 2 0 2 1 0 0 0 1 2 0 1 1 2 2 1 2 2 1 2 2 2 0 2 0]</span><br></pre></td></tr></table></figure>
 <p>这里的数据是被打乱的，可以在机器学习过程中不会有排列在一起的影响</p>
-<p>利用K邻近算法进行机器学习 下面进行分类：</p>
+<p>利用K邻近算法进行机器学习<br>下面进行分类：</p>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">knn=KNeighborsClassifier()<span class="comment">##机器学习命令</span></span><br><span class="line">knn.fit(X_train,Y_train)<span class="comment">##这个函数帮助我们完成学习的步骤，所有training在这一步进行</span></span><br><span class="line"><span class="built_in">print</span>(knn.predict(X_test))<span class="comment">##机器预测测试数据结果，这里的knn已经训练完了</span></span><br><span class="line"><span class="built_in">print</span>(Y_test)<span class="comment">##之前的真实数据</span></span><br></pre></td></tr></table></figure>
 <p>输出结果：</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">[2 1 0 0 0 0 2 0 2 1 0 2 2 0 0 1 0 1 2 0 1 2 2 0 0 1 2 0 1 1 2 0 1 2 1 2 0</span><br><span class="line"> 2 2 0 0 1 0 2 2]</span><br><span class="line">[2 1 0 0 0 0 1 0 2 1 0 2 2 0 0 1 0 1 2 0 1 2 2 0 0 1 2 0 1 1 2 0 1 2 1 2 0</span><br><span class="line"> 2 2 0 0 1 0 2 2]</span><br></pre></td></tr></table></figure>
@@ -2507,8 +2502,7 @@ alt="在这里插入图片描述" /> 程序示例（我是用Pycharm运行的)�
             <blockquote>
               
                 
-                  <p>博客内容遵循 署名-非商业性使用-相同方式共享 4.0 国际 (CC BY-NC-SA
-4.0) 协议</p>
+                  <p>博客内容遵循 署名-非商业性使用-相同方式共享 4.0 国际 (CC BY-NC-SA 4.0) 协议</p>
 
                 
               
@@ -2618,16 +2612,13 @@ alt="在这里插入图片描述" /> 程序示例（我是用Pycharm运行的)�
         <a class='prev' href='/2022/04/18/STM32F103C8T6%20HAL%E5%BA%93%E2%80%94%E2%80%94%E4%BB%8E%E9%9B%B6%E5%BC%80%E5%A7%8B%E7%9A%84%E5%88%B6%E4%BD%9C%E5%B9%B3%E8%A1%A1%E5%B0%8F%E8%BD%A6%E7%94%9F%E6%B4%BB/'>
           <p class='title'><i class="fa-solid fa-chevron-left" aria-hidden="true"></i>STM32F103C8T6 HAL库——从零开始的制作平衡小车生活</p>
           <p class='content'>最近买了个平衡小车，为了圆我PID梦，买来玩玩，废话不多说，直接开搞
-第一步：让小车的轮子转起来
-我用的电机是TB6612FNG，想详细了解的话直接去搜手册，给他输出两路PWM还要两个引脚进行高...</p>
+第一步：让小车的轮子转起来我用的电机是TB6612FNG，想详细了解的话直接去搜手册，给他输出两路PWM还要两个引脚进行高低...</p>
         </a>
       
       
         <a class='next' href='/2022/04/18/%E7%94%A8Pytorch%E6%90%AD%E5%BB%BA%E7%AC%AC%E4%B8%80%E4%B8%AA%E7%A5%9E%E7%BB%8F%E7%BD%91%E7%BB%9C(CIFAR10)%E4%B8%94%E8%BF%9B%E8%A1%8C%E4%BC%98%E5%8C%96/'>
           <p class='title'>用Pytorch搭建第一个神经网络(CIFAR10)且进行优化<i class="fa-solid fa-chevron-right" aria-hidden="true"></i></p>
-          <p class='content'>最近一直在学习pytorch，这次自己跟着教程搭了一个神经网络，用的最经典的CIFAR10，先看一下原理
-
-输入3通道32*32，最后经过3个卷积，3个最大池化，还有1个flatten，和两个线...</p>
+          <p class='content'>最近一直在学习pytorch，这次自己跟着教程搭了一个神经网络，用的最经典的CIFAR10，先看一下原理输入3通道32*32，最后经过3个卷积，3个最大池化，还有1个flatten，和两个线性化...</p>
         </a>
       
     </div>
@@ -2817,9 +2808,7 @@ alt="在这里插入图片描述" /> 程序示例（我是用Pycharm运行的)�
       
     
       
-        <div><p>Blog content follows the <a
-target="_blank" rel="noopener" href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.en">Attribution-NonCommercial-ShareAlike
-4.0 International (CC BY-NC-SA 4.0) License</a></p>
+        <div><p>Blog content follows the <a target="_blank" rel="noopener" href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.en">Attribution-NonCommercial-ShareAlike 4.0 International (CC BY-NC-SA 4.0) License</a></p>
 </div>
       
     

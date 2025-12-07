@@ -40,7 +40,7 @@
 <meta property="og:title" content="Arduino Uno零基础入门学习笔记——LCD1602屏+DS1302时钟">
 <meta property="og:url" content="https://mengfanjun020906.github.io/2022/12/15/Arduino%20Uno%E9%9B%B6%E5%9F%BA%E7%A1%80%E5%85%A5%E9%97%A8%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0%E2%80%94%E2%80%94LCD1602%E5%B1%8F+DS1302%E6%97%B6%E9%92%9F/index.html">
 <meta property="og:site_name" content="MengFanjun的博客">
-<meta property="og:description" content="我是在这篇文章的基础上进行修改的，那篇文章只进行了串口的打印，并没有在LCD1602上显示 # 一、电路连接 ## LCD1602IIC    LCD1602IIC引脚 Arduino引脚     VCC 5V   GND GND   SDA A4   SCL A5    我这里的LCD1602是IIC的，所以只需要4根线  ## DS1302    DS1302引脚 Arduino引脚">
+<meta property="og:description" content="我是在这篇文章的基础上进行修改的，那篇文章只进行了串口的打印，并没有在LCD1602上显示 一、电路连接LCD1602IIC   LCD1602IIC引脚 Arduino引脚    VCC 5V   GND GND   SDA A4   SCL A5   我这里的LCD1602是IIC的，所以只需要4根线  DS1302   DS1302引脚 Arduino引脚    VCC 5V   GND G">
 <meta property="og:locale" content="en_US">
 <meta property="og:image" content="https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png">
 <meta property="article:published_time" content="2022-12-15T09:31:50.000Z">
@@ -1596,7 +1596,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
     debug: "env",
     cdn: {"js":{"app":"/js/app.js","parallax":"/js/plugins/parallax.js","rightMenu":"/js/plugins/rightMenu.js","rightMenus":"/js/plugins/rightMenus.js","sites":"/js/plugins/tags/sites.js","friends":"/js/plugins/tags/friends.js","contributors":"/js/plugins/tags/contributors.js","search":"/js/search/hexo.js"},"css":{"style":"/css/style.css"}},
     default: {"avatar":"https://unpkg.com/volantis-static@0.0.1654736714924/media/placeholder/avatar/round/3442075.svg","link":"https://unpkg.com/volantis-static@0.0.1654736714924/media/placeholder/link/8f277b4ee0ecd.svg","cover":"https://unpkg.com/volantis-static@0.0.1654736714924/media/placeholder/cover/76b86c0226ffd.svg","image":"https://unpkg.com/volantis-static@0.0.1654736714924/media/placeholder/image/2659360.svg"},
-    lastupdate: new Date(1765118762067),
+    lastupdate: new Date(1765119292905),
     sidebar: {
       for_page: ["blogger","category","tagcloud","webinfo","lastupdate"],
       for_post: ["toc"],
@@ -2420,13 +2420,13 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
   <div class="new-meta-item wordcount">
     <a class='notlink'>
       <i class="fa-solid fa-keyboard fa-fw" aria-hidden="true"></i>
-      <p>436 words</p>
+      <p>428 words</p>
     </a>
   </div>
   <div class="new-meta-item readtime">
     <a class='notlink'>
       <i class="fa-solid fa-hourglass-half fa-fw" aria-hidden="true"></i>
-      <p>2 min</p>
+      <p>1 min</p>
     </a>
   </div>
 
@@ -2462,80 +2462,64 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
 
   <div id="layoutHelper-page-plugins"></div>
   <div id="post-body" itemprop="articleBody">
-    <p>我是在<a
-target="_blank" rel="noopener" href="http://t.csdn.cn/mLvIy">这篇文章</a>的基础上进行修改的，那篇文章只进行了串口的打印，并没有在LCD1602上显示
-# 一、电路连接 ## LCD1602IIC</p>
-<table>
+    <p>我是在<a target="_blank" rel="noopener" href="http://t.csdn.cn/mLvIy">这篇文章</a>的基础上进行修改的，那篇文章只进行了串口的打印，并没有在LCD1602上显示</p>
+<h1 id="一、电路连接"><a href="#一、电路连接" class="headerlink" title="一、电路连接"></a>一、电路连接</h1><h2 id="LCD1602IIC"><a href="#LCD1602IIC" class="headerlink" title="LCD1602IIC"></a>LCD1602IIC</h2><table>
 <thead>
-<tr class="header">
+<tr>
 <th>LCD1602IIC引脚</th>
 <th>Arduino引脚</th>
 </tr>
 </thead>
-<tbody>
-<tr class="odd">
+<tbody><tr>
 <td>VCC</td>
 <td>5V</td>
 </tr>
-<tr class="even">
+<tr>
 <td>GND</td>
 <td>GND</td>
 </tr>
-<tr class="odd">
+<tr>
 <td>SDA</td>
 <td>A4</td>
 </tr>
-<tr class="even">
+<tr>
 <td>SCL</td>
 <td>A5</td>
 </tr>
-</tbody>
-</table>
+</tbody></table>
 <p>我这里的LCD1602是IIC的，所以只需要4根线</p>
-<p><img
-src="https://mfjblog-pic.oss-cn-beijing.aliyuncs.com/img/f0f63b0ccc684b42b617c94a959a2ea6-20230324135758210.png"
-alt="在这里插入图片描述" /> ## DS1302</p>
-<table>
+<p><img src="https://mfjblog-pic.oss-cn-beijing.aliyuncs.com/img/f0f63b0ccc684b42b617c94a959a2ea6-20230324135758210.png" class="lazyload" data-srcset="https://mfjblog-pic.oss-cn-beijing.aliyuncs.com/img/f0f63b0ccc684b42b617c94a959a2ea6-20230324135758210.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="在这里插入图片描述"></p>
+<h2 id="DS1302"><a href="#DS1302" class="headerlink" title="DS1302"></a>DS1302</h2><table>
 <thead>
-<tr class="header">
+<tr>
 <th>DS1302引脚</th>
 <th>Arduino引脚</th>
 </tr>
 </thead>
-<tbody>
-<tr class="odd">
+<tbody><tr>
 <td>VCC</td>
 <td>5V</td>
 </tr>
-<tr class="even">
+<tr>
 <td>GND</td>
 <td>GND</td>
 </tr>
-<tr class="odd">
+<tr>
 <td>RST</td>
 <td>A0(14)</td>
 </tr>
-<tr class="even">
+<tr>
 <td>DAT</td>
 <td>A1(15)</td>
 </tr>
-<tr class="odd">
+<tr>
 <td>SCK</td>
 <td>A2(16)</td>
 </tr>
-</tbody>
-</table>
-<h1 id="二代码">二、代码</h1>
-<p>记得提前安装DS1302的库 <a
-target="_blank" rel="noopener" href="https://github.com/msparks/arduino-ds1302">DS1302</a></p>
+</tbody></table>
+<h1 id="二、代码"><a href="#二、代码" class="headerlink" title="二、代码"></a>二、代码</h1><p>记得提前安装DS1302的库<br><a target="_blank" rel="noopener" href="https://github.com/msparks/arduino-ds1302">DS1302</a></p>
 <figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;DS1302.h&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;Wire.h&gt;</span> </span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;LiquidCrystal_I2C.h&gt;</span> <span class="comment">//引用I2C库</span></span></span><br><span class="line"> </span><br><span class="line"><span class="type">char</span> buf1[<span class="number">50</span>];</span><br><span class="line"><span class="type">char</span> buf2[<span class="number">50</span>];</span><br><span class="line"></span><br><span class="line"><span class="comment">//设置LCD1602设备地址，这里的地址是0x27，一般是0x20，或者0x27，具体看模块手册</span></span><br><span class="line">LiquidCrystal_I2C <span class="title function_">lcd</span><span class="params">(<span class="number">0x27</span>,<span class="number">16</span>,<span class="number">2</span>)</span>; <span class="comment">//这里是0x27</span></span><br><span class="line">DS1302 <span class="title function_">rtc</span><span class="params">(<span class="number">14</span>, <span class="number">15</span>, <span class="number">16</span>)</span>; <span class="comment">//对应DS1302的RST,DAT,CLK</span></span><br><span class="line"></span><br><span class="line"><span class="type">void</span> <span class="title function_">initRTCTime</span><span class="params">(<span class="type">void</span>)</span><span class="comment">//初始化RTC时钟</span></span><br><span class="line">&#123;</span><br><span class="line">  rtc.writeProtect(<span class="literal">false</span>); <span class="comment">//关闭写保护</span></span><br><span class="line">  rtc.halt(<span class="literal">false</span>); <span class="comment">//清除时钟停止标志</span></span><br><span class="line">  Time <span class="title function_">t</span><span class="params">(<span class="number">2022</span>, <span class="number">12</span>, <span class="number">15</span>, <span class="number">17</span>, <span class="number">21</span>, <span class="number">50</span>, <span class="number">4</span>)</span>; <span class="comment">//新建时间对象 最后参数位星期数据，周日为1，周一为2以此类推</span></span><br><span class="line">  rtc.time(t);<span class="comment">//向DS1302设置时间数据</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="type">void</span> <span class="title function_">printTime</span><span class="params">()</span><span class="comment">//打印时间数据</span></span><br><span class="line">&#123;</span><br><span class="line">  Time tim = rtc.time(); <span class="comment">//从DS1302获取时间数据</span></span><br><span class="line">  </span><br><span class="line">  <span class="built_in">snprintf</span>(buf1, <span class="keyword">sizeof</span>(buf1), <span class="string">&quot;%04d-%02d-%02d &quot;</span>,</span><br><span class="line">           tim.yr, tim.mon, tim.date</span><br><span class="line">           );</span><br><span class="line">  <span class="built_in">snprintf</span>(buf2, <span class="keyword">sizeof</span>(buf2), <span class="string">&quot;%02d:%02d:%02d&quot;</span>,</span><br><span class="line">           tim.hr, tim.min, tim.sec);</span><br><span class="line"></span><br><span class="line">  Serial.println(buf1);</span><br><span class="line">  Serial.println(buf2);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="type">void</span> <span class="title function_">setup</span><span class="params">()</span> &#123;</span><br><span class="line">  Serial.begin(<span class="number">9600</span>);</span><br><span class="line"></span><br><span class="line">  <span class="comment">//新模块上电需要设置一次当前时间，</span></span><br><span class="line">  <span class="comment">//下载完成后需屏蔽此函数再次下载，否则每次上电都会初始化时间数据</span></span><br><span class="line">  initRTCTime();</span><br><span class="line">  lcd.init();                  <span class="comment">// 初始化LCD</span></span><br><span class="line">  lcd.backlight();             <span class="comment">//设置LCD背景等亮</span></span><br><span class="line"></span><br><span class="line">  lcd.setCursor(<span class="number">0</span>,<span class="number">0</span>); </span><br><span class="line">  lcd.print(<span class="string">&quot;    Clock    &quot;</span>);</span><br><span class="line">  delay(<span class="number">2000</span>);</span><br><span class="line">  lcd.clear();</span><br><span class="line"></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="type">void</span> <span class="title function_">loop</span><span class="params">()</span> &#123;</span><br><span class="line">  printTime();</span><br><span class="line">  delay(<span class="number">1000</span>);</span><br><span class="line">  </span><br><span class="line">  Time tim = rtc.time(); <span class="comment">//从DS1302获取时间数据</span></span><br><span class="line">  lcd.setCursor(<span class="number">0</span>,<span class="number">0</span>);</span><br><span class="line">  lcd.print(buf1);</span><br><span class="line">  lcd.setCursor(<span class="number">0</span>,<span class="number">1</span>);</span><br><span class="line">  lcd.print(buf2);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<h1 id="三效果">三、效果</h1>
-<figure>
-<img
-src="https://mfjblog-pic.oss-cn-beijing.aliyuncs.com/img/de4ddeb79e084f26b3524b947de75c67.gif"
-alt="请添加图片描述" />
-<figcaption aria-hidden="true">请添加图片描述</figcaption>
-</figure>
+<h1 id="三、效果"><a href="#三、效果" class="headerlink" title="三、效果"></a>三、效果</h1><p><img src="https://mfjblog-pic.oss-cn-beijing.aliyuncs.com/img/de4ddeb79e084f26b3524b947de75c67.gif" class="lazyload" data-srcset="https://mfjblog-pic.oss-cn-beijing.aliyuncs.com/img/de4ddeb79e084f26b3524b947de75c67.gif" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="请添加图片描述"></p>
 
   </div>
   
@@ -2553,8 +2537,7 @@ alt="请添加图片描述" />
             <blockquote>
               
                 
-                  <p>博客内容遵循 署名-非商业性使用-相同方式共享 4.0 国际 (CC BY-NC-SA
-4.0) 协议</p>
+                  <p>博客内容遵循 署名-非商业性使用-相同方式共享 4.0 国际 (CC BY-NC-SA 4.0) 协议</p>
 
                 
               
@@ -2663,22 +2646,17 @@ alt="请添加图片描述" />
       
         <a class='prev' href='/2022/12/17/Arduino%20Uno%E9%9B%B6%E5%9F%BA%E7%A1%80%E5%85%A5%E9%97%A8%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0%E2%80%94%E2%80%948229BSF%E8%A7%A6%E6%91%B8%E9%94%AE%E7%9B%98/'>
           <p class='title'><i class="fa-solid fa-chevron-left" aria-hidden="true"></i>Arduino Uno零基础入门学习笔记——8229BSF触摸键盘</p>
-          <p class='content'>一、电路连接
-
-学校发的Arduino实验盒里还有个矩阵键盘，一开始看到了SDA和SCL感觉是IIC驱动的，但是去Arduino官方论坛看了看，发现好像那个是SDO？，他并不是IIC驱动的，后来...</p>
+          <p class='content'>一、电路连接学校发的Arduino实验盒里还有个矩阵键盘，一开始看到了SDA和SCL感觉是IIC驱动的，但是去Arduino官方论坛看了看，发现好像那个是SDO？，他并不是IIC驱动的，后来从G...</p>
         </a>
       
       
         <a class='next' href='/2022/12/15/Arduino%20Uno%E9%9B%B6%E5%9F%BA%E7%A1%80%E5%85%A5%E9%97%A8%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0%E2%80%94%E2%80%94LCD1602%E5%B1%8F+PIR%E8%BF%90%E5%8A%A8%E6%A3%80%E6%B5%8B%E5%99%A8/'>
           <p class='title'>Arduino Uno零基础入门学习笔记——LCD1602屏+PIR运动检测器<i class="fa-solid fa-chevron-right" aria-hidden="true"></i></p>
-          <p class='content'>一、电路连接
-PIR运动检测器
-
+          <p class='content'>一、电路连接PIR运动检测器
 
 
 PIR运动检测器引脚
 Arduino引脚
-
 
 
 
@@ -2695,11 +2673,10 @@ A0(14)
 
 
 
+LCD1602IIC
 
 
-在这里插入图片描述
-
-LCD1602...</p>
+LCD1602IIC...</p>
         </a>
       
     </div>
@@ -2757,7 +2734,7 @@ LCD1602...</p>
 
 
     <div class='content'>
-        
+        <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#LCD1602IIC"><span class="toc-text">LCD1602IIC</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#DS1302"><span class="toc-text">DS1302</span></a></li></ol>
     </div>
   </section>
 
@@ -2899,9 +2876,7 @@ LCD1602...</p>
       
     
       
-        <div><p>Blog content follows the <a
-target="_blank" rel="noopener" href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.en">Attribution-NonCommercial-ShareAlike
-4.0 International (CC BY-NC-SA 4.0) License</a></p>
+        <div><p>Blog content follows the <a target="_blank" rel="noopener" href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.en">Attribution-NonCommercial-ShareAlike 4.0 International (CC BY-NC-SA 4.0) License</a></p>
 </div>
       
     

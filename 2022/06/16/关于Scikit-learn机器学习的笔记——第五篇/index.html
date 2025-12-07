@@ -1597,7 +1597,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
     debug: "env",
     cdn: {"js":{"app":"/js/app.js","parallax":"/js/plugins/parallax.js","rightMenu":"/js/plugins/rightMenu.js","rightMenus":"/js/plugins/rightMenus.js","sites":"/js/plugins/tags/sites.js","friends":"/js/plugins/tags/friends.js","contributors":"/js/plugins/tags/contributors.js","search":"/js/search/hexo.js"},"css":{"style":"/css/style.css"}},
     default: {"avatar":"https://unpkg.com/volantis-static@0.0.1654736714924/media/placeholder/avatar/round/3442075.svg","link":"https://unpkg.com/volantis-static@0.0.1654736714924/media/placeholder/link/8f277b4ee0ecd.svg","cover":"https://unpkg.com/volantis-static@0.0.1654736714924/media/placeholder/cover/76b86c0226ffd.svg","image":"https://unpkg.com/volantis-static@0.0.1654736714924/media/placeholder/image/2659360.svg"},
-    lastupdate: new Date(1765118762067),
+    lastupdate: new Date(1765119292905),
     sidebar: {
       for_page: ["blogger","category","tagcloud","webinfo","lastupdate"],
       for_post: ["toc"],
@@ -2421,7 +2421,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
   <div class="new-meta-item wordcount">
     <a class='notlink'>
       <i class="fa-solid fa-keyboard fa-fw" aria-hidden="true"></i>
-      <p>871 words</p>
+      <p>872 words</p>
     </a>
   </div>
   <div class="new-meta-item readtime">
@@ -2463,18 +2463,14 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
 
   <div id="layoutHelper-page-plugins"></div>
   <div id="post-body" itemprop="articleBody">
-    <p>视频教程：<a
-target="_blank" rel="noopener" href="https://www.bilibili.com/video/BV1xW411Y7Qd?p=5&amp;share_source=copy_web">【莫烦Python】Scikit-learn
-(sklearn) 优雅地学会机器学习</a></p>
+    <p>视频教程：<a target="_blank" rel="noopener" href="https://www.bilibili.com/video/BV1xW411Y7Qd?p=5&share_source=copy_web">【莫烦Python】Scikit-learn (sklearn) 优雅地学会机器学习</a></p>
 <p>首先用KNN模型来进行基础的学习并且计算模型的分数</p>
 <p>程序示例：</p>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> sklearn.datasets <span class="keyword">import</span> load_iris<span class="comment">##从sklearn数据库导入数据</span></span><br><span class="line"><span class="keyword">from</span> sklearn.model_selection <span class="keyword">import</span>  train_test_split</span><br><span class="line"><span class="keyword">from</span> sklearn.neighbors <span class="keyword">import</span> KNeighborsClassifier<span class="comment">##从sklearn数据库导入算法，K邻近分类</span></span><br><span class="line"></span><br><span class="line">iris=load_iris()<span class="comment">##导入鸢尾花数据</span></span><br><span class="line">X=iris.data<span class="comment">##花的属性存在data里面</span></span><br><span class="line">y=iris.target<span class="comment">##花的分类在target里面</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">X_train,X_test,y_train,y_test=train_test_split(X,y,random_state=<span class="number">4</span>)</span><br><span class="line">knn=KNeighborsClassifier(n_neighbors=<span class="number">5</span>)<span class="comment">##机器学习命令,考虑学习点附近5个点的neighbor</span></span><br><span class="line">knn.fit(X_train,y_train)<span class="comment">##这个函数帮助我们完成学习的步骤，所有training在这一步进行</span></span><br><span class="line"><span class="built_in">print</span>(knn.score(X_test,y_test)) </span><br></pre></td></tr></table></figure>
 <p>输出结果：</p>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="number">0.9736842105263158</span></span><br></pre></td></tr></table></figure>
 <p>得分为0.97</p>
-<p>接下来我们用5组数据去验证 <img
-src="https://mfjblog-pic.oss-cn-beijing.aliyuncs.com/img/dbe70775539b4579a74337ea0485d5d2.png"
-alt="在这里插入图片描述" /> 程序示例：</p>
+<p>接下来我们用5组数据去验证<br><img src="https://mfjblog-pic.oss-cn-beijing.aliyuncs.com/img/dbe70775539b4579a74337ea0485d5d2.png" class="lazyload" data-srcset="https://mfjblog-pic.oss-cn-beijing.aliyuncs.com/img/dbe70775539b4579a74337ea0485d5d2.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="在这里插入图片描述"><br>程序示例：</p>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> sklearn.datasets <span class="keyword">import</span> load_iris<span class="comment">##从sklearn数据库导入数据</span></span><br><span class="line"><span class="keyword">from</span> sklearn.model_selection <span class="keyword">import</span>  train_test_split</span><br><span class="line"><span class="keyword">from</span> sklearn.neighbors <span class="keyword">import</span> KNeighborsClassifier<span class="comment">##从sklearn数据库导入算法，K邻近分类</span></span><br><span class="line"></span><br><span class="line">iris=load_iris()<span class="comment">##导入鸢尾花数据</span></span><br><span class="line">X=iris.data<span class="comment">##花的属性存在data里面</span></span><br><span class="line">y=iris.target<span class="comment">##花的分类在target里面</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">from</span> sklearn.model_selection <span class="keyword">import</span>  cross_val_score</span><br><span class="line"><span class="comment">#X_train,X_test,y_train,y_test=train_test_split(X,y,random_state=4)</span></span><br><span class="line">knn=KNeighborsClassifier(n_neighbors=<span class="number">5</span>)<span class="comment">##机器学习命令,考虑学习点附近5个点的neighbor</span></span><br><span class="line">scores=cross_val_score(knn,X,y,cv=<span class="number">5</span>,scoring=<span class="string">&#x27;accuracy&#x27;</span>)<span class="comment">##将数据分成5层，把数据集平均分成5份，scoring方法是accuracy判断准确度</span></span><br><span class="line"><span class="built_in">print</span>(scores)</span><br><span class="line"></span><br></pre></td></tr></table></figure>
 <p>输出结果：</p>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">[<span class="number">0.96666667</span> <span class="number">1.</span>         <span class="number">0.93333333</span> <span class="number">0.96666667</span> <span class="number">1.</span>        ]</span><br></pre></td></tr></table></figure>
@@ -2482,18 +2478,12 @@ alt="在这里插入图片描述" /> 程序示例：</p>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">print</span>(scores.mean())</span><br></pre></td></tr></table></figure>
 <p>输出结果：</p>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="number">0.9733333333333334</span></span><br></pre></td></tr></table></figure>
-<p>接下来我们观察k从1到31，cv=10，模型的评价值</p>
+<p>接下来我们观察k从1到31，cv&#x3D;10，模型的评价值</p>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> sklearn.datasets <span class="keyword">import</span> load_iris<span class="comment">##从sklearn数据库导入数据</span></span><br><span class="line"><span class="keyword">from</span> sklearn.model_selection <span class="keyword">import</span>  train_test_split</span><br><span class="line"><span class="keyword">from</span> sklearn.neighbors <span class="keyword">import</span> KNeighborsClassifier<span class="comment">##从sklearn数据库导入算法，K邻近分类</span></span><br><span class="line"></span><br><span class="line">iris=load_iris()<span class="comment">##导入鸢尾花数据</span></span><br><span class="line">X=iris.data<span class="comment">##花的属性存在data里面</span></span><br><span class="line">y=iris.target<span class="comment">##花的分类在target里面</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">from</span> sklearn.model_selection <span class="keyword">import</span>  cross_val_score</span><br><span class="line"><span class="keyword">import</span> matplotlib.pyplot <span class="keyword">as</span> plt</span><br><span class="line">k_range=<span class="built_in">range</span>(<span class="number">1</span>,<span class="number">31</span>)<span class="comment">##k的范围是1到31</span></span><br><span class="line">k_scores=[]</span><br><span class="line"><span class="keyword">for</span> k <span class="keyword">in</span> k_range:</span><br><span class="line">    knn=KNeighborsClassifier(n_neighbors=k)<span class="comment">##机器学习命令,考虑学习点附近k个点的neighbor，把k从1到31都带进去</span></span><br><span class="line">    scores=cross_val_score(knn,X,y,cv=<span class="number">10</span>,scoring=<span class="string">&#x27;accuracy&#x27;</span>)<span class="comment">##for classication</span></span><br><span class="line">    <span class="comment">#loss=-cross_val_score(knn,X,y,cv=10,scoring=&#x27;mean_squared_error&#x27;)##for regression</span></span><br><span class="line">    k_scores.append(scores.mean())<span class="comment">##每次的结果都附加上去</span></span><br><span class="line">plt.plot(k_range,k_scores)</span><br><span class="line">plt.xlabel(<span class="string">&#x27;Value for K of KNN&#x27;</span>)</span><br><span class="line">plt.ylabel(<span class="string">&#x27;Cross-Validated Accuracy&#x27;</span>)</span><br><span class="line">plt.show()</span><br></pre></td></tr></table></figure>
-<p>输出结果： <img
-src="https://mfjblog-pic.oss-cn-beijing.aliyuncs.com/img/b10cf0227f1b44d69830062f66be7f65.png"
-alt="在这里插入图片描述" /> 可以看出，k在14到18之间，是非常准确的</p>
-<p>如果我们用另一种方式，用判断误差的形式，观察结果会是什么样子的
-程序示例：</p>
+<p>输出结果：<br><img src="https://mfjblog-pic.oss-cn-beijing.aliyuncs.com/img/b10cf0227f1b44d69830062f66be7f65.png" class="lazyload" data-srcset="https://mfjblog-pic.oss-cn-beijing.aliyuncs.com/img/b10cf0227f1b44d69830062f66be7f65.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="在这里插入图片描述"><br>可以看出，k在14到18之间，是非常准确的</p>
+<p>如果我们用另一种方式，用判断误差的形式，观察结果会是什么样子的<br>程序示例：</p>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> sklearn.datasets <span class="keyword">import</span> load_iris<span class="comment">##从sklearn数据库导入数据</span></span><br><span class="line"><span class="keyword">from</span> sklearn.model_selection <span class="keyword">import</span>  train_test_split</span><br><span class="line"><span class="keyword">from</span> sklearn.neighbors <span class="keyword">import</span> KNeighborsClassifier<span class="comment">##从sklearn数据库导入算法，K邻近分类</span></span><br><span class="line"></span><br><span class="line">iris=load_iris()<span class="comment">##导入鸢尾花数据</span></span><br><span class="line">X=iris.data<span class="comment">##花的属性存在data里面</span></span><br><span class="line">y=iris.target<span class="comment">##花的分类在target里面</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">from</span> sklearn.model_selection <span class="keyword">import</span>  cross_val_score</span><br><span class="line"><span class="keyword">import</span> matplotlib.pyplot <span class="keyword">as</span> plt</span><br><span class="line">k_range=<span class="built_in">range</span>(<span class="number">1</span>,<span class="number">31</span>)<span class="comment">##k的范围是1到31</span></span><br><span class="line">k_scores=[]</span><br><span class="line"><span class="keyword">for</span> k <span class="keyword">in</span> k_range:</span><br><span class="line">    knn=KNeighborsClassifier(n_neighbors=k)<span class="comment">##机器学习命令,考虑学习点附近k个点的neighbor，把k从1到31都带进去，这里的模型也可以改，判断该采用什么样子的模型</span></span><br><span class="line">    <span class="comment">#scores=cross_val_score(knn,X,y,cv=10,scoring=&#x27;accuracy&#x27;)##for classication,用了cv=10更精准</span></span><br><span class="line">    loss=-cross_val_score(knn,X,y,cv=<span class="number">10</span>,scoring=<span class="string">&#x27;neg_mean_squared_error&#x27;</span>)<span class="comment">##for regression，判断误差</span></span><br><span class="line">    k_scores.append(loss.mean())<span class="comment">##每次的结果都附加上去</span></span><br><span class="line">plt.plot(k_range,k_scores)</span><br><span class="line">plt.xlabel(<span class="string">&#x27;Value for K of KNN&#x27;</span>)</span><br><span class="line">plt.ylabel(<span class="string">&#x27;Cross-Validated Accuracy&#x27;</span>)</span><br><span class="line">plt.show()</span><br></pre></td></tr></table></figure>
-<p>输出结果： <img
-src="https://mfjblog-pic.oss-cn-beijing.aliyuncs.com/img/64930f7433614f4eab6b4bc73dcf1822.png"
-alt="在这里插入图片描述" />
-loss越小，他的误差越小，应该选最小loss的k值</p>
+<p>输出结果：<br><img src="https://mfjblog-pic.oss-cn-beijing.aliyuncs.com/img/64930f7433614f4eab6b4bc73dcf1822.png" class="lazyload" data-srcset="https://mfjblog-pic.oss-cn-beijing.aliyuncs.com/img/64930f7433614f4eab6b4bc73dcf1822.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="在这里插入图片描述"><br>loss越小，他的误差越小，应该选最小loss的k值</p>
 <p>如果要换不同的模型，只需要改model那里就好</p>
 
   </div>
@@ -2512,8 +2502,7 @@ loss越小，他的误差越小，应该选最小loss的k值</p>
             <blockquote>
               
                 
-                  <p>博客内容遵循 署名-非商业性使用-相同方式共享 4.0 国际 (CC BY-NC-SA
-4.0) 协议</p>
+                  <p>博客内容遵循 署名-非商业性使用-相同方式共享 4.0 国际 (CC BY-NC-SA 4.0) 协议</p>
 
                 
               
@@ -2622,21 +2611,17 @@ loss越小，他的误差越小，应该选最小loss的k值</p>
       
         <a class='prev' href='/2022/06/16/%E5%85%B3%E4%BA%8EScikit-learn%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E7%9A%84%E7%AC%94%E8%AE%B0%E2%80%94%E2%80%94%E7%AC%AC%E5%85%AD%E7%AF%87/'>
           <p class='title'><i class="fa-solid fa-chevron-left" aria-hidden="true"></i>关于Scikit-learn机器学习的笔记——第六篇</p>
-          <p class='content'>视频教程：【莫烦Python】Scikit-learn
-(sklearn) 优雅地学会机器学习
-Overfitting过拟合现象 
-黑线已经区分的很好了，但绿线就出现了过拟合的现象
+          <p class='content'>视频教程：【莫烦Python】Scikit-learn (sklearn) 优雅地学会机器学习
+Overfitting过拟合现象黑线已经区分的很好了，但绿线就出现了过拟合的现象
 程序示例：
-...</p>
+12...</p>
         </a>
       
       
         <a class='next' href='/2022/06/15/%E5%85%B3%E4%BA%8EScikit-learn%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E7%9A%84%E7%AC%94%E8%AE%B0%E2%80%94%E2%80%94%E7%AC%AC%E5%9B%9B%E7%AF%87/'>
           <p class='title'>关于Scikit-learn机器学习的笔记——第四篇<i class="fa-solid fa-chevron-right" aria-hidden="true"></i></p>
-          <p class='content'>视频教程：【莫烦Python】Scikit-learn
-(sklearn) 优雅地学会机器学习
-在我们获得数据时，需要对数据进行normalization 
-x1的数据范围更大，x2的数据范围很...</p>
+          <p class='content'>视频教程：【莫烦Python】Scikit-learn (sklearn) 优雅地学会机器学习
+在我们获得数据时，需要对数据进行normalizationx1的数据范围更大，x2的数据范围很小，...</p>
         </a>
       
     </div>
@@ -2826,9 +2811,7 @@ x1的数据范围更大，x2的数据范围很...</p>
       
     
       
-        <div><p>Blog content follows the <a
-target="_blank" rel="noopener" href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.en">Attribution-NonCommercial-ShareAlike
-4.0 International (CC BY-NC-SA 4.0) License</a></p>
+        <div><p>Blog content follows the <a target="_blank" rel="noopener" href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.en">Attribution-NonCommercial-ShareAlike 4.0 International (CC BY-NC-SA 4.0) License</a></p>
 </div>
       
     

@@ -1597,7 +1597,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
     debug: "env",
     cdn: {"js":{"app":"/js/app.js","parallax":"/js/plugins/parallax.js","rightMenu":"/js/plugins/rightMenu.js","rightMenus":"/js/plugins/rightMenus.js","sites":"/js/plugins/tags/sites.js","friends":"/js/plugins/tags/friends.js","contributors":"/js/plugins/tags/contributors.js","search":"/js/search/hexo.js"},"css":{"style":"/css/style.css"}},
     default: {"avatar":"https://unpkg.com/volantis-static@0.0.1654736714924/media/placeholder/avatar/round/3442075.svg","link":"https://unpkg.com/volantis-static@0.0.1654736714924/media/placeholder/link/8f277b4ee0ecd.svg","cover":"https://unpkg.com/volantis-static@0.0.1654736714924/media/placeholder/cover/76b86c0226ffd.svg","image":"https://unpkg.com/volantis-static@0.0.1654736714924/media/placeholder/image/2659360.svg"},
-    lastupdate: new Date(1765118762067),
+    lastupdate: new Date(1765119292905),
     sidebar: {
       for_page: ["blogger","category","tagcloud","webinfo","lastupdate"],
       for_post: ["toc"],
@@ -2421,7 +2421,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
   <div class="new-meta-item wordcount">
     <a class='notlink'>
       <i class="fa-solid fa-keyboard fa-fw" aria-hidden="true"></i>
-      <p>967 words</p>
+      <p>931 words</p>
     </a>
   </div>
   <div class="new-meta-item readtime">
@@ -2463,55 +2463,26 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
 
   <div id="layoutHelper-page-plugins"></div>
   <div id="post-body" itemprop="articleBody">
-    <p><img
-src="https://mfjblog-pic.oss-cn-beijing.aliyuncs.com/img/06dae02bc6ec49289c8bdd051bd8a332.png"
-alt="在这里插入图片描述" /> <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line">clear</span><br><span class="line">close all</span><br><span class="line">clc</span><br><span class="line"></span><br><span class="line">fs=1000;<span class="built_in">fc</span>=200;fr=300;T=0.001; </span><br><span class="line">wp1=2*pi*<span class="built_in">fc</span>;</span><br><span class="line">wr1=2*pi*fr; </span><br><span class="line">[N1,wn1]=buttord(wp1,wr1,1,25,<span class="string">&#x27;s&#x27;</span>); </span><br><span class="line">[B1,A1]=butter(N1,wn1,<span class="string">&#x27;s&#x27;</span>); </span><br><span class="line">[num1,den1]=impinvar(B1,A1,fs); </span><br><span class="line">[h1,w]=freqz(num1,den1); </span><br><span class="line">wp2=2*fs*tan(2*pi*<span class="built_in">fc</span>/(2*fs)); </span><br><span class="line">wr2=2*fs*tan(2*pi*fr/(2*fs)); </span><br><span class="line">[N2,wn2]=buttord(wp2,wr2,1,25,<span class="string">&#x27;s&#x27;</span>); </span><br><span class="line">[B2,A2]=butter(N2,wn2,<span class="string">&#x27;s&#x27;</span>); </span><br><span class="line">[num2,den2]=bilinear(B2,A2,fs); </span><br><span class="line">[h2,w]=freqz(num2,den2); </span><br><span class="line">f=w/(2*pi)*fs; </span><br><span class="line">plot(f,20*log10(abs(h1)),<span class="string">&#x27;-.&#x27;</span>,f,20*log10(abs(h2)),<span class="string">&#x27;-&#x27;</span>); </span><br><span class="line">axis([0,500,-80,10]);grid; xlabel(<span class="string">&#x27;频率/Hz&#x27;</span>);ylabel(<span class="string">&#x27;幅度/dB&#x27;</span>);title(<span class="string">&#x27;巴特沃思数字低通滤波器&#x27;</span>); legend(<span class="string">&#x27;脉冲响应不变法&#x27;</span>,<span class="string">&#x27;双线性变换法&#x27;</span>);</span><br></pre></td></tr></table></figure> <img
-src="https://mfjblog-pic.oss-cn-beijing.aliyuncs.com/img/345d39a9b21e4380a6da0a349d06fe2d.png"
-alt="在这里插入图片描述" /></p>
-<figure>
-<img
-src="https://mfjblog-pic.oss-cn-beijing.aliyuncs.com/img/2520753e673249f397c2d96f4e4004a0.png"
-alt="在这里插入图片描述" />
-<figcaption aria-hidden="true">在这里插入图片描述</figcaption>
-</figure>
+    <p><img src="https://mfjblog-pic.oss-cn-beijing.aliyuncs.com/img/06dae02bc6ec49289c8bdd051bd8a332.png" class="lazyload" data-srcset="https://mfjblog-pic.oss-cn-beijing.aliyuncs.com/img/06dae02bc6ec49289c8bdd051bd8a332.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="在这里插入图片描述"></p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line">clear</span><br><span class="line">close all</span><br><span class="line">clc</span><br><span class="line"></span><br><span class="line">fs=1000;<span class="built_in">fc</span>=200;fr=300;T=0.001; </span><br><span class="line">wp1=2*pi*<span class="built_in">fc</span>;</span><br><span class="line">wr1=2*pi*fr; </span><br><span class="line">[N1,wn1]=buttord(wp1,wr1,1,25,<span class="string">&#x27;s&#x27;</span>); </span><br><span class="line">[B1,A1]=butter(N1,wn1,<span class="string">&#x27;s&#x27;</span>); </span><br><span class="line">[num1,den1]=impinvar(B1,A1,fs); </span><br><span class="line">[h1,w]=freqz(num1,den1); </span><br><span class="line">wp2=2*fs*tan(2*pi*<span class="built_in">fc</span>/(2*fs)); </span><br><span class="line">wr2=2*fs*tan(2*pi*fr/(2*fs)); </span><br><span class="line">[N2,wn2]=buttord(wp2,wr2,1,25,<span class="string">&#x27;s&#x27;</span>); </span><br><span class="line">[B2,A2]=butter(N2,wn2,<span class="string">&#x27;s&#x27;</span>); </span><br><span class="line">[num2,den2]=bilinear(B2,A2,fs); </span><br><span class="line">[h2,w]=freqz(num2,den2); </span><br><span class="line">f=w/(2*pi)*fs; </span><br><span class="line">plot(f,20*log10(abs(h1)),<span class="string">&#x27;-.&#x27;</span>,f,20*log10(abs(h2)),<span class="string">&#x27;-&#x27;</span>); </span><br><span class="line">axis([0,500,-80,10]);grid; xlabel(<span class="string">&#x27;频率/Hz&#x27;</span>);ylabel(<span class="string">&#x27;幅度/dB&#x27;</span>);title(<span class="string">&#x27;巴特沃思数字低通滤波器&#x27;</span>); legend(<span class="string">&#x27;脉冲响应不变法&#x27;</span>,<span class="string">&#x27;双线性变换法&#x27;</span>);</span><br></pre></td></tr></table></figure>
+<p><img src="https://mfjblog-pic.oss-cn-beijing.aliyuncs.com/img/345d39a9b21e4380a6da0a349d06fe2d.png" class="lazyload" data-srcset="https://mfjblog-pic.oss-cn-beijing.aliyuncs.com/img/345d39a9b21e4380a6da0a349d06fe2d.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="在这里插入图片描述"></p>
+<p><img src="https://mfjblog-pic.oss-cn-beijing.aliyuncs.com/img/2520753e673249f397c2d96f4e4004a0.png" class="lazyload" data-srcset="https://mfjblog-pic.oss-cn-beijing.aliyuncs.com/img/2520753e673249f397c2d96f4e4004a0.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="在这里插入图片描述"></p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line">clear</span><br><span class="line">close all</span><br><span class="line">clc</span><br><span class="line"></span><br><span class="line"><span class="built_in">wc</span>=2*pi*1200;wr=2*pi*2000;rp=0.5;rs=40;fs=8000;</span><br><span class="line">w1=2*fs*tan(<span class="built_in">wc</span>/(2*fs)); </span><br><span class="line">w2=2*fs*tan(wr/(2*fs)); </span><br><span class="line">[Nb,wn]=buttord(w1,w2,rp,rs,<span class="string">&#x27;s&#x27;</span>);</span><br><span class="line">[B,A]=butter(Nb,wn,<span class="string">&#x27;s&#x27;</span>); </span><br><span class="line">[num1,den1]=bilinear(B,A,fs); </span><br><span class="line">[h1,w]=freqz(num1,den1); </span><br><span class="line">[Nc,wn]=cheb1ord(w1,w2,rp,rs,<span class="string">&#x27;s&#x27;</span>);</span><br><span class="line">[B,A]=cheby1(Nc,rp,wn,<span class="string">&#x27;s&#x27;</span>); </span><br><span class="line">[num2,den2]=bilinear(B,A,fs); </span><br><span class="line">[h2,w]=freqz(num2,den2); </span><br><span class="line">[Ne,wn]=ellipord(w1,w2,rp,rs,<span class="string">&#x27;s&#x27;</span>);</span><br><span class="line">[B,A]=ellip(Ne,rp,rs,wn,<span class="string">&#x27;low&#x27;</span>,<span class="string">&#x27;s&#x27;</span>); </span><br><span class="line">[num3,den3]=bilinear(B,A,fs); </span><br><span class="line">[h3,w]=freqz(num3,den3); </span><br><span class="line">f=w/pi*4000; </span><br><span class="line">plot(f,20*log10(abs(h1)),<span class="string">&#x27;-&#x27;</span>,f,20*log10(abs(h2)),<span class="string">&#x27;--&#x27;</span>,f,20*log10(abs(h3)),<span class="string">&#x27;-.&#x27;</span> ); </span><br><span class="line">axis([0,3000,-100,10]);grid; xlabel(<span class="string">&#x27;频率/Hz&#x27;</span>); ylabel(<span class="string">&#x27;幅度/dB&#x27;</span>); title(<span class="string">&#x27;三种数字低通滤波器&#x27;</span>); </span><br><span class="line">legend(<span class="string">&#x27;巴特沃思数字低通滤波器&#x27;</span>,<span class="string">&#x27;切比雪夫数字低通滤波器&#x27;</span>,<span class="string">&#x27;椭圆数字低通滤波器&#x27;</span>);</span><br></pre></td></tr></table></figure>
-<p><img
-src="https://mfjblog-pic.oss-cn-beijing.aliyuncs.com/img/47d3335153724a2d91c9f7b29e1adea4.png"
-alt="在这里插入图片描述" /> <img
-src="https://mfjblog-pic.oss-cn-beijing.aliyuncs.com/img/ff1c7c14077d428aa27be0bc5bbb6da2.png"
-alt="在这里插入图片描述" /></p>
+<p><img src="https://mfjblog-pic.oss-cn-beijing.aliyuncs.com/img/47d3335153724a2d91c9f7b29e1adea4.png" class="lazyload" data-srcset="https://mfjblog-pic.oss-cn-beijing.aliyuncs.com/img/47d3335153724a2d91c9f7b29e1adea4.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="在这里插入图片描述"><br><img src="https://mfjblog-pic.oss-cn-beijing.aliyuncs.com/img/ff1c7c14077d428aa27be0bc5bbb6da2.png" class="lazyload" data-srcset="https://mfjblog-pic.oss-cn-beijing.aliyuncs.com/img/ff1c7c14077d428aa27be0bc5bbb6da2.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="在这里插入图片描述"></p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line">clear</span><br><span class="line">close all</span><br><span class="line">clc</span><br><span class="line"></span><br><span class="line"><span class="built_in">wc</span>=[2*pi*2000,2*pi*3000];wr=[2*pi*1500,2*pi*6000];rp=3;rs=20;fs=30000; </span><br><span class="line">[N,wn]=buttord(<span class="built_in">wc</span>,wr,rp,rs,<span class="string">&#x27;s&#x27;</span>); </span><br><span class="line">[B,A]=butter(N,wn,<span class="string">&#x27;s&#x27;</span>); </span><br><span class="line">[num1,den1]=impinvar(B,A,fs); </span><br><span class="line">[h1,w]=freqz(num1,den1); </span><br><span class="line">w1=2*fs*tan(2*pi*2000/(2*fs)); </span><br><span class="line">w2=2*fs*tan(2*pi*3000/(2*fs)); </span><br><span class="line">wr1=2*fs*tan(2*pi*1500/(2*fs)); </span><br><span class="line">wr2=2*fs*tan(2*pi*6000/(2*fs)); </span><br><span class="line">[N,wn]=buttord([w1,w2],[wr1,wr2],rp,rs,<span class="string">&#x27;s&#x27;</span>); </span><br><span class="line">[B,A]=butter(N,wn,<span class="string">&#x27;s&#x27;</span>); </span><br><span class="line">[num2,den2]=bilinear(B,A,fs); </span><br><span class="line">[h2,w]=freqz(num2,den2); </span><br><span class="line">f=w/pi*15000; </span><br><span class="line">plot(f,20*log10(abs(h1)),<span class="string">&#x27;-.&#x27;</span>,f,20*log10(abs(h2)),<span class="string">&#x27;-&#x27;</span>); </span><br><span class="line">axis([500,7000,-30,10]);</span><br><span class="line">grid; </span><br><span class="line">xlabel(<span class="string">&#x27;频率/Hz&#x27;</span>);</span><br><span class="line">ylabel(<span class="string">&#x27;幅度/dB&#x27;</span>); </span><br><span class="line">title(<span class="string">&#x27;巴特沃思数字低通滤波器&#x27;</span>); </span><br><span class="line">legend(<span class="string">&#x27;脉冲响应不变法&#x27;</span>,<span class="string">&#x27;双线性变换法&#x27;</span>);</span><br></pre></td></tr></table></figure>
-<p><img
-src="https://mfjblog-pic.oss-cn-beijing.aliyuncs.com/img/d30b8b06f27945e8a6395cc568708f12.png"
-alt="在这里插入图片描述" /> <img
-src="https://mfjblog-pic.oss-cn-beijing.aliyuncs.com/img/ee1d743b81384233bfc0fd52ec6b9f87.png"
-alt="在这里插入图片描述" /></p>
+
+<p><img src="https://mfjblog-pic.oss-cn-beijing.aliyuncs.com/img/d30b8b06f27945e8a6395cc568708f12.png" class="lazyload" data-srcset="https://mfjblog-pic.oss-cn-beijing.aliyuncs.com/img/d30b8b06f27945e8a6395cc568708f12.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="在这里插入图片描述"><br><img src="https://mfjblog-pic.oss-cn-beijing.aliyuncs.com/img/ee1d743b81384233bfc0fd52ec6b9f87.png" class="lazyload" data-srcset="https://mfjblog-pic.oss-cn-beijing.aliyuncs.com/img/ee1d743b81384233bfc0fd52ec6b9f87.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="在这里插入图片描述"></p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">clear</span><br><span class="line">close all</span><br><span class="line">clc</span><br><span class="line"></span><br><span class="line">N=15;wn=[0.3,0.5];</span><br><span class="line">window=hanning(N+1); </span><br><span class="line">b=fir1(N,wn,window); </span><br><span class="line">[H,w]=freqz(b); </span><br><span class="line">subplot(2,1,1);plot(w/pi,20*log10(abs(H)));grid; xlabel(<span class="string">&#x27;归一化频率&#x27;</span>);ylabel(<span class="string">&#x27;幅度&#x27;</span>);title(<span class="string">&#x27;幅频响应&#x27;</span>); </span><br><span class="line">subplot(2,1,2);plot(w/pi,angle(H));grid; xlabel(<span class="string">&#x27;归一化频率&#x27;</span>);ylabel(<span class="string">&#x27;相位&#x27;</span>);title(<span class="string">&#x27;相位响应&#x27;</span>);</span><br></pre></td></tr></table></figure>
-<p><img
-src="https://mfjblog-pic.oss-cn-beijing.aliyuncs.com/img/38ed505cf81d4ffd86cc25a1228dd183.png"
-alt="在这里插入图片描述" /> <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">clear</span><br><span class="line">close all</span><br><span class="line">clc</span><br><span class="line"></span><br><span class="line">N=45;wn=[0.3,0.5];</span><br><span class="line">window=hanning(N+1); </span><br><span class="line">b=fir1(N,wn,window); </span><br><span class="line">[H,w]=freqz(b); </span><br><span class="line">subplot(2,1,1);plot(w/pi,20*log10(abs(H)));grid; xlabel(<span class="string">&#x27;归一化频率&#x27;</span>);ylabel(<span class="string">&#x27;幅度&#x27;</span>);title(<span class="string">&#x27;幅频响应&#x27;</span>); </span><br><span class="line">subplot(2,1,2);plot(w/pi,angle(H));grid; xlabel(<span class="string">&#x27;归一化频率&#x27;</span>);ylabel(<span class="string">&#x27;相位&#x27;</span>);title(<span class="string">&#x27;相位响应&#x27;</span>);</span><br></pre></td></tr></table></figure> <img
-src="https://mfjblog-pic.oss-cn-beijing.aliyuncs.com/img/3ea1a1441df04f25819acee53643d25f.png"
-alt="在这里插入图片描述" /></p>
-<figure>
-<img
-src="https://mfjblog-pic.oss-cn-beijing.aliyuncs.com/img/cb63dfa89da849ffa7f0476dcf54708c.png"
-alt="在这里插入图片描述" />
-<figcaption aria-hidden="true">在这里插入图片描述</figcaption>
-</figure>
+<p><img src="https://mfjblog-pic.oss-cn-beijing.aliyuncs.com/img/38ed505cf81d4ffd86cc25a1228dd183.png" class="lazyload" data-srcset="https://mfjblog-pic.oss-cn-beijing.aliyuncs.com/img/38ed505cf81d4ffd86cc25a1228dd183.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="在这里插入图片描述"></p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">clear</span><br><span class="line">close all</span><br><span class="line">clc</span><br><span class="line"></span><br><span class="line">N=45;wn=[0.3,0.5];</span><br><span class="line">window=hanning(N+1); </span><br><span class="line">b=fir1(N,wn,window); </span><br><span class="line">[H,w]=freqz(b); </span><br><span class="line">subplot(2,1,1);plot(w/pi,20*log10(abs(H)));grid; xlabel(<span class="string">&#x27;归一化频率&#x27;</span>);ylabel(<span class="string">&#x27;幅度&#x27;</span>);title(<span class="string">&#x27;幅频响应&#x27;</span>); </span><br><span class="line">subplot(2,1,2);plot(w/pi,angle(H));grid; xlabel(<span class="string">&#x27;归一化频率&#x27;</span>);ylabel(<span class="string">&#x27;相位&#x27;</span>);title(<span class="string">&#x27;相位响应&#x27;</span>);</span><br></pre></td></tr></table></figure>
+<p><img src="https://mfjblog-pic.oss-cn-beijing.aliyuncs.com/img/3ea1a1441df04f25819acee53643d25f.png" class="lazyload" data-srcset="https://mfjblog-pic.oss-cn-beijing.aliyuncs.com/img/3ea1a1441df04f25819acee53643d25f.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="在这里插入图片描述"></p>
+<p><img src="https://mfjblog-pic.oss-cn-beijing.aliyuncs.com/img/cb63dfa89da849ffa7f0476dcf54708c.png" class="lazyload" data-srcset="https://mfjblog-pic.oss-cn-beijing.aliyuncs.com/img/cb63dfa89da849ffa7f0476dcf54708c.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="在这里插入图片描述"></p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">clear</span><br><span class="line">close all</span><br><span class="line">clc</span><br><span class="line"></span><br><span class="line">%矩形窗N=15</span><br><span class="line"></span><br><span class="line">N=input(<span class="string">&#x27;请输入 N 的值\n&#x27;</span>);wn=[0.3,0.5];</span><br><span class="line">b=fir1(N,wn,boxcar(N+1)); </span><br><span class="line">[H,w]=freqz(b,1,512); </span><br><span class="line">subplot(2,1,1);plot(w/pi,20*log10(abs(H)));grid; xlabel(<span class="string">&#x27;归一化频率&#x27;</span>);ylabel(<span class="string">&#x27;幅度&#x27;</span>);title(<span class="string">&#x27;幅频响应&#x27;</span>); </span><br><span class="line">subplot(2,1,2);plot(w/pi,angle(H));grid; xlabel(<span class="string">&#x27;归一化频率&#x27;</span>);ylabel(<span class="string">&#x27;相位&#x27;</span>);title(<span class="string">&#x27;相频响应&#x27;</span>);</span><br></pre></td></tr></table></figure>
-<figure>
-<img
-src="https://mfjblog-pic.oss-cn-beijing.aliyuncs.com/img/90faa4346ba0496c96224b6bc232dd34.png"
-alt="在这里插入图片描述" />
-<figcaption aria-hidden="true">在这里插入图片描述</figcaption>
-</figure>
+
+<p><img src="https://mfjblog-pic.oss-cn-beijing.aliyuncs.com/img/90faa4346ba0496c96224b6bc232dd34.png" class="lazyload" data-srcset="https://mfjblog-pic.oss-cn-beijing.aliyuncs.com/img/90faa4346ba0496c96224b6bc232dd34.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="在这里插入图片描述"></p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">clear</span><br><span class="line">close all</span><br><span class="line">clc</span><br><span class="line"></span><br><span class="line">%布莱克曼窗：（N=15 时）</span><br><span class="line"></span><br><span class="line">N=input(<span class="string">&#x27;请输入 N 的值\n&#x27;</span>);</span><br><span class="line">wn=[0.3,0.5]; </span><br><span class="line">window=blackman(N+1); </span><br><span class="line">b=fir1(N,wn,window); </span><br><span class="line">[H,w]=freqz(b); </span><br><span class="line">subplot(2,1,1);plot(w/pi,20*log10(abs(H)));grid; xlabel(<span class="string">&#x27;归一化频率&#x27;</span>);ylabel(<span class="string">&#x27;幅度&#x27;</span>);title(<span class="string">&#x27;幅频响应&#x27;</span>); </span><br><span class="line">subplot(2,1,2);plot(w/pi,angle(H));grid; xlabel(<span class="string">&#x27;归一化频率&#x27;</span>);ylabel(<span class="string">&#x27;相位&#x27;</span>);title(<span class="string">&#x27;相频响应&#x27;</span>);</span><br></pre></td></tr></table></figure>
-<figure>
-<img
-src="https://mfjblog-pic.oss-cn-beijing.aliyuncs.com/img/24302e77ade14ec5abff4909e2232239-20230324135233567.png"
-alt="在这里插入图片描述" />
-<figcaption aria-hidden="true">在这里插入图片描述</figcaption>
-</figure>
+
+<p><img src="https://mfjblog-pic.oss-cn-beijing.aliyuncs.com/img/24302e77ade14ec5abff4909e2232239-20230324135233567.png" class="lazyload" data-srcset="https://mfjblog-pic.oss-cn-beijing.aliyuncs.com/img/24302e77ade14ec5abff4909e2232239-20230324135233567.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="在这里插入图片描述"></p>
 
   </div>
   
@@ -2529,8 +2500,7 @@ alt="在这里插入图片描述" />
             <blockquote>
               
                 
-                  <p>博客内容遵循 署名-非商业性使用-相同方式共享 4.0 国际 (CC BY-NC-SA
-4.0) 协议</p>
+                  <p>博客内容遵循 署名-非商业性使用-相同方式共享 4.0 国际 (CC BY-NC-SA 4.0) 协议</p>
 
                 
               
@@ -2639,23 +2609,18 @@ alt="在这里插入图片描述" />
       
         <a class='prev' href='/2022/12/06/%E7%BB%99%E8%87%AA%E5%B7%B1%E7%9A%84hexo%E5%8D%9A%E5%AE%A2%E4%B8%AA%E6%80%A7%E5%8C%96Volantis%E4%B8%BB%E9%A2%98/'>
           <p class='title'><i class="fa-solid fa-chevron-left" aria-hidden="true"></i>给自己的hexo博客个性化Volantis主题</p>
-          <p class='content'>准备工作
-首先要有自己的hexo博客，并且已经部署到
-github上面了，这样我们接下来才能顺利的换主题
-先推荐我自己的个人博客 我的博客
+          <p class='content'>准备工作首先要有自己的hexo博客，并且已经部署到github上面了，这样我们接下来才能顺利的换主题
+先推荐我自己的个人博客我的博客
 
-一、搭建一个大致框架
-我在这里非常推荐去读官方的文档...</p>
+一、搭建一个大致框架我在这里非常推荐去读官方的文档，里面写...</p>
         </a>
       
       
         <a class='next' href='/2022/12/05/Pytorch%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0%E5%92%8C%E7%9B%AE%E6%A0%87%E6%A3%80%E6%B5%8B%E5%AE%9E%E6%88%98%E7%AC%94%E8%AE%B0/'>
           <p class='title'>Pytorch深度学习和目标检测实战笔记<i class="fa-solid fa-chevron-right" aria-hidden="true"></i></p>
-          <p class='content'>原视频链接：PyTorch深度学习目标检测入门实战系列【土堆
-x 布尔艺数】
-下载VOC数据集
-下载地址：http://host.robots.ox.ac.uk/pascal/VOC/
-数据集里...</p>
+          <p class='content'>原视频链接：PyTorch深度学习目标检测入门实战系列【土堆 x 布尔艺数】
+下载VOC数据集下载地址：http://host.robots.ox.ac.uk/pascal/VOC/
+数据集里面...</p>
         </a>
       
     </div>
@@ -2845,9 +2810,7 @@ x 布尔艺数】
       
     
       
-        <div><p>Blog content follows the <a
-target="_blank" rel="noopener" href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.en">Attribution-NonCommercial-ShareAlike
-4.0 International (CC BY-NC-SA 4.0) License</a></p>
+        <div><p>Blog content follows the <a target="_blank" rel="noopener" href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.en">Attribution-NonCommercial-ShareAlike 4.0 International (CC BY-NC-SA 4.0) License</a></p>
 </div>
       
     

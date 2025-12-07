@@ -1593,7 +1593,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
     debug: "env",
     cdn: {"js":{"app":"/js/app.js","parallax":"/js/plugins/parallax.js","rightMenu":"/js/plugins/rightMenu.js","rightMenus":"/js/plugins/rightMenus.js","sites":"/js/plugins/tags/sites.js","friends":"/js/plugins/tags/friends.js","contributors":"/js/plugins/tags/contributors.js","search":"/js/search/hexo.js"},"css":{"style":"/css/style.css"}},
     default: {"avatar":"https://unpkg.com/volantis-static@0.0.1654736714924/media/placeholder/avatar/round/3442075.svg","link":"https://unpkg.com/volantis-static@0.0.1654736714924/media/placeholder/link/8f277b4ee0ecd.svg","cover":"https://unpkg.com/volantis-static@0.0.1654736714924/media/placeholder/cover/76b86c0226ffd.svg","image":"https://unpkg.com/volantis-static@0.0.1654736714924/media/placeholder/image/2659360.svg"},
-    lastupdate: new Date(1765118762067),
+    lastupdate: new Date(1765119292905),
     sidebar: {
       for_page: ["blogger","category","tagcloud","webinfo","lastupdate"],
       for_post: ["toc"],
@@ -2411,14 +2411,9 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
   <div class='md article-desc' itemprop="articleBody">
     
       
-        前言
-最近在复习通信原理，每次到了功率谱这一块就感到困惑，每次都要去查，我觉得不能再这样循环下去了，这次一定要对这三个概念理解透彻，于是去网上找了资料去学习。
-学习了b站视频：NO.31
-十分钟搞定频谱/功率谱/功率谱密度
-在这里记录下自己的一些感悟与理解
-介绍
-频谱
-频谱是指某个信号在频域上的表示，即它在不同频率下的成分及其相对强度。在信号处理中，频谱常用于分析信号的频率内容和频率分布，可...
+        前言最近在复习通信原理，每次到了功率谱这一块就感到困惑，每次都要去查，我觉得不能再这样循环下去了，这次一定要对这三个概念理解透彻，于是去网上找了资料去学习。
+学习了b站视频：NO.31 十分钟搞定频谱&#x2F;功率谱&#x2F;功率谱密度在这里记录下自己的一些感悟与理解
+介绍频谱频谱是指某个信号在频域上的表示，即它在不同频率下的成分及其相对强度。在信号处理中，频谱常用于分析信号的频率内容和...
       
     
   </div>
@@ -2498,11 +2493,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
     
       
         汉宁窗
-
-
-在这里插入图片描述
-
-123456789101112clearclose allclcN=45;wn=[0.3,0.5];%截止频率window=hanning(N+1); %计算长度为N的汉宁窗b=fir1(N,wn,window); %N是阶数,wn是截止频率[H,w]=freqz(b); subplot(2,1,1);plot(w/pi,20*log10(abs(H)));...
+123456789101112clearclose allclcN=45;wn=[0.3,0.5];%截止频率window=hanning(N+1); %计算长度为N的汉宁窗b=fir1(N,wn,window); %N是阶数,wn是截止频率[H,w]=freqz(b); subplot(2,1,1);plot(w/pi,20*log10(abs(H)));grid; xlabel(...
       
     
   </div>
@@ -2574,9 +2565,8 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
     
       
         符号含义
- # 例题 
-脉冲响应不变法
-123456789101112131415161718clearclose allclcfs=1000;%采样频率fc=200;%通带截止频率fr=300;%阻带截止频率T=0.001; %采样周期%%%%%%%脉冲响应不变法wp1=2*pi*fc;%通带截止频率wr1=2*pi*fr;%阻带截止频率[N1,wn1]=buttord(wp1,wr1,1...
+例题
+脉冲响应不变法123456789101112131415161718clearclose allclcfs=1000;%采样频率fc=200;%通带截止频率fr=300;%阻带截止频率T=0.001; %采样周期%%%%%%%脉冲响应不变法wp1=2*pi*fc;%通带截止频率wr1=2*pi*fr;%阻带截止频率[N1,wn1]=buttord(wp1,wr1,1,25,&...
       
     
   </div>
@@ -2647,7 +2637,8 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
   <div class='md article-desc' itemprop="articleBody">
     
       
-         1234567891011121314151617181920clearclose allclcfs=1000;fc=200;fr=300;T=0.001; wp1=2*pi*fc;wr1=2*pi*fr; [N1,wn1]=buttord(wp1,wr1,1,25,&#x27;s&#x27;); [B1,A1]=butter(N1,wn1,&#x27;s&#x27;); [num1,de...
+        
+1234567891011121314151617181920clearclose allclcfs=1000;fc=200;fr=300;T=0.001; wp1=2*pi*fc;wr1=2*pi*fr; [N1,wn1]=buttord(wp1,wr1,1,25,&#x27;s&#x27;); [B1,A1]=butter(N1,wn1,&#x27;s&#x27;); [num1,de...
       
     
   </div>
@@ -2718,9 +2709,8 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
   <div class='md article-desc' itemprop="articleBody">
     
       
-        
-这题原本画出来就四条谱线，除了频率0的直流分量，就三根了，太少了，为了看着方便，我自己增加了序列
-12345678910111213clearclose allclcn=0:8;x=[4 3 2 6 7 8 3 3 5];subplot(1,2,1);stem(n,x)xlabel(&#x27;n&#x27;);ylabel(&#x27;幅度&#x27;);title(&#x27;原序列&...
+        这题原本画出来就四条谱线，除了频率0的直流分量，就三根了，太少了，为了看着方便，我自己增加了序列
+12345678910111213clearclose allclcn=0:8;x=[4 3 2 6 7 8 3 3 5];subplot(1,2,1);stem(n,x)xlabel(&#x27;n&#x27;);ylabel(&#x27;幅度&#x27;);title(&#x27;原序列&#...
       
     
   </div>
@@ -2791,9 +2781,8 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
   <div class='md article-desc' itemprop="articleBody">
     
       
-         这里我们直接展示补0的核心代码
-生成三角波和反三角波
-123456789101112N=8;n=0:7;x1=zeros(size(n));x2=zeros(size(n));xa=(n&gt;=0)&amp;(n&lt;=3);x1(xa)=n(xa);x2(xa)=4-n(xa);xa=(n&gt;=4)&amp;(n&lt;=7);x1(xa)=8-n(xa);x2(xa)=n(xa...
+        这里我们直接展示补0的核心代码
+生成三角波和反三角波123456789101112N=8;n=0:7;x1=zeros(size(n));x2=zeros(size(n));xa=(n&gt;=0)&amp;(n&lt;=3);x1(xa)=n(xa);x2(xa)=4-n(xa);xa=(n&gt;=4)&amp;(n&lt;=7);x1(xa)=8-n(xa);x2(xa)=n(xa)-...
       
     
   </div>
@@ -2864,10 +2853,8 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
   <div class='md article-desc' itemprop="articleBody">
     
       
-        
-xa(n)是高斯序列 xb(n)是衰减正弦序列 线性卷积很简单，利用conv函数就可以
-那么圆周卷积要怎么实现呢
-12345678910111213141516171819202122clc; n1=0:1:15; %16个点n2=0:1:30; %线性卷积，序列长度变成了16+16-1p=8;q=2;a=0.1;f=0.0625;xa=exp(-((n1-p).^2)/q);xb=exp...
+        xa(n)是高斯序列xb(n)是衰减正弦序列线性卷积很简单，利用conv函数就可以那么圆周卷积要怎么实现呢
+12345678910111213141516171819202122clc; n1=0:1:15; %16个点n2=0:1:30; %线性卷积，序列长度变成了16+16-1p=8;q=2;a=0.1;f=0.0625;xa=exp(-((n1-p).^2)/q);xb=exp(-a....
       
     
   </div>
@@ -2939,10 +2926,7 @@ xa(n)是高斯序列 xb(n)是衰减正弦序列 线性卷积很简单，利用co
     
       
         
-
-在这里插入图片描述
-
-12345678910111213141516171819clearclose allclcfs=8000;%采样频率n=0:99;%采样点100个y=sin(0.00625*2*pi*n)+sin(0.0625*pi*2*n)+sin(0.125*2*pi*n);%采样后的信号 0.00625=50/8000subplot(2,1,1);stem(n,y)titl...
+12345678910111213141516171819clearclose allclcfs=8000;%采样频率n=0:99;%采样点100个y=sin(0.00625*2*pi*n)+sin(0.0625*pi*2*n)+sin(0.125*2*pi*n);%采样后的信号 0.00625=50/8000subplot(2,1,1);stem(n,y)title(&#x27;抽样后信...
       
     
   </div>
@@ -3013,17 +2997,15 @@ xa(n)是高斯序列 xb(n)是衰减正弦序列 线性卷积很简单，利用co
   <div class='md article-desc' itemprop="articleBody">
     
       
-        原函数
-假设我们有这么一个函数
+        原函数假设我们有这么一个函数
 
-x(n)=3cos(0.125πn+0.2π)+2sin(0.25πn+0.1π)
-n为0到15的整数
+x(n)&#x3D;3cos(0.125πn+0.2π)+2sin(0.25πn+0.1π)n为0到15的整数
 
-这是他的函数图像，如何将其进行周期化  我在MATLAB中文论坛看到了一个很巧妙的方法
+这是他的函数图像，如何将其进行周期化我在MATLAB中文论坛看到了一个很巧妙的方法
 1b = mod(a,m)
 
-b = mod(a,m) 返回 a 除以 m 后的余数，其中 a 是被除数，m
-是除数。此函数通常称为取模运算，表达式为 b = a-m...
+
+b &#x3D; mod(a,m) 返回 a 除以 m 后的余数，其中 a 是被除数，m 是除数。此函数通常称为取模运算，表达式为 ...
       
     
   </div>
@@ -3096,11 +3078,7 @@ b = mod(a,m) 返回 a 除以 m 后的余数，其中 a 是被除数，m
       
         昨天晚上刚出了亚太杯的成绩，获得了三等奖，毕竟是第一次参加数学建模比赛，不是成功参与奖就很高兴了，结束了之后，还要进行总结复盘，接下来，就是我们队伍的思路。
 因为A题和B题都读不懂，所以我们才选了C题，但是坏处是，选C题的人数也很多。
-## 亚太杯C题第一小问
-
-
-读完第一问，我们不难发现，有几个关键词需要我们注意。
-请选择合适指标，收集相关数据，建立塞罕坝对生态环境影响的评价模型，为了定量...
+亚太杯C题第一小问读完第一问，我们不难发现，有几个关键词需要我们注意。请选择合适指标，收集相关数据，建立塞罕坝对生态环境影响的评价模型，为了定量评价。。。。。...
       
     
   </div>
@@ -3575,9 +3553,7 @@ b = mod(a,m) 返回 a 除以 m 后的余数，其中 a 是被除数，m
       
     
       
-        <div><p>Blog content follows the <a
-target="_blank" rel="noopener" href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.en">Attribution-NonCommercial-ShareAlike
-4.0 International (CC BY-NC-SA 4.0) License</a></p>
+        <div><p>Blog content follows the <a target="_blank" rel="noopener" href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.en">Attribution-NonCommercial-ShareAlike 4.0 International (CC BY-NC-SA 4.0) License</a></p>
 </div>
       
     

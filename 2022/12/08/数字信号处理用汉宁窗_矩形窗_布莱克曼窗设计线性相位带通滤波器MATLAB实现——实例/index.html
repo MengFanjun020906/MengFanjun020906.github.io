@@ -40,7 +40,7 @@
 <meta property="og:title" content="数字信号处理用汉宁窗&#x2F;矩形窗&#x2F;布莱克曼窗设计线性相位带通滤波器MATLAB实现——实例">
 <meta property="og:url" content="https://mengfanjun020906.github.io/2022/12/08/%E6%95%B0%E5%AD%97%E4%BF%A1%E5%8F%B7%E5%A4%84%E7%90%86%E7%94%A8%E6%B1%89%E5%AE%81%E7%AA%97_%E7%9F%A9%E5%BD%A2%E7%AA%97_%E5%B8%83%E8%8E%B1%E5%85%8B%E6%9B%BC%E7%AA%97%E8%AE%BE%E8%AE%A1%E7%BA%BF%E6%80%A7%E7%9B%B8%E4%BD%8D%E5%B8%A6%E9%80%9A%E6%BB%A4%E6%B3%A2%E5%99%A8MATLAB%E5%AE%9E%E7%8E%B0%E2%80%94%E2%80%94%E5%AE%9E%E4%BE%8B/index.html">
 <meta property="og:site_name" content="MengFanjun的博客">
-<meta property="og:description" content="汉宁窗   在这里插入图片描述  123456789101112clearclose allclcN&#x3D;45;wn&#x3D;[0.3,0.5];%截止频率window&#x3D;hanning(N+1); %计算长度为N的汉宁窗b&#x3D;fir1(N,wn,window); %N是阶数,wn是截止频率[H,w]&#x3D;freqz(b); subplot(2,1,1);plot(w&#x2F;pi,20*log10(abs(H)));gri">
+<meta property="og:description" content="汉宁窗 123456789101112clearclose allclcN&#x3D;45;wn&#x3D;[0.3,0.5];%截止频率window&#x3D;hanning(N+1); %计算长度为N的汉宁窗b&#x3D;fir1(N,wn,window); %N是阶数,wn是截止频率[H,w]&#x3D;freqz(b); subplot(2,1,1);plot(w&#x2F;pi,20*log10(abs(H)));grid; xlabel(&amp;#x">
 <meta property="og:locale" content="en_US">
 <meta property="og:image" content="https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png">
 <meta property="article:published_time" content="2022-12-08T13:37:53.000Z">
@@ -1597,7 +1597,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
     debug: "env",
     cdn: {"js":{"app":"/js/app.js","parallax":"/js/plugins/parallax.js","rightMenu":"/js/plugins/rightMenu.js","rightMenus":"/js/plugins/rightMenus.js","sites":"/js/plugins/tags/sites.js","friends":"/js/plugins/tags/friends.js","contributors":"/js/plugins/tags/contributors.js","search":"/js/search/hexo.js"},"css":{"style":"/css/style.css"}},
     default: {"avatar":"https://unpkg.com/volantis-static@0.0.1654736714924/media/placeholder/avatar/round/3442075.svg","link":"https://unpkg.com/volantis-static@0.0.1654736714924/media/placeholder/link/8f277b4ee0ecd.svg","cover":"https://unpkg.com/volantis-static@0.0.1654736714924/media/placeholder/cover/76b86c0226ffd.svg","image":"https://unpkg.com/volantis-static@0.0.1654736714924/media/placeholder/image/2659360.svg"},
-    lastupdate: new Date(1765118762067),
+    lastupdate: new Date(1765119292905),
     sidebar: {
       for_page: ["blogger","category","tagcloud","webinfo","lastupdate"],
       for_post: ["toc"],
@@ -2421,7 +2421,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
   <div class="new-meta-item wordcount">
     <a class='notlink'>
       <i class="fa-solid fa-keyboard fa-fw" aria-hidden="true"></i>
-      <p>366 words</p>
+      <p>348 words</p>
     </a>
   </div>
   <div class="new-meta-item readtime">
@@ -2463,31 +2463,13 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
 
   <div id="layoutHelper-page-plugins"></div>
   <div id="post-body" itemprop="articleBody">
-    <h1 id="汉宁窗">汉宁窗</h1>
-<figure>
-<img
-src="https://mfjblog-pic.oss-cn-beijing.aliyuncs.com/img/207e004c0f6348bea653820879c16c73.png"
-alt="在这里插入图片描述" />
-<figcaption aria-hidden="true">在这里插入图片描述</figcaption>
-</figure>
+    <h1 id="汉宁窗"><a href="#汉宁窗" class="headerlink" title="汉宁窗"></a>汉宁窗</h1><p><img src="https://mfjblog-pic.oss-cn-beijing.aliyuncs.com/img/207e004c0f6348bea653820879c16c73.png" class="lazyload" data-srcset="https://mfjblog-pic.oss-cn-beijing.aliyuncs.com/img/207e004c0f6348bea653820879c16c73.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="在这里插入图片描述"></p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">clear</span><br><span class="line">close all</span><br><span class="line">clc</span><br><span class="line"></span><br><span class="line">N=45;</span><br><span class="line">wn=[0.3,0.5];%截止频率</span><br><span class="line">window=hanning(N+1); %计算长度为N的汉宁窗</span><br><span class="line">b=fir1(N,wn,window); %N是阶数,wn是截止频率</span><br><span class="line">[H,w]=freqz(b); </span><br><span class="line"></span><br><span class="line">subplot(2,1,1);plot(w/pi,20*log10(abs(H)));grid; xlabel(<span class="string">&#x27;归一化频率&#x27;</span>);ylabel(<span class="string">&#x27;幅度&#x27;</span>);title(<span class="string">&#x27;幅频响应&#x27;</span>); </span><br><span class="line">subplot(2,1,2);plot(w/pi,angle(H));grid; xlabel(<span class="string">&#x27;归一化频率&#x27;</span>);ylabel(<span class="string">&#x27;相位&#x27;</span>);title(<span class="string">&#x27;相位响应&#x27;</span>);</span><br></pre></td></tr></table></figure>
-<figure>
-<img
-src="https://mfjblog-pic.oss-cn-beijing.aliyuncs.com/img/85cd91b08cc84c7b8c35c6b5aa72abdb.png"
-alt="在这里插入图片描述" />
-<figcaption aria-hidden="true">在这里插入图片描述</figcaption>
-</figure>
-<p>后面的矩形窗和布莱克曼窗的原理同理，matlab已经给我们准备好了函数直接去调用
-<img
-src="https://mfjblog-pic.oss-cn-beijing.aliyuncs.com/img/0234f5a096de442a902a85f5f24684f9.png"
-alt="在这里插入图片描述" /></p>
+<p><img src="https://mfjblog-pic.oss-cn-beijing.aliyuncs.com/img/85cd91b08cc84c7b8c35c6b5aa72abdb.png" class="lazyload" data-srcset="https://mfjblog-pic.oss-cn-beijing.aliyuncs.com/img/85cd91b08cc84c7b8c35c6b5aa72abdb.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="在这里插入图片描述"></p>
+<p>后面的矩形窗和布莱克曼窗的原理同理，matlab已经给我们准备好了函数直接去调用<br><img src="https://mfjblog-pic.oss-cn-beijing.aliyuncs.com/img/0234f5a096de442a902a85f5f24684f9.png" class="lazyload" data-srcset="https://mfjblog-pic.oss-cn-beijing.aliyuncs.com/img/0234f5a096de442a902a85f5f24684f9.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="在这里插入图片描述"></p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line">clear</span><br><span class="line">close all</span><br><span class="line">clc</span><br><span class="line"></span><br><span class="line">%矩形窗N=15</span><br><span class="line"></span><br><span class="line">% N=input(<span class="string">&#x27;请输入 N 的值\n&#x27;</span>);wn=[0.3,0.5];</span><br><span class="line">% b=fir1(N,wn,boxcar(N+1)); </span><br><span class="line">% [H,w]=freqz(b,1,512); </span><br><span class="line">% subplot(2,1,1);plot(w/pi,20*log10(abs(H)));grid; xlabel(<span class="string">&#x27;归一化频率&#x27;</span>);ylabel(<span class="string">&#x27;幅度&#x27;</span>);title(<span class="string">&#x27;幅频响应&#x27;</span>); </span><br><span class="line">% subplot(2,1,2);plot(w/pi,angle(H));grid; xlabel(<span class="string">&#x27;归一化频率&#x27;</span>);ylabel(<span class="string">&#x27;相位&#x27;</span>);title(<span class="string">&#x27;相频响应&#x27;</span>);</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">%布莱克曼窗：（N=15 时）</span><br><span class="line">% </span><br><span class="line">N=input(<span class="string">&#x27;请输入 N 的值\n&#x27;</span>);</span><br><span class="line">wn=[0.3,0.5]; </span><br><span class="line">window=blackman(N+1); </span><br><span class="line">b=fir1(N,wn,window); </span><br><span class="line">[H,w]=freqz(b); </span><br><span class="line">subplot(2,1,1);plot(w/pi,20*log10(abs(H)));grid; xlabel(<span class="string">&#x27;归一化频率&#x27;</span>);ylabel(<span class="string">&#x27;幅度&#x27;</span>);title(<span class="string">&#x27;幅频响应&#x27;</span>); </span><br><span class="line">subplot(2,1,2);plot(w/pi,angle(H));grid; xlabel(<span class="string">&#x27;归一化频率&#x27;</span>);ylabel(<span class="string">&#x27;相位&#x27;</span>);title(<span class="string">&#x27;相频响应&#x27;</span>);</span><br></pre></td></tr></table></figure>
-<h1 id="布莱克曼窗">布莱克曼窗</h1>
-<p><img
-src="https://mfjblog-pic.oss-cn-beijing.aliyuncs.com/img/2c4fa80a58b7441aba8df1054963a17f.png"
-alt="在这里插入图片描述" /> # 矩形窗 <img
-src="https://mfjblog-pic.oss-cn-beijing.aliyuncs.com/img/fe1282b3deef418da6c5e84e42583d36-20230324133419047.png"
-alt="在这里插入图片描述" /></p>
+<h1 id="布莱克曼窗"><a href="#布莱克曼窗" class="headerlink" title="布莱克曼窗"></a>布莱克曼窗</h1><p><img src="https://mfjblog-pic.oss-cn-beijing.aliyuncs.com/img/2c4fa80a58b7441aba8df1054963a17f.png" class="lazyload" data-srcset="https://mfjblog-pic.oss-cn-beijing.aliyuncs.com/img/2c4fa80a58b7441aba8df1054963a17f.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="在这里插入图片描述"></p>
+<h1 id="矩形窗"><a href="#矩形窗" class="headerlink" title="矩形窗"></a>矩形窗</h1><p><img src="https://mfjblog-pic.oss-cn-beijing.aliyuncs.com/img/fe1282b3deef418da6c5e84e42583d36-20230324133419047.png" class="lazyload" data-srcset="https://mfjblog-pic.oss-cn-beijing.aliyuncs.com/img/fe1282b3deef418da6c5e84e42583d36-20230324133419047.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="在这里插入图片描述"></p>
 
   </div>
   
@@ -2505,8 +2487,7 @@ alt="在这里插入图片描述" /></p>
             <blockquote>
               
                 
-                  <p>博客内容遵循 署名-非商业性使用-相同方式共享 4.0 国际 (CC BY-NC-SA
-4.0) 协议</p>
+                  <p>博客内容遵循 署名-非商业性使用-相同方式共享 4.0 国际 (CC BY-NC-SA 4.0) 协议</p>
 
                 
               
@@ -2616,20 +2597,17 @@ alt="在这里插入图片描述" /></p>
         <a class='prev' href='/2022/12/12/%E7%AC%AC%E4%B8%83%E5%B1%8ANVIDIA%20Sky%20Hackathon%E9%A1%B9%E7%9B%AE%E6%8A%A5%E5%91%8A%E4%B9%A6/'>
           <p class='title'><i class="fa-solid fa-chevron-left" aria-hidden="true"></i>第七届NVIDIA Sky Hackathon项目报告书</p>
           <p class='content'>系列文章目录
-
-数据集收集和标注情况 1.1ASR语音数据集收集和标注情况
-1.2CV图像数据集收集和标注情况
-进行模型的训练 2.1进行ASR模型的训练 2.2进行CV模型的训练
-在Jetso...</p>
+   数据集收集和标注情况1.1ASR语音数据集收集和标注情况1.2CV图像数据集收集和标注情况
+进行模型的训练2.1进行ASR模型的训练2.2进行CV模型的训练
+在Jetson平...</p>
         </a>
       
       
         <a class='next' href='/2022/12/08/%E6%95%B0%E5%AD%97%E4%BF%A1%E5%8F%B7%E5%A4%84%E7%90%86%E7%94%A8%E8%84%89%E5%86%B2%E5%93%8D%E5%BA%94%E4%B8%8D%E5%8F%98%E6%B3%95%E5%92%8C%E5%8F%8C%E7%BA%BF%E6%80%A7%E5%8F%98%E6%8D%A2%E6%B3%95%E8%AE%BE%E8%AE%A1%E5%B7%B4%E7%89%B9%E6%B2%83%E6%96%AF%E6%BB%A4%E6%B3%A2%E5%99%A8MATLAB%E5%AE%9E%E7%8E%B0%E2%80%94%E2%80%94%E5%AE%9E%E4%BE%8B/'>
           <p class='title'>数字信号处理用脉冲响应不变法和双线性变换法设计巴特沃斯滤波器MATLAB实现——实例<i class="fa-solid fa-chevron-right" aria-hidden="true"></i></p>
           <p class='content'>符号含义
- # 例题 
-脉冲响应不变法
-123456789101112131415161718clearclose allclcfs=1000;%采样频率fc=200;%通带截止频率fr=300...</p>
+例题
+脉冲响应不变法123456789101112131415161718clearclose allclcfs=1000;%采样频率fc=200;%通带截止频率fr=300;%阻带截...</p>
         </a>
       
     </div>
@@ -2829,9 +2807,7 @@ alt="在这里插入图片描述" /></p>
       
     
       
-        <div><p>Blog content follows the <a
-target="_blank" rel="noopener" href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.en">Attribution-NonCommercial-ShareAlike
-4.0 International (CC BY-NC-SA 4.0) License</a></p>
+        <div><p>Blog content follows the <a target="_blank" rel="noopener" href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.en">Attribution-NonCommercial-ShareAlike 4.0 International (CC BY-NC-SA 4.0) License</a></p>
 </div>
       
     

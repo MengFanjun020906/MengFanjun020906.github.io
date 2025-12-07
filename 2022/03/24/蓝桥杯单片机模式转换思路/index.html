@@ -40,7 +40,7 @@
 <meta property="og:title" content="蓝桥杯单片机模式转换思路">
 <meta property="og:url" content="https://mengfanjun020906.github.io/2022/03/24/%E8%93%9D%E6%A1%A5%E6%9D%AF%E5%8D%95%E7%89%87%E6%9C%BA%E6%A8%A1%E5%BC%8F%E8%BD%AC%E6%8D%A2%E6%80%9D%E8%B7%AF/index.html">
 <meta property="og:site_name" content="MengFanjun的博客">
-<meta property="og:description" content="因为在蓝桥杯的单片机省赛中经常需要用到模式转换。例：  这样的模式转换，我的想法是。每按下一次按键，就给temp+1，在循环里判定temp%2是否等于1，但是这个方法只适用于两种模式，三种模式的我还没想好，先放源代码 这里以S7为例，要放到主函数里面 1234567891011121314151617181920212223242526272829303132333435void Scan_S7(">
+<meta property="og:description" content="因为在蓝桥杯的单片机省赛中经常需要用到模式转换。例：这样的模式转换，我的想法是。每按下一次按键，就给temp+1，在循环里判定temp%2是否等于1，但是这个方法只适用于两种模式，三种模式的我还没想好，先放源代码这里以S7为例，要放到主函数里面 1234567891011121314151617181920212223242526272829303132333435void Scan_S7()&amp;#">
 <meta property="og:locale" content="en_US">
 <meta property="og:image" content="https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png">
 <meta property="article:published_time" content="2022-03-24T01:25:43.000Z">
@@ -1598,7 +1598,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
     debug: "env",
     cdn: {"js":{"app":"/js/app.js","parallax":"/js/plugins/parallax.js","rightMenu":"/js/plugins/rightMenu.js","rightMenus":"/js/plugins/rightMenus.js","sites":"/js/plugins/tags/sites.js","friends":"/js/plugins/tags/friends.js","contributors":"/js/plugins/tags/contributors.js","search":"/js/search/hexo.js"},"css":{"style":"/css/style.css"}},
     default: {"avatar":"https://unpkg.com/volantis-static@0.0.1654736714924/media/placeholder/avatar/round/3442075.svg","link":"https://unpkg.com/volantis-static@0.0.1654736714924/media/placeholder/link/8f277b4ee0ecd.svg","cover":"https://unpkg.com/volantis-static@0.0.1654736714924/media/placeholder/cover/76b86c0226ffd.svg","image":"https://unpkg.com/volantis-static@0.0.1654736714924/media/placeholder/image/2659360.svg"},
-    lastupdate: new Date(1765118762067),
+    lastupdate: new Date(1765119292905),
     sidebar: {
       for_page: ["blogger","category","tagcloud","webinfo","lastupdate"],
       for_post: ["toc"],
@@ -2464,11 +2464,9 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
 
   <div id="layoutHelper-page-plugins"></div>
   <div id="post-body" itemprop="articleBody">
-    <p>因为在蓝桥杯的单片机省赛中经常需要用到模式转换。例： <img
-src="https://mfjblog-pic.oss-cn-beijing.aliyuncs.com/img/watermark,type_d3F5LXplbmhlaQ,shadow_50,text_Q1NETiBAU29sLWl0dWRl,size_20,color_FFFFFF,t_70,g_se,x_16-20230324091117552.png"
-alt="在这里插入图片描述" />
-这样的模式转换，我的想法是。每按下一次按键，就给temp+1，在循环里判定temp%2是否等于1，但是这个方法只适用于两种模式，三种模式的我还没想好，先放源代码
-这里以S7为例，要放到主函数里面 <figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br></pre></td><td class="code"><pre><span class="line"><span class="type">void</span> <span class="title function_">Scan_S7</span><span class="params">()</span></span><br><span class="line">&#123;</span><br><span class="line">	</span><br><span class="line">	uchar temp=<span class="number">4</span>;</span><br><span class="line">	C4=<span class="number">1</span>;</span><br><span class="line">	<span class="keyword">if</span>(R1==<span class="number">0</span>)</span><br><span class="line">	&#123;</span><br><span class="line">		delay_ms(<span class="number">50</span>);</span><br><span class="line">		<span class="keyword">if</span>(R1==<span class="number">0</span>)</span><br><span class="line">		&#123;</span><br><span class="line">			temp++;</span><br><span class="line">			<span class="keyword">while</span>(R1==<span class="number">0</span>);</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">if</span>(temp%<span class="number">2</span>==<span class="number">0</span>)</span><br><span class="line">	&#123;</span><br><span class="line">		<span class="comment">//模式1</span></span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">if</span>(temp%<span class="number">2</span>==<span class="number">1</span>)</span><br><span class="line">	&#123;</span><br><span class="line">		<span class="keyword">while</span>(<span class="number">1</span>)</span><br><span class="line">		&#123;</span><br><span class="line">			<span class="comment">//模式2</span></span><br><span class="line">			<span class="keyword">if</span>(R1==<span class="number">0</span>)</span><br><span class="line">			&#123;</span><br><span class="line">				delay_ms(<span class="number">50</span>);</span><br><span class="line">				<span class="keyword">if</span>(R1==<span class="number">0</span>)</span><br><span class="line">				&#123;</span><br><span class="line">					<span class="keyword">break</span>;</span><br><span class="line">					<span class="keyword">while</span>(R1==<span class="number">0</span>);</span><br><span class="line">				&#125;</span><br><span class="line">			&#125;</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+    <p>因为在蓝桥杯的单片机省赛中经常需要用到模式转换。例：<br><img src="https://mfjblog-pic.oss-cn-beijing.aliyuncs.com/img/watermark,type_d3F5LXplbmhlaQ,shadow_50,text_Q1NETiBAU29sLWl0dWRl,size_20,color_FFFFFF,t_70,g_se,x_16-20230324091117552.png" class="lazyload" data-srcset="https://mfjblog-pic.oss-cn-beijing.aliyuncs.com/img/watermark,type_d3F5LXplbmhlaQ,shadow_50,text_Q1NETiBAU29sLWl0dWRl,size_20,color_FFFFFF,t_70,g_se,x_16-20230324091117552.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="在这里插入图片描述"><br>这样的模式转换，我的想法是。每按下一次按键，就给temp+1，在循环里判定temp%2是否等于1，但是这个方法只适用于两种模式，三种模式的我还没想好，先放源代码<br>这里以S7为例，要放到主函数里面</p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br></pre></td><td class="code"><pre><span class="line"><span class="type">void</span> <span class="title function_">Scan_S7</span><span class="params">()</span></span><br><span class="line">&#123;</span><br><span class="line">	</span><br><span class="line">	uchar temp=<span class="number">4</span>;</span><br><span class="line">	C4=<span class="number">1</span>;</span><br><span class="line">	<span class="keyword">if</span>(R1==<span class="number">0</span>)</span><br><span class="line">	&#123;</span><br><span class="line">		delay_ms(<span class="number">50</span>);</span><br><span class="line">		<span class="keyword">if</span>(R1==<span class="number">0</span>)</span><br><span class="line">		&#123;</span><br><span class="line">			temp++;</span><br><span class="line">			<span class="keyword">while</span>(R1==<span class="number">0</span>);</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">if</span>(temp%<span class="number">2</span>==<span class="number">0</span>)</span><br><span class="line">	&#123;</span><br><span class="line">		<span class="comment">//模式1</span></span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">if</span>(temp%<span class="number">2</span>==<span class="number">1</span>)</span><br><span class="line">	&#123;</span><br><span class="line">		<span class="keyword">while</span>(<span class="number">1</span>)</span><br><span class="line">		&#123;</span><br><span class="line">			<span class="comment">//模式2</span></span><br><span class="line">			<span class="keyword">if</span>(R1==<span class="number">0</span>)</span><br><span class="line">			&#123;</span><br><span class="line">				delay_ms(<span class="number">50</span>);</span><br><span class="line">				<span class="keyword">if</span>(R1==<span class="number">0</span>)</span><br><span class="line">				&#123;</span><br><span class="line">					<span class="keyword">break</span>;</span><br><span class="line">					<span class="keyword">while</span>(R1==<span class="number">0</span>);</span><br><span class="line">				&#125;</span><br><span class="line">			&#125;</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
 
   </div>
   
@@ -2486,8 +2484,7 @@ alt="在这里插入图片描述" />
             <blockquote>
               
                 
-                  <p>博客内容遵循 署名-非商业性使用-相同方式共享 4.0 国际 (CC BY-NC-SA
-4.0) 协议</p>
+                  <p>博客内容遵循 署名-非商业性使用-相同方式共享 4.0 国际 (CC BY-NC-SA 4.0) 协议</p>
 
                 
               
@@ -2596,20 +2593,17 @@ alt="在这里插入图片描述" />
       
         <a class='prev' href='/2022/03/30/%E8%93%9D%E6%A1%A5%E6%9D%AF%E5%8D%95%E7%89%87%E6%9C%BA%E7%AC%AC%E5%85%AB%E5%B1%8A%E7%9C%81%E8%B5%9B%E2%80%94%E2%80%94%E6%BA%90%E7%A0%81%E5%8F%8A%E8%AE%BE%E8%AE%A1%E6%80%9D%E8%B7%AF/'>
           <p class='title'><i class="fa-solid fa-chevron-left" aria-hidden="true"></i>蓝桥杯单片机第八届省赛——源码及设计思路</p>
-          <p class='content'>距离蓝桥杯省赛还有10天，要抓紧练习了，不知道是这一届简单还是自己厉害了的原因，用了一天就做出来了，还是叫大佬帮了一个小忙，时间也不少，还能再做几届。
-废话不多说，先看原题  
-MAIN.C
-1...</p>
+          <p class='content'>距离蓝桥杯省赛还有10天，要抓紧练习了，不知道是这一届简单还是自己厉害了的原因，用了一天就做出来了，还是叫大佬帮了一个小忙，时间也不少，还能再做几届。废话不多说，先看原题
+MAIN.C12345...</p>
         </a>
       
       
         <a class='next' href='/2022/02/11/%E8%93%9D%E6%A1%A5%E6%9D%AF%E5%8D%95%E7%89%87%E6%9C%BA%E7%AC%AC%E5%8D%81%E5%B1%8A%E7%9C%81%E8%B5%9B%E2%80%94%E2%80%94%E6%BA%90%E7%A0%81%E4%BB%A5%E5%8F%8A%E8%AE%BE%E8%AE%A1%E6%80%9D%E8%B7%AF/'>
           <p class='title'>蓝桥杯单片机第十届省赛——源码以及设计思路<i class="fa-solid fa-chevron-right" aria-hidden="true"></i></p>
           <p class='content'>过完年了，也不能老玩了，寒假一堆事，开学还得考试，真是都要emo了，先选一个开始做吧，十一届做完了的话，就去该做第十届了，废话不多说，先看原题
-原题目
-    设计思路：
+原题目设计思路：
 
-这第一眼看上去有4页...</p>
+这第一眼看上去有4页，可是把我...</p>
         </a>
       
     </div>
@@ -2799,9 +2793,7 @@ MAIN.C
       
     
       
-        <div><p>Blog content follows the <a
-target="_blank" rel="noopener" href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.en">Attribution-NonCommercial-ShareAlike
-4.0 International (CC BY-NC-SA 4.0) License</a></p>
+        <div><p>Blog content follows the <a target="_blank" rel="noopener" href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.en">Attribution-NonCommercial-ShareAlike 4.0 International (CC BY-NC-SA 4.0) License</a></p>
 </div>
       
     

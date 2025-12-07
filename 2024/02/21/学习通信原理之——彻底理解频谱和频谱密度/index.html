@@ -40,7 +40,7 @@
 <meta property="og:title" content="学习通信原理之——彻底理解频谱和频谱密度">
 <meta property="og:url" content="https://mengfanjun020906.github.io/2024/02/21/%E5%AD%A6%E4%B9%A0%E9%80%9A%E4%BF%A1%E5%8E%9F%E7%90%86%E4%B9%8B%E2%80%94%E2%80%94%E5%BD%BB%E5%BA%95%E7%90%86%E8%A7%A3%E9%A2%91%E8%B0%B1%E5%92%8C%E9%A2%91%E8%B0%B1%E5%AF%86%E5%BA%A6/index.html">
 <meta property="og:site_name" content="MengFanjun的博客">
-<meta property="og:description" content="前言 最近还是在复习通信原理，但是对于频谱&#x2F;频谱密度&#x2F;能量谱&#x2F;能量谱密度&#x2F;功率谱&#x2F;功率谱密度还是一知半解的，所以我就去各种看资料，看视频，又去问了问老师。 所以我在这里写下自己对这两个概念的一些分析和理解，不敢说100%正确，仅供大家参考。 频谱 频谱的定义 我感觉最通俗的解释就是信号的某种特征量随信号频率的关系，称为频谱 符号定义 接下来文中出现的符号定义    符号 含义     T 信号周期">
+<meta property="og:description" content="前言最近还是在复习通信原理，但是对于频谱&#x2F;频谱密度&#x2F;能量谱&#x2F;能量谱密度&#x2F;功率谱&#x2F;功率谱密度还是一知半解的，所以我就去各种看资料，看视频，又去问了问老师。所以我在这里写下自己对这两个概念的一些分析和理解，不敢说100%正确，仅供大家参考。 频谱频谱的定义我感觉最通俗的解释就是信号的某种特征量随信号频率的关系，称为频谱 符号定义接下来文中出现的符号定义">
 <meta property="og:locale" content="en_US">
 <meta property="og:image" content="https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png">
 <meta property="article:published_time" content="2024-02-21T08:11:56.000Z">
@@ -1598,7 +1598,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
     debug: "env",
     cdn: {"js":{"app":"/js/app.js","parallax":"/js/plugins/parallax.js","rightMenu":"/js/plugins/rightMenu.js","rightMenus":"/js/plugins/rightMenus.js","sites":"/js/plugins/tags/sites.js","friends":"/js/plugins/tags/friends.js","contributors":"/js/plugins/tags/contributors.js","search":"/js/search/hexo.js"},"css":{"style":"/css/style.css"}},
     default: {"avatar":"https://unpkg.com/volantis-static@0.0.1654736714924/media/placeholder/avatar/round/3442075.svg","link":"https://unpkg.com/volantis-static@0.0.1654736714924/media/placeholder/link/8f277b4ee0ecd.svg","cover":"https://unpkg.com/volantis-static@0.0.1654736714924/media/placeholder/cover/76b86c0226ffd.svg","image":"https://unpkg.com/volantis-static@0.0.1654736714924/media/placeholder/image/2659360.svg"},
-    lastupdate: new Date(1765118762067),
+    lastupdate: new Date(1765119292905),
     sidebar: {
       for_page: ["blogger","category","tagcloud","webinfo","lastupdate"],
       for_post: ["toc"],
@@ -2422,7 +2422,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
   <div class="new-meta-item wordcount">
     <a class='notlink'>
       <i class="fa-solid fa-keyboard fa-fw" aria-hidden="true"></i>
-      <p>3k words</p>
+      <p>3.1k words</p>
     </a>
   </div>
   <div class="new-meta-item readtime">
@@ -2464,286 +2464,118 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
 
   <div id="layoutHelper-page-plugins"></div>
   <div id="post-body" itemprop="articleBody">
-    <h1 id="前言">前言</h1>
-<p>最近还是在复习通信原理，但是对于频谱/频谱密度/能量谱/能量谱密度/功率谱/功率谱密度还是一知半解的，所以我就去各种看资料，看视频，又去问了问老师。
-所以我在这里写下自己对这两个概念的一些分析和理解，不敢说100%正确，仅供大家参考。</p>
-<h1 id="频谱">频谱</h1>
-<h2 id="频谱的定义">频谱的定义</h2>
-<p>我感觉最通俗的解释就是<code>信号的某种特征量随信号频率的关系，称为频谱</code></p>
-<h2 id="符号定义">符号定义</h2>
-<p>接下来文中出现的符号定义</p>
+    <h1 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h1><p>最近还是在复习通信原理，但是对于频谱&#x2F;频谱密度&#x2F;能量谱&#x2F;能量谱密度&#x2F;功率谱&#x2F;功率谱密度还是一知半解的，所以我就去各种看资料，看视频，又去问了问老师。<br>所以我在这里写下自己对这两个概念的一些分析和理解，不敢说100%正确，仅供大家参考。</p>
+<h1 id="频谱"><a href="#频谱" class="headerlink" title="频谱"></a>频谱</h1><h2 id="频谱的定义"><a href="#频谱的定义" class="headerlink" title="频谱的定义"></a>频谱的定义</h2><p>我感觉最通俗的解释就是<code>信号的某种特征量随信号频率的关系，称为频谱</code></p>
+<h2 id="符号定义"><a href="#符号定义" class="headerlink" title="符号定义"></a>符号定义</h2><p>接下来文中出现的符号定义</p>
 <table>
 <thead>
-<tr class="header">
+<tr>
 <th>符号</th>
 <th>含义</th>
 </tr>
 </thead>
-<tbody>
-<tr class="odd">
+<tbody><tr>
 <td>T</td>
 <td>信号周期</td>
 </tr>
-<tr class="even">
-<td><span class="math display">\[\Omega\]</span></td>
+<tr>
+<td>$$\Omega$$</td>
 <td>频域信号两个谱线之间的间距</td>
 </tr>
-<tr class="odd">
-<td><span class="math display">\[\tau\]</span></td>
+<tr>
+<td>$$\tau$$</td>
 <td>时域信号宽度</td>
 </tr>
-</tbody>
-</table>
-<h3 id="周期信号">周期信号</h3>
-<p>周期信号的傅立叶级数具有幅频特性和相频特性</p>
-<h4 id="单边谱">单边谱</h4>
-<p>这里是傅立叶级数的普通形式</p>
-<p><span class="math display">\[
-\begin{Bmatrix}A_{n}(幅度) \sim  \omega
-\\
-\varphi_{n}(相位) \sim \omega
-\end{Bmatrix}
-\]</span></p>
-<p><span class="math display">\[
-A_n=\sqrt[]{a^2_n+b^2_n}~~~ n=1,2,3...
-\]</span></p>
-<h4 id="双边谱">双边谱</h4>
-<p>这里是傅立叶级数的复数形式</p>
-<p><span class="math display">\[
-\begin{Bmatrix} \left | F_{n}(幅度)\right | \sim \omega  
-\\
-\varphi_{n}(相位)\sim \omega
-\end{Bmatrix}
-\]</span></p>
-<p><span class="math display">\[
-\left | F_{n}\right |=\frac{A_n}{2}~~~n=0,\pm  1,\pm 2,...
-\]</span></p>
-<h2 id="例子周期矩形波信号">例子：周期矩形波信号</h2>
-<p>我拿GeoGebra画了一个很粗略的表示，这个其实是周期性的，就是他其实是无限个矩形波函数，大家应该都懂我意思🤪</p>
-<p><img
-src="https://mfjblog-pic.oss-cn-beijing.aliyuncs.com/img/debec403c10945e28bbfbb3de7f14e6c.png" /></p>
-<p><span class="math display">\[
-矩形波信号：幅度为1  宽度为\tau   周期为T
-\]</span></p>
+</tbody></table>
+<h3 id="周期信号"><a href="#周期信号" class="headerlink" title="周期信号"></a>周期信号</h3><p>周期信号的傅立叶级数具有幅频特性和相频特性</p>
+<h4 id="单边谱"><a href="#单边谱" class="headerlink" title="单边谱"></a>单边谱</h4><p>这里是傅立叶级数的普通形式</p>
+<p>$$<br>\begin{Bmatrix}A_{n}(幅度) \sim  \omega<br> \<br>\varphi_{n}(相位) \sim \omega<br>\end{Bmatrix}<br>$$</p>
+<p>$$<br>A_n&#x3D;\sqrt[]{a^2_n+b^2_n}~~~ n&#x3D;1,2,3…<br>$$</p>
+<h4 id="双边谱"><a href="#双边谱" class="headerlink" title="双边谱"></a>双边谱</h4><p>这里是傅立叶级数的复数形式</p>
+<p>$$<br>\begin{Bmatrix} \left | F_{n}(幅度)\right | \sim \omega<br> \<br>\varphi_{n}(相位)\sim \omega<br>\end{Bmatrix}<br>$$</p>
+<p>$$<br>\left | F_{n}\right |&#x3D;\frac{A_n}{2}~~~n&#x3D;0,\pm  1,\pm 2,…<br>$$</p>
+<h2 id="例子：周期矩形波信号"><a href="#例子：周期矩形波信号" class="headerlink" title="例子：周期矩形波信号"></a>例子：周期矩形波信号</h2><p>我拿GeoGebra画了一个很粗略的表示，这个其实是周期性的，就是他其实是无限个矩形波函数，大家应该都懂我意思🤪</p>
+<p><img src="https://mfjblog-pic.oss-cn-beijing.aliyuncs.com/img/debec403c10945e28bbfbb3de7f14e6c.png" class="lazyload" data-srcset="https://mfjblog-pic.oss-cn-beijing.aliyuncs.com/img/debec403c10945e28bbfbb3de7f14e6c.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw=="></p>
+<p>$$<br>矩形波信号：幅度为1  宽度为\tau   周期为T<br>$$</p>
 <p>我们求其<code>频谱</code>也就是求傅立叶级数的系数<code>Fn</code></p>
-<h3 id="求其傅立叶级数的fn">求其傅立叶级数的Fn</h3>
-<p><span class="math display">\[
-\begin{aligned}
-Fn&amp;=\frac{1}{T}\int_{-\frac{T}{2} }^{\frac{T}{2} }  f(t)e^{-jn\Omega
-t}dt
-\\
-&amp;=\frac{1}{T}\int_{-\frac{T}{2} }^{\frac{T}{2} }  e^{-jn\Omega t}dt
-\\
-&amp;=\frac{1}{T}\frac{1}{-jn\Omega} e^{-jn\Omega
-t}|_{-\frac{T}{2}}^{\frac{T}{2}}
-\\
-&amp;=\frac{1}{T}\frac{1}{-jn\Omega} [e^{-jn\Omega \frac{T}{2}
-}-e^{-jn\Omega (-\frac{T}{2}) }]
-\\
-&amp;=\frac{1}{T}\frac{1}{-jn\Omega}[-2jsin(n\Omega\frac{\tau }{2} )]
-\\
-&amp;=\frac{2}{T}\frac{sin(\frac{n\Omega\tau}{2}
-)}{\frac{n\Omega\tau}{2}}  ·\frac{\tau}{2}
-\\
-&amp;=\frac{\tau}{T}Sa(\frac{n\Omega\tau}{2}) (n=0,\pm 1,\pm 2...)
-\end{aligned}
-\]</span></p>
-<p><span class="math display">\[
-我们已知抽样函数Sa(x)函数=\frac{sinx}{x} \\\tau是信号宽度,T是信号周期
-\]</span></p>
-<h3 id="画出其频谱图">画出其频谱图</h3>
-<p>先画出Sa函数，注意坐标轴，我这里为了方便显示，取了几个具体的数值，实际上要根据题中的条件计算。</p>
+<h3 id="求其傅立叶级数的Fn"><a href="#求其傅立叶级数的Fn" class="headerlink" title="求其傅立叶级数的Fn"></a>求其傅立叶级数的Fn</h3><p>$$<br>\begin{aligned}<br>Fn&amp;&#x3D;\frac{1}{T}\int_{-\frac{T}{2} }^{\frac{T}{2} }  f(t)e^{-jn\Omega t}dt<br>\<br>&amp;&#x3D;\frac{1}{T}\int_{-\frac{T}{2} }^{\frac{T}{2} }  e^{-jn\Omega t}dt<br>\<br>&amp;&#x3D;\frac{1}{T}\frac{1}{-jn\Omega} e^{-jn\Omega t}|_{-\frac{T}{2}}^{\frac{T}{2}}<br>\<br>&amp;&#x3D;\frac{1}{T}\frac{1}{-jn\Omega} [e^{-jn\Omega \frac{T}{2} }-e^{-jn\Omega (-\frac{T}{2}) }]<br>\<br>&amp;&#x3D;\frac{1}{T}\frac{1}{-jn\Omega}[-2jsin(n\Omega\frac{\tau }{2} )]<br>\<br>&amp;&#x3D;\frac{2}{T}\frac{sin(\frac{n\Omega\tau}{2} )}{\frac{n\Omega\tau}{2}}  ·\frac{\tau}{2}<br>\<br>&amp;&#x3D;\frac{\tau}{T}Sa(\frac{n\Omega\tau}{2}) (n&#x3D;0,\pm 1,\pm 2…)<br>\end{aligned}<br>$$</p>
+<p>$$<br>我们已知抽样函数Sa(x)函数&#x3D;\frac{sinx}{x} \\tau是信号宽度,T是信号周期<br>$$</p>
+<h3 id="画出其频谱图"><a href="#画出其频谱图" class="headerlink" title="画出其频谱图"></a>画出其频谱图</h3><p>先画出Sa函数，注意坐标轴，我这里为了方便显示，取了几个具体的数值，实际上要根据题中的条件计算。</p>
 <figure class="highlight matlab"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br></pre></td><td class="code"><pre><span class="line">clear</span><br><span class="line">close all</span><br><span class="line">clc</span><br><span class="line"></span><br><span class="line"><span class="comment">% 定义时间轴t和信号x</span></span><br><span class="line">t = <span class="number">-16</span>:<span class="number">0.01</span>:<span class="number">16</span>;</span><br><span class="line">x = (<span class="number">0.25</span>)*sinc(t / <span class="built_in">pi</span>);</span><br><span class="line"></span><br><span class="line"><span class="comment">% 绘制原始信号</span></span><br><span class="line"><span class="built_in">plot</span>(t, x, <span class="string">&#x27;--&#x27;</span>,<span class="string">&#x27;LineWidth&#x27;</span>, <span class="number">3</span>);</span><br><span class="line">xlabel(<span class="string">&#x27;时间&#x27;</span>);</span><br><span class="line">ylabel(<span class="string">&#x27;幅度&#x27;</span>);</span><br><span class="line">title(<span class="string">&#x27;Sa(t)&#x27;</span>);</span><br><span class="line">grid on;</span><br><span class="line"><span class="built_in">hold</span> on;</span><br><span class="line"></span><br><span class="line"><span class="comment">% 进行1/4倍采样</span></span><br><span class="line">x_downsampled = downsample(x, <span class="number">80</span>);</span><br><span class="line"></span><br><span class="line"><span class="comment">% 计算新的时间轴</span></span><br><span class="line">t_downsampled = t(<span class="number">1</span>:<span class="number">80</span>:<span class="keyword">end</span>);</span><br><span class="line"></span><br><span class="line"><span class="comment">% 绘制降采样后的信号</span></span><br><span class="line">stem(t_downsampled, x_downsampled, <span class="string">&#x27;LineWidth&#x27;</span>, <span class="number">3</span>);</span><br><span class="line">xlabel(<span class="string">&#x27;w&#x27;</span>);</span><br><span class="line">ylabel(<span class="string">&#x27;Fn&#x27;</span>);</span><br><span class="line">title(<span class="string">&#x27;频谱图&#x27;</span>);</span><br><span class="line"><span class="built_in">legend</span>(<span class="string">&#x27;频谱信号&#x27;</span>, <span class="string">&#x27;谱线&#x27;</span>);</span><br><span class="line">grid on;</span><br></pre></td></tr></table></figure>
-<p><img
-src="https://mfjblog-pic.oss-cn-beijing.aliyuncs.com/img/5007dc17d9a448bf8d673c629174971e.png" /></p>
-<p><span class="math display">\[
-我们设T=4\tau~~ Fn=\frac{1}{4}Sa(\frac{n\Omega\tau }{2} )
-\\则零点\frac{n\Omega\tau }{2}=\pi m\Rightarrow n\Omega
-=\frac{2m\pi}{\tau}
-\]</span></p>
-<p>两个零点之间有4条谱线，这些谱线的位置和数量取决于信号的采样率和矩形波函数的宽度。
-<span class="math display">\[
-两个零点之间有4条谱线,谱线间隔为\Omega
-\\
-\frac{\omega }{\Omega}=\frac{\frac{2\pi }{\tau } }{\frac{2\pi }{T} }  =4
-\\
-最高点是0.25
-\]</span></p>
-<p><span class="math display">\[
-\Omega=\frac{2\pi }{T}=2\pi f
-\]</span></p>
+<p><img src="https://mfjblog-pic.oss-cn-beijing.aliyuncs.com/img/5007dc17d9a448bf8d673c629174971e.png" class="lazyload" data-srcset="https://mfjblog-pic.oss-cn-beijing.aliyuncs.com/img/5007dc17d9a448bf8d673c629174971e.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw=="></p>
+<p>$$<br>我们设T&#x3D;4\tau~~ Fn&#x3D;\frac{1}{4}Sa(\frac{n\Omega\tau }{2} ) \则零点\frac{n\Omega\tau }{2}&#x3D;\pi m\Rightarrow n\Omega &#x3D;\frac{2m\pi}{\tau}<br>$$</p>
+<p>两个零点之间有4条谱线，这些谱线的位置和数量取决于信号的采样率和矩形波函数的宽度。<br>$$<br>两个零点之间有4条谱线,谱线间隔为\Omega<br>\<br>\frac{\omega }{\Omega}&#x3D;\frac{\frac{2\pi }{\tau } }{\frac{2\pi }{T} }  &#x3D;4 \<br>最高点是0.25<br>$$</p>
+<p>$$<br>\Omega&#x3D;\frac{2\pi }{T}&#x3D;2\pi f<br>$$</p>
 <p>因为周期门函数在时域是周期连续的，所以他在频谱上就是非周期离散的。</p>
 <p><strong>对应关系</strong></p>
 <table>
 <thead>
-<tr class="header">
-<th>时域/频域</th>
-<th>时域/频域</th>
+<tr>
+<th>时域&#x2F;频域</th>
+<th>时域&#x2F;频域</th>
 </tr>
 </thead>
-<tbody>
-<tr class="odd">
+<tbody><tr>
 <td>周期</td>
 <td>离散</td>
 </tr>
-<tr class="even">
+<tr>
 <td>非周期</td>
 <td>连续</td>
 </tr>
-</tbody>
-</table>
+</tbody></table>
 <p>举个例子：</p>
 <ul>
 <li>矩形波函数在时域是连续周期的，那么他在频谱上就是非周期离散的。</li>
 <li><strong>门函数做傅立叶变换后就是Sa函数，如果把它在时域上周期化，那他的频谱就被离散化了，也就是变成了上图的样子，包络是一个Sa函数，但是谱线是离散的。</strong></li>
 </ul>
-<h3 id="特点">特点</h3>
-<ol type="1">
+<h3 id="特点"><a href="#特点" class="headerlink" title="特点"></a>特点</h3><ol>
 <li>周期信号频谱是离散谱（谐波性）。</li>
 <li>谱线所处的位置是基频Ω的整数倍。</li>
 <li>一般具有收敛性，总趋势减小。</li>
 </ol>
-<h2
-id="t不变改变τ观察三个脉冲时间不同的矩形波信号">T不变，改变τ，观察三个脉冲时间不同的矩形波信号</h2>
-<p><span class="math display">\[
-函数g_\tau (t)=\frac{\tau}{T}Sa(\frac{n\pi \tau }{T} )
-\]</span></p>
-<p><img
-src="https://mfjblog-pic.oss-cn-beijing.aliyuncs.com/img/8b268efc307645a88c129f23d7b8e5a1.png" /></p>
-<h3 id="结论">结论</h3>
-<p>观察这些图，我们可以得到结论：</p>
-<p><span class="math display">\[
-若T不变\tau 减小\left\{\begin{matrix}1.最大点\frac{\tau}{T} \downarrow
-\\2.谱线间隔不变
-\\2.零点向右移动，零点横坐标变大了
-\\4.   谱线数目\frac{T}{\tau}
-\end{matrix}\right.
-\]</span></p>
-<p><span class="math display">\[
-当\tau\longrightarrow 0,图像会变成一条直线，也就是我们说的冲激函数\delta
-(t)
-\]</span></p>
-<h2
-id="τ不变改变t观察四个周期不同的矩形波信号">τ不变，改变T，观察四个周期不同的矩形波信号</h2>
-<p><img
-src="https://mfjblog-pic.oss-cn-beijing.aliyuncs.com/img/1edf746f71804c97a5b5e81ad1042af8.png" /></p>
-<p><span class="math display">\[
-若\tau 不变，T增加\left\{\begin{matrix}最大值\frac{\tau }{T}\downarrow  
-\\谱线间隔\Omega=\frac{2\pi}{T} \downarrow,当T\rightarrow \infty
-，\Omega\rightarrow 0
-\\零点\frac{2m\pi}{\tau },\tau 不变,0点不变
-\\谱线数\frac{T}{\tau }\uparrow ,谱线数\rightarrow \infty  
-\end{matrix}\right.
-\]</span></p>
-<h3 id="结论-1">结论</h3>
-<p>我们重点看一下最后一个图，<strong><code>当T趋于∞，周期信号的周期无穷大，那么他就变成了非周期信号，频域变成了连续函数。</code></strong>
-我们知道：</p>
-<p><span class="math display">\[
-n\Omega=\frac{2\pi}{T}n , T\rightarrow \infty ,n\Omega\rightarrow 0
-\]</span></p>
+<h2 id="T不变，改变τ，观察三个脉冲时间不同的矩形波信号"><a href="#T不变，改变τ，观察三个脉冲时间不同的矩形波信号" class="headerlink" title="T不变，改变τ，观察三个脉冲时间不同的矩形波信号"></a>T不变，改变τ，观察三个脉冲时间不同的矩形波信号</h2><p>$$<br>函数g_\tau (t)&#x3D;\frac{\tau}{T}Sa(\frac{n\pi \tau }{T} )<br>$$</p>
+<p><img src="https://mfjblog-pic.oss-cn-beijing.aliyuncs.com/img/8b268efc307645a88c129f23d7b8e5a1.png" class="lazyload" data-srcset="https://mfjblog-pic.oss-cn-beijing.aliyuncs.com/img/8b268efc307645a88c129f23d7b8e5a1.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw=="></p>
+<h3 id="结论"><a href="#结论" class="headerlink" title="结论"></a>结论</h3><p>观察这些图，我们可以得到结论：</p>
+<p>$$<br>若T不变\tau 减小\left{\begin{matrix}1.最大点\frac{\tau}{T} \downarrow<br> \2.谱线间隔不变<br> \2.零点向右移动，零点横坐标变大了<br> \4.	谱线数目\frac{T}{\tau}<br>\end{matrix}\right.<br>$$</p>
+<p>$$<br>当\tau\longrightarrow 0,图像会变成一条直线，也就是我们说的冲激函数\delta (t)<br>$$</p>
+<h2 id="τ不变，改变T，观察四个周期不同的矩形波信号"><a href="#τ不变，改变T，观察四个周期不同的矩形波信号" class="headerlink" title="τ不变，改变T，观察四个周期不同的矩形波信号"></a>τ不变，改变T，观察四个周期不同的矩形波信号</h2><p> <img src="https://mfjblog-pic.oss-cn-beijing.aliyuncs.com/img/1edf746f71804c97a5b5e81ad1042af8.png" class="lazyload" data-srcset="https://mfjblog-pic.oss-cn-beijing.aliyuncs.com/img/1edf746f71804c97a5b5e81ad1042af8.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw=="></p>
+<p>$$<br> 若\tau 不变，T增加\left{\begin{matrix}最大值\frac{\tau }{T}\downarrow<br> \谱线间隔\Omega&#x3D;\frac{2\pi}{T} \downarrow,当T\rightarrow \infty ，\Omega\rightarrow 0<br> \零点\frac{2m\pi}{\tau },\tau 不变,0点不变<br> \谱线数\frac{T}{\tau }\uparrow ,谱线数\rightarrow \infty<br>\end{matrix}\right.<br>$$</p>
+<h3 id="结论-1"><a href="#结论-1" class="headerlink" title="结论"></a>结论</h3><p>我们重点看一下最后一个图，<strong><code>当T趋于∞，周期信号的周期无穷大，那么他就变成了非周期信号，频域变成了连续函数。</code></strong><br>我们知道：</p>
+<p>$$<br>n\Omega&#x3D;\frac{2\pi}{T}n , T\rightarrow \infty ,n\Omega\rightarrow 0<br>$$</p>
 <p>上面的公式是什么意思呢，就是频域的离散函数变成了连续函数，因为每一个谱线的间隔的无限小。</p>
-<p><span class="math display">\[
-在数学上，当\Omega\rightarrow 0时,我们称其为\omega
-\]</span></p>
-<p>其实最后一个图像我们就从傅立叶级数得到了傅立叶变换——计算非周期信号的频谱。关于其数学公式的推导，我也写了<a
-target="_blank" rel="noopener" href="https://blog.csdn.net/qq_42887663/article/details/123660236">一篇博客</a>但是因为公式实在太多，只推导了一部分，后期我会把坑填上的。</p>
-<h1 id="频谱密度">频谱密度</h1>
-<p>这个概念可折磨我太久了，主要是网上好多说的感觉不太准确，也没有合适的视频讲解，只能靠着我自己搜集资料来做一个浅浅的解释。</p>
+<p>$$<br>在数学上，当\Omega\rightarrow 0时,我们称其为\omega<br>$$</p>
+<p>其实最后一个图像我们就从傅立叶级数得到了傅立叶变换——计算非周期信号的频谱。关于其数学公式的推导，我也写了<a target="_blank" rel="noopener" href="https://blog.csdn.net/qq_42887663/article/details/123660236">一篇博客</a>但是因为公式实在太多，只推导了一部分，后期我会把坑填上的。</p>
+<h1 id="频谱密度"><a href="#频谱密度" class="headerlink" title="频谱密度"></a>频谱密度</h1><p>这个概念可折磨我太久了，主要是网上好多说的感觉不太准确，也没有合适的视频讲解，只能靠着我自己搜集资料来做一个浅浅的解释。</p>
 <p>我去问老师的时候，他先举了一个例子：</p>
 <blockquote>
-<p>假如这有一本书，书上画满了点，那么书上的点就是无限的，随便在书上找一页，每个点上面“占有了”这个书多少呢。
-答案是0，点是无限的，所以平均到每个点上面，占有的书就是0。</p>
+<p>假如这有一本书，书上画满了点，那么书上的点就是无限的，随便在书上找一页，每个点上面“占有了”这个书多少呢。<br>答案是0，点是无限的，所以平均到每个点上面，占有的书就是0。</p>
 </blockquote>
 <p>在Wikipedia中，对于密度的定义是这样的：</p>
 <blockquote>
 <p>密度是指一物质单位体积下的质量</p>
 </blockquote>
 <p>我们常说的密度是连续的，所以那频谱密度也是连续的，这里我给个频谱密度一个定义，<strong><code>是指信号单位频率下的能量</code></strong>。</p>
-<h2 id="频谱密度函数fleft-omega-right公式">频谱密度函数<span
-class="math inline">\(F\left( \omega \right)\)</span>公式</h2>
-<p><span class="math display">\[
-F\left( \omega \right) =\lim_{T\rightarrow \infty}
-\frac{F_n}{1/T}=\lim_{T\rightarrow \infty} F_n \cdot T=
-\lim_{w\rightarrow 0} \frac{F_n\cdot 2\pi}{w}
-\]</span> 在这里<span
-class="math inline">\(F_n\)</span>(指数型傅里叶级数的系数)是趋于无穷小的，<span
-class="math inline">\(T\)</span>是趋于无穷大的，所以这两者相乘是一个常数。</p>
-<hr />
+<h2 id="频谱密度函数-F-left-omega-right-公式"><a href="#频谱密度函数-F-left-omega-right-公式" class="headerlink" title="频谱密度函数$F\left( \omega \right)$公式"></a>频谱密度函数$F\left( \omega \right)$公式</h2><p>$$<br>F\left( \omega \right) &#x3D;\lim_{T\rightarrow \infty} \frac{F_n}{1&#x2F;T}&#x3D;\lim_{T\rightarrow \infty} F_n \cdot T&#x3D; \lim_{w\rightarrow 0} \frac{F_n\cdot 2\pi}{w}<br>$$<br>在这里$F_n$(指数型傅里叶级数的系数)是趋于无穷小的，$T$是趋于无穷大的，所以这两者相乘是一个常数。</p>
+<hr>
 <p>但是话又说回来，为什么频谱密度要叫频谱<strong>密度</strong>呢，他和普通的频谱到底有什么区别？</p>
-<p>想象有一块石头，他的质量是m，他的体积是v，根据密度公式，我们很容易算出他的密度是多少，那加入我们取石头上非常非常小的一块，<strong>它的质量趋于0</strong>，<strong>它的体积也趋于0</strong>，那么怎么用物理量来表示呢，这时就要引出<strong>密度</strong>的概念了，无穷小的质量/无穷小的体积得到的常数，就是这一小块的密度了。</p>
-<figure>
-<img
-src="https://mfjblog-pic.oss-cn-beijing.aliyuncs.com/img/f74d789eeb524b959420ca3416961be0-20240229154956504.png"
-alt="img" />
-<figcaption aria-hidden="true">img</figcaption>
-</figure>
-<p>所以频谱密度也是一样的道理，<span class="math inline">\(F\left(
-j\omega \right) = \lim_{w\rightarrow 0} \frac{F_n\cdot
-2\pi}{\omega}\)</span>。因为各个频率分量的幅度是无穷小的，给他除一个很小的频带宽度<span
-class="math inline">\(\omega\)</span>就能得到一个常数。</p>
-<h1 id="傅里叶正变换公式">傅里叶正变换公式</h1>
-<p>由上文的公式 <span class="math display">\[
-F\left( \omega \right) =\lim_{T\rightarrow \infty}
-\frac{F_n}{1/T}=\lim_{T\rightarrow \infty} F_n \cdot T=
-\lim_{w\rightarrow 0} \frac{F_n\cdot 2\pi}{w}
-\]</span> 以及 <span class="math display">\[
-F_n=\frac{1}{T}\int_{-\frac{T}{2}}^{\frac{T}{2}}{f\left( t \right)
-e^{-jn\omega t}dt}
-\]</span> 将<span class="math inline">\(F_n\)</span>代入<span
-class="math inline">\(F\left( j\omega \right) =\lim_{T\rightarrow
-\infty} F_n \cdot T\)</span>得</p>
-<p><span class="math display">\[
-F\left( \omega \right) =\int_{-\frac{T}{2}}^{\frac{T}{2}}{f\left( t
-\right) e^{-jn\omega t}dt}
-\]</span> 因为傅里叶变换的情况是<span
-class="math inline">\(T\)</span>趋于无穷，<span
-class="math inline">\(\omega\)</span>趋于0，<span
-class="math inline">\(n\omega\)</span>变成连续的了，所以傅里叶正变换公式就是</p>
-<p><span class="math display">\[
-F\left( \omega \right) =\int_{-\infty}^{\infty}{f\left( t \right)
-e^{-j\omega t}dt}
-\]</span> # 傅里叶逆变换公式 先看傅里叶级数的指数形式 <span
-class="math display">\[
-f\left( t \right) =\sum_{n=-\infty}^{\infty}{F_ne^{jn\omega t}}
-\]</span> 为了凑出<span
-class="math inline">\(F(\omega)\)</span>，我们要这样处理 <span
-class="math display">\[
-f\left( t \right) =\sum_{n=-\infty}^{\infty}{F_nTe^{jn\omega t}\cdot
-\frac{1}{T}}
-\]</span> 我们令<span class="math inline">\(T\rightarrow
-\infty\)</span>，则<span class="math inline">\(\omega \rightarrow
-0\)</span>，取其为<span
-class="math inline">\(d\omega\)</span>，我们就可以将上式的<span
-class="math inline">\(\frac{1}{T}\)</span>改为<span
-class="math inline">\(\frac{2\pi}{T}\cdot \frac{1}{2\pi}\)</span>，<span
-class="math inline">\(\omega\)</span>趋于0，<span
-class="math inline">\(n\omega\)</span>变成连续的了，求和符号应变为积分符号，所以<span
-class="math inline">\(f(t)\)</span>最后为</p>
-<p><span class="math display">\[
-f\left( t \right) =\frac{1}{2\pi}\int_{-\infty}^{\infty}{F(\omega
-)}e^{j\omega t}d\omega
-\]</span> 这就是傅里叶逆变换。</p>
+<p>想象有一块石头，他的质量是m，他的体积是v，根据密度公式，我们很容易算出他的密度是多少，那加入我们取石头上非常非常小的一块，<strong>它的质量趋于0</strong>，<strong>它的体积也趋于0</strong>，那么怎么用物理量来表示呢，这时就要引出<strong>密度</strong>的概念了，无穷小的质量&#x2F;无穷小的体积得到的常数，就是这一小块的密度了。</p>
+<p><img src="https://mfjblog-pic.oss-cn-beijing.aliyuncs.com/img/f74d789eeb524b959420ca3416961be0-20240229154956504.png" class="lazyload" data-srcset="https://mfjblog-pic.oss-cn-beijing.aliyuncs.com/img/f74d789eeb524b959420ca3416961be0-20240229154956504.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="img"></p>
+<p>所以频谱密度也是一样的道理，$F\left( j\omega \right) &#x3D; \lim_{w\rightarrow 0} \frac{F_n\cdot 2\pi}{\omega}$。因为各个频率分量的幅度是无穷小的，给他除一个很小的频带宽度$\omega$就能得到一个常数。</p>
+<h1 id="傅里叶正变换公式"><a href="#傅里叶正变换公式" class="headerlink" title="傅里叶正变换公式"></a>傅里叶正变换公式</h1><p>由上文的公式<br>$$<br>F\left( \omega \right) &#x3D;\lim_{T\rightarrow \infty} \frac{F_n}{1&#x2F;T}&#x3D;\lim_{T\rightarrow \infty} F_n \cdot T&#x3D; \lim_{w\rightarrow 0} \frac{F_n\cdot 2\pi}{w}<br>$$<br>以及<br>$$<br>F_n&#x3D;\frac{1}{T}\int_{-\frac{T}{2}}^{\frac{T}{2}}{f\left( t \right) e^{-jn\omega t}dt}<br>$$<br>将$F_n$代入$F\left( j\omega \right) &#x3D;\lim_{T\rightarrow \infty} F_n \cdot T$得</p>
+<p>$$<br>F\left( \omega \right) &#x3D;\int_{-\frac{T}{2}}^{\frac{T}{2}}{f\left( t \right) e^{-jn\omega t}dt}<br>$$<br>因为傅里叶变换的情况是$T$趋于无穷，$\omega$趋于0，$n\omega$变成连续的了，所以傅里叶正变换公式就是</p>
+<p>$$<br>F\left( \omega \right) &#x3D;\int_{-\infty}^{\infty}{f\left( t \right) e^{-j\omega t}dt}<br>$$</p>
+<h1 id="傅里叶逆变换公式"><a href="#傅里叶逆变换公式" class="headerlink" title="傅里叶逆变换公式"></a>傅里叶逆变换公式</h1><p>先看傅里叶级数的指数形式<br>$$<br>f\left( t \right) &#x3D;\sum_{n&#x3D;-\infty}^{\infty}{F_ne^{jn\omega t}}<br>$$<br>为了凑出$F(\omega)$，我们要这样处理<br>$$<br>f\left( t \right) &#x3D;\sum_{n&#x3D;-\infty}^{\infty}{F_nTe^{jn\omega t}\cdot \frac{1}{T}}<br>$$<br>我们令$T\rightarrow \infty$，则$\omega \rightarrow 0$，取其为$d\omega$，我们就可以将上式的$\frac{1}{T}$改为$\frac{2\pi}{T}\cdot \frac{1}{2\pi}$，$\omega$趋于0，$n\omega$变成连续的了，求和符号应变为积分符号，所以$f(t)$最后为</p>
+<p>$$<br>f\left( t \right) &#x3D;\frac{1}{2\pi}\int_{-\infty}^{\infty}{F(\omega )}e^{j\omega t}d\omega<br>$$<br>这就是傅里叶逆变换。</p>
 <p>我们在上面已经说了，连续的频谱基频Ω趋于0，对照着下面这图像</p>
-<p><img
-src="https://mfjblog-pic.oss-cn-beijing.aliyuncs.com/img/220526b136774b679c2121f5e18109f3.png" />
-我们可以知道，连续频谱在时域上是非周期的。所以，当我们谈论谱密度时，就已经是默认这个信号在时域上是非周期的，频谱是连续的了。</p>
+<p><img src="https://mfjblog-pic.oss-cn-beijing.aliyuncs.com/img/220526b136774b679c2121f5e18109f3.png" class="lazyload" data-srcset="https://mfjblog-pic.oss-cn-beijing.aliyuncs.com/img/220526b136774b679c2121f5e18109f3.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw=="><br>我们可以知道，连续频谱在时域上是非周期的。所以，当我们谈论谱密度时，就已经是默认这个信号在时域上是非周期的，频谱是连续的了。</p>
 <p>这里我们需要引入<code>能量信号</code>，他的能量是有限的，所以他一定是一个非周期函数，所以严格地说，他不能用<code>傅立叶级数</code>去计算他的频谱，他只能用<code>傅立叶变换</code>去计算他的频谱密度。</p>
-<p>关于周期信号的频谱密度，我参考了这一篇文章：<a
-target="_blank" rel="noopener" href="https://www.zhihu.com/question/46963648/answer/399267420">频谱和频谱密度在概念和适用方向上有哪些区分？
-- 張無忌的回答 - 知乎</a></p>
-<p><strong><code>周期功率信号</code></strong>
-的功率只集中分布在<code>基频的倍频</code>上，因而，功率在频域是离散分布的，如果严格地套用谱密度的意义，其谱密度应该是一连串冲击函数，这类包含无穷的特殊函数对应用而言是没有意义的。<code>有时为了与非周期信号统一表示，会将集中分布的功率近似平均到相邻倍频的区间内，形式上也就变成频谱密度</code>，但应当了解，<code>这是近似的，并不是周期信号原始的属性</code>。</p>
+<p>关于周期信号的频谱密度，我参考了这一篇文章：<a target="_blank" rel="noopener" href="https://www.zhihu.com/question/46963648/answer/399267420">频谱和频谱密度在概念和适用方向上有哪些区分？ - 張無忌的回答 - 知乎</a></p>
+<p><strong><code>周期功率信号</code></strong> 的功率只集中分布在<code>基频的倍频</code>上，因而，功率在频域是离散分布的，如果严格地套用谱密度的意义，其谱密度应该是一连串冲击函数，这类包含无穷的特殊函数对应用而言是没有意义的。<code>有时为了与非周期信号统一表示，会将集中分布的功率近似平均到相邻倍频的区间内，形式上也就变成频谱密度</code>，但应当了解，<code>这是近似的，并不是周期信号原始的属性</code>。</p>
 <p>举个例子，在这幅图中，我们可以将集中分布的功率近似分布到相邻的倍频区间内，他也就变成连续的了。</p>
-<p><img
-src="https://mfjblog-pic.oss-cn-beijing.aliyuncs.com/img/5007dc17d9a448bf8d673c629174971e.png" />
-<strong><code>非周期功率信号</code></strong>
-对应的直接就是频谱密度。</p>
-<p>还有需要了解的是，对能量信号和功率信号的分析中，虽然有时两者的分析中都称谱密度，但能量信号的谱密度是
-<strong><code>能量的谱密度</code></strong> ，而功率信号的谱密度指的是
-<strong><code>功率的谱密度</code></strong>
-，二者在计算上有区别的，相差了一个时间平均，不应混淆。</p>
-<h1 id="总结">总结</h1>
-<p>我们一般在分析信号的时候，要先确定其信号类型，如果是非功率非能量信号，则要用广义函数和分布对其进行分析，但是话说回来，我看了这么多还真没遇到过这样的，如果我以后遇到了再来填坑。确定其信号类型之后，我们要根据其类型再去分析：如果是能量信号，看看是周期信号还是非周期信号(通常是非周期信号)，再对其进行傅立叶变换，假如是功率信号，判断其是周期信号还是非周期信号，要注意只有周期功率信号才有频谱(因为可以做傅立叶级数)，非周期功率信号和能量信号是没有频谱的，只有频谱密度(只能做傅立叶变换)。或者说周期性的功率信号频域是离散的，其他信号频域是连续的。</p>
+<p><img src="https://mfjblog-pic.oss-cn-beijing.aliyuncs.com/img/5007dc17d9a448bf8d673c629174971e.png" class="lazyload" data-srcset="https://mfjblog-pic.oss-cn-beijing.aliyuncs.com/img/5007dc17d9a448bf8d673c629174971e.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw=="><br><strong><code>非周期功率信号</code></strong> 对应的直接就是频谱密度。</p>
+<p>还有需要了解的是，对能量信号和功率信号的分析中，虽然有时两者的分析中都称谱密度，但能量信号的谱密度是 <strong><code>能量的谱密度</code></strong> ，而功率信号的谱密度指的是 <strong><code>功率的谱密度</code></strong> ，二者在计算上有区别的，相差了一个时间平均，不应混淆。</p>
+<h1 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h1><p>我们一般在分析信号的时候，要先确定其信号类型，如果是非功率非能量信号，则要用广义函数和分布对其进行分析，但是话说回来，我看了这么多还真没遇到过这样的，如果我以后遇到了再来填坑。确定其信号类型之后，我们要根据其类型再去分析：如果是能量信号，看看是周期信号还是非周期信号(通常是非周期信号)，再对其进行傅立叶变换，假如是功率信号，判断其是周期信号还是非周期信号，要注意只有周期功率信号才有频谱(因为可以做傅立叶级数)，非周期功率信号和能量信号是没有频谱的，只有频谱密度(只能做傅立叶变换)。或者说周期性的功率信号频域是离散的，其他信号频域是连续的。</p>
 
   </div>
   
@@ -2761,8 +2593,7 @@ src="https://mfjblog-pic.oss-cn-beijing.aliyuncs.com/img/5007dc17d9a448bf8d673c6
             <blockquote>
               
                 
-                  <p>博客内容遵循 署名-非商业性使用-相同方式共享 4.0 国际 (CC BY-NC-SA
-4.0) 协议</p>
+                  <p>博客内容遵循 署名-非商业性使用-相同方式共享 4.0 国际 (CC BY-NC-SA 4.0) 协议</p>
 
                 
               
@@ -2871,19 +2702,14 @@ src="https://mfjblog-pic.oss-cn-beijing.aliyuncs.com/img/5007dc17d9a448bf8d673c6
       
         <a class='prev' href='/2024/04/25/%E5%9F%BA%E4%BA%8ERetinaFace+Jetson%20Nano%E7%9A%84%E6%99%BA%E8%83%BD%E9%97%A8%E9%94%81%E7%B3%BB%E7%BB%9F/'>
           <p class='title'><i class="fa-solid fa-chevron-left" aria-hidden="true"></i>基于RetinaFace+Jetson Nano的智能门锁系统</p>
-          <p class='content'>总体介绍
-项目名称：基于RetinaFace+Jetson Nano的智能门锁系统
-项目时间：2024年4月-2024年6月 项目平台：PC、Linux 项目语言：Python、C
-项目软件：P...</p>
+          <p class='content'>总体介绍项目名称：基于RetinaFace+Jetson Nano的智能门锁系统项目时间：2024年4月-2024年6月项目平台：PC、Linux项目语言：Python、C项目软件：Pychar...</p>
         </a>
       
       
         <a class='next' href='/2024/01/03/%E5%A6%82%E4%BD%95%E5%81%9A%E4%B8%80%E4%B8%AA%E7%82%AB%E9%85%B7%E7%9A%84Github%E4%B8%AA%E4%BA%BA%E7%AE%80%E4%BB%8B%EF%BC%883DContribution%EF%BC%89/'>
           <p class='title'>如何做一个炫酷的Github个人简介（3DContribution）<i class="fa-solid fa-chevron-right" aria-hidden="true"></i></p>
-          <p class='content'>前言
-最近放假了，毕设目前也不太想做，先搞一点小玩意玩玩，让自己的github看起来好看点。也顺便学学这个action是怎么个事。
-3D-Contrib
-先给大家看一下效果 我的个人主页：htt...</p>
+          <p class='content'>前言最近放假了，毕设目前也不太想做，先搞一点小玩意玩玩，让自己的github看起来好看点。也顺便学学这个action是怎么个事。
+3D-Contrib先给大家看一下效果我的个人主页：https:...</p>
         </a>
       
     </div>
@@ -2941,7 +2767,7 @@ src="https://mfjblog-pic.oss-cn-beijing.aliyuncs.com/img/5007dc17d9a448bf8d673c6
 
 
     <div class='content'>
-        <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E9%A2%91%E8%B0%B1%E7%9A%84%E5%AE%9A%E4%B9%89"><span class="toc-text">频谱的定义</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%AC%A6%E5%8F%B7%E5%AE%9A%E4%B9%89"><span class="toc-text">符号定义</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%91%A8%E6%9C%9F%E4%BF%A1%E5%8F%B7"><span class="toc-text">周期信号</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%8D%95%E8%BE%B9%E8%B0%B1"><span class="toc-text">单边谱</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%8F%8C%E8%BE%B9%E8%B0%B1"><span class="toc-text">双边谱</span></a></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%BE%8B%E5%AD%90%E5%91%A8%E6%9C%9F%E7%9F%A9%E5%BD%A2%E6%B3%A2%E4%BF%A1%E5%8F%B7"><span class="toc-text">例子：周期矩形波信号</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%B1%82%E5%85%B6%E5%82%85%E7%AB%8B%E5%8F%B6%E7%BA%A7%E6%95%B0%E7%9A%84fn"><span class="toc-text">求其傅立叶级数的Fn</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%94%BB%E5%87%BA%E5%85%B6%E9%A2%91%E8%B0%B1%E5%9B%BE"><span class="toc-text">画出其频谱图</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%89%B9%E7%82%B9"><span class="toc-text">特点</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#t%E4%B8%8D%E5%8F%98%E6%94%B9%E5%8F%98%CF%84%E8%A7%82%E5%AF%9F%E4%B8%89%E4%B8%AA%E8%84%89%E5%86%B2%E6%97%B6%E9%97%B4%E4%B8%8D%E5%90%8C%E7%9A%84%E7%9F%A9%E5%BD%A2%E6%B3%A2%E4%BF%A1%E5%8F%B7"><span class="toc-text">T不变，改变τ，观察三个脉冲时间不同的矩形波信号</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%BB%93%E8%AE%BA"><span class="toc-text">结论</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%CF%84%E4%B8%8D%E5%8F%98%E6%94%B9%E5%8F%98t%E8%A7%82%E5%AF%9F%E5%9B%9B%E4%B8%AA%E5%91%A8%E6%9C%9F%E4%B8%8D%E5%90%8C%E7%9A%84%E7%9F%A9%E5%BD%A2%E6%B3%A2%E4%BF%A1%E5%8F%B7"><span class="toc-text">τ不变，改变T，观察四个周期不同的矩形波信号</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%BB%93%E8%AE%BA-1"><span class="toc-text">结论</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E9%A2%91%E8%B0%B1%E5%AF%86%E5%BA%A6%E5%87%BD%E6%95%B0fleft-omega-right%E5%85%AC%E5%BC%8F"><span class="toc-text">频谱密度函数\(F\left( \omega \right)\)公式</span></a></li></ol>
+        <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E9%A2%91%E8%B0%B1%E7%9A%84%E5%AE%9A%E4%B9%89"><span class="toc-text">频谱的定义</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%AC%A6%E5%8F%B7%E5%AE%9A%E4%B9%89"><span class="toc-text">符号定义</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%91%A8%E6%9C%9F%E4%BF%A1%E5%8F%B7"><span class="toc-text">周期信号</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%8D%95%E8%BE%B9%E8%B0%B1"><span class="toc-text">单边谱</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%8F%8C%E8%BE%B9%E8%B0%B1"><span class="toc-text">双边谱</span></a></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%BE%8B%E5%AD%90%EF%BC%9A%E5%91%A8%E6%9C%9F%E7%9F%A9%E5%BD%A2%E6%B3%A2%E4%BF%A1%E5%8F%B7"><span class="toc-text">例子：周期矩形波信号</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%B1%82%E5%85%B6%E5%82%85%E7%AB%8B%E5%8F%B6%E7%BA%A7%E6%95%B0%E7%9A%84Fn"><span class="toc-text">求其傅立叶级数的Fn</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%94%BB%E5%87%BA%E5%85%B6%E9%A2%91%E8%B0%B1%E5%9B%BE"><span class="toc-text">画出其频谱图</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%89%B9%E7%82%B9"><span class="toc-text">特点</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#T%E4%B8%8D%E5%8F%98%EF%BC%8C%E6%94%B9%E5%8F%98%CF%84%EF%BC%8C%E8%A7%82%E5%AF%9F%E4%B8%89%E4%B8%AA%E8%84%89%E5%86%B2%E6%97%B6%E9%97%B4%E4%B8%8D%E5%90%8C%E7%9A%84%E7%9F%A9%E5%BD%A2%E6%B3%A2%E4%BF%A1%E5%8F%B7"><span class="toc-text">T不变，改变τ，观察三个脉冲时间不同的矩形波信号</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%BB%93%E8%AE%BA"><span class="toc-text">结论</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%CF%84%E4%B8%8D%E5%8F%98%EF%BC%8C%E6%94%B9%E5%8F%98T%EF%BC%8C%E8%A7%82%E5%AF%9F%E5%9B%9B%E4%B8%AA%E5%91%A8%E6%9C%9F%E4%B8%8D%E5%90%8C%E7%9A%84%E7%9F%A9%E5%BD%A2%E6%B3%A2%E4%BF%A1%E5%8F%B7"><span class="toc-text">τ不变，改变T，观察四个周期不同的矩形波信号</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%BB%93%E8%AE%BA-1"><span class="toc-text">结论</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E9%A2%91%E8%B0%B1%E5%AF%86%E5%BA%A6%E5%87%BD%E6%95%B0-F-left-omega-right-%E5%85%AC%E5%BC%8F"><span class="toc-text">频谱密度函数$F\left( \omega \right)$公式</span></a></li></ol>
     </div>
   </section>
 
@@ -3083,9 +2909,7 @@ src="https://mfjblog-pic.oss-cn-beijing.aliyuncs.com/img/5007dc17d9a448bf8d673c6
       
     
       
-        <div><p>Blog content follows the <a
-target="_blank" rel="noopener" href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.en">Attribution-NonCommercial-ShareAlike
-4.0 International (CC BY-NC-SA 4.0) License</a></p>
+        <div><p>Blog content follows the <a target="_blank" rel="noopener" href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.en">Attribution-NonCommercial-ShareAlike 4.0 International (CC BY-NC-SA 4.0) License</a></p>
 </div>
       
     

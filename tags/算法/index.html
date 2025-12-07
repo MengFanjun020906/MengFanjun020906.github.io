@@ -1593,7 +1593,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
     debug: "env",
     cdn: {"js":{"app":"/js/app.js","parallax":"/js/plugins/parallax.js","rightMenu":"/js/plugins/rightMenu.js","rightMenus":"/js/plugins/rightMenus.js","sites":"/js/plugins/tags/sites.js","friends":"/js/plugins/tags/friends.js","contributors":"/js/plugins/tags/contributors.js","search":"/js/search/hexo.js"},"css":{"style":"/css/style.css"}},
     default: {"avatar":"https://unpkg.com/volantis-static@0.0.1654736714924/media/placeholder/avatar/round/3442075.svg","link":"https://unpkg.com/volantis-static@0.0.1654736714924/media/placeholder/link/8f277b4ee0ecd.svg","cover":"https://unpkg.com/volantis-static@0.0.1654736714924/media/placeholder/cover/76b86c0226ffd.svg","image":"https://unpkg.com/volantis-static@0.0.1654736714924/media/placeholder/image/2659360.svg"},
-    lastupdate: new Date(1765118762067),
+    lastupdate: new Date(1765119292905),
     sidebar: {
       for_page: ["blogger","category","tagcloud","webinfo","lastupdate"],
       for_post: ["toc"],
@@ -2401,9 +2401,8 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
   <div class='md article-desc' itemprop="articleBody">
     
       
-         这里我们直接展示补0的核心代码
-生成三角波和反三角波
-123456789101112N=8;n=0:7;x1=zeros(size(n));x2=zeros(size(n));xa=(n&gt;=0)&amp;(n&lt;=3);x1(xa)=n(xa);x2(xa)=4-n(xa);xa=(n&gt;=4)&amp;(n&lt;=7);x1(xa)=8-n(xa);x2(xa)=n(xa...
+        这里我们直接展示补0的核心代码
+生成三角波和反三角波123456789101112N=8;n=0:7;x1=zeros(size(n));x2=zeros(size(n));xa=(n&gt;=0)&amp;(n&lt;=3);x1(xa)=n(xa);x2(xa)=4-n(xa);xa=(n&gt;=4)&amp;(n&lt;=7);x1(xa)=8-n(xa);x2(xa)=n(xa)-...
       
     
   </div>
@@ -2474,17 +2473,15 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
   <div class='md article-desc' itemprop="articleBody">
     
       
-        原函数
-假设我们有这么一个函数
+        原函数假设我们有这么一个函数
 
-x(n)=3cos(0.125πn+0.2π)+2sin(0.25πn+0.1π)
-n为0到15的整数
+x(n)&#x3D;3cos(0.125πn+0.2π)+2sin(0.25πn+0.1π)n为0到15的整数
 
-这是他的函数图像，如何将其进行周期化  我在MATLAB中文论坛看到了一个很巧妙的方法
+这是他的函数图像，如何将其进行周期化我在MATLAB中文论坛看到了一个很巧妙的方法
 1b = mod(a,m)
 
-b = mod(a,m) 返回 a 除以 m 后的余数，其中 a 是被除数，m
-是除数。此函数通常称为取模运算，表达式为 b = a-m...
+
+b &#x3D; mod(a,m) 返回 a 除以 m 后的余数，其中 a 是被除数，m 是除数。此函数通常称为取模运算，表达式为 ...
       
     
   </div>
@@ -2556,8 +2553,7 @@ b = mod(a,m) 返回 a 除以 m 后的余数，其中 a 是被除数，m
     
       
         这是为了准备国赛突击学习的模型算法，我在原有的基础上加上自己的理解虽然不知道对不对，就是为了记录下自己学的模型他究竟是个什么东西，语言通俗，但是极不准确，只适合做一个大概的了解，建议大家详细的还是要看更专业的文章去学习，但是自己看着还是挺顺眼的，欢迎批评指正，里面我说的程序包就是老哥提供的程序包
-视频来源：泰山教育小石老师数学建模教程
-【零基础教程】老哥：数学建模算法、编程、写作和获奖指南全...
+视频来源：泰山教育小石老师数学建模教程【零基础教程】老哥：数学建模算法、编程、写作和获奖指南全流...
       
     
   </div>
@@ -2632,18 +2628,16 @@ b = mod(a,m) 返回 a 除以 m 后的余数，其中 a 是被除数，m
   <div class='md article-desc' itemprop="articleBody">
     
       
-        原视频链接：3.
-零基础入门PyTorch之线性回归【逐行代码讲解】 原文章链接：【PyTorch修炼】零基础入门PyTorch之线性回归【逐行代码讲解】
+        原视频链接：3. 零基础入门PyTorch之线性回归【逐行代码讲解】原文章链接：【PyTorch修炼】零基础入门PyTorch之线性回归【逐行代码讲解】
 线性回归其实就是
 
-y=kx+b
+y&#x3D;kx+b
 
 但是需要注意的是，这里所有的未知量都是一个矩阵而不是一个数，k是权重，b是偏差
 要求：
 
 数据都是tensor类型 如果有batch_size需要用dataloader去装这个数据
-建立 model
-完...
+建立 mod...
       
     
   </div>
@@ -2715,9 +2709,8 @@ y=kx+b
     
       
         原视频地址
-导入基本库
-12345import torchimport torch.nn as nnfrom sklearn import datasetsfrom sklearn.preprocessing import StandardScaler#缩放特征from sklearn.model_selection import train_test_split#分离测试与训练数据
-导入乳...
+导入基本库12345import torchimport torch.nn as nnfrom sklearn import datasetsfrom sklearn.preprocessing import StandardScaler#缩放特征from sklearn.model_selection import train_test_split#分离测试与训练数据
+导入乳腺...
       
     
   </div>
@@ -3177,9 +3170,7 @@ y=kx+b
       
     
       
-        <div><p>Blog content follows the <a
-target="_blank" rel="noopener" href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.en">Attribution-NonCommercial-ShareAlike
-4.0 International (CC BY-NC-SA 4.0) License</a></p>
+        <div><p>Blog content follows the <a target="_blank" rel="noopener" href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.en">Attribution-NonCommercial-ShareAlike 4.0 International (CC BY-NC-SA 4.0) License</a></p>
 </div>
       
     

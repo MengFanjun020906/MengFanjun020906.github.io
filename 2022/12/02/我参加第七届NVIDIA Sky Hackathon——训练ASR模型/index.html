@@ -40,7 +40,7 @@
 <meta property="og:title" content="我参加第七届NVIDIA Sky Hackathon——训练ASR模型">
 <meta property="og:url" content="https://mengfanjun020906.github.io/2022/12/02/%E6%88%91%E5%8F%82%E5%8A%A0%E7%AC%AC%E4%B8%83%E5%B1%8ANVIDIA%20Sky%20Hackathon%E2%80%94%E2%80%94%E8%AE%AD%E7%BB%83ASR%E6%A8%A1%E5%9E%8B/index.html">
 <meta property="og:site_name" content="MengFanjun的博客">
-<meta property="og:description" content="如何从0开始训练自己的ASR模型 第一步 获取NGC密钥 第二步 配置Ubuntu22.04的运行环境 第三步 开始训练ASR模型  前言 Sky Hackathon由NVIDIA发起并主办，项目旨在帮助在校学生、深度学习开发者在NVIDIA Jetson边缘高性能计算产品上部署和优化人工智能应用。在经验丰富的GPU导师指导下，通过黑客松竞赛的方式学习业界所需的深度学习相关应用开发及其并行计算技能">
+<meta property="og:description" content="如何从0开始训练自己的ASR模型第一步 获取NGC密钥第二步 配置Ubuntu22.04的运行环境第三步 开始训练ASR模型  前言Sky Hackathon由NVIDIA发起并主办，项目旨在帮助在校学生、深度学习开发者在NVIDIA Jetson边缘高性能计算产品上部署和优化人工智能应用。在经验丰富的GPU导师指导下，通过黑客松竞赛的方式学习业界所需的深度学习相关应用开发及其并行计算技能，激发学">
 <meta property="og:locale" content="en_US">
 <meta property="og:image" content="https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png">
 <meta property="article:published_time" content="2022-12-02T02:39:21.000Z">
@@ -1598,7 +1598,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
     debug: "env",
     cdn: {"js":{"app":"/js/app.js","parallax":"/js/plugins/parallax.js","rightMenu":"/js/plugins/rightMenu.js","rightMenus":"/js/plugins/rightMenus.js","sites":"/js/plugins/tags/sites.js","friends":"/js/plugins/tags/friends.js","contributors":"/js/plugins/tags/contributors.js","search":"/js/search/hexo.js"},"css":{"style":"/css/style.css"}},
     default: {"avatar":"https://unpkg.com/volantis-static@0.0.1654736714924/media/placeholder/avatar/round/3442075.svg","link":"https://unpkg.com/volantis-static@0.0.1654736714924/media/placeholder/link/8f277b4ee0ecd.svg","cover":"https://unpkg.com/volantis-static@0.0.1654736714924/media/placeholder/cover/76b86c0226ffd.svg","image":"https://unpkg.com/volantis-static@0.0.1654736714924/media/placeholder/image/2659360.svg"},
-    lastupdate: new Date(1765118762067),
+    lastupdate: new Date(1765119292905),
     sidebar: {
       for_page: ["blogger","category","tagcloud","webinfo","lastupdate"],
       for_post: ["toc"],
@@ -2464,50 +2464,22 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
 
   <div id="layoutHelper-page-plugins"></div>
   <div id="post-body" itemprop="articleBody">
-    <h1 id="如何从0开始训练自己的asr模型">如何从0开始训练自己的ASR模型</h1>
-<p>第一步 获取NGC密钥 第二步 配置Ubuntu22.04的运行环境 第三步
-开始训练ASR模型</p>
-<hr />
-<h1 id="前言">前言</h1>
-<p>Sky
-Hackathon由NVIDIA发起并主办，项目旨在帮助在校学生、深度学习开发者在NVIDIA
-Jetson边缘高性能计算产品上部署和优化人工智能应用。在经验丰富的GPU导师指导下，通过黑客松竞赛的方式学习业界所需的深度学习相关应用开发及其并行计算技能，激发学生们的学习兴趣与创新力。</p>
-<p>NVIDIA工程师将亲自为参赛队伍带来他们对最新的深度学习与边缘计算方面的理解、行业的趋势与最新的技术应用及最新开发工具实战技能知识，在训练营中对参赛队伍进行指导。</p>
-<p>Sky
-Hackathon为参加者提供了一个难得的学习并实操的机会，学习嵌入式深度学习开发所需的动手技能，
-通过使用NVIDIA最新的编程模型、库和工具以加速和优化他们的AI应用程序。</p>
-<p>相关网站：<a target="_blank" rel="noopener" href="https://jetsoncloud.com/match?id=2">第七届NVIDIA
-SKy Hackathon</a></p>
-<p>比赛文件资料链接：
-https://pan.baidu.com/s/1UADeDey1OsTvEOPE5f_2CA?pwd=a647 提取码:
-a647</p>
-<hr />
-<h1 id="一获取ngc密钥">一、获取NGC密钥</h1>
-<p>进入NGC网站：<a target="_blank" rel="noopener" href="https://catalog.ngc.nvidia.com">NVIDIA NGC</a>
-<img
-src="https://mfjblog-pic.oss-cn-beijing.aliyuncs.com/img/8875d7668cdd4162a703ecb026d9f792.png"
-alt="在这里插入图片描述" /> 点击注册</p>
-<p><img
-src="https://mfjblog-pic.oss-cn-beijing.aliyuncs.com/img/baedc4fbb7d64f20a87714182f22bee8.png"
-alt="在这里插入图片描述" /> 登陆之后点击右上角set up <img
-src="https://mfjblog-pic.oss-cn-beijing.aliyuncs.com/img/3ec4dc2748554e7da1b3364017b9eecf.png"
-alt="在这里插入图片描述" /> 点击Get API Key <img
-src="https://mfjblog-pic.oss-cn-beijing.aliyuncs.com/img/3ff4865ce7a341be8caf52526d416ba7.png"
-alt="在这里插入图片描述" /> 点击Generate API Key <img
-src="https://mfjblog-pic.oss-cn-beijing.aliyuncs.com/img/32940ec91d754116aea685cc6c82b953.png"
-alt="在这里插入图片描述" /> 这里就是你的API Key了 <img
-src="https://mfjblog-pic.oss-cn-beijing.aliyuncs.com/img/7f068612743c4eecb2c58d42ed5b1b5a.png"
-alt="在这里插入图片描述" /></p>
-<h1 id="二配置ubuntu22.04的运行环境">二、配置Ubuntu22.04的运行环境</h1>
-<h2 id="安装-nvidia-驱动-460-以上版本">1.安装 NVIDIA 驱动 460
-以上版本</h2>
-<blockquote>
+    <h1 id="如何从0开始训练自己的ASR模型"><a href="#如何从0开始训练自己的ASR模型" class="headerlink" title="如何从0开始训练自己的ASR模型"></a>如何从0开始训练自己的ASR模型</h1><p>第一步 获取NGC密钥<br>第二步 配置Ubuntu22.04的运行环境<br>第三步 开始训练ASR模型</p>
+<hr>
+<h1 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h1><p>Sky Hackathon由NVIDIA发起并主办，项目旨在帮助在校学生、深度学习开发者在NVIDIA Jetson边缘高性能计算产品上部署和优化人工智能应用。在经验丰富的GPU导师指导下，通过黑客松竞赛的方式学习业界所需的深度学习相关应用开发及其并行计算技能，激发学生们的学习兴趣与创新力。</p>
+<p> NVIDIA工程师将亲自为参赛队伍带来他们对最新的深度学习与边缘计算方面的理解、行业的趋势与最新的技术应用及最新开发工具实战技能知识，在训练营中对参赛队伍进行指导。 </p>
+<p>Sky Hackathon为参加者提供了一个难得的学习并实操的机会，学习嵌入式深度学习开发所需的动手技能， 通过使用NVIDIA最新的编程模型、库和工具以加速和优化他们的AI应用程序。</p>
+<p>相关网站：<a target="_blank" rel="noopener" href="https://jetsoncloud.com/match?id=2">第七届NVIDIA SKy Hackathon</a></p>
+<p>比赛文件资料链接： <a target="_blank" rel="noopener" href="https://pan.baidu.com/s/1UADeDey1OsTvEOPE5f_2CA?pwd=a647">https://pan.baidu.com/s/1UADeDey1OsTvEOPE5f_2CA?pwd=a647</a> 提取码: a647</p>
+<hr>
+<h1 id="一、获取NGC密钥"><a href="#一、获取NGC密钥" class="headerlink" title="一、获取NGC密钥"></a>一、获取NGC密钥</h1><p>进入NGC网站：<a target="_blank" rel="noopener" href="https://catalog.ngc.nvidia.com/">NVIDIA NGC</a><br><img src="https://mfjblog-pic.oss-cn-beijing.aliyuncs.com/img/8875d7668cdd4162a703ecb026d9f792.png" class="lazyload" data-srcset="https://mfjblog-pic.oss-cn-beijing.aliyuncs.com/img/8875d7668cdd4162a703ecb026d9f792.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="在这里插入图片描述"><br>点击注册</p>
+<p><img src="https://mfjblog-pic.oss-cn-beijing.aliyuncs.com/img/baedc4fbb7d64f20a87714182f22bee8.png" class="lazyload" data-srcset="https://mfjblog-pic.oss-cn-beijing.aliyuncs.com/img/baedc4fbb7d64f20a87714182f22bee8.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="在这里插入图片描述"><br>登陆之后点击右上角set up<br><img src="https://mfjblog-pic.oss-cn-beijing.aliyuncs.com/img/3ec4dc2748554e7da1b3364017b9eecf.png" class="lazyload" data-srcset="https://mfjblog-pic.oss-cn-beijing.aliyuncs.com/img/3ec4dc2748554e7da1b3364017b9eecf.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="在这里插入图片描述"><br>点击Get API Key<br><img src="https://mfjblog-pic.oss-cn-beijing.aliyuncs.com/img/3ff4865ce7a341be8caf52526d416ba7.png" class="lazyload" data-srcset="https://mfjblog-pic.oss-cn-beijing.aliyuncs.com/img/3ff4865ce7a341be8caf52526d416ba7.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="在这里插入图片描述"><br>点击Generate API Key<br><img src="https://mfjblog-pic.oss-cn-beijing.aliyuncs.com/img/32940ec91d754116aea685cc6c82b953.png" class="lazyload" data-srcset="https://mfjblog-pic.oss-cn-beijing.aliyuncs.com/img/32940ec91d754116aea685cc6c82b953.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="在这里插入图片描述"><br>这里就是你的API Key了<br><img src="https://mfjblog-pic.oss-cn-beijing.aliyuncs.com/img/7f068612743c4eecb2c58d42ed5b1b5a.png" class="lazyload" data-srcset="https://mfjblog-pic.oss-cn-beijing.aliyuncs.com/img/7f068612743c4eecb2c58d42ed5b1b5a.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="在这里插入图片描述"></p>
+<h1 id="二、配置Ubuntu22-04的运行环境"><a href="#二、配置Ubuntu22-04的运行环境" class="headerlink" title="二、配置Ubuntu22.04的运行环境"></a>二、配置Ubuntu22.04的运行环境</h1><h2 id="1-安装-NVIDIA-驱动-460-以上版本"><a href="#1-安装-NVIDIA-驱动-460-以上版本" class="headerlink" title="1.安装 NVIDIA 驱动 460 以上版本"></a>1.安装 NVIDIA 驱动 460 以上版本</h2><blockquote>
 <p>代码如下：</p>
 </blockquote>
 <figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">sudo apt-get install software-properties-common </span><br><span class="line">sudo add-apt-repository ppa:graphics-drivers/ppa </span><br><span class="line">sudo apt-get install nvidia-driver<span class="number">-460</span> </span><br><span class="line">sudo reboot # 重启之后才会生效，重启后执行 nvidia-smi 检查驱动</span><br></pre></td></tr></table></figure>
-<h2 id="安装-docker-与-nvidia-docker2">2.安装 docker 与
-nvidia-docker2</h2>
-<blockquote>
+
+<h2 id="2-安装-docker-与-nvidia-docker2"><a href="#2-安装-docker-与-nvidia-docker2" class="headerlink" title="2.安装 docker 与 nvidia-docker2"></a>2.安装 docker 与 nvidia-docker2</h2><blockquote>
 <p>代码如下(安装 docker)：</p>
 </blockquote>
 <figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">sudo apt-get install -y ca-certificates curl gnupg lsb-release </span><br><span class="line">curl -fsSL https:<span class="comment">//download.docker.com/linux/ubuntu/gpg | sudo gpg --dearmor -o /usr/share/keyrings/docker-archive-keyring.gpg </span></span><br><span class="line">echo <span class="string">&quot;deb [arch=$(dpkg --print-architecture) signed-by=/usr/share/keyrings/dockerarchive-keyring.gpg] https://download.docker.com/linux/ubuntu $(lsb_release -cs)stable&quot;</span> | ¥ $ sudo tee /etc/apt/sources.<span class="built_in">list</span>.d/docker.<span class="built_in">list</span> &gt; /dev/null sudo apt-get update</span><br><span class="line">sudo apt-get install -y docker-ce docker-ce-cli containerd.io</span><br><span class="line"># 测试安装 </span><br><span class="line">sudo docker run hello-world</span><br></pre></td></tr></table></figure>
@@ -2515,14 +2487,12 @@ nvidia-docker2</h2>
 <p>代码如下(安装 nvidia-docker2)：</p>
 </blockquote>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">curl -s -L https://nvidia.github.io/nvidia-docker/gpgkey | sudo apt-key add -distribution=$(. /etc/os-release;<span class="built_in">echo</span> $ID<span class="variable">$VERSION_ID</span>)</span><br><span class="line">curl -s -L https://nvidia.github.io/nvidia-docker/<span class="variable">$distribution</span>/nvidia-docker.list | sudo <span class="built_in">tee</span> /etc/apt/sources.list.d/nvidia-docker.list </span><br><span class="line">sudo apt-get update &amp;&amp; sudo apt-get install -y nvidia-docker2 </span><br><span class="line">sudo systemctl restart docker </span><br><span class="line"><span class="comment"># 测试安装 </span></span><br><span class="line">sudo docker run --<span class="built_in">rm</span> --gpus all nvidia/cuda:11.0.3-base-ubuntu20.04 nvidia-smi</span><br></pre></td></tr></table></figure>
-<p>如果出现以下信息，表示 docker 与 nvidia-docker2 都安装完成 <img
-src="https://mfjblog-pic.oss-cn-beijing.aliyuncs.com/img/02aefb9c64a4422aaf26a024a66a91c3.png"
-alt="在这里插入图片描述" /> &gt;代码如下(登录
-NGC：只要登录一次就行)：</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo docker login -u <span class="string">&#x27;$oauthtoken&#x27;</span> --password-stdin nvcr.io &lt;&lt;&lt; <span class="string">&#x27;申请的密钥&#x27;</span></span><br></pre></td></tr></table></figure>
-<h2 id="安装-miniconda3-与-jupyter-开发环境">3.安装 MiniConda3 与
-Jupyter 开发环境</h2>
+<p>如果出现以下信息，表示 docker 与 nvidia-docker2 都安装完成<br><img src="https://mfjblog-pic.oss-cn-beijing.aliyuncs.com/img/02aefb9c64a4422aaf26a024a66a91c3.png" class="lazyload" data-srcset="https://mfjblog-pic.oss-cn-beijing.aliyuncs.com/img/02aefb9c64a4422aaf26a024a66a91c3.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="在这里插入图片描述"></p>
 <blockquote>
+<p>代码如下(登录 NGC：只要登录一次就行)：</p>
+</blockquote>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo docker login -u <span class="string">&#x27;$oauthtoken&#x27;</span> --password-stdin nvcr.io &lt;&lt;&lt; <span class="string">&#x27;申请的密钥&#x27;</span></span><br></pre></td></tr></table></figure>
+<h2 id="3-安装-MiniConda3-与-Jupyter-开发环境"><a href="#3-安装-MiniConda3-与-Jupyter-开发环境" class="headerlink" title="3.安装 MiniConda3 与 Jupyter 开发环境"></a>3.安装 MiniConda3 与 Jupyter 开发环境</h2><blockquote>
 <p>代码如下(安装 MiniConda)：</p>
 </blockquote>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 用国内清华源 </span></span><br><span class="line"><span class="built_in">export</span> DL_SITE=https://mirrors.tuna.tsinghua.edu.cn/anaconda/miniconda <span class="comment"># 用原厂的源 </span></span><br><span class="line"><span class="built_in">export</span> DL_SITE=https://repo.anaconda.com/miniconda </span><br><span class="line"><span class="comment"># 下载安装包</span></span><br><span class="line">wget -c <span class="variable">$DL_SITE</span>/Miniconda3-py38_4.10.3-Linux-x86_64.sh </span><br><span class="line"><span class="comment"># 执行安装，全部按照预设路径与”yes”选项 </span></span><br><span class="line">bash Miniconda3-py38_4.10.3-Linux-x86_64.sh </span><br><span class="line"><span class="comment"># 启动 </span></span><br><span class="line">Conda <span class="built_in">source</span> ~/.bashrc</span><br></pre></td></tr></table></figure>
@@ -2530,38 +2500,35 @@ Jupyter 开发环境</h2>
 <p>代码如下(安装 Jupyter Lab)：</p>
 </blockquote>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">pip install jupyter jupyterlab <span class="comment"># 设置登录密码</span></span><br><span class="line"><span class="built_in">export</span> PW=’你自己要设置的密码‘</span><br><span class="line">python3 -c <span class="string">&quot;from notebook.auth.security import set_password; set_password(&#x27;<span class="variable">$PW</span>&#x27;,&#x27;<span class="variable">$HOME</span>/.jupyter/jupyter_notebook_config.json&#x27;)&quot;</span></span><br></pre></td></tr></table></figure>
-<h2 id="安装-nemo-1.4.0">4.安装 NeMo 1.4.0</h2>
-<p>通过 pip 安装 GPU 版本 Pytorch 参考链接
-https://pytorch.org/get-started/previous-versions/</p>
+<h2 id="4-安装-NeMo-1-4-0"><a href="#4-安装-NeMo-1-4-0" class="headerlink" title="4.安装 NeMo 1.4.0"></a>4.安装 NeMo 1.4.0</h2><p>通过 pip 安装 GPU 版本 Pytorch 参考链接 <a target="_blank" rel="noopener" href="https://pytorch.org/get-started/previous-versions/">https://pytorch.org/get-started/previous-versions/</a></p>
 <p>例如 Pytorch1.12.1 版本则安装指令如下：</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">pip install torch==1.12.1+cu113 torchvision==0.13.1+cu113 torchaudio==0.12.1 --extra-indexurl https://download.pytorch.org/whl/cu113</span><br></pre></td></tr></table></figure>
+
 <blockquote>
 <p>代码如下(安装 NeMo)：</p>
 </blockquote>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">sudo apt-get update &amp;&amp; sudo apt-get install -y libsndfile1 ffmpeg </span><br><span class="line">pip install Cython </span><br><span class="line">pip install --user pytest-runner </span><br><span class="line">pip install rosa numpy==1.19.4 </span><br><span class="line">pip install torchmetrics==0.6.0 </span><br><span class="line">pip install nemo_toolkit[all]==1.4.0 </span><br><span class="line">pip install ASR-metrics</span><br></pre></td></tr></table></figure>
+
 <blockquote>
 <p>代码如下(检测NeMo)：</p>
 </blockquote>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">python</span><br><span class="line">import nemo</span><br><span class="line">import nemo.collections.asr as nemo_asr</span><br></pre></td></tr></table></figure>
 <p>若没有报错表示安装成功（warning 不用理会）</p>
-<h2 id="安装-tao-模型训练优化工具用-python-与-virtualenv">5.安装 TAO
-模型训练优化工具：用 Python 与 Virtualenv</h2>
-<blockquote>
-<p>代码如下(安装 virtualenv 虚拟环境：这是确保 TAO 有独立的 Python
-执行环境，为配合 Nemo 工 具使用 Python 3.8 的 MiniConda 安装，因此这里的
-virtualenv 也绑定在 MiniConda 的 Python3 上)：</p>
+<h2 id="5-安装-TAO-模型训练优化工具：用-Python-与-Virtualenv"><a href="#5-安装-TAO-模型训练优化工具：用-Python-与-Virtualenv" class="headerlink" title="5.安装 TAO 模型训练优化工具：用 Python 与 Virtualenv"></a>5.安装 TAO 模型训练优化工具：用 Python 与 Virtualenv</h2><blockquote>
+<p>代码如下(安装 virtualenv 虚拟环境：这是确保 TAO 有独立的 Python 执行环境，为配合 Nemo 工 具使用 Python 3.8 的 MiniConda 安装，因此这里的 virtualenv 也绑定在 MiniConda 的 Python3 上)：</p>
 </blockquote>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">pip install virtualenv virtualenvwrapper </span><br><span class="line"><span class="comment"># 创建目录用来存放虚拟环境 </span></span><br><span class="line"><span class="built_in">mkdir</span> <span class="variable">$HOME</span>/.virtualenvs </span><br><span class="line"><span class="comment"># 在~/.bashrc 中添加行： </span></span><br><span class="line"><span class="built_in">export</span> WORKON_HOME=<span class="variable">$HOME</span>/.virtualenvs <span class="built_in">export</span> VIRTUALENVWRAPPER_PYTHON=<span class="variable">$HOME</span>/miniconda3/bin/python3 </span><br><span class="line"><span class="built_in">source</span> <span class="variable">$HOME</span>/miniconda3/bin/virtualenvwrapper.sh </span><br><span class="line"><span class="comment"># 保存并退出 </span></span><br><span class="line"><span class="built_in">source</span> ~/.bashrc </span><br><span class="line"><span class="comment"># 创建名为”tao”的 Virtualenv </span></span><br><span class="line">mkvirtualenv tao -p <span class="variable">$HOME</span>/miniconda3/bin/python3</span><br></pre></td></tr></table></figure>
+
 <blockquote>
 <p>代码如下(安装 TAO 模型训练工具)：</p>
 </blockquote>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 确认在 ”tao” 的 Virtualenv 环境下，如果不在的话就执行以下指令 </span></span><br><span class="line">workon tao </span><br><span class="line"><span class="comment"># 安装 nvidia-pyindex 与 nvidia-tao </span></span><br><span class="line">pip3 install nvidia-pyindex </span><br><span class="line">pip3 install nvidia-tao </span><br><span class="line"><span class="comment"># 检查安装 </span></span><br><span class="line">tao info</span><br></pre></td></tr></table></figure>
+
 <blockquote>
 <p>代码如下(启动 TAO 模型训练工具 Jupyter 交互界面)：</p>
 </blockquote>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 启动名为 “tao” 的 virtualenv </span></span><br><span class="line">workon tao </span><br><span class="line"><span class="comment"># 进入工作目录并启动 Jupyter Lab </span></span><br><span class="line"><span class="built_in">cd</span> ~/hackathon &amp;&amp; jupyter lab --ip 0.0.0.0 --port 8888 --allow-root</span><br></pre></td></tr></table></figure>
-<p>输入您先前设置的密码就能进去，进入 Jupyter Lab 之后是以~/hackathon
-为根目录</p>
+<p>输入您先前设置的密码就能进去，进入 Jupyter Lab 之后是以~&#x2F;hackathon 为根目录</p>
 <blockquote>
 <p>代码如下(启动Jupyter)：</p>
 </blockquote>
@@ -2571,22 +2538,21 @@ virtualenv 也绑定在 MiniConda 的 Python3 上)：</p>
 </blockquote>
 <p>在ubuntu的终端输入ip address</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br></pre></td><td class="code"><pre><span class="line">1: lo: &lt;LOOPBACK,UP,LOWER_UP&gt; mtu 65536 qdisc noqueue state UNKNOWN group default qlen 1000</span><br><span class="line">    <span class="built_in">link</span>/loopback 00:00:00:00:00:00 brd 00:00:00:00:00:00</span><br><span class="line">    inet 127.0.0.1/8 scope host lo</span><br><span class="line">       valid_lft forever preferred_lft forever</span><br><span class="line">    inet6 ::1/128 scope host </span><br><span class="line">       valid_lft forever preferred_lft forever</span><br><span class="line">2: enp8s0: &lt;BROADCAST,MULTICAST&gt; mtu 1500 qdisc noop state DOWN group default qlen 1000</span><br><span class="line">    <span class="built_in">link</span>/ether b4:a9:<span class="built_in">fc</span>:6c:6b:5e brd ff:ff:ff:ff:ff:ff</span><br><span class="line">3: wlp0s20f3: &lt;BROADCAST,MULTICAST,UP,LOWER_UP&gt; mtu 1500 qdisc noqueue state UP group default qlen 1000</span><br><span class="line">    <span class="built_in">link</span>/ether 40:ec:99:20:b5:61 brd ff:ff:ff:ff:ff:ff</span><br><span class="line">    inet 10.20.113.129/22 brd 10.20.115.255 scope global wlp0s20f3</span><br><span class="line">       valid_lft forever preferred_lft forever</span><br><span class="line">    inet 192.168.1.206/24 brd 192.168.1.255 scope global dynamic noprefixroute wlp0s20f3</span><br><span class="line">       valid_lft 79725sec preferred_lft 79725sec</span><br><span class="line">    inet6 2409:8a02:6068:880:4691:5ea5:dbf9:3151/64 scope global temporary dynamic </span><br><span class="line">       valid_lft 259087sec preferred_lft 79410sec</span><br><span class="line">    inet6 2409:8a02:6068:880:ff41:1037:c6e5:bd3b/64 scope global dynamic mngtmpaddr noprefixroute </span><br><span class="line">       valid_lft 259087sec preferred_lft 259087sec</span><br><span class="line">    inet6 fe80::f0ce:78ab:12c0:d59e/64 scope <span class="built_in">link</span> noprefixroute </span><br><span class="line">       valid_lft forever preferred_lft forever</span><br><span class="line">4: docker0: &lt;BROADCAST,MULTICAST,UP,LOWER_UP&gt; mtu 1500 qdisc noqueue state UP group default </span><br><span class="line">    <span class="built_in">link</span>/ether 02:42:10:5d:d6:56 brd ff:ff:ff:ff:ff:ff</span><br><span class="line">    inet 172.17.0.1/16 brd 172.17.255.255 scope global docker0</span><br><span class="line">       valid_lft forever preferred_lft forever</span><br><span class="line">    inet6 fe80::42:10ff:fe5d:d656/64 scope <span class="built_in">link</span> </span><br><span class="line">       valid_lft forever preferred_lft forever</span><br><span class="line">22: vethd32e2b1@if21: &lt;BROADCAST,MULTICAST,UP,LOWER_UP&gt; mtu 1500 qdisc noqueue master docker0 state UP group default </span><br><span class="line">    <span class="built_in">link</span>/ether f6:73:02:10:2c:98 brd ff:ff:ff:ff:ff:ff link-netnsid 0</span><br><span class="line">    inet6 fe80::f473:2ff:fe10:2c98/64 scope <span class="built_in">link</span> </span><br><span class="line">       valid_lft forever preferred_lft forever</span><br><span class="line">30: veth442d3b9@if29: &lt;BROADCAST,MULTICAST,UP,LOWER_UP&gt; mtu 1500 qdisc noqueue master docker0 state UP group default </span><br><span class="line">    <span class="built_in">link</span>/ether 1e:66:e8:63:24:11 brd ff:ff:ff:ff:ff:ff link-netnsid 1</span><br><span class="line">    inet6 fe80::1c66:e8ff:fe63:2411/64 scope <span class="built_in">link</span> </span><br><span class="line">       valid_lft forever preferred_lft forever</span><br><span class="line">34: veth7c78114@if33: &lt;BROADCAST,MULTICAST,UP,LOWER_UP&gt; mtu 1500 qdisc noqueue master docker0 state UP group default </span><br><span class="line">    <span class="built_in">link</span>/ether 9a:a2:4d:ac:13:0a brd ff:ff:ff:ff:ff:ff link-netnsid 2</span><br><span class="line">    inet6 fe80::98a2:4dff:feac:130a/64 scope <span class="built_in">link</span> </span><br><span class="line">       valid_lft forever preferred_lft forever</span><br></pre></td></tr></table></figure>
-<p>我这里的ip是192.168.1.206 在浏览器里面输入</p>
+<p>我这里的ip是192.168.1.206<br>在浏览器里面输入</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">192.168.1.206:8888</span><br></pre></td></tr></table></figure>
 <p>就能进入Jupyter Lab了</p>
-<h1 id="三开始训练asr模型">三、开始训练ASR模型</h1>
-<h2 id="制作数据集">1.制作数据集</h2>
-<p>数据集格式——json文件格式</p>
+<h1 id="三、开始训练ASR模型"><a href="#三、开始训练ASR模型" class="headerlink" title="三、开始训练ASR模型"></a>三、开始训练ASR模型</h1><h2 id="1-制作数据集"><a href="#1-制作数据集" class="headerlink" title="1.制作数据集"></a>1.制作数据集</h2><p>数据集格式——json文件格式</p>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line"><span class="string">&quot;audio_filepath&quot;</span>:<span class="string">&quot;your_path&quot;</span>,</span><br><span class="line"><span class="string">&quot;duration&quot;</span>:time,</span><br><span class="line"><span class="string">&quot;text&quot;</span>:<span class="string">&quot;your_text&quot;</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>利用librosa获取其语音 注意：音频为单声道，wav格式，采样率建议44100HZ
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 导入librosa音频工具包获取音频时长,用于制作语音数据集</span></span><br><span class="line"><span class="keyword">import</span> librosa </span><br><span class="line">time = librosa.get_duration(filename=<span class="string">&quot;你音频的路径&quot;</span>)</span><br><span class="line"><span class="built_in">print</span>(time)</span><br></pre></td></tr></table></figure> 最后数据集文件结构 ├── Datasets │├── audio.wav
-所有的语音文件(wav单声道格式) │├── xxx.json 制作好的json文件</p>
-<h2 id="对其进行训练">2.对其进行训练</h2>
-<p>导入基本包</p>
+<p>利用librosa获取其语音<br>注意：音频为单声道，wav格式，采样率建议44100HZ</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 导入librosa音频工具包获取音频时长,用于制作语音数据集</span></span><br><span class="line"><span class="keyword">import</span> librosa </span><br><span class="line">time = librosa.get_duration(filename=<span class="string">&quot;你音频的路径&quot;</span>)</span><br><span class="line"><span class="built_in">print</span>(time)</span><br></pre></td></tr></table></figure>
+<p>最后数据集文件结构<br>├── Datasets<br>│├── audio.wav  所有的语音文件(wav单声道格式)<br>│├── xxx.json  制作好的json文件</p>
+<h2 id="2-对其进行训练"><a href="#2-对其进行训练" class="headerlink" title="2.对其进行训练"></a>2.对其进行训练</h2><p>导入基本包</p>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> nemo</span><br><span class="line">nemo.__version__</span><br><span class="line"><span class="keyword">import</span> torch</span><br><span class="line">torch.__version__</span><br><span class="line">torch.cuda.is_available()</span><br><span class="line"><span class="keyword">import</span> nemo.collections.asr <span class="keyword">as</span> nemo_asr</span><br></pre></td></tr></table></figure>
 <p>加载数据清单</p>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#将制作好的json格式的数据清单加载进来</span></span><br><span class="line">train_manifest = <span class="string">&quot;your_path/xxx.json&quot;</span></span><br><span class="line">test_manifest = <span class="string">&quot;your_path/xxx.json&quot;</span></span><br></pre></td></tr></table></figure>
-<p>加载quartznet文件 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 使用YAML读取quartznet模型配置文件</span></span><br><span class="line"><span class="keyword">try</span>:</span><br><span class="line">    <span class="keyword">from</span> ruamel.yaml <span class="keyword">import</span> YAML</span><br><span class="line"><span class="keyword">except</span> ModuleNotFoundError:</span><br><span class="line">    <span class="keyword">from</span> ruamel_yaml <span class="keyword">import</span> YAML</span><br><span class="line">config_path =<span class="string">&quot;/root/config/quartznet_15x5_zh.yaml&quot;</span></span><br><span class="line"></span><br><span class="line">yaml = YAML(typ=<span class="string">&#x27;safe&#x27;</span>)</span><br><span class="line"><span class="keyword">with</span> <span class="built_in">open</span>(config_path) <span class="keyword">as</span> f:</span><br><span class="line">    params = yaml.load(f)</span><br><span class="line"><span class="built_in">print</span>(params)</span><br></pre></td></tr></table></figure></p>
+<p>加载quartznet文件</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 使用YAML读取quartznet模型配置文件</span></span><br><span class="line"><span class="keyword">try</span>:</span><br><span class="line">    <span class="keyword">from</span> ruamel.yaml <span class="keyword">import</span> YAML</span><br><span class="line"><span class="keyword">except</span> ModuleNotFoundError:</span><br><span class="line">    <span class="keyword">from</span> ruamel_yaml <span class="keyword">import</span> YAML</span><br><span class="line">config_path =<span class="string">&quot;/root/config/quartznet_15x5_zh.yaml&quot;</span></span><br><span class="line"></span><br><span class="line">yaml = YAML(typ=<span class="string">&#x27;safe&#x27;</span>)</span><br><span class="line"><span class="keyword">with</span> <span class="built_in">open</span>(config_path) <span class="keyword">as</span> f:</span><br><span class="line">    params = yaml.load(f)</span><br><span class="line"><span class="built_in">print</span>(params)</span><br></pre></td></tr></table></figure>
+
 <p>将数据清单传给配置文件</p>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">params[<span class="string">&#x27;model&#x27;</span>][<span class="string">&#x27;train_ds&#x27;</span>][<span class="string">&#x27;manifest_filepath&#x27;</span>]=train_manifest</span><br><span class="line">params[<span class="string">&#x27;model&#x27;</span>][<span class="string">&#x27;validation_ds&#x27;</span>][<span class="string">&#x27;manifest_filepath&#x27;</span>]=test_manifest</span><br></pre></td></tr></table></figure>
 <p>使用迁移学习的方法训练模型</p>
@@ -2599,10 +2565,9 @@ virtualenv 也绑定在 MiniConda 的 Python3 上)：</p>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">asr_result = try_model_1.transcribe(paths2audio_files=[<span class="string">&quot;your_wav_path&quot;</span>])</span><br><span class="line"><span class="built_in">print</span>(asr_result)</span><br></pre></td></tr></table></figure>
 <p>计算其正确率</p>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> ASR_metrics <span class="keyword">import</span> utils <span class="keyword">as</span> metrics</span><br><span class="line">s1 = <span class="string">&quot;请检测出纸箱果皮和瓶子&quot;</span><span class="comment">#指定正确答案</span></span><br><span class="line">s2 = <span class="string">&quot; &quot;</span>.join(asr_result)<span class="comment">#识别结果</span></span><br><span class="line"><span class="built_in">print</span>(<span class="string">&quot;字错率:&#123;&#125;&quot;</span>.<span class="built_in">format</span>(metrics.calculate_cer(s1,s2)))<span class="comment">#计算字错率cer</span></span><br><span class="line"><span class="built_in">print</span>(<span class="string">&quot;准确率:&#123;&#125;&quot;</span>.<span class="built_in">format</span>(<span class="number">1</span>-metrics.calculate_cer(s1,s2)))<span class="comment">#计算准确率accuracy</span></span><br></pre></td></tr></table></figure>
-<hr />
-<h1 id="总结">总结</h1>
-<p>以上就是第七届NVIDIA Sky
-Hackathon的配置环境和训练ASR模型的部分，在制作时要注意json文件的格式，还有音频的格式，这些细小的部分都可能成为bug的发生地</p>
+
+<hr>
+<h1 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h1><p>以上就是第七届NVIDIA  Sky Hackathon的配置环境和训练ASR模型的部分，在制作时要注意json文件的格式，还有音频的格式，这些细小的部分都可能成为bug的发生地</p>
 
   </div>
   
@@ -2620,8 +2585,7 @@ Hackathon的配置环境和训练ASR模型的部分，在制作时要注意json�
             <blockquote>
               
                 
-                  <p>博客内容遵循 署名-非商业性使用-相同方式共享 4.0 国际 (CC BY-NC-SA
-4.0) 协议</p>
+                  <p>博客内容遵循 署名-非商业性使用-相同方式共享 4.0 国际 (CC BY-NC-SA 4.0) 协议</p>
 
                 
               
@@ -2737,9 +2701,7 @@ B站网课链接...</p>
       
         <a class='next' href='/2022/12/02/%E6%88%91%E5%8F%82%E5%8A%A0%E7%AC%AC%E4%B8%83%E5%B1%8ANVIDIA%20Sky%20Hackathon%E2%80%94%E2%80%94%E8%AE%AD%E7%BB%83CV%E6%A8%A1%E5%9E%8B/'>
           <p class='title'>我参加第七届NVIDIA Sky Hackathon——训练CV模型<i class="fa-solid fa-chevron-right" aria-hidden="true"></i></p>
-          <p class='content'>如何从0开始训练自己的CV模型
-第一步 配置基本环境(在上一篇已经配置了我参加第七届NVIDIA Sky
-Hackathon——训练ASR模型 ) 第二步 利用labelimg制作图像数据集 第...</p>
+          <p class='content'>如何从0开始训练自己的CV模型第一步 配置基本环境(在上一篇已经配置了我参加第七届NVIDIA Sky Hackathon——训练ASR模型  )第二步 利用labelimg制作图像数据集第三步...</p>
         </a>
       
     </div>
@@ -2797,11 +2759,7 @@ Hackathon——训练ASR模型 ) 第二步 利用labelimg制作图像数据集 �
 
 
     <div class='content'>
-        <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%AE%89%E8%A3%85-nvidia-%E9%A9%B1%E5%8A%A8-460-%E4%BB%A5%E4%B8%8A%E7%89%88%E6%9C%AC"><span class="toc-text">1.安装 NVIDIA 驱动 460
-以上版本</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%AE%89%E8%A3%85-docker-%E4%B8%8E-nvidia-docker2"><span class="toc-text">2.安装 docker 与
-nvidia-docker2</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%AE%89%E8%A3%85-miniconda3-%E4%B8%8E-jupyter-%E5%BC%80%E5%8F%91%E7%8E%AF%E5%A2%83"><span class="toc-text">3.安装 MiniConda3 与
-Jupyter 开发环境</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%AE%89%E8%A3%85-nemo-1.4.0"><span class="toc-text">4.安装 NeMo 1.4.0</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%AE%89%E8%A3%85-tao-%E6%A8%A1%E5%9E%8B%E8%AE%AD%E7%BB%83%E4%BC%98%E5%8C%96%E5%B7%A5%E5%85%B7%E7%94%A8-python-%E4%B8%8E-virtualenv"><span class="toc-text">5.安装 TAO
-模型训练优化工具：用 Python 与 Virtualenv</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%88%B6%E4%BD%9C%E6%95%B0%E6%8D%AE%E9%9B%86"><span class="toc-text">1.制作数据集</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%AF%B9%E5%85%B6%E8%BF%9B%E8%A1%8C%E8%AE%AD%E7%BB%83"><span class="toc-text">2.对其进行训练</span></a></li></ol>
+        <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#1-%E5%AE%89%E8%A3%85-NVIDIA-%E9%A9%B1%E5%8A%A8-460-%E4%BB%A5%E4%B8%8A%E7%89%88%E6%9C%AC"><span class="toc-text">1.安装 NVIDIA 驱动 460 以上版本</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2-%E5%AE%89%E8%A3%85-docker-%E4%B8%8E-nvidia-docker2"><span class="toc-text">2.安装 docker 与 nvidia-docker2</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#3-%E5%AE%89%E8%A3%85-MiniConda3-%E4%B8%8E-Jupyter-%E5%BC%80%E5%8F%91%E7%8E%AF%E5%A2%83"><span class="toc-text">3.安装 MiniConda3 与 Jupyter 开发环境</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#4-%E5%AE%89%E8%A3%85-NeMo-1-4-0"><span class="toc-text">4.安装 NeMo 1.4.0</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#5-%E5%AE%89%E8%A3%85-TAO-%E6%A8%A1%E5%9E%8B%E8%AE%AD%E7%BB%83%E4%BC%98%E5%8C%96%E5%B7%A5%E5%85%B7%EF%BC%9A%E7%94%A8-Python-%E4%B8%8E-Virtualenv"><span class="toc-text">5.安装 TAO 模型训练优化工具：用 Python 与 Virtualenv</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#1-%E5%88%B6%E4%BD%9C%E6%95%B0%E6%8D%AE%E9%9B%86"><span class="toc-text">1.制作数据集</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2-%E5%AF%B9%E5%85%B6%E8%BF%9B%E8%A1%8C%E8%AE%AD%E7%BB%83"><span class="toc-text">2.对其进行训练</span></a></li></ol>
     </div>
   </section>
 
@@ -2943,9 +2901,7 @@ Jupyter 开发环境</span></a></li><li class="toc-item toc-level-2"><a class="t
       
     
       
-        <div><p>Blog content follows the <a
-target="_blank" rel="noopener" href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.en">Attribution-NonCommercial-ShareAlike
-4.0 International (CC BY-NC-SA 4.0) License</a></p>
+        <div><p>Blog content follows the <a target="_blank" rel="noopener" href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.en">Attribution-NonCommercial-ShareAlike 4.0 International (CC BY-NC-SA 4.0) License</a></p>
 </div>
       
     

@@ -40,7 +40,7 @@
 <meta property="og:title" content="Arduino Uno零基础入门学习笔记——在LCD1602屏上显示温度和湿度">
 <meta property="og:url" content="https://mengfanjun020906.github.io/2022/12/19/Arduino%20Uno%E9%9B%B6%E5%9F%BA%E7%A1%80%E5%85%A5%E9%97%A8%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0%E2%80%94%E2%80%94%E5%9C%A8LCD1602%E5%B1%8F%E4%B8%8A%E6%98%BE%E7%A4%BA%E6%B8%A9%E5%BA%A6%E5%92%8C%E6%B9%BF%E5%BA%A6/index.html">
 <meta property="og:site_name" content="MengFanjun的博客">
-<meta property="og:description" content="一、电路连接 LCD1602IIC    LCD1602IIC引脚 Arduino引脚     VCC 5V   GND GND   SDA A4   SCL A5    我这里的LCD1602是IIC的，所以只需要4根线  ## 1-WIRE    传感器引脚 Arduino引脚     - GND   S 8   + 5V     中间的线是要接5V的 二、程序 123456789101112">
+<meta property="og:description" content="一、电路连接LCD1602IIC   LCD1602IIC引脚 Arduino引脚    VCC 5V   GND GND   SDA A4   SCL A5   我这里的LCD1602是IIC的，所以只需要4根线  1-WIRE   传感器引脚 Arduino引脚    - GND   S 8   + 5V   中间的线是要接5V的 二、程序123456789101112131415161718">
 <meta property="og:locale" content="en_US">
 <meta property="og:image" content="https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png">
 <meta property="article:published_time" content="2022-12-19T06:38:54.000Z">
@@ -1596,7 +1596,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
     debug: "env",
     cdn: {"js":{"app":"/js/app.js","parallax":"/js/plugins/parallax.js","rightMenu":"/js/plugins/rightMenu.js","rightMenus":"/js/plugins/rightMenus.js","sites":"/js/plugins/tags/sites.js","friends":"/js/plugins/tags/friends.js","contributors":"/js/plugins/tags/contributors.js","search":"/js/search/hexo.js"},"css":{"style":"/css/style.css"}},
     default: {"avatar":"https://unpkg.com/volantis-static@0.0.1654736714924/media/placeholder/avatar/round/3442075.svg","link":"https://unpkg.com/volantis-static@0.0.1654736714924/media/placeholder/link/8f277b4ee0ecd.svg","cover":"https://unpkg.com/volantis-static@0.0.1654736714924/media/placeholder/cover/76b86c0226ffd.svg","image":"https://unpkg.com/volantis-static@0.0.1654736714924/media/placeholder/image/2659360.svg"},
-    lastupdate: new Date(1765118762067),
+    lastupdate: new Date(1765119292905),
     sidebar: {
       for_page: ["blogger","category","tagcloud","webinfo","lastupdate"],
       for_post: ["toc"],
@@ -2420,7 +2420,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
   <div class="new-meta-item wordcount">
     <a class='notlink'>
       <i class="fa-solid fa-keyboard fa-fw" aria-hidden="true"></i>
-      <p>461 words</p>
+      <p>454 words</p>
     </a>
   </div>
   <div class="new-meta-item readtime">
@@ -2462,72 +2462,55 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
 
   <div id="layoutHelper-page-plugins"></div>
   <div id="post-body" itemprop="articleBody">
-    <h1 id="一电路连接">一、电路连接</h1>
-<h2 id="lcd1602iic">LCD1602IIC</h2>
-<table>
+    <h1 id="一、电路连接"><a href="#一、电路连接" class="headerlink" title="一、电路连接"></a>一、电路连接</h1><h2 id="LCD1602IIC"><a href="#LCD1602IIC" class="headerlink" title="LCD1602IIC"></a>LCD1602IIC</h2><table>
 <thead>
-<tr class="header">
+<tr>
 <th>LCD1602IIC引脚</th>
 <th>Arduino引脚</th>
 </tr>
 </thead>
-<tbody>
-<tr class="odd">
+<tbody><tr>
 <td>VCC</td>
 <td>5V</td>
 </tr>
-<tr class="even">
+<tr>
 <td>GND</td>
 <td>GND</td>
 </tr>
-<tr class="odd">
+<tr>
 <td>SDA</td>
 <td>A4</td>
 </tr>
-<tr class="even">
+<tr>
 <td>SCL</td>
 <td>A5</td>
 </tr>
-</tbody>
-</table>
+</tbody></table>
 <p>我这里的LCD1602是IIC的，所以只需要4根线</p>
-<p><img
-src="https://mfjblog-pic.oss-cn-beijing.aliyuncs.com/img/f0f63b0ccc684b42b617c94a959a2ea6-20230324135721057.png"
-alt="在这里插入图片描述" /> ## 1-WIRE</p>
-<table>
+<p><img src="https://mfjblog-pic.oss-cn-beijing.aliyuncs.com/img/f0f63b0ccc684b42b617c94a959a2ea6-20230324135721057.png" class="lazyload" data-srcset="https://mfjblog-pic.oss-cn-beijing.aliyuncs.com/img/f0f63b0ccc684b42b617c94a959a2ea6-20230324135721057.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="在这里插入图片描述"></p>
+<h2 id="1-WIRE"><a href="#1-WIRE" class="headerlink" title="1-WIRE"></a>1-WIRE</h2><table>
 <thead>
-<tr class="header">
+<tr>
 <th>传感器引脚</th>
 <th>Arduino引脚</th>
 </tr>
 </thead>
-<tbody>
-<tr class="odd">
+<tbody><tr>
 <td>-</td>
 <td>GND</td>
 </tr>
-<tr class="even">
+<tr>
 <td>S</td>
 <td>8</td>
 </tr>
-<tr class="odd">
+<tr>
 <td>+</td>
 <td>5V</td>
 </tr>
-</tbody>
-</table>
-<p><img
-src="https://mfjblog-pic.oss-cn-beijing.aliyuncs.com/img/c3aaa976100f417c8c3da928b2609028-20230324135724126.png"
-alt="在这里插入图片描述" /> 中间的线是要接5V的</p>
-<h1 id="二程序">二、程序</h1>
-<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;dht11.h&gt;</span>   <span class="comment">//引用dht11库文件，使得下面可以调用相关参数</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;Wire.h&gt;</span> </span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;LiquidCrystal_I2C.h&gt;</span> <span class="comment">//引用I2C库</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">define</span> dht11Pin 8   <span class="comment">//定义温湿度针脚号为8号引脚</span></span></span><br><span class="line">dht11 dht;    <span class="comment">//实例化一个对象</span></span><br><span class="line">LiquidCrystal_I2C <span class="title function_">lcd</span><span class="params">(<span class="number">0x27</span>,<span class="number">16</span>,<span class="number">2</span>)</span>; <span class="comment">//这里是0x27</span></span><br><span class="line"></span><br><span class="line"><span class="type">void</span> <span class="title function_">setup</span><span class="params">()</span>    <span class="comment">//初始化函数，只执行一次</span></span><br><span class="line">&#123;</span><br><span class="line">  Serial.begin(<span class="number">9600</span>);      <span class="comment">//设置波特率参数</span></span><br><span class="line">  pinMode(dht11Pin, OUTPUT);    <span class="comment">//通过定义将Arduino开发板上dht11Pin引脚(8号口)的工作模式转化为输出模式</span></span><br><span class="line"></span><br><span class="line">  lcd.init();                  <span class="comment">// 初始化LCD</span></span><br><span class="line">  lcd.backlight();             <span class="comment">//设置LCD背景等亮</span></span><br><span class="line"></span><br><span class="line">  lcd.setCursor(<span class="number">0</span>,<span class="number">0</span>); </span><br><span class="line">  lcd.print(<span class="string">&quot;  Thermometer    &quot;</span>);</span><br><span class="line">  delay(<span class="number">2000</span>);</span><br><span class="line">  lcd.clear();</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="type">void</span> <span class="title function_">loop</span><span class="params">()</span>     <span class="comment">//loop函数，重复循环执行</span></span><br><span class="line">&#123;</span><br><span class="line">  SerialTem();</span><br><span class="line">  ther();</span><br><span class="line">  delay(<span class="number">1000</span>);      <span class="comment">//延时1秒</span></span><br><span class="line">&#125;</span><br><span class="line"><span class="type">void</span> <span class="title function_">ther</span><span class="params">()</span><span class="comment">//温湿度计</span></span><br><span class="line">&#123;</span><br><span class="line">  <span class="type">int</span> tol = dht.read(dht11Pin);    <span class="comment">//将读取到的值赋给tol</span></span><br><span class="line">  <span class="type">int</span> temp = (<span class="type">float</span>)dht.temperature; <span class="comment">//将温度值赋值给temp</span></span><br><span class="line">  <span class="type">int</span> humi = (<span class="type">float</span>)dht.humidity; <span class="comment">//将湿度值赋给humi</span></span><br><span class="line"></span><br><span class="line">  lcd.setCursor(<span class="number">0</span>,<span class="number">0</span>);</span><br><span class="line">  lcd.print(<span class="string">&quot;Tem:&quot;</span>);</span><br><span class="line">  lcd.setCursor(<span class="number">4</span>,<span class="number">0</span>);</span><br><span class="line">  lcd.print(temp);</span><br><span class="line">  lcd.setCursor(<span class="number">6</span>,<span class="number">0</span>);</span><br><span class="line">  lcd.print(<span class="string">&quot;C&quot;</span>);</span><br><span class="line"></span><br><span class="line">  lcd.setCursor(<span class="number">0</span>,<span class="number">1</span>);</span><br><span class="line">  lcd.print(<span class="string">&quot;Hum:&quot;</span>);</span><br><span class="line">  lcd.setCursor(<span class="number">4</span>,<span class="number">1</span>);</span><br><span class="line">  lcd.print(humi);</span><br><span class="line">  lcd.setCursor(<span class="number">6</span>,<span class="number">1</span>);</span><br><span class="line">  lcd.print(<span class="string">&quot;%&quot;</span>);</span><br><span class="line">&#125;</span><br><span class="line"><span class="type">void</span> <span class="title function_">SerialTem</span><span class="params">()</span><span class="comment">//串口打印温度湿度</span></span><br><span class="line">&#123;</span><br><span class="line">  <span class="type">int</span> tol = dht.read(dht11Pin);    <span class="comment">//将读取到的值赋给tol</span></span><br><span class="line">  <span class="type">int</span> temp = (<span class="type">float</span>)dht.temperature; <span class="comment">//将温度值赋值给temp</span></span><br><span class="line">  <span class="type">int</span> humi = (<span class="type">float</span>)dht.humidity; <span class="comment">//将湿度值赋给humi</span></span><br><span class="line">  Serial.print(<span class="string">&quot;Temperature:&quot;</span>);     <span class="comment">//在串口打印出Tempeature:</span></span><br><span class="line">  Serial.print(temp);       <span class="comment">//在串口打印温度结果</span></span><br><span class="line">  Serial.println(<span class="string">&quot;.C&quot;</span>);    <span class="comment">//在串口打印出℃</span></span><br><span class="line">  Serial.print(<span class="string">&quot;Humidity:&quot;</span>);     <span class="comment">//在串口打印出Humidity:</span></span><br><span class="line">  Serial.print(humi);     <span class="comment">//在串口打印出湿度结果</span></span><br><span class="line">  Serial.println(<span class="string">&quot;%&quot;</span>);     <span class="comment">//在串口打印出%  </span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<h1 id="三效果">三、效果</h1>
-<figure>
-<img
-src="https://mfjblog-pic.oss-cn-beijing.aliyuncs.com/img/ebcd2f4f0a57455790f64fd0ce6ff042.gif"
-alt="请添加图片描述" />
-<figcaption aria-hidden="true">请添加图片描述</figcaption>
-</figure>
+</tbody></table>
+<p><img src="https://mfjblog-pic.oss-cn-beijing.aliyuncs.com/img/c3aaa976100f417c8c3da928b2609028-20230324135724126.png" class="lazyload" data-srcset="https://mfjblog-pic.oss-cn-beijing.aliyuncs.com/img/c3aaa976100f417c8c3da928b2609028-20230324135724126.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="在这里插入图片描述"><br>中间的线是要接5V的</p>
+<h1 id="二、程序"><a href="#二、程序" class="headerlink" title="二、程序"></a>二、程序</h1><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;dht11.h&gt;</span>   <span class="comment">//引用dht11库文件，使得下面可以调用相关参数</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;Wire.h&gt;</span> </span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;LiquidCrystal_I2C.h&gt;</span> <span class="comment">//引用I2C库</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">define</span> dht11Pin 8   <span class="comment">//定义温湿度针脚号为8号引脚</span></span></span><br><span class="line">dht11 dht;    <span class="comment">//实例化一个对象</span></span><br><span class="line">LiquidCrystal_I2C <span class="title function_">lcd</span><span class="params">(<span class="number">0x27</span>,<span class="number">16</span>,<span class="number">2</span>)</span>; <span class="comment">//这里是0x27</span></span><br><span class="line"></span><br><span class="line"><span class="type">void</span> <span class="title function_">setup</span><span class="params">()</span>    <span class="comment">//初始化函数，只执行一次</span></span><br><span class="line">&#123;</span><br><span class="line">  Serial.begin(<span class="number">9600</span>);      <span class="comment">//设置波特率参数</span></span><br><span class="line">  pinMode(dht11Pin, OUTPUT);    <span class="comment">//通过定义将Arduino开发板上dht11Pin引脚(8号口)的工作模式转化为输出模式</span></span><br><span class="line"></span><br><span class="line">  lcd.init();                  <span class="comment">// 初始化LCD</span></span><br><span class="line">  lcd.backlight();             <span class="comment">//设置LCD背景等亮</span></span><br><span class="line"></span><br><span class="line">  lcd.setCursor(<span class="number">0</span>,<span class="number">0</span>); </span><br><span class="line">  lcd.print(<span class="string">&quot;  Thermometer    &quot;</span>);</span><br><span class="line">  delay(<span class="number">2000</span>);</span><br><span class="line">  lcd.clear();</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="type">void</span> <span class="title function_">loop</span><span class="params">()</span>     <span class="comment">//loop函数，重复循环执行</span></span><br><span class="line">&#123;</span><br><span class="line">  SerialTem();</span><br><span class="line">  ther();</span><br><span class="line">  delay(<span class="number">1000</span>);      <span class="comment">//延时1秒</span></span><br><span class="line">&#125;</span><br><span class="line"><span class="type">void</span> <span class="title function_">ther</span><span class="params">()</span><span class="comment">//温湿度计</span></span><br><span class="line">&#123;</span><br><span class="line">  <span class="type">int</span> tol = dht.read(dht11Pin);    <span class="comment">//将读取到的值赋给tol</span></span><br><span class="line">  <span class="type">int</span> temp = (<span class="type">float</span>)dht.temperature; <span class="comment">//将温度值赋值给temp</span></span><br><span class="line">  <span class="type">int</span> humi = (<span class="type">float</span>)dht.humidity; <span class="comment">//将湿度值赋给humi</span></span><br><span class="line"></span><br><span class="line">  lcd.setCursor(<span class="number">0</span>,<span class="number">0</span>);</span><br><span class="line">  lcd.print(<span class="string">&quot;Tem:&quot;</span>);</span><br><span class="line">  lcd.setCursor(<span class="number">4</span>,<span class="number">0</span>);</span><br><span class="line">  lcd.print(temp);</span><br><span class="line">  lcd.setCursor(<span class="number">6</span>,<span class="number">0</span>);</span><br><span class="line">  lcd.print(<span class="string">&quot;C&quot;</span>);</span><br><span class="line"></span><br><span class="line">  lcd.setCursor(<span class="number">0</span>,<span class="number">1</span>);</span><br><span class="line">  lcd.print(<span class="string">&quot;Hum:&quot;</span>);</span><br><span class="line">  lcd.setCursor(<span class="number">4</span>,<span class="number">1</span>);</span><br><span class="line">  lcd.print(humi);</span><br><span class="line">  lcd.setCursor(<span class="number">6</span>,<span class="number">1</span>);</span><br><span class="line">  lcd.print(<span class="string">&quot;%&quot;</span>);</span><br><span class="line">&#125;</span><br><span class="line"><span class="type">void</span> <span class="title function_">SerialTem</span><span class="params">()</span><span class="comment">//串口打印温度湿度</span></span><br><span class="line">&#123;</span><br><span class="line">  <span class="type">int</span> tol = dht.read(dht11Pin);    <span class="comment">//将读取到的值赋给tol</span></span><br><span class="line">  <span class="type">int</span> temp = (<span class="type">float</span>)dht.temperature; <span class="comment">//将温度值赋值给temp</span></span><br><span class="line">  <span class="type">int</span> humi = (<span class="type">float</span>)dht.humidity; <span class="comment">//将湿度值赋给humi</span></span><br><span class="line">  Serial.print(<span class="string">&quot;Temperature:&quot;</span>);     <span class="comment">//在串口打印出Tempeature:</span></span><br><span class="line">  Serial.print(temp);       <span class="comment">//在串口打印温度结果</span></span><br><span class="line">  Serial.println(<span class="string">&quot;.C&quot;</span>);    <span class="comment">//在串口打印出℃</span></span><br><span class="line">  Serial.print(<span class="string">&quot;Humidity:&quot;</span>);     <span class="comment">//在串口打印出Humidity:</span></span><br><span class="line">  Serial.print(humi);     <span class="comment">//在串口打印出湿度结果</span></span><br><span class="line">  Serial.println(<span class="string">&quot;%&quot;</span>);     <span class="comment">//在串口打印出%  </span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h1 id="三、效果"><a href="#三、效果" class="headerlink" title="三、效果"></a>三、效果</h1><p><img src="https://mfjblog-pic.oss-cn-beijing.aliyuncs.com/img/ebcd2f4f0a57455790f64fd0ce6ff042.gif" class="lazyload" data-srcset="https://mfjblog-pic.oss-cn-beijing.aliyuncs.com/img/ebcd2f4f0a57455790f64fd0ce6ff042.gif" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="请添加图片描述"></p>
 
   </div>
   
@@ -2545,8 +2528,7 @@ alt="请添加图片描述" />
             <blockquote>
               
                 
-                  <p>博客内容遵循 署名-非商业性使用-相同方式共享 4.0 国际 (CC BY-NC-SA
-4.0) 协议</p>
+                  <p>博客内容遵循 署名-非商业性使用-相同方式共享 4.0 国际 (CC BY-NC-SA 4.0) 协议</p>
 
                 
               
@@ -2655,8 +2637,7 @@ alt="请添加图片描述" />
       
         <a class='prev' href='/2022/12/19/Arduino%20Uno%E9%9B%B6%E5%9F%BA%E7%A1%80%E5%85%A5%E9%97%A8%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0%E2%80%94%E2%80%94%E6%99%BA%E8%83%BD%E6%97%B6%E9%92%9F(%E5%8F%AF%E4%BB%A5%E6%98%BE%E7%A4%BA%E6%B8%A9%E6%B9%BF%E5%BA%A6)%E3%80%90LCD1602+DS1302+%E6%B8%A9%E6%B9%BF%E5%BA%A6%E4%BC%A0%E6%84%9F%E5%99%A8+%E7%BA%A2%E5%A4%96%E6%8E%A5%E6%94%B6%E5%99%A8+LED+%E8%9C%82%E9%B8%A3%E5%99%A8%E3%80%91/'>
           <p class='title'><i class="fa-solid fa-chevron-left" aria-hidden="true"></i>Arduino Uno零基础入门学习笔记——智能时钟(可以显示温湿度)【LCD1602+DS1302+温湿度传感器+红外接收器+LED+蜂鸣器】</p>
-          <p class='content'>一、电路连接
-需要以下几个外设
+          <p class='content'>一、电路连接需要以下几个外设
 
 LCD1602(IIC驱动)
 DS1302
@@ -2669,19 +2650,15 @@ DS1302
 LCD1602IIC
 
 
-
-LCD1...</p>
+LCD160...</p>
         </a>
       
       
         <a class='next' href='/2022/12/17/Arduino%20UNO%E6%96%B0%E6%89%8B%E9%9B%B6%E5%9F%BA%E7%A1%80%E5%85%A5%E9%97%A8%E5%AD%A6%E4%B9%A0%E5%8D%9A%E5%AE%A2%E6%B1%87%E6%80%BB/'>
           <p class='title'>Arduino UNO新手零基础入门学习博客汇总<i class="fa-solid fa-chevron-right" aria-hidden="true"></i></p>
-          <p class='content'>写在开头
-最近在上Arduino的课，可以说Arduino对新手来说非常友好了，因为相比于51和32，Arduino的库函数下载就好，不需要自己去写，就很方便
+          <p class='content'>写在开头最近在上Arduino的课，可以说Arduino对新手来说非常友好了，因为相比于51和32，Arduino的库函数下载就好，不需要自己去写，就很方便
 我的硬件设备
-
-
-Arduino实...</p>
+博客汇总博客内容大多数...</p>
         </a>
       
     </div>
@@ -2739,7 +2716,7 @@ Arduino实...</p>
 
 
     <div class='content'>
-        <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#lcd1602iic"><span class="toc-text">LCD1602IIC</span></a></li></ol>
+        <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#LCD1602IIC"><span class="toc-text">LCD1602IIC</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#1-WIRE"><span class="toc-text">1-WIRE</span></a></li></ol>
     </div>
   </section>
 
@@ -2881,9 +2858,7 @@ Arduino实...</p>
       
     
       
-        <div><p>Blog content follows the <a
-target="_blank" rel="noopener" href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.en">Attribution-NonCommercial-ShareAlike
-4.0 International (CC BY-NC-SA 4.0) License</a></p>
+        <div><p>Blog content follows the <a target="_blank" rel="noopener" href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.en">Attribution-NonCommercial-ShareAlike 4.0 International (CC BY-NC-SA 4.0) License</a></p>
 </div>
       
     

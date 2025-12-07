@@ -1593,7 +1593,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
     debug: "env",
     cdn: {"js":{"app":"/js/app.js","parallax":"/js/plugins/parallax.js","rightMenu":"/js/plugins/rightMenu.js","rightMenus":"/js/plugins/rightMenus.js","sites":"/js/plugins/tags/sites.js","friends":"/js/plugins/tags/friends.js","contributors":"/js/plugins/tags/contributors.js","search":"/js/search/hexo.js"},"css":{"style":"/css/style.css"}},
     default: {"avatar":"https://unpkg.com/volantis-static@0.0.1654736714924/media/placeholder/avatar/round/3442075.svg","link":"https://unpkg.com/volantis-static@0.0.1654736714924/media/placeholder/link/8f277b4ee0ecd.svg","cover":"https://unpkg.com/volantis-static@0.0.1654736714924/media/placeholder/cover/76b86c0226ffd.svg","image":"https://unpkg.com/volantis-static@0.0.1654736714924/media/placeholder/image/2659360.svg"},
-    lastupdate: new Date(1765118762067),
+    lastupdate: new Date(1765119292905),
     sidebar: {
       for_page: ["blogger","category","tagcloud","webinfo","lastupdate"],
       for_post: ["toc"],
@@ -2406,15 +2406,12 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
     
       
         最近买了个平衡小车，为了圆我PID梦，买来玩玩，废话不多说，直接开搞
-第一步：让小车的轮子转起来
-我用的电机是TB6612FNG，想详细了解的话直接去搜手册，给他输出两路PWM还要两个引脚进行高低电平的转换就可以设置前进或者后退了，规则如下
- 看一下引脚图吧  引脚连接：
+第一步：让小车的轮子转起来我用的电机是TB6612FNG，想详细了解的话直接去搜手册，给他输出两路PWM还要两个引脚进行高低电平的转换就可以设置前进或者后退了，规则如下看一下引脚图吧引脚连接：
 
 
 
 PWMA
 PA11
-
 
 
 
@@ -2431,7 +2428,10 @@ PB12
 
 
 BIN1
-PB1...
+PB14
+
+
+BI...
       
     
   </div>
@@ -2494,11 +2494,9 @@ PB1...
   <div class='md article-desc' itemprop="articleBody">
     
       
-        视频教程：【莫烦Python】Scikit-learn
-(sklearn) 优雅地学会机器学习
-首先从安装sklearn入手，我用的是python3.7，需要安装numpy和scipy，安装之后，就可以用sklearn自带的数据了，就用它自带的鸢尾花了
- 程序示例（我是用Pycharm运行的)：
-12345678910import numpy as npfrom sklearn import...
+        视频教程：【莫烦Python】Scikit-learn (sklearn) 优雅地学会机器学习
+首先从安装sklearn入手，我用的是python3.7，需要安装numpy和scipy，安装之后，就可以用sklearn自带的数据了，就用它自带的鸢尾花了程序示例（我是用Pycharm运行的)：
+12345678910import numpy as npfrom sklearn import d...
       
     
   </div>
@@ -2569,11 +2567,9 @@ PB1...
   <div class='md article-desc' itemprop="articleBody">
     
       
-        最近一直在学习pytorch，这次自己跟着教程搭了一个神经网络，用的最经典的CIFAR10，先看一下原理
-
-输入3通道32*32，最后经过3个卷积，3个最大池化，还有1个flatten，和两个线性化，得到十个输出
+        最近一直在学习pytorch，这次自己跟着教程搭了一个神经网络，用的最经典的CIFAR10，先看一下原理输入3通道32*32，最后经过3个卷积，3个最大池化，还有1个flatten，和两个线性化，得到十个输出
 程序如下：
-12345678910111213141516171819202122232425262728293031323334from torch import nnfrom ...
+12345678910111213141516171819202122232425262728293031323334from torch import nnfrom to...
       
     
   </div>
@@ -2645,19 +2641,14 @@ PB1...
     
       
         最近在练习蓝桥杯的单片机，因为之前沉迷游戏太久了，于是就想做出来一个涨涨面子，这一做就是一周。。。。。。。但总算做出来了，在这里复盘一下，顺便放出代码，大家也能看看，检查一下bug之类的。
-注意！！！J5为KBD模式，J13位IO模式，然后跳线帽不要放在P34和SIGNAL上，我就因为这个看了1个小时的代码
-原理图
-
-
-请添加图片描述
-
+注意！！！J5为KBD模式，J13位IO模式，然后跳线帽不要放在P34和SIGNAL上，我就因为这个看了1个小时的代码原理图
 题目
-  
 主要是分四个显示：
 
-输入显示
-修改显示
-...
+输入显示 
+修改显示 
+正确显示 
+错误显示（清除...
       
     
   </div>
@@ -2728,8 +2719,8 @@ PB1...
   <div class='md article-desc' itemprop="articleBody">
     
       
-        还有几小时比赛了，做个模拟练练手感 先看原题 
-12345678910111213141516171819202122232425262728293031323334353637383940414243444546474849505152535455565758596061626364656667686970717273747576777879808182838485868788899091...
+        还有几小时比赛了，做个模拟练练手感先看原题
+1234567891011121314151617181920212223242526272829303132333435363738394041424344454647484950515253545556575859606162636465666768697071727374757677787980818283848586878889909192...
       
     
   </div>
@@ -2800,10 +2791,8 @@ PB1...
   <div class='md article-desc' itemprop="articleBody">
     
       
-        还有一天比赛了，先看原题
-很简单，感觉就是前几届不常考的考点，注意那个L10操作
-MAIN.C
-12345678910111213141516171819202122232425262728293031323334353637383940414243444546474849505152535455565758596061626364656667686970717273747576777879...
+        还有一天比赛了，先看原题很简单，感觉就是前几届不常考的考点，注意那个L10操作
+MAIN.C1234567891011121314151617181920212223242526272829303132333435363738394041424344454647484950515253545556575859606162636465666768697071727374757677787980...
       
     
   </div>
@@ -2875,9 +2864,7 @@ MAIN.C
     
       
         距离比赛还有15天，昨天发愤图强，想做一个练练手，又想到了第十二届的第二批没有写，然后在同专业大佬的帮助下，在一天做完了一届，速度最快的一次了，废话不多说，先看原题
-  
-设计思路
-第一眼看真是没什么特别难的感觉，就是一个长按键还没有想到解决方法，先从四个按键入手，S4按键切换三个模式，一开始我用的是递归，在四个while循环，直接把整个程序写死在一个函数里面了，也是迫不得已，当时也没想出什...
+设计思路第一眼看真是没什么特别难的感觉，就是一个长按键还没有想到解决方法，先从四个按键入手，S4按键切换三个模式，一开始我用的是递归，在四个while循环，直接把整个程序写死在一个函数里面了，也是迫不得已，当时也没想出什么好方法...
       
     
   </div>
@@ -2949,9 +2936,9 @@ MAIN.C
     
       
         最近几天闲着没事干，刷动态的时候，看到了十三届的模拟题，然后就去搜了搜，题目来源@电子设计工坊，我是从博主@slow_walker看到的题目，原blog的链接：https://blog.csdn.net/boybs/article/details/123829667
-先看题目吧： 
- 
-刚看的时候，感觉还是很简单的，没有乱七八糟的显示模式切换，也就用到了eeprom和PCF8591，后来往下...
+先看题目吧：
+
+刚看的时候，感觉还是很简单的，没有乱七八糟的显示模式切换，也就用到了eeprom和PCF8591，后来往下仔细...
       
     
   </div>
@@ -3411,9 +3398,7 @@ MAIN.C
       
     
       
-        <div><p>Blog content follows the <a
-target="_blank" rel="noopener" href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.en">Attribution-NonCommercial-ShareAlike
-4.0 International (CC BY-NC-SA 4.0) License</a></p>
+        <div><p>Blog content follows the <a target="_blank" rel="noopener" href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.en">Attribution-NonCommercial-ShareAlike 4.0 International (CC BY-NC-SA 4.0) License</a></p>
 </div>
       
     

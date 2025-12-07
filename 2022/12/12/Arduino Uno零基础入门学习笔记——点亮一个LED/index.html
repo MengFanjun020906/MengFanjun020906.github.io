@@ -40,7 +40,7 @@
 <meta property="og:title" content="Arduino Uno零基础入门学习笔记——点亮一个LED">
 <meta property="og:url" content="https://mengfanjun020906.github.io/2022/12/12/Arduino%20Uno%E9%9B%B6%E5%9F%BA%E7%A1%80%E5%85%A5%E9%97%A8%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0%E2%80%94%E2%80%94%E7%82%B9%E4%BA%AE%E4%B8%80%E4%B8%AALED/index.html">
 <meta property="og:site_name" content="MengFanjun的博客">
-<meta property="og:description" content="文中的部分图片来源视频教程：【太极创客】零基础入门学用Arduino 第一部分 合辑 一、认识LED LED&#x3D;Lighting Emitting Diode  长的那一边是正极，短的那一边是负极 工作时，LED产生2V的压降 二、接线 在Fritzing中接好线  Arduino的引脚输出5V，而LED需要2V，所以电阻要分压3V   三、使用面包板搭建LED电路   在这里插入图片描述  四、代">
+<meta property="og:description" content="文中的部分图片来源视频教程：【太极创客】零基础入门学用Arduino 第一部分 合辑 一、认识LEDLED&#x3D;Lighting Emitting Diode长的那一边是正极，短的那一边是负极工作时，LED产生2V的压降 二、接线在Fritzing中接好线Arduino的引脚输出5V，而LED需要2V，所以电阻要分压3V  三、使用面包板搭建LED电路 四、代码123456789101112">
 <meta property="og:locale" content="en_US">
 <meta property="og:image" content="https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png">
 <meta property="article:published_time" content="2022-12-12T08:11:05.000Z">
@@ -1596,7 +1596,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
     debug: "env",
     cdn: {"js":{"app":"/js/app.js","parallax":"/js/plugins/parallax.js","rightMenu":"/js/plugins/rightMenu.js","rightMenus":"/js/plugins/rightMenus.js","sites":"/js/plugins/tags/sites.js","friends":"/js/plugins/tags/friends.js","contributors":"/js/plugins/tags/contributors.js","search":"/js/search/hexo.js"},"css":{"style":"/css/style.css"}},
     default: {"avatar":"https://unpkg.com/volantis-static@0.0.1654736714924/media/placeholder/avatar/round/3442075.svg","link":"https://unpkg.com/volantis-static@0.0.1654736714924/media/placeholder/link/8f277b4ee0ecd.svg","cover":"https://unpkg.com/volantis-static@0.0.1654736714924/media/placeholder/cover/76b86c0226ffd.svg","image":"https://unpkg.com/volantis-static@0.0.1654736714924/media/placeholder/image/2659360.svg"},
-    lastupdate: new Date(1765118762067),
+    lastupdate: new Date(1765119292905),
     sidebar: {
       for_page: ["blogger","category","tagcloud","webinfo","lastupdate"],
       for_post: ["toc"],
@@ -2420,7 +2420,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
   <div class="new-meta-item wordcount">
     <a class='notlink'>
       <i class="fa-solid fa-keyboard fa-fw" aria-hidden="true"></i>
-      <p>199 words</p>
+      <p>182 words</p>
     </a>
   </div>
   <div class="new-meta-item readtime">
@@ -2462,40 +2462,13 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
 
   <div id="layoutHelper-page-plugins"></div>
   <div id="post-body" itemprop="articleBody">
-    <p>文中的部分图片来源视频教程：<a
-target="_blank" rel="noopener" href="https://www.bilibili.com/video/BV164411J7GE">【太极创客】零基础入门学用Arduino
-第一部分 合辑</a></p>
-<h1 id="一认识led">一、认识LED</h1>
-<p>LED=Lighting Emitting Diode <img
-src="https://mfjblog-pic.oss-cn-beijing.aliyuncs.com/img/7ee19f335db946d5ae4bc007e0a979bc.png"
-alt="在这里插入图片描述" /> 长的那一边是正极，短的那一边是负极
-工作时，LED产生2V的压降</p>
-<h1 id="二接线">二、接线</h1>
-<p>在Fritzing中接好线 <img
-src="https://mfjblog-pic.oss-cn-beijing.aliyuncs.com/img/1a31d0782f664d298a3e3b2f99b52e2f.png"
-alt="在这里插入图片描述" />
-Arduino的引脚输出5V，而LED需要2V，所以电阻要分压3V</p>
-<p><img
-src="https://mfjblog-pic.oss-cn-beijing.aliyuncs.com/img/40fa0b0a6e1b47d487eaedd8c9916da4.png"
-alt="在这里插入图片描述" /> <img
-src="https://mfjblog-pic.oss-cn-beijing.aliyuncs.com/img/ae7cc1715e36488894a1b6d910adda0b-20230324201724056.png"
-alt="在这里插入图片描述" /></p>
-<h1 id="三使用面包板搭建led电路">三、使用面包板搭建LED电路</h1>
-<figure>
-<img
-src="https://mfjblog-pic.oss-cn-beijing.aliyuncs.com/img/df7c550718f84fbf9244a163ab588460-20230324201727351.png"
-alt="在这里插入图片描述" />
-<figcaption aria-hidden="true">在这里插入图片描述</figcaption>
-</figure>
-<h1 id="四代码">四、代码</h1>
-<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// the setup function runs once when you press reset or power the board</span></span><br><span class="line"><span class="type">void</span> <span class="title function_">setup</span><span class="params">()</span> &#123;</span><br><span class="line">  <span class="comment">// initialize digital pin 5 as an output.</span></span><br><span class="line">  pinMode(<span class="number">5</span>, OUTPUT);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// the loop function runs over and over again forever</span></span><br><span class="line"><span class="type">void</span> <span class="title function_">loop</span><span class="params">()</span> &#123;</span><br><span class="line">  digitalWrite(<span class="number">5</span>, HIGH);   <span class="comment">// turn the LED on (HIGH is the voltage level)</span></span><br><span class="line">  delay(<span class="number">1000</span>);              <span class="comment">// wait for a second</span></span><br><span class="line">  digitalWrite(<span class="number">5</span>, LOW);    <span class="comment">// turn the LED off by making the voltage LOW</span></span><br><span class="line">  delay(<span class="number">1000</span>);              <span class="comment">// wait for a second</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<h1 id="五效果">五、效果</h1>
-<figure>
-<img
-src="https://mfjblog-pic.oss-cn-beijing.aliyuncs.com/img/f73bf5a13c6445b7b15f69448682a312.gif"
-alt="请添加图片描述" />
-<figcaption aria-hidden="true">请添加图片描述</figcaption>
-</figure>
+    <p>文中的部分图片来源视频教程：<a target="_blank" rel="noopener" href="https://www.bilibili.com/video/BV164411J7GE">【太极创客】零基础入门学用Arduino 第一部分 合辑</a></p>
+<h1 id="一、认识LED"><a href="#一、认识LED" class="headerlink" title="一、认识LED"></a>一、认识LED</h1><p>LED&#x3D;Lighting Emitting Diode<br><img src="https://mfjblog-pic.oss-cn-beijing.aliyuncs.com/img/7ee19f335db946d5ae4bc007e0a979bc.png" class="lazyload" data-srcset="https://mfjblog-pic.oss-cn-beijing.aliyuncs.com/img/7ee19f335db946d5ae4bc007e0a979bc.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="在这里插入图片描述"><br>长的那一边是正极，短的那一边是负极<br>工作时，LED产生2V的压降</p>
+<h1 id="二、接线"><a href="#二、接线" class="headerlink" title="二、接线"></a>二、接线</h1><p>在Fritzing中接好线<br><img src="https://mfjblog-pic.oss-cn-beijing.aliyuncs.com/img/1a31d0782f664d298a3e3b2f99b52e2f.png" class="lazyload" data-srcset="https://mfjblog-pic.oss-cn-beijing.aliyuncs.com/img/1a31d0782f664d298a3e3b2f99b52e2f.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="在这里插入图片描述"><br>Arduino的引脚输出5V，而LED需要2V，所以电阻要分压3V</p>
+<p><img src="https://mfjblog-pic.oss-cn-beijing.aliyuncs.com/img/40fa0b0a6e1b47d487eaedd8c9916da4.png" class="lazyload" data-srcset="https://mfjblog-pic.oss-cn-beijing.aliyuncs.com/img/40fa0b0a6e1b47d487eaedd8c9916da4.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="在这里插入图片描述"><br><img src="https://mfjblog-pic.oss-cn-beijing.aliyuncs.com/img/ae7cc1715e36488894a1b6d910adda0b-20230324201724056.png" class="lazyload" data-srcset="https://mfjblog-pic.oss-cn-beijing.aliyuncs.com/img/ae7cc1715e36488894a1b6d910adda0b-20230324201724056.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="在这里插入图片描述"></p>
+<h1 id="三、使用面包板搭建LED电路"><a href="#三、使用面包板搭建LED电路" class="headerlink" title="三、使用面包板搭建LED电路"></a>三、使用面包板搭建LED电路</h1><p><img src="https://mfjblog-pic.oss-cn-beijing.aliyuncs.com/img/df7c550718f84fbf9244a163ab588460-20230324201727351.png" class="lazyload" data-srcset="https://mfjblog-pic.oss-cn-beijing.aliyuncs.com/img/df7c550718f84fbf9244a163ab588460-20230324201727351.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="在这里插入图片描述"></p>
+<h1 id="四、代码"><a href="#四、代码" class="headerlink" title="四、代码"></a>四、代码</h1><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// the setup function runs once when you press reset or power the board</span></span><br><span class="line"><span class="type">void</span> <span class="title function_">setup</span><span class="params">()</span> &#123;</span><br><span class="line">  <span class="comment">// initialize digital pin 5 as an output.</span></span><br><span class="line">  pinMode(<span class="number">5</span>, OUTPUT);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// the loop function runs over and over again forever</span></span><br><span class="line"><span class="type">void</span> <span class="title function_">loop</span><span class="params">()</span> &#123;</span><br><span class="line">  digitalWrite(<span class="number">5</span>, HIGH);   <span class="comment">// turn the LED on (HIGH is the voltage level)</span></span><br><span class="line">  delay(<span class="number">1000</span>);              <span class="comment">// wait for a second</span></span><br><span class="line">  digitalWrite(<span class="number">5</span>, LOW);    <span class="comment">// turn the LED off by making the voltage LOW</span></span><br><span class="line">  delay(<span class="number">1000</span>);              <span class="comment">// wait for a second</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h1 id="五、效果"><a href="#五、效果" class="headerlink" title="五、效果"></a>五、效果</h1><p><img src="https://mfjblog-pic.oss-cn-beijing.aliyuncs.com/img/f73bf5a13c6445b7b15f69448682a312.gif" class="lazyload" data-srcset="https://mfjblog-pic.oss-cn-beijing.aliyuncs.com/img/f73bf5a13c6445b7b15f69448682a312.gif" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="请添加图片描述"></p>
 
   </div>
   
@@ -2513,8 +2486,7 @@ alt="请添加图片描述" />
             <blockquote>
               
                 
-                  <p>博客内容遵循 署名-非商业性使用-相同方式共享 4.0 国际 (CC BY-NC-SA
-4.0) 协议</p>
+                  <p>博客内容遵循 署名-非商业性使用-相同方式共享 4.0 国际 (CC BY-NC-SA 4.0) 协议</p>
 
                 
               
@@ -2623,29 +2595,24 @@ alt="请添加图片描述" />
       
         <a class='prev' href='/2022/12/13/Arduino%20Uno%E9%9B%B6%E5%9F%BA%E7%A1%80%E5%85%A5%E9%97%A8%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0%E2%80%94%E2%80%94%E6%8C%89%E9%94%AE%E5%BC%80%E5%85%B3/'>
           <p class='title'><i class="fa-solid fa-chevron-left" aria-hidden="true"></i>Arduino Uno零基础入门学习笔记——按键开关</p>
-          <p class='content'>一、按键介绍
-按键相连不同侧，同侧不相连 按键是一种数字输入，可以识别两种状态
+          <p class='content'>一、按键介绍按键相连不同侧，同侧不相连按键是一种数字输入，可以识别两种状态
 
 HIGH
 LOW
 
-二、搭建电路
-  上拉电阻为10K
-三、代码
-123456789101112131415vo...</p>
+二、搭建电路上拉电阻为10K
+三、代码123456789101112131415void set...</p>
         </a>
       
       
         <a class='next' href='/2022/12/12/Arduino%20Uno%E9%9B%B6%E5%9F%BA%E7%A1%80%E5%85%A5%E9%97%A8%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0%E2%80%94%E2%80%94%E5%8F%98%E9%87%8F%E4%B8%8E%E5%87%BD%E6%95%B0/'>
           <p class='title'>Arduino Uno零基础入门学习笔记——变量与函数<i class="fa-solid fa-chevron-right" aria-hidden="true"></i></p>
-          <p class='content'>一、创建变量
-1int currentTemperature;
+          <p class='content'>一、创建变量1int currentTemperature;
 
-整数型变量 变量名字 分号
+整数型变量  变量名字 分号
 
 使用驼峰命名法对进行命名
-有些程序员喜欢全部小写，有些程序员喜欢用下划线，所以如果要写一个my
-n...</p>
+有些程序员喜欢全部小写，有些程序员喜欢用下划线，所以如果要写一个my n...</p>
         </a>
       
     </div>
@@ -2845,9 +2812,7 @@ n...</p>
       
     
       
-        <div><p>Blog content follows the <a
-target="_blank" rel="noopener" href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.en">Attribution-NonCommercial-ShareAlike
-4.0 International (CC BY-NC-SA 4.0) License</a></p>
+        <div><p>Blog content follows the <a target="_blank" rel="noopener" href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.en">Attribution-NonCommercial-ShareAlike 4.0 International (CC BY-NC-SA 4.0) License</a></p>
 </div>
       
     
