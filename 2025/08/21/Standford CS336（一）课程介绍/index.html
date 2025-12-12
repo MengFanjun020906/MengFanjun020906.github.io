@@ -1,0 +1,3748 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head hexo-theme='https://github.com/volantis-x/hexo-theme-volantis/#5.7.7'>
+  <meta name="generator" content="Hexo 5.4.2">
+  <meta name="Volantis" content="5.7.7">
+  <meta charset="utf-8">
+  <!-- SEO相关 -->
+  
+  <link rel="canonical" href="https://mengfanjun020906.github.io/2025/08/21/standford cs336（一）课程介绍/"/>
+  <!-- 渲染优化 -->
+    <meta http-equiv='x-dns-prefetch-control' content='on' />
+      <link rel='dns-prefetch' href='https://unpkg.com'>
+      <link rel="preconnect" href="https://unpkg.com" crossorigin>
+  <meta name="renderer" content="webkit">
+  <meta name="force-rendering" content="webkit">
+  <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1">
+    <meta http-equiv="Content-Security-Policy" content=" default-src 'self' https:; block-all-mixed-content; base-uri 'self' https:; form-action 'self' https:; worker-src 'self' https:; connect-src 'self' https: *; img-src 'self' data: https: *; media-src 'self' https: *; font-src 'self' data: https: *; frame-src 'self' https: *; manifest-src 'self' https: *; child-src https:; script-src 'self' https: 'unsafe-inline' *; style-src 'self' https: 'unsafe-inline' *; ">
+  <meta name="HandheldFriendly" content="True" >
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=5">
+  <meta content="black-translucent" name="apple-mobile-web-app-status-bar-style">
+  <meta content="telephone=no" name="format-detection">
+  <!-- import head_begin begin -->
+  <!-- import head_begin end -->
+  <!-- Custom Files headBegin begin-->
+  
+  <!-- Custom Files headBegin end-->
+    <link rel="shortcut icon" type='image/x-icon' href="https://pic.imgdb.cn/item/640ad0cdf144a01007830622.png">
+  <link rel="preload" href="/css/style.css" as="style">
+  <link rel="preload" href="https://unpkg.com/volantis-static@0.0.1654736714924/media/fonts/VarelaRound/VarelaRound-Regular.ttf" as="font" type="font/ttf" crossorigin="anonymous">
+<link rel="preload" href="https://unpkg.com/volantis-static@0.0.1654736714924/media/fonts/UbuntuMono/UbuntuMono-Regular.ttf" as="font" type="font/ttf" crossorigin="anonymous">
+
+  <!-- feed -->
+  <!-- 页面元数据 -->
+  <title>Standford CS336（一）课程介绍 - MengFanjun的博客</title>
+  <meta name="keywords" content="学习,大模型,null">
+  <meta desc name="description" content="20级通信工程大学生的个人博客 - MengFanjun - MengFanjun的博客">
+  
+<meta property="og:type" content="article">
+<meta property="og:title" content="Standford CS336（一）课程介绍">
+<meta property="og:url" content="https://mengfanjun020906.github.io/2025/08/21/Standford%20CS336%EF%BC%88%E4%B8%80%EF%BC%89%E8%AF%BE%E7%A8%8B%E4%BB%8B%E7%BB%8D/index.html">
+<meta property="og:site_name" content="MengFanjun的博客">
+<meta property="og:description" content="仓库链接：https:&#x2F;&#x2F;github.com&#x2F;stanford-cs336&#x2F;spring2025-lectures 斯坦福CS336：从零开始构建语言模型 (2025春季)课程简介本课程是斯坦福大学CS336课程的第二次开课，专注于“从零开始构建语言模型”。值得注意的是，本课程在斯坦福大学的规模增长了50%，显示出其日益增长的受欢迎程度和重要性。 为什么开设这门课程？开设这门课程的核心原因在于当">
+<meta property="og:locale" content="en_US">
+<meta property="og:image" content="https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png">
+<meta property="article:published_time" content="2025-08-21T02:29:19.000Z">
+<meta property="article:modified_time" content="2025-12-12T14:24:26.366Z">
+<meta property="article:author" content="MengFanjun">
+<meta property="article:tag" content="学习">
+<meta property="article:tag" content="大模型">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png">
+  <style>
+    /* 首屏样式 */
+    #safearea {
+  display: none;
+}
+:root {
+  --color-site-body: #f4f4f4;
+  --color-site-bg: #f4f4f4;
+  --color-site-inner: #fff;
+  --color-site-footer: #fff;
+  --color-card: #fff;
+  --color-text: #444;
+  --color-block: #f6f6f6;
+  --color-inlinecode: #d56d28;
+  --color-codeblock: #f6f6f6;
+  --color-h1: #444;
+  --color-h2: #444;
+  --color-h3: #444;
+  --color-h4: #444;
+  --color-h5: #444;
+  --color-h6: #444;
+  --color-p: #444;
+  --color-list: #666;
+  --color-list-hl: #36ac91;
+  --color-meta: #888;
+  --color-read-bkg: #e0d8c8;
+  --color-read-post: #f8f1e2;
+  --color-copyright-bkg: #f5f5f5;
+}
+* {
+  box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  outline: none;
+  margin: 0;
+  padding: 0;
+}
+*::-webkit-scrollbar {
+  height: 4px;
+  width: 4px;
+}
+*::-webkit-scrollbar-track-piece {
+  background: transparent;
+}
+*::-webkit-scrollbar-thumb {
+  background: #44d7b6;
+  cursor: pointer;
+  border-radius: 2px;
+  -webkit-border-radius: 2px;
+}
+*::-webkit-scrollbar-thumb:hover {
+  background: #ff5722;
+}
+html {
+  color: var(--color-text);
+  width: 100%;
+  height: 100%;
+  font-family: UbuntuMono, "Varela Round", "PingFang SC", "Microsoft YaHei", Helvetica, Arial, Menlo, Monaco, monospace, sans-serif;
+  font-size: 16px;
+}
+html >::-webkit-scrollbar {
+  height: 4px;
+  width: 4px;
+}
+html >::-webkit-scrollbar-track-piece {
+  background: transparent;
+}
+html >::-webkit-scrollbar-thumb {
+  background: #44d7b6;
+  cursor: pointer;
+  border-radius: 2px;
+  -webkit-border-radius: 2px;
+}
+html >::-webkit-scrollbar-thumb:hover {
+  background: #ff5722;
+}
+body {
+  background-color: var(--color-site-body);
+  text-rendering: optimizelegibility;
+  -webkit-tap-highlight-color: rgba(0,0,0,0);
+  line-height: 1.6;
+  -webkit-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%;
+}
+body.modal-active {
+  overflow: hidden;
+}
+@media screen and (max-width: 680px) {
+  body.modal-active {
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+  }
+}
+a {
+  color: #2196f3;
+  cursor: pointer;
+  text-decoration: none;
+  transition: all 0.28s ease;
+  -webkit-transition: all 0.28s ease;
+  -khtml-transition: all 0.28s ease;
+  -moz-transition: all 0.28s ease;
+  -o-transition: all 0.28s ease;
+  -ms-transition: all 0.28s ease;
+}
+a:hover {
+  color: #ff5722;
+}
+a:active,
+a:hover {
+  outline: 0;
+}
+ul,
+ol {
+  padding-left: 0;
+}
+ul li,
+ol li {
+  list-style: none;
+}
+header {
+  display: -webkit-box /* OLD - iOS 6-, Safari 3.1-6 */;
+  display: -moz-box /* OLD - Firefox 19- (buggy but mostly works) */;
+  display: block;
+}
+img {
+  border: 0;
+  background: none;
+  max-width: 100%;
+}
+svg:not(:root) {
+  overflow: hidden;
+}
+hr {
+  -moz-box-sizing: content-box;
+  box-sizing: content-box;
+  -webkit-box-sizing: content-box;
+  -moz-box-sizing: content-box;
+  height: 0;
+  border: 0;
+  border-radius: 1px;
+  -webkit-border-radius: 1px;
+  border-bottom: 1px solid rgba(68,68,68,0.1);
+}
+button,
+input {
+  color: inherit;
+  font: inherit;
+  margin: 0;
+}
+button {
+  overflow: visible;
+  text-transform: none;
+  -webkit-appearance: button;
+  cursor: pointer;
+}
+@supports (backdrop-filter: blur(20px)) {
+  .blur {
+    background: rgba(255,255,255,0.9) !important;
+    backdrop-filter: saturate(200%) blur(20px);
+  }
+}
+.shadow {
+  box-shadow: 0 1px 2px 0px rgba(0,0,0,0.1);
+  -webkit-box-shadow: 0 1px 2px 0px rgba(0,0,0,0.1);
+}
+.shadow.floatable {
+  transition: all 0.28s ease;
+  -webkit-transition: all 0.28s ease;
+  -khtml-transition: all 0.28s ease;
+  -moz-transition: all 0.28s ease;
+  -o-transition: all 0.28s ease;
+  -ms-transition: all 0.28s ease;
+}
+.shadow.floatable:hover {
+  box-shadow: 0 2px 4px 0px rgba(0,0,0,0.1), 0 4px 8px 0px rgba(0,0,0,0.1), 0 8px 16px 0px rgba(0,0,0,0.1);
+  -webkit-box-shadow: 0 2px 4px 0px rgba(0,0,0,0.1), 0 4px 8px 0px rgba(0,0,0,0.1), 0 8px 16px 0px rgba(0,0,0,0.1);
+}
+#l_cover {
+  min-height: 64px;
+}
+.cover-wrapper {
+  top: 0;
+  left: 0;
+  max-width: 100%;
+  height: 100vh;
+  display: -webkit-box /* OLD - iOS 6-, Safari 3.1-6 */;
+  display: -moz-box /* OLD - Firefox 19- (buggy but mostly works) */;
+  display: -ms-flexbox /* TWEENER - IE 10 */;
+  display: -webkit-flex /* NEW - Chrome */;
+  display: flex /* NEW, Spec - Opera 12.1, Firefox 20+ */;
+  display: flex;
+  flex-wrap: nowrap;
+  -webkit-flex-wrap: nowrap;
+  -khtml-flex-wrap: nowrap;
+  -moz-flex-wrap: nowrap;
+  -o-flex-wrap: nowrap;
+  -ms-flex-wrap: nowrap;
+  -webkit-box-direction: normal;
+  -moz-box-direction: normal;
+  -webkit-box-orient: vertical;
+  -moz-box-orient: vertical;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  align-items: center;
+  align-self: center;
+  align-content: center;
+  color: var(--color-site-inner);
+  padding: 0 16px;
+  user-select: none;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  position: relative;
+  overflow: hidden;
+  margin-bottom: -100px;
+}
+.cover-wrapper .cover-body {
+  z-index: 1;
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+.cover-wrapper#full {
+  height: calc(100vh + 100px);
+  padding-bottom: 100px;
+}
+.cover-wrapper#half {
+  max-height: 640px;
+  min-height: 400px;
+  height: calc(36vh - 64px + 200px);
+}
+.cover-wrapper #scroll-down {
+  width: 100%;
+  height: 64px;
+  position: absolute;
+  bottom: 100px;
+  text-align: center;
+  cursor: pointer;
+}
+.cover-wrapper #scroll-down .scroll-down-effects {
+  color: #fff;
+  font-size: 24px;
+  line-height: 64px;
+  position: absolute;
+  width: 24px;
+  left: calc(50% - 12px);
+  text-shadow: 0 1px 2px rgba(0,0,0,0.1);
+  animation: scroll-down-effect 1.5s infinite;
+  -webkit-animation: scroll-down-effect 1.5s infinite;
+  -khtml-animation: scroll-down-effect 1.5s infinite;
+  -moz-animation: scroll-down-effect 1.5s infinite;
+  -o-animation: scroll-down-effect 1.5s infinite;
+  -ms-animation: scroll-down-effect 1.5s infinite;
+}
+@-moz-keyframes scroll-down-effect {
+  0% {
+    top: 0;
+    opacity: 1;
+    -webkit-opacity: 1;
+    -moz-opacity: 1;
+  }
+  50% {
+    top: -16px;
+    opacity: 0.4;
+    -webkit-opacity: 0.4;
+    -moz-opacity: 0.4;
+  }
+  100% {
+    top: 0;
+    opacity: 1;
+    -webkit-opacity: 1;
+    -moz-opacity: 1;
+  }
+}
+@-webkit-keyframes scroll-down-effect {
+  0% {
+    top: 0;
+    opacity: 1;
+    -webkit-opacity: 1;
+    -moz-opacity: 1;
+  }
+  50% {
+    top: -16px;
+    opacity: 0.4;
+    -webkit-opacity: 0.4;
+    -moz-opacity: 0.4;
+  }
+  100% {
+    top: 0;
+    opacity: 1;
+    -webkit-opacity: 1;
+    -moz-opacity: 1;
+  }
+}
+@-o-keyframes scroll-down-effect {
+  0% {
+    top: 0;
+    opacity: 1;
+    -webkit-opacity: 1;
+    -moz-opacity: 1;
+  }
+  50% {
+    top: -16px;
+    opacity: 0.4;
+    -webkit-opacity: 0.4;
+    -moz-opacity: 0.4;
+  }
+  100% {
+    top: 0;
+    opacity: 1;
+    -webkit-opacity: 1;
+    -moz-opacity: 1;
+  }
+}
+@keyframes scroll-down-effect {
+  0% {
+    top: 0;
+    opacity: 1;
+    -webkit-opacity: 1;
+    -moz-opacity: 1;
+  }
+  50% {
+    top: -16px;
+    opacity: 0.4;
+    -webkit-opacity: 0.4;
+    -moz-opacity: 0.4;
+  }
+  100% {
+    top: 0;
+    opacity: 1;
+    -webkit-opacity: 1;
+    -moz-opacity: 1;
+  }
+}
+.cover-wrapper .cover-body {
+  margin-top: 64px;
+  margin-bottom: 100px;
+}
+.cover-wrapper .cover-body,
+.cover-wrapper .cover-body .top,
+.cover-wrapper .cover-body .bottom {
+  display: -webkit-box /* OLD - iOS 6-, Safari 3.1-6 */;
+  display: -moz-box /* OLD - Firefox 19- (buggy but mostly works) */;
+  display: -ms-flexbox /* TWEENER - IE 10 */;
+  display: -webkit-flex /* NEW - Chrome */;
+  display: flex /* NEW, Spec - Opera 12.1, Firefox 20+ */;
+  display: flex;
+  -webkit-box-direction: normal;
+  -moz-box-direction: normal;
+  -webkit-box-orient: vertical;
+  -moz-box-orient: vertical;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  -webkit-justify-content: center;
+  -khtml-justify-content: center;
+  -moz-justify-content: center;
+  -o-justify-content: center;
+  -ms-justify-content: center;
+  max-width: 100%;
+}
+.cover-wrapper .cover-body .bottom {
+  margin-top: 32px;
+}
+.cover-wrapper .cover-body .title {
+  font-family: "Varela Round", "PingFang SC", "Microsoft YaHei", Helvetica, Arial, Helvetica, monospace;
+  font-size: 3.125rem;
+  line-height: 1.2;
+  text-shadow: 0 1px 2px rgba(0,0,0,0.1);
+}
+.cover-wrapper .cover-body .subtitle {
+  font-size: 20px;
+}
+.cover-wrapper .cover-body .logo {
+  max-height: 120px;
+  max-width: calc(100% - 4 * 16px);
+}
+@media screen and (min-height: 1024px) {
+  .cover-wrapper .cover-body .title {
+    font-size: 3rem;
+  }
+  .cover-wrapper .cover-body .subtitle {
+    font-size: 1.05rem;
+  }
+  .cover-wrapper .cover-body .logo {
+    max-height: 150px;
+  }
+}
+.cover-wrapper .cover-body .m_search {
+  position: relative;
+  max-width: calc(100% - 16px);
+  width: 320px;
+  vertical-align: middle;
+}
+.cover-wrapper .cover-body .m_search .form {
+  position: relative;
+  display: -webkit-box /* OLD - iOS 6-, Safari 3.1-6 */;
+  display: -moz-box /* OLD - Firefox 19- (buggy but mostly works) */;
+  display: block;
+  width: 100%;
+}
+.cover-wrapper .cover-body .m_search .icon,
+.cover-wrapper .cover-body .m_search .input {
+  transition: all 0.28s ease;
+  -webkit-transition: all 0.28s ease;
+  -khtml-transition: all 0.28s ease;
+  -moz-transition: all 0.28s ease;
+  -o-transition: all 0.28s ease;
+  -ms-transition: all 0.28s ease;
+}
+.cover-wrapper .cover-body .m_search .icon {
+  position: absolute;
+  display: -webkit-box /* OLD - iOS 6-, Safari 3.1-6 */;
+  display: -moz-box /* OLD - Firefox 19- (buggy but mostly works) */;
+  display: block;
+  line-height: 2.5rem;
+  width: 32px;
+  top: 0;
+  left: 5px;
+  color: rgba(68,68,68,0.75);
+}
+.cover-wrapper .cover-body .m_search .input {
+  display: -webkit-box /* OLD - iOS 6-, Safari 3.1-6 */;
+  display: -moz-box /* OLD - Firefox 19- (buggy but mostly works) */;
+  display: block;
+  height: 2.5rem;
+  width: 100%;
+  box-shadow: none;
+  -webkit-box-shadow: none;
+  box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  font-size: 0.875rem;
+  -webkit-appearance: none;
+  padding-left: 36px;
+  border-radius: 1.4rem;
+  -webkit-border-radius: 1.4rem;
+  background: rgba(255,255,255,0.6);
+  backdrop-filter: blur(10px);
+  border: none;
+  color: var(--color-text);
+}
+@media screen and (max-width: 500px) {
+  .cover-wrapper .cover-body .m_search .input {
+    padding-left: 36px;
+  }
+}
+.cover-wrapper .cover-body .m_search .input:hover {
+  background: rgba(255,255,255,0.8);
+}
+.cover-wrapper .cover-body .m_search .input:focus {
+  background: #fff;
+}
+.cover-wrapper .list-h {
+  display: -webkit-box /* OLD - iOS 6-, Safari 3.1-6 */;
+  display: -moz-box /* OLD - Firefox 19- (buggy but mostly works) */;
+  display: -ms-flexbox /* TWEENER - IE 10 */;
+  display: -webkit-flex /* NEW - Chrome */;
+  display: flex /* NEW, Spec - Opera 12.1, Firefox 20+ */;
+  display: flex;
+  -webkit-box-direction: normal;
+  -moz-box-direction: normal;
+  -webkit-box-orient: horizontal;
+  -moz-box-orient: horizontal;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  flex-wrap: wrap;
+  -webkit-flex-wrap: wrap;
+  -khtml-flex-wrap: wrap;
+  -moz-flex-wrap: wrap;
+  -o-flex-wrap: wrap;
+  -ms-flex-wrap: wrap;
+  align-items: stretch;
+  border-radius: 4px;
+  -webkit-border-radius: 4px;
+  user-select: none;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+}
+.cover-wrapper .list-h a {
+  -webkit-box-flex: 1;
+  -moz-box-flex: 1;
+  -webkit-flex: 1 0;
+  -ms-flex: 1 0;
+  flex: 1 0;
+  display: -webkit-box /* OLD - iOS 6-, Safari 3.1-6 */;
+  display: -moz-box /* OLD - Firefox 19- (buggy but mostly works) */;
+  display: -ms-flexbox /* TWEENER - IE 10 */;
+  display: -webkit-flex /* NEW - Chrome */;
+  display: flex /* NEW, Spec - Opera 12.1, Firefox 20+ */;
+  display: flex;
+  font-weight: 600;
+}
+.cover-wrapper .list-h a img {
+  display: -webkit-box /* OLD - iOS 6-, Safari 3.1-6 */;
+  display: -moz-box /* OLD - Firefox 19- (buggy but mostly works) */;
+  display: block;
+  border-radius: 2px;
+  -webkit-border-radius: 2px;
+  margin: 4px;
+  min-width: 40px;
+  max-width: 44px;
+}
+@media screen and (max-width: 768px) {
+  .cover-wrapper .list-h a img {
+    min-width: 36px;
+    max-width: 40px;
+  }
+}
+@media screen and (max-width: 500px) {
+  .cover-wrapper .list-h a img {
+    margin: 2px 4px;
+    min-width: 32px;
+    max-width: 36px;
+  }
+}
+@media screen and (max-width: 375px) {
+  .cover-wrapper .list-h a img {
+    min-width: 28px;
+    max-width: 32px;
+  }
+}
+.cover-wrapper {
+  max-width: 100%;
+}
+.cover-wrapper.search .bottom .menu {
+  margin-top: 16px;
+}
+.cover-wrapper.search .bottom .menu .list-h a {
+  white-space: nowrap;
+  -webkit-box-direction: normal;
+  -moz-box-direction: normal;
+  -webkit-box-orient: horizontal;
+  -moz-box-orient: horizontal;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  align-items: baseline;
+  padding: 2px;
+  margin: 4px;
+  color: var(--color-site-inner);
+  opacity: 0.75;
+  -webkit-opacity: 0.75;
+  -moz-opacity: 0.75;
+  text-shadow: 0 1px 2px rgba(0,0,0,0.05);
+  border-bottom: 2px solid transparent;
+}
+.cover-wrapper.search .bottom .menu .list-h a i {
+  margin-right: 4px;
+}
+.cover-wrapper.search .bottom .menu .list-h a p {
+  font-size: 0.9375rem;
+}
+.cover-wrapper.search .bottom .menu .list-h a:hover,
+.cover-wrapper.search .bottom .menu .list-h a.active,
+.cover-wrapper.search .bottom .menu .list-h a:active {
+  opacity: 1;
+  -webkit-opacity: 1;
+  -moz-opacity: 1;
+  border-bottom: 2px solid var(--color-site-inner);
+}
+.cover-wrapper #parallax-window {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background: transparent;
+}
+.parallax-mirror {
+  animation-delay: 0s;
+  animation-duration: 0.5s;
+  animation-fill-mode: forwards;
+  animation-timing-function: ease-out;
+  animation-name: fadeIn;
+}
+@-moz-keyframes fadeIn {
+  0% {
+    opacity: 0;
+    -webkit-opacity: 0;
+    -moz-opacity: 0;
+    filter: blur(12px);
+  }
+  100% {
+    opacity: 1;
+    -webkit-opacity: 1;
+    -moz-opacity: 1;
+  }
+}
+@-webkit-keyframes fadeIn {
+  0% {
+    opacity: 0;
+    -webkit-opacity: 0;
+    -moz-opacity: 0;
+    filter: blur(12px);
+  }
+  100% {
+    opacity: 1;
+    -webkit-opacity: 1;
+    -moz-opacity: 1;
+  }
+}
+@-o-keyframes fadeIn {
+  0% {
+    opacity: 0;
+    -webkit-opacity: 0;
+    -moz-opacity: 0;
+    filter: blur(12px);
+  }
+  100% {
+    opacity: 1;
+    -webkit-opacity: 1;
+    -moz-opacity: 1;
+  }
+}
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+    -webkit-opacity: 0;
+    -moz-opacity: 0;
+    filter: blur(12px);
+  }
+  100% {
+    opacity: 1;
+    -webkit-opacity: 1;
+    -moz-opacity: 1;
+  }
+}
+@font-face {
+  font-family: 'UbuntuMono';
+  src: url("https://unpkg.com/volantis-static@0.0.1654736714924/media/fonts/UbuntuMono/UbuntuMono-Regular.ttf");
+  font-weight: 'normal';
+  font-style: 'normal';
+  font-display: swap;
+}
+@font-face {
+  font-family: 'Varela Round';
+  src: url("https://unpkg.com/volantis-static@0.0.1654736714924/media/fonts/VarelaRound/VarelaRound-Regular.ttf");
+  font-weight: 'normal';
+  font-style: 'normal';
+  font-display: swap;
+}
+.l_header {
+  position: fixed;
+  z-index: 1000;
+  top: 0;
+  width: 100%;
+  height: 64px;
+  background: var(--color-card);
+  box-shadow: 0 1px 2px 0px rgba(0,0,0,0.1);
+  -webkit-box-shadow: 0 1px 2px 0px rgba(0,0,0,0.1);
+}
+.l_header.auto {
+  transition: opacity 0.4s ease;
+  -webkit-transition: opacity 0.4s ease;
+  -khtml-transition: opacity 0.4s ease;
+  -moz-transition: opacity 0.4s ease;
+  -o-transition: opacity 0.4s ease;
+  -ms-transition: opacity 0.4s ease;
+  visibility: hidden;
+}
+.l_header.auto.show {
+  opacity: 1 !important;
+  -webkit-opacity: 1 !important;
+  -moz-opacity: 1 !important;
+  visibility: visible;
+}
+.l_header .container {
+  margin-left: 16px;
+  margin-right: 16px;
+}
+.l_header #wrapper {
+  height: 100%;
+  user-select: none;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+}
+.l_header #wrapper .nav-main,
+.l_header #wrapper .nav-sub {
+  display: -webkit-box /* OLD - iOS 6-, Safari 3.1-6 */;
+  display: -moz-box /* OLD - Firefox 19- (buggy but mostly works) */;
+  display: -ms-flexbox /* TWEENER - IE 10 */;
+  display: -webkit-flex /* NEW - Chrome */;
+  display: flex /* NEW, Spec - Opera 12.1, Firefox 20+ */;
+  display: flex;
+  flex-wrap: nowrap;
+  -webkit-flex-wrap: nowrap;
+  -khtml-flex-wrap: nowrap;
+  -moz-flex-wrap: nowrap;
+  -o-flex-wrap: nowrap;
+  -ms-flex-wrap: nowrap;
+  justify-content: space-between;
+  -webkit-justify-content: space-between;
+  -khtml-justify-content: space-between;
+  -moz-justify-content: space-between;
+  -o-justify-content: space-between;
+  -ms-justify-content: space-between;
+  align-items: center;
+}
+.l_header #wrapper .nav-main {
+  transition: all 0.28s ease;
+  -webkit-transition: all 0.28s ease;
+  -khtml-transition: all 0.28s ease;
+  -moz-transition: all 0.28s ease;
+  -o-transition: all 0.28s ease;
+  -ms-transition: all 0.28s ease;
+}
+.l_header #wrapper.sub .nav-main {
+  transform: translateY(-64px);
+  -webkit-transform: translateY(-64px);
+  -khtml-transform: translateY(-64px);
+  -moz-transform: translateY(-64px);
+  -o-transform: translateY(-64px);
+  -ms-transform: translateY(-64px);
+}
+.l_header #wrapper .nav-sub {
+  transition: all 0.28s ease;
+  -webkit-transition: all 0.28s ease;
+  -khtml-transition: all 0.28s ease;
+  -moz-transition: all 0.28s ease;
+  -o-transition: all 0.28s ease;
+  -ms-transition: all 0.28s ease;
+  opacity: 0;
+  -webkit-opacity: 0;
+  -moz-opacity: 0;
+  height: 64px;
+  width: calc(100% - 2 * 16px);
+  position: absolute;
+}
+.l_header #wrapper .nav-sub ::-webkit-scrollbar {
+  display: -webkit-box /* OLD - iOS 6-, Safari 3.1-6 */;
+  display: -moz-box /* OLD - Firefox 19- (buggy but mostly works) */;
+  display: none;
+}
+@media screen and (min-width: 2048px) {
+  .l_header #wrapper .nav-sub {
+    max-width: 55vw;
+    margin: auto;
+  }
+}
+.l_header #wrapper.sub .nav-sub {
+  opacity: 1;
+  -webkit-opacity: 1;
+  -moz-opacity: 1;
+}
+.l_header #wrapper .title {
+  position: relative;
+  color: var(--color-text);
+  padding-left: 24px;
+  max-height: 64px;
+}
+.l_header #wrapper .nav-main .title {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  flex-shrink: 0;
+  line-height: 64px;
+  padding: 0 24px;
+  font-size: 1.25rem;
+  font-family: "Varela Round", "PingFang SC", "Microsoft YaHei", Helvetica, Arial, Helvetica, monospace;
+}
+.l_header #wrapper .nav-main .title img {
+  height: 64px;
+}
+.l_header .nav-sub {
+  max-width: 1080px;
+  margin: auto;
+}
+.l_header .nav-sub .title {
+  font-weight: bold;
+  font-family: UbuntuMono, "Varela Round", "PingFang SC", "Microsoft YaHei", Helvetica, Arial, Menlo, Monaco, monospace, sans-serif;
+  line-height: 1.2;
+  max-height: 64px;
+  white-space: normal;
+  flex-shrink: 1;
+}
+.l_header .switcher {
+  display: -webkit-box /* OLD - iOS 6-, Safari 3.1-6 */;
+  display: -moz-box /* OLD - Firefox 19- (buggy but mostly works) */;
+  display: none;
+  line-height: 64px;
+  align-items: center;
+}
+.l_header .switcher .s-toc {
+  display: -webkit-box /* OLD - iOS 6-, Safari 3.1-6 */;
+  display: -moz-box /* OLD - Firefox 19- (buggy but mostly works) */;
+  display: none;
+}
+@media screen and (max-width: 768px) {
+  .l_header .switcher .s-toc {
+    display: -webkit-box /* OLD - iOS 6-, Safari 3.1-6 */;
+    display: -moz-box /* OLD - Firefox 19- (buggy but mostly works) */;
+    display: -ms-flexbox /* TWEENER - IE 10 */;
+    display: -webkit-flex /* NEW - Chrome */;
+    display: flex /* NEW, Spec - Opera 12.1, Firefox 20+ */;
+    display: flex;
+  }
+}
+.l_header .switcher >li {
+  height: 48px;
+  transition: all 0.28s ease;
+  -webkit-transition: all 0.28s ease;
+  -khtml-transition: all 0.28s ease;
+  -moz-transition: all 0.28s ease;
+  -o-transition: all 0.28s ease;
+  -ms-transition: all 0.28s ease;
+  margin: 2px;
+}
+@media screen and (max-width: 500px) {
+  .l_header .switcher >li {
+    margin: 0 1px;
+    height: 48px;
+  }
+}
+.l_header .switcher >li >a {
+  display: -webkit-box /* OLD - iOS 6-, Safari 3.1-6 */;
+  display: -moz-box /* OLD - Firefox 19- (buggy but mostly works) */;
+  display: -ms-flexbox /* TWEENER - IE 10 */;
+  display: -webkit-flex /* NEW - Chrome */;
+  display: flex /* NEW, Spec - Opera 12.1, Firefox 20+ */;
+  display: flex;
+  justify-content: center;
+  -webkit-justify-content: center;
+  -khtml-justify-content: center;
+  -moz-justify-content: center;
+  -o-justify-content: center;
+  -ms-justify-content: center;
+  align-items: center;
+  width: 48px;
+  height: 48px;
+  padding: 0.85em 1.1em;
+  border-radius: 100px;
+  -webkit-border-radius: 100px;
+  border: none;
+  transition: all 0.28s ease;
+  -webkit-transition: all 0.28s ease;
+  -khtml-transition: all 0.28s ease;
+  -moz-transition: all 0.28s ease;
+  -o-transition: all 0.28s ease;
+  -ms-transition: all 0.28s ease;
+  color: #44d7b6;
+}
+.l_header .switcher >li >a:hover {
+  border: none;
+}
+.l_header .switcher >li >a.active,
+.l_header .switcher >li >a:active {
+  border: none;
+  background: var(--color-site-bg);
+}
+@media screen and (max-width: 500px) {
+  .l_header .switcher >li >a {
+    width: 36px;
+    height: 48px;
+  }
+}
+.l_header .nav-sub .switcher {
+  display: -webkit-box /* OLD - iOS 6-, Safari 3.1-6 */;
+  display: -moz-box /* OLD - Firefox 19- (buggy but mostly works) */;
+  display: -ms-flexbox /* TWEENER - IE 10 */;
+  display: -webkit-flex /* NEW - Chrome */;
+  display: flex /* NEW, Spec - Opera 12.1, Firefox 20+ */;
+  display: flex;
+}
+.l_header .m_search {
+  display: -webkit-box /* OLD - iOS 6-, Safari 3.1-6 */;
+  display: -moz-box /* OLD - Firefox 19- (buggy but mostly works) */;
+  display: -ms-flexbox /* TWEENER - IE 10 */;
+  display: -webkit-flex /* NEW - Chrome */;
+  display: flex /* NEW, Spec - Opera 12.1, Firefox 20+ */;
+  display: flex;
+  height: 64px;
+  width: 240px;
+  transition: all 0.28s ease;
+  -webkit-transition: all 0.28s ease;
+  -khtml-transition: all 0.28s ease;
+  -moz-transition: all 0.28s ease;
+  -o-transition: all 0.28s ease;
+  -ms-transition: all 0.28s ease;
+}
+@media screen and (max-width: 1024px) {
+  .l_header .m_search {
+    width: 44px;
+    min-width: 44px;
+  }
+  .l_header .m_search input::placeholder {
+    opacity: 0;
+    -webkit-opacity: 0;
+    -moz-opacity: 0;
+  }
+  .l_header .m_search:hover {
+    width: 240px;
+  }
+  .l_header .m_search:hover input::placeholder {
+    opacity: 1;
+    -webkit-opacity: 1;
+    -moz-opacity: 1;
+  }
+}
+@media screen and (min-width: 500px) {
+  .l_header .m_search:hover .input {
+    width: 100%;
+  }
+  .l_header .m_search:hover .input::placeholder {
+    opacity: 1;
+    -webkit-opacity: 1;
+    -moz-opacity: 1;
+  }
+}
+@media screen and (max-width: 500px) {
+  .l_header .m_search {
+    min-width: 0;
+  }
+  .l_header .m_search input::placeholder {
+    opacity: 1;
+    -webkit-opacity: 1;
+    -moz-opacity: 1;
+  }
+}
+.l_header .m_search .form {
+  position: relative;
+  display: -webkit-box /* OLD - iOS 6-, Safari 3.1-6 */;
+  display: -moz-box /* OLD - Firefox 19- (buggy but mostly works) */;
+  display: -ms-flexbox /* TWEENER - IE 10 */;
+  display: -webkit-flex /* NEW - Chrome */;
+  display: flex /* NEW, Spec - Opera 12.1, Firefox 20+ */;
+  display: flex;
+  width: 100%;
+  align-items: center;
+}
+.l_header .m_search .icon {
+  position: absolute;
+  width: 36px;
+  left: 5px;
+  color: var(--color-meta);
+}
+@media screen and (max-width: 500px) {
+  .l_header .m_search .icon {
+    display: -webkit-box /* OLD - iOS 6-, Safari 3.1-6 */;
+    display: -moz-box /* OLD - Firefox 19- (buggy but mostly works) */;
+    display: none;
+  }
+}
+.l_header .m_search .input {
+  display: -webkit-box /* OLD - iOS 6-, Safari 3.1-6 */;
+  display: -moz-box /* OLD - Firefox 19- (buggy but mostly works) */;
+  display: block;
+  padding-top: 8px;
+  padding-bottom: 8px;
+  line-height: 1.3;
+  width: 100%;
+  color: var(--color-text);
+  background: #fafafa;
+  box-shadow: none;
+  -webkit-box-shadow: none;
+  box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  padding-left: 40px;
+  font-size: 0.875rem;
+  border-radius: 8px;
+  -webkit-border-radius: 8px;
+  border: none;
+  transition: all 0.28s ease;
+  -webkit-transition: all 0.28s ease;
+  -khtml-transition: all 0.28s ease;
+  -moz-transition: all 0.28s ease;
+  -o-transition: all 0.28s ease;
+  -ms-transition: all 0.28s ease;
+}
+@media screen and (min-width: 500px) {
+  .l_header .m_search .input:focus {
+    box-shadow: 0 4px 8px 0px rgba(0,0,0,0.1);
+    -webkit-box-shadow: 0 4px 8px 0px rgba(0,0,0,0.1);
+  }
+}
+@media screen and (max-width: 500px) {
+  .l_header .m_search .input {
+    background: var(--color-block);
+    padding-left: 8px;
+    border: none;
+  }
+  .l_header .m_search .input:hover,
+  .l_header .m_search .input:focus {
+    border: none;
+  }
+}
+@media (max-width: 500px) {
+  .l_header .m_search {
+    left: 0;
+    width: 0;
+    overflow: hidden;
+    position: absolute;
+    background: #fff;
+    transition: all 0.28s ease;
+    -webkit-transition: all 0.28s ease;
+    -khtml-transition: all 0.28s ease;
+    -moz-transition: all 0.28s ease;
+    -o-transition: all 0.28s ease;
+    -ms-transition: all 0.28s ease;
+  }
+  .l_header .m_search .input {
+    border-radius: 32px;
+    -webkit-border-radius: 32px;
+    margin-left: 16px;
+    padding-left: 16px;
+  }
+  .l_header.z_search-open .m_search {
+    width: 100%;
+  }
+  .l_header.z_search-open .m_search .input {
+    width: calc(100% - 120px);
+  }
+}
+ul.m-pc >li>a {
+  color: inherit;
+  border-bottom: 2px solid transparent;
+}
+ul.m-pc >li>a:active,
+ul.m-pc >li>a.active {
+  border-bottom: 2px solid #44d7b6;
+}
+ul.m-pc li:hover >ul.list-v,
+ul.list-v li:hover >ul.list-v {
+  display: -webkit-box /* OLD - iOS 6-, Safari 3.1-6 */;
+  display: -moz-box /* OLD - Firefox 19- (buggy but mostly works) */;
+  display: block;
+}
+ul.nav-list-h {
+  display: -webkit-box /* OLD - iOS 6-, Safari 3.1-6 */;
+  display: -moz-box /* OLD - Firefox 19- (buggy but mostly works) */;
+  display: -ms-flexbox /* TWEENER - IE 10 */;
+  display: -webkit-flex /* NEW - Chrome */;
+  display: flex /* NEW, Spec - Opera 12.1, Firefox 20+ */;
+  display: flex;
+  align-items: stretch;
+}
+ul.nav-list-h>li {
+  position: relative;
+  justify-content: center;
+  -webkit-justify-content: center;
+  -khtml-justify-content: center;
+  -moz-justify-content: center;
+  -o-justify-content: center;
+  -ms-justify-content: center;
+  height: 100%;
+  line-height: 2.4;
+  border-radius: 4px;
+  -webkit-border-radius: 4px;
+}
+ul.nav-list-h>li >a {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  font-weight: 600;
+}
+ul.list-v {
+  z-index: 1;
+  display: -webkit-box /* OLD - iOS 6-, Safari 3.1-6 */;
+  display: -moz-box /* OLD - Firefox 19- (buggy but mostly works) */;
+  display: none;
+  position: absolute;
+  background: var(--color-card);
+  box-shadow: 0 2px 4px 0px rgba(0,0,0,0.08), 0 4px 8px 0px rgba(0,0,0,0.08), 0 8px 16px 0px rgba(0,0,0,0.08);
+  -webkit-box-shadow: 0 2px 4px 0px rgba(0,0,0,0.08), 0 4px 8px 0px rgba(0,0,0,0.08), 0 8px 16px 0px rgba(0,0,0,0.08);
+  margin-top: -6px;
+  border-radius: 4px;
+  -webkit-border-radius: 4px;
+  padding: 8px 0;
+}
+ul.list-v.show {
+  display: -webkit-box /* OLD - iOS 6-, Safari 3.1-6 */;
+  display: -moz-box /* OLD - Firefox 19- (buggy but mostly works) */;
+  display: block;
+}
+ul.list-v hr {
+  margin-top: 8px;
+  margin-bottom: 8px;
+}
+ul.list-v >li {
+  white-space: nowrap;
+  word-break: keep-all;
+}
+ul.list-v >li.header {
+  font-size: 0.78125rem;
+  font-weight: bold;
+  line-height: 2em;
+  color: var(--color-meta);
+  margin: 8px 16px 4px;
+}
+ul.list-v >li.header i {
+  margin-right: 8px;
+}
+ul.list-v >li ul {
+  margin-left: 0;
+  display: -webkit-box /* OLD - iOS 6-, Safari 3.1-6 */;
+  display: -moz-box /* OLD - Firefox 19- (buggy but mostly works) */;
+  display: none;
+  margin-top: -40px;
+}
+ul.list-v .aplayer-container {
+  min-height: 64px;
+  padding: 6px 16px;
+}
+ul.list-v >li>a {
+  transition: all 0.28s ease;
+  -webkit-transition: all 0.28s ease;
+  -khtml-transition: all 0.28s ease;
+  -moz-transition: all 0.28s ease;
+  -o-transition: all 0.28s ease;
+  -ms-transition: all 0.28s ease;
+  display: -webkit-box /* OLD - iOS 6-, Safari 3.1-6 */;
+  display: -moz-box /* OLD - Firefox 19- (buggy but mostly works) */;
+  display: block;
+  color: var(--color-list);
+  font-size: 0.875rem;
+  font-weight: bold;
+  line-height: 36px;
+  padding: 0 20px 0 16px;
+  text-overflow: ellipsis;
+  margin: 0 4px;
+  border-radius: 4px;
+  -webkit-border-radius: 4px;
+}
+@media screen and (max-width: 1024px) {
+  ul.list-v >li>a {
+    line-height: 40px;
+  }
+}
+ul.list-v >li>a >i {
+  margin-right: 8px;
+}
+ul.list-v >li>a:active,
+ul.list-v >li>a.active {
+  color: var(--color-list-hl);
+}
+ul.list-v >li>a:hover {
+  color: var(--color-list-hl);
+  background: var(--color-site-bg);
+}
+.l_header .menu >ul>li>a {
+  display: -webkit-box /* OLD - iOS 6-, Safari 3.1-6 */;
+  display: -moz-box /* OLD - Firefox 19- (buggy but mostly works) */;
+  display: block;
+  padding: 0 8px;
+}
+.l_header .menu >ul>li>a >i {
+  margin-right: 4px;
+}
+.l_header ul.nav-list-h>li {
+  color: var(--color-list);
+  line-height: 64px;
+}
+.l_header ul.nav-list-h>li >a {
+  max-height: 64px;
+  overflow: hidden;
+  color: inherit;
+}
+.l_header ul.nav-list-h>li >a:active,
+.l_header ul.nav-list-h>li >a.active {
+  color: #44d7b6;
+}
+.l_header ul.nav-list-h>li:hover>a {
+  color: var(--color-list-hl);
+}
+.l_header ul.nav-list-h>li i.music {
+  animation: rotate-effect 1.5s linear infinite;
+  -webkit-animation: rotate-effect 1.5s linear infinite;
+  -khtml-animation: rotate-effect 1.5s linear infinite;
+  -moz-animation: rotate-effect 1.5s linear infinite;
+  -o-animation: rotate-effect 1.5s linear infinite;
+  -ms-animation: rotate-effect 1.5s linear infinite;
+}
+@-moz-keyframes rotate-effect {
+  0% {
+    transform: rotate(0);
+    -webkit-transform: rotate(0);
+    -khtml-transform: rotate(0);
+    -moz-transform: rotate(0);
+    -o-transform: rotate(0);
+    -ms-transform: rotate(0);
+  }
+  25% {
+    transform: rotate(90deg);
+    -webkit-transform: rotate(90deg);
+    -khtml-transform: rotate(90deg);
+    -moz-transform: rotate(90deg);
+    -o-transform: rotate(90deg);
+    -ms-transform: rotate(90deg);
+  }
+  50% {
+    transform: rotate(180deg);
+    -webkit-transform: rotate(180deg);
+    -khtml-transform: rotate(180deg);
+    -moz-transform: rotate(180deg);
+    -o-transform: rotate(180deg);
+    -ms-transform: rotate(180deg);
+  }
+  75% {
+    transform: rotate(270deg);
+    -webkit-transform: rotate(270deg);
+    -khtml-transform: rotate(270deg);
+    -moz-transform: rotate(270deg);
+    -o-transform: rotate(270deg);
+    -ms-transform: rotate(270deg);
+  }
+  100% {
+    transform: rotate(360deg);
+    -webkit-transform: rotate(360deg);
+    -khtml-transform: rotate(360deg);
+    -moz-transform: rotate(360deg);
+    -o-transform: rotate(360deg);
+    -ms-transform: rotate(360deg);
+  }
+}
+@-webkit-keyframes rotate-effect {
+  0% {
+    transform: rotate(0);
+    -webkit-transform: rotate(0);
+    -khtml-transform: rotate(0);
+    -moz-transform: rotate(0);
+    -o-transform: rotate(0);
+    -ms-transform: rotate(0);
+  }
+  25% {
+    transform: rotate(90deg);
+    -webkit-transform: rotate(90deg);
+    -khtml-transform: rotate(90deg);
+    -moz-transform: rotate(90deg);
+    -o-transform: rotate(90deg);
+    -ms-transform: rotate(90deg);
+  }
+  50% {
+    transform: rotate(180deg);
+    -webkit-transform: rotate(180deg);
+    -khtml-transform: rotate(180deg);
+    -moz-transform: rotate(180deg);
+    -o-transform: rotate(180deg);
+    -ms-transform: rotate(180deg);
+  }
+  75% {
+    transform: rotate(270deg);
+    -webkit-transform: rotate(270deg);
+    -khtml-transform: rotate(270deg);
+    -moz-transform: rotate(270deg);
+    -o-transform: rotate(270deg);
+    -ms-transform: rotate(270deg);
+  }
+  100% {
+    transform: rotate(360deg);
+    -webkit-transform: rotate(360deg);
+    -khtml-transform: rotate(360deg);
+    -moz-transform: rotate(360deg);
+    -o-transform: rotate(360deg);
+    -ms-transform: rotate(360deg);
+  }
+}
+@-o-keyframes rotate-effect {
+  0% {
+    transform: rotate(0);
+    -webkit-transform: rotate(0);
+    -khtml-transform: rotate(0);
+    -moz-transform: rotate(0);
+    -o-transform: rotate(0);
+    -ms-transform: rotate(0);
+  }
+  25% {
+    transform: rotate(90deg);
+    -webkit-transform: rotate(90deg);
+    -khtml-transform: rotate(90deg);
+    -moz-transform: rotate(90deg);
+    -o-transform: rotate(90deg);
+    -ms-transform: rotate(90deg);
+  }
+  50% {
+    transform: rotate(180deg);
+    -webkit-transform: rotate(180deg);
+    -khtml-transform: rotate(180deg);
+    -moz-transform: rotate(180deg);
+    -o-transform: rotate(180deg);
+    -ms-transform: rotate(180deg);
+  }
+  75% {
+    transform: rotate(270deg);
+    -webkit-transform: rotate(270deg);
+    -khtml-transform: rotate(270deg);
+    -moz-transform: rotate(270deg);
+    -o-transform: rotate(270deg);
+    -ms-transform: rotate(270deg);
+  }
+  100% {
+    transform: rotate(360deg);
+    -webkit-transform: rotate(360deg);
+    -khtml-transform: rotate(360deg);
+    -moz-transform: rotate(360deg);
+    -o-transform: rotate(360deg);
+    -ms-transform: rotate(360deg);
+  }
+}
+@keyframes rotate-effect {
+  0% {
+    transform: rotate(0);
+    -webkit-transform: rotate(0);
+    -khtml-transform: rotate(0);
+    -moz-transform: rotate(0);
+    -o-transform: rotate(0);
+    -ms-transform: rotate(0);
+  }
+  25% {
+    transform: rotate(90deg);
+    -webkit-transform: rotate(90deg);
+    -khtml-transform: rotate(90deg);
+    -moz-transform: rotate(90deg);
+    -o-transform: rotate(90deg);
+    -ms-transform: rotate(90deg);
+  }
+  50% {
+    transform: rotate(180deg);
+    -webkit-transform: rotate(180deg);
+    -khtml-transform: rotate(180deg);
+    -moz-transform: rotate(180deg);
+    -o-transform: rotate(180deg);
+    -ms-transform: rotate(180deg);
+  }
+  75% {
+    transform: rotate(270deg);
+    -webkit-transform: rotate(270deg);
+    -khtml-transform: rotate(270deg);
+    -moz-transform: rotate(270deg);
+    -o-transform: rotate(270deg);
+    -ms-transform: rotate(270deg);
+  }
+  100% {
+    transform: rotate(360deg);
+    -webkit-transform: rotate(360deg);
+    -khtml-transform: rotate(360deg);
+    -moz-transform: rotate(360deg);
+    -o-transform: rotate(360deg);
+    -ms-transform: rotate(360deg);
+  }
+}
+.menu-phone li ul.list-v {
+  right: calc(100% - 0.5 * 16px);
+}
+.menu-phone li ul.list-v ul {
+  right: calc(100% - 0.5 * 16px);
+}
+#wrapper {
+  max-width: 1080px;
+  margin: auto;
+}
+@media screen and (min-width: 2048px) {
+  #wrapper {
+    max-width: 55vw;
+  }
+}
+#wrapper .menu {
+  -webkit-box-flex: 1;
+  -moz-box-flex: 1;
+  -webkit-flex: 1 1;
+  -ms-flex: 1 1;
+  flex: 1 1;
+  margin: 0 16px 0 0;
+}
+#wrapper .menu .list-v ul {
+  left: calc(100% - 0.5 * 16px);
+}
+.menu-phone {
+  display: -webkit-box /* OLD - iOS 6-, Safari 3.1-6 */;
+  display: -moz-box /* OLD - Firefox 19- (buggy but mostly works) */;
+  display: none;
+  margin-top: 16px;
+  right: 8px;
+  transition: all 0.28s ease;
+  -webkit-transition: all 0.28s ease;
+  -khtml-transition: all 0.28s ease;
+  -moz-transition: all 0.28s ease;
+  -o-transition: all 0.28s ease;
+  -ms-transition: all 0.28s ease;
+}
+.menu-phone ul {
+  right: calc(100% - 0.5 * 16px);
+}
+@media screen and (max-width: 500px) {
+  .menu-phone {
+    display: -webkit-box /* OLD - iOS 6-, Safari 3.1-6 */;
+    display: -moz-box /* OLD - Firefox 19- (buggy but mostly works) */;
+    display: block;
+  }
+}
+.l_header {
+  max-width: 65vw;
+  left: calc((100% - 65vw) * 0.5);
+  border-bottom-left-radius: 8px;
+  border-bottom-right-radius: 8px;
+}
+@media screen and (max-width: 2048px) {
+  .l_header {
+    max-width: 1112px;
+    left: calc((100% - 1112px) * 0.5);
+  }
+}
+@media screen and (max-width: 1112px) {
+  .l_header {
+    left: 0;
+    border-radius: 0;
+    -webkit-border-radius: 0;
+    max-width: 100%;
+  }
+}
+@media screen and (max-width: 500px) {
+  .l_header .container {
+    margin-left: 0;
+    margin-right: 0;
+  }
+  .l_header #wrapper .nav-main .title {
+    padding-left: 16px;
+    padding-right: 16px;
+  }
+  .l_header #wrapper .nav-sub {
+    width: 100%;
+  }
+  .l_header #wrapper .nav-sub .title {
+    overflow-y: scroll;
+    margin-top: 2px;
+    padding: 8px 16px;
+  }
+  .l_header #wrapper .switcher {
+    display: -webkit-box /* OLD - iOS 6-, Safari 3.1-6 */;
+    display: -moz-box /* OLD - Firefox 19- (buggy but mostly works) */;
+    display: -ms-flexbox /* TWEENER - IE 10 */;
+    display: -webkit-flex /* NEW - Chrome */;
+    display: flex /* NEW, Spec - Opera 12.1, Firefox 20+ */;
+    display: flex;
+    margin-right: 8px;
+  }
+  .l_header .menu {
+    display: -webkit-box /* OLD - iOS 6-, Safari 3.1-6 */;
+    display: -moz-box /* OLD - Firefox 19- (buggy but mostly works) */;
+    display: none;
+  }
+}
+@media screen and (max-width: 500px) {
+  .list-v li {
+    max-width: 270px;
+  }
+}
+#u-search {
+  display: -webkit-box /* OLD - iOS 6-, Safari 3.1-6 */;
+  display: -moz-box /* OLD - Firefox 19- (buggy but mostly works) */;
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  padding: 60px 20px;
+  z-index: 1001;
+}
+@media screen and (max-width: 680px) {
+  #u-search {
+    padding: 0px;
+  }
+}
+
+  </style>
+  <link rel="stylesheet" href="/css/style.css" media="print" onload="this.media='all';this.onload=null">
+  <noscript><link rel="stylesheet" href="/css/style.css"></noscript>
+  
+<script>
+if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMode))
+    document.write(
+	'<style>'+
+		'html{'+
+			'overflow-x: hidden !important;'+
+			'overflow-y: hidden !important;'+
+		'}'+
+		'.kill-ie{'+
+			'text-align:center;'+
+			'height: 100%;'+
+			'margin-top: 15%;'+
+			'margin-bottom: 5500%;'+
+		'}'+
+    '.kill-t{'+
+      'font-size: 2rem;'+
+    '}'+
+    '.kill-c{'+
+      'font-size: 1.2rem;'+
+    '}'+
+		'#l_header,#l_body{'+
+			'display: none;'+
+		'}'+
+	'</style>'+
+    '<div class="kill-ie">'+
+        `<span class="kill-t"><b>Sorry, your browser cannot access this site</b></span><br/>`+
+        `<span class="kill-c">Microsoft has terminated support for Internet Explorer (IE) 10 and earlier versions in 2016. <br/>There are great security risks to continue using it. Please use contemporary mainstream browsers to access.</span><br/>`+
+        `<a target="_blank" rel="noopener" href="https://blogs.windows.com/windowsexperience/2021/05/19/the-future-of-internet-explorer-on-windows-10-is-in-microsoft-edge/"><strong>Learn more ></strong></a>`+
+    '</div>');
+</script>
+
+
+<noscript>
+	<style>
+		html{
+			overflow-x: hidden !important;
+			overflow-y: hidden !important;
+		}
+		.kill-noscript{
+			text-align:center;
+			height: 100%;
+			margin-top: 15%;
+			margin-bottom: 5500%;
+		}
+    .kill-t{
+      font-size: 2rem;
+    }
+    .kill-c{
+      font-size: 1.2rem;
+    }
+		#l_header,#l_body{
+			display: none;
+		}
+	</style>
+    <div class="kill-noscript">
+        <span class="kill-t"><b>Sorry, your browser cannot access this site</b></span><br/>
+        <span class="kill-c">This page requires browser support (enable) JavaScript</span><br/>
+        <a target="_blank" rel="noopener" href="https://www.baidu.com/s?wd=启用JavaScript"><strong>Learn more ></strong></a>
+    </div>
+</noscript>
+
+
+  <script>
+  /************这个文件存放不需要重载的全局变量和全局函数*********/
+  window.volantis = {}; // volantis 全局变量
+  volantis.debug = "env"; // 调试模式
+  volantis.dom = {}; // 页面Dom see: /source/js/app.js etc.
+
+  volantis.GLOBAL_CONFIG ={
+    debug: "env",
+    cdn: {"js":{"app":"/js/app.js","parallax":"/js/plugins/parallax.js","rightMenu":"/js/plugins/rightMenu.js","rightMenus":"/js/plugins/rightMenus.js","sites":"/js/plugins/tags/sites.js","friends":"/js/plugins/tags/friends.js","contributors":"/js/plugins/tags/contributors.js","search":"/js/search/hexo.js"},"css":{"style":"/css/style.css"}},
+    default: {"avatar":"https://unpkg.com/volantis-static@0.0.1654736714924/media/placeholder/avatar/round/3442075.svg","link":"https://unpkg.com/volantis-static@0.0.1654736714924/media/placeholder/link/8f277b4ee0ecd.svg","cover":"https://unpkg.com/volantis-static@0.0.1654736714924/media/placeholder/cover/76b86c0226ffd.svg","image":"https://unpkg.com/volantis-static@0.0.1654736714924/media/placeholder/image/2659360.svg"},
+    lastupdate: new Date(1765549629403),
+    sidebar: {
+      for_page: ["blogger","category","tagcloud","webinfo","lastupdate"],
+      for_post: ["toc"],
+      webinfo: {
+        lastupd: {
+          enable: true,
+          friendlyShow: true
+        },
+        runtime: {
+          data: "2022/12/04",
+          unit: "天"
+        }
+      }
+    },
+    plugins: {
+      message: {"enable":true,"css":"https://unpkg.com/volantis-static@0.0.1654736714924/libs/izitoast/dist/css/iziToast.min.css","js":"https://unpkg.com/volantis-static@0.0.1654736714924/libs/izitoast/dist/js/iziToast.min.js","icon":{"default":"fa-solid fa-info-circle light-blue","quection":"fa-solid fa-question-circle light-blue"},"time":{"default":5000,"quection":20000},"position":"topRight","transitionIn":"bounceInLeft","transitionOut":"fadeOutRight","titleColor":"var(--color-text)","messageColor":"var(--color-text)","backgroundColor":"var(--color-card)","zindex":2147483647,"copyright":{"enable":true,"title":"知识共享许可协议","message":"请遵守 CC BY-NC-SA 4.0 协议。","icon":"far fa-copyright light-blue"},"aplayer":{"enable":true,"play":"fa-solid fa-play","pause":"fa-solid fa-pause"},"rightmenu":{"enable":true,"notice":true}},
+      fancybox: {"css":"https://unpkg.com/volantis-static@0.0.1654736714924/libs/@fancyapps/ui/dist/fancybox.css","js":"https://unpkg.com/volantis-static@0.0.1654736714924/libs/@fancyapps/ui/dist/fancybox.umd.js"},
+      
+      aplayer: {
+        id: 993524571,
+        enable:true
+      },
+      
+      
+      
+    }
+  }
+
+  /******************** volantis.EventListener ********************************/
+  // 事件监听器 see: /source/js/app.js
+  volantis.EventListener = {}
+  // 这里存放pjax切换页面时将被移除的事件监听器
+  volantis.EventListener.list = []
+  //构造方法
+  function volantisEventListener(type, f, ele) {
+    this.type = type
+    this.f = f
+    this.ele = ele
+  }
+  // 移除事件监听器
+  volantis.EventListener.remove = () => {
+    volantis.EventListener.list.forEach(function (i) {
+      i.ele.removeEventListener(i.type, i.f, false)
+    })
+    volantis.EventListener.list = []
+  }
+  /******************** volantis.dom.$ ********************************/
+  // 注：这里没有选择器，也没有forEach一次只处理一个dom，这里重新封装主题常用的dom方法，返回的是dom对象，对象包含了以下方法，同时保留dom的原生API
+  function volantisDom(ele) {
+    if (!ele) ele = document.createElement("div")
+    this.ele = ele;
+    // ==============================================================
+    this.ele.find = (c) => {
+      let q = this.ele.querySelector(c)
+      if (q)
+        return new volantisDom(q)
+    }
+    // ==============================================================
+    this.ele.hasClass = (c) => {
+      return this.ele.className.match(new RegExp('(\\s|^)' + c + '(\\s|$)'));
+    }
+    this.ele.addClass = (c) => {
+      this.ele.classList.add(c);
+      return this.ele
+    }
+    this.ele.removeClass = (c) => {
+      this.ele.classList.remove(c);
+      return this.ele
+    }
+    this.ele.toggleClass = (c) => {
+      if (this.ele.hasClass(c)) {
+        this.ele.removeClass(c)
+      } else {
+        this.ele.addClass(c)
+      }
+      return this.ele
+    }
+    // ==============================================================
+    // 参数 r 为 true 表示pjax切换页面时事件监听器将被移除，false不移除
+    this.ele.on = (c, f, r = 1) => {
+      this.ele.addEventListener(c, f, false)
+      if (r) {
+        volantis.EventListener.list.push(new volantisEventListener(c, f, this.ele))
+      }
+      return this.ele
+    }
+    this.ele.click = (f, r) => {
+      this.ele.on("click", f, r)
+      return this.ele
+    }
+    this.ele.scroll = (f, r) => {
+      this.ele.on("scroll", f, r)
+      return this.ele
+    }
+    // ==============================================================
+    this.ele.html = (c) => {
+      // if(c=== undefined){
+      //   return this.ele.innerHTML
+      // }else{
+      this.ele.innerHTML = c
+      return this.ele
+      // }
+    }
+    // ==============================================================
+    this.ele.hide = (c) => {
+      this.ele.style.display = "none"
+      return this.ele
+    }
+    this.ele.show = (c) => {
+      this.ele.style.display = "block"
+      return this.ele
+    }
+    // ==============================================================
+    return this.ele
+  }
+  volantis.dom.$ = (ele) => {
+    return !!ele ? new volantisDom(ele) : null;
+  }
+  /******************** RunItem ********************************/
+  function RunItem() {
+    this.list = []; // 存放回调函数
+    this.start = () => {
+      for (var i = 0; i < this.list.length; i++) {
+        this.list[i].run();
+      }
+    };
+    this.push = (fn, name, setRequestAnimationFrame = true) => {
+      let myfn = fn
+      if (setRequestAnimationFrame) {
+        myfn = ()=>{
+          volantis.requestAnimationFrame(fn)
+        }
+      }
+      var f = new Item(myfn, name);
+      this.list.push(f);
+    };
+    this.remove = (name) =>{
+      for (let index = 0; index < this.list.length; index++) {
+        const e = this.list[index];
+        if (e.name == name) {
+          this.list.splice(index,1);
+        }
+      }
+    }
+    // 构造一个可以run的对象
+    function Item(fn, name) {
+      // 函数名称
+      this.name = name || fn.name;
+      // run方法
+      this.run = () => {
+        try {
+          fn()
+        } catch (error) {
+          console.log(error);
+        }
+      };
+    }
+  }
+  /******************** Pjax ********************************/
+  // /layout/_plugins/pjax/index.ejs
+  // volantis.pjax.send(callBack[,"callBackName"]) 传入pjax:send回调函数
+  // volantis.pjax.push(callBack[,"callBackName"]) 传入pjax:complete回调函数
+  // volantis.pjax.error(callBack[,"callBackName"]) 传入pjax:error回调函数
+  volantis.pjax = {};
+  volantis.pjax.method = {
+    complete: new RunItem(),
+    error: new RunItem(),
+    send: new RunItem(),
+  };
+  volantis.pjax = Object.assign(volantis.pjax, {
+    push: volantis.pjax.method.complete.push,
+    error: volantis.pjax.method.error.push,
+    send: volantis.pjax.method.send.push,
+  });
+  /******************** RightMenu ********************************/
+  // volantis.rightmenu.handle(callBack[,"callBackName"]) 外部菜单项控制
+  // 可在 volantis.mouseEvent 处获取右键事件
+  volantis.rightmenu = {};
+  volantis.rightmenu.method = {
+    handle: new RunItem(),
+  }
+  volantis.rightmenu = Object.assign(volantis.rightmenu, {
+    handle: volantis.rightmenu.method.handle.push,
+  });
+  /********************  Dark Mode  ********************************/
+  // /layout/_partial/scripts/darkmode.ejs
+  // volantis.dark.mode 当前模式 dark or light
+  // volantis.dark.toggle() 暗黑模式触发器
+  // volantis.dark.push(callBack[,"callBackName"]) 传入触发器回调函数
+  volantis.dark = {};
+  volantis.dark.method = {
+    toggle: new RunItem(),
+  };
+  volantis.dark = Object.assign(volantis.dark, {
+    push: volantis.dark.method.toggle.push,
+  });
+  /********************  Message  ********************************/
+  // VolantisApp.message
+  /********************  isMobile  ********************************/
+  // /source/js/app.js
+  // volantis.isMobile
+  // volantis.isMobileOld
+  /********************脚本动态加载函数********************************/
+  // volantis.js(src, cb)  cb 可以传入onload回调函数 或者 JSON对象 例如: volantis.js("src", ()=>{}) 或 volantis.js("src", {defer:true,onload:()=>{}})
+  // volantis.css(src)
+
+  // 返回Promise对象，如下方法同步加载资源，这利于处理文件资源之间的依赖关系，例如：APlayer 需要在 MetingJS 之前加载
+  // (async () => {
+  //     await volantis.js("...theme.plugins.aplayer.js.aplayer...")
+  //     await volantis.js("...theme.plugins.aplayer.js.meting...")
+  // })();
+
+  // 已经加入了setTimeout
+  volantis.js = (src, cb) => {
+    return new Promise(resolve => {
+      setTimeout(function () {
+        var HEAD = document.getElementsByTagName("head")[0] || document.documentElement;
+        var script = document.createElement("script");
+        script.setAttribute("type", "text/javascript");
+        if (cb) {
+          if (JSON.stringify(cb)) {
+            for (let p in cb) {
+              if (p == "onload") {
+                script[p] = () => {
+                  cb[p]()
+                  resolve()
+                }
+              } else {
+                script[p] = cb[p]
+                script.onload = resolve
+              }
+            }
+          } else {
+            script.onload = () => {
+              cb()
+              resolve()
+            };
+          }
+        } else {
+          script.onload = resolve
+        }
+        script.setAttribute("src", src);
+        HEAD.appendChild(script);
+      });
+    });
+  }
+  volantis.css = (src) => {
+    return new Promise(resolve => {
+      setTimeout(function () {
+        var link = document.createElement('link');
+        link.rel = "stylesheet";
+        link.href = src;
+        link.onload = resolve;
+        document.getElementsByTagName("head")[0].appendChild(link);
+      });
+    });
+  }
+  /********************按需加载的插件********************************/
+  // volantis.import.jQuery().then(()=>{})
+  volantis.import = {
+    jQuery: () => {
+      if (typeof jQuery == "undefined") {
+        return volantis.js("https://unpkg.com/volantis-static@0.0.1654736714924/libs/jquery/dist/jquery.min.js")
+      } else {
+        return new Promise(resolve => {
+          resolve()
+        });
+      }
+    }
+  }
+  /********************** requestAnimationFrame ********************************/
+  // 1、requestAnimationFrame 会把每一帧中的所有 DOM 操作集中起来，在一次重绘或回流中就完成，并且重绘或回流的时间间隔紧紧跟随浏览器的刷新频率，一般来说，这个频率为每秒60帧。
+  // 2、在隐藏或不可见的元素中，requestAnimationFrame 将不会进行重绘或回流，这当然就意味着更少的的 cpu，gpu 和内存使用量。
+  volantis.requestAnimationFrame = (fn)=>{
+    if (!window.requestAnimationFrame) {
+      window.requestAnimationFrame = window.requestAnimationFrame || window.mozRequestAnimationFrame || window.webkitRequestAnimationFrame;
+    }
+    window.requestAnimationFrame(fn)
+  }
+  /************************ layoutHelper *****************************************/
+  volantis.layoutHelper = (helper, html, opt)=>{
+    opt = Object.assign({clean:false, pjax:true}, opt)
+    function myhelper(helper, html, clean) {
+      volantis.tempDiv = document.createElement("div");
+      volantis.tempDiv.innerHTML = html;
+      let layoutHelper = document.querySelector("#layoutHelper-"+helper)
+      if (layoutHelper) {
+        if (clean) {
+          layoutHelper.innerHTML = ""
+        }
+        layoutHelper.append(volantis.tempDiv);
+      }
+    }
+    myhelper(helper, html, opt.clean)
+    if (opt.pjax) {
+      volantis.pjax.push(()=>{
+        myhelper(helper, html, opt.clean)
+      },"layoutHelper-"+helper)
+    }
+  }
+  /****************************** 滚动事件处理 ****************************************/
+  volantis.scroll = {
+    engine: new RunItem(),
+    unengine: new RunItem(),
+  };
+  volantis.scroll = Object.assign(volantis.scroll, {
+    push: volantis.scroll.engine.push,
+  });
+  // 滚动条距离顶部的距离
+  volantis.scroll.getScrollTop = () =>{
+    let scrollPos;
+    if (window.pageYOffset) {
+      scrollPos = window.pageYOffset;
+    } else if (document.compatMode && document.compatMode != 'BackCompat') {
+      scrollPos = document.documentElement.scrollTop;
+    } else if (document.body) {
+      scrollPos = document.body.scrollTop;
+    }
+    return scrollPos;
+  }
+  // 使用 requestAnimationFrame 处理滚动事件
+  // `volantis.scroll.del` 中存储了一个数值, 该数值检测一定时间间隔内滚动条滚动的位移, 数值的检测频率是浏览器的刷新频率. 数值为正数时, 表示向下滚动. 数值为负数时, 表示向上滚动.
+  volantis.scroll.handleScrollEvents = () => {
+    volantis.scroll.lastScrollTop = volantis.scroll.getScrollTop()
+    function loop() {
+      const scrollTop = volantis.scroll.getScrollTop();
+      if (volantis.scroll.lastScrollTop !== scrollTop) {
+        volantis.scroll.del = scrollTop - volantis.scroll.lastScrollTop;
+        volantis.scroll.lastScrollTop = scrollTop;
+        // if (volantis.scroll.del > 0) {
+        //   console.log("向下滚动");
+        // } else {
+        //   console.log("向上滚动");
+        // }
+        // 注销过期的unengine未滚动事件
+        volantis.scroll.unengine.list=[]
+        volantis.scroll.engine.start();
+      }else{
+        volantis.scroll.unengine.start();
+      }
+      volantis.requestAnimationFrame(loop)
+    }
+    volantis.requestAnimationFrame(loop)
+  }
+  volantis.scroll.handleScrollEvents()
+  volantis.scroll.ele = null;
+  // 触发页面滚动至目标元素位置
+  volantis.scroll.to = (ele, option = {}) => {
+    if (!ele) return;
+    volantis.scroll.ele = ele;
+    // 默认配置
+    opt = {
+      top: ele.getBoundingClientRect().top + document.documentElement.scrollTop,
+      behavior: "smooth"
+    }
+    // 定义配置
+    if ("top" in option) {
+      opt.top = option.top
+    }
+    if ("behavior" in option) {
+      opt.behavior = option.behavior
+    }
+    if ("addTop" in option) {
+      opt.top += option.addTop
+    }
+    if (!("observerDic" in option)) {
+      option.observerDic = 100
+    }
+    // 滚动
+    window.scrollTo(opt);
+    // 监视器
+    // 监视并矫正元素滚动到指定位置
+    // 用于处理 lazyload 引起的 cls 导致的定位失败问题
+    // option.observer = false
+    if (option.observer) {
+      setTimeout(() => {
+        if (volantis.scroll.ele != ele) {
+          return
+        }
+        volantis.scroll.unengine.push(() => {
+          let me = ele.getBoundingClientRect().top
+          if(!(me >= -option.observerDic && me <= option.observerDic)){
+            volantis.scroll.to(ele, option)
+          }
+          volantis.scroll.unengine.remove("unengineObserver")
+        },"unengineObserver")
+      },1000)
+    }
+  }
+  /********************** Content Visibility ********************************/
+  // 见 source/css/first.styl 如果遇到任何问题 删除 .post-story 即可
+  // 一个元素被声明 content-visibility 属性后 如果元素不在 viewport 中 浏览器不会计算其后代元素样式和属性 从而节省 Style & Layout 耗时
+  // content-visibility 的副作用: 锚点失效 等等(实验初期 暂不明确), 使用此方法清除样式
+  volantis.cleanContentVisibility = ()=>{
+    if (document.querySelector(".post-story")) {
+      console.log("cleanContentVisibility");
+      document.querySelectorAll(".post-story").forEach(e=>{
+        e.classList.remove("post-story")
+      })
+    }
+  }
+  /******************************************************************************/
+  /******************************************************************************/
+  /******************************************************************************/
+  //图像加载出错时的处理
+  function errorImgAvatar(img) {
+    img.src = "https://unpkg.com/volantis-static@0.0.1654736714924/media/placeholder/avatar/round/3442075.svg";
+    img.onerror = null;
+  }
+  function errorImgCover(img) {
+    img.src = "https://unpkg.com/volantis-static@0.0.1654736714924/media/placeholder/cover/76b86c0226ffd.svg";
+    img.onerror = null;
+  }
+  /******************************************************************************/
+</script>
+
+  <!-- import head_end begin -->
+  <!-- import head_end end -->
+  <!-- Custom Files headEnd begin-->
+  
+  <!-- Custom Files headEnd end-->
+<!-- hexo injector head_end start -->
+<link rel="stylesheet" href="https://unpkg.com/katex@0.12.0/dist/katex.min.css">
+
+<link rel="stylesheet" href="https://unpkg.com/hexo-math@4.0.0/dist/style.css">
+<!-- hexo injector head_end end --></head>
+  <body itemscope itemtype="http://schema.org/WebPage">
+    <!-- import body_begin begin-->
+    <!-- import body_begin end-->
+    <!-- Custom Files bodyBegin begin-->
+    
+    <!-- Custom Files bodyBegin end-->
+    <header itemscope itemtype="http://schema.org/WPHeader" id="l_header" class="l_header auto shadow floatable blur " style='opacity: 0' >
+  <div class='container'>
+  <div id='wrapper'>
+    <div class='nav-sub'>
+      <p class="title"></p>
+      <ul class='switcher nav-list-h m-phone' id="pjax-header-nav-list">
+        <li><a id="s-comment" class="fa-solid fa-comments fa-fw" target="_self"  href="/" onclick="return false;" title="comment"></a></li>
+        
+          <li><a id="s-toc" class="s-toc fa-solid fa-list fa-fw" target="_self"  href="/" onclick="return false;" title="toc"></a></li>
+        
+      </ul>
+    </div>
+		<div class="nav-main">
+      
+        
+        <a class="title flat-box" target="_self" href='/'>
+          
+            <img no-lazy class='logo' src='https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/Logo-NavBar@3x.png'/>
+          
+          
+          
+        </a>
+      
+
+			<div class='menu navigation'>
+				<ul class='nav-list-h m-pc'>
+          
+          
+          
+            
+            
+              <li>
+                <a class="menuitem flat-box faa-parent animated-hover"
+                href="/" title="博客"
+                  
+                  
+                  
+                    active-action="action-home"
+                  >
+                  <i class='fa-solid fa-rss fa-fw'></i>博客
+                </a>
+                
+              </li>
+            
+          
+          
+            
+            
+              <li>
+                <a class="menuitem flat-box faa-parent animated-hover"
+                href="/categories/" title="分类"
+                  
+                  
+                  
+                    active-action="action-categories"
+                  >
+                  <i class='fa-solid fa-folder-open fa-fw'></i>分类
+                </a>
+                
+              </li>
+            
+          
+          
+            
+            
+              <li>
+                <a class="menuitem flat-box faa-parent animated-hover"
+                href="/tags/" title="标签"
+                  
+                  
+                  
+                    active-action="action-tags"
+                  >
+                  <i class='fa-solid fa-tags fa-fw'></i>标签
+                </a>
+                
+              </li>
+            
+          
+          
+            
+            
+              <li>
+                <a class="menuitem flat-box faa-parent animated-hover"
+                href="/archives/" title="归档"
+                  
+                  
+                  
+                    active-action="action-archives"
+                  >
+                  <i class='fa-solid fa-archive fa-fw'></i>归档
+                </a>
+                
+              </li>
+            
+          
+          
+            
+            
+              <li>
+                <a class="menuitem flat-box faa-parent animated-hover"
+                href="/friends/" title="友链"
+                  
+                  
+                  
+                    active-action="action-friends"
+                  >
+                  <i class='fa-solid fa-link fa-fw'></i>友链
+                </a>
+                
+              </li>
+            
+          
+          
+            
+            
+              <li>
+                <a class="menuitem flat-box faa-parent animated-hover"
+                href="/about/" title="关于"
+                  
+                  
+                  
+                    active-action="action-about"
+                  >
+                  <i class='fa-solid fa-info-circle fa-fw'></i>关于
+                </a>
+                
+              </li>
+            
+          
+          
+				</ul>
+			</div>
+      
+      <div class="m_search">
+        <form name="searchform" class="form u-search-form">
+          <i class="icon fa-solid fa-search fa-fw"></i>
+          <input type="text" class="input u-search-input" placeholder="Search..." />
+        </form>
+      </div>
+      
+
+			<ul class='switcher nav-list-h m-phone'>
+				
+					<li><a class="s-search fa-solid fa-search fa-fw" target="_self" href="/" onclick="return false;" title="search"></a></li>
+				
+				<li>
+          <a class="s-menu fa-solid fa-bars fa-fw" target="_self" href="/" onclick="return false;" title="menu"></a>
+          <ul class="menu-phone list-v navigation white-box">
+            
+              
+            
+              <li>
+                <a class="menuitem flat-box faa-parent animated-hover"
+                href="/" title="博客"
+                  
+                  
+                  
+                    active-action="action-home"
+                  >
+                  <i class='fa-solid fa-rss fa-fw'></i>博客
+                </a>
+                
+              </li>
+            
+          
+            
+              
+            
+              <li>
+                <a class="menuitem flat-box faa-parent animated-hover"
+                href="/categories/" title="分类"
+                  
+                  
+                  
+                    active-action="action-categories"
+                  >
+                  <i class='fa-solid fa-folder-open fa-fw'></i>分类
+                </a>
+                
+              </li>
+            
+          
+            
+              
+            
+              <li>
+                <a class="menuitem flat-box faa-parent animated-hover"
+                href="/tags/" title="标签"
+                  
+                  
+                  
+                    active-action="action-tags"
+                  >
+                  <i class='fa-solid fa-tags fa-fw'></i>标签
+                </a>
+                
+              </li>
+            
+          
+            
+              
+            
+              <li>
+                <a class="menuitem flat-box faa-parent animated-hover"
+                href="/archives/" title="归档"
+                  
+                  
+                  
+                    active-action="action-archives"
+                  >
+                  <i class='fa-solid fa-archive fa-fw'></i>归档
+                </a>
+                
+              </li>
+            
+          
+            
+              
+            
+              <li>
+                <a class="menuitem flat-box faa-parent animated-hover"
+                href="/friends/" title="友链"
+                  
+                  
+                  
+                    active-action="action-friends"
+                  >
+                  <i class='fa-solid fa-link fa-fw'></i>友链
+                </a>
+                
+              </li>
+            
+          
+            
+              
+            
+              <li>
+                <a class="menuitem flat-box faa-parent animated-hover"
+                href="/about/" title="关于"
+                  
+                  
+                  
+                    active-action="action-about"
+                  >
+                  <i class='fa-solid fa-info-circle fa-fw'></i>关于
+                </a>
+                
+              </li>
+            
+          
+            
+          </ul>
+        </li>
+			</ul>
+
+      <!-- Custom Files header begin -->
+      
+      <!-- Custom Files header end -->
+		</div>
+	</div>
+  </div>
+</header>
+
+    <div id="l_body">
+      <div id="l_cover">
+  
+    
+      <!-- see: /layout/_partial/scripts/_ctrl/coverCtrl.ejs -->
+      <div id="half" class='cover-wrapper post search' style="display: ;">
+        
+  <div id="parallax-window"></div>
+
+<div class='cover-body'>
+  <div class='top'>
+    
+    
+      <p class="title">MengFanjun的博客</p>
+    
+    
+  </div>
+  <div class='bottom'>
+    
+      <div class="m_search">
+        <form name="searchform" class="form u-search-form">
+          <input type="text" class="input u-search-input" placeholder="搜一下" />
+          <i class="icon fa-solid fa-search fa-fw"></i>
+        </form>
+      </div>
+    
+    <div class='menu navigation'>
+      <div class='list-h'>
+        
+          
+            <a href="/"
+              
+              
+              active-action="action-home">
+              <p>主页</p>
+            </a>
+          
+            <a href="/tags/"
+              
+              
+              active-action="action-tags">
+              <p>标签</p>
+            </a>
+          
+        
+      </div>
+    </div>
+  </div>
+</div>
+
+        <div id="scroll-down" style="display: none;"><i class="fa fa-chevron-down scroll-down-effects"></i></div>
+      </div>
+    
+  
+</div>
+
+      <div id="safearea">
+        <div class="body-wrapper">
+          
+<div id="l_main" class=''>
+  <article itemscope itemtype="http://schema.org/Article" class="article post white-box reveal md shadow floatable blur article-type-post" id="post" itemscope itemprop="blogPost">
+  <link itemprop="mainEntityOfPage" href="https://mengfanjun020906.github.io/2025/08/21/Standford CS336（一）课程介绍/">
+  <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+    <meta itemprop="name" content="MengFanjun的博客">
+  </span>
+  <span hidden itemprop="post" itemscope itemtype="http://schema.org/Post">
+    <meta itemprop="name" content="MengFanjun的博客">
+    <meta itemprop="description" content="20级通信工程大学生的个人博客">
+  </span>
+  
+
+
+  
+    <span hidden>
+      <meta itemprop="image" content="https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png">
+    </span>
+  
+  <div class="article-meta" id="top">
+    
+    
+    
+      <h1 class="title" itemprop="name headline">
+        Standford CS336（一）课程介绍
+      </h1>
+      <div class='new-meta-box'>
+        
+          
+            
+<div class='new-meta-item author' itemprop="author" itemscope itemtype="http://schema.org/Person">
+  <a itemprop="url" class='author' href="/" rel="nofollow">
+    <img itemprop="image" src="https://pic.imgdb.cn/item/63f9926ef144a01007de7d7d.png" class="lazyload" data-srcset="https://pic.imgdb.cn/item/63f9926ef144a01007de7d7d.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==">
+    <p itemprop="name">MengFanjun</p>
+  </a>
+</div>
+
+          
+        
+          
+            
+
+          
+        
+          
+            <div class="new-meta-item date" itemprop="dateCreated datePublished" datetime="2025-08-21T10:29:19+08:00">
+  <a class='notlink'>
+    <i class="fa-solid fa-calendar-alt fa-fw" aria-hidden="true"></i>
+    <p>发布于：Aug 21, 2025</p>
+  </a>
+</div>
+
+          
+        
+          
+            
+  <div class="new-meta-item wordcount">
+    <a class='notlink'>
+      <i class="fa-solid fa-keyboard fa-fw" aria-hidden="true"></i>
+      <p>12.3k words</p>
+    </a>
+  </div>
+  <div class="new-meta-item readtime">
+    <a class='notlink'>
+      <i class="fa-solid fa-hourglass-half fa-fw" aria-hidden="true"></i>
+      <p>43 min</p>
+    </a>
+  </div>
+
+
+          
+        
+          
+            
+
+
+<div class="new-meta-item browse">
+  <a class='notlink'>
+    <p>
+      <i class="fa-solid fa-eye fa-fw" aria-hidden="true"></i>
+      
+      <span id="busuanzi_value_page_pv"><i class="fa-solid fa-loader fa-spin fa-fw" aria-hidden="true"></i></span>
+      
+      <span>次浏览</span>
+    </p>
+  </a>
+</div>
+
+
+          
+        
+        <!-- Custom Files topMeta begin-->
+        
+        <!-- Custom Files topMeta end-->
+      </div>
+    
+  </div>
+
+
+  <div id="layoutHelper-page-plugins"></div>
+  <div id="post-body" itemprop="articleBody">
+    <p>仓库链接：<a target="_blank" rel="noopener" href="https://github.com/stanford-cs336/spring2025-lectures">https://github.com/stanford-cs336/spring2025-lectures</a></p>
+<h1 id="斯坦福CS336：从零开始构建语言模型-2025春季"><a href="#斯坦福CS336：从零开始构建语言模型-2025春季" class="headerlink" title="斯坦福CS336：从零开始构建语言模型 (2025春季)"></a>斯坦福CS336：从零开始构建语言模型 (2025春季)</h1><h2 id="课程简介"><a href="#课程简介" class="headerlink" title="课程简介"></a>课程简介</h2><p>本课程是斯坦福大学CS336课程的第二次开课，专注于“从零开始构建语言模型”。值得注意的是，本课程在斯坦福大学的规模增长了50%，显示出其日益增长的受欢迎程度和重要性。</p>
+<h2 id="为什么开设这门课程？"><a href="#为什么开设这门课程？" class="headerlink" title="为什么开设这门课程？"></a>为什么开设这门课程？</h2><p>开设这门课程的核心原因在于当前人工智能研究领域的一个显著趋势：研究人员与底层技术之间正在出现一种“脱节”现象。在过去，大约八年前，研究人员通常会亲自动手实现并训练自己的模型，这使得他们对模型的内部机制有着深刻的理解。然而，随着时间的推移，这种实践方式逐渐演变。六年前，研究人员开始倾向于下载预训练好的模型（例如BERT），然后在此基础上进行微调，这简化了开发流程，但也减少了对模型从头构建的参与度。到了今天，许多研究人员甚至仅仅通过提示（prompt）来与专有模型（如GPT-4、Claude、Gemini等）进行交互，而无需了解其背后的复杂实现细节。</p>
+<p>这种抽象层次的提升无疑极大地提高了生产力，使得研究人员能够更快地迭代和实验。然而，课程指出，这些抽象并非完美无缺，它们是“有漏洞的”（leaky），这意味着在某些情况下，底层的复杂性仍然会暴露出来，影响模型的行为和性能。与编程语言或操作系统等成熟的抽象不同，大型语言模型的抽象层仍然处于发展阶段，其内部工作原理对外部使用者而言并非完全透明。更重要的是，人工智能领域仍然有大量的基础研究工作需要完成，而这些研究往往需要“撕开”现有的抽象层，深入到技术栈的底层进行探索和创新。因此，课程强调，对这项技术拥有<strong>全面而深入的理解</strong>，是进行<strong>基础研究</strong>不可或缺的前提。</p>
+<p>基于此，本课程的核心理念是“<strong>通过构建来理解</strong>”。这意味着学生将通过亲手实现语言模型的各个组成部分，从而获得对其工作原理的深刻洞察。然而，课程也坦诚地指出，这其中存在一个“小问题”——即“语言模型的工业化”所带来的巨大挑战。</p>
+<h3 id="语言模型的工业化"><a href="#语言模型的工业化" class="headerlink" title="语言模型的工业化"></a>语言模型的工业化</h3><p>当前，大型语言模型的开发和训练已经进入了一个工业化时代，其规模和成本达到了前所未有的水平。这使得个人或小型研究团队难以企及：</p>
+<ul>
+<li><strong>参数规模与训练成本：</strong> 以GPT-4为例，据称其拥有高达1.8万亿的参数，并且训练成本估计达到了惊人的1亿美元。这表明了训练一个前沿模型所需的巨大计算资源和资金投入。</li>
+<li><strong>超大规模计算集群：</strong> 像xAI这样的公司正在构建庞大的计算集群，例如用于训练Grok的20万块H100显卡集群，这进一步凸显了训练大型模型对硬件基础设施的极端需求。</li>
+<li><strong>巨额投资：</strong> 甚至有像Stargate这样的项目，由OpenAI、NVIDIA和Oracle联合发起，计划在四年内投资5000亿美元，旨在推动AI基础设施的建设，这预示着未来AI模型规模将继续膨胀。</li>
+</ul>
+<p>除了巨大的成本和规模，另一个挑战是前沿模型的构建细节通常不公开。例如，GPT-4的技术报告中明确指出，由于其规模和能力的独特性，报告中并未包含关于模型架构、训练数据、硬件或训练方法等方面的具体细节。这种信息的不透明性使得外部研究人员难以复现或深入分析这些最先进的模型。</p>
+<h3 id="“多即不同”-More-is-different"><a href="#“多即不同”-More-is-different" class="headerlink" title="“多即不同” (More is different)"></a>“多即不同” (More is different)</h3><p>“多即不同”这一概念在大型语言模型领域尤为重要。它指出，虽然我们可以在课程中构建小型语言模型（参数量通常小于10亿），但这些小型模型的行为和特性可能与前沿的大型语言模型存在显著差异，因此不能简单地将小型模型的经验直接推广到大型模型上。</p>
+<p><strong>具体示例包括：</strong></p>
+<ol>
+<li><strong>计算资源分配的变化：</strong> 随着模型规模的扩大，注意力机制和多层感知机（MLP）之间FLOPs（浮点运算）的分配比例会发生变化。在小型模型中，MLP可能占据主导地位，但在大型模型中，注意力机制的计算开销会变得更加显著，这需要不同的优化策略。</li>
+<li><strong>行为的涌现性：</strong> 大型语言模型在达到一定规模后，会展现出一些在小型模型中不曾出现的“涌现能力”（emergent abilities）。这些能力并非简单地通过线性叠加而产生，而是随着模型规模的增加，在复杂性和功能上发生质的飞跃。例如，大型模型可能突然展现出解决复杂推理问题、遵循复杂指令或进行多步规划的能力，而这些能力在较小模型中是缺失的。</li>
+</ol>
+<h3 id="从本课程中能学到什么？"><a href="#从本课程中能学到什么？" class="headerlink" title="从本课程中能学到什么？"></a>从本课程中能学到什么？</h3><p>尽管存在“多即不同”的挑战，本课程仍然致力于教授对前沿模型有价值的知识。课程将重点放在三种类型的知识上：</p>
+<ul>
+<li><strong>机制 (Mechanics)：</strong> 这部分知识关注事物“如何运作”的底层原理。例如，学生将深入理解Transformer架构的内部机制，包括其编码器-解码器结构、自注意力机制、前馈网络等。此外，课程还将探讨模型并行化如何有效地利用多个GPU来训练超大型模型，包括数据并行、模型并行和流水线并行等技术。这些都是构建和优化大型语言模型的基础。</li>
+<li><strong>思维模式 (Mindset)：</strong> 这部分知识培养学生一种“最大限度地利用硬件”的思维方式，并认真对待“规模”问题。这包括理解缩放定律（scaling laws），即模型性能如何随着计算资源、数据量和模型参数的增加而变化。这种思维模式强调在资源有限的情况下，如何高效地设计和训练模型，以达到最佳性能。</li>
+<li><strong>直觉 (Intuitions)：</strong> 这部分知识涉及“哪些数据和建模决策能带来良好的准确性”。然而，课程也坦诚地指出，这部分直觉的教授只能是部分性的，因为许多直觉并不一定能跨规模迁移。例如，在小型模型上有效的某些超参数设置或数据处理策略，可能在大型模型上不再适用，甚至可能产生负面影响。许多设计决策并非基于严格的理论推导，而是来源于大量的实验和经验，例如SwiGLU激活函数的引入就是如此。</li>
+</ul>
+<p>课程明确表示，可以有效地教授机制和思维模式，因为这些知识具有较强的可迁移性。然而，对于直觉部分，由于其高度依赖于具体规模和实验，因此只能进行有限的教授。</p>
+<h3 id="苦涩的教训-The-Bitter-Lesson"><a href="#苦涩的教训-The-Bitter-Lesson" class="headerlink" title="苦涩的教训 (The Bitter Lesson)"></a>苦涩的教训 (The Bitter Lesson)</h3><p>“苦涩的教训”是Rich Sutton在2019年提出的一种观点，它对人工智能领域的发展路径提出了深刻的见解。课程对此进行了澄清，指出其<strong>错误解读</strong>是“规模是唯一重要的，算法不重要”。这种解读忽视了算法在效率和创新中的作用。</p>
+<p>而<strong>正确解读</strong>是“能够扩展的算法才是重要的”。这意味着，虽然规模确实带来了强大的能力，但真正有价值的是那些能够随着规模扩大而持续提升性能、并且能够高效利用资源的算法。一个无法有效扩展的算法，即使在小规模下表现良好，也难以在大型模型时代发挥作用。</p>
+<p>课程进一步用一个公式来概括这一思想：<strong>准确性 &#x3D; 效率 x 资源</strong>。这个公式强调了效率在模型性能中的关键作用。事实上，在更大规模的模型训练中，效率变得尤为重要，因为计算资源和时间成本都非常高昂，我们无法承受任何浪费。例如，有研究表明，从2012年到2019年，ImageNet上的算法效率提高了44倍，这意味着在相同的计算资源下，模型性能得到了显著提升。</p>
+<p>因此，本课程的<strong>核心思想</strong>是：在给定一定的计算和数据预算的情况下，如何构建出最佳的模型？换句话说，就是要<strong>最大化效率</strong>！这包括在数据处理、模型架构、训练策略等各个环节中，寻找最有效的方法来利用有限的资源，从而在当前计算受限的环境下，实现模型性能的最大化。</p>
+<h2 id="当前语言模型发展历程"><a href="#当前语言模型发展历程" class="headerlink" title="当前语言模型发展历程"></a>当前语言模型发展历程</h2><p>语言模型的发展经历了多个阶段，从早期的统计方法到如今的深度学习模型，每一次飞跃都伴随着新的技术突破和范式转变。</p>
+<h3 id="神经网络之前-2010年代前"><a href="#神经网络之前-2010年代前" class="headerlink" title="神经网络之前 (2010年代前)"></a>神经网络之前 (2010年代前)</h3><p>在深度学习兴起之前，语言模型主要基于统计学方法：</p>
+<ul>
+<li><strong>香农的语言模型：</strong> 克劳德·香农在1950年提出了一个开创性的语言模型，用于衡量英语的熵。他通过预测下一个字符或单词来量化语言的信息量，这为后来的语言模型研究奠定了理论基础。</li>
+<li><strong>N-gram语言模型：</strong> 在机器翻译和语音识别等领域，N-gram语言模型得到了广泛应用。这类模型通过计算N个单词序列（N-gram）的出现频率来预测下一个单词，例如，三元组（trigram）模型会考虑前两个单词来预测第三个单词。尽管简单，但在当时取得了显著的成功。</li>
+</ul>
+<h3 id="神经网络要素-2010年代"><a href="#神经网络要素-2010年代" class="headerlink" title="神经网络要素 (2010年代)"></a>神经网络要素 (2010年代)</h3><p>2010年代是神经网络在自然语言处理领域崭露头角的十年，一系列关键技术和模型架构的出现，为现代大型语言模型奠定了基础：</p>
+<ul>
+<li><strong>第一个神经网络语言模型：</strong> 约书亚·本吉奥（Yoshua Bengio）等人在2003年提出了第一个神经网络语言模型，它使用前馈神经网络来学习单词的分布式表示（词嵌入），并预测下一个单词。这标志着神经网络在语言建模中的首次成功应用。</li>
+<li><strong>序列到序列建模 (Sequence-to-sequence modeling)：</strong> 2014年，Sutskever等人提出了序列到序列（Seq2Seq）模型，该模型由一个编码器和一个解码器组成，能够将一个序列映射到另一个序列，在机器翻译任务中取得了突破性进展。这是许多现代生成式模型的基础。</li>
+<li><strong>Adam优化器：</strong> 2014年，Kingma和Ba提出了Adam（Adaptive Moment Estimation）优化器，它结合了Adagrad和RMSprop的优点，能够自适应地调整学习率，并有效地处理稀疏梯度和非平稳目标。Adam迅速成为深度学习中最流行的优化器之一。</li>
+<li><strong>注意力机制 (Attention mechanism)：</strong> 2015年，Bahdanau等人引入了注意力机制，允许模型在生成输出时，动态地关注输入序列中的相关部分。这解决了传统Seq2Seq模型在处理长序列时信息瓶颈的问题，极大地提升了机器翻译等任务的性能。</li>
+<li><strong>Transformer架构：</strong> 2017年，Vaswani等人提出了划时代的Transformer架构，完全放弃了循环神经网络（RNN）和卷积神经网络（CNN），仅依靠自注意力机制来处理序列数据。Transformer的并行计算能力和捕获长距离依赖的优势，使其成为后续大型语言模型的基础架构。</li>
+<li><strong>专家混合 (Mixture of Experts, MoE)：</strong> 2017年，Shazeer等人提出了专家混合模型，通过引入多个“专家”网络，并使用一个门控网络来选择性地激活这些专家，从而在不显著增加计算量的情况下，大幅增加模型的参数量和容量。这为构建超大型模型提供了新的思路。</li>
+<li><strong>模型并行化：</strong> 随着模型规模的增长，单个设备已无法容纳整个模型。模型并行化技术应运而生，包括GPipe（2018年）、ZeRO（2019年）和Megatron-LM（2019年）等，它们将模型的不同部分分布到不同的设备上进行计算，从而实现超大型模型的训练。</li>
+</ul>
+<h3 id="早期基础模型-2010年代末"><a href="#早期基础模型-2010年代末" class="headerlink" title="早期基础模型 (2010年代末)"></a>早期基础模型 (2010年代末)</h3><p>在Transformer架构的推动下，一批“基础模型”开始出现，它们通过大规模预训练，为各种下游任务提供了强大的通用能力：</p>
+<ul>
+<li><strong>ELMo：</strong> 2018年，Peters等人提出了ELMo（Embeddings from Language Models），它使用双向LSTM进行预训练，生成上下文相关的词嵌入。ELMo的出现表明，通过大规模预训练获得的语言表示，可以显著提升各种自然语言处理任务的性能。</li>
+<li><strong>BERT：</strong> 2018年，Devlin等人发布了BERT（Bidirectional Encoder Representations from Transformers），它使用Transformer编码器进行双向预训练，通过掩码语言模型（Masked Language Model）和下一句预测（Next Sentence Prediction）任务，学习深层双向的语言表示。BERT在多项NLP任务上刷新了SOTA，并开创了“预训练-微调”的范式。</li>
+<li><strong>Google的T5 (11B)：</strong> 2020年，Raffel等人提出了T5（Text-to-Text Transfer Transformer），它将所有文本处理任务都统一为“文本到文本”的格式，并在大规模数据集上进行预训练。T5的成功展示了统一框架的强大潜力。</li>
+</ul>
+<h3 id="拥抱规模，更加封闭"><a href="#拥抱规模，更加封闭" class="headerlink" title="拥抱规模，更加封闭"></a>拥抱规模，更加封闭</h3><p>进入2020年代，语言模型的发展进入了一个“拥抱规模”的阶段，模型参数量持续膨胀，同时许多前沿模型变得更加封闭：</p>
+<ul>
+<li><strong>OpenAI的GPT-2 (1.5B)：</strong> 2019年，OpenAI发布了GPT-2，一个拥有15亿参数的语言模型。它能够生成非常流畅和连贯的文本，并首次展现出零样本学习（zero-shot learning）的能力，即在没有特定任务训练数据的情况下执行任务。GPT-2的发布采取了分阶段的方式，以评估其潜在风险。</li>
+<li><strong>缩放定律 (Scaling laws)：</strong> 2020年，Kaplan等人提出了语言模型的缩放定律，揭示了模型性能如何随着计算量、模型参数和数据集大小的增加而呈现可预测的趋势。这些定律为大型模型的未来发展提供了指导和希望。</li>
+<li><strong>OpenAI的GPT-3 (175B)：</strong> 2020年，OpenAI发布了GPT-3，一个拥有1750亿参数的巨型模型。GPT-3最引人注目的能力是“上下文学习”（in-context learning），即通过在输入中提供少量示例，模型就能执行新任务，而无需进行权重更新。GPT-3的发布是封闭的，主要通过API提供服务。</li>
+<li><strong>Google的PaLM (540B)：</strong> 2022年，Google发布了PaLM（Pathways Language Model），一个拥有5400亿参数的大规模语言模型。尽管规模巨大，但有观点认为其在训练上可能存在“训练不足”（undertrained）的情况，即在给定模型规模下，训练数据量或训练步数可能不足以充分发挥其潜力。</li>
+<li><strong>DeepMind的Chinchilla (70B)：</strong> 2022年，DeepMind的研究表明，在给定计算预算的情况下，模型参数量和训练数据量之间存在一个最优比例。他们提出了Chinchilla模型，一个700亿参数的模型，通过增加训练数据量而非仅仅增加参数量，在相同计算预算下超越了更大的模型，强调了“计算最优缩放定律”的重要性。</li>
+</ul>
+<h3 id="开放模型"><a href="#开放模型" class="headerlink" title="开放模型"></a>开放模型</h3><p>与封闭模型相对，一些研究机构和公司致力于推动“开放模型”的发展，旨在促进AI研究的透明度和可访问性：</p>
+<ul>
+<li><strong>EleutherAI的开放数据集和模型：</strong> EleutherAI是一个致力于开放AI研究的社区，他们发布了The Pile等大型开放数据集，并训练了GPT-J等开放模型，为研究人员提供了宝贵的资源。</li>
+<li><strong>Meta的OPT (175B)：</strong> Meta发布了OPT（Open Pre-trained Transformer Language Models），旨在复现GPT-3的性能，并提供了详细的训练日志和代码。然而，OPT的训练过程中也遇到了大量的硬件问题，这反映了训练超大型模型的复杂性。</li>
+<li><strong>Hugging Face &#x2F; BigScience的BLOOM：</strong> BLOOM是一个由Hugging Face和BigScience社区合作训练的1760亿参数的多语言模型，其特点是高度关注数据来源的透明度和多样性，旨在构建一个真正开放和负责任的大型语言模型。</li>
+<li><strong>Meta的Llama系列模型：</strong> Meta发布了Llama系列模型（Llama、Llama 2、Llama 3），这些模型在性能上与一些封闭模型相媲美，并且以开放的方式发布，极大地推动了开源大型语言模型生态系统的发展。</li>
+<li><strong>阿里巴巴的Qwen模型：</strong> 阿里巴巴也发布了Qwen系列模型，在中文和多语言能力方面表现出色，为中文社区提供了强大的开放模型选择。</li>
+<li><strong>DeepSeek的模型：</strong> DeepSeek发布了一系列开放模型，包括DeepSeek-67B、DeepSeek-V2和DeepSeek-V3，这些模型在代码和数学等领域表现突出。</li>
+<li><strong>AI2的OLMo 2：</strong> AI2（Allen Institute for AI）发布了OLMo 2，这是一个专注于科学研究的开放语言模型，提供了完整的训练数据、代码和模型权重，旨在促进可复现的AI研究。</li>
+</ul>
+<h3 id="开放性级别"><a href="#开放性级别" class="headerlink" title="开放性级别"></a>开放性级别</h3><p>语言模型的“开放性”并非一个简单的二元概念，而是存在不同的级别：</p>
+<ul>
+<li><strong>封闭模型 (Closed models)：</strong> 这类模型通常由少数公司开发和维护，仅通过API提供访问，用户无法获取模型的权重、架构细节或训练数据。例如，OpenAI的GPT-4o就属于此类。</li>
+<li><strong>开放权重模型 (Open-weight models)：</strong> 这类模型会发布模型的权重，并提供关于架构细节的论文，以及一些训练过程的细节，但通常不公开训练数据。DeepSeek的模型就是开放权重模型的典型代表。</li>
+<li><strong>开源模型 (Open-source models)：</strong> 这是最高级别的开放性，不仅提供模型的权重和架构细节，还会公开训练数据，并提供详细的论文，尽可能地披露所有相关信息。例如，AI2的OLMo模型就是开源模型的典范，它旨在促进透明和可复现的AI研究。然而，即使是开源模型，也可能不包括所有决策背后的“原理”或“失败实验”的细节。</li>
+</ul>
+<h3 id="当今前沿模型"><a href="#当今前沿模型" class="headerlink" title="当今前沿模型"></a>当今前沿模型</h3><p>当前，大型语言模型领域竞争激烈，各大科技公司和研究机构都在不断推出新的前沿模型，推动着技术边界的拓展。这些模型通常在多模态能力、推理能力、上下文理解等方面展现出最先进的水平：</p>
+<ul>
+<li><strong>OpenAI的o3：</strong> OpenAI持续推出其最新的模型迭代，o3是其在特定领域或能力上的最新进展。</li>
+<li><strong>Anthropic的Claude Sonnet 3.7：</strong> Anthropic的Claude系列模型以其在安全性和伦理方面的关注而闻名，Sonnet 3.7是其最新版本，在性能和安全性之间取得了平衡。</li>
+<li><strong>xAI的Grok 3：</strong> xAI是埃隆·马斯克创立的AI公司，Grok模型以其独特的个性和实时信息处理能力而受到关注，Grok 3是其最新迭代。</li>
+<li><strong>Google的Gemini 2.5：</strong> Google DeepMind的Gemini系列模型是其在多模态AI领域的旗舰产品，Gemini 2.5代表了其在理解和生成多种数据类型方面的最新进展。</li>
+<li><strong>Meta的Llama 3.3：</strong> Meta的Llama系列模型在开源社区中广受欢迎，Llama 3.3是其最新版本，持续提升性能和可用性。</li>
+<li><strong>DeepSeek的r1：</strong> DeepSeek在代码和数学领域有其独特的优势，r1是其在该领域的最新研究成果。</li>
+<li><strong>阿里巴巴的Qwen 2.5 Max：</strong> 阿里巴巴的Qwen系列模型在中文和多语言能力方面表现突出，Qwen 2.5 Max是其高性能版本。</li>
+<li><strong>腾讯的Hunyuan-T1：</strong> 腾讯的混元大模型系列，Hunyuan-T1是其在大型语言模型领域的最新探索。</li>
+</ul>
+<h2 id="什么是“可执行讲座”？"><a href="#什么是“可执行讲座”？" class="headerlink" title="什么是“可执行讲座”？"></a>什么是“可执行讲座”？</h2><p>本课程采用了一种创新的教学形式，即“可执行讲座”（Executable Lecture）。这不仅仅是传统的幻灯片或讲义，而是一个程序，其执行过程本身就是讲座内容的呈现。这种形式旨在弥合理论与实践之间的鸿沟，让学生能够更深入地理解复杂的概念。</p>
+<p><strong>“可执行讲座”的优势在于：</strong></p>
+<ul>
+<li><strong>代码的可见性与可运行性：</strong> 由于整个讲座都是以代码的形式呈现，学生可以清晰地看到每个概念是如何通过代码实现的。更重要的是，这些代码是可运行的，学生可以实时修改参数、观察结果，从而直观地理解代码的逻辑和模型的行为。这比仅仅阅读代码或观看演示视频更能加深理解。</li>
+<li><strong>讲座的层次结构：</strong> 可执行讲座通常会以结构化的方式组织内容，通过代码的函数调用或模块导入来体现讲座的逻辑流程和层次关系。学生可以轻松地浏览讲座的不同部分，理解各个主题之间的关联性，从而建立起一个完整的知识体系。</li>
+<li><strong>概念的快速跳转与定义：</strong> 在传统的讲座中，当遇到一个新概念时，学生可能需要翻阅资料或进行搜索。而在可执行讲座中，通常会提供便捷的跳转功能，允许学生直接点击某个概念，立即查看其定义、相关代码示例或更详细的解释。这大大提高了学习效率，使得学生能够根据自己的节奏和需求进行深度探索。</li>
+</ul>
+<p>通过这种互动式的、以代码为中心的教学方式，课程旨在为学生提供一个更具沉浸感和实践性的学习体验，帮助他们更好地掌握大型语言模型的复杂知识。</p>
+<h3 id="作业"><a href="#作业" class="headerlink" title="作业"></a>作业</h3><p>本课程包含<strong>5个作业</strong>，涵盖了语言模型构建的各个核心方面：基础（basics）、系统（systems）、缩放定律（scaling laws）、数据（data）和对齐（alignment）。这些作业旨在让学生亲身实践，从零开始构建语言模型的关键组件。</p>
+<ul>
+<li><strong>无模板代码：</strong> 与许多提供大量模板代码的课程不同，本课程的作业不提供模板代码。这意味着学生需要从头开始编写大部分代码，这极大地锻炼了他们的编程和解决问题的能力。然而，为了帮助学生检查代码的正确性，课程会提供单元测试和适配器接口。</li>
+<li><strong>本地测试与集群运行：</strong> 学生需要在本地实现并测试代码的正确性，然后将代码提交到计算集群上进行基准测试，以评估模型的准确性和运行速度。这种实践模式模拟了真实世界中AI模型开发的流程。</li>
+<li><strong>排行榜：</strong> 对于部分作业，课程会设置排行榜，例如在给定90分钟H100显卡预算下最小化OpenWebText困惑度。这种竞争机制可以激励学生优化他们的模型，追求更高的效率和性能。</li>
+<li><strong>AI工具的使用：</strong> 课程提醒学生，AI工具（如GitHub Copilot、Cursor等）虽然能提高编码效率，但也可能“剥夺”学习的机会。因此，学生应自行承担使用这些工具的风险，并权衡其对学习效果的影响。</li>
+</ul>
+<h2 id="课程组成"><a href="#课程组成" class="headerlink" title="课程组成"></a>课程组成</h2><p>本课程的核心理念是围绕“<strong>效率</strong>”展开。在大型语言模型领域，资源（包括数据和硬件，如计算能力、内存和通信带宽）是有限的。因此，课程的核心问题是：<strong>如何在给定固定资源的情况下，训练出最佳的模型？</strong></p>
+<p>课程通过一个具体的例子来阐明这个问题：如果给你一个Common Crawl数据转储和32块H100显卡，为期2周，你应该怎么做才能训练出最好的模型？这促使学生思考如何在有限的资源约束下，做出最优的设计决策。</p>
+<p><strong>设计决策</strong>涵盖了模型构建的各个方面，从数据处理到模型架构，再到训练策略，每一个环节都需要权衡效率和性能。</p>
+<h3 id="课程概述"><a href="#课程概述" class="headerlink" title="课程概述"></a>课程概述</h3><p>课程内容被划分为五个主要组成部分，每个部分都深入探讨了语言模型构建的关键方面：</p>
+<ul>
+<li><strong>基础 (Basics)：</strong> 涵盖语言模型的基本构建模块，包括分词、模型架构和训练流程。</li>
+<li><strong>系统 (Systems)：</strong> 专注于如何最大限度地利用硬件资源，提高训练和推理效率。</li>
+<li><strong>缩放定律 (Scaling Laws)：</strong> 探讨模型性能如何随计算、数据和参数规模的变化而变化，以及如何利用这些定律进行模型设计。</li>
+<li><strong>数据 (Data)：</strong> 深入研究数据在语言模型训练中的作用，包括数据收集、清洗、预处理和质量评估。</li>
+<li><strong>对齐 (Alignment)：</strong> 关注如何使语言模型的行为与人类的价值观和意图保持一致，包括偏见消除、安全性等。</li>
+</ul>
+<h3 id="效率驱动设计决策"><a href="#效率驱动设计决策" class="headerlink" title="效率驱动设计决策"></a>效率驱动设计决策</h3><p>当前，大型语言模型的训练主要受限于<strong>计算资源</strong>。因此，所有的设计决策都将围绕着如何“最大限度地利用现有硬件”这一目标展开：</p>
+<ul>
+<li><strong>数据处理：</strong> 为了避免浪费宝贵的计算资源，需要高效地处理数据，避免在低质量或不相关的数据上进行训练。这意味着需要精心设计数据清洗、过滤和采样策略。</li>
+<li><strong>分词 (Tokenization)：</strong> 尽管直接使用原始字节进行处理在理论上可能更优雅，但对于当前主流的模型架构而言，这种方式在计算上效率低下。因此，选择高效的分词方法（如BPE）至关重要，以确保输入序列的长度适中，从而降低计算成本。</li>
+<li><strong>模型架构：</strong> 许多模型架构的创新都旨在减少内存占用或浮点运算（FLOPs）。例如，共享KV缓存（Key-Value Cache Sharing）和滑动窗口注意力（Sliding Window Attention）等技术，都是为了在保持性能的同时，降低模型的计算和内存需求。</li>
+<li><strong>训练策略：</strong> 在某些情况下，即使只进行一个epoch的训练，也能获得不错的效果，这表明了训练效率的重要性。优化训练策略，如选择合适的批处理大小、学习率调度等，可以显著缩短训练时间。</li>
+<li><strong>缩放定律：</strong> 利用缩放定律，可以在训练小型模型时使用较少的计算资源进行超参数调优。通过在小规模上进行实验，可以预测大型模型的行为，从而节省大量的计算成本。</li>
+<li><strong>对齐：</strong> 如果能够更好地将模型调整到所需的用例，那么即使是较小的基础模型也能满足需求。这意味着通过有效的对齐技术，可以减少对超大规模基础模型的依赖，从而降低训练和部署成本。</li>
+</ul>
+<p>课程展望，未来语言模型的发展可能会从计算受限转向<strong>数据受限</strong>，这意味着数据质量和多样性将成为新的瓶颈。</p>
+<h2 id="基础-Basics"><a href="#基础-Basics" class="headerlink" title="基础 (Basics)"></a>基础 (Basics)</h2><p>“基础”部分的目标是让学生能够构建一个完整语言模型管道的基本版本，使其能够正常工作。这包括三个核心组成部分：分词（Tokenization）、模型架构（Model Architecture）和训练（Training）。</p>
+<h3 id="分词-Tokenization"><a href="#分词-Tokenization" class="headerlink" title="分词 (Tokenization)"></a>分词 (Tokenization)</h3><p><strong>核心概念：</strong> 分词器（Tokenizer）是语言模型中的一个关键组件，它的主要功能是将人类可读的字符串（例如句子或文档）转换为一系列整数序列，这些整数被称为“token”（词元）。反之，它也能将这些整数序列解码回原始字符串。</p>
+<p><strong>直觉：</strong> 分词的直觉在于将字符串分解成“常用片段”。例如，一个单词可能被分解成多个子词单元，或者一个常见的短语被视为一个单一的token。这种分解方式旨在平衡词汇量大小和序列长度，从而提高模型的效率和性能。</p>
+<p><strong>本课程的分词器：</strong> 本课程将重点介绍并实现**字节对编码（Byte-Pair Encoding, BPE）**分词器。BPE是一种数据压缩算法，后来被成功应用于自然语言处理领域，尤其是在神经机器翻译中，并被GPT-2等大型语言模型广泛采用。</p>
+<p><strong>无分词器方法：</strong> 尽管BPE等分词器是主流，但也有一些研究探索“无分词器”的方法，例如直接使用原始字节进行处理。这些方法包括byt5、megabyte、blt和tfree等。虽然这些方法在理论上具有优雅性，并且在某些场景下表现出潜力，但目前尚未能扩展到前沿大型模型的规模，主要原因在于直接处理字节会导致输入序列过长，从而增加计算开销。</p>
+<h3 id="架构-Architecture"><a href="#架构-Architecture" class="headerlink" title="架构 (Architecture)"></a>架构 (Architecture)</h3><p><strong>起点：</strong> 本课程将以<strong>原始Transformer</strong>架构作为构建语言模型的起点。Transformer是当前大型语言模型的基础，其核心在于自注意力机制，能够高效地处理序列数据并捕获长距离依赖。</p>
+<p><strong>Transformer的变体：</strong> 尽管原始Transformer是基础，但为了适应不同的需求和优化性能，研究人员提出了许多变体：</p>
+<ul>
+<li><strong>激活函数：</strong> 除了传统的ReLU（Rectified Linear Unit），还出现了如SwiGLU（Swish-Gated Linear Unit）等新型激活函数，它们在某些情况下能带来更好的性能。</li>
+<li><strong>位置编码：</strong> Transformer模型本身不具备处理序列顺序的能力，因此需要位置编码来引入位置信息。常见的位置编码包括正弦位置编码（sinusoidal positional encoding）和旋转位置编码（RoPE, Rotary Position Embedding），后者在处理长序列时表现出优势。</li>
+<li><strong>归一化：</strong> 归一化层在深度学习模型中扮演着重要角色，有助于稳定训练和加速收敛。常见的归一化方法包括LayerNorm（层归一化）和RMSNorm（均方根归一化）。</li>
+<li><strong>归一化位置：</strong> 归一化层在模型中的放置位置也会影响性能，主要有两种模式：pre-norm（预归一化）和post-norm（后归一化）。</li>
+<li><strong>MLP（多层感知机）：</strong> Transformer中的前馈网络通常由MLP组成。除了标准的密集型MLP，专家混合（Mixture of Experts, MoE）结构也被引入，通过稀疏激活多个专家网络来增加模型容量，同时控制计算成本。</li>
+<li><strong>注意力机制：</strong> 除了标准的全局自注意力，还出现了多种注意力变体，以提高效率或处理特定场景，例如滑动窗口注意力（Sliding Window Attention）和线性注意力（Linear Attention）。</li>
+<li><strong>低维注意力：</strong> 为了进一步优化注意力机制的效率，研究人员提出了如Group-Query Attention (GQA) 和Multi-Head Latent Attention (MLA) 等低维注意力方法。</li>
+<li><strong>状态空间模型：</strong> 除了Transformer，状态空间模型（State-Space Models, SSMs）也开始在语言建模中展现潜力，例如Hyena模型，它们提供了一种替代的序列建模范式。</li>
+</ul>
+<h3 id="训练-Training"><a href="#训练-Training" class="headerlink" title="训练 (Training)"></a>训练 (Training)</h3><p>语言模型的训练是一个复杂的过程，涉及多个关键组件和策略：</p>
+<ul>
+<li><strong>优化器：</strong> 优化器负责更新模型的参数以最小化损失函数。除了经典的Adam优化器，还有AdamW（Adam with Weight Decay Decoupling）、Muon和SOAP等变体，它们在不同场景下可能提供更好的收敛性和泛化能力。</li>
+<li><strong>学习率调度：</strong> 学习率调度器（Learning Rate Scheduler）控制着训练过程中学习率的变化。常见的调度策略包括余弦退火（cosine annealing）和WSD（Warmup-Stable-Decay）等，它们有助于模型在训练初期稳定学习，并在后期精细调整。</li>
+<li><strong>批处理大小：</strong> 批处理大小（Batch Size）是指每次模型参数更新时使用的样本数量。选择合适的批处理大小至关重要，它会影响训练的稳定性和效率，例如“临界批处理大小”（critical batch size）的概念。</li>
+<li><strong>正则化：</strong> 正则化技术用于防止模型过拟合，提高泛化能力。常见的正则化方法包括Dropout（随机失活）和权重衰减（Weight Decay）。</li>
+<li><strong>超参数调优：</strong> 模型的性能高度依赖于超参数（如头数、隐藏维度等）的选择。通常采用网格搜索（Grid Search）或随机搜索等方法来寻找最优的超参数组合。</li>
+</ul>
+<h3 id="作业1"><a href="#作业1" class="headerlink" title="作业1"></a>作业1</h3><p>作业1是本课程的第一个实践项目，旨在让学生亲手实现语言模型的基础组件：</p>
+<ul>
+<li><strong>实现BPE分词器：</strong> 学生需要从头开始实现字节对编码（BPE）分词器，理解其工作原理和合并过程。</li>
+<li><strong>实现Transformer、交叉熵损失、AdamW优化器和训练循环：</strong> 学生将构建Transformer模型的核心部分，并实现用于语言建模的交叉熵损失函数，以及AdamW优化器和完整的训练循环。</li>
+<li><strong>在TinyStories和OpenWebText上进行训练：</strong> 学生将在两个不同的数据集上训练他们的模型：TinyStories（一个用于生成简单故事的小型数据集）和OpenWebText（一个更大规模的文本数据集）。</li>
+<li><strong>排行榜：</strong> 作业1还设有一个排行榜，学生的目标是在给定90分钟H100显卡预算的情况下，最小化模型在OpenWebText上的困惑度（perplexity）。这鼓励学生不仅要实现功能，还要优化模型的效率和性能。</li>
+</ul>
+<h2 id="系统-Systems"><a href="#系统-Systems" class="headerlink" title="系统 (Systems)"></a>系统 (Systems)</h2><p>“系统”部分的目标是深入探讨如何<strong>最大限度地利用硬件</strong>资源来训练和部署大型语言模型。在当前计算资源仍然是瓶颈的背景下，理解并优化系统层面的效率至关重要。</p>
+<h3 id="分词的进一步讨论"><a href="#分词的进一步讨论" class="headerlink" title="分词的进一步讨论"></a>分词的进一步讨论</h3><p>尽管分词是当前语言模型处理文本的必要步骤，但课程也指出，分词是一个必要的“恶”（necessary evil）。这意味着它虽然解决了将文本转换为模型可处理的数字序列的问题，但也引入了额外的复杂性和潜在的效率损失。理想情况下，如果能够直接从原始字节进行处理，将能够避免分词带来的各种问题，例如词汇表大小、未知词（OOV）问题以及分词器本身的计算开销。然而，正如前面所讨论的，直接处理字节会导致序列过长，对于当前的Transformer架构而言，这在计算上是不可行的。因此，未来的研究方向之一可能是开发能够高效处理原始字节的模型架构，从而彻底摆脱对分词器的依赖。</p>
+<h3 id="Tokenizer-抽象接口"><a href="#Tokenizer-抽象接口" class="headerlink" title="Tokenizer 抽象接口"></a>Tokenizer 抽象接口</h3><p>为了更好地组织和管理分词器的实现，课程定义了一个抽象接口<code>Tokenizer</code>。这个接口规定了所有分词器都必须实现的两个核心方法：</p>
+<ul>
+<li><code>encode(self, string: str) -&gt; list[int]</code>: 这个方法接收一个字符串作为输入，并将其转换为一个整数列表（即token序列）。这是将人类语言转换为模型可理解格式的关键步骤。</li>
+<li><code>decode(self, indices: list[int]) -&gt; str</code>: 这个方法接收一个整数列表（token序列）作为输入，并将其解码回原始的字符串。这是将模型的输出（token序列）转换回人类可读语言的逆过程。</li>
+</ul>
+<p>通过定义这样的抽象接口，可以确保不同类型的分词器（如字符级、字节级或BPE分词器）都遵循相同的规范，从而提高了代码的可维护性和可扩展性。</p>
+<h3 id="BPETokenizerParams-数据类"><a href="#BPETokenizerParams-数据类" class="headerlink" title="BPETokenizerParams 数据类"></a>BPETokenizerParams 数据类</h3><p><code>BPETokenizerParams</code>是一个数据类，它封装了定义一个BPE分词器所需的所有参数。使用数据类的好处是它提供了一种简洁的方式来创建只包含数据（而非行为）的类，并且自动生成了<code>__init__</code>、<code>__repr__</code>等方法，使得代码更加清晰和易于管理。这个数据类包含两个核心属性：</p>
+<ul>
+<li><code>vocab: dict[int, bytes]</code>: 这是一个字典，将整数索引映射到其对应的字节序列。这个词汇表包含了所有在BPE训练过程中学习到的token，包括原始字节和合并后的字节对。</li>
+<li><code>merges: dict[tuple[int, int], int]</code>: 这是一个字典，记录了BPE训练过程中执行的所有合并操作。每个键是一个元组，表示要合并的两个相邻token的索引；对应的值是合并后新生成的token的索引。这个字典定义了BPE分词器如何将更小的单元逐步合并成更大的单元。</li>
+</ul>
+<h3 id="CharacterTokenizer-字符级分词器"><a href="#CharacterTokenizer-字符级分词器" class="headerlink" title="CharacterTokenizer (字符级分词器)"></a>CharacterTokenizer (字符级分词器)</h3><p>字符级分词器是一种最简单的分词方法，它将字符串中的每一个Unicode字符都视为一个独立的token。其实现方式如下：</p>
+<ul>
+<li><code>encode</code>方法：通过Python内置的<code>ord()</code>函数，将字符串中的每个字符转换为其对应的Unicode码点（一个整数）。例如，&#96;ord(</li>
+</ul>
+<p>a</p>
+<p><code>会返回97，</code>ord(“🌍”)&#96;会返回127757。</p>
+<ul>
+<li><code>decode</code>方法：通过Python内置的<code>chr()</code>函数，将Unicode码点转换回对应的字符。例如，<code>chr(97)</code>会返回<code>&quot;a&quot;</code>，<code>chr(127757)</code>会返回<code>&quot;🌍&quot;</code>。</li>
+</ul>
+<p><strong>优点：</strong> 简单直观，不会出现未知词（UNK token）的问题，因为任何字符都有对应的Unicode码点。</p>
+<p><strong>问题：</strong></p>
+<ul>
+<li><strong>词汇量巨大：</strong> Unicode字符集非常庞大，包含约15万个字符。这意味着字符级分词器需要维护一个非常大的词汇表，这会增加模型的复杂性和内存消耗。</li>
+<li><strong>效率低下：</strong> 许多Unicode字符（如表情符号或不常用的语言字符）非常罕见。将这些罕见字符作为独立的token会使得词汇表的使用效率低下，因为模型需要为这些低频token分配参数，但它们在训练数据中出现的次数很少，导致模型难以有效学习其表示。</li>
+<li><strong>压缩率低：</strong> 字符级分词器对文本的压缩能力非常有限，因为每个字符都被视为一个独立的单元。这意味着生成的token序列会非常长，对于Transformer等依赖于序列长度的模型来说，这会显著增加计算成本（尤其是注意力机制的二次方复杂度）。</li>
+</ul>
+<h3 id="ByteTokenizer-字节级分词器"><a href="#ByteTokenizer-字节级分词器" class="headerlink" title="ByteTokenizer (字节级分词器)"></a>ByteTokenizer (字节级分词器)</h3><p>字节级分词器是另一种简单的分词方法，它将字符串表示为一系列字节。由于计算机内部最终处理的都是字节，这种方法在理论上更加接近底层。最常用的Unicode编码是UTF-8，它是一种变长编码，可以将Unicode字符编码为1到4个字节。</p>
+<ul>
+<li><code>encode</code>方法：首先使用UTF-8编码将字符串转换为字节序列（<code>string.encode(&quot;utf-8&quot;)</code>），然后将每个字节转换为一个整数（0-255）。例如，英文字符<code>&quot;a&quot;</code>编码为<code>b&quot;a&quot;</code>（一个字节），而表情符号<code>&quot;🌍&quot;</code>编码为<code>b&quot;\xf0\x9f\x8c\x8d&quot;</code>（四个字节）。</li>
+<li><code>decode</code>方法：将整数列表（字节序列）转换回字节串（<code>bytes(indices)</code>），然后使用UTF-8解码将其转换回字符串（<code>string_bytes.decode(&quot;utf-8&quot;)</code>）。</li>
+</ul>
+<p><strong>优点：</strong></p>
+<ul>
+<li><strong>词汇量小且固定：</strong> 字节的取值范围是0到255，因此字节级分词器的词汇量固定为256个，这比字符级分词器小得多，易于管理。</li>
+<li><strong>不会出现未知词：</strong> 任何字符串都可以被编码为字节序列，因此不会出现无法表示的“未知词”问题。</li>
+</ul>
+<p><strong>问题：</strong></p>
+<ul>
+<li><strong>压缩率极低：</strong> 字节级分词器对文本的压缩能力非常差，因为每个字节都被视为一个独立的token。对于多字节字符（如中文字符或表情符号），一个字符可能被分解成多个token。这意味着生成的token序列会非常长，甚至比字符级分词器更长。例如，一个中文字符在UTF-8中通常占用3个字节，那么它就会被分解成3个token。这种极低的压缩率导致模型需要处理非常长的输入序列，这对于Transformer等模型来说是巨大的计算负担，因为其注意力机制的计算复杂度与序列长度的平方成正比。因此，尽管字节级分词器在理论上很“纯粹”，但在实际应用中，由于序列长度问题，它在当前主流模型中并不实用。</li>
+</ul>
+<h3 id="WordTokenizer-词汇分词"><a href="#WordTokenizer-词汇分词" class="headerlink" title="WordTokenizer (词汇分词)"></a>WordTokenizer (词汇分词)</h3><p>词汇分词是一种更接近人类语言直觉的方法，它将字符串分割成独立的单词或标点符号。这种方法在传统自然语言处理（NLP）中非常常见。</p>
+<ul>
+<li><strong>分割规则：</strong> 通常使用正则表达式来识别单词边界，例如，将字母数字字符序列视为一个单词，而将标点符号视为独立的token。例如，句子“I’ll say supercalifragilisticexpialidocious!”可能会被分割成<code>[&quot;I&quot;, &quot;&#39;ll&quot;, &quot;say&quot;, &quot;supercalifragilisticexpialidocious&quot;, &quot;!&quot;]</code>。</li>
+<li><strong>映射到整数：</strong> 为了将这些分割后的词汇（segments）输入到模型中，需要为每个唯一的词汇分配一个整数ID，从而构建一个词汇表。</li>
+</ul>
+<p><strong>问题：</strong></p>
+<ul>
+<li><strong>词汇量巨大：</strong> 英语中存在大量的单词，而且随着新词的不断出现，词汇量会持续增长。这导致词汇表非常庞大，类似于Unicode字符集的问题。</li>
+<li><strong>稀有词问题：</strong> 许多单词非常罕见，在训练数据中出现的频率很低。模型难以有效学习这些稀有词的表示，导致性能下降。</li>
+<li><strong>固定词汇表难以实现：</strong> 词汇分词很难提供一个固定大小的词汇表。如果预先设定一个固定大小的词汇表，那么未在词汇表中的新词或罕见词就需要被特殊处理。</li>
+<li><strong>未知词 (UNK token)：</strong> 对于在训练过程中未见过的单词，通常会将其替换为一个特殊的“未知词”（UNK）token。这种处理方式不仅“丑陋”，而且会丢失原始信息，并可能影响模型的困惑度计算，因为模型无法区分不同的未知词。</li>
+</ul>
+<h3 id="Byte-Pair-Encoding-BPE-字节对编码"><a href="#Byte-Pair-Encoding-BPE-字节对编码" class="headerlink" title="Byte Pair Encoding (BPE) (字节对编码)"></a>Byte Pair Encoding (BPE) (字节对编码)</h3><p>字节对编码（BPE）是一种混合了字符级和词汇级分词优点的分词方法，它在当前大型语言模型中得到了广泛应用。BPE算法最初由Philip Gage在1994年提出，用于数据压缩。后来，Sennrich等人在2016年将其应用于神经机器翻译，取得了显著成功，并被GPT-2等模型采纳。</p>
+<p><strong>基本思想：</strong> BPE的核心思想是<strong>训练</strong>一个分词器，使其能够自动从原始文本中学习出一个最优的词汇表。其直觉是：频繁出现的字符序列（或子词单元）应该被合并成一个单一的token，而罕见的序列则可以由多个较小的token组成。这在词汇量大小和序列长度之间取得了良好的平衡。</p>
+<p><strong>训练过程：</strong> BPE的训练过程是一个迭代的合并过程：</p>
+<ol>
+<li><strong>初始化：</strong> 首先，将文本中的每个字节（或字符，取决于初始设置）都视为一个独立的token。例如，对于字符串“the cat in the hat”，初始token序列可能是<code>[&#39;t&#39;, &#39;h&#39;, &#39;e&#39;, &#39; &#39;, &#39;c&#39;, &#39;a&#39;, &#39;t&#39;, &#39; &#39;, &#39;i&#39;, &#39;n&#39;, &#39; &#39;, &#39;t&#39;, &#39;h&#39;, &#39;e&#39;, &#39; &#39;, &#39;h&#39;, &#39;a&#39;, &#39;t&#39;]</code>。</li>
+<li><strong>统计频率：</strong> 统计所有相邻token对的出现频率。例如，<code>(&#39;t&#39;, &#39;h&#39;)</code>、<code>(&#39;h&#39;, &#39;e&#39;)</code>等。</li>
+<li><strong>选择最常见对：</strong> 找到出现频率最高的相邻token对。</li>
+<li><strong>合并：</strong> 将这个最常见的token对合并成一个新的token，并将其添加到词汇表中。例如，如果<code>(&#39;t&#39;, &#39;h&#39;)</code>是最常见的对，就将其合并为<code>&#39;th&#39;</code>。</li>
+<li><strong>更新序列：</strong> 在文本中，所有出现该对的地方都替换为新的token。</li>
+<li><strong>重复：</strong> 重复步骤2-5，直到达到预设的合并次数，或者没有新的合并可以进行。</li>
+</ol>
+<p>通过这种迭代合并，BPE能够逐步构建出一个包含常用子词单元的词汇表。例如，<code>&quot;ing&quot;</code>、<code>&quot;tion&quot;</code>、<code>&quot;un&quot;</code>等常见的词缀或音节会被合并成独立的token，而整个单词（如<code>&quot;tokenization&quot;</code>）也可能被合并成一个token。对于不常见的单词，它会被分解成更小的、常见的子词单元，从而避免了未知词问题。</p>
+<p><strong><code>merge</code>函数：</strong> 这个辅助函数负责在给定token序列中，将所有出现的特定token对替换为新的token。它遍历输入序列，如果遇到要合并的<code>pair</code>，就将其替换为<code>new_index</code>，否则保留原始token。</p>
+<p><strong><code>train_bpe</code>函数：</strong> 这个函数实现了BPE的训练逻辑。它接收一个字符串和要执行的合并次数作为输入。在每次迭代中，它会统计当前token序列中所有相邻token对的频率，找出最常见的对，然后将其合并成一个新的token，并更新词汇表和当前token序列。新token的索引通常从256（字节的范围）开始递增。</p>
+<p><strong>使用分词器：</strong> 一旦BPE分词器通过训练获得了词汇表和合并规则，就可以用它来编码新的文本。<code>BPETokenizer</code>类会存储这些训练好的参数。当调用<code>encode</code>方法时，它会首先将输入字符串转换为初始的字节序列，然后按照训练时学习到的合并规则，迭代地应用合并操作，直到无法再进行合并。<code>decode</code>方法则执行相反的操作，将token序列转换回字节序列，最终解码为字符串。</p>
+<p><strong>作业1中BPE的改进点：</strong> 在作业1中，学生需要对BPE的实现进行优化和扩展：</p>
+<ul>
+<li><strong>优化<code>encode()</code>效率：</strong> 当前的<code>encode()</code>实现可能效率低下，因为它会循环遍历所有合并规则。学生需要优化这一过程，只关注那些实际存在于当前序列中的合并。</li>
+<li><strong>特殊token处理：</strong> 语言模型通常会使用一些特殊的token（如<code>&lt;|endoftext|&gt;</code>表示文本结束）。学生需要确保分词器能够检测并保留这些特殊token，不将其分解。</li>
+<li><strong>预分词：</strong> 在应用BPE之前，可以先进行一步“预分词”（pre-tokenization），例如使用GPT-2分词器中使用的正则表达式，将文本初步分割成单词或标点符号，然后再在这些初步分割的单元上应用BPE。这可以提高分词的效率和质量。</li>
+<li><strong>性能优化：</strong> 尽可能地提高BPE实现的运行速度，这对于处理大规模文本数据至关重要。</li>
+</ul>
+
+  </div>
+  
+  
+    
+    <div class='footer'>
+       <!-- 参考资料、相关资料等 -->
+      
+       <!-- 相关文章 -->
+      
+      <!-- 版权声明组件 -->
+      
+        
+          <div class='copyright'>
+            <blockquote>
+              
+                
+                  <p>博客内容遵循 署名-非商业性使用-相同方式共享 4.0 国际 (CC BY-NC-SA 4.0) 协议</p>
+
+                
+              
+                
+                  <p>本文永久链接是：<a href="https://mengfanjun020906.github.io/2025/08/21/Standford CS336（一）课程介绍/">https://mengfanjun020906.github.io/2025/08/21/Standford CS336（一）课程介绍/</a></p>
+                
+              
+            </blockquote>
+          </div>
+        
+      
+      <!-- 打赏组件 -->
+      
+    </div>
+  
+  
+    
+
+
+  <div class='article-meta' id="bottom">
+    <div class='new-meta-box'>
+      
+        
+          <div class="new-meta-item date" itemprop="dateModified" datetime="2025-12-12T22:24:26+08:00">
+  <a class='notlink'>
+    <i class="fa-solid fa-edit fa-fw" aria-hidden="true"></i>
+    <p>更新于：Dec 12, 2025</p>
+  </a>
+</div>
+
+        
+      
+        
+          
+  
+  <div class="new-meta-item meta-tags"><a class="tag" href="/tags/%E5%AD%A6%E4%B9%A0/" rel="nofollow"><i class="fa-solid fa-hashtag fa-fw" aria-hidden="true"></i><p>学习</p></a></div> <div class="new-meta-item meta-tags"><a class="tag" href="/tags/%E5%A4%A7%E6%A8%A1%E5%9E%8B/" rel="nofollow"><i class="fa-solid fa-hashtag fa-fw" aria-hidden="true"></i><p>大模型</p></a></div>
+  <span hidden itemprop="keywords">学习 大模型</span>
+
+
+        
+      
+        
+          
+  <div class="new-meta-item share -mob-share-list">
+  <div class="-mob-share-list share-body">
+    
+      
+        <a class="-mob-share-qq" title="" rel="external nofollow noopener noreferrer noopener"
+          
+          target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://mengfanjun020906.github.io/2025/08/21/Standford%20CS336%EF%BC%88%E4%B8%80%EF%BC%89%E8%AF%BE%E7%A8%8B%E4%BB%8B%E7%BB%8D/&title=Standford CS336（一）课程介绍 - MengFanjun的博客&summary="
+          
+          >
+          
+            <img src="https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/logo/128/qq.png" class="lazyload" data-srcset="https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/logo/128/qq.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==">
+          
+        </a>
+      
+    
+      
+        <a class="-mob-share-qzone" title="" rel="external nofollow noopener noreferrer noopener"
+          
+          target="_blank" href="https://sns.qzone.qq.com/cgi-bin/qzshare/cgi_qzshare_onekey?url=https://mengfanjun020906.github.io/2025/08/21/Standford%20CS336%EF%BC%88%E4%B8%80%EF%BC%89%E8%AF%BE%E7%A8%8B%E4%BB%8B%E7%BB%8D/&title=Standford CS336（一）课程介绍 - MengFanjun的博客&summary="
+          
+          >
+          
+            <img src="https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/logo/128/qzone.png" class="lazyload" data-srcset="https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/logo/128/qzone.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==">
+          
+        </a>
+      
+    
+      
+        <a class="-mob-share-weibo" title="" rel="external nofollow noopener noreferrer noopener"
+          
+          target="_blank" href="http://service.weibo.com/share/share.php?url=https://mengfanjun020906.github.io/2025/08/21/Standford%20CS336%EF%BC%88%E4%B8%80%EF%BC%89%E8%AF%BE%E7%A8%8B%E4%BB%8B%E7%BB%8D/&title=Standford CS336（一）课程介绍 - MengFanjun的博客&summary="
+          
+          >
+          
+            <img src="https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/logo/128/weibo.png" class="lazyload" data-srcset="https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/logo/128/weibo.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==">
+          
+        </a>
+      
+    
+      
+    
+      
+    
+  </div>
+</div>
+
+
+
+        
+      
+    </div>
+    <!-- Custom Files bottomMeta begin -->
+    
+    <!-- Custom Files bottomMeta end -->
+  </div>
+
+
+  
+  
+
+  
+    <div class="prev-next">
+      
+        <a class='prev' href='/2025/08/30/Standford%20CS336%EF%BC%88%E4%BA%8C%EF%BC%89%E8%AE%AD%E7%BB%83%E6%A8%A1%E5%9E%8B%E4%BB%8B%E7%BB%8D/'>
+          <p class='title'><i class="fa-solid fa-chevron-left" aria-hidden="true"></i>Standford CS336（二）训练模型介绍</p>
+          <p class='content'>github库链接：https://github.com/stanford-cs336/spring2025-lectures
+概述本讲将讨论训练模型所需的所有基本要素，从张量到底层模型，再到优...</p>
+        </a>
+      
+      
+        <a class='next' href='/2024/10/23/%E3%80%90%E9%A1%B9%E7%9B%AE%E4%BB%8B%E7%BB%8D%E3%80%91%E5%9F%BA%E4%BA%8E%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E7%9A%84%E4%BD%8E%E7%A9%BA%E5%B0%8F%E3%80%81%E5%BE%AE%E6%97%A0%E4%BA%BA%E6%9C%BA%E8%AF%86%E5%88%AB%E6%8A%80%E6%9C%AF/'>
+          <p class='title'>基于机器学习的低空小、微无人机识别技术<i class="fa-solid fa-chevron-right" aria-hidden="true"></i></p>
+          <p class='content'>1.项目介绍对于现代雷达探测系统而言，无人机和飞鸟同属于低空小、微特征的一类典型目标，而面对比较复杂的环境，如何有效区分两者类型并完成识别是当下急迫且重要的难题。常规方法是从目标的微动特征差异进...</p>
+        </a>
+      
+    </div>
+  
+  <!-- Custom Files postEnd begin-->
+  
+  <!-- Custom Files postEnd end-->
+</article>
+
+
+  
+
+
+  <article class="post white-box shadow floatable blur" id="comments">
+    <span hidden>
+      <meta itemprop="discussionUrl" content="/2025/08/21/Standford%20CS336%EF%BC%88%E4%B8%80%EF%BC%89%E8%AF%BE%E7%A8%8B%E4%BB%8B%E7%BB%8D/index.html#comments">
+    </span>
+    <p ct><i class='fa-solid fa-comments'></i> 评论</p>
+    
+
+    <div id="layoutHelper-comments"></div>
+
+  </article>
+
+
+
+
+
+
+</div>
+<aside id='l_side' itemscope itemtype="http://schema.org/WPSideBar">
+  
+
+  
+    
+    
+      
+    
+  
+
+
+<div class="widget-sticky pjax">
+
+  
+  
+
+
+  <section class="widget toc-wrapper desktop mobile " id="toc-div" >
+    
+  <header>
+    
+      <i class="fa-solid fa-list fa-fw" aria-hidden="true"></i><span class='name'>本文目录</span>
+    
+  </header>
+
+
+    <div class='content'>
+        <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E8%AF%BE%E7%A8%8B%E7%AE%80%E4%BB%8B"><span class="toc-text">课程简介</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%B8%BA%E4%BB%80%E4%B9%88%E5%BC%80%E8%AE%BE%E8%BF%99%E9%97%A8%E8%AF%BE%E7%A8%8B%EF%BC%9F"><span class="toc-text">为什么开设这门课程？</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%AF%AD%E8%A8%80%E6%A8%A1%E5%9E%8B%E7%9A%84%E5%B7%A5%E4%B8%9A%E5%8C%96"><span class="toc-text">语言模型的工业化</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E2%80%9C%E5%A4%9A%E5%8D%B3%E4%B8%8D%E5%90%8C%E2%80%9D-More-is-different"><span class="toc-text">“多即不同” (More is different)</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%BB%8E%E6%9C%AC%E8%AF%BE%E7%A8%8B%E4%B8%AD%E8%83%BD%E5%AD%A6%E5%88%B0%E4%BB%80%E4%B9%88%EF%BC%9F"><span class="toc-text">从本课程中能学到什么？</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%8B%A6%E6%B6%A9%E7%9A%84%E6%95%99%E8%AE%AD-The-Bitter-Lesson"><span class="toc-text">苦涩的教训 (The Bitter Lesson)</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%BD%93%E5%89%8D%E8%AF%AD%E8%A8%80%E6%A8%A1%E5%9E%8B%E5%8F%91%E5%B1%95%E5%8E%86%E7%A8%8B"><span class="toc-text">当前语言模型发展历程</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%A5%9E%E7%BB%8F%E7%BD%91%E7%BB%9C%E4%B9%8B%E5%89%8D-2010%E5%B9%B4%E4%BB%A3%E5%89%8D"><span class="toc-text">神经网络之前 (2010年代前)</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%A5%9E%E7%BB%8F%E7%BD%91%E7%BB%9C%E8%A6%81%E7%B4%A0-2010%E5%B9%B4%E4%BB%A3"><span class="toc-text">神经网络要素 (2010年代)</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%97%A9%E6%9C%9F%E5%9F%BA%E7%A1%80%E6%A8%A1%E5%9E%8B-2010%E5%B9%B4%E4%BB%A3%E6%9C%AB"><span class="toc-text">早期基础模型 (2010年代末)</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%8B%A5%E6%8A%B1%E8%A7%84%E6%A8%A1%EF%BC%8C%E6%9B%B4%E5%8A%A0%E5%B0%81%E9%97%AD"><span class="toc-text">拥抱规模，更加封闭</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%BC%80%E6%94%BE%E6%A8%A1%E5%9E%8B"><span class="toc-text">开放模型</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%BC%80%E6%94%BE%E6%80%A7%E7%BA%A7%E5%88%AB"><span class="toc-text">开放性级别</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%BD%93%E4%BB%8A%E5%89%8D%E6%B2%BF%E6%A8%A1%E5%9E%8B"><span class="toc-text">当今前沿模型</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%BB%80%E4%B9%88%E6%98%AF%E2%80%9C%E5%8F%AF%E6%89%A7%E8%A1%8C%E8%AE%B2%E5%BA%A7%E2%80%9D%EF%BC%9F"><span class="toc-text">什么是“可执行讲座”？</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%BD%9C%E4%B8%9A"><span class="toc-text">作业</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E8%AF%BE%E7%A8%8B%E7%BB%84%E6%88%90"><span class="toc-text">课程组成</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%AF%BE%E7%A8%8B%E6%A6%82%E8%BF%B0"><span class="toc-text">课程概述</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%95%88%E7%8E%87%E9%A9%B1%E5%8A%A8%E8%AE%BE%E8%AE%A1%E5%86%B3%E7%AD%96"><span class="toc-text">效率驱动设计决策</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%9F%BA%E7%A1%80-Basics"><span class="toc-text">基础 (Basics)</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%88%86%E8%AF%8D-Tokenization"><span class="toc-text">分词 (Tokenization)</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%9E%B6%E6%9E%84-Architecture"><span class="toc-text">架构 (Architecture)</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%AE%AD%E7%BB%83-Training"><span class="toc-text">训练 (Training)</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%BD%9C%E4%B8%9A1"><span class="toc-text">作业1</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%B3%BB%E7%BB%9F-Systems"><span class="toc-text">系统 (Systems)</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%88%86%E8%AF%8D%E7%9A%84%E8%BF%9B%E4%B8%80%E6%AD%A5%E8%AE%A8%E8%AE%BA"><span class="toc-text">分词的进一步讨论</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Tokenizer-%E6%8A%BD%E8%B1%A1%E6%8E%A5%E5%8F%A3"><span class="toc-text">Tokenizer 抽象接口</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#BPETokenizerParams-%E6%95%B0%E6%8D%AE%E7%B1%BB"><span class="toc-text">BPETokenizerParams 数据类</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#CharacterTokenizer-%E5%AD%97%E7%AC%A6%E7%BA%A7%E5%88%86%E8%AF%8D%E5%99%A8"><span class="toc-text">CharacterTokenizer (字符级分词器)</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#ByteTokenizer-%E5%AD%97%E8%8A%82%E7%BA%A7%E5%88%86%E8%AF%8D%E5%99%A8"><span class="toc-text">ByteTokenizer (字节级分词器)</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#WordTokenizer-%E8%AF%8D%E6%B1%87%E5%88%86%E8%AF%8D"><span class="toc-text">WordTokenizer (词汇分词)</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Byte-Pair-Encoding-BPE-%E5%AD%97%E8%8A%82%E5%AF%B9%E7%BC%96%E7%A0%81"><span class="toc-text">Byte Pair Encoding (BPE) (字节对编码)</span></a></li></ol></li></ol>
+    </div>
+  </section>
+
+  
+
+</div>
+
+
+<!-- 没有 pjax 占位会报错 万恶的 pjax -->
+
+  <div class="pjax">
+    <!-- pjax占位 -->
+  </div>
+
+  <div class="pjax">
+    <!-- pjax占位 -->
+  </div>
+
+  <div class="pjax">
+    <!-- pjax占位 -->
+  </div>
+
+  <div class="pjax">
+    <!-- pjax占位 -->
+  </div>
+
+  <div class="pjax">
+    <!-- pjax占位 -->
+  </div>
+
+  <div class="pjax">
+    <!-- pjax占位 -->
+  </div>
+
+  <div class="pjax">
+    <!-- pjax占位 -->
+  </div>
+
+  <div class="pjax">
+    <!-- pjax占位 -->
+  </div>
+
+  <div class="pjax">
+    <!-- pjax占位 -->
+  </div>
+
+  <div class="pjax">
+    <!-- pjax占位 -->
+  </div>
+
+  <!-- Custom Files side begin -->
+  
+  <!-- Custom Files side end -->
+</aside>
+
+
+
+          <!--此文件用来存放一些不方便取值的变量-->
+<!--思路大概是将值藏到重加载的区域内-->
+
+<pjax>
+<script>
+  window.pdata={}
+  pdata.ispage=true;
+  pdata.commentPath="";
+  pdata.commentPlaceholder="";
+  pdata.commentConfig={};
+  //  see: /layout/_partial/scripts/_ctrl/coverCtrl.ejs
+  
+    // header
+    var l_header=document.getElementById("l_header");
+    
+    l_header.classList.remove("show");
+    
+    
+      // cover
+      var cover_wrapper=document.querySelector('#l_cover .cover-wrapper');
+      var scroll_down=document.getElementById('scroll-down');
+      cover_wrapper.id="half";
+      cover_wrapper.style.display="";
+      scroll_down.style.display="none";
+    
+  
+</script>
+</pjax>
+        </div>
+        
+  
+  <footer class="footer clearfix"  itemscope itemtype="http://schema.org/WPFooter">
+    <br><br>
+    
+      
+        <div class="aplayer-container">
+          
+
+  
+    <meting-js
+      theme='#1BCDFC'
+      autoplay='true'
+      volume='0.7'
+      loop='all'
+      order='list'
+      fixed='true'
+      list-max-height='320px'
+      server='netease'
+      type='playlist'
+      id='993524571'
+      list-folded='true'>
+    </meting-js>
+  
+
+
+        </div>
+      
+    
+      
+        <br>
+        <div class="social-wrapper" itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          
+            
+              <a href="mailto:mengfanjun_020906@outlook.com"
+                class="social fas fa-envelope flat-btn"
+                target="_blank"
+                rel="external nofollow noopener noreferrer" itemprop="url">
+                
+              </a>
+            
+          
+            
+              <a href="https://github.com/MengFanjun020906"
+                class="social fab fa-github flat-btn"
+                target="_blank"
+                rel="external nofollow noopener noreferrer" itemprop="url">
+                
+              </a>
+            
+          
+        </div>
+      
+    
+      
+        <div><p>Blog content follows the <a target="_blank" rel="noopener" href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.en">Attribution-NonCommercial-ShareAlike 4.0 International (CC BY-NC-SA 4.0) License</a></p>
+</div>
+      
+    
+      
+        Use
+        <a href="https://github.com/volantis-x/hexo-theme-volantis/#5.7.7" target="_blank" class="codename">Volantis</a>
+        as theme, total visits
+          <span id="busuanzi_value_site_pv"><i class="fa-solid fa-loader fa-spin fa-fw" aria-hidden="true"></i></span>
+          times
+        
+      
+    
+      
+        <div class='copyright'>
+        <p><a href="/">Copyright © 2022-2023 孟凡钧</a></p>
+
+        </div>
+      
+    
+    <!-- Custom Files footer begin-->
+    
+    <!-- Custom Files footer end-->
+  </footer>
+
+
+        <a id="s-top" class="fa-solid fa-arrow-up fa-fw" href="/" onclick="return false;" title="top"></a>
+      </div>
+    </div>
+    <div>
+      <script>
+  /******************** volantis.dom ********************************/
+  // 页面选择器 将dom对象缓存起来 see: /source/js/app.js etc.
+  volantis.dom.bodyAnchor = volantis.dom.$(document.getElementById("safearea")); // 页面主体
+  volantis.dom.topBtn = volantis.dom.$(document.getElementById('s-top')); // 向上
+  volantis.dom.wrapper = volantis.dom.$(document.getElementById('wrapper')); // 整个导航栏
+  volantis.dom.coverAnchor = volantis.dom.$(document.querySelector('#l_cover .cover-wrapper')); // 1个
+  volantis.dom.switcher = volantis.dom.$(document.querySelector('#l_header .switcher .s-search')); // 搜索按钮   移动端 1个
+  volantis.dom.header = volantis.dom.$(document.getElementById('l_header')); // 移动端导航栏
+  volantis.dom.search = volantis.dom.$(document.querySelector('#l_header .m_search')); // 搜索框 桌面端 移动端 1个
+  volantis.dom.mPhoneList = volantis.dom.$(document.querySelectorAll('#l_header .m-phone .list-v')); //  手机端 子菜单 多个
+</script>
+
+<script>
+  
+  volantis.css("https://unpkg.com/volantis-static@0.0.1654736714924/libs/@fortawesome/fontawesome-free/css/all.min.css");
+  
+  
+  
+</script>
+<script type="text/javascript" id="clustrmaps" src="//clustrmaps.com/map_v2.js?d=bPcCRxC4bZtkgRsg7UgdnDBMTDZWpbJMNpbRzeeUhkQ">
+</script>
+<!-- required -->
+
+
+<!-- internal -->
+
+<script src="/js/app.js"></script>
+
+
+
+
+
+
+<!-- rightmenu要在darkmode之前（ToggleButton） darkmode要在comments之前（volantis.dark.push）-->
+
+
+
+<script>
+  function loadIssuesJS() {
+    
+      const sites_api = document.getElementById('sites-api');
+      if (sites_api != undefined && typeof SitesJS === 'undefined') {
+        volantis.js("/js/plugins/tags/sites.js")
+      }
+    
+    
+      const friends_api = document.getElementById('friends-api');
+      if (friends_api != undefined && typeof FriendsJS === 'undefined') {
+        volantis.js("/js/plugins/tags/friends.js")
+      }
+    
+    
+      const contributors_api = document.getElementById('contributors-api');
+      if (contributors_api != undefined && typeof ContributorsJS === 'undefined') {
+        volantis.js("/js/plugins/tags/contributors.js")
+      }
+    
+  };
+  loadIssuesJS()
+  volantis.pjax.push(()=>{
+    loadIssuesJS();
+  })
+
+</script>
+
+
+
+
+  <script defer src="https://unpkg.com/volantis-static@0.0.1654736714924/libs/vanilla-lazyload/dist/lazyload.min.js"></script>
+<script>
+  // https://www.npmjs.com/package/vanilla-lazyload
+  // Set the options globally
+  // to make LazyLoad self-initialize
+  window.lazyLoadOptions = {
+    elements_selector: ".lazyload",
+    threshold: 0
+  };
+  // Listen to the initialization event
+  // and get the instance of LazyLoad
+  window.addEventListener(
+    "LazyLoad::Initialized",
+    function (event) {
+      window.lazyLoadInstance = event.detail.instance;
+    },
+    false
+  );
+  document.addEventListener('DOMContentLoaded', function () {
+    lazyLoadInstance.update();
+  });
+  document.addEventListener('pjax:complete', function () {
+    lazyLoadInstance.update();
+  });
+</script>
+
+
+
+
+  
+
+<script>
+  window.FPConfig = {
+	delay: 0,
+	ignoreKeywords: ["#"],
+	maxRPS: 6,
+	hoverDelay: 0
+  };
+</script>
+<script defer src="https://unpkg.com/volantis-static@0.0.1654736714924/libs/flying-pages/flying-pages.min.js"></script>
+
+
+
+
+
+
+
+  <script>
+  volantis.css("https://unpkg.com/volantis-static@0.0.1654736714924/libs/aplayer/dist/APlayer.min.css");
+  (async () => {
+    // APlayer 需要在  MetingJS 之前加载
+    await volantis.js("https://unpkg.com/volantis-static@0.0.1654736714924/libs/aplayer/dist/APlayer.min.js")
+    await volantis.js("https://unpkg.com/volantis-static@0.0.1654736714924/libs/meting/dist/Meting.min.js")
+  
+  })();
+
+  function SetAPlayerPlugin(){
+    let Metings = document.querySelectorAll('meting-js');
+    if (Metings.length === 0) {return;};
+    if (Metings[0].aplayer && Metings[0].aplayer.on) {
+      // improve the accessibility https://web.dev/button-name/
+      document.querySelectorAll(".aplayer-icon-menu").forEach(e=>{
+        e.setAttribute("aria-label","Aplayer Menu")
+      })
+      // message see: /layout/_plugins/message/script.ejs
+      
+        try {
+          setTimeout(() => {
+            Metings.forEach((item, index) => {
+              const aplayerItem = item.aplayer; if(!aplayerItem) return;
+              const rightAplayerCheck = 'true' === 'true'
+                && item.meta.id === '993524571';
+              if(rightAplayerCheck && typeof RightMenuAplayer !="undefined") RightMenuAplayer.checkAPlayer();
+              if(aplayerItem.events.events.play.every(item => {return item.name !== 'messagePlay'})) {
+                aplayerItem.on('play', function messagePlay() {
+                  let index = aplayerItem.list.index;
+                  let title = aplayerItem.list.audios[index].title;
+                  let artist = aplayerItem.list.audios[index].artist;
+                  setTimeout(() => {
+                    VolantisApp.message('音乐通知', title + ' - ' + artist, {
+                      icon: 'fa-solid fa-play',
+                      transitionIn: 'flipInX',
+                      transitionOut: 'flipOutX'
+                    });
+                  }, 100)
+                });
+              }
+              if(aplayerItem.events.events.pause.every(item => {return item.name !== 'messagePause'})) {
+                aplayerItem.on('pause', function messagePause() {
+                  let index = aplayerItem.list.index;
+                  let title = aplayerItem.list.audios[index].title;
+                  let artist = aplayerItem.list.audios[index].artist;
+                  setTimeout(() => {
+                    // 歌曲播放结束也会触发 pause 事件，为了避免错误提示，等待一会儿
+                    if(aplayerItem.paused) {
+                      VolantisApp.message('音乐通知', title + ' - ' + artist, {
+                        icon: 'fa-solid fa-pause',
+                        transitionIn: 'flipInX',
+                        transitionOut: 'flipOutX'
+                      });
+                    }
+                  }, 100)
+                });
+              }
+            });
+          }, 500)
+        } catch (error) { console.error(error); }
+      
+    }else{
+      volantis.requestAnimationFrame(SetAPlayerPlugin)
+    }
+  }
+
+  document.addEventListener("DOMContentLoaded", ()=>{
+    SetAPlayerPlugin();
+  });
+  volantis.pjax.push(SetAPlayerPlugin);
+</script>
+
+
+
+
+      <script>
+  volantis.layoutHelper("comments",`<div id="giscus_container"></div>`)
+
+  volantis.giscus = {};
+
+  function check_giscus() {
+    if (volantis.dark.mode === "dark") {
+      volantis.giscus.Theme = 'dark';
+    } else {
+      volantis.giscus.Theme = 'light';
+    }
+
+    return document.getElementById("giscus_container");
+  }
+
+  function pjax_giscus() {
+    const HEAD = check_giscus();
+    if (!HEAD) return;
+    let cfg = Object.assign({"theme":{"light":"light","dark":"dark"},"repo":"MengFanjun020906/comments","repo-id":"R_kgDOIjrvJg","category":"Announcements","category-id":"DIC_kwDOIjrvJs4CS6YN","mapping":"pathname","reactions-enabled":"1","emit-metadata":"0","lang":"zh-CN"},pdata.commentConfig)
+    const script = document.createElement('script');
+    script.setAttribute('src', 'https://giscus.app/client.js');
+    Object.keys(cfg).forEach(k=>{
+      if (k != "theme") {
+        script.setAttribute('data-'+k, cfg[k]);
+      }
+    })
+    script.setAttribute('data-theme', volantis.giscus.Theme);
+    script.setAttribute('crossorigin', "anonymous");
+    HEAD.appendChild(script);
+  }
+
+  function dark_giscus() {
+    const HEAD = check_giscus();
+    if (!HEAD) return;
+
+    const message = {
+      setConfig: {
+        theme: volantis.giscus.Theme
+      }
+    };
+    const giscusIframe = document.querySelector('iframe.giscus-frame');
+    giscusIframe.contentWindow.postMessage({ giscus: message }, 'https://giscus.app');
+  }
+  pjax_giscus();
+  volantis.pjax.push(pjax_giscus);
+  volantis.dark.push(dark_giscus);
+</script>
+
+    
+
+
+
+
+  <script defer src="https://gcore.jsdelivr.net/gh/volantis-x/cdn-busuanzi@2.3/js/busuanzi.pure.mini.js" data-pjax></script>
+
+
+<!-- optional -->
+
+  <script>
+  const SearchServiceDataPathRoot = ("/" || "/").endsWith("/") ?
+    "/" || "/" :
+    "//" || "/";
+  const SearchServiceDataPath = SearchServiceDataPathRoot + "content.json";
+
+  function loadSearchScript() {
+    // see: layout/_partial/scripts/_ctrl/cdnCtrl.ejs
+    return volantis.js("/js/search/hexo.js");
+  }
+
+  function loadSearchService() {
+    loadSearchScript();
+    document.querySelectorAll(".input.u-search-input").forEach((e) => {
+      e.removeEventListener("focus", loadSearchService, false);
+    });
+
+    document.querySelectorAll(".u-search-form").forEach((e) => {
+      e.addEventListener("submit", (event) => {
+        event.preventDefault();
+      }, false);
+    });
+  }
+
+  // 打开并搜索 字符串 s
+  function OpenSearch(s) {
+    if (typeof SearchService === 'undefined')
+      loadSearchScript().then(() => {
+        SearchService.setQueryText(s);
+        SearchService.search();
+      });
+    else {
+      SearchService.setQueryText(s);
+      SearchService.search();
+    }
+  }
+
+  // 访问含有 ?s=xxx  的链接时打开搜索 // 与搜索引擎 structured data 相关: /scripts/helpers/structured-data/lib/config.js
+  if (window.location.search && /^\?s=/g.test(window.location.search)) {
+    let queryText = decodeURI(window.location.search)
+      .replace(/\ /g, "-")
+      .replace(/^\?s=/g, "");
+    OpenSearch(queryText);
+  }
+
+  // 搜索输入框获取焦点时加载搜索
+  document.querySelectorAll(".input.u-search-input").forEach((e) => {
+    e.addEventListener("focus", loadSearchService, false);
+  });
+</script>
+
+
+
+
+
+
+
+  <script>
+
+
+
+  function pjax_highlightjs_copyCode(){
+    if (!(document.querySelector(".highlight .code pre") ||
+      document.querySelector(".article pre code"))) {
+      return;
+    }
+    VolantisApp.utilCopyCode(".highlight .code pre, .article pre code")
+  }
+  volantis.requestAnimationFrame(pjax_highlightjs_copyCode)
+  volantis.pjax.push(pjax_highlightjs_copyCode)
+
+</script>
+
+
+
+
+
+
+
+
+
+
+  <script>
+  let imgs = ["https://mfjblog-pic.oss-cn-beijing.aliyuncs.com/img/1071826.jpg"];
+  let index = 0;
+  let IntervalParallax = null;
+
+  function parallax(){
+    let ParallaxWindow = document.querySelector("#parallax-window");
+    
+      ParallaxWindow = document.querySelector("html");
+    
+    Parallax.window = ParallaxWindow;
+    Parallax.options.fade = 1500;
+    Parallax.cache = 1;
+    next_parallax();
+    Parallax.init();
+    if (imgs.length>1) {
+      IntervalParallax = setInterval(function () {
+        next_parallax();
+      }, '10000');
+    }
+  }
+
+  function next_parallax() {
+    if (typeof Parallax == "undefined") {
+      return
+    }
+    
+    if (imgs.length>=1) {
+      Parallax.options.src = imgs[index % imgs.length];
+      Parallax.start();
+      index++;
+      if (Parallax.cache) {
+        fetch(imgs[index % imgs.length] +"?t=" + new Date().getTime());
+        if (index == imgs.length) {
+          Parallax.cache = 0;
+        }
+      }
+    }
+  }
+  var runningOnBrowser = typeof window !== "undefined";
+  var isBot = runningOnBrowser && !("onscroll" in window) || typeof navigator !== "undefined" && /(gle|ing|ro|msn)bot|crawl|spider|yand|duckgo/i.test(navigator.userAgent);
+  if (!isBot) {
+    volantis.js('/js/plugins/parallax.js').then(()=>{
+      parallax()
+    })
+    volantis.pjax.send(()=>{
+      clearInterval(IntervalParallax)
+    },"clearIntervalParallax");
+    volantis.pjax.push(parallax);
+  }
+</script>
+
+
+
+
+  <script>
+  function load_swiper() {
+    if (!document.querySelectorAll(".swiper-container")[0]) return;
+    volantis.css("https://unpkg.com/volantis-static@0.0.1654736714924/libs/swiper/swiper-bundle.min.css");
+    volantis.js("https://unpkg.com/volantis-static@0.0.1654736714924/libs/swiper/swiper-bundle.min.js").then(() => {
+      pjax_swiper();
+    });
+  }
+
+  load_swiper();
+
+  function pjax_swiper() {
+    volantis.swiper = new Swiper('.swiper-container', {
+      slidesPerView: 'auto',
+      spaceBetween: 8,
+      centeredSlides: true,
+      loop: true,
+      pagination: {
+        el: '.swiper-pagination',
+        clickable: true,
+      },
+      navigation: {
+        nextEl: '.swiper-button-next',
+        prevEl: '.swiper-button-prev',
+      },
+    });
+  }
+
+  volantis.pjax.push(() => {
+    if (!document.querySelectorAll(".swiper-container")[0]) return;
+    if (typeof volantis.swiper === "undefined") {
+      load_swiper();
+    } else {
+      pjax_swiper();
+    }
+  });
+</script>
+
+
+<!-- pjax 标签必须存在于所有页面 否则 pjax error -->
+<pjax>
+
+        <script>
+  // https://github.com/theme-next/hexo-theme-next/blob/master/layout/_third-party/math/mathjax.swig
+  if (typeof MathJax === 'undefined') {
+    window.MathJax = {
+      loader: {
+        source: {
+          '[tex]/amsCd': '[tex]/amscd',
+          '[tex]/AMScd': '[tex]/amscd'
+        }
+      },
+      tex: {
+        inlineMath: {'[+]': [['$', '$']]},
+        tags: 'ams'
+      },
+      options: {
+        renderActions: {
+          findScript: [10, doc => {
+            document.querySelectorAll('script[type^="math/tex"]').forEach(node => {
+              const display = !!node.type.match(/; *mode=display/);
+              const math = new doc.options.MathItem(node.textContent, doc.inputJax[0], display);
+              const text = document.createTextNode('');
+              node.parentNode.replaceChild(text, node);
+              math.start = {node: text, delim: '', n: 0};
+              math.end = {node: text, delim: '', n: 0};
+              doc.math.push(math);
+            });
+          }, '', false],
+          insertedScript: [200, () => {
+            document.querySelectorAll('mjx-container').forEach(node => {
+              let target = node.parentNode;
+              if (target.nodeName.toLowerCase() === 'li') {
+                target.parentNode.classList.add('has-jax');
+              }
+            });
+          }, '', false]
+        }
+      }
+    };
+    (function () {
+      var script = document.createElement('script');
+      script.src = "https://unpkg.com/volantis-static@0.0.1654736714924/libs/mathjax/es5/tex-mml-chtml.js";
+      script.defer = true;
+      document.head.appendChild(script);
+    })();
+  } else {
+    // 文章章节标题不能为 “MathJax” ，否则会报错。
+    MathJax.startup.document.state(0);
+    MathJax.texReset();
+    MathJax.typesetPromise();
+  }
+</script>
+
+
+
+</pjax>
+
+<script>
+  function listennSidebarTOC() {
+    const navItems = document.querySelectorAll(".toc li");
+    if (!navItems.length) return;
+    let targets = []
+    const sections = [...navItems].map((element) => {
+      const link = element.querySelector(".toc-link");
+      const target = document.getElementById(
+        decodeURI(link.getAttribute("href")).replace("#", "")
+      );
+      targets.push(target)
+      // 解除 a 标签 href 的 锚点定位, a 标签 href 的 锚点定位 会随机启用?? 产生错位???
+      link.setAttribute("onclick","return false;")
+      link.setAttribute("toc-action","toc-"+decodeURI(link.getAttribute("href")).replace("#", ""))
+      link.setAttribute("href","/")
+      // 配置 点击 触发新的锚点定位
+      link.addEventListener("click", (event) => {
+        event.preventDefault();
+        // 这里的 addTop 是通过错位使得 toc 自动展开.
+        volantis.scroll.to(target,{addTop: 5, observer:true})
+        // Anchor id
+        history.pushState(null, document.title, "#" + target.id);
+      });
+      return target;
+    });
+
+    function activateNavByIndex(target) {
+      if (target.classList.contains("active-current")) return;
+
+      document.querySelectorAll(".toc .active").forEach((element) => {
+        element.classList.remove("active", "active-current");
+      });
+      target.classList.add("active", "active-current");
+      let parent = target.parentNode;
+      while (!parent.matches(".toc")) {
+        if (parent.matches("li")) parent.classList.add("active");
+        parent = parent.parentNode;
+      }
+    }
+
+    // 方案一：
+    volantis.activateNavIndex=0
+    activateNavByIndex(navItems[volantis.activateNavIndex])
+    volantis.scroll.push(()=>{
+      if (targets[0].getBoundingClientRect().top >= 0) {
+        volantis.activateNavIndex = 0
+      }else if (targets[targets.length-1].getBoundingClientRect().top < 0) {
+        volantis.activateNavIndex = targets.length-1
+      } else {
+        for (let index = 0; index < targets.length; index++) {
+          const target0 = targets[index];
+          const target1 = targets[(index+1)%targets.length];
+          if (target0.getBoundingClientRect().top < 0&&target1.getBoundingClientRect().top >= 0) {
+            volantis.activateNavIndex=index
+            break;
+          }
+        }
+      }
+      activateNavByIndex(navItems[volantis.activateNavIndex])
+    })
+
+    // 方案二：
+    // IntersectionObserver 不是完美精确到像素级别 也不是低延时性的
+    // function findIndex(entries) {
+    //   let index = 0;
+    //   let entry = entries[index];
+    //   if (entry.boundingClientRect.top > 0) {
+    //     index = sections.indexOf(entry.target);
+    //     return index === 0 ? 0 : index - 1;
+    //   }
+    //   for (; index < entries.length; index++) {
+    //     if (entries[index].boundingClientRect.top <= 0) {
+    //       entry = entries[index];
+    //     } else {
+    //       return sections.indexOf(entry.target);
+    //     }
+    //   }
+    //   return sections.indexOf(entry.target);
+    // }
+    // function createIntersectionObserver(marginTop) {
+    //   marginTop = Math.floor(marginTop + 10000);
+    //   let intersectionObserver = new IntersectionObserver(
+    //     (entries, observe) => {
+    //       let scrollHeight = document.documentElement.scrollHeight;
+    //       if (scrollHeight > marginTop) {
+    //         observe.disconnect();
+    //         createIntersectionObserver(scrollHeight);
+    //         return;
+    //       }
+    //       let index = findIndex(entries);
+    //       activateNavByIndex(navItems[index]);
+    //     }, {
+    //       rootMargin: marginTop + "px 0px -100% 0px",
+    //       threshold: 0,
+    //     }
+    //   );
+    //   sections.forEach((element) => {
+    //     element && intersectionObserver.observe(element);
+    //   });
+    // }
+    // createIntersectionObserver(document.documentElement.scrollHeight);
+  }
+
+  document.addEventListener("DOMContentLoaded", ()=>{
+    volantis.requestAnimationFrame(listennSidebarTOC)
+  });
+  document.addEventListener("pjax:success", ()=>{
+    volantis.requestAnimationFrame(listennSidebarTOC)
+  });
+</script>
+
+
+
+<script>
+  document.onreadystatechange = function () {
+    if (document.readyState == 'complete') {
+      // 页面加载完毕 样式加载失败，或是当前网速慢，或是开启了省流模式
+      const { saveData, effectiveType } = navigator.connection || navigator.mozConnection || navigator.webkitConnection || {}
+      if (getComputedStyle(document.querySelector("#safearea"), null)["display"] == "none" || saveData || /2g/.test(effectiveType)) {
+        document.querySelectorAll(".reveal").forEach(function (e) {
+          e.style["opacity"] = "1";
+        });
+        document.querySelector("#safearea").style["display"] = "block";
+      }
+    }
+  }
+</script>
+
+
+  <script type="application/ld+json">[{"@context":"http://schema.org","@type":"Organization","name":"MengFanjun的博客","url":"https://mengfanjun020906.github.io/","logo":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}},{"@context":"http://schema.org","@type":"Person","name":"MengFanjun","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png"},"url":"https://mengfanjun020906.github.io/","sameAs":["https://github.com/volantis-x"],"description":"20级通信工程大学生的个人博客"},{"@context":"http://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"item":{"@id":"https://mengfanjun020906.github.io/","name":"MengFanjun的博客"}},{"@type":"ListItem","position":3,"item":{"@id":"https://mengfanjun020906.github.io/2025/08/21/Standford CS336（一）课程介绍/","name":"Standford CS336（一）课程介绍"}}]},{"@context":"http://schema.org","@type":"WebSite","name":"MengFanjun的博客","url":"https://mengfanjun020906.github.io/","keywords":null,"description":"20级通信工程大学生的个人博客","author":{"@type":"Person","name":"MengFanjun","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png"},"url":"https://mengfanjun020906.github.io/","description":"20级通信工程大学生的个人博客"},"publisher":{"@type":"Organization","name":"MengFanjun的博客","url":"https://mengfanjun020906.github.io/","logo":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}},"potentialAction":{"@type":"SearchAction","name":"Site Search","target":{"@type":"EntryPoint","urlTemplate":"https://mengfanjun020906.github.io?s={search_term_string}"},"query-input":"required name=search_term_string"}},{"@context":"http://schema.org","@type":"BlogPosting","headline":"Standford CS336（一）课程介绍","description":"20级通信工程大学生的个人博客","inLanguage":"en","mainEntityOfPage":{"@type":"WebPage","@id":"https://mengfanjun020906.github.io/2025/08/21/Standford%20CS336%EF%BC%88%E4%B8%80%EF%BC%89%E8%AF%BE%E7%A8%8B%E4%BB%8B%E7%BB%8D/"},"author":{"@type":"Person","name":"MengFanjun","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png"},"url":"https://mengfanjun020906.github.io/"},"publisher":{"@type":"Organization","name":"MengFanjun的博客","logo":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}},"url":"https://mengfanjun020906.github.io/2025/08/21/Standford%20CS336%EF%BC%88%E4%B8%80%EF%BC%89%E8%AF%BE%E7%A8%8B%E4%BB%8B%E7%BB%8D/","wordCount":0,"datePublished":"2025-08-21T02:29:19.000Z","dateModified":"2025-12-12T14:24:26.366Z","keywords":"学习,大模型","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}}]</script>
+
+
+
+      
+        <!--
+  pjax重载区域接口：
+  1.  <pjax></pjax> 标签 pjax 标签必须存在于所有页面 否则 pjax error
+  2.  script[data-pjax]
+  3.  .pjax-reload script
+  4.  .pjax
+-->
+
+
+
+<script src="https://unpkg.com/volantis-static@0.0.1654736714924/libs/pjax/pjax.min.js"></script>
+
+
+<script>
+    var pjax;
+    document.addEventListener('DOMContentLoaded', function () {
+      pjax = new Pjax({
+        elements: 'a[href]:not([href^="#"]):not([href="javascript:void(0)"]):not([pjax-fancybox]):not([onclick="return false;"]):not([onclick="return!1"]):not([target="_blank"]):not([target="view_window"]):not([href$=".xml"])',
+        selectors: [
+          "head title",
+          "head meta[name=keywords]",
+          "head meta[name=description]",
+          
+          "#l_main",
+          "#pjax-header-nav-list",
+          ".pjax",
+          "pjax", // <pjax></pjax> 标签
+          "script[data-pjax], .pjax-reload script" // script标签添加data-pjax 或 script标签外层添加.pjax-reload 的script代码段重载
+        ],
+        cacheBust: false,   // url 地址追加时间戳，用以避免浏览器缓存
+        timeout: 5000,
+        
+      });
+    });
+
+    document.addEventListener('pjax:send', function (e) {
+      //window.stop(); // 相当于点击了浏览器的停止按钮
+
+      try {
+        var currentUrl = window.location.pathname;
+        var targetUrl = e.triggerElement.href;
+        var banUrl = [""];
+        if (banUrl[0] != "") {
+          banUrl.forEach(item => {
+            if(currentUrl.indexOf(item) != -1 || targetUrl.indexOf(item) != -1) {
+              window.location.href = targetUrl;
+            }
+          });
+        }
+      } catch (error) {}
+
+      // 使用 volantis.pjax.send 方法传入pjax:send回调函数 参见layout/_partial/scripts/global.ejs
+      volantis.pjax.method.send.start();
+    });
+
+    document.addEventListener('pjax:complete', function () {
+      // 使用 volantis.pjax.push 方法传入重载函数 参见layout/_partial/scripts/global.ejs
+      volantis.pjax.method.complete.start();
+    });
+
+    document.addEventListener('pjax:error', function (e) {
+      if(volantis.debug) {
+        console.error(e);
+        console.log('pjax error: \n' + JSON.stringify(e));
+      }else{
+        // 使用 volantis.pjax.error 方法传入pjax:error回调函数 参见layout/_partial/scripts/global.ejs
+        volantis.pjax.method.error.start();
+        window.location.href = e.triggerElement.href;
+      }
+    });
+</script>
+
+      
+    </div>
+    <!-- import body_end begin-->
+    <!-- import body_end end-->
+    <!-- Custom Files bodyEnd begin-->
+    
+    <!-- Custom Files bodyEnd end-->
+  </body>
+</html>
